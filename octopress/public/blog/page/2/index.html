@@ -7,7 +7,7 @@
 
 	<meta name="author" content="David Calhoun">
 
-<meta name="description" content="(view the full image, image credit) A long time ago, four black ships appeared off the coast of Japan, which had closed itself off from the world &hellip;"> <meta name="keywords" content="">
+<meta name="description" content="EDIT: big thanks to my classmate Robin from Switzerland who showed me the key steps to getting this figured out! For the last six months, I’ve &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -46,6 +46,93 @@
 </header>
 
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/2013/how-to-import-imiwa-vocabulary-lists-directly-into-anki-ios-iphone-guide">
+			
+				How to Import Imiwa? Vocabulary Lists Directly Into Anki (iOS/iPhone Guide)</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-27T00:00:00-08:00" pubdate data-updated="true">Feb 27<span>th</span>, 2013</time></div>
+	</header>
+	<div class="entry-content">
+		<p>EDIT: big thanks to my classmate Robin from Switzerland who showed me the key steps to getting this figured out!</p>
+
+<p>For the last six months, I’ve mainly been using imiwa? for iOS to look up Japanese words whenever I don’t know them (mostly in class). However, I found that I built up big lists without ever reviewing them.</p>
+
+<p>The best way to review is of course through Anki, but it was a laborious process to import each word one-by-one. I should’ve figured there was an easier way!</p>
+
+<h3 id="step-1-export-list-and-email-to-yourself">Step 1: Export list and email to yourself</h3>
+
+<p>Most good apps, including imiwa?, include an export function. They may export directly to an Anki file (all the easier!), or they may export to a tab-delimited file, as imiwa? does. For this tutorial I’ll assume you have a dictionary that does the latter, and for the purpose of this quick tutorial, I’ll use screenshots from imiwa? on iOS as a guide.</p>
+
+<p>Your first step is to open up imiwa? and go to the Lists tab (click the icon at the bottom):</p>
+
+<p><a href="http://davidbcalhoun.com/wp-content/uploads/2013/02/imiwa-ios-list.jpg"><img src="http://davidbcalhoun.com/wp-content/uploads/2013/02/imiwa-ios-list.jpg" alt="imiwa-ios-list" width="320" height="480" class="aligncenter size-large wp-image-1026" /></a></p>
+
+<p>Click on the list you want to export, then click on the icon next to the Edit button at the top of the screen:</p>
+
+<p><a href="http://davidbcalhoun.com/wp-content/uploads/2013/02/imiwa-ios-list-export.jpg"><img src="http://davidbcalhoun.com/wp-content/uploads/2013/02/imiwa-ios-list-export.jpg" alt="imiwa-ios-list-export" width="320" height="480" class="aligncenter size-full wp-image-1029" /></a></p>
+
+<p>At this point we have a few options. Choose the bottom option (“Tab separated values”):</p>
+
+<p><a href="http://davidbcalhoun.com/wp-content/uploads/2013/02/imiwa-ios-tab-separated-values-export.jpg"><img src="http://davidbcalhoun.com/wp-content/uploads/2013/02/imiwa-ios-tab-separated-values-export.jpg" alt="imiwa-ios-tab-separated-values-export" width="320" height="480" class="aligncenter size-large wp-image-1028" /></a></p>
+
+<p>After a little processing, imiwa? will finish and direct you to the email app, where you need to email the list to yourself. Just type in your email address and hit Send:</p>
+
+<p><a href="http://davidbcalhoun.com/wp-content/uploads/2013/02/imiwa-ios-email-to-self.jpg"><img src="http://davidbcalhoun.com/wp-content/uploads/2013/02/imiwa-ios-email-to-self.jpg" alt="imiwa-ios-email-to-self" width="320" height="480" class="aligncenter size-large wp-image-1025" /></a></p>
+
+<h3 id="step-2-download-and-import-to-desktop-anki">Step 2: Download and import to desktop Anki</h3>
+
+<p>Now switch to your desktop and download the file you emailed to yourself. It should look something like this:</p>
+
+<p><a href="http://davidbcalhoun.com/wp-content/uploads/2013/02/imiwa-ios-tab-separated-values-export-sample.png"><img src="http://davidbcalhoun.com/wp-content/uploads/2013/02/imiwa-ios-tab-separated-values-export-sample-1024x588.png" alt="imiwa-ios-tab-separated-values-export-sample" width="512" height="294" class="aligncenter size-large wp-image-1027" /></a></p>
+
+<p>Note that there’s a lot of “junk” data that we won’t need when we import into Anki. Don’t worry, there’s a way to get rid of it!</p>
+
+<p>Now open up Anki, click File -&gt; Import… and select the file you downloaded (from the email you send to yourself).</p>
+
+<h3 id="step-3-hide-junk-columns-from-anki">Step 3: Hide junk columns from Anki</h3>
+
+<p>When you import the file, you’ll get prompted with a screen that looks like this:</p>
+
+<p><a href="http://davidbcalhoun.com/wp-content/uploads/2013/02/anki-tab-delimited-import.png"><img src="http://davidbcalhoun.com/wp-content/uploads/2013/02/anki-tab-delimited-import-1024x876.png" alt="anki-tab-delimited-import" width="512" height="438" class="aligncenter size-large wp-image-1024" /></a></p>
+
+<p>This allows you to tell Anki which deck to import into (you probably will want to create a brand new deck), but most importantly you need to tell Anki which fields are import.</p>
+
+<p>Here’s a typical line from a list I imported:</p>
+
+<p>“JMDICT 1431110 直接 ちょくせつ direct, immediate, personal, firsthand L41-50″</p>
+
+<p>In other words:</p>
+
+<p>“1. [Junk] 2. [Junk] 3. Expression 4. Reading 5. Meaning 6. [Junk]”</p>
+
+<p>On this screen in Anki, hit the Change button for fields 1, 2, and 6, and be sure to tell Anki to ignore them. For the rest of the fields, match them up appropriately (Field 3 is Expression, Field 4 is Reading, Field 5 is Meaning).</p>
+
+<p>Now click the Import button, and you magically have a new Anki deck to work through!</p>
+
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post">
@@ -806,73 +893,6 @@
 </ol>
 
 <p>If you’re feeling especially motivated, go ahead and study <a href="http://www.japanmoji.com/2010/07/vocabulary-list-51-to-100.html">words 50 to 100</a> and <a href="http://www.japanmoji.com/2010/11/vocabulary-list-101-to-150.html">words 101 to 150</a>. I’ll record those soon of course, so stay tuned.</p>
-
-
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post">
-	<header>
-		<h2 class="title">
-			
-			<a href="/2012/response-to-whats-next-for-mobile-now-that-adaptive-design-has-failed">
-			
-				Response to &#8220;What’s Next for Mobile Now That Adaptive Design Has Failed?&#8221;</a>
-		</h2>
-		<div class="meta date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-05-23T00:00:00-07:00" pubdate data-updated="true">May 23<span>rd</span>, 2012</time></div>
-	</header>
-	<div class="entry-content">
-		<p>There’s been a flurry of response to <a href="http://venturebeat.com/2012/05/22/adaptive-design-has-failed/">this article, entitled “What’s next for mobile now that adaptive design has failed?”</a>.</p>
-
-<p>There’s many problems with this article, so it’s hard to know where to start.</p>
-
-<p>I will admit that defenders of responsive design have come out of the woodwork in trashing this article, but I suppose I count myself among them, being a proponent of responsive design. I still see the web heading that direction, and I definitely don’t see it heading in the direction the author of the article has described.</p>
-
-<h3 id="adaptive--responsive">Adaptive != Responsive</h3>
-
-<p>Like others have said, adaptive isn’t the same as responsive. I hate that both have become buzzwords to be thrown around by execs, but they should at least be used appropriately. (see <a href="http://www.linkedin.com/answers/technology/web-development/TCH_WDD/961492-23942997">this page</a> for a good discussion of the differences). This article conflates the two.</p>
-
-<p>I’ll assume for the purpose of this argument that we’re referring to responsive design.</p>
-
-<h3 id="unproven-assumption-responsive-design-has-failed">Unproven assumption: responsive design has failed</h3>
-
-<p>There’s an assumption that responsive design has failed, but no argument for it, which means by the end of the article it remains an assumption. I’ll assume its purpose was solely as an attention-seeking headline. Not much more to be said there, so let’s pass over it.</p>
-
-<h3 id="tablets--magazines-vertical-scroll--bad-pagination--good">Tablets = Magazines?, Vertical Scroll = Bad?, Pagination = Good?</h3>
-
-<p>There’s an assumption that users equate tablets to magazines, and therefore expect to swipe through pages. I believe there’s some sort of interaction or deal the author has with Pressly (which he mentions and has retweeted on Twitter), so I can understand why they’d be pushing their agenda and usage model, which is very much of the “iPad-magazine-page-flip” sort.</p>
-
-<p>But there’s a reason pagination is still an optional feature not turned on by default in apps such as Instapaper: it’s because users are very familiar and comfortable with vertical scrolling of content on the web, and possibly in some cases more comfortable than a page-based format. They are as comfortable with vertical scrolling as the author would say they are with turning the pages of a magazine.</p>
-
-<p>I’m the age where I’ve seen the decline of newspapers and magazines and am actually more comfortable with a vertical-scrolling interface as opposed to a page-flipping interface as older folks might be used to in magazines.</p>
-
-<p>Just because the interaction model worked for an older medium doesn’t mean it’ll work or is even the best for new mediums. If that were true, we’d still have rotary dial inputs on our touchscreen phones, simply because some phone exec insisted that users were more familiar and comfortable with the rotary dial interaction model.</p>
-
-<h3 id="users-love-those-full-screen-ads">Users Love Those Full-Screen Ads</h3>
-
-<p>Users do NOT like full-screen ads. To think otherwise can be very rightly said to be a delusion of grandeur. Go to the app store, look at the iPad CNET app reviews, and tell me that users are thrilled about seeing a full-screen ad pop over their content when they open the app. Quite the opposite, that turns out to be the main complaint by a long shot, or at least it was for a long while after the app was released. I know. I was there to see it happen, and to see a blind eye turned toward the problem.</p>
-
-<h3 id="successful-advertising--successful-user-experience">Successful advertising != Successful User Experience</h3>
-
-<p>Advertising isn’t a gauge of user experience. This is the hubris and the downfall of CBS and anyone who believes otherwise. More ad revenue means more aggressive ads, more fullscreen ads, and more ways to trick the user into clicking ads. This is the opposite of a good user experience. The real user base isn’t there to click on ads – they’re there to read content, and everything else is a distraction. This is the catch-22 of this model, and those that don’t see that will never know they need to toe the line and maintain a delicate balance. Worst of all, those who completely miss the point will mistake successful advertising with a successful user experience (which here is as easily conflated as adaptive and responsive design have been).</p>
-
-<p>Sometimes companies don’t realize there’s a point of no return when ads (which are necessary in some minimal form) become too distracting and actually make it more difficult to get to content, resulting in users abandoning the site in the long term, or taking measures to churn the site through AdBlock or Instapaper or other measures that preserve the content, while discarding the distracting bits (usually ads and other tricks to get the user to stay on the site longer by showing “related content”, which is ultimately a way to trick the user into staying to view more ads).</p>
 
 
 		

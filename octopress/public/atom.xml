@@ -4,13 +4,154 @@
   <title><![CDATA[David Calhoun's blog]]></title>
   <link href="http://davidbcalhoun.com/atom.xml" rel="self"/>
   <link href="http://davidbcalhoun.com/"/>
-  <updated>2014-04-16T17:30:52-07:00</updated>
+  <updated>2014-04-30T12:17:16-07:00</updated>
   <id>http://davidbcalhoun.com/</id>
   <author>
     <name><![CDATA[David Calhoun]]></name>
     
   </author>
 
+  
+  <entry>
+    <title type="html"><![CDATA[What is AMD, CommonJS, and UMD?]]></title>
+    <link href="http://davidbcalhoun.com/2014/what-is-amd-commonjs-umd/"/>
+    <updated>2014-04-30T11:59:21-07:00</updated>
+    <id>http://davidbcalhoun.com/2014/what-is-amd-commonjs-umd</id>
+    <content type="html"><![CDATA[<h3 id="intro">Intro</h3>
+<p>Over the years there’s been a steadily increasing ecosystem of JavaScript components to choose from.  The sheer amount of choices is fantastic, but this also infamously presents a difficulty when components are mixed-and-matched.  And it doesn’t take too long for budding developers to find out that not all components are built to play nicely together.</p>
+
+<p>To address these issues, the competing module specs AMD and CommonJS have appeared on the scene, allowing developers to write their code in an agreed-upon sandboxed and modularized way, so as not to “pollute the ecosystem”.</p>
+
+<h3 id="amd">AMD</h3>
+<p>Asynchronous Module Definition (AMD) has gained traction on the frontend, with RequireJS being the most popular implementation.</p>
+
+<p>Here’s module <code>foo</code> with a single dependency on <code>jquery</code>:</p>
+
+<pre><code>//    filename: foo.js
+define(['jquery'], function ($) {
+    //    methods
+    function myFunc(){};
+
+    //    exposed public methods
+    return myFunc;
+});
+</code></pre>
+
+<p>And a little more complicated example with multiple dependencies and multiple exposed methods:</p>
+
+<pre><code>//    filename: foo.js
+define(['jquery', 'underscore'], function ($, _) {
+    //    methods
+    function a(){};    //    private because it's not returned (see below)
+    function b(){};    //    public because it's returned
+    function c(){};    //    public because it's returned
+
+    //    exposed public methods
+    return {
+        b: b,
+        c: c
+    }
+});
+</code></pre>
+
+<p>The first part of the define is an array of dependencies, while the second part is essentially the callback function which is only executed when the dependencies are available (script loaders like RequireJS take care of that part, including figuring out where the files are located).</p>
+
+<p>Note that the dependency to variable order is important (ex. jquery-&gt;<code>$</code>, underscore-&gt;<code>_</code>).</p>
+
+<p>Also note that we can map the dependencies to any arbitrary variables we want here.  If we change <code>$</code> to <code>$$</code> in the code above, all jQuery references within our function block will be <code>$$</code> instead of <code>$</code>.</p>
+
+<p>And note, most importantly, that you can’t reference the variables <code>$</code> and <code>_</code> outside of the function, because it’s sandboxed from other code.  That’s the goal here!</p>
+
+<h3 id="commonjs">CommonJS</h3>
+
+<p>CommonJS is a style you may be familiar with if you’re written anything in Node (which uses a slight variant).  It’s also been gaining traction on the frontend with Browserify.</p>
+
+<p>Using the same format as before, here’s what our <code>foo</code> module looks like in CommonJS:</p>
+
+<pre><code>//    filename: foo.js
+
+//    dependencies
+var $ = require('jquery');
+
+//    methods
+function myFunc(){};
+
+//    exposed public method (single)
+module.exports = myFunc;
+</code></pre>
+
+<p>And our more complicate example, with multiple dependencies and multiple exposed methods:</p>
+
+<pre><code>//    filename: foo.js
+var $ = require('jquery');
+var _ = require('underscore');
+
+//    methods
+function a(){};    //    private because it's omitted from module.exports (see below)
+function b(){};    //    public because it's defined in module.exports
+function c(){};    //    public because it's defined in module.exports
+
+//    exposed public methods
+module.exports = {
+    b: b,
+    c: c
+};
+</code></pre>
+
+<h3 id="umd-universal-module-definition">UMD: Universal Module Definition</h3>
+
+<p>Since CommonJS and AMD styles have both been equally popular, it seems there’s yet no consensus.  This has brought about the push for a “universal” pattern that supports both styles, which brings us to none other than the Universal Module Definition.</p>
+
+<p>The pattern is admittedly ugly, but is both AMD and CommonJS compatible, as well as supporting the old-style “global” variable definition:</p>
+
+<pre><code>(function (root, factory) {
+    if (typeof define === 'function' &amp;&amp; define.amd) {
+        // AMD
+        define(['jquery'], factory);
+    } else if (typeof exports === 'object') {
+        // Node, CommonJS-like
+        module.exports = factory(require('jquery'));
+    } else {
+        // Browser globals (root is window)
+        root.returnExports = factory(root.jQuery);
+    }
+}(this, function ($) {
+    //    methods
+    function myFunc(){};
+
+    //    exposed public method
+    return myFunc;
+}));
+</code></pre>
+
+<p>And keeping in the same pattern as the above examples, the more complicated case with multiple dependencies and multiple exposed methods:</p>
+
+<pre><code>(function (root, factory) {
+    if (typeof define === 'function' &amp;&amp; define.amd) {
+        // AMD
+        define(['jquery', 'underscore'], factory);
+    } else if (typeof exports === 'object') {
+        // Node, CommonJS-like
+        module.exports = factory(require('jquery', 'underscore'));
+    } else {
+        // Browser globals (root is window)
+        root.returnExports = factory(root.jQuery, root._);
+    }
+}(this, function ($, _) {
+    //    methods
+    function a(){};    //    private because it's not returned (see below)
+    function b(){};    //    public because it's returned
+    function c(){};    //    public because it's returned
+
+    //    exposed public methods
+    return {
+        b: b,
+        c: c
+    }
+}));
+</code></pre>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[The mobile web is dead (and we have killed it)]]></title>
@@ -1371,50 +1512,6 @@ Today <a href="http://www.bbc.co.uk/news/world-us-canada-22820711">President Oba
 </ol>
 
 <p>If you’re feeling especially motivated, go ahead and study <a href="http://www.japanmoji.com/2010/07/vocabulary-list-51-to-100.html">words 50 to 100</a> and <a href="http://www.japanmoji.com/2010/11/vocabulary-list-101-to-150.html">words 101 to 150</a>. I’ll record those soon of course, so stay tuned.</p>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Response to &#8220;What’s next for mobile now that adaptive design has failed?&#8221;]]></title>
-    <link href="http://davidbcalhoun.com/2012/response-to-whats-next-for-mobile-now-that-adaptive-design-has-failed"/>
-    <updated>2012-05-23T00:00:00-07:00</updated>
-    <id>http://davidbcalhoun.com/2012/response-to-whats-next-for-mobile-now-that-adaptive-design-has-failed</id>
-    <content type="html"><![CDATA[<p>There’s been a flurry of response to <a href="http://venturebeat.com/2012/05/22/adaptive-design-has-failed/">this article, entitled “What’s next for mobile now that adaptive design has failed?”</a>.</p>
-
-<p>There’s many problems with this article, so it’s hard to know where to start.</p>
-
-<p>I will admit that defenders of responsive design have come out of the woodwork in trashing this article, but I suppose I count myself among them, being a proponent of responsive design. I still see the web heading that direction, and I definitely don’t see it heading in the direction the author of the article has described.</p>
-
-<h3 id="adaptive--responsive">Adaptive != Responsive</h3>
-
-<p>Like others have said, adaptive isn’t the same as responsive. I hate that both have become buzzwords to be thrown around by execs, but they should at least be used appropriately. (see <a href="http://www.linkedin.com/answers/technology/web-development/TCH_WDD/961492-23942997">this page</a> for a good discussion of the differences). This article conflates the two.</p>
-
-<p>I’ll assume for the purpose of this argument that we’re referring to responsive design.</p>
-
-<h3 id="unproven-assumption-responsive-design-has-failed">Unproven assumption: responsive design has failed</h3>
-
-<p>There’s an assumption that responsive design has failed, but no argument for it, which means by the end of the article it remains an assumption. I’ll assume its purpose was solely as an attention-seeking headline. Not much more to be said there, so let’s pass over it.</p>
-
-<h3 id="tablets--magazines-vertical-scroll--bad-pagination--good">Tablets = Magazines?, Vertical Scroll = Bad?, Pagination = Good?</h3>
-
-<p>There’s an assumption that users equate tablets to magazines, and therefore expect to swipe through pages. I believe there’s some sort of interaction or deal the author has with Pressly (which he mentions and has retweeted on Twitter), so I can understand why they’d be pushing their agenda and usage model, which is very much of the “iPad-magazine-page-flip” sort.</p>
-
-<p>But there’s a reason pagination is still an optional feature not turned on by default in apps such as Instapaper: it’s because users are very familiar and comfortable with vertical scrolling of content on the web, and possibly in some cases more comfortable than a page-based format. They are as comfortable with vertical scrolling as the author would say they are with turning the pages of a magazine.</p>
-
-<p>I’m the age where I’ve seen the decline of newspapers and magazines and am actually more comfortable with a vertical-scrolling interface as opposed to a page-flipping interface as older folks might be used to in magazines.</p>
-
-<p>Just because the interaction model worked for an older medium doesn’t mean it’ll work or is even the best for new mediums. If that were true, we’d still have rotary dial inputs on our touchscreen phones, simply because some phone exec insisted that users were more familiar and comfortable with the rotary dial interaction model.</p>
-
-<h3 id="users-love-those-full-screen-ads">Users Love Those Full-Screen Ads</h3>
-
-<p>Users do NOT like full-screen ads. To think otherwise can be very rightly said to be a delusion of grandeur. Go to the app store, look at the iPad CNET app reviews, and tell me that users are thrilled about seeing a full-screen ad pop over their content when they open the app. Quite the opposite, that turns out to be the main complaint by a long shot, or at least it was for a long while after the app was released. I know. I was there to see it happen, and to see a blind eye turned toward the problem.</p>
-
-<h3 id="successful-advertising--successful-user-experience">Successful advertising != Successful User Experience</h3>
-
-<p>Advertising isn’t a gauge of user experience. This is the hubris and the downfall of CBS and anyone who believes otherwise. More ad revenue means more aggressive ads, more fullscreen ads, and more ways to trick the user into clicking ads. This is the opposite of a good user experience. The real user base isn’t there to click on ads – they’re there to read content, and everything else is a distraction. This is the catch-22 of this model, and those that don’t see that will never know they need to toe the line and maintain a delicate balance. Worst of all, those who completely miss the point will mistake successful advertising with a successful user experience (which here is as easily conflated as adaptive and responsive design have been).</p>
-
-<p>Sometimes companies don’t realize there’s a point of no return when ads (which are necessary in some minimal form) become too distracting and actually make it more difficult to get to content, resulting in users abandoning the site in the long term, or taking measures to churn the site through AdBlock or Instapaper or other measures that preserve the content, while discarding the distracting bits (usually ads and other tricks to get the user to stay on the site longer by showing “related content”, which is ultimately a way to trick the user into staying to view more ads).</p>
 
 ]]></content>
   </entry>

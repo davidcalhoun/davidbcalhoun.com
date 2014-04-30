@@ -7,7 +7,8 @@
 
 	<meta name="author" content="David Calhoun">
 
-<meta name="description" content="The mobile web is dead. (Banner: would you like to download the app?) The mobile web remains dead. (Splash screen: download the app!) And we have &hellip;"> <meta name="keywords" content="">
+<meta name="description" content="Intro
+Over the years there’s been a steadily increasing ecosystem of JavaScript components to choose from. The sheer amount of choices is fantastic &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -46,6 +47,170 @@
 </header>
 
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/2014/what-is-amd-commonjs-umd/">
+			
+				What Is AMD, CommonJS, and UMD?</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-30T11:59:21-07:00" pubdate data-updated="true">Apr 30<span>th</span>, 2014</time></div>
+	</header>
+	<div class="entry-content">
+		<h3 id="intro">Intro</h3>
+<p>Over the years there’s been a steadily increasing ecosystem of JavaScript components to choose from.  The sheer amount of choices is fantastic, but this also infamously presents a difficulty when components are mixed-and-matched.  And it doesn’t take too long for budding developers to find out that not all components are built to play nicely together.</p>
+
+<p>To address these issues, the competing module specs AMD and CommonJS have appeared on the scene, allowing developers to write their code in an agreed-upon sandboxed and modularized way, so as not to “pollute the ecosystem”.</p>
+
+<h3 id="amd">AMD</h3>
+<p>Asynchronous Module Definition (AMD) has gained traction on the frontend, with RequireJS being the most popular implementation.</p>
+
+<p>Here’s module <code>foo</code> with a single dependency on <code>jquery</code>:</p>
+
+<pre><code>//    filename: foo.js
+define(['jquery'], function ($) {
+    //    methods
+    function myFunc(){};
+
+    //    exposed public methods
+    return myFunc;
+});
+</code></pre>
+
+<p>And a little more complicated example with multiple dependencies and multiple exposed methods:</p>
+
+<pre><code>//    filename: foo.js
+define(['jquery', 'underscore'], function ($, _) {
+    //    methods
+    function a(){};    //    private because it's not returned (see below)
+    function b(){};    //    public because it's returned
+    function c(){};    //    public because it's returned
+
+    //    exposed public methods
+    return {
+        b: b,
+        c: c
+    }
+});
+</code></pre>
+
+<p>The first part of the define is an array of dependencies, while the second part is essentially the callback function which is only executed when the dependencies are available (script loaders like RequireJS take care of that part, including figuring out where the files are located).</p>
+
+<p>Note that the dependency to variable order is important (ex. jquery-&gt;<code>$</code>, underscore-&gt;<code>_</code>).</p>
+
+<p>Also note that we can map the dependencies to any arbitrary variables we want here.  If we change <code>$</code> to <code>$$</code> in the code above, all jQuery references within our function block will be <code>$$</code> instead of <code>$</code>.</p>
+
+<p>And note, most importantly, that you can’t reference the variables <code>$</code> and <code>_</code> outside of the function, because it’s sandboxed from other code.  That’s the goal here!</p>
+
+<h3 id="commonjs">CommonJS</h3>
+
+<p>CommonJS is a style you may be familiar with if you’re written anything in Node (which uses a slight variant).  It’s also been gaining traction on the frontend with Browserify.</p>
+
+<p>Using the same format as before, here’s what our <code>foo</code> module looks like in CommonJS:</p>
+
+<pre><code>//    filename: foo.js
+
+//    dependencies
+var $ = require('jquery');
+
+//    methods
+function myFunc(){};
+
+//    exposed public method (single)
+module.exports = myFunc;
+</code></pre>
+
+<p>And our more complicate example, with multiple dependencies and multiple exposed methods:</p>
+
+<pre><code>//    filename: foo.js
+var $ = require('jquery');
+var _ = require('underscore');
+
+//    methods
+function a(){};    //    private because it's omitted from module.exports (see below)
+function b(){};    //    public because it's defined in module.exports
+function c(){};    //    public because it's defined in module.exports
+
+//    exposed public methods
+module.exports = {
+    b: b,
+    c: c
+};
+</code></pre>
+
+<h3 id="umd-universal-module-definition">UMD: Universal Module Definition</h3>
+
+<p>Since CommonJS and AMD styles have both been equally popular, it seems there’s yet no consensus.  This has brought about the push for a “universal” pattern that supports both styles, which brings us to none other than the Universal Module Definition.</p>
+
+<p>The pattern is admittedly ugly, but is both AMD and CommonJS compatible, as well as supporting the old-style “global” variable definition:</p>
+
+<pre><code>(function (root, factory) {
+    if (typeof define === 'function' &amp;&amp; define.amd) {
+        // AMD
+        define(['jquery'], factory);
+    } else if (typeof exports === 'object') {
+        // Node, CommonJS-like
+        module.exports = factory(require('jquery'));
+    } else {
+        // Browser globals (root is window)
+        root.returnExports = factory(root.jQuery);
+    }
+}(this, function ($) {
+    //    methods
+    function myFunc(){};
+
+    //    exposed public method
+    return myFunc;
+}));
+</code></pre>
+
+<p>And keeping in the same pattern as the above examples, the more complicated case with multiple dependencies and multiple exposed methods:</p>
+
+<pre><code>(function (root, factory) {
+    if (typeof define === 'function' &amp;&amp; define.amd) {
+        // AMD
+        define(['jquery', 'underscore'], factory);
+    } else if (typeof exports === 'object') {
+        // Node, CommonJS-like
+        module.exports = factory(require('jquery', 'underscore'));
+    } else {
+        // Browser globals (root is window)
+        root.returnExports = factory(root.jQuery, root._);
+    }
+}(this, function ($, _) {
+    //    methods
+    function a(){};    //    private because it's not returned (see below)
+    function b(){};    //    public because it's returned
+    function c(){};    //    public because it's returned
+
+    //    exposed public methods
+    return {
+        b: b,
+        c: c
+    }
+}));
+</code></pre>
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post">
@@ -986,93 +1151,6 @@ Today <a href="http://www.bbc.co.uk/news/world-us-canada-22820711">President Oba
 	</header>
 	<div class="entry-content">
 		
-
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post">
-	<header>
-		<h2 class="title">
-			
-			<a href="/2013/how-to-import-imiwa-vocabulary-lists-directly-into-anki-ios-iphone-guide">
-			
-				How to Import Imiwa? Vocabulary Lists Directly Into Anki (iOS/iPhone Guide)</a>
-		</h2>
-		<div class="meta date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-02-27T00:00:00-08:00" pubdate data-updated="true">Feb 27<span>th</span>, 2013</time></div>
-	</header>
-	<div class="entry-content">
-		<p>EDIT: big thanks to my classmate Robin from Switzerland who showed me the key steps to getting this figured out!</p>
-
-<p>For the last six months, I’ve mainly been using imiwa? for iOS to look up Japanese words whenever I don’t know them (mostly in class). However, I found that I built up big lists without ever reviewing them.</p>
-
-<p>The best way to review is of course through Anki, but it was a laborious process to import each word one-by-one. I should’ve figured there was an easier way!</p>
-
-<h3 id="step-1-export-list-and-email-to-yourself">Step 1: Export list and email to yourself</h3>
-
-<p>Most good apps, including imiwa?, include an export function. They may export directly to an Anki file (all the easier!), or they may export to a tab-delimited file, as imiwa? does. For this tutorial I’ll assume you have a dictionary that does the latter, and for the purpose of this quick tutorial, I’ll use screenshots from imiwa? on iOS as a guide.</p>
-
-<p>Your first step is to open up imiwa? and go to the Lists tab (click the icon at the bottom):</p>
-
-<p><a href="http://davidbcalhoun.com/wp-content/uploads/2013/02/imiwa-ios-list.jpg"><img src="http://davidbcalhoun.com/wp-content/uploads/2013/02/imiwa-ios-list.jpg" alt="imiwa-ios-list" width="320" height="480" class="aligncenter size-large wp-image-1026" /></a></p>
-
-<p>Click on the list you want to export, then click on the icon next to the Edit button at the top of the screen:</p>
-
-<p><a href="http://davidbcalhoun.com/wp-content/uploads/2013/02/imiwa-ios-list-export.jpg"><img src="http://davidbcalhoun.com/wp-content/uploads/2013/02/imiwa-ios-list-export.jpg" alt="imiwa-ios-list-export" width="320" height="480" class="aligncenter size-full wp-image-1029" /></a></p>
-
-<p>At this point we have a few options. Choose the bottom option (“Tab separated values”):</p>
-
-<p><a href="http://davidbcalhoun.com/wp-content/uploads/2013/02/imiwa-ios-tab-separated-values-export.jpg"><img src="http://davidbcalhoun.com/wp-content/uploads/2013/02/imiwa-ios-tab-separated-values-export.jpg" alt="imiwa-ios-tab-separated-values-export" width="320" height="480" class="aligncenter size-large wp-image-1028" /></a></p>
-
-<p>After a little processing, imiwa? will finish and direct you to the email app, where you need to email the list to yourself. Just type in your email address and hit Send:</p>
-
-<p><a href="http://davidbcalhoun.com/wp-content/uploads/2013/02/imiwa-ios-email-to-self.jpg"><img src="http://davidbcalhoun.com/wp-content/uploads/2013/02/imiwa-ios-email-to-self.jpg" alt="imiwa-ios-email-to-self" width="320" height="480" class="aligncenter size-large wp-image-1025" /></a></p>
-
-<h3 id="step-2-download-and-import-to-desktop-anki">Step 2: Download and import to desktop Anki</h3>
-
-<p>Now switch to your desktop and download the file you emailed to yourself. It should look something like this:</p>
-
-<p><a href="http://davidbcalhoun.com/wp-content/uploads/2013/02/imiwa-ios-tab-separated-values-export-sample.png"><img src="http://davidbcalhoun.com/wp-content/uploads/2013/02/imiwa-ios-tab-separated-values-export-sample-1024x588.png" alt="imiwa-ios-tab-separated-values-export-sample" width="512" height="294" class="aligncenter size-large wp-image-1027" /></a></p>
-
-<p>Note that there’s a lot of “junk” data that we won’t need when we import into Anki. Don’t worry, there’s a way to get rid of it!</p>
-
-<p>Now open up Anki, click File -&gt; Import… and select the file you downloaded (from the email you send to yourself).</p>
-
-<h3 id="step-3-hide-junk-columns-from-anki">Step 3: Hide junk columns from Anki</h3>
-
-<p>When you import the file, you’ll get prompted with a screen that looks like this:</p>
-
-<p><a href="http://davidbcalhoun.com/wp-content/uploads/2013/02/anki-tab-delimited-import.png"><img src="http://davidbcalhoun.com/wp-content/uploads/2013/02/anki-tab-delimited-import-1024x876.png" alt="anki-tab-delimited-import" width="512" height="438" class="aligncenter size-large wp-image-1024" /></a></p>
-
-<p>This allows you to tell Anki which deck to import into (you probably will want to create a brand new deck), but most importantly you need to tell Anki which fields are import.</p>
-
-<p>Here’s a typical line from a list I imported:</p>
-
-<p>“JMDICT 1431110 直接 ちょくせつ direct, immediate, personal, firsthand L41-50″</p>
-
-<p>In other words:</p>
-
-<p>“1. [Junk] 2. [Junk] 3. Expression 4. Reading 5. Meaning 6. [Junk]”</p>
-
-<p>On this screen in Anki, hit the Change button for fields 1, 2, and 6, and be sure to tell Anki to ignore them. For the rest of the fields, match them up appropriately (Field 3 is Expression, Field 4 is Reading, Field 5 is Meaning).</p>
-
-<p>Now click the Import button, and you magically have a new Anki deck to work through!</p>
-
 
 		
 		

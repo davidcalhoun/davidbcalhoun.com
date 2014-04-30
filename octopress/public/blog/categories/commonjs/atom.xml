@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: javascript, | David Calhoun's blog]]></title>
-  <link href="http://davidbcalhoun.com/blog/categories/javascript/atom.xml" rel="self"/>
+  <title><![CDATA[Category: commonjs | David Calhoun's blog]]></title>
+  <link href="http://davidbcalhoun.com/blog/categories/commonjs/atom.xml" rel="self"/>
   <link href="http://davidbcalhoun.com/"/>
   <updated>2014-04-30T12:17:16-07:00</updated>
   <id>http://davidbcalhoun.com/</id>
