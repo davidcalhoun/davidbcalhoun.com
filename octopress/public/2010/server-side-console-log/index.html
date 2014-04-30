@@ -1,0 +1,407 @@
+
+<!DOCTYPE HTML>
+<html lang="en-GB">
+<head>
+	<meta charset="utf-8">
+	<title>Server side console.log  | David Calhoun's blog</title>
+
+	<meta name="author" content="David Calhoun">
+
+<meta name="description" content="The problem On the desktop we’re quite privileged to have nice debugging tools such as Firebug and Web Inspector in Webkit-based browsers. But when &hellip;"> <meta name="keywords" content="">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="David Calhoun's blog" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="/javascripts/html5.js"></script><![endif]-->
+	
+
+</head>
+
+
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">David Calhoun's blog</a></h1>
+<span class="tagline"></span>
+<!-- <nav id="main-nav"><ul>
+	<li><a href="/about">About</a></li>
+	<li><a href="/archives">Archives</a></li>
+	<li><a href="/contact">Contact</a></li>
+</ul>
+</nav> -->
+<!-- <nav id="mobile-nav"> -->
+<!-- 	<div class="alignleft menu"> -->
+<!-- 		<a class="button">Menu</a> -->
+<!-- 		<div class="container"><ul>
+	<li><a href="/about">About</a></li>
+	<li><a href="/archives">Archives</a></li>
+	<li><a href="/contact">Contact</a></li>
+</ul>
+</div> -->
+<!-- 	</div> -->
+<!-- </nav> -->
+
+
+</header>
+
+	<div id="content" class="inner"><article class="post">
+	<header>
+		<h2 class="title">Server Side console.log</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-15T00:00:00-07:00" pubdate data-updated="true">Sep 15<span>th</span>, 2010</time></div>
+	</header>
+	<div class="entry-content"><h3 id="the-problem">The problem</h3>
+
+<p>On the desktop we’re quite privileged to have nice debugging tools such as Firebug and Web Inspector in Webkit-based browsers. But when it comes to mobile, debugging JavaScript with</p>
+
+<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;">
+  <table cellspacing="0" cellpadding="0">
+    <tr>
+      <td class="line-numbers">
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class="text codecolorer">
+          console.log
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<p>isn’t quite as easy.</p>
+
+<p>Probably the best available tool on mobile at the moment is mobile Safari’s console, which looks like the following when enabled (Settings -&gt; Safari -&gt; Developer -&gt; Debug Console):<br />
+&lt;div id=&#8221;attachment_453&#8221; style=&#8221;width: 710px&#8221; class=&#8221;wp-caption aligncenter&#8221;&gt;
+  <img src="http://davidbcalhoun.com/wp-content/uploads/2010/09/mobile-safari-console.png" alt="" title="mobile-safari-console" width="700" height="480" class="size-full wp-image-453" />&lt;p class=&#8221;wp-caption-text&#8221;&gt;
+    Mobile Safari’s debug console
+  &lt;/p&gt;
+&lt;/div&gt;</p>
+
+<p>On the left you can see the debug console displayed above the document itself, and on the right is an example of what you might see after outputting an object or a string of text to</p>
+
+<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;">
+  <table cellspacing="0" cellpadding="0">
+    <tr>
+      <td class="line-numbers">
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class="text codecolorer">
+          console.log
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<p>. It’s the best debugging tool on mobile, but it’s not without its issues.</p>
+
+<p>The first issue is that the debug console is taking up space in the screen and interfering with how an actual user would view the website. I could image this could become particularly annoying when trying to develop a web app in the style of the new YouTube mobile, which doesn’t function like a traditional webpage at all, and relies on the screen being a certain height in order to display its content.</p>
+
+<p>The second issue is that you can’t see the contents of JavaScript Objects. We’re a bit spoiled being able to see a tree view of objects on the latest browsers with the latest debugging tools, and therefore it makes the experience on mobile Safari less than adequate. When we type</p>
+
+<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;">
+  <table cellspacing="0" cellpadding="0">
+    <tr>
+      <td class="line-numbers">
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class="text codecolorer">
+          console.log(navigator)
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<p>all we can see on mobile Safari is</p>
+
+<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;">
+  <table cellspacing="0" cellpadding="0">
+    <tr>
+      <td class="line-numbers">
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class="text codecolorer">
+          [object Navigator]
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<p>, which leaves something to be desired.</p>
+
+<p>So what about Android? Google offers something called <a href="http://developer.android.com/guide/developing/tools/adb.html">Android Debug Bridge</a>, which is a client-server debugging solution that can be used either for web or application development. As such, when you view the messages the devices sends to the server, the vast majority of messages will be messages about low-level operations, stuff we usually don’t care much about when developing with JavaScript. The workaround for this is to grep for “console” on the command line, which will only display the messages we’re interested in.</p>
+
+<h3 id="the-solution-server-side-consolelog">The solution: server side console.log!</h3>
+
+<p>Why not just send the contents of your console message to a server, and have it log it? The concept is pretty simple:</p>
+
+<ol>
+  <li>Create a log function that sends an XHR to a server.</li>
+  <li>Have the server process the request and log the message to a file.</li>
+  <li>Tail the end of the file on the command line to see the latest messages.</li>
+</ol>
+
+<p>The implementation is pretty simple. In JavaScript we have this code:</p>
+
+<pre name="code" class="JScript">(function(){
+
+// define console if not already defined
+console || (console = {});
+
+// new toFile method
+console.toFile = function(log) {
+  // variable declarations
+  var http, url, params;
+  
+  // might as well use the traditional console.log() as well
+  console.log(log);
+  
+  // ajax request
+  http = new XMLHttpRequest();
+  url = "//example.com/log.php";
+  params = "log=" + Date.now() + ' ' + escape(sanitize(log));
+  http.open("POST", url, true);
+  http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  http.send(params);
+}
+
+// do something special if txt is an object
+var sanitize = function(txt) {
+  var output, x;
+  
+  if(typeof txt == 'object') {
+    // create a new object to get around circular references
+    output = {};
+    for(x in txt) {
+        // type conversion of each element to a string
+        output[x] = txt[x] + '';
+    }
+    output = JSON.stringify(output, null, 2);
+  } else {
+    output = txt;
+  }
+  
+  return output;
+}
+
+})();
+</pre>
+
+<p>In summary, the above code adds a new method to the console object called</p>
+
+<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;">
+  <table cellspacing="0" cellpadding="0">
+    <tr>
+      <td class="line-numbers">
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class="text codecolorer">
+          toFile
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<p>, which simply takes the inputted data and sends it to the specified URL. The only bit of trickery here is the function</p>
+
+<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;">
+  <table cellspacing="0" cellpadding="0">
+    <tr>
+      <td class="line-numbers">
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class="text codecolorer">
+          sanitize
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<p>, which detects if the message being passed in is an object. If it is, it copies it to a new object containing only strings (which gets around JSON “circular reference” errors) and runs JSON.stringify() on it, which lets us peek into its contents one level deep.</p>
+
+<p>The server side PHP code to make this work is even simpler:</p>
+
+<pre name="code" class="PHP">// log.php
+&lt;?php
+
+// take advantage of error_log to log the message to the file console.log
+@error_log($_POST['log'] . "\n", 3, 'console.log');
+
+?&gt;
+</pre>
+
+<p>On the server, we log in with terminal, navigate to the directory containing the file console.log, and simply tail the end of the file, which shows live updates as new messages are added to the end of the file:</p>
+
+<pre name="code">tail -f console.log
+</pre>
+
+<h3 id="example">Example</h3>
+
+<p>Once we have the above code in place, using the console is very simple:</p>
+
+<pre name="code" class="JScript">console.toFile('hello world!');
+console.toFile(navigator);
+</pre>
+
+<p>After running this code, you should see this pop up on your terminal:</p>
+
+<pre name="code">1284574866900 hello world!
+1284575008914 {
+  "geolocation": "[object Geolocation]",
+  "standalone": "false",
+  "cookieEnabled": "true",
+  "language": "en-us",
+  "productSub": "20030107",
+  "product": "Gecko",
+  "appCodeName": "Mozilla",
+  "mimeTypes": "[object MimeTypeArray]",
+  "vendorSub": "",
+  "vendor": "Apple Computer, Inc.",
+  "platform": "iPhone",
+  "appName": "Netscape",
+  "appVersion": "5.0 (iPhone; U; CPU iPhone OS 4_1 like Mac OS X; en-us) AppleWebKit/532.9 (KHTML, like Gecko) Version/4.0.5 Mobile/8B117 Safari/6531.22.7",
+  "userAgent": "Mozilla/5.0 (iPhone; U; CPU iPhone OS 4_1 like Mac OS X; en-us) AppleWebKit/532.9 (KHTML, like Gecko) Version/4.0.5 Mobile/8B117 Safari/6531.22.7",
+  "plugins": "[object PluginArray]",
+  "onLine": "true",
+  "javaEnabled": "function javaEnabled() {\n    [native code]\n}",
+  "getStorageUpdates": "function getStorageUpdates() {\n    [native code]\n}",
+  "registerProtocolHandler": "function registerProtocolHandler() {\n    [native code]\n}",
+  "registerContentHandler": "function registerContentHandler() {\n    [native code]\n}"
+}
+</pre>
+
+<p>Sweet! Now we can easily see console messages from <em>actual devices</em>. You can potentially use this code to log Events as they occur (on click or touch interactions) and view the actual x/y coordinate values as they’re being detected on the device!</p>
+
+<h3 id="related">Related</h3>
+
+<p>Alex Kessinger implemented a <a href="http://alexkessinger.net/story/one-file-remote-consolelog-using-nodejs">similar concept with node.js running locally</a></p>
+
+<h3 id="update">Update</h3>
+
+<p>It turns out that Joe Hewitt did this before me with his <a href="http://www.joehewitt.com/blog/firebug_for_iph.php">“Firebug for iPhone”</a>. I have no idea why it took me so long to find this!</p>
+
+</div>
+
+</article>
+
+	
+	<div class="share">
+	  <!-- <ul> -->
+	  <!--   <li>
+  <a href="https://twitter.com/intent/tweet?text=Server side console.log by @&url=http://davidbcalhoun.com/2010/server-side-console-log" title="Share Server side console.log on Twitter">
+    <img src="/images/social/twitter.png" />
+  </a>
+</li>
+ -->
+	  <!--   <li>
+  <a href="https://www.facebook.com/sharer.php?u=http://davidbcalhoun.com/2010/server-side-console-log" title="Share Server side console.log on Facebook">
+    <img src="/images/social/facebook.png" />
+  </a>
+</li>
+ -->
+	  <!--   <li>
+  <a href="https://plus.google.com/share?url=http://davidbcalhoun.com/2010/server-side-console-log" title="Share Server side console.log on Google Plus">
+    <img src="/images/social/google.png" />
+  </a>
+</li>
+ -->
+	  <!-- </ul> -->
+	</div>
+
+
+
+
+<section id="comment">
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+	<footer id="footer" class="inner"><br>
+<br>
+<br>
+<br>
+&copy; 2014
+
+    David Calhoun
+
+</footer>
+	<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="/javascripts/slash.js"></script> -->
+<!-- <script src="/javascripts/hyphenator.js"></script> -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'davidbcalhoun';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://davidbcalhoun.com/2010/server-side-console-log';
+        var disqus_url = 'http://davidbcalhoun.com/2010/server-side-console-log';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+<script src="/javascripts/main.js"></script>
+<!-- <script src="/javascripts/negative-scroll-blur.js"></script> -->
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-5530615-3', 'davidbcalhoun.com');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,736 @@
+
+<!DOCTYPE HTML>
+<html lang="en-GB">
+<head>
+	<meta charset="utf-8">
+	<title>New Mobile Safari stuff in iOS5: position:fixed, overflow:scroll, new input type support, web workers, ECMAScript 5  | David Calhoun's blog</title>
+
+	<meta name="author" content="David Calhoun">
+
+<meta name="description" content="(note: this is based on the first iOS5 beta [9A5220p] and is subject to change on final release) It looks like there’s finally some major &hellip;"> <meta name="keywords" content="">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="David Calhoun's blog" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="/javascripts/html5.js"></script><![endif]-->
+	
+
+</head>
+
+
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">David Calhoun's blog</a></h1>
+<span class="tagline"></span>
+<!-- <nav id="main-nav"><ul>
+	<li><a href="/about">About</a></li>
+	<li><a href="/archives">Archives</a></li>
+	<li><a href="/contact">Contact</a></li>
+</ul>
+</nav> -->
+<!-- <nav id="mobile-nav"> -->
+<!-- 	<div class="alignleft menu"> -->
+<!-- 		<a class="button">Menu</a> -->
+<!-- 		<div class="container"><ul>
+	<li><a href="/about">About</a></li>
+	<li><a href="/archives">Archives</a></li>
+	<li><a href="/contact">Contact</a></li>
+</ul>
+</div> -->
+<!-- 	</div> -->
+<!-- </nav> -->
+
+
+</header>
+
+	<div id="content" class="inner"><article class="post">
+	<header>
+		<h2 class="title">New Mobile Safari Stuff in iOS5: Position:fixed, Overflow:scroll, New Input Type Support, Web Workers, ECMAScript 5</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-06-07T00:00:00-07:00" pubdate data-updated="true">Jun 7<span>th</span>, 2011</time></div>
+	</header>
+	<div class="entry-content"><p>(note: this is based on the first iOS5 beta [9A5220p] and is subject to change on final release)</p>
+
+<p>It looks like there’s finally some major improvements in mobile Safari, some of which I’ve found below on my “first glance” after downloading the SDK. Chime in if you find anything yourself!</p>
+
+<h3 id="bad-news-first">Bad news first</h3>
+
+<p>Much to my disappointment, browser-based file uploads are still not supported (<a href="http://frontendstuff.com/html/examples/input-type-file.html">input type=”file”</a>), even though they have been supported on Android since version 2.2 (which they have <a href="http://davidbcalhoun.com/2011/android-3-0-honeycomb-is-first-to-implement-the-device-api">continued to improve and refine</a>). The best use case for this is uploading pictures and videos straight from the browser, but Apple seems more interested in making those functions possible directly from the operating system itself, supporting only big names like Twitter and YouTube. So much for the little guys.</p>
+
+<p>There’s other stuff on my wishlist that hasn’t yet been implemented, such as <s>WebGL and</s> indexedDB, along with some HTML5 input types, but regardless it’s good to see some real progress in iOS 5. (update: it appears that some WebGL features are starting to be supported, although the demos I tried didn’t seem to work).</p>
+
+<p>Now let’s move on to the awesome new stuff that IS implemented!</p>
+
+<h3 id="positionfixed">position:fixed</h3>
+
+<p>A point of contention since the original iPhone was released in 2007, position:fixed now works on iOS5! What this means to developers: it’s now very easy to create top and bottom toolbars for your web apps. (there’s a long history of hacks and workarounds which will still need to be implemented as a fallback for the time being, but I’ll save that for another post. I should also mention that position:fixed has worked on Android since version 2.2, and webOS seems to support a somewhat hacky implementation).</p>
+
+<p>Here’s a <a href="http://www.youtube.com/watch?v=JFzv3ETwfms">video demo of position:fixed on iOS5</a>:</p>
+
+<p>(check out the <a href="http://frontendstuff.com/css/examples/position-fixed.html">demo</a> for yourself)</p>
+
+<h3 id="overflowscroll">overflow:scroll</h3>
+
+<p>This is a similar problem to position:fixed, but now it works on iOS5! For content that doesn’t fit in its container element, previously the content was completely cut off (similarly with iframes). On the desktop we have the option to show scrollbars instead, allowing the user to scroll to see the content, but iOS made this difficult by requiring two fingers to scroll. Now overflow:scroll works and the user can scroll through the container’s content with a single finger. Developers can use new CSS to enable native scrolling (with scrollbars and momentum):</p>
+
+<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;">
+  <table cellspacing="0" cellpadding="0">
+    <tr>
+      <td class="line-numbers">
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class="text codecolorer">
+          -webkit-overflow-scrolling: touch;
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<p>(via <a href="http://johanbrook.com/browsers/native-momentum-scrolling-ios-5/">Johan Brook</a>).</p>
+
+<p>It’s assumed that it’s up to the developer to implement some sort of visual indicator to let the user know they can interact with the element.</p>
+
+<p>One criticism so far: there’s no inertia scroll on this element, so it doesn’t quite feel the same as scrolling the page.</p>
+
+<p>Here’s a quick <a href="http://www.youtube.com/watch?v=KwpZ1F6dW5U">video demo of overflow:scroll on iOS 5</a>.</p>
+
+<p>(check out the <a href="http://frontendstuff.com/css/examples/overflow-scroll.html">demo</a> for yourself)</p>
+
+<h3 id="new-input-types">New Input Types</h3>
+
+<p>HTML5 defined many new helpful input types, and mobile operating systems have been slowly implementing them and creating optimized keyboards for the inputs. iOS5 now supports these input types: date, datetime, month, time, range. Click on the images to see their respective demo pages:</p>
+
+<p><a href="http://frontendstuff.com/html/input-type-date.html"><img src="http://davidbcalhoun.com/wp-content/uploads/2011/06/ios-date-input.png" alt="iOS Date Input" title="iOS Date Input" width="320" height="480" class="size-full wp-image-677" /></a><a href="http://frontendstuff.com/html/input-type-datetime.html"><img src="http://davidbcalhoun.com/wp-content/uploads/2011/06/ios-datetime-input.png" alt="iOS Datetime Input" title="iOS Datetime Input" width="320" height="480" class="size-full wp-image-678" /></a><a href="http://frontendstuff.com/html/input-type-month.html"><img src="http://davidbcalhoun.com/wp-content/uploads/2011/06/ios-month-input.png" alt="iOS Month Input" title="iOS Month Input" width="320" height="480" class="size-full wp-image-680" /></a><a href="http://frontendstuff.com/html/input-type-time.html"><img src="http://davidbcalhoun.com/wp-content/uploads/2011/06/ios-time-input.png" alt="iOS Time Input" title="iOS Time Input" width="320" height="480" class="size-full wp-image-682" /></a><a href="http://frontendstuff.com/html/input-type-range.html"><img src="http://davidbcalhoun.com/wp-content/uploads/2011/06/ios-range-input.png" alt="iOS Range Input" title="iOS Range Input" width="320" height="480" class="size-full wp-image-681" /></a></p>
+
+<p>And a fun one – <a href="http://davidbcalhoun.com/2011/implementing-iphone-slider-unlock-with-input-type-range">my iPhone slider hack based on input type range</a>, which now actually works on the iPhone itself (because input type=”range” is now supported)!</p>
+
+<p><a href="http://davidbcalhoun.com/a/iphone-slider.html"><img src="http://davidbcalhoun.com/wp-content/uploads/2011/06/ios-iphone-slider-in-html.png" alt="iOS Slider implemented with Range Input" title="iOS Slider implemented with Range Input" width="320" height="480" class="aligncenter size-full wp-image-679" /></a></p>
+
+<h3 id="web-workers-javascript">Web Workers (JavaScript)</h3>
+
+<p>JavaScript is single-threaded, and it happens to run on the same thread as the UI, which means computationally expensive operations can lead to an unresponsive UI, and no one likes that. Web Workers help by offloading tasks to another thread and only returning output when it needs to. In other words, it’s a good thing for us web developers.</p>
+
+<p>According to my own tests, Web Workers seemed to be briefly enabled on early versions of iOS3, but were soon disabled thereafter. Now with iOS5, they’re back again!</p>
+
+<h3 id="new-ecmascript-5-stuff-javascript">New ECMAScript 5 stuff (JavaScript)</h3>
+
+<p>(based on <a href="http://kangax.github.com/es5-compat-table/">kangax’s ECMAScript 5 compatibility table</a>)</p>
+
+<table>
+  <tr>
+    <td>
+      Feature
+    </td>
+    
+    <td>
+      iOS 4.3.2
+    </td>
+    
+    <td>
+      iOS 5 beta 1
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Object.create
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Object.defineProperty
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Object.defineProperties
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Object.getPrototypeOf
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Object.keys
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Object.seal
+    </td>
+    
+    <td class="negative">
+      No
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Object.freeze
+    </td>
+    
+    <td class="negative">
+      No
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Object.preventExtensions
+    </td>
+    
+    <td class="negative">
+      No
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Object.isSealed
+    </td>
+    
+    <td class="negative">
+      No
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Object.isFrozen
+    </td>
+    
+    <td class="negative">
+      No
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Object.isExtensible
+    </td>
+    
+    <td class="negative">
+      No
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Object.getOwnPropertyDescriptor
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Object.getOwnPropertyNames
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Date.prototype.toISOString
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Date.prototype.toISOString
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Date.prototype.toISOString
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Date.now
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      JSON
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Function.prototype.bind
+    </td>
+    
+    <td class="negative">
+      No
+    </td>
+    
+    <td class="negative">
+      No
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      String.prototype.trim
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Array.prototype.indexOf
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Array.prototype.lastIndexOf
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Array.prototype.every
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Array.prototype.some
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Array.prototype.forEach
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Array.prototype.map
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Array.prototype.filter
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Array.prototype.reduce
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Array.prototype.reduceRight
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Getter in property initializer
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Setter in property initializer
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Property access on strings
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Reserved words as property names
+    </td>
+    
+    <td class="negative">
+      No
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Strict mode
+    </td>
+    
+    <td class="negative">
+      No
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+</table>
+
+<h3 id="html5test-score">HTML5Test score</h3>
+
+<p>iOS 4.3.2 scores 206 (7 bonus points) on the <a href="http://html5test.com/">HTML5 Test</a>, whereas iOS 5 beta scores 267 (9 bonus points). Much of these gains seem to be made in the “Forms” and “Parsing rules” sections, as well as the “Web Workers” section.</p>
+
+<h3 id="miscellaneous-new-stuff">Miscellaneous new stuff</h3>
+
+<ul>
+  <li>Inline SVG in text/html</li>
+  <li>float32array, int8array, int16array, int32array in JavaScript</li>
+  <li>window.matchmedia() (JavaScript)</li>
+  <li>
+    <s>onsearch Event (JavaScript)</s>
+    <p>– it looks like this was just broken in later iOS 4.3 builds, but it’s back now in iOS 5</p>
+  </li>
+  <li>MathML elements recognized (based on <a href="http://html5test.com/">html5test</a>)</li>
+  <li>Improved speed of Canvas rendering (<a href="https://twitter.com/#!/KesieV/status/78067470501543936">source</a>)</li>
+  <li>UIWebView and home screen web apps now running on Nitro? (expected but not tested)</li>
+  <li>Newly supported CSS gradient syntax (-webkit-linear-gradient versus the older -webkit-gradient syntax)</li>
+  <li><a href="https://developer.mozilla.org/en/DOM/element.classList">classList</a> (JavaScript)</li>
+  <li>A major WebKit HTML5 History (popstate) bug is <a href="https://bugs.webkit.org/show_bug.cgi?id=42940">now fixed</a></li>
+  <li><a href="http://html5demos.com/contenteditable">contentEditable</a> now works properly</li>
+</ul>
+
+</div>
+
+</article>
+
+	
+	<div class="share">
+	  <!-- <ul> -->
+	  <!--   <li>
+  <a href="https://twitter.com/intent/tweet?text=New Mobile Safari stuff in iOS5: position:fixed, overflow:scroll, new input type support, web workers, ECMAScript 5 by @&url=http://davidbcalhoun.com/2011/new-mobile-safari-stuff-in-ios5-position-fixed-overflow-scroll-new-input-type-support-web-workers-ecmascript-5" title="Share New Mobile Safari stuff in iOS5: position:fixed, overflow:scroll, new input type support, web workers, ECMAScript 5 on Twitter">
+    <img src="/images/social/twitter.png" />
+  </a>
+</li>
+ -->
+	  <!--   <li>
+  <a href="https://www.facebook.com/sharer.php?u=http://davidbcalhoun.com/2011/new-mobile-safari-stuff-in-ios5-position-fixed-overflow-scroll-new-input-type-support-web-workers-ecmascript-5" title="Share New Mobile Safari stuff in iOS5: position:fixed, overflow:scroll, new input type support, web workers, ECMAScript 5 on Facebook">
+    <img src="/images/social/facebook.png" />
+  </a>
+</li>
+ -->
+	  <!--   <li>
+  <a href="https://plus.google.com/share?url=http://davidbcalhoun.com/2011/new-mobile-safari-stuff-in-ios5-position-fixed-overflow-scroll-new-input-type-support-web-workers-ecmascript-5" title="Share New Mobile Safari stuff in iOS5: position:fixed, overflow:scroll, new input type support, web workers, ECMAScript 5 on Google Plus">
+    <img src="/images/social/google.png" />
+  </a>
+</li>
+ -->
+	  <!-- </ul> -->
+	</div>
+
+
+
+
+<section id="comment">
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+	<footer id="footer" class="inner"><br>
+<br>
+<br>
+<br>
+&copy; 2014
+
+    David Calhoun
+
+</footer>
+	<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="/javascripts/slash.js"></script> -->
+<!-- <script src="/javascripts/hyphenator.js"></script> -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'davidbcalhoun';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://davidbcalhoun.com/2011/new-mobile-safari-stuff-in-ios5-position-fixed-overflow-scroll-new-input-type-support-web-workers-ecmascript-5';
+        var disqus_url = 'http://davidbcalhoun.com/2011/new-mobile-safari-stuff-in-ios5-position-fixed-overflow-scroll-new-input-type-support-web-workers-ecmascript-5';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+<script src="/javascripts/main.js"></script>
+<!-- <script src="/javascripts/negative-scroll-blur.js"></script> -->
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-5530615-3', 'davidbcalhoun.com');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>

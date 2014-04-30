@@ -1,0 +1,19 @@
+<p>I fired up the newly released Android 3.0 SDK to run some tests and found they&#8217;ve implemented part of the long-awaited <a href='http://www.w3.org/2009/dap/'>Device API</a> (aka the Media Capture API). From your browser you can now upload pictures and videos from the camera as well as sounds from the microphone. The returned data should be available to manipulate via the <a href='http://www.w3.org/TR/FileAPI/'>File API</a> (although I haven&#8217;t yet tested this).</p>
+
+<p>I made a <a href='http://www.youtube.com/watch?v=L1XqvLOi-3I'>short video demo</a> with some explanation:</p>
+
+<p>Here&#8217;s the code so you can play around with it for yourself!</p>
+<pre class='html' name='code'>&lt;form enctype="multipart/form-data" method="post"&gt;
+  &lt;h2&gt;Regular file upload&lt;/h2&gt;
+  &lt;input type="file"&gt;&lt;/input&gt;
+  
+  &lt;h2&gt;capture=camera&lt;/h2&gt;
+  &lt;input type="file" accept="image/*;capture=camera"&gt;&lt;/input&gt;
+  
+  &lt;h2&gt;capture=camcorder&lt;/h2&gt;
+  &lt;input type="file" accept="video/*;capture=camcorder"&gt;&lt;/input&gt;
+  
+  &lt;h2&gt;capture=microphone&lt;/h2&gt;
+  &lt;input type="file" accept="audio/*;capture=microphone"&gt;&lt;/input&gt;
+&lt;/form&gt;
+</pre>

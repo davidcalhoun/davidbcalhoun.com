@@ -1,0 +1,307 @@
+---
+title: Different ways of defining functions in JavaScript (this is madness!)
+date: 2011-06-24
+comments: true
+author: David
+layout: post
+permalink: /2011/different-ways-of-defining-functions-in-javascript-this-is-madness
+categories:
+  - javascript
+---
+### This is madness! This&#8230; is&#8230; JavaScript!
+
+In JavaScript, there&#8217;s many different ways of doing something. This is both a good thing and a bad thing. To the newcomer this is definitely a bad thing, as it means not only more things to learn, but more little caveats and more places to go wrong. And so it is with declaring functions!
+
+The aim of this is just an accessible tour of the landscape, just so you know what&#8217;s out there and what the basic differences are. Do be sure to check out the &#8220;further reading&#8221; section as well! Much of this is based on [Juriy &#8220;kangax&#8221; Zaytsev&#8217;s article][1], which goes into more depth. But I found that there wasn&#8217;t just one reference to show all the different variable declarations.
+
+How about ways to execute functions? That opens up another can of worms, and incidentally opens up the possibility for a future post on that topic. <img src='http://davidbcalhoun.com/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> 
+
+### Overview: different ways of declaring functions
+
+    function A(){};             // function declaration
+    var B = function(){};       // function expression
+    var C = (function(){});     // function expression with grouping operators
+    var D = function foo(){};   // named function expression
+    var E = (function(){        // immediately-invoked function expression (IIFE) that returns a function
+      return function(){}
+    })();
+    var F = new Function();     // Function constructor
+    var G = new function(){};   // special case: object constructor
+{:lang="javascript"}
+
+### Function declarations: function A(){};
+
+Function declarations are probably the most familiar and oldest way of doing things in JavaScript land. This creates a variable A which is accessible in the current scope. Scope is a separate topic, so we&#8217;ll do everything in the global scope for all these examples (something you want to avoid usually).
+
+#### 1. Hoisting
+
+The interesting thing about these is that they are &#8220;hoisted&#8221; to the top of their scope, which means this code:
+
+    A();
+    function A(){
+      console.log('foo');
+    };
+{:lang="javascript"}
+
+Gets executed as this code:
+
+    function A(){
+      console.log('foo');
+    };
+    A();
+{:lang="javascript"}
+
+Which practically means that, yes, you can call the functions before they&#8217;re written in your code. It won&#8217;t matter, because the entire function gets hoisted to the top of its containing scope. (This is contrasted with variables, which only have their declaration hoisted, not their contents, as we&#8217;ll see in the next section).
+
+#### 2. No function declarations in ``if`` statements (or loops, etc)</h4> 
+You can&#8217;t define functions this way in expressions, for example ``if`` statements, which is common if we want to define different versions of a function for different circumstances, usually to address browser inconsistencies. Well, you *can* in some implementations, but the way the code is processed is inconsistent (kangax has documented the inconsistencies [here][1]). If you want to use this pattern, use function expressions instead.
+
+#### 3. Functions declarations must have names
+
+This method doesn&#8217;t allow you to create anonymous functions, meaning that you always have to give it an identifier (in this case we&#8217;ve used &#8220;A&#8221;).
+
+### Function expressions: var B = function(){};
+
+A function expression looks similar to function declarations, except that the function is assigned to a variable name. Though functions are not primitive values in JavaScript, this is the way they can be utilized to their full effect in this functional language. Functions are &#8220;[first class][2]&#8220;:
+
+> &#8220;[JavaScript] supports passing functions as arguments to other functions, returning them as the values from other functions, and assigning them to variables or storing them in data structures&#8221;
+
+#### 1. Anonymous functions (they don&#8217;t need names)
+
+The function name is optional in function expressions, and we call these anonymous. Here we&#8217;re setting the variable B equal to an anonymous function:
+
+    var B = function(){};
+{:lang="javascript"}
+
+#### 2. Variable declaration hoisting
+
+Variable declarations are hoisted to the top of their scope, somewhat similarly to function hoisting *except* the contents of the variable are not hoisted as well. This happens with all variables, and it means it&#8217;s now happening with our functions, now that we&#8217;re assigning them to variables.
+
+This code:
+
+    var A = function(){};
+    var B = function(){};
+    var C = function(){};
+{:lang="javascript"}
+
+Will be executed as this:
+
+    var A, B, C;  // variable declarations are hoisted
+    A = function(){};
+    B = function(){};
+    C = function(){};
+{:lang="javascript"}
+
+Therefore the order of setting and calling this type of function is important:
+
+    // this works
+    var B = function(){};
+    B();
+
+    // this doesn't work
+    B2();  // TypeError (B2 is undefined)
+    var B2 = function(){};
+{:lang="javascript"}
+
+The second example gives us an error because only the variable B2&#8242;s declaration is hoisted, but not its definition, thus the &#8220;undefined&#8221; error.
+
+### Function expressions with grouping operators: var C = (function(){});
+
+These really aren&#8217;t different from plain old function expressions and aren&#8217;t really seen in the wild (so maybe they&#8217;re just good for JavaScript quizzes?). Recently this way of declaring functions was brought up in [this article][3] and confused some folks including myself.
+
+Here&#8217;s a good way to see what&#8217;s happening:
+
+    function(){};  // SyntaxError
+    (function(){});
+{:lang="javascript"}
+
+Why does one work and the other doesn&#8217;t? The first example is a function declaration, and we learned above that we can&#8217;t declare them anonymously &#8211; that is, they must have a name. That&#8217;s why we&#8217;re getting the syntax error.
+
+The second example is using parenthesis &#8211; grouping operators &#8211; and is therefore evaluated differently, as a function expression. The grouping operators are the things we use to help show what should be evaluated first, as in mathematical problems. We&#8217;re saying &#8220;evaluate this first, then take the result and do something with it&#8221;:
+
+    (1 + 2) * 3;  // 9
+    1 + (2 * 3);  // 7
+{:lang="javascript"}
+
+In the first example we&#8217;re saying &#8220;first add 1 and 2, then take the result and multiply by 3&#8243;, whereas in the second example we&#8217;re saying &#8220;first multiply 2 and 3, then take the result and add 1&#8243;.
+
+Because functions are first class, we can use similar grouping operators. Here&#8217;s a facetious example, but it shows how we can essentially drop in a function in the same way:
+
+    (function(){} + 1);  // function(){}1
+{:lang="javascript"}
+
+The result is a string (because toString is being called on the function, then added/appended with 1), but you get the idea I hope.
+
+When the JavaScript engine encounters the opening parenthesis here, we&#8217;re essentially saying &#8220;ok, start grouping this together with something else&#8221;. Using our technical terms, we&#8217;re telling the engine that we&#8217;re not making a function declaration, but instead a function expression. And then we can assign the result to a variable:
+
+    (function(){});           // resulting function not assigned
+    var foo = (function(){}); // resulting function assigned to foo
+    var bar = function(){};   // resulting function assigned to bar
+{:lang="javascript"}
+
+Here we can see that foo and bar are really just the same, because in foo we&#8217;re not grouping the function together with anything but itself.
+
+### Named function expression: var D = function foo(){};
+
+Here we have our same old friend, the function expression. But instead of assigning the variable to an anonymous function, we&#8217;re assigning it to a named function (with the name foo).
+
+#### 1. The function name is only accessible within the function
+
+We haven&#8217;t exposed the function name (foo) to the enclosing scope (in this case the global scope):
+
+    var D = function foo(){
+      console.log(typeof foo);
+    };
+    D();                       // function
+    console.log(typeof foo);   // undefined
+{:lang="javascript"}
+
+#### 2. Useful for recursion
+
+Because the function&#8217;s name is accessible in the function itself, this turns out to be useful for recursive functions, much more useful than the plain old anonymous function.
+
+Here&#8217;s a trivial recursive function to illustrate calling itself from within the named function expression:
+
+    var countdown = function a(count){
+      if(count > 0) {
+        count--;
+        return a(count);  // we can also do this: a(--count), which is less clear
+      }
+      console.log('end of recursive function');
+    }
+    countdown(5);
+{:lang="javascript"}
+
+#### 3. Useful for debugging
+
+As a [few][1] [have][4] pointed out, giving previously anonymous functions names helps in debugging, since the function name shows up on the call stack.
+
+#### 4. Quirks: JScript&#8217;s bad implementation
+
+[kangax][1] points out that named function expressions are basically poison to JScript, Internet Explorer&#8217;s implementation of JavaScript.
+
+The named function becomes a global variable, is hoisted like a function declaration, and actually ends up creating multiple instances of the same function.
+
+### Immediately-invoked function expressions (IIFE): var E = (function(){return function(){}})();
+
+&#8220;Execute this function, whose return value is another function, and assign that to the variable E&#8221;. This may seem like magic, but it&#8217;s actually quite simple, and the pattern is powerful and has useful applications, the most famous of which is the [module pattern][5].
+
+First we&#8217;ll use an example that doesn&#8217;t look like magic:
+
+    var foo = function(){
+      return 'bar';
+    };
+    var output = foo();
+    console.log(output);  // 'bar'
+{:lang="javascript"}
+
+We already learned about grouping operators above, so you should feel comfortable with saying this is equivalent:
+
+    var foo = function(){
+      return 'bar';
+    };
+    var output = (foo)(); // note the extra grouping operators
+    console.log(output);  // 'bar'
+{:lang="javascript"}
+
+Since foo is pointing to our function expression, we know that we can simply refrain from using the variable &#8220;foo&#8221; and drop in the entire function as an anonymous function (since functions are first class, after all!):
+
+    var output = (function(){
+      return 'bar';
+    })();
+    console.log(output);  // 'bar'
+{:lang="javascript"}
+
+Hey wait, we just arrived at the magical resulting function! It turns out to be not so magical after all, once we break it down and see it for what it is. It&#8217;s simply shorthand for the code we wrote originally, where we defined a function, executed it, and defined output to be its return value.
+
+I&#8217;ve included this method on the list of declaring functions because we can assign the return value to itself be a function:
+
+    var E = (function(){
+      return function(){}
+    })();
+{:lang="javascript"}
+
+#### Applications
+
+There are good applications for this, including information hiding using in the module pattern, ([partial application][6], for example), and other clever uses of it. It&#8217;s definitely not a trivial pattern.
+
+### Function constructor: var F = new Function();
+
+This method is extremely old and it&#8217;s not recommended to be used. You pass in an unlimited number of arguments in the front, then the actual function body appears as a string in the last argument (because it&#8217;s a string, it&#8217;s effectively the equivalent of eval(), and isn&#8217;t recommended).
+
+#### 1. Defining the function
+
+You can create a function like this:
+
+    var F = new Function('arg1', 'arg2', 'console.log(arg1 + ", " + arg2)');
+    F('foo', 'bar');  // 'foo, bar'
+{:lang="javascript"}
+
+#### 2. You don't need the ``new`` operator</h4> 
+You can simply write ``var F = Function();`` to get the same result.
+
+#### 3. Quirks
+
+The [MDN docs][7] have some good examples of the quirks, including the fact that functions declared with the Function constructor don&#8217;t inherit their current scope properly (i.e. a closure isn&#8217;t formed).
+
+What this means is that they don&#8217;t have access to variables in their enclosing scope, which isn&#8217;t particularly useful:
+
+    function foo(){
+      var bar = 'blah';
+      
+      var first = new Function('console.log(typeof bar)');
+      first();   // undefined
+      
+      var second = function(){
+        console.log(typeof bar);
+      }
+      second();  // string
+    }
+    foo();
+{:lang="javascript"}
+
+In the function &#8220;first&#8221;, we&#8217;re using the Function constructor, so it doesn&#8217;t have access to the variable bar. However, if we use the function &#8220;second&#8221;, which is a function expression, it does in fact have access to variables defined in its enclosing scope (via closure).
+
+In other words, *don&#8217;t use the Function constructor*.
+
+### Special case &#8211; object constructor: var G = new function foo(){};
+
+I saved this for last because we&#8217;re not really defining a function, though we are using the function keyword, so it&#8217;s worth noting at least.
+
+``new function(){};`` creates a new object and invokes the anonymous function as its constructor. If an object is returned from the function, that becomes the resulting object, otherwise a new object is created from scratch and function is executed in the context of that new function (let&#8217;s save the details for another post!).
+
+It&#8217;s a bit unusual to see it in this form. Let&#8217;s do it the proper way:
+
+    var Person = function(){
+      console.log(this);  // Person
+    }
+    var joe = new Person();
+{:lang="javascript"}
+
+So really with the new operator, we are giving it a new &#8216;this&#8217; context and then executing the given function with that new context. Much different than the function definitions we&#8217;ve been dealing with above! This does into a whole new topic, and we&#8217;ll save that for later!
+
+### Further reading
+
+[Named function expressions demystified][1] (kangax)
+
+[Immediately-Invoked Function Expression (IIFE) (Ben Alman)][8]
+
+[Functions and function scope][9] (Mozilla Developer Network &#8211; MDN)
+
+[How does an anonymous function in JavaScript work? (StackOverflow)][10]
+
+[Function Declarations vs. Function Expressions (JavaScript, JavaScript by Angus Croll)][4]
+
+[JavaScript: The Definitive Guide][11] (classic book by David Flanagan)
+
+ [1]: http://kangax.github.com/nfe/
+ [2]: http://en.wikipedia.org/wiki/First-class_function
+ [3]: http://ironjs.wordpress.com/2011/06/22/my-gripes-with-javascript/
+ [4]: http://javascriptweblog.wordpress.com/2010/07/06/function-declarations-vs-function-expressions/
+ [5]: http://www.klauskomenda.com/code/javascript-programming-patterns/#module
+ [6]: http://ejohn.org/blog/partial-functions-in-javascript/
+ [7]: https://developer.mozilla.org/en/JavaScript/Reference/Functions_and_function_scope#Function_constructor_vs._function_declaration_vs._function_expression
+ [8]: http://benalman.com/news/2010/11/immediately-invoked-function-expression/
+ [9]: https://developer.mozilla.org/en/JavaScript/Reference/Functions_and_function_scope
+ [10]: http://stackoverflow.com/questions/1140089/how-does-an-anonymous-function-in-javascript-work
+ [11]: http://www.amazon.com/gp/product/0596805527/

@@ -1,0 +1,186 @@
+.CodeRay {
+  background-color: $code-bg;
+  padding: 0px;
+  pre {
+    padding: 5px 0px 5px 10px;
+    border-radius: 0;
+  }
+}
+
+.CodeRay pre, .CodeRay .highlight, .CodeRay .gist-highlight  {
+  background-color: $code-bg;
+  border: 0px;
+  color: #F8F8F8;
+  margin-bottom: 0px;
+}
+
+// Nice line numbers
+table.CodeRay td {
+  padding: 0px;
+}
+.CodeRay .line-numbers, .CodeRay .no {
+  background-color: $line-nb-bg;
+  padding-right: 1em;
+  pre {
+      background-color: $line-nb-bg;
+      border: 0px;
+      margin: 0px;
+  }
+}
+.CodeRay .line { background-color: $line-nb-bg }
+.CodeRay span.line-numbers { padding: 0px 10px 0px 0px }
+
+// As in Sublime editor
+// Violet for constants ("Rails")
+.CodeRay .constant { color: #9B859D; }
+// Blue for predefined-constants ("self")
+.CodeRay .predefined-constant { color: #7587A6; font-weight: normal  }
+
+.CodeRay .code {
+	text-align: left;
+}
+
+.CodeRay .code,
+.CodeRay .line-numbers {
+	font-size: 13px;
+}
+
+.CodeRay .pseudo-class {
+	color: #9393FF;
+}
+
+.CodeRay .key {
+	color: #E4BEE4;
+}
+
+.CodeRay .comment {
+	color: #858585;
+}
+
+.CodeRay .attribute-name {
+	color: #FF7EC3;
+}
+
+.CodeRay .attribute-value {
+	color: #FF6969;
+}
+
+.CodeRay .delimiter {
+	color: #988E8E;
+}
+
+.CodeRay {
+	display: inline-block;
+	max-width: 100%;
+	overflow-x: scroll;
+}
+
+
+/* ------------------ */
+body {
+	font-size: 16px;
+}
+
+body a {
+	color: #000000;
+	font-family: arial;
+}
+
+h3 a:hover {
+	color: #0C0049;
+}
+
+body a.category {
+	color: #477899;
+}
+
+
+body #header {
+	margin: 1.5em auto 0em;
+	letter-spacing: 0;
+}
+
+body #header h1 {
+	font-size: 18px;
+	letter-spacing: 0.03em;
+	padding-left: 0;
+	font-weight: 400;
+}
+
+body #header a {
+	color: #979797;
+}
+
+body #header a:hover {
+	color: #3D3F52;
+}
+
+body {
+	margin: auto;
+	max-width: 1000px;
+}
+
+body .entry-content video {
+	border-radius: 0;
+}
+
+.inner {
+	width: 100%;
+}
+
+#content {
+	text-align: center;
+}
+
+.meta.date {
+	text-align: left;
+	color: #DEDEDE;
+	font-size: 0.85em;
+}
+
+body .post .has-image {
+	text-align: center;
+}
+
+.post {
+	padding-top: 20px;
+
+}
+
+.post p {
+	text-align: justify;
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	hyphens: auto;
+}
+
+table .positive {
+	background-color: rgba(194, 255, 194, 0.65);
+}
+
+table .negative {
+	background-color: rgba(255, 110, 110, 0.65);
+}
+
+
+/* disqus */
+#disqus_thread iframe #footer,
+#disqus_thread .nav-secondary,
+#disqus_thread .publisher-nav-color:after,
+#conversation > div.nav.nav-secondary {
+	display: none;
+}
+
+@media screen and (max-width: 600px) {
+	body {
+		width: 95%;
+	}
+	#header {
+		margin-top: 0.5em;
+		padding-bottom: 0;
+	}
+	.CodeRay .line-numbers,
+	.CodeRay .code {
+		font-size: 11px !important;
+	}
+}

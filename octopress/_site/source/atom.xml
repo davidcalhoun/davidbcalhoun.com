@@ -1,0 +1,1649 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[]]></title>
+  <link href="http://davidbcalhoun.com/atom.xml" rel="self"/>
+  <link href="http://davidbcalhoun.com/"/>
+  <updated>2013-12-04T22:57:06-08:00</updated>
+  <id>http://davidbcalhoun.com/</id>
+  <author>
+    <name><![CDATA[]]></name>
+    
+  </author>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Introducing Negative Scroll Blur (for browsers that support CSS filters)]]></title>
+    <link href="http://davidbcalhoun.com/2013/introducing-negative-scroll-blur-for-browsers-that-support-css-filters"/>
+    <updated>2013-11-23T00:00:00-08:00</updated>
+    <id>http://davidbcalhoun.com/2013/introducing-negative-scroll-blur-for-browsers-that-support-css-filters</id>
+    <content type="html"><![CDATA[<p><a href='http://davidbcalhoun.com/a/negative-scroll-blur.html'>Demo</a></p>
+
+<p>Just for fun, I wanted to reproduce a cool but completely superfluous UI I saw in the updated Foursquare app recently. Basically, when the user tries to scroll past the upper bound of the app/page, the header image becomes blurred.</p>
+
+<p>We can do the same thing on the web by listening for negative scroll and then using (abusing?) CSS filters.</p>
+
+<h3 id='video'>Video</h3>
+
+<h3 id='extra_tweaks_for_mobile'>Extra tweaks for mobile</h3>
+
+<p>Note that there&#8217;s an extra trick for iOS, which presents problems I had forgotten about (namely, no negative scroll, and a scroll listener which fires once at the end of scrolling). That&#8217;s why I had to throw in some extra logic for touchstart/touchmove/touchend.</p>
+
+<h3 id='links'>Links</h3>
+
+<p><a href='http://davidbcalhoun.com/a/negative-scroll-blur.html'>Demo</a><br /><a href='https://github.com/davidcalhoun/negative-scroll-blur'>Github</a></p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[You Can&#8217;t JavaScript Under Pressure walkthrough]]></title>
+    <link href="http://davidbcalhoun.com/2013/you-cant-javascript-under-pressure-walkthrough"/>
+    <updated>2013-10-04T00:00:00-07:00</updated>
+    <id>http://davidbcalhoun.com/2013/you-cant-javascript-under-pressure-walkthrough</id>
+    <content type="html"><![CDATA[<p>A friend posted a link to this fun little quiz &#8211; <a href='http://toys.usvsth3m.com/javascript-under-pressure/'>You Can&#8217;t JavaScript Under Pressure</a>.</p>
+
+<p>The quizzes get more and more difficult, and they present a nice challenge if you fear your skills are getting rusty. Give it an honest try first, then come back here if you get seriously, honestly stuck. Try to do it yourself!</p>
+
+<h3 id='quiz_1_doubleinteger'>Quiz 1: doubleInteger</h3>
+
+<h4 id='problem'>Problem</h4>
+<div class='codecolorer-container javascript twitlight' style='overflow:auto;white-space:nowrap;width:435px;'>
+  <table cellpadding='0' cellspacing='0'>
+    <tr>
+      <td class='line-numbers'>
+        <div>
+          1<br />2<br />3<br />4<br />5<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class='javascript codecolorer'>
+          <span class='kw2'>function</span> doubleInteger<span class='br0'>&#40;</span>i<span class='br0'>&#41;</span> <span class='br0'>&#123;</span><br /> &nbsp; &nbsp; <span class='co1'>// i will be an integer. Double it and return it.</span><br /> &nbsp; &nbsp; <br /> &nbsp; &nbsp; <span class='kw1'>return</span> i<span class='sy0'>;</span><br /> <span class='br0'>&#125;</span>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+<h4 id='solution'>Solution</h4>
+<div class='codecolorer-container javascript twitlight' style='overflow:auto;white-space:nowrap;width:435px;'>
+  <table cellpadding='0' cellspacing='0'>
+    <tr>
+      <td class='line-numbers'>
+        <div>
+          1<br />2<br />3<br />4<br />5<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class='javascript codecolorer'>
+          <span class='kw2'>function</span> doubleInteger<span class='br0'>&#40;</span>i<span class='br0'>&#41;</span> <span class='br0'>&#123;</span><br /> &nbsp; &nbsp; <span class='co1'>// i will be an integer. Double it and return it.</span><br /> &nbsp; &nbsp; <br /> &nbsp; &nbsp; <span class='kw1'>return</span> i <span class='sy0'>*</span> <span class='nu0'>2</span><span class='sy0'>;</span><br /> <span class='br0'>&#125;</span>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+<h4 id='explanation'>Explanation</h4>
+
+<p>Nothing tricky going on here. The prompt implies this should be done in two steps, but a one-liner works. We know i will always be an integer, so we don&#8217;t need any sanitization checks, just a straight up return.</p>
+
+<h3 id='quiz_2_isnumbereven'>Quiz 2: isNumberEven</h3>
+
+<h4 id='problem'>Problem</h4>
+<div class='codecolorer-container javascript twitlight' style='overflow:auto;white-space:nowrap;width:435px;'>
+  <table cellpadding='0' cellspacing='0'>
+    <tr>
+      <td class='line-numbers'>
+        <div>
+          1<br />2<br />3<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class='javascript codecolorer'>
+          <span class='kw2'>function</span> isNumberEven<span class='br0'>&#40;</span>i<span class='br0'>&#41;</span> <span class='br0'>&#123;</span><br /> &nbsp; &nbsp; <span class='co1'>// i will be an integer. Return true if it's even, and false if it isn't.</span><br /> <span class='br0'>&#125;</span>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+<h4 id='solution'>Solution</h4>
+<div class='codecolorer-container javascript twitlight' style='overflow:auto;white-space:nowrap;width:435px;'>
+  <table cellpadding='0' cellspacing='0'>
+    <tr>
+      <td class='line-numbers'>
+        <div>
+          1<br />2<br />3<br />4<br />5<br />6<br />7<br />8<br />9<br />10<br />11<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class='javascript codecolorer'>
+          <span class='kw2'>function</span> isNumberEven<span class='br0'>&#40;</span>i<span class='br0'>&#41;</span> <span class='br0'>&#123;</span><br /> &nbsp; &nbsp; <span class='co1'>// i will be an integer. Return true if it's even, and false if it isn't.</span><br /> &nbsp; &nbsp; <br /> &nbsp; &nbsp; <span class='kw1'>if</span><span class='br0'>&#40;</span>i <span class='sy0'>%</span> <span class='nu0'>2</span> <span class='sy0'>===</span> <span class='nu0' /><span class='br0'>&#41;</span> <span class='br0'>&#123;</span><br /> &nbsp; &nbsp; &nbsp; &nbsp; <span class='co1'>//&nbsp; no remainder, so it must be an even number</span><br /> &nbsp; &nbsp; &nbsp; &nbsp; <span class='kw1'>return</span> <span class='kw2'>true</span><span class='sy0'>;</span><br /> &nbsp; &nbsp; <span class='br0'>&#125;</span> <span class='kw1'>else</span> <span class='br0'>&#123;</span><br /> &nbsp; &nbsp; &nbsp; &nbsp; <span class='co1'>//&nbsp; remainder, so it must be odd.</span><br /> &nbsp; &nbsp; &nbsp; &nbsp; <span class='kw1'>return</span> <span class='kw2'>false</span><span class='sy0'>;</span><br /> &nbsp; &nbsp; <span class='br0'>&#125;</span><br /> <span class='br0'>&#125;</span>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+<h4 id='explanation'>Explanation</h4>
+
+<p>Again, no sanitization needed here because i is guaranteed to be an integer. The solution relies on an understanding of the modulus function &#8211; this is something usually learned in school, but something I haven&#8217;t had to use since, except in interviews or quizzes. Or quizzes during interviews.</p>
+
+<p>Basically, think of modulus as &#8220;remainder&#8221; function for division problems. For instance,</p>
+<div class='codecolorer-container text twitlight' style='overflow:auto;white-space:nowrap;width:435px;'>
+  <table cellpadding='0' cellspacing='0'>
+    <tr>
+      <td class='line-numbers'>
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class='text codecolorer'>
+          4 % 2
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+<p>will give a modulus of</p>
+<div class='codecolorer-container text twitlight' style='overflow:auto;white-space:nowrap;width:435px;'>
+  <table cellpadding='0' cellspacing='0'>
+    <tr>
+      <td class='line-numbers'>
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class='text codecolorer'>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+<p>because 4 goes into 2 twice, evenly, with zero remainder. On the other hand,</p>
+<div class='codecolorer-container text twitlight' style='overflow:auto;white-space:nowrap;width:435px;'>
+  <table cellpadding='0' cellspacing='0'>
+    <tr>
+      <td class='line-numbers'>
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class='text codecolorer'>
+          5 % 2
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+<p>will give a modulus of &#8220;1&#8243; because 5 goes into 2 twice, with a remainder of 1. This turns out to be a handy way to differentiate even (4) and odd (5) numbers.</p>
+
+<p>(note that the</p>
+<div class='codecolorer-container text twitlight' style='overflow:auto;white-space:nowrap;width:435px;'>
+  <table cellpadding='0' cellspacing='0'>
+    <tr>
+      <td class='line-numbers'>
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class='text codecolorer'>
+          else
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+<p>isn&#8217;t needed here, but it gives greater clarity to what&#8217;s going on)</p>
+
+<h3 id='quiz_3_getfileextension'>Quiz 3: getFileExtension</h3>
+
+<h4 id='problem'>Problem</h4>
+<div class='codecolorer-container javascript twitlight' style='overflow:auto;white-space:nowrap;width:435px;'>
+  <table cellpadding='0' cellspacing='0'>
+    <tr>
+      <td class='line-numbers'>
+        <div>
+          1<br />2<br />3<br />4<br />5<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class='javascript codecolorer'>
+          <span class='kw2'>function</span> getFileExtension<span class='br0'>&#40;</span>i<span class='br0'>&#41;</span> <span class='br0'>&#123;</span><br /> &nbsp; &nbsp; <span class='co1'>// i will be a string, but it may not have a file extension.</span><br /> &nbsp; &nbsp; <span class='co1'>// return the file extension (with no period) if it has one, otherwise false</span><br /> <br /> <span class='br0'>&#125;</span>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+<h4 id='solution'>Solution</h4>
+<pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'>REXML could not parse this XML/HTML: 
+&lt;div class=&quot;codecolorer-container javascript twitlight&quot; style=&quot;overflow:auto;white-space:nowrap;width:435px;&quot;&gt;
+  &lt;table cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;
+    &lt;tr&gt;
+      &lt;td class=&quot;line-numbers&quot;&gt;
+        &lt;div&gt;
+          1&lt;br /&gt;2&lt;br /&gt;3&lt;br /&gt;4&lt;br /&gt;5&lt;br /&gt;6&lt;br /&gt;7&lt;br /&gt;8&lt;br /&gt;9&lt;br /&gt;10&lt;br /&gt;11&lt;br /&gt;12&lt;br /&gt;13&lt;br /&gt;14&lt;br /&gt;
+        &lt;/div&gt;
+      &lt;/td&gt;
+      
+      &lt;td&gt;
+        &lt;div class=&quot;javascript codecolorer&quot;&gt;
+          &lt;span class=&quot;kw2&quot;&gt;function&lt;/span&gt; getFileExtension&lt;span class=&quot;br0&quot;&gt;&amp;#40;&lt;/span&gt;i&lt;span class=&quot;br0&quot;&gt;&amp;#41;&lt;/span&gt; &lt;span class=&quot;br0&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br /&gt; &amp;nbsp; &amp;nbsp; &lt;span class=&quot;co1&quot;&gt;// i will be a string, but it may not have a file extension.&lt;/span&gt;&lt;br /&gt; &amp;nbsp; &amp;nbsp; &lt;span class=&quot;co1&quot;&gt;// return the file extension (with no period) if it has one, otherwise false&lt;/span&gt;&lt;br /&gt; &lt;br /&gt; &amp;nbsp; &amp;nbsp; &lt;span class=&quot;kw2&quot;&gt;var&lt;/span&gt; filenameArray &lt;span class=&quot;sy0&quot;&gt;=&lt;/span&gt; i.&lt;span class=&quot;me1&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;br0&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span class=&quot;st0&quot;&gt;&quot;.&quot;&lt;/span&gt;&lt;span class=&quot;br0&quot;&gt;&amp;#41;&lt;/span&gt;&lt;span class=&quot;sy0&quot;&gt;;&lt;/span&gt;&lt;br /&gt; &lt;br /&gt; &amp;nbsp; &amp;nbsp; &lt;span class=&quot;kw1&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;br0&quot;&gt;&amp;#40;&lt;/span&gt;filenameArray.&lt;span class=&quot;me1&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;sy0&quot;&gt;&lt;=&lt;/span&gt; &lt;span class=&quot;nu0&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;br0&quot;&gt;&amp;#41;&lt;/span&gt; &lt;span class=&quot;br0&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br /&gt; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;span class=&quot;co1&quot;&gt;//&amp;nbsp; i.e. &quot;foo&quot; becomes [&quot;foo&quot;] (array with 1 member)&lt;/span&gt;&lt;br /&gt; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;span class=&quot;kw1&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kw2&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;sy0&quot;&gt;;&lt;/span&gt;&lt;br /&gt; &amp;nbsp; &amp;nbsp; &lt;span class=&quot;br0&quot;&gt;&amp;#125;&lt;/span&gt; &lt;span class=&quot;kw1&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;br0&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br /&gt; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;span class=&quot;co1&quot;&gt;//&amp;nbsp; must be an array with more than 1 member. &amp;nbsp;The extension must be at the end.&lt;/span&gt;&lt;br /&gt; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;span class=&quot;kw1&quot;&gt;return&lt;/span&gt; filenameArray&lt;span class=&quot;br0&quot;&gt;&amp;#91;&lt;/span&gt;filenameArray.&lt;span class=&quot;me1&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;sy0&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;nu0&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;br0&quot;&gt;&amp;#93;&lt;/span&gt;&lt;span class=&quot;sy0&quot;&gt;;&lt;/span&gt;&lt;br /&gt; &amp;nbsp; &amp;nbsp; &lt;span class=&quot;br0&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br /&gt; &lt;span class=&quot;br0&quot;&gt;&amp;#125;&lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/div&gt;</pre>
+<h4 id='explanation'>Explanation</h4>
+
+<p>Now we&#8217;re getting a bit tougher!</p>
+
+<p>Strings have a handy function that splits them into an array:</p>
+<div class='codecolorer-container text twitlight' style='overflow:auto;white-space:nowrap;width:435px;'>
+  <table cellpadding='0' cellspacing='0'>
+    <tr>
+      <td class='line-numbers'>
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class='text codecolorer'>
+          split()
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+<p>. For instance,</p>
+<div class='codecolorer-container text twitlight' style='overflow:auto;white-space:nowrap;width:435px;'>
+  <table cellpadding='0' cellspacing='0'>
+    <tr>
+      <td class='line-numbers'>
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class='text codecolorer'>
+          "foo.bar.baz".split(".")
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+<p>will output</p>
+<div class='codecolorer-container text twitlight' style='overflow:auto;white-space:nowrap;width:435px;'>
+  <table cellpadding='0' cellspacing='0'>
+    <tr>
+      <td class='line-numbers'>
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class='text codecolorer'>
+          ["foo", "bar", "baz"]
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+<p>. Notice that the periods have been removed, just as the prompt asked for!</p>
+
+<p>In this case we need to first check if there was no file extension. This means that there were no periods to split on, resulting in a one-member array (</p>
+<div class='codecolorer-container text twitlight' style='overflow:auto;white-space:nowrap;width:435px;'>
+  <table cellpadding='0' cellspacing='0'>
+    <tr>
+      <td class='line-numbers'>
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class='text codecolorer'>
+          "foo".split(".")
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+<p>becomes</p>
+<div class='codecolorer-container text twitlight' style='overflow:auto;white-space:nowrap;width:435px;'>
+  <table cellpadding='0' cellspacing='0'>
+    <tr>
+      <td class='line-numbers'>
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class='text codecolorer'>
+          ["foo"]
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+<p>). In this case we return</p>
+<div class='codecolorer-container text twitlight' style='overflow:auto;white-space:nowrap;width:435px;'>
+  <table cellpadding='0' cellspacing='0'>
+    <tr>
+      <td class='line-numbers'>
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class='text codecolorer'>
+          false
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+<p>, as the prompt asks for.</p>
+
+<p>Now, in the else case, we know that the array must be larger than 1, meaning that it has a file extension. Since the file extension is always at the end, we know that it must be the last member in the array.</p>
+
+<p>We can find the index of the last member by taking into account array length (</p>
+<div class='codecolorer-container text twitlight' style='overflow:auto;white-space:nowrap;width:435px;'>
+  <table cellpadding='0' cellspacing='0'>
+    <tr>
+      <td class='line-numbers'>
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class='text codecolorer'>
+          filenameArray.length
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+<p>) and the fact that the array is zero-indexed, meaning that we need to subtract 1 from this length. Now we know the extension exists and is at the end of the array, so all we need to do is return it:</p>
+<div class='codecolorer-container text twitlight' style='overflow:auto;white-space:nowrap;width:435px;'>
+  <table cellpadding='0' cellspacing='0'>
+    <tr>
+      <td class='line-numbers'>
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class='text codecolorer'>
+          return filenameArray[filenameArray.length - 1];
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+<h3 id='quiz_4_longeststring'>Quiz 4: longestString</h3>
+
+<h4 id='problem'>Problem</h4>
+<div class='codecolorer-container javascript twitlight' style='overflow:auto;white-space:nowrap;width:435px;'>
+  <table cellpadding='0' cellspacing='0'>
+    <tr>
+      <td class='line-numbers'>
+        <div>
+          1<br />2<br />3<br />4<br />5<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class='javascript codecolorer'>
+          <span class='kw2'>function</span> longestString<span class='br0'>&#40;</span>i<span class='br0'>&#41;</span> <span class='br0'>&#123;</span><br /> &nbsp; &nbsp; <span class='co1'>// i will be an array.</span><br /> &nbsp; &nbsp; <span class='co1'>// return the longest string in the array</span><br /> &nbsp; &nbsp; <br /> <span class='br0'>&#125;</span>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+<h4 id='solution'>Solution</h4>
+<pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'>REXML could not parse this XML/HTML: 
+&lt;div class=&quot;codecolorer-container javascript twitlight&quot; style=&quot;overflow:auto;white-space:nowrap;width:435px;&quot;&gt;
+  &lt;table cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;
+    &lt;tr&gt;
+      &lt;td class=&quot;line-numbers&quot;&gt;
+        &lt;div&gt;
+          1&lt;br /&gt;2&lt;br /&gt;3&lt;br /&gt;4&lt;br /&gt;5&lt;br /&gt;6&lt;br /&gt;7&lt;br /&gt;8&lt;br /&gt;9&lt;br /&gt;10&lt;br /&gt;11&lt;br /&gt;12&lt;br /&gt;13&lt;br /&gt;14&lt;br /&gt;15&lt;br /&gt;16&lt;br /&gt;17&lt;br /&gt;18&lt;br /&gt;19&lt;br /&gt;
+        &lt;/div&gt;
+      &lt;/td&gt;
+      
+      &lt;td&gt;
+        &lt;div class=&quot;javascript codecolorer&quot;&gt;
+          &lt;span class=&quot;kw2&quot;&gt;function&lt;/span&gt; longestString&lt;span class=&quot;br0&quot;&gt;&amp;#40;&lt;/span&gt;i&lt;span class=&quot;br0&quot;&gt;&amp;#41;&lt;/span&gt; &lt;span class=&quot;br0&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br /&gt; &amp;nbsp; &amp;nbsp; &lt;span class=&quot;co1&quot;&gt;// i will be an array.&lt;/span&gt;&lt;br /&gt; &amp;nbsp; &amp;nbsp; &lt;span class=&quot;co1&quot;&gt;// return the longest string in the array&lt;/span&gt;&lt;br /&gt; &amp;nbsp;&lt;br /&gt; &amp;nbsp; &amp;nbsp; &lt;span class=&quot;kw2&quot;&gt;var&lt;/span&gt; longest &lt;span class=&quot;sy0&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;st0&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;sy0&quot;&gt;,&lt;/span&gt;&lt;br /&gt; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; n&lt;span class=&quot;sy0&quot;&gt;,&lt;/span&gt; len&lt;span class=&quot;sy0&quot;&gt;;&lt;/span&gt;&lt;br /&gt; &lt;br /&gt; &amp;nbsp; &amp;nbsp; &lt;span class=&quot;kw1&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;br0&quot;&gt;&amp;#40;&lt;/span&gt;n&lt;span class=&quot;sy0&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nu0&quot;&gt;&lt;/span&gt;&lt;span class=&quot;sy0&quot;&gt;,&lt;/span&gt; len&lt;span class=&quot;sy0&quot;&gt;=&lt;/span&gt;i.&lt;span class=&quot;me1&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;sy0&quot;&gt;;&lt;/span&gt; n&lt;span class=&quot;sy0&quot;&gt;&lt;&lt;/span&gt;len&lt;span class=&quot;sy0&quot;&gt;;&lt;/span&gt; n&lt;span class=&quot;sy0&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;br0&quot;&gt;&amp;#41;&lt;/span&gt; &lt;span class=&quot;br0&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br /&gt; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;span class=&quot;kw1&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;br0&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span class=&quot;kw1&quot;&gt;typeof&lt;/span&gt; n&lt;span class=&quot;br0&quot;&gt;&amp;#91;&lt;/span&gt;i&lt;span class=&quot;br0&quot;&gt;&amp;#93;&lt;/span&gt; &lt;span class=&quot;sy0&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;st0&quot;&gt;&quot;string&quot;&lt;/span&gt;&lt;span class=&quot;br0&quot;&gt;&amp;#41;&lt;/span&gt; &lt;span class=&quot;br0&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br /&gt; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;span class=&quot;co1&quot;&gt;//&amp;nbsp; not a string, go to next iteration of the loop&lt;/span&gt;&lt;br /&gt; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;span class=&quot;kw1&quot;&gt;continue&lt;/span&gt;&lt;span class=&quot;sy0&quot;&gt;;&lt;/span&gt;&lt;br /&gt; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;span class=&quot;br0&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br /&gt; &lt;br /&gt; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;span class=&quot;kw1&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;br0&quot;&gt;&amp;#40;&lt;/span&gt;n&lt;span class=&quot;br0&quot;&gt;&amp;#91;&lt;/span&gt;i&lt;span class=&quot;br0&quot;&gt;&amp;#93;&lt;/span&gt;.&lt;span class=&quot;me1&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;sy0&quot;&gt;&gt;&lt;/span&gt; longest.&lt;span class=&quot;me1&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;br0&quot;&gt;&amp;#41;&lt;/span&gt; &lt;span class=&quot;br0&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br /&gt; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;span class=&quot;co1&quot;&gt;//&amp;nbsp; Current string is longer, so set it as the new longest string&lt;/span&gt;&lt;br /&gt; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; longest &lt;span class=&quot;sy0&quot;&gt;=&lt;/span&gt; n&lt;span class=&quot;br0&quot;&gt;&amp;#91;&lt;/span&gt;i&lt;span class=&quot;br0&quot;&gt;&amp;#93;&lt;/span&gt;&lt;span class=&quot;sy0&quot;&gt;;&lt;/span&gt;&lt;br /&gt; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;span class=&quot;br0&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br /&gt; &amp;nbsp; &amp;nbsp; &lt;span class=&quot;br0&quot;&gt;&amp;#125;&lt;/span&gt; &amp;nbsp; &lt;br /&gt; &lt;span class=&quot;br0&quot;&gt;&amp;#125;&lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/div&gt;</pre>
+<h4 id='explanation'>Explanation</h4>
+
+<p>This is a pretty classic interview question. It&#8217;s fairly easy and straightforward: just keep track of the longest string in a variable, then loop through all the members of the array. If the current member is longer, set it as the new longest string. At the end, return whatever that variable contains.</p>
+
+<p>Note the extra sanitization check here to make sure the type is a string. If it&#8217;s not a string, we</p>
+<div class='codecolorer-container text twitlight' style='overflow:auto;white-space:nowrap;width:435px;'>
+  <table cellpadding='0' cellspacing='0'>
+    <tr>
+      <td class='line-numbers'>
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class='text codecolorer'>
+          continue
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+<p>to continue to the next iteration of the</p>
+<div class='codecolorer-container text twitlight' style='overflow:auto;white-space:nowrap;width:435px;'>
+  <table cellpadding='0' cellspacing='0'>
+    <tr>
+      <td class='line-numbers'>
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class='text codecolorer'>
+          for
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+<p>loop. (Note that this is similar to returning early in functions)</p>
+
+<h3 id='quiz_5_arraysum'>Quiz 5: arraySum</h3>
+
+<h4 id='problem'>Problem</h4>
+<div class='codecolorer-container javascript twitlight' style='overflow:auto;white-space:nowrap;width:435px;'>
+  <table cellpadding='0' cellspacing='0'>
+    <tr>
+      <td class='line-numbers'>
+        <div>
+          1<br />2<br />3<br />4<br />5<br />6<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class='javascript codecolorer'>
+          <span class='kw2'>function</span> arraySum<span class='br0'>&#40;</span>i<span class='br0'>&#41;</span> <span class='br0'>&#123;</span><br /> &nbsp; &nbsp; <span class='co1'>// i will be an array, containing integers, strings and/or arrays like itself.</span><br /> &nbsp; &nbsp; <span class='co1'>// Sum all the integers you find, anywhere in the nest of arrays.</span><br /> &nbsp; &nbsp; &nbsp;<br /> &nbsp; &nbsp; <br /> <span class='br0'>&#125;</span>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+<h4 id='solution'>Solution</h4>
+<pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'>REXML could not parse this XML/HTML: 
+&lt;div class=&quot;codecolorer-container javascript twitlight&quot; style=&quot;overflow:auto;white-space:nowrap;width:435px;&quot;&gt;
+  &lt;table cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;
+    &lt;tr&gt;
+      &lt;td class=&quot;line-numbers&quot;&gt;
+        &lt;div&gt;
+          1&lt;br /&gt;2&lt;br /&gt;3&lt;br /&gt;4&lt;br /&gt;5&lt;br /&gt;6&lt;br /&gt;7&lt;br /&gt;8&lt;br /&gt;9&lt;br /&gt;10&lt;br /&gt;11&lt;br /&gt;12&lt;br /&gt;13&lt;br /&gt;14&lt;br /&gt;15&lt;br /&gt;16&lt;br /&gt;17&lt;br /&gt;
+        &lt;/div&gt;
+      &lt;/td&gt;
+      
+      &lt;td&gt;
+        &lt;div class=&quot;javascript codecolorer&quot;&gt;
+          &lt;span class=&quot;kw2&quot;&gt;function&lt;/span&gt; arraySum&lt;span class=&quot;br0&quot;&gt;&amp;#40;&lt;/span&gt;i&lt;span class=&quot;br0&quot;&gt;&amp;#41;&lt;/span&gt; &lt;span class=&quot;br0&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br /&gt; &amp;nbsp; &amp;nbsp; &lt;span class=&quot;kw2&quot;&gt;var&lt;/span&gt; sum &lt;span class=&quot;sy0&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nu0&quot;&gt;&lt;/span&gt;&lt;span class=&quot;sy0&quot;&gt;,&lt;/span&gt;&lt;br /&gt; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; n&lt;span class=&quot;sy0&quot;&gt;,&lt;/span&gt; len&lt;span class=&quot;sy0&quot;&gt;;&lt;/span&gt;&lt;br /&gt; &lt;br /&gt; &amp;nbsp; &amp;nbsp; &lt;span class=&quot;kw1&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;br0&quot;&gt;&amp;#40;&lt;/span&gt;&lt;span class=&quot;kw1&quot;&gt;typeof&lt;/span&gt; i &lt;span class=&quot;sy0&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;st0&quot;&gt;&quot;number&quot;&lt;/span&gt;&lt;span class=&quot;br0&quot;&gt;&amp;#41;&lt;/span&gt; &lt;span class=&quot;br0&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br /&gt; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;span class=&quot;co1&quot;&gt;//&amp;nbsp; i has been defined as a simple number through a recursive call&lt;/span&gt;&lt;br /&gt; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; sum &lt;span class=&quot;sy0&quot;&gt;+=&lt;/span&gt; i&lt;span class=&quot;sy0&quot;&gt;;&lt;/span&gt;&lt;br /&gt; &amp;nbsp; &amp;nbsp; &lt;span class=&quot;br0&quot;&gt;&amp;#125;&lt;/span&gt; &lt;span class=&quot;kw1&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;kw1&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;br0&quot;&gt;&amp;#40;&lt;/span&gt;Array.&lt;span class=&quot;me1&quot;&gt;isArray&lt;/span&gt;&lt;span class=&quot;br0&quot;&gt;&amp;#40;&lt;/span&gt;i&lt;span class=&quot;br0&quot;&gt;&amp;#41;&lt;/span&gt;&lt;span class=&quot;br0&quot;&gt;&amp;#41;&lt;/span&gt; &lt;span class=&quot;br0&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br /&gt; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;span class=&quot;co1&quot;&gt;//&amp;nbsp; i is an array, so iterate through it&lt;/span&gt;&lt;br /&gt; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;span class=&quot;kw1&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;br0&quot;&gt;&amp;#40;&lt;/span&gt;n&lt;span class=&quot;sy0&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nu0&quot;&gt;&lt;/span&gt;&lt;span class=&quot;sy0&quot;&gt;,&lt;/span&gt; len&lt;span class=&quot;sy0&quot;&gt;=&lt;/span&gt;i.&lt;span class=&quot;me1&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;sy0&quot;&gt;;&lt;/span&gt; n&lt;span class=&quot;sy0&quot;&gt;&lt;&lt;/span&gt;len&lt;span class=&quot;sy0&quot;&gt;;&lt;/span&gt; n&lt;span class=&quot;sy0&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;br0&quot;&gt;&amp;#41;&lt;/span&gt; &lt;span class=&quot;br0&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br /&gt; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;span class=&quot;co1&quot;&gt;//&amp;nbsp; recursive call&lt;/span&gt;&lt;br /&gt; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; sum &lt;span class=&quot;sy0&quot;&gt;+=&lt;/span&gt; arraySum&lt;span class=&quot;br0&quot;&gt;&amp;#40;&lt;/span&gt;i&lt;span class=&quot;br0&quot;&gt;&amp;#91;&lt;/span&gt;n&lt;span class=&quot;br0&quot;&gt;&amp;#93;&lt;/span&gt;&lt;span class=&quot;br0&quot;&gt;&amp;#41;&lt;/span&gt;&lt;span class=&quot;sy0&quot;&gt;;&lt;/span&gt;&lt;br /&gt; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;span class=&quot;br0&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br /&gt; &amp;nbsp; &amp;nbsp; &lt;span class=&quot;br0&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br /&gt; &lt;br /&gt; &amp;nbsp; &amp;nbsp; &lt;span class=&quot;kw1&quot;&gt;return&lt;/span&gt; sum&lt;span class=&quot;sy0&quot;&gt;;&lt;/span&gt;&lt;br /&gt; &lt;span class=&quot;br0&quot;&gt;&amp;#125;&lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/div&gt;</pre>
+<h4 id='explanation'>Explanation</h4>
+
+<p>The best way to handle this one is through recursion, which is tricky but powerful. I admit that on my first attempts writing it in the console, my browser froze up and I had to restart it.</p>
+
+<p>Recursive functions are very elegant but tricky. It helps to step through with examples.</p>
+
+<p>First, let&#8217;s start with</p>
+<div class='codecolorer-container text twitlight' style='overflow:auto;white-space:nowrap;width:435px;'>
+  <table cellpadding='0' cellspacing='0'>
+    <tr>
+      <td class='line-numbers'>
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class='text codecolorer'>
+          arraySum(1)
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+<p>. The output is of course 1, but note that we didn&#8217;t actually input an array. The code took the first codepath in the</p>
+<div class='codecolorer-container text twitlight' style='overflow:auto;white-space:nowrap;width:435px;'>
+  <table cellpadding='0' cellspacing='0'>
+    <tr>
+      <td class='line-numbers'>
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class='text codecolorer'>
+          if
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+<p>statement (because</p>
+<div class='codecolorer-container text twitlight' style='overflow:auto;white-space:nowrap;width:435px;'>
+  <table cellpadding='0' cellspacing='0'>
+    <tr>
+      <td class='line-numbers'>
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class='text codecolorer'>
+          typeof 1 === "number"
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+<p>is true)</p>
+
+<p>Let&#8217;s see what happens when we input a basic array:</p>
+<div class='codecolorer-container text twitlight' style='overflow:auto;white-space:nowrap;width:435px;'>
+  <table cellpadding='0' cellspacing='0'>
+    <tr>
+      <td class='line-numbers'>
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class='text codecolorer'>
+          arraySum([1]); &nbsp;// 1
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+<p>Again the answer is 1, but this time the codepath was different. This time</p>
+<div class='codecolorer-container text twitlight' style='overflow:auto;white-space:nowrap;width:435px;'>
+  <table cellpadding='0' cellspacing='0'>
+    <tr>
+      <td class='line-numbers'>
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class='text codecolorer'>
+          Array.isArray([1])
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+<p>was true, and the function was called recursively for each of the members in the array. That is to say, each member of the array (in this case the single member) was sent to arraySum as a simple integer. So the recursive call was the same as the original example:</p>
+<div class='codecolorer-container text twitlight' style='overflow:auto;white-space:nowrap;width:435px;'>
+  <table cellpadding='0' cellspacing='0'>
+    <tr>
+      <td class='line-numbers'>
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class='text codecolorer'>
+          arraySum(1)
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+<p>, and the output was the same.</p>
+
+<p>In the case of more numbers, the outputs are all added to the</p>
+<div class='codecolorer-container text twitlight' style='overflow:auto;white-space:nowrap;width:435px;'>
+  <table cellpadding='0' cellspacing='0'>
+    <tr>
+      <td class='line-numbers'>
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class='text codecolorer'>
+          sum
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+<p>and then returned back at the end of the function.</p>
+
+<p>Note that this works quite well for even deeply nested arrays, since arraySum() has logic for arrays that will always return the sum of all of its deeply nested integers:</p>
+<div class='codecolorer-container text twitlight' style='overflow:auto;white-space:nowrap;width:435px;'>
+  <table cellpadding='0' cellspacing='0'>
+    <tr>
+      <td class='line-numbers'>
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class='text codecolorer'>
+          arraySum([1, [2,[3,[4,[5]]]]]); &nbsp; &nbsp;// 15
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The Google Bitch]]></title>
+    <link href="http://davidbcalhoun.com/2013/the-google-bitch"/>
+    <updated>2013-09-24T00:00:00-07:00</updated>
+    <id>http://davidbcalhoun.com/2013/the-google-bitch</id>
+    <content type="html"><![CDATA[<p>When I came back from Japan and accepted an offer to work at a startup in Silicon Valley, I knew one of the biggest challenges would be to find a decent and affordable apartment in Mountain View, close to where I&#8217;d be working. I had it all planned out, and how healthy and convenient it would be to walk to work and also Mountain View downtown!</p>
+
+<p>Unfortunately, this dream was shared by me and hundreds of thousands of other like-minded software engineers. Which isn&#8217;t unexpected, really. If you spend enough time in Silicon Valley, everyone&#8217;s ideas start to sound the same after a while.</p>
+
+<p>Mountain View, if you didn&#8217;t already know, is home to the now omnipresent non-evil company known as Google. Google has been fast taking over Mountain View, building by building, campus extension by campus extension. They even have their name on the sidewalks near where I take walks at work. Because they own those, too. (Actually, they own the fiber connections running beneath them).</p>
+
+<p>One day I went out apartment hunting and was pretty happy the apartment listed earlier in the day hadn&#8217;t already sold, as had happened several times earlier (yes, there is THAT much competition).</p>
+
+<p>As I drove up and approached the apartment, I noticed the unwelcoming stare of a single woman waiting outside the complex. She didn&#8217;t say anything, so I mentioned that she must be waiting for the apartment walk-through the same as myself. She acknowledged and then mentioned that &#8220;he was supposed to be here 15 minutes ago&#8221;, referring to the current tenant who was supposed to show up earlier for an apartment viewing.</p>
+
+<p>I saw that she was pretty serious about maintaining that she was here first, and I cracked a joke about folks being cutthroat because of the competition or some such thing, to try to break the tension. I even said it with a smile, which is supposed to prompt at least a crack of a smile in any human capable of empathy. Sadly it had no effect on this poor emotionless woman. It was clear that she was all business.</p>
+
+<p>It&#8217;s not dissimilar to the animal kingdom, really. She was just establishing her dominance by passively explaining that she was here before I was. Oh I see, so even if I wanted this place, I&#8217;d have no shot at it, because you were here first? I guess that&#8217;s what you have to do these days to ensure you get a place&#8230;</p>
+
+<p>I hear it&#8217;s worse in &#8220;The City&#174;&#8221; (San Francisco), and I&#8217;m not surprised really. The last time I was looking for apartments there, it was a crappy little studio apartment in a crappy part of town, with what looked like 20 people lined up ahead of me to put down a deposit. No thank you. Sometimes I think I&#8217;d rather live someplace in the country.</p>
+
+<p>Alright, back to my apartment hunting story in Mountain View. I figured I might as well take a look at the place, since I&#8217;d taken the time to come by. Some other folks showed up and started waiting in the same spot, until finally the current tenant came by, apologized for the wait, and took us through the apartment.</p>
+
+<p>To be honest, the apartment was nothing special. It was an older apartment that was part of a fourplex with families with kids on all sides. Not exactly a quiet place. Sure, there was nice lush greenery everywhere, and of course it was conveniently situated in Mountain View, but it was overall not exceptional. But in a bubble economy, the location is now sufficient to make anything special and worth the price.</p>
+
+<p>I asked the current tenant about cable internet availability, and the single woman decided to use her God-given right to interrupt and respond: &#8220;The entire city of Mountain View has WiFi provided for free by Google&#8221;. Without missing a beat, she added some other talking points as if they were coming out of a pre-prepared handbook. It actually kind of sounded like someone reciting a memorized passage from the Bible. And there was a certain pride behind it, to give me a hint that I need not ask if she worked for the blasted company.</p>
+
+<p>I didn&#8217;t know what to say other than, &#8220;Oh, that&#8217;s cool&#8221;. I really wasn&#8217;t prepared to deal with corporate shills on what had become an epic search for an apartment.</p>
+
+<p>After looking around a bit more, I was the second to last person to talk to the owner and take an application. He was more than patient with me, but I noticed the very last person waiting in the shadows to talk to him was The Google Bitch. Dammit, so she had some scheme she was waiting to thrust on the poor guy.</p>
+
+<p>As I walked away and went back to my car, still within earshot The Google Bitch made an offer to the guy: &#8220;So, I am prepared to put down money today to secure this apartment&#8221; she said confidently. The current tenant just said &#8220;Wow, ok&#8221; and they talked from there.</p>
+
+<p>Needless to say, I never turned in the application, as it would&#8217;ve just been a waste of everyone&#8217;s time.</p>
+
+<p>I have since settled into an apartment community in Sunnyvale, where I have been adopted by a very extended, loving Indian family. They sometimes give me funny looks when I walk through the complex, but it&#8217;s all good. Perhaps the farther from The Google Bitch and people like her, the better.</p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Fourth of July letter to my government]]></title>
+    <link href="http://davidbcalhoun.com/2013/fourth-of-july-letter-to-my-government"/>
+    <updated>2013-07-04T00:00:00-07:00</updated>
+    <id>http://davidbcalhoun.com/2013/fourth-of-july-letter-to-my-government</id>
+    <content type="html"><![CDATA[<p>(this is a copy of a letter which I&#8217;ve sent to various representatives in government)</p>
+
+<p>As a concerned citizen, I know you understand that I must occasionally voice my concern through letters such as this. My hope is that you will honestly consider my claims and take action on my part. I honestly appreciate you taking your time to seriously consider this letter.</p>
+
+<p>I&#8217;m writing to you today specifically in response to abuses by the NSA overstepping its bounds. Citizens of the United States and citizens of the world now know its private data is being indiscriminately collected, sifted through, and intruded upon by the NSA. These actions are clearly antithetical to our own Constitution and set a terrible precedent for the future of this country and the rest of the world.</p>
+
+<p>Today is the Fourth of July. However, this Fourth of July is a bit different for me. Instead of setting off fireworks and spending time with my family, I am alone in Japan. Yet I am not alone in my concerns that my constitutional rights are being forced away from me.</p>
+
+<p>As you well know, there are protests today in support of restoring the fourth amendment and against organizations such as the NSA which subvert our Constitution in the name of national security. I sincerely wish I could join these rallies, but I must show support by other means, such as through this letter. While I admit it would be interesting to protest the Japanese way, parked at a street intersection shouting my protests through a megaphone, it seems more effective for me to write directly to you. And to other people such as you who have the full time job of representing me and people like myself.</p>
+
+<p>While the US has never been a perfect country, I know it&#8217;s had better times. I&#8217;m not the only one who believes our nation is now in a bad way. Yet I hope to do my small part to help fix some of these problems in my lifetime, in order to make America a better place for us all. Since we are both Americans, I hope we share this common interest.</p>
+
+<p>My growing list of grievances is too much to list here, therefore I want to focus on recent revelations by whistleblowers such as Edward Snowden. This has been a tipping point for me and many fellow Americans, whom I hope have also been awoken from a dogmatic slumber.</p>
+
+<p>Somewhat counterintuitively, as a result I&#8217;ve started to become more of a believer in America. Or rather, what America is intended to be. I&#8217;ve recently found myself reading more about the history of my country. I&#8217;ve become interested in politics, and for the first time in my life I&#8217;ve seriously considered joining a protest. I have become a better citizen in the hope for a better America.</p>
+
+<p>President Obama and others in positions of power have defended these NSA spying programs, responding by explaining that they have come into effect through lawful means. Yet there has been massive public backlash, which I believe should at least warrant a reconsideration of these surveillance programs. I trust people like you to make sure this happens.</p>
+
+<p>It&#8217;s worth mentioning that this hasn&#8217;t been the first time in recent years the great disconnect between the governed and the government has been exposed. Perhaps our representatives are not really representing our interests after all? The situation isn&#8217;t dissimilar to what culminated in the breaking off and founding of our nation in the first place.</p>
+
+<p>It will be a great shame, but perhaps we are part of the generation which collectively allowed the great American experiment to fail?</p>
+
+<p>Update (July 12, 2013):</p>
+
+<p>I received a reply from one of my senators, Diane Fienstein. While it&#8217;s a generic reply sent to everyone sending letters similar to my own (http://www.feinstein.senate.gov/public/index.cfm/nsa-programs), I appreciate some sort of response.</p>
+
+<p>I&#8217;m still concerned however. Fienstein argued her case with the same defense as Obama: our repesentatives in the House and Senate voted these spying initiatives into law. Therefore it&#8217;s &#8220;legal&#8221; and was created and approved by people we voted into law.</p>
+
+<p>This is supposed to dissuade my fears in some way, but it actually makes me more apprehensive. Where are the people in government that represent me and my fears? Where are the people in Congress to re-examine the work they&#8217;ve made of the Constitution?</p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[NSA&#8217;s PRISM: from the minds of conspiracy nuts, turns out to be reality]]></title>
+    <link href="http://davidbcalhoun.com/2013/nsas-prism-from-the-minds-of-conspiracy-nuts-turns-out-to-be-reality"/>
+    <updated>2013-06-07T00:00:00-07:00</updated>
+    <id>http://davidbcalhoun.com/2013/nsas-prism-from-the-minds-of-conspiracy-nuts-turns-out-to-be-reality</id>
+    <content type="html"><![CDATA[<p>The real shame about NSA/PRISM is that everyone will forget about it next week or next month. Just like we forgot about Trapwire and other endless abuses in the name of protecting society.</p>
+
+<p>The US is now a nation too mentally castrated to do anything about these obvious constitutional abuses. Why are we only capable of short-lived and impotent protest attempts like Occupy? How did we get to be so sedated through this anesthesia of modern consumerism and entertainment?</p>
+
+<p>As of today, it&#8217;s no longer just a thought confined to the head of some crazy conspiracy theorist.</p>
+
+<p>UPDATE:<br />Today <a href='http://www.bbc.co.uk/news/world-us-canada-22820711'>President Obama defended the spy programs (cell phone and internet espionage)</a>, directly against <a href='http://www.youtube.com/watch?v=B6fnfVJzZT4'>his campaign promises (video from 2007)</a>, in I suppose a true political fashion.</p>
+
+<p><a href='https://www.facebook.com/zuck/posts/10100828955847631'>Facebook</a> and <a href='http://googleblog.blogspot.com/2013/06/what.html'>Google</a> CEOs appeared to have denied involvement using carefully constructed statements. One of the commenter&#8217;s on Mark Zuckerberg&#8217;s post made the observation that his is a carbon copy of Larry Page&#8217;s, which is indeed very strange.</p>
+
+<p>Here&#8217;s the statements side-by-side, emphasis mine.</p>
+
+<h3 id='part_1_introduction'>Part 1: Introduction</h3>
+<blockquote style='width: 49%; float: left; margin: 1em 0.25em 0 0;'>
+  <p>
+    (<a href='http://googleblog.blogspot.com/2013/06/what.html'>Google&#8217;s Larry Page and David Drummond</a>)
+  </p>
+  
+  <p>
+    Dear Google users—
+  </p>
+  
+  <p>
+    You may be aware of press reports alleging that Internet companies have joined a secret U.S. government program called PRISM to give the National Security Agency direct access to our servers. As Google&#8217;s CEO and Chief Legal Officer, we wanted you to have the facts.
+  </p>
+</blockquote><blockquote style='width: 49%; float: left; margin: 1em 0;'>
+  <p>
+    (<a href='https://www.facebook.com/zuck/posts/10100828955847631'>Facebook&#8217;s Mark Zuckerberg</a>)
+  </p>
+  
+  <p>
+    I want to respond personally to the outrageous press reports about PRISM:
+  </p>
+</blockquote><h3 style='clear:both; margin-top: 1em;'>
+  Part 2: Deny direct involvement with any government program
+</h3><blockquote style='width: 49%; float: left; margin: 1em 0.25em 0 0;'>
+  <p>
+    (<a href='http://googleblog.blogspot.com/2013/06/what.html'>Google</a>)
+  </p>
+  
+  <p>
+    First, we have not joined any program that would give the U.S. government—or any other government—direct access to our servers. Indeed, the U.S. government does not have <b>direct access</b> or a &#8220;back door&#8221; to the information stored in our data centers. <b>We had not heard of a program called PRISM until yesterday</b>.
+  </p>
+</blockquote><blockquote style='width: 49%; float: left; margin: 1em 0;'>
+  <p>
+    (<a href='https://www.facebook.com/zuck/posts/10100828955847631'>Facebook</a>)
+  </p>
+  
+  <p>
+    Facebook is not and has never been part of any program to give the US or any other government <b>direct access to our servers</b>. We have never received a blanket request or court order from any government agency asking for information or metadata in bulk, like the one Verizon reportedly received. And if we did, we would fight it aggressively. <b>We hadn&#8217;t even heard of PRISM before yesterday</b>.
+  </p>
+</blockquote><h3 style='clear:both; margin-top: 1em;'>
+  Part 3: Emphasize that data given to the government is on a case-by-case basis and in compliance with the law
+</h3><blockquote style='width: 49%; float: left; margin: 1em 0.25em 0 0;'>
+  <p>
+    (<a href='http://googleblog.blogspot.com/2013/06/what.html'>Google</a>)
+  </p>
+  
+  <p>
+    Second, we provide user data to governments only in accordance with the law. Our legal team <b>reviews each and every request</b>, and frequently pushes back when requests are overly broad or don&#8217;t follow the <b>correct process</b>. Press reports that suggest that Google is providing open-ended access to our users&#8217; data are false, period. Until this week&#8217;s reports, we had never heard of the broad type of order that Verizon received—an order that appears to have required them to hand over millions of users&#8217; call records. We were very surprised to learn that such broad orders exist. Any suggestion that Google is disclosing information about our users&#8217; Internet activity on such a scale is completely false.
+  </p>
+</blockquote><blockquote style='width: 49%; float: left; margin: 1em 0;'>
+  <p>
+    (<a href='https://www.facebook.com/zuck/posts/10100828955847631'>Facebook</a>)
+  </p>
+  
+  <p>
+    When governments ask Facebook for data, <b>we review each request</b> carefully to make sure they always follow the <b>correct processes</b> and all applicable laws, and then only provide the information if is required by law. We will continue fighting aggressively to keep your information safe and secure.
+  </p>
+</blockquote><h3 style='clear:both; margin-top: 1em;'>
+  Part 4: Recommend more government transparency
+</h3><blockquote style='width: 49%; float: left; margin: 1em 0.25em 0 0;'>
+  <p>
+    (<a href='http://googleblog.blogspot.com/2013/06/what.html'>Google</a>)
+  </p>
+  
+  <p>
+    Finally, this episode confirms what we have long believed—there needs to be a more <b>transparent</b> approach. Google has worked hard, within the confines of the current laws, to be open about the data requests we receive. We post this information on our Transparency Report whenever possible. We were the first company to do this. And, of course, we understand that the U.S. and other governments need to take action to protect their citizens&#8217; safety—including sometimes by using surveillance. But the level of secrecy around the current legal procedures undermines the <b>freedoms we all cherish</b>.
+  </p>
+  
+  <p>
+    Posted by Larry Page, CEO and David Drummond, Chief Legal Officer
+  </p>
+</blockquote><blockquote style='width: 49%; float: left; margin: 1em 0;'>
+  <p>
+    (<a href='https://www.facebook.com/zuck/posts/10100828955847631'>Facebook</a>)
+  </p>
+  
+  <p>
+    We strongly encourage all governments to be much more <b>transparent</b> about all programs aimed at keeping the public safe. It&#8217;s the only way to protect everyone&#8217;s civil liberties and create the safe and <b>free society we all want</b> over the long term.
+  </p>
+</blockquote>
+<p>I&#8217;m not sure if this is conspiracy or just laziness, but I would guess the latter. Both responses have similar wording (which is admittedly sometimes unavoidable) and are organized in the same three-part format, with the same talking point for each section.</p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Quick style comparison of mobile image search sites]]></title>
+    <link href="http://davidbcalhoun.com/2013/comparison-of-mobile-image-search-sites"/>
+    <updated>2013-05-10T00:00:00-07:00</updated>
+    <id>http://davidbcalhoun.com/2013/comparison-of-mobile-image-search-sites</id>
+    <content type="html"><![CDATA[<p>The other day I glanced at a classmate using <a href='http://www.baidu.com/'>Baidu</a> to perform an image search and was impressed with their presentation:</p>
+
+<p><a href='http://davidbcalhoun.com/wp-content/uploads/2013/05/baidu-mobile-image-search.jpg'><img alt='Baidu mobile image search' class='aligncenter size-full wp-image-1163' height='480' src='http://davidbcalhoun.com/wp-content/uploads/2013/05/baidu-mobile-image-search.jpg' width='320' /></a></p>
+
+<p>Note the nice big images and the lack of margins around images. After seeing this presentation, I realized that the common approach of adding margins around images is pretty unnecessary.</p>
+
+<p>I also noticed that the images are a variety of sizes, leading to a less sterile experience. There&#8217;s surely some clever math going on behind the scenes here to make sure the images appear &#8220;justified&#8221; (to use a word from the recent Flickr redesign).</p>
+
+<h3 id='google'>Google</h3>
+
+<p><a href='http://davidbcalhoun.com/wp-content/uploads/2013/05/google-mobile-image-search.jpg'><img alt='Google mobile image search' class='aligncenter size-full wp-image-1166' height='480' src='http://davidbcalhoun.com/wp-content/uploads/2013/05/google-mobile-image-search.jpg' width='320' /></a></p>
+
+<p>Note the smaller photos, which sometimes causes features on images to be indiscernable.</p>
+
+<p>Also note the more common approach of adding margins around the images. This seems to remove a lot of space which could otherwise be used to show more details of images, which is the approach Baidu takes.</p>
+
+<h3 id='bing'>Bing</h3>
+
+<p><a href='http://davidbcalhoun.com/wp-content/uploads/2013/05/bing-mobile-image-search.jpg'><img alt='Bing mobile image search' class='aligncenter size-full wp-image-1169' height='480' src='http://davidbcalhoun.com/wp-content/uploads/2013/05/bing-mobile-image-search.jpg' width='320' /></a></p>
+
+<p>Bing uses a nicely-designed slick interface with a black background, which I tend to like a bit better.</p>
+
+<p>However, all its images are cropped or resized to be exactly the same size, leading to a more sterile gridlike experience.</p>
+
+<p>Also, just a minor complaint, but the search magnifying glass appears to be a tiny bit blurry, especially compared to the sharpness of the Bing logo. But it&#8217;s barely noticeable, especially compared to Yahoo (below).</p>
+
+<h3 id='yahoo'>Yahoo!</h3>
+
+<p><a href='http://davidbcalhoun.com/wp-content/uploads/2013/05/yahoo-mobile-image-search.jpg'><img alt='Yahoo mobile image search' class='aligncenter size-full wp-image-1167' height='480' src='http://davidbcalhoun.com/wp-content/uploads/2013/05/yahoo-mobile-image-search.jpg' width='320' /></a></p>
+
+<p>Yahoo has nice big images, actually a bit too big. Bit it also appears to suffer from the approach Bing uses to resize photos to make their dimensions exactly the same.</p>
+
+<p>Again note the common white margins around the images.</p>
+
+<p>The non-retina top graphics (logo and search button) are so blurry and distracting that I have to at least mention them here. These images look blurry on every modern phone on the market today, and it&#8217;s sad to me that neither developers nor QA cared enough about this to do something about it.</p>
+
+<p>Strangely, these images look fine on the main &#8220;Web&#8221; tab, but they are distractingly blurry on this Images view as well as others.</p>
+
+<h3 id='flickr_mobile_app_ios'>Flickr mobile app (iOS)</h3>
+
+<p><a href='http://davidbcalhoun.com/wp-content/uploads/2013/05/flickr-mobile-app-image-search.jpg'><img alt='Flickr mobile app image search' class='aligncenter size-full wp-image-1164' height='480' src='http://davidbcalhoun.com/wp-content/uploads/2013/05/flickr-mobile-app-image-search.jpg' width='320' /></a></p>
+
+<p>The Flickr app itself has some decently-sized images, but here again we see the image margins at work. This is also present on the &#8220;justified view&#8221; on the desktop site, so I suppose they wanted to be consistent.</p>
+
+<h3 id='flickr_mobile_web'>Flickr mobile web</h3>
+
+<p><a href='http://davidbcalhoun.com/wp-content/uploads/2013/05/flickr-mobile-web-image-search.jpg'><img alt='Flickr mobile web image search' class='aligncenter size-full wp-image-1165' height='480' src='http://davidbcalhoun.com/wp-content/uploads/2013/05/flickr-mobile-web-image-search.jpg' width='320' /></a></p>
+
+<p>This is certainly the worst out of the bunch. It&#8217;s a real waste of space, with small images sacrificed for textual information that&#8217;s a little excessive for this screen.</p>
+
+<p>I think this is just due to the website&#8217;s age. Flickr&#8217;s mobile website is much neglected and is showing its age. I would be really nice to see updates to match the nice progress they&#8217;ve made with the &#8220;justified layout&#8221; that you can see on their desktop site and mobile app.</p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Kyoto Cherry Blossoms 2013 (京都の桜２０１３年)]]></title>
+    <link href="http://davidbcalhoun.com/2013/kyoto-cherry-blossoms-2013-%e4%ba%ac%e9%83%bd-%e6%a1%9c"/>
+    <updated>2013-04-30T00:00:00-07:00</updated>
+    <id>http://davidbcalhoun.com/2013/kyoto-cherry-blossoms-2013-%e4%ba%ac%e9%83%bd-%e6%a1%9c</id>
+    <content type="html"><![CDATA[<p><a href='http://www.flickr.com/photos/franksvalli/8691586416/'><img alt='Cherry blossoms in Kyoto, Japan 2013' class='aligncenter size-full wp-image-1153' height='2004' src='http://davidbcalhoun.com/wp-content/uploads/2013/04/cherry-blossoms-kyoto-japan-IMG_3207.jpg' width='3006' /></a></p>
+
+<p><a href='http://www.flickr.com/photos/franksvalli/sets/72157633239996237/'>Check out my cherry blossoms 2013 set on Flickr.</a></p>
+
+<p>Japan has a healthy fascination with the beauty of nature, and this includes the ephemeral cherry blossoms. And one of the prime locations for cherry blossoms is Kyoto, Japan.</p>
+
+<p>It takes a while to realize, but there actually seems to be a wide variety of cherry blossoms which blossom at different times. This stretches the season out a bit (the prime blossoming lasts only about a week). It&#8217;s nice to be able to walk around for a few weeks and find random beautiful cherry blossoms.</p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Video: Spring in Kyoto (京都の春)]]></title>
+    <link href="http://davidbcalhoun.com/2013/video-spring-in-kyoto-%e4%ba%ac%e9%83%bd%e3%81%ae%e6%98%a5"/>
+    <updated>2013-04-15T00:00:00-07:00</updated>
+    <id>http://davidbcalhoun.com/2013/video-spring-in-kyoto-%e4%ba%ac%e9%83%bd%e3%81%ae%e6%98%a5</id>
+    <content type="html"><![CDATA[]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How to import imiwa? vocabulary lists directly into Anki (iOS/iPhone guide)]]></title>
+    <link href="http://davidbcalhoun.com/2013/how-to-import-imiwa-vocabulary-lists-directly-into-anki-ios-iphone-guide"/>
+    <updated>2013-02-27T00:00:00-08:00</updated>
+    <id>http://davidbcalhoun.com/2013/how-to-import-imiwa-vocabulary-lists-directly-into-anki-ios-iphone-guide</id>
+    <content type="html"><![CDATA[<p>For the last six months, I&#8217;ve mainly been using imiwa? for iOS to look up Japanese words whenever I don&#8217;t know them (mostly in class). However, I found that I built up big lists without ever reviewing them.</p>
+
+<p>The best way to review is of course through Anki, but it was a laborious process to import each word one-by-one. I should&#8217;ve figured there was an easier way!</p>
+
+<h3 id='step_1_export_list_and_email_to_yourself'>Step 1: Export list and email to yourself</h3>
+
+<p>Most good apps, including imiwa?, include an export function. They may export directly to an Anki file (all the easier!), or they may export to a tab-delimited file, as imiwa? does. For this tutorial I&#8217;ll assume you have a dictionary that does the latter, and for the purpose of this quick tutorial, I&#8217;ll use screenshots from imiwa? on iOS as a guide.</p>
+
+<p>Your first step is to open up imiwa? and go to the Lists tab (click the icon at the bottom):</p>
+
+<p><a href='http://davidbcalhoun.com/wp-content/uploads/2013/02/imiwa-ios-list.jpg'><img alt='imiwa-ios-list' class='aligncenter size-large wp-image-1026' height='480' src='http://davidbcalhoun.com/wp-content/uploads/2013/02/imiwa-ios-list.jpg' width='320' /></a></p>
+
+<p>Click on the list you want to export, then click on the icon next to the Edit button at the top of the screen:</p>
+
+<p><a href='http://davidbcalhoun.com/wp-content/uploads/2013/02/imiwa-ios-list-export.jpg'><img alt='imiwa-ios-list-export' class='aligncenter size-full wp-image-1029' height='480' src='http://davidbcalhoun.com/wp-content/uploads/2013/02/imiwa-ios-list-export.jpg' width='320' /></a></p>
+
+<p>At this point we have a few options. Choose the bottom option (&#8220;Tab separated values&#8221;):</p>
+
+<p><a href='http://davidbcalhoun.com/wp-content/uploads/2013/02/imiwa-ios-tab-separated-values-export.jpg'><img alt='imiwa-ios-tab-separated-values-export' class='aligncenter size-large wp-image-1028' height='480' src='http://davidbcalhoun.com/wp-content/uploads/2013/02/imiwa-ios-tab-separated-values-export.jpg' width='320' /></a></p>
+
+<p>After a little processing, imiwa? will finish and direct you to the email app, where you need to email the list to yourself. Just type in your email address and hit Send:</p>
+
+<p><a href='http://davidbcalhoun.com/wp-content/uploads/2013/02/imiwa-ios-email-to-self.jpg'><img alt='imiwa-ios-email-to-self' class='aligncenter size-large wp-image-1025' height='480' src='http://davidbcalhoun.com/wp-content/uploads/2013/02/imiwa-ios-email-to-self.jpg' width='320' /></a></p>
+
+<h3 id='step_2_download_and_import_to_desktop_anki'>Step 2: Download and import to desktop Anki</h3>
+
+<p>Now switch to your desktop and download the file you emailed to yourself. It should look something like this:</p>
+
+<p><a href='http://davidbcalhoun.com/wp-content/uploads/2013/02/imiwa-ios-tab-separated-values-export-sample.png'><img alt='imiwa-ios-tab-separated-values-export-sample' class='aligncenter size-large wp-image-1027' height='294' src='http://davidbcalhoun.com/wp-content/uploads/2013/02/imiwa-ios-tab-separated-values-export-sample-1024x588.png' width='512' /></a></p>
+
+<p>Note that there&#8217;s a lot of &#8220;junk&#8221; data that we won&#8217;t need when we import into Anki. Don&#8217;t worry, there&#8217;s a way to get rid of it!</p>
+
+<p>Now open up Anki, click File -&gt; Import&#8230; and select the file you downloaded (from the email you send to yourself).</p>
+
+<h3 id='step_3_hide_junk_columns_from_anki'>Step 3: Hide junk columns from Anki</h3>
+
+<p>When you import the file, you&#8217;ll get prompted with a screen that looks like this:</p>
+
+<p><a href='http://davidbcalhoun.com/wp-content/uploads/2013/02/anki-tab-delimited-import.png'><img alt='anki-tab-delimited-import' class='aligncenter size-large wp-image-1024' height='438' src='http://davidbcalhoun.com/wp-content/uploads/2013/02/anki-tab-delimited-import-1024x876.png' width='512' /></a></p>
+
+<p>This allows you to tell Anki which deck to import into (you probably will want to create a brand new deck), but most importantly you need to tell Anki which fields are import.</p>
+
+<p>Here&#8217;s a typical line from a list I imported:</p>
+
+<p>&#8220;JMDICT 1431110 直接 ちょくせつ direct, immediate, personal, firsthand L41-50&#8243;</p>
+
+<p>In other words:</p>
+
+<p>&#8220;1. <span>Junk</span> 2. <span>Junk</span> 3. Expression 4. Reading 5. Meaning 6. <span>Junk</span>&#8221;</p>
+
+<p>On this screen in Anki, hit the Change button for fields 1, 2, and 6, and be sure to tell Anki to ignore them. For the rest of the fields, match them up appropriately (Field 3 is Expression, Field 4 is Reading, Field 5 is Meaning).</p>
+
+<p>Now click the Import button, and you magically have a new Anki deck to work through!</p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Japan: from miniature train to bullet train]]></title>
+    <link href="http://davidbcalhoun.com/2013/japan-from-miniature-train-to-bullet-train"/>
+    <updated>2013-01-29T00:00:00-08:00</updated>
+    <id>http://davidbcalhoun.com/2013/japan-from-miniature-train-to-bullet-train</id>
+    <content type="html"><![CDATA[<p><a href='http://library.brown.edu/cds/perry/scroll7_Forkin.html'><img alt='Matthew C. Perry and the gift of the miniature train to Japan' class='aligncenter size-large wp-image-1007' height='684' src='http://davidbcalhoun.com/wp-content/uploads/2013/01/perry-japan-miniature-train-model-train-closeup-1024x684.jpg' width='1024' /></a><br />(view the <a href='http://davidbcalhoun.com/wp-content/uploads/2013/01/perry-japan-miniature-train-model-train.jpg'>full image</a>, <a href='http://library.brown.edu/cds/perry/scroll7_Forkin.html'>image credit</a>)</p>
+
+<p>A long time ago, four black ships appeared off the coast of Japan, which had closed itself off from the world and its influences. These ships were from the US, and commanding them was Commodore Matthew C. Perry, who was instrumental in <a href='http://en.wikipedia.org/wiki/Opening_of_Japan'>reopening Japan to the rest of the world</a>.</p>
+
+<p>As a result of this, and to promote a goodwill between the two countries, Perry gave various gifts to Japan, one of which was a one-fourth scale model train, in order to convincingly demonstrate the benefit of adopting Western technology:</p>
+
+<blockquote>
+<p>Perry&#8217;s gifts aimed to foster trade and good relations between America and Japan by displaying the goodwill of the U.S. as well as its technological and cultural power. This fully operational Norris Works, one-fourth scale model train, complete with 350 feet of 18-gauge track, engine, tender, and car, represented one of these &#8220;triumphs of civilization&#8221;, which Perry used to influence the Japanese. Behind the Yokohama reception hall, the Americans assembled and operated the locomotive for the Japanese officials, some of whom rode by sitting on top of the car. (<a href='http://library.brown.edu/cds/perry/scroll7_Forkin.html'>source</a>)</p>
+</blockquote>
+
+<p>Of course one of the things modern Japan is now famous for is its great rail system, the epitome of which is the world-renowned Shinkansen bullet train.</p>
+
+<p>In contrast, being born and raised in Los Angeles, I&#8217;m painfully aware at America&#8217;s recent lack of progress in rail transportation, compared to Japan and the rest of the world. Part of this can be blamed on GM and other companies, which <a href='http://en.wikipedia.org/wiki/General_Motors_streetcar_conspiracy'>in the 1930s and 1940s purchased streetcar companies only to dismantle them</a>. It&#8217;s the classic tradition of the big corporation buying up the smaller competition in order to stifle it. Unfortunately, as a result of this corporate selfishness, Los Angeles transportation is perhaps permanently handicapped. And currently it&#8217;s nearly impossible to live in LA without owning a car. And one of the wonderful benefits of owning a car is of course participating in the great modern innovation known as the traffic jam.</p>
+
+<p>Thankfully, there are finally <a href='http://www.businessinsider.com/gov-brown-defends-high-speed-rail-in-california-2013-1'>concrete plans of bringing a bullet train to California</a>, to span Los Angeles and San Francisco.</p>
+
+<p>Of course all of this comes decades behind the progress of the rest of the world, and far behind Japan, a country which we were so proud to introduce rail transportation to back in the day.</p>
+
+<p>Perhaps Darth Vader, <a href='http://en.wikipedia.org/wiki/Kabuto'>his own mask being Japanese-inspired</a>, said it best: &#8220;The circle is now complete. When I left you, I was but the learner; now I am the master.&#8221;</p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Forms of Escapism]]></title>
+    <link href="http://davidbcalhoun.com/2012/forms-of-escapism"/>
+    <updated>2012-12-08T00:00:00-08:00</updated>
+    <id>http://davidbcalhoun.com/2012/forms-of-escapism</id>
+    <content type="html"><![CDATA[<p>I&#8217;ve been thinking lately that the fates of so many are motivated by, in a word, escapism. Including my own fate. These are folks whose lives seem quite different on first glance, but turn out to be similar. We can&#8217;t escape some of our basic human nature after all.</p>
+
+<h3 id='the_preservationist'>The Preservationist</h3>
+
+<p>These are folks who, for lack of a better term, wish to preserve a &#8220;simpler time&#8221;. They are people such as Thoreau, who wanted a return to simpler times and aspired to self-sufficiency (or an approximation, in any case). They are folks such as the Amish, who saw no good in the coming changes, and decided to create an ideal society in the form of a living time capsule.</p>
+
+<p>I also think backpackers and wilderness-goers fit into this category. Their journeys may be temporary escapes from city life, but they are escapes nonetheless.</p>
+
+<p>The Preservationists stand against progress, for various reasons. These folks are most easily labeled escapists: their main drive is motivated by a desire to escape the progress of the world.</p>
+
+<h3 id='the_progressive'>The Progressive</h3>
+
+<p>Perhaps controversially, I think the folks on the other end of the spectrum can also be placed with escapists, maybe in a small way.</p>
+
+<p>The folks pushing progress are not satisfied with the world as it is, but instead of abandoning it (as the Preservationists do), they seek to improve their world from within.</p>
+
+<p>They seek to to escape from the present world by changing it. And perhaps we&#8217;ve all wanted to change the world at one point or another, perhaps while we were young, and surely a long whole before we accepted that comfortable desk job at The Company.</p>
+
+<h3 id='the_traveler'>The Traveler</h3>
+
+<p>Travelers are easily escapists, but they are temporary escapists, of course. (The more &#8220;permanent travelers&#8221; are what we call expatriots.)</p>
+
+<p>Travelers are not necessarily unsatisfied with their current curcumstances, but their main drive for adventure of course requires them to escape from their everday routine. Or perhaps they just need a vacation, or as we so often say, an escape.</p>
+
+<p>The traveler gets to experience an idealized, whitewashed version of everyday routine in some other part of the world. The real routine, revealed with time, isn&#8217;t as pretty as it seems. However, this is not to deny that a routine in a part of the world might be better than a routine in some other part of the world.</p>
+
+<p>Actually, this must necessarily be the case, as it seems ridiculous to say that daily life all over the world is equally suited to everyone.</p>
+
+<h3 id='the_recluse'>The Recluse</h3>
+
+<p>Our present technology is bringing the world together in many ways, as well as enabling reclusive people to more successfully live a literally sheltered life. These folks are paradoxes &#8211; Thoreaus who live among us in cities, even if they are rarely seen.</p>
+
+<p>It helps the Recluse that we can now work, bank, and shop for food entirely online, enabling people to stay inside longer than ever before. Technology designed to bring us closer together ironically has stifled real-life interaction, making all of us a little more distant.</p>
+
+<p>Whatever bad things we may think about The Recluse, we have to remind ourselves that there&#8217;s a little bit of Recluse in all of us. Who hasn&#8217;t ever been exhausted and decided to spend a &#8220;lazy Sunday&#8221; indoors, never bothering to even get dressed?</p>
+
+<h3 id='the_suicide'>The Suicide</h3>
+
+<p>I saved the worst for last &#8211; the most extreme escapist is surely the person who removes themselves violently from the world. Perhaps they have tried the other forms of escapism, and perhaps they haven&#8217;t. Perhaps they think they know the ways of the world and are weary of it. But perhaps they are mistaken, and haven&#8217;t yet tried living other lives.</p>
+
+<p>I&#8217;ve also been world-weary. At various points in my life I&#8217;ve felt this way, but have always wanted to try for something better without wanting to give up. This is what I&#8217;d advise anyone who feels this way: your feeling is one of extreme escapism, but perhaps there are other ways to escape. Ways which are less violent. Ways which still allow you to contact your family and friends.</p>
+
+<p>Suicide is such an extreme form of escape, but the reason I wrote this post is to show that these feelings of escapism are widespread, and that they need not result in an &#8220;ultimate escape&#8221;.</p>
+
+<p>The drive to escape, in its various forms, is widespread. I think it&#8217;s part of what defines us as human. And these different ways of coping are what define us as individuals.</p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[A theory of leisure time, choice, and happiness]]></title>
+    <link href="http://davidbcalhoun.com/2012/a-theory-of-leisure-time-choice-and-happiness"/>
+    <updated>2012-10-19T00:00:00-07:00</updated>
+    <id>http://davidbcalhoun.com/2012/a-theory-of-leisure-time-choice-and-happiness</id>
+    <content type="html"><![CDATA[<p>This is finally the end of my first week in Japanese language school here in Kyoto. It&#8217;s been quite a long week, with the most studying I&#8217;ve ever done in my life. We&#8217;ve gone through nine chapters in a week, and just Friday received two more books for learning Kanji. We&#8217;ll learn our first 50 Kanji in a week, alongside the rest of our classes. I already know some words here and there, but for the most part, much of what we&#8217;ve just learned is a blur, which is forcing me to use almost all of my free time in running to catch up.</p>
+
+<p>Having very little leisure time has been good in some ways. It&#8217;s been a marked change in the cozy, comfortable lifestyle of sitting in front of a computer screen all day, doing tasks which were somewhat challenging but ultimately not rewarding. Those days in Silicon Valley were ended with a gratuitous amount of free time (which is unusual, working for a startup). Which seems nice for a while, but becomes a bit maddening after long, at least for me.</p>
+
+<p>I remember moving to Silicon Valley and buying my TV and PS3 and everything to set me up with all the comforts of my new lifestyle. After coming home from work, I would waste away my time on my computer, my TV, or my video games. After long it was pretty easy to see the same mundane cycle develop: wake up, work, waste time, sleep. Rinse, repeat. Ad nauseum. Ad absurdum.</p>
+
+<p>It became apparent that this lifestyle wasn&#8217;t really healthy, mentally or physically. It would be better, I thought, to live in a city where I needed to walk around from place to place, or take public transport. San Francisco is perfect for that, but I gave the city (or should I say &#8220;The City&#8221; as folks there do) a shot and it never really grew on me. In my short time here on Earth, I&#8217;ve found there are other cities that are better suited to me. I wanted to find a city I liked, which ended up being far away Kyoto, where I&#8217;m at now.</p>
+
+<p>My unhealthy physical lifestyle, combined with too much free time, had resulted in an unhealthy mental state. I believe lack of exercise leads to deteriorated mental performance as well as depression, and this is what I believe I experienced. This combined with too much free time, solitude, and a brooding time resulted in days where I&#8217;d come home from work and attempt to distract myself by browsing the internet the rest of the day. I ended up absorbing the highly-prized gift of free time which I wasted with abandon, before going asleep and starting the cycle over again.</p>
+
+<p>Now, after becoming a student, I have relearned what it&#8217;s like to have every little free time. I&#8217;m stressed out and overwhelmed already (as a beginner Japanese language student), but it feels good in a lot of ways. I feel alive, but I also feel like I&#8217;m not squandering my free time, or worrying about what I do with the free time I have. In a lot of ways I think I became maddened with the choice, and maddened with brooding in my free time over my life path and the usefulness (to society) of my career choice. Maybe I had chosen the wrong one? I wonder what it would be like if I had chosen to live in Japan after all?</p>
+
+<blockquote>
+<p>If you marry, you will regret it; if you do not marry, you will also regret it; if you marry or do not marry, you will regret both;</p>
+
+<p>Laugh at the world’s follies, you will regret it, weep over them, you will also regret that; laugh at the world’s follies or weep over them, you will regret both; whether you laugh at the world’s follies or weep over them, you will regret both.</p>
+
+<p>Believe a woman, you will regret it, believe her not, you will also regret that; believe a woman or believe her not, you will regret both; whether you believe a woman or believe her not, you will regret both.</p>
+
+<p>Hang yourself, you will regret it; do not hang yourself, and you will also regret that; hang yourself or do not hang yourself, you will regret both; whether you hang yourself or do not hang yourself, you will regret both.</p>
+
+<p>This, gentlemen, is the sum and substance of all philosophy. (Kierkegaard)</p>
+</blockquote>
+
+<p>This passage by Kierkegaard gives a lot of insight into the brooding mind of an existentialist, but arguably offers us a glimpse at the modern human predicament. We make choices daily, and we also make great life-changing choices. It&#8217;s natural to think &#8220;Would I have been better off if I did it differently? If I choose differently?&#8221;.</p>
+
+<p>Kierkegaard himself, if I remember right, lived off of his family&#8217;s money and didn&#8217;t have to worry about work. He had an excessive amount of leisure time, and perhaps that influenced the amount of time he had to brood over his life&#8217;s choices. He certainly had enough time to write down these thoughts, so I would think that his thoughts themselves were more numerous than his writings.</p>
+
+<p>Since I no longer have too much free time, but rather too little of it, I have that much less time to brood over matters. I have made my choices for now (moving to Japan, studying Japanese full time), and I will only know if I&#8217;ve made the right decision after spending more time giving this path a try.</p>
+
+<p>This is good in a lot of ways. In a lot of ways, the choice of what to do in my leisure time has been made for me. I must use it to study.</p>
+
+<p>The choice is made! The existentialist dilemma has been, at the very least, temporarily pushed aside.</p>
+
+<p>And at the very best, the existentialist dilemma has been conquered. &#8220;Live in Japan or do not live in Japan, you will regret it either way&#8221;. Now I have done both. I&#8217;ve now lived on both sides of the coin, on both sides of the world.</p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Descartes on building software frameworks]]></title>
+    <link href="http://davidbcalhoun.com/2012/descartes-on-building-software-frameworks"/>
+    <updated>2012-10-02T00:00:00-07:00</updated>
+    <id>http://davidbcalhoun.com/2012/descartes-on-building-software-frameworks</id>
+    <content type="html"><![CDATA[<p><a href='http://commons.wikimedia.org/wiki/File:Frans_Hals_-_Portret_van_Ren%C3%A9_Descartes.jpg'><img alt='Rene Descartes' class='aligncenter size-full wp-image-969' height='1000' src='http://davidbcalhoun.com/wp-content/uploads/2012/10/Frans_Hals_-_Portret_van_René_Descartes.jpeg' title='Rene Descartes' width='817' /></a></p>
+
+<p>Years ago I read Descartes&#8217;s <a href='http://en.wikipedia.org/wiki/Discourse_on_the_Method'>Discourse on Method</a> for what I found to be some of the more interesting philosophy courses of my college career: those of the history of modern philosophy. Modern philosophy technically starts with Descartes, so it&#8217;s a good place to start, or to get re-acquainted with philosophy in general.</p>
+
+<p>I&#8217;ve been reading through the Discourse again, and have found it to be more interesting and relatable this time around (particularly about lessons learned while traveling, but that&#8217;s a topic for another post).</p>
+
+<p>What&#8217;s particularly interesting here is that a lot of what Descartes talks about seems very relevant for software engineers who wish to create their own software framework from scratch.</p>
+
+<p>I&#8217;m sorry, I know that sounds pretty pretentious and crazy.</p>
+
+<p>This isn&#8217;t as far-fetched as it may seem at first. Be patient!</p>
+
+<p>But first, some background&#8230;</p>
+
+<h3 id='what_was_descartes_up_to_does_french_count_as_a_programming_language'>What was Descartes up to? Does French count as a programming language?</h3>
+
+<p><a href='http://commons.wikimedia.org/wiki/File:Ren%C3%A9_Descartes_i_samtal_med_Sveriges_drottning,_Kristina.jpg'><img alt='Rene Descartes' class='aligncenter size-full wp-image-975' height='539' src='http://davidbcalhoun.com/wp-content/uploads/2012/10/René_Descartes_i_samtal_med_Sveriges_drottning_Kristina.jpeg' title='Rene Descartes' width='581' /></a><br /><em>&#8220;Oh my! I find your foundations to be awfully shaky.&#8221;</em> (note: not an actual Descartes quote)</p>
+
+<blockquote>
+<p>Philosophy has been pursued for many centuries by the best minds, and yet everything in it is still disputed and hence doubtful; and I wasn’t so arrogant as to hope to achieve more in philosophy than others had done. Considering how many different opinions learned men may maintain on a single question—where at most one can be true—I regarded everything that was merely probable as being near enough to false. -<a href='http://en.wikipedia.org/wiki/Discourse_on_the_Method'>Descartes, Discourse on Method</a></p>
+</blockquote>
+
+<p>Descartes&#8217;s task, if you&#8217;ll remember, is intense self-examination where he throws out any questionable belief in order to build a strong foundation of clear and unquestionable beliefs. He doubts literally everything, until he comes to the one thing that can&#8217;t be doubted: that there is obviously <em>something</em> doing the doubting. Namely himself. This is where the concept &#8220;I think, therefore I am&#8221; comes from (&#8220;Je pense, donc je suis&#8221;, and in Latin as &#8220;Cogito ergo sum&#8221; in a later work).</p>
+
+<h3 id='the_software_engineer_tiein'>The software engineer tie-in</h3>
+
+<p>Software engineers, I&#8217;ve found, when given the chance, are likewise just as skeptical of the &#8220;status quo&#8221;. They take a look at the landscape around them, but find themselves dissatisfied and unable to find a perfectly suitable software framework. Of course many people do find close approximations and are perfectly happy using an existing framework. On the other hand, there are definitely purists who believe the proper thing to do is to create their own tailor-made framework from the ground up. Descartes would definitely fit into this latter category.</p>
+
+<p>What I&#8217;ve found over my short career in software is that engineers like to build custom frameworks. Lots of custom frameworks. And they often times like to build them in a purist way, from the ground up.</p>
+
+<p>Building your own framework turns out not only to be more interesting and fun (rather than maintaining some existing framework), but it&#8217;s also supposedly a better way to ensure a lack of cruft, and to ensure a firm foundation. A foundation which has no component that is unneeded or of which can be doubted.</p>
+
+<p>The danger of doing otherwise, it&#8217;s thought, is that after investing the effort to learn an existing framework, one might find it wasn&#8217;t that great after all. Or worse, that it had questionable foundations which would need to be patched up. This is not unlike the task of learning an existing philosophical system, only to see holes poked in its very foundations (as the quote above states, this is essentially what philosophers have been doing for centuries &#8211; poking holes in each other&#8217;s foundations).</p>
+
+<h3 id='better_than_maintaining_the_old'>Better than maintaining the old</h3>
+
+<blockquote>
+<p>Regarding the opinions which I had previously held, I couldn’t do better than set out to get rid of them all at one go, so as then to replace them afterwards with better opinions or even with the same ones after I had straightened them out using reason’s plumb-line. I ﬁrmly believed that this would let me conduct my life much better than if I were to build only on old foundations and rely only on principles that I had accepted in my youth without ever examining whether they were true. Even if I were to see various difﬁculties in this project, they weren’t insurmountable, and weren’t comparable with the difﬁculties involved in reforming even minor matters affecting public institutions. -<a href='http://en.wikipedia.org/wiki/Discourse_on_the_Method'>Descartes, Discourse on Method</a></p>
+</blockquote>
+
+<p>The huge drawback of &#8220;going at it on our own&#8221; is of course the fact that <em>we</em> are now responsible for creating the entire foundation and each component of our custom framework. Descartes would be perfectly fine with this.</p>
+
+<p>And this is exactly what he did with himself: he tore down everything he thought he knew to be true, then started to slowly build up his philosophy bit by bit. Better to do this than to patch old shaky foundations in existing philosophies.</p>
+
+<h3 id='reusing_old_bits'>Reusing old bits</h3>
+
+<p><a href='http://commons.wikimedia.org/wiki/File:Descartesmaison.jpg'><img alt='Descartes&#039;s house' class='aligncenter size-full wp-image-979' height='597' src='http://davidbcalhoun.com/wp-content/uploads/2012/10/Descartesmaison.jpeg' title='Descartes&#039;s house' width='395' /></a><br /><em>Descartes&#8217;s house. Hmm, not sure the foundations are secure here&#8230;</em></p>
+
+<p>Interestingly enough, parts of old beliefs (old frameworks) may still find their way in, but only after intense scrutiny:</p>
+
+<blockquote>
+<p>Just as in demolishing an old house we usually keep the materials for use in building a new one, so in destroying all those opinions of mine that I judged to be ill-founded I made various observations and acquired many experiences that I have since used in establishing more certain opinions. -<a href='http://en.wikipedia.org/wiki/Discourse_on_the_Method'>Descartes, Discourse on Method</a></p>
+</blockquote>
+
+<p>In other words, there&#8217;s some good bits out there that have already been created. Might as well reuse them if they&#8217;re good enough.</p>
+
+<h3 id='philosophy_as_a_preview_of_the_future_of_software_development'>Philosophy as a preview of the future of software development</h3>
+
+<p>Obviously philosophy didn&#8217;t stop with Descartes. He did become the foundation for others in the modern tradition to build on (namely Spinoza and Leibniz, and most others who came after him), but of course that wasn&#8217;t the end of it. The famous &#8220;cogito ergo sum&#8221;, the foundation of Descartes&#8217;s philosophy and seemingly common sense, <a href='http://en.wikipedia.org/wiki/Cogito_ergo_sum#Criticisms'>hasn&#8217;t even been immune from criticism</a>.</p>
+
+<p>Folks have continued to build philosophies and have continued to be unsatisfied with what&#8217;s out there, or unconvinced that it&#8217;s even useful in this age.</p>
+
+<p>I believe we approach software frameworks, software itself, and even programming languages the same way. Unsatisfied with what&#8217;s out there, people will continue to build new things and new tools which work for the time being for certain groups of people.</p>
+
+<p>Inevitably, a new generation of developers, not unlike a new generation of philosophers, will eventually tear it all down and start over again.</p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The life of your parents&#8217; choosing]]></title>
+    <link href="http://davidbcalhoun.com/2012/the-life-of-your-parents-choosing"/>
+    <updated>2012-09-15T00:00:00-07:00</updated>
+    <id>http://davidbcalhoun.com/2012/the-life-of-your-parents-choosing</id>
+    <content type="html"><![CDATA[<p>Several times I&#8217;ve heard the phrase &#8220;the religion of your parents&#8217; choosing&#8221;, used to scoff at adherents to various religions, as if they had no intelligent choice in the matter of their own beliefs. As the thought goes, religious standing (or lack thereof) should be a personal matter, one to be decided rationally (yes, there is such a thing as rational faith; to say otherwise is to label all religious people as fideists, which is a mistake) by individuals, apart from their social group if possible.</p>
+
+<p>How strange then not to carry this philosophy into more of our social behaviors. Why should we then avoid phrases such as &#8220;the culture/land of your parents&#8217; choosing&#8221;?</p>
+
+<p>It seems to me that this carries the same implications as religious belief. For instance, permenently moving to another country is in a sense turning one&#8217;s back on their upbringing and their whole social group. Of course this isn&#8217;t a total turning away: a person might return to one&#8217;s home country after many years, just as they might return to their faith after many years away.</p>
+
+<p>Both of these moves seem only possible after exposure to different ways of thinking, something increasingly made possible as the modern world progresses. It should be of little surprise then that more people will test the waters of other faiths, or lack of faith, just as they may test the waters of living in a different culture. It seems increasingly easy to do, especially in a highly individual-centered culture. Trying a new career or a new life may be a challenge, but it might have the same motive as turning over in bed: the current position has become uncomfortable, and a new position becomes increasingly more alluring.</p>
+
+<p>Some people may stay in their new culture, new career, new faith &#8211; their new way of life &#8211; and some may eventually return.</p>
+
+<p>Either way they are forever changed, and hopefully for the better: hardened by experience and permanently viewing the world through a different lens.</p>
+
+<p>Either way I think is better than not having ventured out at all.</p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Thoughts on TrapWire]]></title>
+    <link href="http://davidbcalhoun.com/2012/thoughts-on-trapwire"/>
+    <updated>2012-08-11T00:00:00-07:00</updated>
+    <id>http://davidbcalhoun.com/2012/thoughts-on-trapwire</id>
+    <content type="html"><![CDATA[<p><a href='http://www.youtube.com/watch?v=ItreEs03A2k&amp;#038;t=3m13s'><img alt='Stratfor CEO George Friedman' class='size-full wp-image-943' src='http://davidbcalhoun.com/wp-content/uploads/2012/08/george-friedman-stratfor.jpg' title='Stratfor CEO George Friedman' /></a><br /><em>&#8220;&#8230;but the hackers will not find intelligence of corporations and governments, or signs of a vast conspiracy&#8230;&#8221; -Stratfor CEO George Friedman, January 2012</em></p>
+
+<p>&#8230;eight months later&#8230;</p>
+
+<p><em>&#8220;WIKILEAKS: Surveillance Cameras Around The Country Are Being Used In A Huge Spy Network&#8221; -Business Insider, August 2012</em></p>
+
+<p>In case you haven&#8217;t noticed, there been some big news released recently as a result of another release of documents by Wikileaks on August 9, 2012. The documents are <a href='http://mirror2.wikileaks-press.org/gifiles/releasedate/2012-08-09.html'>emails from the global intelligence company Stratfor</a>. The most recent release has confirmed what many conspiracy theorists have feared for years: that the government is operating a vast secret surveillance network that is collecting data on citizens and their movements.</p>
+
+<p>The news has been surprisingly (or unsurprisingly?) absent from major news sources, so I&#8217;ve collected a few of the major articles here:</p>
+
+<p><a href='http://www.salon.com/2012/08/10/biggest_story_you_missed_7/'>http://www.salon.com/2012/08/10/biggest_story_you_missed_7/</a><br /><a href='http://www.businessinsider.com/trapwire-everything-you-need-to-know-2012-8'>http://www.businessinsider.com/trapwire-everything-you-need-to-know-2012-8</a><br /><a href='http://venturebeat.com/2012/08/10/wikileaks-trapwire-stratfor-cia/'>http://venturebeat.com/2012/08/10/wikileaks-trapwire-stratfor-cia/</a><br /><a href='http://english.ruvr.ru/2012_08_10/Big-Brother-watching-as-TrapWire-wraps-up-America/'>http://english.ruvr.ru/2012_08_10/Big-Brother-watching-as-TrapWire-wraps-up-America/</a><br /><a href='https://publicintelligence.net/unravelling-trapwire'>https://publicintelligence.net/unravelling-trapwire</a><br /><a href='http://reason.com/blog/2012/08/10/creepy-spying-system-revealed-by-wikilea'>http://reason.com/blog/2012/08/10/creepy-spying-system-revealed-by-wikilea</a></p>
+
+<p>And here&#8217;s a link to the mirror of the recent Wikileaks email release: <a href='http://mirror2.wikileaks-press.org/gifiles/releasedate/2012-08-09.html'>http://mirror2.wikileaks-press.org/gifiles/releasedate/2012-08-09.html</a></p>
+
+<p>Though this has been suspected for a while now, I read the news with a huge sinking feeling. Conspiracy theories always have the virtue of the remote possibility of being wrong. But now with the theory confirmed, it appears that global surveillance has been implemented on a scale and degree much worse than CCTV ever was or could&#8217;ve been, with a technology purportedly much more sophisticated than just facial recognition. I fear the genie has escaped the bottle, and it will be impossible to put it back in again.</p>
+
+<p>The technology itself has been created by TrapWire, a company which, according to the leaked emails, supplies both the US government and various companies with surveillance equipment. (Side note: interestingly enough, the technology bears a striking resemblance to a controversial new technology <a href='http://stream.aljazeera.com/story/predicting-crime-online-and-offline-0022307'>INDECT</a>, apparently in use in the EU since 2009).</p>
+
+<p>TrapWire actually has a <a href='http://www.trapwire.com/'>website</a> on which it outlines, on first glance, its <a href='http://www.trapwire.com/attack.html'>well-intentioned philosophy</a>:</p>
+
+<blockquote>
+<p>Most modern critical infrastructure and asset protection programs are focused on improving perimeter security, access control, and incident response. While prudent, these physical security measures are reactive &#8212; designed to mitigate the effects of an attack, rather than prevent the incident from occurring in the first place. At TrapWire, we have shown that we can achieve better results, and do so much more cost effectively, by shifting the focus from mitigation to prevention.</p>
+</blockquote>
+
+<p>In short, preventative measures are both more cost-effective and more effective in general. Actually, I think most folks would agree with this. Considered alone, of course we would like to be able to prevent crimes before they occur.</p>
+
+<p>However, if the tradeoff is living in a state of constant surveillance, I believe the cost to be too great.</p>
+
+<p>Furthermore, I believe any actions to create a state of constant, unwarranted surveillance is directly contradictory to the spirit in which our nation was founded, for what it&#8217;s worth:</p>
+
+<blockquote>
+<p>The right of the people to be secure in their persons, houses, papers, and effects, against unreasonable searches and seizures, shall not be violated, and no Warrants shall issue, but upon probable cause, supported by Oath or affirmation, and particularly describing the place to be searched, and the persons or things to be seized.</p>
+</blockquote>
+
+<p>But I&#8217;m not sure that is worth much in general these days.</p>
+
+<p>I hope that quote <a href='http://en.wikipedia.org/wiki/Fourth_Amendment_to_the_United_States_Constitution'>rings familiar</a>, because I fear as time marches on, those words will ring less and less familiar, until they are stamped out completely and disappear into the vague memory of the past.</p>
+
+<p>Already I fear that the powers that be are trying to distract us and prevent us from hearing the TrapWire news and making an informed judgement for ourselves.</p>
+
+<p>Coincidentally, Wikileaks has been under massive DDoS attacks since the beginning of the month, resulting in their site being inaccessible. In all fairness, these attacks started occurring before the latest email leak on August 9, but there is something undeniably fishy about the timing of the attacks.</p>
+
+<p>There is also something very fishy about the group that&#8217;s taken responsibility for the attacks on Wikileaks: a purported new group called AntiLeaks, whose leader released <a href='http://www.twitlonger.com/show/intmnv'>this statement on August 8</a>:</p>
+
+<blockquote>
+<p>You can call me DietPepsi. I am the leader of AntiLeaks. We are not doing this to call attention to ourselves. We are young adults, citizens of the United States of America and are deeply concerned about the recent developments with Julian Assange and his attempt at aslyum in Ecuador.</p>
+
+<p>Assange is the head of a new breed of terrorist. We are doing this as a protest against his attempt to escape justice into Ecuador. This would be a catalyst for many more like him to rise up in his place. We will not stop and they will not stop us.</p>
+</blockquote>
+
+<p>I have the keen ability to spot bad actors while watching movies or TV shows. I also detect some bad acting here, and so do most other folks.</p>
+
+<p>In all, it seems quite Orwellian, and it seems clear that someone doesn&#8217;t want us to find out about their Orwellian plots. Perhaps they would&#8217;ve attracted less attention if they were more forthcoming and transparent? But now people are rightfully curious as ever.</p>
+
+<p>It&#8217;ll be interesting what will become of this, but at this point I&#8217;ve become a bit pessimistic. I think this will pass and be forgotten, along with the Occupy Movement and any other glimpse of true hope and true change that could come to this country.</p>
+
+<p>Perhaps all this is leading me back to the stark realization that it is time to follow in the steps of my ancestors and leave my country in search of a new and better one? In search of a better life?</p>
+<pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'>REXML could not parse this XML/HTML: 
+&lt;div id=&quot;attachment_941&quot; style=&quot;width: 510px&quot; class=&quot;wp-caption aligncenter&quot;&gt;
+  &lt;a href=&quot;https://twitter.com/PhillyRoach/status/234423706389184512&quot;&gt;&lt;img src=&quot;http://davidbcalhoun.com/wp-content/uploads/2012/08/orson.png&quot; alt=&quot;Orson Welles in The Third Man&quot; title=&quot;Orson Welles in The Third Man&quot; width=&quot;500&quot; height=&quot;717&quot; class=&quot;size-full wp-image-941&quot; /&gt;&lt;/a&gt;&lt;p class=&quot;wp-caption-text&quot;&gt;
+    &amp;#8220;Nobody thinks in terms of human beings. Governments don&amp;#8217;t. Why should we? They talk about the people and the proletariat, I talk about the suckers and the mugs &amp;#8211; it&amp;#8217;s the same thing. They have their five-year plans, so have I.&amp;#8221; &lt;p&gt;
+      Harry Lime, played by Orson Welles (from &lt;a href=&quot;http://www.imdb.com/title/tt0041959/&quot;&gt;THE THIRD MAN&lt;/a&gt;)
+    &lt;/p&gt;
+    
+    &lt;p&gt;
+    &lt;/p&gt;&lt;/div&gt;</pre>
+<pre><code>&lt;p&gt;
+  (I&amp;#8217;m fairly certain this tweet was supposed to be referencing George Orwell, the author of 1984. However, I found this quote from THE THIRD MAN appropriate.)
+&lt;/p&gt;</code></pre>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[More fun with WebKit pseudoelements: -webkit-search-cancel-button (or: Pseudoclass Inception)]]></title>
+    <link href="http://davidbcalhoun.com/2012/more-fun-with-webkit-pseudoelements-webkit-search-cancel-button-or-pseudoclass-inception"/>
+    <updated>2012-08-10T00:00:00-07:00</updated>
+    <id>http://davidbcalhoun.com/2012/more-fun-with-webkit-pseudoelements-webkit-search-cancel-button-or-pseudoclass-inception</id>
+    <content type="html"><![CDATA[<h3 id='introduction'>Introduction</h3>
+
+<p>(check out the <strong><a href='http://davidbcalhoun.com/a/webkit-search-cancel-button.html'>Demo</a></strong>)</p>
+
+<p>A while back I had a bit of a field day <a href='http://davidbcalhoun.com/2011/implementing-iphone-slider-unlock-with-input-type-range'>messing around with input type=&#8221;range&#8221;</a>, trying to replicate the &#8220;unlock slider&#8221; on iOS using CSS, targeting special WebKit-only CSS pseudoelements such as webkit-slider-thumb.</p>
+
+<p>Well, now I&#8217;m at it again, this time with a much simpler use case, trying to implement a custom &#8220;clear&#8221; button on search field inputs (note that this only works on input type=&#8221;search&#8221;):</p>
+
+<p><a href='http://davidbcalhoun.com/a/webkit-search-cancel-button.html'><img alt='Custom webkit-search-cancel-button' class='aligncenter size-full wp-image-914' height='145' src='http://davidbcalhoun.com/wp-content/uploads/2012/08/custom-webkit-search-cancel-button.png' title='Custom webkit-search-cancel-button' width='239' /></a></p>
+
+<h3 id='details_about_the_implementation'>Details about the implementation</h3>
+
+<p>It turns out this is relatively easy to do, and is somewhat supported, at least in the latest Chrome and Safari 6. Note that it does work on iOS6, but not on iOS5, but the positioning is slightly different from the other implementations. No idea about Android, so I&#8217;ll leave that for someone else to find out. <img alt=':)' class='wp-smiley' src='http://davidbcalhoun.com/wp-includes/images/smilies/icon_smile.gif' /></p>
+
+<p>So how do we do it? First, we need the special WebKit CSS pseudoselector (</p>
+<div class='codecolorer-container text twitlight' style='overflow:auto;white-space:nowrap;width:435px;'>
+  <table cellpadding='0' cellspacing='0'>
+    <tr>
+      <td class='line-numbers'>
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class='text codecolorer'>
+          -webkit-search-cancel-button
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+<p>), and secondly, we need to use that to wipe out the default WebKit styling (with -webkit-appearance: none;):</p>
+<pre class='css' name='code'>::-webkit-search-cancel-button {   // select all "X" buttons in search inputs
+    -webkit-appearance: none;      // hide the default "X" button
+}
+</pre>
+<p>You would think that the next step might be adding our own custom background-image to this element, but unfortunately it won&#8217;t work that easily (of course).</p>
+
+<p>What we need now is a little bit of trickery, using an</p>
+<div class='codecolorer-container text twitlight' style='overflow:auto;white-space:nowrap;width:435px;'>
+  <table cellpadding='0' cellspacing='0'>
+    <tr>
+      <td class='line-numbers'>
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class='text codecolorer'>
+          :after
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+<p>pseudoclass on the pseduoclass (!?). The result is a bit of &#8220;pseudoclass Inception&#8221;:</p>
+<pre class='css' name='code'>::-webkit-search-cancel-button {   /* select all "X" buttons in search inputs */
+    -webkit-appearance: none;      /* hide the default "X" button */
+}
+
+::-webkit-search-cancel-button:after {  /* generate content after all "X" buttons */
+    content: '';    /* required for :after content to show */
+    display: block;
+
+    /*
+     * Setup dimensions for the custom icon.  Note that these dimensions seem to
+     * affect positioning.
+     */
+    width: 14px;
+    height: 10px;
+    
+    /*
+     * Base64 encoded custom "X" icon
+     * Natively 30x30, but downscaled for highres screens
+     */
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAn0lEQVR42u3UMQrDMBBEUZ9WfQqDmm22EaTyjRMHAlM5K+Y7lb0wnUZPIKHlnutOa+25Z4D++MRBX98MD1V/trSppLKHqj9TTBWKcoUqffbUcbBBEhTjBOV4ja4l4OIAZThEOV6jHO8ARXD+gPPvKMABinGOrnu6gTNUawrcQKNCAQ7QeTxORzle3+sDfjJpPCqhJh7GixZq4rHcc9l5A9qZ+WeBhgEuAAAAAElFTkSuQmCC);
+
+    /* setup all the background tweaks for our custom icon */
+    background-repeat: no-repeat;
+
+    /* icon size */
+    background-size: 10px;
+
+    /* note: this positioning will need to be tweaked for iOS */
+    background-position: top left;
+}
+</pre>
+<p>So it turns out you can still whatever you like in there really, even text content (see the last text input in the <a href='http://davidbcalhoun.com/a/webkit-search-cancel-button.html'>demo</a>). You may even need to tweak the positioning a bit, in which case you can learn from the same example (you will need to set position:relative on the cancel button itself to anchor the position:absolute</p>
+<div class='codecolorer-container text twitlight' style='overflow:auto;white-space:nowrap;width:435px;'>
+  <table cellpadding='0' cellspacing='0'>
+    <tr>
+      <td class='line-numbers'>
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class='text codecolorer'>
+          :after
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+<p>content &#8211; check out the code).</p>
+
+<h3 id='final_notes'>Final notes</h3>
+
+<p>Note that this is just an experiment, not a robust use case that I&#8217;m recommending as a cross-browser solution (obviously, since it&#8217;s WebKit-only).</p>
+
+<p>In the case of wanting to implement something similar cross-browser, I recommend absolutely-positioning a button element over an input element, then adding the appropriate right-padding to the input as necessary, then hooking up the &#8220;clear all text&#8221; behavior with the help of JavaScript.</p>
+
+<h3 id='video'>Video</h3>
+
+<p>Here&#8217;s a video if you&#8217;re not in the mood to read (view in HD so you can read the text!):</p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Initial thoughts on the Retina MacBook Pro (after a few minutes at the store)]]></title>
+    <link href="http://davidbcalhoun.com/2012/initial-thoughts-on-the-retina-macbook-pro-after-a-few-minutes-at-the-store"/>
+    <updated>2012-06-19T00:00:00-07:00</updated>
+    <id>http://davidbcalhoun.com/2012/initial-thoughts-on-the-retina-macbook-pro-after-a-few-minutes-at-the-store</id>
+    <content type="html"><![CDATA[<p>After work today, I stopped by the old bustling Apple Store in Palo Alto. I was there for a bit of a peek at what my next blank check to Apple would bring me.</p>
+
+<p>I was between tables going back and forth between the updated MacBook Pro (non-retina) and the Retina MacBook Pro and came away with some initial impressions. I couldn&#8217;t find these sort of &#8220;impartial&#8221; impressions elsewhere, so I thought I&#8217;d record these impressions for myself.</p>
+
+<h3 id='prima_facie'>Prima facie</h3>
+
+<p>Initial thoughts: the screen seemed to be slightly more crisp, especially the icons in the dock. However, the form factor made more of an impression than the screen: the laptop is significantly lighter than previous models I&#8217;ve used (for the record, I use a late 2008 MBP at home, and have been using newer MacBook Pros for work purposes). I picked up the laptop expecting it to be nearly as heavy as what I&#8217;m used to, and overcompensated when lifting it up. That&#8217;s a good thing.</p>
+
+<p>The lady at the store opened up iPhoto and showed me a few photos. It seemed to be crisper, but nothing like the noticeable difference when I upgraded from an iPhone 3GS to an iPhone 4S. She also opened up the Apple homepage on the Retina display and on a non-Retina, and pointed out a specific piece of text. In this case it was text in a graphic. We had to shuffle back and forth in order to be convinced. In this case we were actually looking at the text on a graphic on the Apple site):</p>
+
+<p><a href='http://images.apple.com/home/images/macbookpro_title.png'><img alt='Non-retina text' class='aligncenter size-full wp-image-905' height='124' src='http://davidbcalhoun.com/wp-content/uploads/2012/06/non-retina.png' title='Non-retina text' width='374' /></a></p>
+
+<p><a href='http://images.apple.com/home/images/macbookpro_title_2x.png'><img alt='Retina text' class='aligncenter size-full wp-image-906' height='248' src='http://davidbcalhoun.com/wp-content/uploads/2012/06/retina.png' title='Retina text' width='748' /></a></p>
+
+<p>Non-retina (top) and Retina (bottom) graphics at native resolution.</p>
+
+<p>(technical note: the Retina version is served via JavaScript &#8211; see <a href='http://blog.cloudfour.com/how-apple-com-will-serve-retina-images-to-new-ipads/'>http://blog.cloudfour.com/how-apple-com-will-serve-retina-images-to-new-ipads/</a>)</p>
+
+<h3 id='good_for_photo_editing'>Good for photo editing?</h3>
+
+<p>The differences in the text and dock icons was easier to see than the difference between photos in iPhoto. As an amateur photographer, I&#8217;m unsure if this makes a difference. When editing photos, instead of zooming my head closer to the screen I end up leaving my head stationary and zooming with controls in the photo editing program I use. The Retina screen makes the experience a bit nicer, but obviously isn&#8217;t a requirement for producing good detailed photos. For photographers, I think there&#8217;s an apt analogy. The Retina screen is kind of like an expensive lens: it definitely help, but it won&#8217;t guarantee good photos, and not all good photos are necessarily taken with good lenses.</p>
+
+<h3 id='application_support_or_lack_thereof'>Application support (or lack thereof)</h3>
+
+<p>One thing that was also evident is that not everything is ready for the Retina screen. Photoshop surprisingly didn&#8217;t support it, even though the saleslady mentioned they had an early look at the Retina MacBook Pro. Surprisingly, not even the Apple Store greeting/icons on the demo mode laptops was ready for the screen (it was visibly pixelated).</p>
+
+<p>The guy next to me predictably loaded up Microsoft Word and complained about it looking ugly (apparently he got the memo and wanted to act surprised). Like other programs, it&#8217;s just a matter of time until they fix it. Whatever, I can deal with that.</p>
+
+<p>I tried to load up YouTube in Safari, but I didn&#8217;t have a good 1080p video to test (for the record, I tried this one, which doesn&#8217;t look too great at 1080p: <a href='http://www.youtube.com/watch?v=pjC72RIDt_A'>http://www.youtube.com/watch?v=pjC72RIDt_A</a>). I&#8217;ll have to try again later.</p>
+
+<h3 id='testing_out_different_viewing_distances'>Testing out different viewing distances</h3>
+
+<p>Lastly, I tried several viewing distance tests. I found that at my normal viewing distance (sorry I don&#8217;t have measurements) I could definitely tell that things were a little sharper, but again, the difference was slight. As I moved back, it didn&#8217;t take long for the difference to be indiscernible compared to the non-Retina screen. Starting again from normal viewing distance, the closer I got, the easier it was to tell that it was a &#8220;Retina&#8221; screen. In my mind, there&#8217;s a logical reason &#8220;Retina&#8221; came first to the iPhone, then the iPad, and now the MacBook Pro, in that order. It simply becomes less discernable at longer viewing distances.</p>
+
+<h3 id='afterthoughts_impact_on_web_development'>Afterthoughts: impact on web development?</h3>
+
+<p>At least on my initial impression, it didn&#8217;t seem that the new Retina screen necessitated too much of a change in websites offering higher-resolution graphics. They can get along just fine not upgrading, but I suppose folks will enjoy high-res graphics when they see it.</p>
+
+<p>It&#8217;s now been a few years after the iPhone 4 was released, and years since high pixel density Android phones have been on the market, and I still still see noticeably blurry graphics on mobile sites. Hopefully at the greater viewing distance afforded by the MacBook Pro, there will be less of a shock at seeing the contrast between sharp text and a blurry photo. Perhaps a laptop is a nice compromise: good enough to enjoy &#8220;Retina&#8221; graphics where supported, but not too distracting when graphics aren&#8217;t optimized for the high pixel density.</p>
+
+<h3 id='tldr_too_long_didnt_read'>TLDR (Too long, didn&#8217;t read)</h3>
+
+<p>TLDR/Conclusion: the light form factor was more of a sell for me than the Retina screen. Though the Retina screen is nice, it&#8217;s hard to justify the purchase on that alone. However, the purchase becomes justified when coupled with a nice processor bump and nice form factor. Since I&#8217;ve been waiting to upgrade for a while, it&#8217;s only a matter of time before I get one. But as I don&#8217;t NEED one yet, I&#8217;ll wait until prices drop a bit (as they always do).</p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[I think I&#8217;m learning Japanese: JLPT vocabulary words 1 to 50 (audio)]]></title>
+    <link href="http://davidbcalhoun.com/2012/i-think-im-learning-japanese-jlpt-vocabulary-words-1-to-50-audio"/>
+    <updated>2012-05-28T00:00:00-07:00</updated>
+    <id>http://davidbcalhoun.com/2012/i-think-im-learning-japanese-jlpt-vocabulary-words-1-to-50-audio</id>
+    <content type="html"><![CDATA[<p>I have been learning bits and pieces of Japanese throughout the years, and picking up more and more on each of my trips to Japan. But now it&#8217;s time to buckle down and get disciplined about learning, and make some real progress.</p>
+
+<p>As with learning any language, having a decent vocabulary is critical in order to form coherent sentences, so I&#8217;ve decided to focus on this for the time being, in addition to learning hiragana and katakana and getting it down pat, with no errors.</p>
+
+<p>You may already be familiar with the JLPT, the Japanese Language Proficiency Test, which has difficulty ranges between 1-5, with 1 being the most difficult. So let&#8217;s start together at JLPT 5. <img alt=':)' class='wp-smiley' src='http://davidbcalhoun.com/wp-includes/images/smilies/icon_smile.gif' /></p>
+
+<p>Thanks to <a href='http://www.japanmoji.com/2010/07/vocabulary-list.html'>this site</a>, I&#8217;ve use the following first 50 vocabulary words and <a href='http://davidbcalhoun.com/b/jlpt5-vocabulary-1-50.mp3'>recorded myself</a> going through them so I can commit these to memory (many I already know, which is a good thing I suppose!). Of course I will be speaking only to the best of my ability, so the pronunciation of many words will likely be off in some way or another. In any case, it should be useful to listen to on repeat to get these drilled into my head! I&#8217;ve uploaded my recording for your convenience, but note again that the pronunciation isn&#8217;t perfect, and this is a free service, so don&#8217;t complain. <img alt=':P' class='wp-smiley' src='http://davidbcalhoun.com/wp-includes/images/smilies/icon_razz.gif' /></p>
+
+<p><a href='http://davidbcalhoun.com/b/jlpt5-vocabulary-1-50.mp3'>Audio (MP3): JLPT 5 vocabulary words 1 to 50</a></p>
+
+<ol>
+<li>ああ &#8211; Ah!</li>
+
+<li>あいます (会います, aimasu) &#8211; see (a person), meet</li>
+
+<li>あおい (aoi) &#8211; blue</li>
+
+<li>あかい (赤い, akai), &#8211; red</li>
+
+<li>あかるい (akarui) &#8211; light, bright</li>
+
+<li>あき (aki) &#8211; autumn, fall</li>
+
+<li>あきます (akimasu) &#8211; open <span>ex. doa ga akimasu</span></li>
+
+<li>あけます (akemasu) &#8211; open <span>ex. watashi wa doa wo akemasu</span></li>
+
+<li>あげます (agemasu) &#8211; give</li>
+
+<li>あさ (朝, asa) &#8211; morning</li>
+
+<li>あさごはん (朝ごはん,asa-gohan) &#8211; breakfast</li>
+
+<li>あさって (asatte) &#8211; the day after tomorrow</li>
+
+<li>あし (足, ashi) &#8211; leg, foot</li>
+
+<li>あした (ashita) &#8211; tomorrow</li>
+
+<li>あそこ (asoko) &#8211; over there</li>
+
+<li>あそびます (asobimasu) &#8211; play</li>
+
+<li>あたたかい (atatakai) &#8211; warm</li>
+
+<li>あたま (atama) &#8211; head</li>
+
+<li>あたらしい (atarashii) &#8211; new, fresh</li>
+
+<li>あちら (achira) &#8211; over there</li>
+
+<li>あつい (atsui) &#8211; hot, thick</li>
+
+<li>あと (後,ato) &#8211; after, later</li>
+
+<li>あなた (anata) &#8211; you</li>
+
+<li>あに (ani) &#8211; <span>my</span> brother</li>
+
+<li>あね (ane) &#8211; <span>my</span> sister</li>
+
+<li>あの (ano) &#8211; that, well, let me see</li>
+
+<li>アパート (apa-to) &#8211; apartment</li>
+
+<li>あびます (abimasu) &#8211; take <span>a shower</span></li>
+
+<li>あぶない (abunai) &#8211; dangerous</li>
+
+<li>あまい (amai) &#8211; sweet</li>
+
+<li>あまり (amari) &#8211; not so..</li>
+
+<li>あめ (雨,ame) &#8211; rain</li>
+
+<li>あらいます (araimasu) &#8211; wash</li>
+
+<li>あります (arimasu) &#8211; be <span>existence</span></li>
+
+<li>あるきます (歩きます,arukimasu) &#8211; walk</li>
+
+<li>あれ (are) &#8211; that</li>
+
+<li>いい/よい (ii/ yoi) &#8211; good</li>
+
+<li>いいえ (iie) &#8211; no</li>
+
+<li>いいます (言います,iimasu) &#8211; say, tell</li>
+
+<li>いえ (家,ie) &#8211; house, home</li>
+
+<li>いきます (行きます, ikimasu) &#8211; go</li>
+
+<li>いくつ (ikutsu) &#8211; how many, how old</li>
+
+<li>いくら (ikura) &#8211; how much</li>
+
+<li>いけ (ike) &#8211; pond</li>
+
+<li>いしゃ (isha) &#8211; doctor</li>
+
+<li>いす (isu) &#8211; chair</li>
+
+<li>いそがしい (isogashii) &#8211; busy</li>
+
+<li>いたい (itai) &#8211; be painful</li>
+
+<li>いち (一, ichi) &#8211; one</li>
+
+<li>いちにち (一日,ichi nichi) &#8211; one day</li>
+</ol>
+
+<p>If you&#8217;re feeling especially motivated, go ahead and study <a href='http://www.japanmoji.com/2010/07/vocabulary-list-51-to-100.html'>words 50 to 100</a> and <a href='http://www.japanmoji.com/2010/11/vocabulary-list-101-to-150.html'>words 101 to 150</a>. I&#8217;ll record those soon of course, so stay tuned.</p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Response to &#8220;What’s next for mobile now that adaptive design has failed?&#8221;]]></title>
+    <link href="http://davidbcalhoun.com/2012/response-to-whats-next-for-mobile-now-that-adaptive-design-has-failed"/>
+    <updated>2012-05-23T00:00:00-07:00</updated>
+    <id>http://davidbcalhoun.com/2012/response-to-whats-next-for-mobile-now-that-adaptive-design-has-failed</id>
+    <content type="html"><![CDATA[<p>There&#8217;s been a flurry of response to <a href='http://venturebeat.com/2012/05/22/adaptive-design-has-failed/'>this article, entitled &#8220;What’s next for mobile now that adaptive design has failed?&#8221;</a>.</p>
+
+<p>There&#8217;s many problems with this article, so it&#8217;s hard to know where to start.</p>
+
+<p>I will admit that defenders of responsive design have come out of the woodwork in trashing this article, but I suppose I count myself among them, being a proponent of responsive design. I still see the web heading that direction, and I definitely don&#8217;t see it heading in the direction the author of the article has described.</p>
+
+<h3 id='adaptive__responsive'>Adaptive != Responsive</h3>
+
+<p>Like others have said, adaptive isn&#8217;t the same as responsive. I hate that both have become buzzwords to be thrown around by execs, but they should at least be used appropriately. (see <a href='http://www.linkedin.com/answers/technology/web-development/TCH_WDD/961492-23942997'>this page</a> for a good discussion of the differences). This article conflates the two.</p>
+
+<p>I&#8217;ll assume for the purpose of this argument that we&#8217;re referring to responsive design.</p>
+
+<h3 id='unproven_assumption_responsive_design_has_failed'>Unproven assumption: responsive design has failed</h3>
+
+<p>There&#8217;s an assumption that responsive design has failed, but no argument for it, which means by the end of the article it remains an assumption. I&#8217;ll assume its purpose was solely as an attention-seeking headline. Not much more to be said there, so let&#8217;s pass over it.</p>
+
+<h3 id='tablets__magazines_vertical_scroll__bad_pagination__good'>Tablets = Magazines?, Vertical Scroll = Bad?, Pagination = Good?</h3>
+
+<p>There&#8217;s an assumption that users equate tablets to magazines, and therefore expect to swipe through pages. I believe there&#8217;s some sort of interaction or deal the author has with Pressly (which he mentions and has retweeted on Twitter), so I can understand why they&#8217;d be pushing their agenda and usage model, which is very much of the &#8220;iPad-magazine-page-flip&#8221; sort.</p>
+
+<p>But there&#8217;s a reason pagination is still an optional feature not turned on by default in apps such as Instapaper: it&#8217;s because users are very familiar and comfortable with vertical scrolling of content on the web, and possibly in some cases more comfortable than a page-based format. They are as comfortable with vertical scrolling as the author would say they are with turning the pages of a magazine.</p>
+
+<p>I&#8217;m the age where I&#8217;ve seen the decline of newspapers and magazines and am actually more comfortable with a vertical-scrolling interface as opposed to a page-flipping interface as older folks might be used to in magazines.</p>
+
+<p>Just because the interaction model worked for an older medium doesn&#8217;t mean it&#8217;ll work or is even the best for new mediums. If that were true, we&#8217;d still have rotary dial inputs on our touchscreen phones, simply because some phone exec insisted that users were more familiar and comfortable with the rotary dial interaction model.</p>
+
+<h3 id='users_love_those_fullscreen_ads'>Users Love Those Full-Screen Ads</h3>
+
+<p>Users do NOT like full-screen ads. To think otherwise can be very rightly said to be a delusion of grandeur. Go to the app store, look at the iPad CNET app reviews, and tell me that users are thrilled about seeing a full-screen ad pop over their content when they open the app. Quite the opposite, that turns out to be the main complaint by a long shot, or at least it was for a long while after the app was released. I know. I was there to see it happen, and to see a blind eye turned toward the problem.</p>
+
+<h3 id='successful_advertising__successful_user_experience'>Successful advertising != Successful User Experience</h3>
+
+<p>Advertising isn&#8217;t a gauge of user experience. This is the hubris and the downfall of CBS and anyone who believes otherwise. More ad revenue means more aggressive ads, more fullscreen ads, and more ways to trick the user into clicking ads. This is the opposite of a good user experience. The real user base isn&#8217;t there to click on ads &#8211; they&#8217;re there to read content, and everything else is a distraction. This is the catch-22 of this model, and those that don&#8217;t see that will never know they need to toe the line and maintain a delicate balance. Worst of all, those who completely miss the point will mistake successful advertising with a successful user experience (which here is as easily conflated as adaptive and responsive design have been).</p>
+
+<p>Sometimes companies don&#8217;t realize there&#8217;s a point of no return when ads (which are necessary in some minimal form) become too distracting and actually make it more difficult to get to content, resulting in users abandoning the site in the long term, or taking measures to churn the site through AdBlock or Instapaper or other measures that preserve the content, while discarding the distracting bits (usually ads and other tricks to get the user to stay on the site longer by showing &#8220;related content&#8221;, which is ultimately a way to trick the user into staying to view more ads).</p>]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Why is Philosophy still important?]]></title>
+    <link href="http://davidbcalhoun.com/2012/why-is-philosophy-still-important"/>
+    <updated>2012-05-06T00:00:00-07:00</updated>
+    <id>http://davidbcalhoun.com/2012/why-is-philosophy-still-important</id>
+    <content type="html"><![CDATA[<p>This was posted on <a href='http://www.reddit.com/r/philosophy/comments/sw0t2/why_is_philosophy_still_important/'>reddit</a> recently, so I thought I&#8217;d copy my response here.</p>
+
+<p>First, just a quick introduction! There&#8217;s been a lot of thought recently that philosophy is useless. The main arguments seem to be that</p>
+
+<ol>
+<li>science has replaced any need for philosophy</li>
+
+<li>philosophy is a useless subject to study in college</li>
+</ol>
+
+<p>For the latter argument, I recently recorded my thoughts, <a href='http://davidbcalhoun.com/b/2012-03-17-the-value-of-a-philosophy-degree.mp3'>and you can hear them here</a>. For the first argument, read on&#8230;</p>
+
+<p>In short: science helps us live longer, whereas philosophy helps us live better.</p>
+
+<p>It&#8217;s true that there&#8217;s a lot of philosophy that is very academic and not so useful, but at its core, philosophy is a striving towards figuring out what is true and worthwhile, and what it means to live a meaningful and worthwhile life. That&#8217;s something off-limits for science, because science can tell us how things are empirically, but it can&#8217;t prescribe how we should then live.</p>
+
+<p>It so happens that we already believe many things to be true and have many attitudes and dispositions towards things, whether we realize it or not. That&#8217;s what you might call a person&#8217;s personal philosophy. A person may hate philosophy, but it would be true to say that their &#8220;anti-philosophy&#8221; is a type of philosophy. In short, we all have a philosophy already. Shouldn&#8217;t we then examine it logically and try to improve it, and make sure it gets closer to the truth?</p>
+
+<p>It also happens that our world is saturated with manipulation of people&#8217;s philosophies. Advertisements and an envy of other&#8217;s belongings has saturated our consumer culture and has turned into a sort of philosophy of its own, and sadly a way of life. There&#8217;s also much manipulation of attitudes and thought in politics, which is how politics have turned into a game of image and often times broad, false promises. Money and a lust for fame have also corrupted the sciences to some degree, and have turned it into a bit of a game to get research funding from large corporations, so nothing in the world is off-limits it seems.</p>
+
+<p>Philosophy gives us the tools to recognize these things for what they are, and gives us some defenses against them that the common person might not have. (incidentally, I recommend reading On Bullshit for more of a taste of how our world is saturated in BS)</p>
+
+<p>I believe there&#8217;s a few big reasons philosophy is downplayed and ridiculed in our culture today. The main reason is that there&#8217;s no real way to make it profitable, unlike the sciences. If we&#8217;re living in a consumer culture that assigns some value to things based on money, then naturally we will value less the things which aren&#8217;t profitable. When it comes down to it, we really are living in a culture that values more the computer science graduate who goes to join a company such as Zynga to produce banal (borrowing a favorite word from David Foster Wallace) ripoff games. We value this person more than someone who stays in academia to pursue truth and knowledge, and we ridicule them for not coming out into the real world, working a real job, and making a ton of money, which is after all the highest end according to to our current thinking (which is in itself a philosophy).</p>
+
+<p>I have more to say about all this, but I&#8217;ll keep this short. <img alt=':)' class='wp-smiley' src='http://davidbcalhoun.com/wp-includes/images/smilies/icon_smile.gif' /></p>
+
+<p>(For a bit of perspective, I&#8217;m saying this as someone who makes way more money than I need working for big corporations doing web dev work, but is looking to go back and study more philosophy in school eventually.)</p>]]></content>
+  </entry>
+  
+</feed>

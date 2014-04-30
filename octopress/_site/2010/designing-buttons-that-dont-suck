@@ -1,0 +1,57 @@
+<p>But you probably don&#8217;t want to make everything into a button. After all, there&#8217;s still a place for good old fashioned anchor tags. So what do you make into a button? Simple: areas of your website that get frequent usage. For instance, <a href='http://mobile.twitter.com'>mobile.twitter.com</a> has buttons for Search, Refresh results, and More (display more tweets), but leaves other things as anchors/hyperlinks, such as usernames and links in tweets. Basically, use common sense. You should have a mixture of both buttons and hyperlinks.</p>
+
+<p>There&#8217;s a distinction to be made between form input buttons and other things that look like buttons. The former occurs within a Form tag and can be used to submit a form of data when clicked (and you can <a href='http://girliemac.com/blog/2010/02/04/css3-box-shadow-with-inset-values-the-aqua-button-rerevisited/'>style it up all you want</a>!). The latter is simply an Anchor tag disguised as a big clickable button, which is the focus of this article.</p>
+
+<p>A button can be a very useful thing, and can make the user experience much much better. Yet it&#8217;s surprisingly easy to fail to create a proper button.</p>
+
+<h3 id='how_to_fail_at_creating_a_button'>How to fail at creating a button</h3>
+
+<p>See if you can tell the difference between these two buttons:</p>
+<pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'>REXML could not parse this XML/HTML: 
+&lt;div class=&quot;button-container&quot;&gt;
+  &lt;div class=&quot;incorrect button&quot;&gt;
+    &lt;a href=&quot;#&quot;&gt;More&lt;/a&gt;
+  &lt;/div&gt;
+  
+  &lt;p&gt;
+    &lt;a href=&quot;#&quot; class=&quot;correct button&quot;&gt;More&lt;/a&gt; &lt;/div&gt;</pre>
+<pre><code>  If the difference isn&amp;#8217;t immediately apparent, try mousing over the following buttons:
+&lt;/p&gt;
+
+&lt;div class=&quot;button-container hovers&quot;&gt;
+  &lt;div class=&quot;incorrect button&quot;&gt;
+    &lt;a href=&quot;#&quot;&gt;More&lt;/a&gt;
+  &lt;/div&gt;
+  
+  &lt;p&gt;
+    &lt;a href=&quot;#&quot; class=&quot;correct button&quot;&gt;More&lt;/a&gt; &lt;/div&gt; &lt;p&gt;
+      What&amp;#8217;s the problem? The button on the top is only clickable when hovering over the text. In other words, it looks like a button but it acts just like a regular hyperlink. This is a common problem that I&amp;#8217;ve seen a LOT, and I&amp;#8217;ve even seen it on major websites (in fact, the faulty button is inspired by the live code on &lt;a href=&quot;http://mobile.twitter.com&quot;&gt;mobile.twitter.com&lt;/a&gt;).
+    &lt;/p&gt;
+    
+    &lt;h3&gt;
+      How does this happen?
+    &lt;/h3&gt;
+    
+    &lt;p&gt;
+      My theory is that when a design is passed down to a developer, the developer may think their job ends when their code produces output that looks like the original design documents. But they fail to take into consideration the actual usability of the website.
+    &lt;/p&gt;
+    
+    &lt;p&gt;
+      This is a simple mistake, but it definitely causes frustration when I find it on websites. And I find myself even more annoyed when I see this while browsing websites with my iPhone. It basically tells me that the developers don&amp;#8217;t use their own website. That&amp;#8217;s not a good impression to leave with your visitors.
+    &lt;/p&gt;
+    
+    &lt;h3&gt;
+      Summary
+    &lt;/h3&gt;
+    
+    &lt;p&gt;
+      In summary, buttons are an important part of your mobile website. They are designed to be easy to activate, so make sure that frequently used functions on your website are buttons. Also, don&amp;#8217;t be lazy: TEST your code for usability and don&amp;#8217;t assume that the product is done when it looks identical to the design specs.
+    &lt;/p&gt;
+    
+    &lt;h3&gt;
+      More from the Mobile Web series:
+    &lt;/h3&gt;
+    
+    &lt;p&gt;
+      &lt;a href=&quot;http://davidbcalhoun.com/2010/viewport-metatag&quot;&gt;Part 1: The viewport metatag&lt;/a&gt;&lt;br /&gt; &lt;a href=&quot;http://davidbcalhoun.com/2010/the-mobile-developers-toolkit-mobile-web-part-2&quot;&gt;Part 2: The mobile developer’s toolkit&lt;/a&gt;&lt;br /&gt; &lt;a href=&quot;http://davidbcalhoun.com/2010/designing-buttons-that-dont-suck&quot;&gt;Part 3: Designing buttons that don’t suck&lt;/a&gt;&lt;br /&gt; &lt;a href=&quot;http://davidbcalhoun.com/2010/on-designing-a-mobile-webpage&quot;&gt;Part 4: On designing a mobile webpage&lt;/a&gt;&lt;br /&gt; &lt;a href=&quot;http://davidbcalhoun.com/2010/using-mobile-specific-html-css-javascript&quot;&gt;Part 5: Using mobile-specific HTML, CSS, and JavaScript&lt;/a&gt;&lt;br /&gt; &lt;a href=&quot;http://davidbcalhoun.com/2010/dealing-with-device-orientation&quot;&gt;Part 6: Dealing with device orientation&lt;/a&gt;&lt;br /&gt; &lt;a href=&quot;http://davidbcalhoun.com/2010/mobile-javascript-libraries-and-frameworks&quot;&gt;Part 7: Mobile JavaScript libraries and frameworks&lt;/a&gt;
+    &lt;/p&gt;</code></pre>

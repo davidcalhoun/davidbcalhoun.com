@@ -1,0 +1,898 @@
+
+<!DOCTYPE HTML>
+<html lang="en-GB">
+<head>
+	<meta charset="utf-8">
+	<title>  | David Calhoun's blog</title>
+
+	<meta name="author" content="David Calhoun">
+
+<meta name="description" content="You’re probably used to typical variables names such as the following: var personName = 'Joe'; You may not realize it, but there are some non- &hellip;"> <meta name="keywords" content="">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="David Calhoun's blog" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="/javascripts/html5.js"></script><![endif]-->
+	
+
+</head>
+
+
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">David Calhoun's blog</a></h1>
+<span class="tagline"></span>
+<!-- <nav id="main-nav"><ul>
+	<li><a href="/about">About</a></li>
+	<li><a href="/archives">Archives</a></li>
+	<li><a href="/contact">Contact</a></li>
+</ul>
+</nav> -->
+<!-- <nav id="mobile-nav"> -->
+<!-- 	<div class="alignleft menu"> -->
+<!-- 		<a class="button">Menu</a> -->
+<!-- 		<div class="container"><ul>
+	<li><a href="/about">About</a></li>
+	<li><a href="/archives">Archives</a></li>
+	<li><a href="/contact">Contact</a></li>
+</ul>
+</div> -->
+<!-- 	</div> -->
+<!-- </nav> -->
+
+
+</header>
+
+	<div id="content" class="inner">
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/2009/javascript-tidbit-special-variables-_-etc">
+			
+				JavaScript Tidbit: Special Variables ($, $$, _, Etc)</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-12-08T00:00:00-08:00" pubdate data-updated="true">Dec 8<span>th</span>, 2009</time></div>
+	</header>
+	<div class="entry-content">
+		<p>You’re probably used to typical variables names such as the following:</p>
+
+<pre name="code" class="JScript">var personName = 'Joe';</pre>
+
+<p>You may not realize it, but there are some non-alphanumeric variables at your disposal.</p>
+
+<h3 id="using-">Using $</h3>
+
+<p>For instance, the $ variable has been made popular by several JavaScript libraries, most notably <a href="http://jquery.com/">jQuery</a>. You can use it to alias operations that are commonly performed, such as the following (1):</p>
+
+<pre name="code" class="JScript">var $ = document.getElementById;
+var myElement = $('targetElement');</pre>
+
+<p>If you declare this variable outside of a function it will be a global variable and will compete with libraries that use the same global variable, so it’s probably best not to use it.</p>
+
+<p>Interestingly, originally the dollar sign $ was originally intended for “mechanically generated code” (2), but as the usage of the symbol has become popular for other purposes, it looks like <a href="http://www.ecma-international.org/publications/standards/Ecma-262.htm">the latest version of JavaScript (ECMAScript 5th edition) now officially “oks” its use</a>:</p>
+
+<blockquote>
+  <p>This standard specifies specific character additions: The dollar sign ($) and the underscore (_) are permitted anywhere in an IdentifierName.</p>
+</blockquote>
+
+<h3 id="using--1">Using $$</h3>
+
+<p>Some have come up with the solution of simply using two or more $$ symbols in order to distinguish the variable from libraries that just use a single $:</p>
+
+<pre name="code" class="JScript">var $$ = document.getElementById;
+var myElement = $$('targetElement');</pre>
+
+<h3 id="using--2">Using _</h3>
+
+<p>You will find that you can use the underscore _ in the same way to alias variables and functions:</p>
+
+<pre name="code" class="JScript">var _ = document.getElementById;
+var myElement = _('targetElement');</pre>
+
+<h3 id="other-symbols">Other symbols</h3>
+
+<p>If you’re really getting adventurous, you can even try using other symbols such as square root √, which seems to work just fine, just as $ and _ above. The only problem: it’s quite inconvenient using it, since it’s not available on any keyboards (except through some crazy key combinations perhaps).</p>
+
+<p>Or you can put the symbol to use doing what you would naturally think it should do…</p>
+
+<pre name="code" class="JScript">var √ = Math.sqrt;
+alert(√(4));   // 2</pre>
+
+<h3 id="references">References</h3>
+
+<p>(1) <a href="http://www.amazon.com/Even-Faster-Web-Sites-Performance/dp/0596522304">Even Faster Web Sites</a>, p. 128<br />
+(2) <a href="http://stackoverflow.com/questions/205853/why-would-a-javascript-variable-start-with-a-dollar-sign">Stackoverflow: Why would a javascript variable start with a dollar sign?</a></p>
+
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/2009/passing-data-to-functions-in-javascript">
+			
+				Ways of Passing Data to Functions in JavaScript</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-12-04T00:00:00-08:00" pubdate data-updated="true">Dec 4<span>th</span>, 2009</time></div>
+	</header>
+	<div class="entry-content">
+		<p>Passing data is quite important in functional programming languages like JavaScript. When there are multiple functions (which is most of the time), there needs to be a way to pass data between the functions. This is done by passing values in parenthesis: myFunction(myData). Even when there is no data to be passed, we still have to declare and execute functions by using parenthesis: myFunction().</p>
+
+<h3 id="simple-passing">Simple Passing</h3>
+
+<p>I’ve already referred to the common method of passing data. Here’s an example of the code in action:</p>
+
+<pre name="code" class="JScript">function greeting (name) {
+    alert('Hello ' + name);
+}
+var personsName = 'Joe';
+greeting(personsName);  // Hello Joe</pre>
+
+<p>This example only passes one variable to the function. Note that we can get rid of the variable personsName and make the string on the fly. So the code above is equivalent to this:</p>
+
+<pre name="code" class="JScript">function greeting (name) {
+    alert('Hello ' + name);
+}
+greeting('Joe');  // Hello Joe</pre>
+
+<p>Ok. Now let’s suppose we have a function that accepts two variables:</p>
+
+<pre name="code" class="JScript">function greeting (firstName, lastName) {
+    alert('Hello ' + firstName + ' ' + lastName);
+}
+greeting('Joe', 'Schmoe');  // Hello Joe Schmoe</pre>
+
+<p>This doesn’t look too hard. But there’s a catch – the person writing the code has to remember the order of variables to pass in. Suppose they call the function like this:</p>
+
+<pre name="code" class="JScript">function greeting (firstName, lastName) {
+    alert('Hello ' + firstName + ' ' + lastName);
+}
+greeting('Schmoe', 'Joe');  // Hello Schmoe Joe</pre>
+
+<p>That’s no good! This isn’t the result we want. In the case of firstName and lastName the variable order isn’t too hard to remember, but in other cases the variables aren’t in any logical order, which can cause confusion.</p>
+
+<h3 id="no-constructor-overloading">No constructor overloading</h3>
+
+<p>Unlike other languages such as C++ and Java, JavaScript has no <a href="http://en.wikipedia.org/wiki/Method_overloading">constructor overloading</a>. In fact, JavaScript is (for better or worse) not even strict about enforcing the number of variables passed in. For example, the following code works fine and throws no errors, even though we’re not passing in a variable in the function call:</p>
+
+<pre name="code" class="JScript">function test (someVar) {
+    // do stuff
+};
+test();  // no errors!</pre>
+
+<p>It’s only when you try to use someVar within the function that causes the problems. Otherwise, everything’s working just fine and dandy.</p>
+
+<p>What happens if we try the other case scenario: pass in more variables than the function expects? No errors again:</p>
+
+<pre name="code" class="JScript">function test () {
+    // do stuff
+};
+test('testing 123');  // again, no errors</pre>
+
+<p>And what happens if we try to declare a function with the same name? No errors, but the previous function is overwritten (this is generally to be avoided of course):</p>
+
+<pre name="code" class="JScript">function test () {
+    alert('First function');
+};
+function test () {
+    alert('Second function');
+};
+test();  // Second function</pre>
+
+<p>Because JavaScript has no function overloading, all it takes to overwrite another function is to redeclare a function with the same name. It doesn’t matter what sort of arguments they accept.</p>
+
+<h3 id="passing-with-the-help-of-the-arguments-object">Passing with the help of the arguments object</h3>
+
+<p>As it turns out, JavaScript has a handy arguments object to access the arguments passed into each function:</p>
+
+<pre name="code" class="JScript">function test () {
+    alert(arguments[0]);    // testing 123
+};
+test('testing 123');</pre>
+
+<p>In the above case the arguments object acts just as an array – it’s 0-indexed and can be used to access any arbitrary number of arguments. But arguments also has an interesting and useful property: length. Using arguments.length, we can traverse the array of arguments. This is handy in cases where we might want to add an arbitrary number of elements together:</p>
+
+<pre name="code" class="JScript">function add () {
+    var sumTotal = 0;                        // initialize total to 0
+
+    for(var i=0; i&lt;arguments.length; i++) {  // for each argument
+        sumTotal += arguments[i];            // add current argument to total
+    }
+    
+    alert(sumTotal);
+};
+add(2, 3, 4);  // 9
+add(1, 1, 1, 1, 1, 1, 1, 1, 1);  // 9
+</pre>
+
+<h3 id="passing-an-object">Passing an object</h3>
+
+<p>JavaScript libraries such as <a href="http://developer.yahoo.com/yui/">YUI</a> have already learned that the variable order is a common nuisance and an opportunity to introduce errors, so they’ve come up with a solution: pass a single object to the function. It ends up looking something like this:</p>
+
+<pre name="code" class="JScript">function greeting (obj) {
+    alert('Hello ' + obj.first + ' ' + obj.last);
+}
+var nameObject = {};
+nameObject.first = 'Joe';
+nameObject.last = 'Schmoe';
+greeting(nameObject);  // Hello Joe Schmoe</pre>
+
+<p>Now the variables become properties of a single object which is passed into the function. And it doesn’t matter which order the properties are declared in, which is a great relief to the developer.</p>
+
+<p>Note that we can simplify the above code:</p>
+
+<pre name="code" class="JScript">function greeting (obj) {
+    alert('Hello ' + obj.first + ' ' + obj.last);
+}
+var nameObject = {
+    first: 'Joe',
+    last: 'Schmoe'
+};
+greeting(nameObject);  // Hello Joe Schmoe</pre>
+
+<p>And we can simplify even further:</p>
+
+<pre name="code" class="JScript">function greeting (obj) {
+    alert('Hello ' + obj.first + ' ' + obj.last);
+}
+greeting({
+    first: 'Joe',
+    last: 'Schmoe'
+});  // Hello Joe Schmoe</pre>
+
+<p>This is the form commonly used in these JavaScript libraries. It’s easy to copy-and-paste example code, but it might not always be so obvious what’s going on behind the scenes. You can see that just as we bypassed declaring a named variable in the Simple Passing model (with greeting(”)), here we use the same shortcut and bypass declaring a named object (with greeting({})).</p>
+
+<h3 id="call-and-apply">call() and apply()</h3>
+
+<p>These two methods have different techniques for passing data to functions, but I’m going to have to hold off on them for now. It’s a bit complicated, since they’re only used to execute methods (functions) in other object contexts. But seeing as I need to explain object context to get into that, I’ll save that for a future entry!</p>
+
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/2009/php-dealing-with-stuff-that-doesnt-exist">
+			
+				PHP: Dealing With Stuff That Doesn&#8217;t Exist</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-12-01T00:00:00-08:00" pubdate data-updated="true">Dec 1<span>st</span>, 2009</time></div>
+	</header>
+	<div class="entry-content">
+		<h3 id="introduction">Introduction</h3>
+
+<p>As the application you’re coding becomes more and more complex, there’s more of an opportunity for things to go wrong in all sorts of unforseen ways.  One of these problems is variables or functions that don’t exist.  The problem is when you code in such a way that you presuppose their existence. But their existence isn’t guaranteed!</p>
+
+<p>A simple case of this happening is when you’re dealing with user input.  As it turns out, the user didn’t fill out a text field, but the variable for that text field still gets passed around as if it did exist.  More specifically, the variable gets set, but it gets set to an empty string (”).</p>
+
+<h3 id="check-that-the-variable-isn8217t-empty">Check that the variable isn’t empty</h3>
+
+<p>A common way of dealing with this is to check that the variable isn’t empty before using it:</p>
+
+<pre name="code" class="PHP">$name = 'Joe';
+if($name != '') {
+	echo 'Hello ' . $name;
+}</pre>
+
+<p>This turns out to be ALMOST equivalent to the following, which uses <a href="http://www.php.net/manual/en/function.empty.php">empty()</a>:</p>
+
+<pre name="code" class="PHP">$name = 'Joe';
+if(!empty($name)) {  // make sure $name isn't empty
+    echo 'Hello ' . $name;
+}
+</pre>
+
+<p>However, as <a href="http://www.zachstronaut.com/posts/2009/02/09/careful-with-php-empty.html">Zachary Johnson</a> points out, empty($variable) evaluates to true when $variable=’0′, so you may want to avoid using this.</p>
+
+<h3 id="check-that-the-variable-is-defined">Check that the variable is defined</h3>
+
+<p>There’s another case we haven’t tried yet: what happens if we haven’t defined the variable?</p>
+
+<pre name="code" class="PHP">error_reporting(E_ALL);
+if($name != '') {
+	echo 'Hello' . $name;
+}</pre>
+
+<p>Nothing catastrophic happens, but if we turn on error reporting, we can see that PHP is a bit upset. We get a notice that the variable $name is undefined, yet we’re trying to evaluate it. The value hasn’t been set yet. And there’s a function to check for that:</p>
+
+<pre name="code" class="PHP">$name = 'Joe';
+if(isset($name)) {
+	echo 'Variable is set';
+}</pre>
+
+<p>We can combine what we’ve learned into the following:</p>
+
+<pre name="code" class="PHP">$name = 'Joe';
+if(isset($name) &#038;&#038; $name != '') {
+	echo 'Hello ' . $name;
+}</pre>
+
+<p>There’s one neat thing here – if $name isn’t set, it evaluates the first part of the If condition as false (isset($name)) and doesn’t even look at the second part of the If condition ($name != ”). This is because it doesn’t matter what comes after, it will still evaluate to false (false &#038;&#038; true evaluates to false, and false &#038;&#038; false evaluates to false). Looking at the rest of the If condition is a waste of CPU cycles, so PHP doesn’t do it!</p>
+
+<p>We can confirm this with the following code, which evaluates to false on the first If condition, then doesn’t even try to evaluate the call to a nonexisting function, and thus gives no errors:</p>
+
+<pre name="code" class="PHP">if(false &#038;&#038; function_that_doesnt_exist()) {
+	// do stuff here
+}</pre>
+
+<h3 id="check-if-a-function-exists">Check if a function exists</h3>
+
+<p>For functions there’s a similar helper called <a href="http://us3.php.net/manual/en/function.function-exists.php">function_exists()</a>:</p>
+
+<pre name="code" class="PHP">function my_function() { }
+if(function_exists('my_function')) {
+	my_function();
+}</pre>
+
+<p>And it doesn’t matter if your function is declared before or after you call it! Check it out – this works fine:</p>
+
+<pre name="code" class="PHP">if(function_exists('my_function')) {
+	my_function();
+}
+function my_function() { }</pre>
+
+<h3 id="check-if-an-object8217s-method-exists">Check if an object’s method exists</h3>
+
+<p>Similarly to checking if functions exist, we can check for the existence of functions belonging to an object (we call these the object’s methods) with <a href="http://php.net/manual/en/function.method-exists.php">method_exists()</a>:</p>
+
+<pre name="code" class="PHP">// Create a test class
+class myClass {
+	// Create a test function
+	public function my_function() {}
+}
+
+// Instantiate the class
+$myObject = new myClass();
+
+// Check to see if the test function exists
+if(method_exists($myObject, 'my_function')) {
+	// Do stuff here
+}</pre>
+
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/2009/another-iemobile-bug-classes-and-id-not-supported-on-the-html-element">
+			
+				IEMobile 6/7 Bug: Classes and Id Not Supported on the HTML Element</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-12-01T00:00:00-08:00" pubdate data-updated="true">Dec 1<span>st</span>, 2009</time></div>
+	</header>
+	<div class="entry-content">
+		<p>As it turns out, IEMobile 6/7 (and presumably anything earlier) doesn’t support classes and ids that are attached to the HTML element. I confirmed this on both IEMobile 6 and 7. Fortunately it looks to be fixed in IEMobile 8 (which makes sense, since it works fine in desktop IE6, which it’s based on).</p>
+
+<p>The consequence of this is that adding an id/class to the html tag will result in the style not being applied to the document:</p>
+
+<pre name="code" class="html">&lt;!doctype html&gt;
+&lt;html id="a" class="b"&gt;
+&lt;head&gt;
+	&lt;title&gt;Cascade test&lt;/title&gt;
+	
+	&lt;style type="text/css" media="screen"&gt;
+		#a span { color: red; }     /* style isn't applied in IEMobile 6/7 */
+		.b span { color: yellow; }  /* style isn't applied in IEMobile 6/7 */
+	&lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;span&gt;Testing 123&lt;/span&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</pre>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/2009/pitfalls-of-declaring-variables-in-javascript">
+			
+				Pitfalls of Declaring Variables in JavaScript</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-11-18T00:00:00-08:00" pubdate data-updated="true">Nov 18<span>th</span>, 2009</time></div>
+	</header>
+	<div class="entry-content">
+		<h3 id="introduction">Introduction</h3>
+
+<p>One of the things that’s always been confusing to me is that there are multiple ways to declare variables in JavaScript, and some ways are better than others. For the beginner programmer, just getting to code to work means complete success, but for the intermediate or advanced programmer, this is just the first step. The next step is to clean up the code and make sure everything is written in the best way it could have been written.</p>
+
+<p>Declaring variables seems like such a basic thing that one almost feels insulted reading about it. Yes, this whole post is about declaring variables. But not just this – it’s about declaring variables <em>the right way</em>. This means declaring variables in the scope they were intended to be declared in.  For the most part this means writing variables in the scope of a function, as opposed to the global namespace (in which everything becomes a property of the window object).</p>
+
+<h3 id="global-variables-can-be-declared-in-functions">Global variables can be declared in functions</h3>
+
+<p>When I was starting to learn JavaScript, I read about global and functional scope and <em>wrongly</em> assumed that functions <em>completely</em> protected the variables declared inside.  As it turns out, there’s many ways to create global variables in JavaScript, and none of them throw up red flags or sound off bells and whistles (unfortunately).</p>
+
+<p>Here’s a few ways to create global variables in JavaScript:</p>
+
+<pre name="code" class="JScript">// Creating global variables outside of a function
+window.global1 = 1;
+global2 = 2;
+var global3 = 3;
+
+// Created global variables within a function
+function test() {
+    global4 = 4;
+    window.global5 = 5;
+};
+test();</pre>
+
+<p>You can confirm this for yourself by checking the values of the variables with alert().</p>
+
+<h3 id="good-practice-always-precede-variables-with-var">Good practice: always precede variables with var</h3>
+
+<p>What I learned was that it was essentially good practice to always write variables preceded by the var keyword.  For variables declared outside of functions this has no effect – they are still global, but for variables within functions this ensures that they’re kept within their functional scope:</p>
+
+<pre name="code" class="JScript">var global = null;
+function test() {
+    var local = null;
+}
+test();</pre>
+
+<h3 id="same-name-but-different-variables">Same name, but different variables</h3>
+
+<p>And check this out – confusingly, you can create a global variable, then create a variable with the <em>same name</em> that’s functionally-scoped, yet a completely different variable!</p>
+
+<pre name="code" class="JScript">var number = 0;
+
+function test() {
+    var number = 1;
+}
+test();
+
+alert(number);  // 0</pre>
+
+<p>When you precede a variable with the var keyword, you’re essentially saying you’re creating the variable for the first time.  So when you create “number” inside the function, no error is thrown because the variable is created in the function’s scope.  If you try to create another variable with the name “number” inside the function, you will get an error because it’s already been defined within the scope.</p>
+
+<h3 id="there8217s-no-such-thing-as-magical-protective-parenthesis">There’s no such thing as magical protective parenthesis</h3>
+
+<p>For some reason I was further mistaken into believing that extra parenthesis around an anonymous function magically protected <em>all</em> the variables within:</p>
+
+<pre name="code" class="JScript">(function() {
+    global = null;
+    var local = null;
+})();</pre>
+
+<p>Nope – as you can see, the global variable is still global since it’s not preceded by the var keyword.  However, the local variable is local because it’s within its functional scope and preceded by the var keyword.</p>
+
+<h3 id="shorthand-for-declaring-multiple-functionally-scoped-variables">Shorthand for declaring multiple functionally-scoped variables</h3>
+
+<p>The following code ensures each variable is functionally (locally) scoped, even though only the first variable is preceded by the var keyword:</p>
+
+<pre name="code" class="JScript">// shorthand #1
+function test() {
+    var local1 = null,
+        local2 = null;
+}
+test();
+
+// shorthand #2
+function test2() {
+    var local1, local2;  // these are of type 'undefined' but they have functional scope!
+}
+test2();
+</pre>
+
+<h3 id="multiple-variable-declaration-equivalence-gives-different-scope-to-each-variable">Multiple variable declaration equivalence gives different scope to each variable</h3>
+
+<p>Today I learned another way to mistakenly create a global variable.  Trying to be fancy and declare multiple variables to be the same value, I mistakenly created a global variable (again, no bells and whistles went off to warn me, unfortunately):</p>
+
+<pre name="code" class="JScript">function test() {
+    var local = global = null;
+}
+test();</pre>
+
+<p>This sets both variables to “null” using the shortest code possible, but unfortunately only the variable “local” is preceded by the var keyword, so only that variable will be in its proper functional scope. Variable “global”, on the other hand, is… well… global. (thanks to <a href="http://stackoverflow.com/questions/1758576/multiple-left-hand-assignment-with-javascript/1758912#1758912">Crescent Fish</a>)</p>
+
+<p>You learn something new every day…</p>
+
+<h3 id="update-1">Update 1</h3>
+
+<p>If you want to check your code for “accidental global variables” you can use <a href="http://www.jslint.com/">JSLint</a> or you can even use Firebug (click on the Script tab, then click on “New watch expression…”, then type “window”, which will display all the properties of the window object – these are all global variables!). Thanks to Nick for the Firebug tip.</p>
+
+<h3 id="update-2">Update 2</h3>
+
+<p>Just another quick note to remind you that after a variable has been initially declared, the scope will not change. Which is why you can redefine variables, but have them keep their scope:</p>
+
+<pre name="code" class="JScript">function test() {
+    var local = null;
+    local = 5;    // still keeps its local/functional scope
+}
+test();</pre>
+
+<p>As you can see above, the variable “local” keeps its local scope, even though it’s redefined to be 5. This is one of the reasons it’s recommended to declare all variables at the start of a function – to make sure the scope gets set correctly.</p>
+
+<p>One final note: var should only be used when declaring a variable for the first time. If you try to use var for the same variable name in the same scope, it will result in an error:</p>
+
+<pre name="code" class="JScript">function test() {
+    var local = null;
+    var local = 5;    // throws an error!
+}
+test();</pre>
+
+<h3 id="update-3-graphical-representation">Update 3: Graphical representation</h3>
+
+<div id="attachment_115" style="width: 710px" class="wp-caption alignleft">
+  <a href="http://davidbcalhoun.com/wp-content/uploads/2009/11/js-scope.png"><img src="http://davidbcalhoun.com/wp-content/uploads/2009/11/js-scope.png" alt="Scope in JavaScript" title="Scope in JavaScript" width="700" class="size-full wp-image-115" /></a><p class="wp-caption-text">
+    Scope in JavaScript
+  </p>
+</div>
+
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/2009/javascript-tidbit-block-scope-with-let">
+			
+				JavaScript Tidbit: Block Scope With &#8220;let&#8221;</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-09-15T00:00:00-07:00" pubdate data-updated="true">Sep 15<span>th</span>, 2009</time></div>
+	</header>
+	<div class="entry-content">
+		<p>JavaScript has <strong>functional scope</strong>. Meaning that if you (properly) define variables within functions, those variables remain accessible only inside the function.</p>
+
+<p><strong>Block scope</strong>, on the other hand, defines scope within a block of code, usually defined by braces. JavaScript now has block scope as of version 1.7, which means it’s available in these browsers:</p>
+
+<ul>
+  <li>Firefox 2+</li>
+</ul>
+
+<p>Block scope is enabled in JavaScript with the use of “let”:</p>
+
+<pre name="code" class="JScript">let(x=100) {
+    alert(x);
+};</pre>
+
+<p>It also works perfectly well on one line, without the use of braces:</p>
+
+<pre name="code" class="JScript">let(x=100) alert(x);</pre>
+
+<p>Note that we can define global variables with the same name outside the block scope and the variables won’t interfere with each other:</p>
+
+<pre name="code" class="JScript">x = 200;
+let(x=100) alert(x);
+alert(x);
+// result: 100, 200
+</pre>
+
+<p>Note that there’s a slight caveat – not only is this not available in any version of IE, but it also requires a special script type declaration in order to work (at least for Firefox): <strong>type=”text/javascript;version=1.7″</strong></p>
+
+<p>References:<br />
+<a href="http://en.wikipedia.org/wiki/JavaScript#Versions">JavaScript Versions</a><br />
+<a href="http://www.youtube.com/watch?v=0LKDImgRfrg#t=32m2s">Video: Best Practices in Javascript Library Design (John Resig)</a><br />
+<a href="https://developer.mozilla.org/en/New_in_JavaScript_1.7">New in JavaScript 1.7</a></p>
+
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/2009/php-tidbit-dead-simple-singleton">
+			
+				PHP Tidbit: Dead Simple Singleton</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-09-14T00:00:00-07:00" pubdate data-updated="true">Sep 14<span>th</span>, 2009</time></div>
+	</header>
+	<div class="entry-content">
+		<pre name="code" class="php">class Singleton {
+    private static $instance;
+    public static function getInstance() {
+        if(!isset(self::$instance)) {
+            $c = __CLASS__;
+            self::$instance = new $c();
+        }
+        return self::$instance;
+    }
+}</pre>
+
+<p>And the explanation…</p>
+
+<pre name="code" class="php">class Singleton {
+    private static $instance;               // static variable to hold our 1 instance
+
+    public static function getInstance() {  // function to get the 1 instance
+        if(!isset(self::$instance)) {       // this will only run once (and instantiate once)
+            $c = __CLASS__;                 // get the class (Singleton)
+            self::$instance = new $c();     // instantiate the class and store it in our variable
+        }
+        return self::$instance;             // return the instance
+    }
+
+    public static function myFunction() {   // we can get to this through Singleton::getInstance()-&gt;myFunction()
+        // ...
+    }
+}</pre>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/2009/javascript-tidbit-shorthand-object-instantiation">
+			
+				JavaScript Tidbit: Shorthand Object Instantiation</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-09-14T00:00:00-07:00" pubdate data-updated="true">Sep 14<span>th</span>, 2009</time></div>
+	</header>
+	<div class="entry-content">
+		<p>The skinny: here’s a neat little trick to reduce the amount of code users have to type to instantiate objects:</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+</pre></td>
+  <td class="code"><pre><span class="keyword">function</span> <span class="function">jQuery</span>(str, con){
+    <span class="keyword">if</span> ( window == <span class="local-variable">this</span> )
+        <span class="keyword">return</span> <span class="keyword">new</span> jQuery(str, con);
+    <span class="comment">// ...</span>
+}
+
+<span class="keyword">new</span> jQuery(<span class="string"><span class="delimiter">&quot;</span><span class="content">#foo</span><span class="delimiter">&quot;</span></span>); <span class="comment">// this is now equivalent...</span>
+jQuery(<span class="string"><span class="delimiter">&quot;</span><span class="content">#foo</span><span class="delimiter">&quot;</span></span>);     <span class="comment">// ...to this!</span>
+</pre></td>
+</tr></table>
+</div>
+
+<p>Explanation: when jQuery(“#foo”) is typed, the function first determines if the context in which it’s being called is the global object (window).  If it is, it returns an instantiation of itself.  When it’s instantiated, the context in which it’s being called is inside its own function, and NOT within the global object (window), thus it bypasses our little instantiation trick and moves on to execute any remaining code in the function.</p>
+
+<p>From John Resig’s <a href="http://www.youtube.com/watch?v=0LKDImgRfrg#t=32m2s">Best Practices in Javascript Library Design</a></p>
+
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/2009/ie-mobile-6-12-problem-browser-ignores-the-specificity-of-css-display-styles">
+			
+				IE Mobile 6.12 Problem: Browser Ignores the Specificity of CSS Display Styles</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-08-31T00:00:00-07:00" pubdate data-updated="true">Aug 31<span>st</span>, 2009</time></div>
+	</header>
+	<div class="entry-content">
+		<p><strong>UPDATE:</strong> I found that the problem is actually that inline-block is completely unsupported in this version of IE Mobile, and is likely also unsupported in IE Mobile 7, which is also based on IE4. This is in contrast to desktop IE6, where inline-block is supported on elements that are natively inline (span, em, etc.).</p>
+
+<p>Just found this today, for what it’s worth.  If you’re unlucky enough to be working with older Windows Mobile phones you have probably realized that the browser is based on IE6, which all the desktop web developers notoriously complain about constantly.</p>
+
+<p>Though the mobile version of IE6 has most of the same issues as its desktop counterpart, IEMobile introduces some new random problems.  And in most cases there’s no handy web resources to help you out, since almost everyone develops for the desktop.</p>
+
+<p>This particular IEMobile quirk is a specificity problem.  We have a parent element styled with display: block and the child element is styled with display: inline-block or display: inline.  We’ve made the child CSS selector more specific so it <em>should</em> override the parent:</p>
+
+<pre name="code" class="css">.parent { display: block; }
+.parent .child { display: inline-block; }</pre>
+
+<p>This works on the desktop version of IE6!  But not in IEMobile 6.12, where the child element is still displayed as a block.  The same thing happens when we change the “.parent .child” style to “display: inline;”, but interestingly not when we change it to “display: none;”, where the style is correctly recognized and applied.  Doh!</p>
+
+<p>And FYI: I checked and found that this bug is <em>not</em> occurring on IEMobile 8.12</p>
+
+		
+		
+	</div>
+
+</article>
+
+<nav id="pagenavi">
+    
+        <a href="/blog/page/8/" class="prev">Previous</a>
+    
+    
+</nav>
+</div>
+	<footer id="footer" class="inner"><br>
+<br>
+<br>
+<br>
+&copy; 2014
+
+    David Calhoun
+
+</footer>
+	<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="/javascripts/slash.js"></script> -->
+<!-- <script src="/javascripts/hyphenator.js"></script> -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'davidbcalhoun';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+<script src="/javascripts/main.js"></script>
+<!-- <script src="/javascripts/negative-scroll-blur.js"></script> -->
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-5530615-3', 'davidbcalhoun.com');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+<h3 id='introduction'>Introduction</h3>
+
+<p>One of the things that&#8217;s always been confusing to me is that there are multiple ways to declare variables in JavaScript, and some ways are better than others. For the beginner programmer, just getting to code to work means complete success, but for the intermediate or advanced programmer, this is just the first step. The next step is to clean up the code and make sure everything is written in the best way it could have been written.</p>
+
+<p>Declaring variables seems like such a basic thing that one almost feels insulted reading about it. Yes, this whole post is about declaring variables. But not just this &#8211; it&#8217;s about declaring variables <em>the right way</em>. This means declaring variables in the scope they were intended to be declared in.  For the most part this means writing variables in the scope of a function, as opposed to the global namespace (in which everything becomes a property of the window object).</p>
+
+<h3 id='global_variables_can_be_declared_in_functions'>Global variables can be declared in functions</h3>
+
+<p>When I was starting to learn JavaScript, I read about global and functional scope and <em>wrongly</em> assumed that functions <em>completely</em> protected the variables declared inside.  As it turns out, there&#8217;s many ways to create global variables in JavaScript, and none of them throw up red flags or sound off bells and whistles (unfortunately).</p>
+
+<p>Here&#8217;s a few ways to create global variables in JavaScript:</p>
+<pre class='JScript' name='code'>// Creating global variables outside of a function
+window.global1 = 1;
+global2 = 2;
+var global3 = 3;
+
+// Created global variables within a function
+function test() {
+    global4 = 4;
+    window.global5 = 5;
+};
+test();</pre>
+<p>You can confirm this for yourself by checking the values of the variables with alert().</p>
+
+<h3 id='good_practice_always_precede_variables_with_var'>Good practice: always precede variables with var</h3>
+
+<p>What I learned was that it was essentially good practice to always write variables preceded by the var keyword.  For variables declared outside of functions this has no effect &#8211; they are still global, but for variables within functions this ensures that they&#8217;re kept within their functional scope:</p>
+<pre class='JScript' name='code'>var global = null;
+function test() {
+    var local = null;
+}
+test();</pre>
+<h3 id='same_name_but_different_variables'>Same name, but different variables</h3>
+
+<p>And check this out &#8211; confusingly, you can create a global variable, then create a variable with the <em>same name</em> that&#8217;s functionally-scoped, yet a completely different variable!</p>
+<pre class='JScript' name='code'>var number = 0;
+
+function test() {
+    var number = 1;
+}
+test();
+
+alert(number);  // 0</pre>
+<p>When you precede a variable with the var keyword, you&#8217;re essentially saying you&#8217;re creating the variable for the first time.  So when you create &#8220;number&#8221; inside the function, no error is thrown because the variable is created in the function&#8217;s scope.  If you try to create another variable with the name &#8220;number&#8221; inside the function, you will get an error because it&#8217;s already been defined within the scope.</p>
+
+<h3 id='theres_no_such_thing_as_magical_protective_parenthesis'>There&#8217;s no such thing as magical protective parenthesis</h3>
+
+<p>For some reason I was further mistaken into believing that extra parenthesis around an anonymous function magically protected <em>all</em> the variables within:</p>
+<pre class='JScript' name='code'>(function() {
+    global = null;
+    var local = null;
+})();</pre>
+<p>Nope &#8211; as you can see, the global variable is still global since it&#8217;s not preceded by the var keyword.  However, the local variable is local because it&#8217;s within its functional scope and preceded by the var keyword.</p>
+
+<h3 id='shorthand_for_declaring_multiple_functionallyscoped_variables'>Shorthand for declaring multiple functionally-scoped variables</h3>
+
+<p>The following code ensures each variable is functionally (locally) scoped, even though only the first variable is preceded by the var keyword:</p>
+<pre class='JScript' name='code'>// shorthand #1
+function test() {
+    var local1 = null,
+        local2 = null;
+}
+test();
+
+// shorthand #2
+function test2() {
+    var local1, local2;  // these are of type 'undefined' but they have functional scope!
+}
+test2();
+</pre>
+<h3 id='multiple_variable_declaration_equivalence_gives_different_scope_to_each_variable'>Multiple variable declaration equivalence gives different scope to each variable</h3>
+
+<p>Today I learned another way to mistakenly create a global variable.  Trying to be fancy and declare multiple variables to be the same value, I mistakenly created a global variable (again, no bells and whistles went off to warn me, unfortunately):</p>
+<pre class='JScript' name='code'>function test() {
+    var local = global = null;
+}
+test();</pre>
+<p>This sets both variables to &#8220;null&#8221; using the shortest code possible, but unfortunately only the variable &#8220;local&#8221; is preceded by the var keyword, so only that variable will be in its proper functional scope. Variable &#8220;global&#8221;, on the other hand, is&#8230; well&#8230; global. (thanks to <a href='http://stackoverflow.com/questions/1758576/multiple-left-hand-assignment-with-javascript/1758912#1758912'>Crescent Fish</a>)</p>
+
+<p>You learn something new every day&#8230;</p>
+
+<h3 id='update_1'>Update 1</h3>
+
+<p>If you want to check your code for &#8220;accidental global variables&#8221; you can use <a href='http://www.jslint.com/'>JSLint</a> or you can even use Firebug (click on the Script tab, then click on &#8220;New watch expression&#8230;&#8221;, then type &#8220;window&#8221;, which will display all the properties of the window object &#8211; these are all global variables!). Thanks to Nick for the Firebug tip.</p>
+
+<h3 id='update_2'>Update 2</h3>
+
+<p>Just another quick note to remind you that after a variable has been initially declared, the scope will not change. Which is why you can redefine variables, but have them keep their scope:</p>
+<pre class='JScript' name='code'>function test() {
+    var local = null;
+    local = 5;    // still keeps its local/functional scope
+}
+test();</pre>
+<p>As you can see above, the variable &#8220;local&#8221; keeps its local scope, even though it&#8217;s redefined to be 5. This is one of the reasons it&#8217;s recommended to declare all variables at the start of a function &#8211; to make sure the scope gets set correctly.</p>
+
+<p>One final note: var should only be used when declaring a variable for the first time. If you try to use var for the same variable name in the same scope, it will result in an error:</p>
+<pre class='JScript' name='code'>function test() {
+    var local = null;
+    var local = 5;    // throws an error!
+}
+test();</pre>
+<h3 id='update_3_graphical_representation'>Update 3: Graphical representation</h3>
+<div class='wp-caption alignleft' id='attachment_115' style='width: 710px'>
+  <a href='http://davidbcalhoun.com/wp-content/uploads/2009/11/js-scope.png'><img alt='Scope in JavaScript' class='size-full wp-image-115' src='http://davidbcalhoun.com/wp-content/uploads/2009/11/js-scope.png' title='Scope in JavaScript' width='700' /></a><p class='wp-caption-text'>
+    Scope in JavaScript
+  </p>
+</div>

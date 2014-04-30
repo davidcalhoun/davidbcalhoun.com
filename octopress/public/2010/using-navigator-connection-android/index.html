@@ -1,0 +1,261 @@
+
+<!DOCTYPE HTML>
+<html lang="en-GB">
+<head>
+	<meta charset="utf-8">
+	<title>Optimizing based on connection speed: using navigator.connection on Android 2.2+  | David Calhoun's blog</title>
+
+	<meta name="author" content="David Calhoun">
+
+<meta name="description" content="Introduction A little while back this post made the rounds, which took us on a journey through some of the new features introduced in the browser in &hellip;"> <meta name="keywords" content="">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="David Calhoun's blog" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="/javascripts/html5.js"></script><![endif]-->
+	
+
+</head>
+
+
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">David Calhoun's blog</a></h1>
+<span class="tagline"></span>
+<!-- <nav id="main-nav"><ul>
+	<li><a href="/about">About</a></li>
+	<li><a href="/archives">Archives</a></li>
+	<li><a href="/contact">Contact</a></li>
+</ul>
+</nav> -->
+<!-- <nav id="mobile-nav"> -->
+<!-- 	<div class="alignleft menu"> -->
+<!-- 		<a class="button">Menu</a> -->
+<!-- 		<div class="container"><ul>
+	<li><a href="/about">About</a></li>
+	<li><a href="/archives">Archives</a></li>
+	<li><a href="/contact">Contact</a></li>
+</ul>
+</div> -->
+<!-- 	</div> -->
+<!-- </nav> -->
+
+
+</header>
+
+	<div id="content" class="inner"><article class="post">
+	<header>
+		<h2 class="title">Optimizing Based on Connection Speed: Using navigator.connection on Android 2.2+</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-14T00:00:00-07:00" pubdate data-updated="true">Sep 14<span>th</span>, 2010</time></div>
+	</header>
+	<div class="entry-content"><h3 id="introduction">Introduction</h3>
+
+<p>A little while back <a href="http://www.mobilexweb.com/blog/android-froyo-html5-accelerometer-flash-player">this post</a> made the rounds, which took us on a journey through some of the new features introduced in the browser in Android 2.2 Froyo. Among the most overlooked features are the file upload functionality (you can upload photos from your browser now! But we’re still waiting on iPhone to support this…) and a little-known JavaScript addition to the Browser Object Model (BOM) in the form of</p>
+
+<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;">
+  <table cellspacing="0" cellpadding="0">
+    <tr>
+      <td class="line-numbers">
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class="text codecolorer">
+          navigator.connection
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<p>. Let’s take a peek at its contents:</p>
+
+<pre name="code" class="JScript">// contents of navigator.connection object
+{
+  "type": "3",
+  "UNKNOWN": "0",
+  "ETHERNET": "1",
+  "WIFI": "2",
+  "CELL_2G": "3",
+  "CELL_3G": "4"
+}
+</pre>
+
+<p>This is data taken from a Nexus One running on a 2G network, so you can see that the type is set to 3, which corresponds with “CELL_2G”. In other words, this phone runs on a slower network, so from a performance perspective, you probably want to consider delivering a lower-bandwidth experience.</p>
+
+<p>So how exactly do we target this?</p>
+
+<h3 id="the-code">The code</h3>
+
+<p>The purpose of this code is to first find the connection speed, and then add a class to the</p>
+
+<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;">
+  <table cellspacing="0" cellpadding="0">
+    <tr>
+      <td class="line-numbers">
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class="text codecolorer">
+          html
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<p>element based on this connection. The goal is to be able to target these connections with CSS, so the right content is delivered to the right connection:</p>
+
+<pre name="code" class="CSS">.highbandwidth .logo   { background-image:url('logo-high.jpg'); }
+.mediumbandwidth .logo { background-image:url('logo-medium.jpg'); }
+.lowbandwidth .logo    { background-image:url('logo-low.jpg'); }
+</pre>
+
+<p>And here’s the JavaScript:</p>
+
+<pre name="code" class="JScript">var connection, connectionSpeed, htmlNode, htmlClass;
+
+// create a custom object if navigator.connection isn't available
+connection = navigator.connection || {'type':'0'};
+
+// set connectionSpeed
+switch(connection.type) {
+  case connection.CELL_3G:
+    // 3G
+    connectionSpeed = 'mediumbandwidth';
+  break;
+  case connection.CELL_2G:
+    // 2G
+    connectionSpeed = 'lowbandwidth';
+  break;
+  default:
+    // WIFI, ETHERNET, UNKNOWN
+    connectionSpeed = 'highbandwidth';
+}
+
+// set the connection speed on the html element, i.e. &lt;html class="lowbandwidth"&gt;
+htmlNode = document.body.parentNode;
+htmlClass = htmlNode.getAttribute('class') || '';
+htmlNode.setAttribute('class', htmlClass + ' ' + connectionSpeed);
+</pre>
+
+<h3 id="give-the-user-control">Give the user control!</h3>
+
+<p>Just as it’s a good practice to give the user a link to the full desktop version of the website, if you’re going to deliver different content based on different connection speeds, then it’s highly advisable to give the user full control.</p>
+
+<p>So give them control! You can provide something like the following:</p>
+
+<div id="bandwidthControls">
+  <p>
+    Mobile | <a href="#">Desktop</a>
+  </p>
+  
+  <p>
+    Bandwidth: <a href="#">High</a> | <a href="#">Medium</a> | Low
+  </p>
+</div>
+
+</div>
+
+</article>
+
+	
+	<div class="share">
+	  <!-- <ul> -->
+	  <!--   <li>
+  <a href="https://twitter.com/intent/tweet?text=Optimizing based on connection speed: using navigator.connection on Android 2.2+ by @&url=http://davidbcalhoun.com/2010/using-navigator-connection-android" title="Share Optimizing based on connection speed: using navigator.connection on Android 2.2+ on Twitter">
+    <img src="/images/social/twitter.png" />
+  </a>
+</li>
+ -->
+	  <!--   <li>
+  <a href="https://www.facebook.com/sharer.php?u=http://davidbcalhoun.com/2010/using-navigator-connection-android" title="Share Optimizing based on connection speed: using navigator.connection on Android 2.2+ on Facebook">
+    <img src="/images/social/facebook.png" />
+  </a>
+</li>
+ -->
+	  <!--   <li>
+  <a href="https://plus.google.com/share?url=http://davidbcalhoun.com/2010/using-navigator-connection-android" title="Share Optimizing based on connection speed: using navigator.connection on Android 2.2+ on Google Plus">
+    <img src="/images/social/google.png" />
+  </a>
+</li>
+ -->
+	  <!-- </ul> -->
+	</div>
+
+
+
+
+<section id="comment">
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+	<footer id="footer" class="inner"><br>
+<br>
+<br>
+<br>
+&copy; 2014
+
+    David Calhoun
+
+</footer>
+	<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="/javascripts/slash.js"></script> -->
+<!-- <script src="/javascripts/hyphenator.js"></script> -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'davidbcalhoun';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://davidbcalhoun.com/2010/using-navigator-connection-android';
+        var disqus_url = 'http://davidbcalhoun.com/2010/using-navigator-connection-android';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+<script src="/javascripts/main.js"></script>
+<!-- <script src="/javascripts/negative-scroll-blur.js"></script> -->
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-5530615-3', 'davidbcalhoun.com');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>

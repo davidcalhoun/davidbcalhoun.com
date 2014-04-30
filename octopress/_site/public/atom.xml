@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[David Calhoun's blog]]></title>
+  <link href="http://davidbcalhoun.com/atom.xml" rel="self"/>
+  <link href="http://davidbcalhoun.com/"/>
+  <updated>2013-12-04T22:39:31-08:00</updated>
+  <id>http://davidbcalhoun.com/</id>
+  <author>
+    <name><![CDATA[David Calhoun]]></name>
+    
+  </author>
+
+  
+</feed>

@@ -1,0 +1,333 @@
+<h3 id='this_is_madness_this_is_javascript'>This is madness! This&#8230; is&#8230; JavaScript!</h3>
+
+<p>In JavaScript, there&#8217;s many different ways of doing something. This is both a good thing and a bad thing. To the newcomer this is definitely a bad thing, as it means not only more things to learn, but more little caveats and more places to go wrong. And so it is with declaring functions!</p>
+
+<p>The aim of this is just an accessible tour of the landscape, just so you know what&#8217;s out there and what the basic differences are. Do be sure to check out the &#8220;further reading&#8221; section as well! Much of this is based on <a href='http://kangax.github.com/nfe/'>Juriy &#8220;kangax&#8221; Zaytsev&#8217;s article</a>, which goes into more depth. But I found that there wasn&#8217;t just one reference to show all the different variable declarations.</p>
+
+<p>How about ways to execute functions? That opens up another can of worms, and incidentally opens up the possibility for a future post on that topic. <img alt=':)' class='wp-smiley' src='http://davidbcalhoun.com/wp-includes/images/smilies/icon_smile.gif' /></p>
+
+<h3 id='overview_different_ways_of_declaring_functions'>Overview: different ways of declaring functions</h3>
+<pre class='jscript' name='code'>function A(){};             // function declaration
+var B = function(){};       // function expression
+var C = (function(){});     // function expression with grouping operators
+var D = function foo(){};   // named function expression
+var E = (function(){        // immediately-invoked function expression (IIFE) that returns a function
+  return function(){}
+})();
+var F = new Function();     // Function constructor
+var G = new function(){};   // special case: object constructor
+</pre>
+<h3 id='function_declarations_function_a'>Function declarations: function A(){};</h3>
+
+<p>Function declarations are probably the most familiar and oldest way of doing things in JavaScript land. This creates a variable A which is accessible in the current scope. Scope is a separate topic, so we&#8217;ll do everything in the global scope for all these examples (something you want to avoid usually).</p>
+
+<h4 id='1_hoisting'>1. Hoisting</h4>
+
+<p>The interesting thing about these is that they are &#8220;hoisted&#8221; to the top of their scope, which means this code:</p>
+<pre class='jscript' name='code'>A();
+function A(){
+  console.log('foo');
+};
+</pre>
+<p>Gets executed as this code:</p>
+<pre class='jscript' name='code'>function A(){
+  console.log('foo');
+};
+A();
+</pre>
+<p>Which practically means that, yes, you can call the functions before they&#8217;re written in your code. It won&#8217;t matter, because the entire function gets hoisted to the top of its containing scope. (This is contrasted with variables, which only have their declaration hoisted, not their contents, as we&#8217;ll see in the next section).</p>
+
+<h4 id='2_no_function_declarations_inp_'>2. No function declarations in&lt;/p&gt; <pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'>REXML could not parse this XML/HTML: 
+&lt;div class=&quot;codecolorer-container text twitlight&quot; style=&quot;overflow:auto;white-space:nowrap;width:435px;&quot;&gt;</pre></h4>
+<table cellpadding='0' cellspacing='0'>
+    <tr>
+      <td class='line-numbers'>
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class='text codecolorer'>
+          If
+        </div>
+      </td>
+    </tr>
+  </table><pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'>REXML could not parse this XML/HTML: 
+&lt;/div&gt;</pre>
+<p>statements (or loops, etc)&lt;/h4&gt; You can&#8217;t define functions this way in expressions, for example</p>
+<div class='codecolorer-container text twitlight' style='overflow:auto;white-space:nowrap;width:435px;'>
+  <table cellpadding='0' cellspacing='0'>
+    <tr>
+      <td class='line-numbers'>
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class='text codecolorer'>
+          if
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+<p>statements, which is common if we want to define different versions of a function for different circumstances, usually to address browser inconsistencies. Well, you <em>can</em> in some implementations, but the way the code is processed is inconsistent (kangax has documented the inconsistencies <a href='http://kangax.github.com/nfe/'>here</a>). If you want to use this pattern, use function expressions instead.</p>
+
+<h4 id='3_functions_declarations_must_have_names'>3. Functions declarations must have names</h4>
+
+<p>This method doesn&#8217;t allow you to create anonymous functions, meaning that you always have to give it an identifier (in this case we&#8217;ve used &#8220;A&#8221;).</p>
+
+<h3 id='function_expressions_var_b__function'>Function expressions: var B = function(){};</h3>
+
+<p>A function expression looks similar to function declarations, except that the function is assigned to a variable name. Though functions are not primitive values in JavaScript, this is the way they can be utilized to their full effect in this functional language. Functions are &#8220;<a href='http://en.wikipedia.org/wiki/First-class_function'>first class</a>&#8220;:</p>
+
+<blockquote>
+<p>&#8220;<span>JavaScript</span> supports passing functions as arguments to other functions, returning them as the values from other functions, and assigning them to variables or storing them in data structures&#8221;</p>
+</blockquote>
+
+<h4 id='1_anonymous_functions_they_dont_need_names'>1. Anonymous functions (they don&#8217;t need names)</h4>
+
+<p>The function name is optional in function expressions, and we call these anonymous. Here we&#8217;re setting the variable B equal to an anonymous function:</p>
+<pre class='jscript' name='code'>var B = function(){};
+</pre>
+<h4 id='2_variable_declaration_hoisting'>2. Variable declaration hoisting</h4>
+
+<p>Variable declarations are hoisted to the top of their scope, somewhat similarly to function hoisting <em>except</em> the contents of the variable are not hoisted as well. This happens with all variables, and it means it&#8217;s now happening with our functions, now that we&#8217;re assigning them to variables.</p>
+
+<p>This code:</p>
+<pre class='jscript' name='code'>var A = function(){};
+var B = function(){};
+var C = function(){};
+</pre>
+<p>Will be executed as this:</p>
+<pre class='jscript' name='code'>var A, B, C;  // variable declarations are hoisted
+A = function(){};
+B = function(){};
+C = function(){};
+</pre>
+<p>Therefore the order of setting and calling this type of function is important:</p>
+<pre class='jscript' name='code'>// this works
+var B = function(){};
+B();
+
+// this doesn't work
+B2();  // TypeError (B2 is undefined)
+var B2 = function(){};
+</pre>
+<p>The second example gives us an error because only the variable B2&#8242;s declaration is hoisted, but not its definition, thus the &#8220;undefined&#8221; error.</p>
+
+<h3 id='function_expressions_with_grouping_operators_var_c__function'>Function expressions with grouping operators: var C = (function(){});</h3>
+
+<p>These really aren&#8217;t different from plain old function expressions and aren&#8217;t really seen in the wild (so maybe they&#8217;re just good for JavaScript quizzes?). Recently this way of declaring functions was brought up in <a href='http://ironjs.wordpress.com/2011/06/22/my-gripes-with-javascript/'>this article</a> and confused some folks including myself.</p>
+
+<p>Here&#8217;s a good way to see what&#8217;s happening:</p>
+<pre class='jscript' name='code'>function(){};  // SyntaxError
+(function(){});
+</pre>
+<p>Why does one work and the other doesn&#8217;t? The first example is a function declaration, and we learned above that we can&#8217;t declare them anonymously &#8211; that is, they must have a name. That&#8217;s why we&#8217;re getting the syntax error.</p>
+
+<p>The second example is using parenthesis &#8211; grouping operators &#8211; and is therefore evaluated differently, as a function expression. The grouping operators are the things we use to help show what should be evaluated first, as in mathematical problems. We&#8217;re saying &#8220;evaluate this first, then take the result and do something with it&#8221;:</p>
+<pre class='jscript' name='code'>(1 + 2) * 3;  // 9
+1 + (2 * 3);  // 7
+</pre>
+<p>In the first example we&#8217;re saying &#8220;first add 1 and 2, then take the result and multiply by 3&#8243;, whereas in the second example we&#8217;re saying &#8220;first multiply 2 and 3, then take the result and add 1&#8243;.</p>
+
+<p>Because functions are first class, we can use similar grouping operators. Here&#8217;s a facetious example, but it shows how we can essentially drop in a function in the same way:</p>
+<pre class='jscript' name='code'>(function(){} + 1);  // function(){}1
+</pre>
+<p>The result is a string (because toString is being called on the function, then added/appended with 1), but you get the idea I hope.</p>
+
+<p>When the JavaScript engine encounters the opening parenthesis here, we&#8217;re essentially saying &#8220;ok, start grouping this together with something else&#8221;. Using our technical terms, we&#8217;re telling the engine that we&#8217;re not making a function declaration, but instead a function expression. And then we can assign the result to a variable:</p>
+<pre class='jscript' name='code'>(function(){});           // resulting function not assigned
+var foo = (function(){}); // resulting function assigned to foo
+var bar = function(){};   // resulting function assigned to bar
+</pre>
+<p>Here we can see that foo and bar are really just the same, because in foo we&#8217;re not grouping the function together with anything but itself.</p>
+
+<h3 id='named_function_expression_var_d__function_foo'>Named function expression: var D = function foo(){};</h3>
+
+<p>Here we have our same old friend, the function expression. But instead of assigning the variable to an anonymous function, we&#8217;re assigning it to a named function (with the name foo).</p>
+
+<h4 id='1_the_function_name_is_only_accessible_within_the_function'>1. The function name is only accessible within the function</h4>
+
+<p>We haven&#8217;t exposed the function name (foo) to the enclosing scope (in this case the global scope):</p>
+<pre class='jscript' name='code'>var D = function foo(){
+  console.log(typeof foo);
+};
+D();                       // function
+console.log(typeof foo);   // undefined
+</pre>
+<h4 id='2_useful_for_recursion'>2. Useful for recursion</h4>
+
+<p>Because the function&#8217;s name is accessible in the function itself, this turns out to be useful for recursive functions, much more useful than the plain old anonymous function.</p>
+
+<p>Here&#8217;s a trivial recursive function to illustrate calling itself from within the named function expression:</p>
+<pre class='jscript' name='code'>var countdown = function a(count){
+  if(count > 0) {
+    count--;
+    return a(count);  // we can also do this: a(--count), which is less clear
+  }
+  console.log('end of recursive function');
+}
+countdown(5);
+</pre>
+<h4 id='3_useful_for_debugging'>3. Useful for debugging</h4>
+
+<p>As a <a href='http://kangax.github.com/nfe/'>few</a> <a href='http://javascriptweblog.wordpress.com/2010/07/06/function-declarations-vs-function-expressions/'>have</a> pointed out, giving previously anonymous functions names helps in debugging, since the function name shows up on the call stack.</p>
+
+<h4 id='4_quirks_jscripts_bad_implementation'>4. Quirks: JScript&#8217;s bad implementation</h4>
+
+<p><a href='http://kangax.github.com/nfe/'>kangax</a> points out that named function expressions are basically poison to JScript, Internet Explorer&#8217;s implementation of JavaScript.</p>
+
+<p>The named function becomes a global variable, is hoisted like a function declaration, and actually ends up creating multiple instances of the same function.</p>
+
+<h3 id='immediatelyinvoked_function_expressions_iife_var_e__functionreturn_function'>Immediately-invoked function expressions (IIFE): var E = (function(){return function(){}})();</h3>
+
+<p>&#8220;Execute this function, whose return value is another function, and assign that to the variable E&#8221;. This may seem like magic, but it&#8217;s actually quite simple, and the pattern is powerful and has useful applications, the most famous of which is the <a href='http://www.klauskomenda.com/code/javascript-programming-patterns/#module'>module pattern</a>.</p>
+
+<p>First we&#8217;ll use an example that doesn&#8217;t look like magic:</p>
+<pre class='jscript' name='code'>var foo = function(){
+  return 'bar';
+};
+var output = foo();
+console.log(output);  // 'bar'
+</pre>
+<p>We already learned about grouping operators above, so you should feel comfortable with saying this is equivalent:</p>
+<pre class='jscript' name='code'>var foo = function(){
+  return 'bar';
+};
+var output = (foo)(); // note the extra grouping operators
+console.log(output);  // 'bar'
+</pre>
+<p>Since foo is pointing to our function expression, we know that we can simply refrain from using the variable &#8220;foo&#8221; and drop in the entire function as an anonymous function (since functions are first class, after all!):</p>
+<pre class='jscript' name='code'>var output = (function(){
+  return 'bar';
+})();
+console.log(output);  // 'bar'
+</pre>
+<p>Hey wait, we just arrived at the magical resulting function! It turns out to be not so magical after all, once we break it down and see it for what it is. It&#8217;s simply shorthand for the code we wrote originally, where we defined a function, executed it, and defined output to be its return value.</p>
+
+<p>I&#8217;ve included this method on the list of declaring functions because we can assign the return value to itself be a function:</p>
+<pre class='jscript' name='code'>var E = (function(){
+  return function(){}
+})();
+</pre>
+<h4 id='applications'>Applications</h4>
+
+<p>There are good applications for this, including information hiding using in the module pattern, (<a href='http://ejohn.org/blog/partial-functions-in-javascript/'>partial application</a>, for example), and other clever uses of it. It&#8217;s definitely not a trivial pattern.</p>
+
+<h3 id='function_constructor_var_f__new_function'>Function constructor: var F = new Function();</h3>
+
+<p>This method is extremely old and it&#8217;s not recommended to be used. You pass in an unlimited number of arguments in the front, then the actual function body appears as a string in the last argument (because it&#8217;s a string, it&#8217;s effectively the equivalent of eval(), and isn&#8217;t recommended).</p>
+
+<h4 id='1_defining_the_function'>1. Defining the function</h4>
+
+<p>You can create a function like this:</p>
+<pre class='jscript' name='code'>var F = new Function('arg1', 'arg2', 'console.log(arg1 + ", " + arg2)');
+F('foo', 'bar');  // 'foo, bar'
+</pre>
+<h4 id='2_you_dont_need_thep_'>2. You don&#8217;t need the&lt;/p&gt; <pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'>REXML could not parse this XML/HTML: 
+&lt;div class=&quot;codecolorer-container text twitlight&quot; style=&quot;overflow:auto;white-space:nowrap;width:435px;&quot;&gt;</pre></h4>
+<table cellpadding='0' cellspacing='0'>
+    <tr>
+      <td class='line-numbers'>
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class='text codecolorer'>
+          new
+        </div>
+      </td>
+    </tr>
+  </table><pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'>REXML could not parse this XML/HTML: 
+&lt;/div&gt;</pre>
+<p>operator&lt;/h4&gt; You can simply write</p>
+<div class='codecolorer-container text twitlight' style='overflow:auto;white-space:nowrap;width:435px;'>
+  <table cellpadding='0' cellspacing='0'>
+    <tr>
+      <td class='line-numbers'>
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class='text codecolorer'>
+          var F = Function();
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+<p>to get the same result.</p>
+
+<h4 id='3_quirks'>3. Quirks</h4>
+
+<p>The <a href='https://developer.mozilla.org/en/JavaScript/Reference/Functions_and_function_scope#Function_constructor_vs._function_declaration_vs._function_expression'>MDN docs</a> have some good examples of the quirks, including the fact that functions declared with the Function constructor don&#8217;t inherit their current scope properly (i.e. a closure isn&#8217;t formed).</p>
+
+<p>What this means is that they don&#8217;t have access to variables in their enclosing scope, which isn&#8217;t particularly useful:</p>
+<pre class='jscript' name='code'>function foo(){
+  var bar = 'blah';
+  
+  var first = new Function('console.log(typeof bar)');
+  first();   // undefined
+  
+  var second = function(){
+    console.log(typeof bar);
+  }
+  second();  // string
+}
+foo();
+</pre>
+<p>In the function &#8220;first&#8221;, we&#8217;re using the Function constructor, so it doesn&#8217;t have access to the variable bar. However, if we use the function &#8220;second&#8221;, which is a function expression, it does in fact have access to variables defined in its enclosing scope (via closure).</p>
+
+<p>In other words, <em>don&#8217;t use the Function constructor</em>.</p>
+
+<h3 id='special_case__object_constructor_var_g__new_function_foo'>Special case &#8211; object constructor: var G = new function foo(){};</h3>
+
+<p>I saved this for last because we&#8217;re not really defining a function, though we are using the function keyword, so it&#8217;s worth noting at least.</p>
+<div class='codecolorer-container text twitlight' style='overflow:auto;white-space:nowrap;width:435px;'>
+  <table cellpadding='0' cellspacing='0'>
+    <tr>
+      <td class='line-numbers'>
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class='text codecolorer'>
+          new function(){};
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+<p>creates a new object and invokes the anonymous function as its constructor. If an object is returned from the function, that becomes the resulting object, otherwise a new object is created from scratch and function is executed in the context of that new function (let&#8217;s save the details for another post!).</p>
+
+<p>It&#8217;s a bit unusual to see it in this form. Let&#8217;s do it the proper way:</p>
+<pre class='jscript' name='code'>var Person = function(){
+  console.log(this);  // Person
+}
+var joe = new Person();
+</pre>
+<p>So really with the new operator, we are giving it a new &#8216;this&#8217; context and then executing the given function with that new context. Much different than the function definitions we&#8217;ve been dealing with above! This does into a whole new topic, and we&#8217;ll save that for later!</p>
+
+<h3 id='further_reading'>Further reading</h3>
+
+<p><a href='http://kangax.github.com/nfe/'>Named function expressions demystified</a> (kangax)</p>
+
+<p><a href='http://benalman.com/news/2010/11/immediately-invoked-function-expression/'>Immediately-Invoked Function Expression (IIFE) (Ben Alman)</a></p>
+
+<p><a href='https://developer.mozilla.org/en/JavaScript/Reference/Functions_and_function_scope'>Functions and function scope</a> (Mozilla Developer Network &#8211; MDN)</p>
+
+<p><a href='http://stackoverflow.com/questions/1140089/how-does-an-anonymous-function-in-javascript-work'>How does an anonymous function in JavaScript work? (StackOverflow)</a></p>
+
+<p><a href='http://javascriptweblog.wordpress.com/2010/07/06/function-declarations-vs-function-expressions/'>Function Declarations vs. Function Expressions (JavaScript, JavaScript by Angus Croll)</a></p>
+
+<p><a href='http://www.amazon.com/gp/product/0596805527/'>JavaScript: The Definitive Guide</a> (classic book by David Flanagan)</p>

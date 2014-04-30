@@ -1,0 +1,15 @@
+<p><a href='http://davidbcalhoun.com/a/negative-scroll-blur.html'>Demo</a></p>
+
+<p>Just for fun, I wanted to reproduce a cool but completely superfluous UI I saw in the updated Foursquare app recently. Basically, when the user tries to scroll past the upper bound of the app/page, the header image becomes blurred.</p>
+
+<p>We can do the same thing on the web by listening for negative scroll and then using (abusing?) CSS filters.</p>
+
+<h3 id='video'>Video</h3>
+
+<h3 id='extra_tweaks_for_mobile'>Extra tweaks for mobile</h3>
+
+<p>Note that there&#8217;s an extra trick for iOS, which presents problems I had forgotten about (namely, no negative scroll, and a scroll listener which fires once at the end of scrolling). That&#8217;s why I had to throw in some extra logic for touchstart/touchmove/touchend.</p>
+
+<h3 id='links'>Links</h3>
+
+<p><a href='http://davidbcalhoun.com/a/negative-scroll-blur.html'>Demo</a><br /><a href='https://github.com/davidcalhoun/negative-scroll-blur'>Github</a></p>

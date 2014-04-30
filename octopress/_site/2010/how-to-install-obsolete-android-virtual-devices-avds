@@ -1,0 +1,28 @@
+<p>Apparently it&#8217;s no longer possible to easily download Android versions 2.0 and 2.0.1 from the AVD Manager. I noticed this problem when I got a new machine and had to install everything from scratch. In the future I suspect even more AVDs will be made obsolete, so this solution also applies to them.</p>
+
+<p>Why would you want to install obsolete AVDs? In my case it&#8217;s a matter of research: I simply want to see the progress of features being added to its browser, and track those changes over time.</p>
+
+<h3 id='step_1_manually_download_and_inspect_repositoryxml'>Step 1: Manually download and inspect repository.xml</h3>
+
+<p>When updating from &#8220;Available Packages&#8221; there&#8217;s a little one-line error saying &#8220;Some packages were found but are not compatible updates.&#8221;</p>
+
+<p>Ok, so let&#8217;s check out the XML for ourselves to see if we can find anything. So point your browser to <a href='https://dl-ssl.google.com/android/repository/repository.xml'>https://dl-ssl.google.com/android/repository/repository.xml</a> (to see the XML, right click to view the page source if you&#8217;re using a Webkit-based browser).</p>
+
+<p>Search for the AVD version you want. In this case we want 2.0 and 2.0.1, so a simple search find the relevant blocks of code. And we also find the XML tag that&#8217;s the cause of our troubles, which prevents us from easily getting the AVDs:</p>
+<pre class='xml' name='code'>&lt;sdk:obsolete /&gt;
+</pre>
+<h3 id='step_2_get_the_avds'>Step 2: Get the AVDs!</h3>
+
+<p>At this point you could do two things, either save repository.xml to your computer and remove these &#8220;obsolete&#8221; tags (then add the XML to your AVD Manager by clicking &#8220;Add Add-on Site&#8230;&#8221;), or simply find the path to the AVD and download it manually.</p>
+
+<p>The second option is to simply manually download the paths, which are easy to find in the XML and are listed here for your convenience:<br /><a href='https://dl-ssl.google.com/android/repository/android-2.0_r01-linux.zip'>Android 2.0 AVD (Linux)</a><br /><a href='https://dl-ssl.google.com/android/repository/android-2.0_r01-macosx.zip'>Android 2.0 AVD (Mac OSX)</a><br /><a href='https://dl-ssl.google.com/android/repository/android-2.0_r01-windows.zip'>Android 2.0 AVD (Windows)</a></p>
+
+<p><a href='https://dl-ssl.google.com/android/repository/android-2.0.1_r01-linux.zip'>Android 2.0.1 AVD (Linux)</a><br /><a href='https://dl-ssl.google.com/android/repository/android-2.0.1_r01-macosx.zip'>Android 2.0.1 AVD (Mac OSX)</a><br /><a href='https://dl-ssl.google.com/android/repository/android-2.0.1_r01-windows.zip'>Android 2.0.1 AVD (Windows)</a></p>
+
+<h3 id='step_3_install'>Step 3: Install!</h3>
+
+<p>Create directories under your Android SDK installation&#8217;s &#8220;platforms&#8221; folder. In this case we have 2.0 (API level 5) and 2.0.1 (API level 6), so I created these folders: android-5 and android-6. Now just unzip the contents into these folders.</p>
+
+<p>Start up the AVD Manager and click on &#8220;Installed Packages&#8221;. If you don&#8217;t see your new (obsolete) packages you just installed, hit the Refresh button and you should see them.</p>
+
+<p>Now you can create new AVDs with these obsolete packages!</p>

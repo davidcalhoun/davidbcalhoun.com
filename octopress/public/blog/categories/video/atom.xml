@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: video | David Calhoun's blog]]></title>
+  <link href="http://davidbcalhoun.com/blog/categories/video/atom.xml" rel="self"/>
+  <link href="http://davidbcalhoun.com/"/>
+  <updated>2014-04-16T17:30:52-07:00</updated>
+  <id>http://davidbcalhoun.com/</id>
+  <author>
+    <name><![CDATA[David Calhoun]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Video: John Resig &#8211; Testing, Performance Analysis, and jQuery 1.4]]></title>
+    <link href="http://davidbcalhoun.com/2009/video-john-resig-testing-performance-analysis-and-jquery-1-4"/>
+    <updated>2009-12-21T00:00:00-08:00</updated>
+    <id>http://davidbcalhoun.com/2009/video-john-resig-testing-performance-analysis-and-jquery-1-4</id>
+    <content type="html"><![CDATA[<p>In case you hadn’t seen it yet, <a href="http://ejohn.org/">John Resig</a> was kind enough to stop by Yahoo! for the December <a href="http://www.meetup.com/BayJax/">Bayjax</a> meetup. Here’s the <a href="http://developer.yahoo.com/yui/theater/video.php?v=resig-testing">video</a>:</p>
+
+<div class="video" style="width:576px; height: 324px;">
+</div>
+
+<p>Usually developers are more interested in just getting the dang code to work, and as a result actual the testing and maintenance of JavaScript isn’t talked about too much, so I’m sure this will be new territory for many developers. And since it’s John Resig speaking, there was of course a bit about using <a href="http://testswarm.com/">TestSwarm</a>, a testing distributed framework-agnostic automated testing tool (that’s a mouthful!).</p>
+
+<p>Included in the talk are good things to note while testing, such as the fact unless you’re running Firefox or Chrome on Windows, all test times have a margin of error of up to 15ms (not to be confused with <a href="http://www.quirksmode.org/blog/archives/2009/08/when_to_read_ou.html">PPK’s observation of the delay between JavaScript computation and browser rendering</a>).</p>
+
+<p>(via <a href="http://www.yuiblog.com/blog/2009/12/16/video-resig-testing-and-jquery/">YUIBlog</a>)</p>
+
+]]></content>
+  </entry>
+  
+</feed>

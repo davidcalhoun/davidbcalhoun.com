@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: philosophy | David Calhoun's blog]]></title>
+  <link href="http://davidbcalhoun.com/blog/categories/philosophy/atom.xml" rel="self"/>
+  <link href="http://davidbcalhoun.com/"/>
+  <updated>2014-04-16T17:30:52-07:00</updated>
+  <id>http://davidbcalhoun.com/</id>
+  <author>
+    <name><![CDATA[David Calhoun]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[A theory of leisure time, choice, and happiness]]></title>
+    <link href="http://davidbcalhoun.com/2012/a-theory-of-leisure-time-choice-and-happiness"/>
+    <updated>2012-10-19T00:00:00-07:00</updated>
+    <id>http://davidbcalhoun.com/2012/a-theory-of-leisure-time-choice-and-happiness</id>
+    <content type="html"><![CDATA[<p>This is finally the end of my first week in Japanese language school here in Kyoto. It’s been quite a long week, with the most studying I’ve ever done in my life. We’ve gone through nine chapters in a week, and just Friday received two more books for learning Kanji. We’ll learn our first 50 Kanji in a week, alongside the rest of our classes. I already know some words here and there, but for the most part, much of what we’ve just learned is a blur, which is forcing me to use almost all of my free time in running to catch up.</p>
+
+<p>Having very little leisure time has been good in some ways. It’s been a marked change in the cozy, comfortable lifestyle of sitting in front of a computer screen all day, doing tasks which were somewhat challenging but ultimately not rewarding. Those days in Silicon Valley were ended with a gratuitous amount of free time (which is unusual, working for a startup). Which seems nice for a while, but becomes a bit maddening after long, at least for me.</p>
+
+<p>I remember moving to Silicon Valley and buying my TV and PS3 and everything to set me up with all the comforts of my new lifestyle. After coming home from work, I would waste away my time on my computer, my TV, or my video games. After long it was pretty easy to see the same mundane cycle develop: wake up, work, waste time, sleep. Rinse, repeat. Ad nauseum. Ad absurdum.</p>
+
+<p>It became apparent that this lifestyle wasn’t really healthy, mentally or physically. It would be better, I thought, to live in a city where I needed to walk around from place to place, or take public transport. San Francisco is perfect for that, but I gave the city (or should I say “The City” as folks there do) a shot and it never really grew on me. In my short time here on Earth, I’ve found there are other cities that are better suited to me. I wanted to find a city I liked, which ended up being far away Kyoto, where I’m at now.</p>
+
+<p>My unhealthy physical lifestyle, combined with too much free time, had resulted in an unhealthy mental state. I believe lack of exercise leads to deteriorated mental performance as well as depression, and this is what I believe I experienced. This combined with too much free time, solitude, and a brooding time resulted in days where I’d come home from work and attempt to distract myself by browsing the internet the rest of the day. I ended up absorbing the highly-prized gift of free time which I wasted with abandon, before going asleep and starting the cycle over again.</p>
+
+<p>Now, after becoming a student, I have relearned what it’s like to have every little free time. I’m stressed out and overwhelmed already (as a beginner Japanese language student), but it feels good in a lot of ways. I feel alive, but I also feel like I’m not squandering my free time, or worrying about what I do with the free time I have. In a lot of ways I think I became maddened with the choice, and maddened with brooding in my free time over my life path and the usefulness (to society) of my career choice. Maybe I had chosen the wrong one? I wonder what it would be like if I had chosen to live in Japan after all?</p>
+
+<blockquote>
+  <p>If you marry, you will regret it; if you do not marry, you will also regret it; if you marry or do not marry, you will regret both;</p>
+
+  <p>Laugh at the world’s follies, you will regret it, weep over them, you will also regret that; laugh at the world’s follies or weep over them, you will regret both; whether you laugh at the world’s follies or weep over them, you will regret both.</p>
+
+  <p>Believe a woman, you will regret it, believe her not, you will also regret that; believe a woman or believe her not, you will regret both; whether you believe a woman or believe her not, you will regret both.</p>
+
+  <p>Hang yourself, you will regret it; do not hang yourself, and you will also regret that; hang yourself or do not hang yourself, you will regret both; whether you hang yourself or do not hang yourself, you will regret both.</p>
+
+  <p>This, gentlemen, is the sum and substance of all philosophy. (Kierkegaard)</p>
+</blockquote>
+
+<p>This passage by Kierkegaard gives a lot of insight into the brooding mind of an existentialist, but arguably offers us a glimpse at the modern human predicament. We make choices daily, and we also make great life-changing choices. It’s natural to think “Would I have been better off if I did it differently? If I choose differently?”.</p>
+
+<p>Kierkegaard himself, if I remember right, lived off of his family’s money and didn’t have to worry about work. He had an excessive amount of leisure time, and perhaps that influenced the amount of time he had to brood over his life’s choices. He certainly had enough time to write down these thoughts, so I would think that his thoughts themselves were more numerous than his writings.</p>
+
+<p>Since I no longer have too much free time, but rather too little of it, I have that much less time to brood over matters. I have made my choices for now (moving to Japan, studying Japanese full time), and I will only know if I’ve made the right decision after spending more time giving this path a try.</p>
+
+<p>This is good in a lot of ways. In a lot of ways, the choice of what to do in my leisure time has been made for me. I must use it to study.</p>
+
+<p>The choice is made! The existentialist dilemma has been, at the very least, temporarily pushed aside.</p>
+
+<p>And at the very best, the existentialist dilemma has been conquered. “Live in Japan or do not live in Japan, you will regret it either way”. Now I have done both. I’ve now lived on both sides of the coin, on both sides of the world.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Descartes on building software frameworks]]></title>
+    <link href="http://davidbcalhoun.com/2012/descartes-on-building-software-frameworks"/>
+    <updated>2012-10-02T00:00:00-07:00</updated>
+    <id>http://davidbcalhoun.com/2012/descartes-on-building-software-frameworks</id>
+    <content type="html"><![CDATA[<p><a href="http://commons.wikimedia.org/wiki/File:Frans_Hals_-_Portret_van_Ren%C3%A9_Descartes.jpg"><img src="http://davidbcalhoun.com/wp-content/uploads/2012/10/Frans_Hals_-_Portret_van_René_Descartes.jpeg" alt="Rene Descartes" title="Rene Descartes" width="817" height="1000" class="aligncenter size-full wp-image-969" /></a></p>
+
+<p>Years ago I read Descartes’s <a href="http://en.wikipedia.org/wiki/Discourse_on_the_Method">Discourse on Method</a> for what I found to be some of the more interesting philosophy courses of my college career: those of the history of modern philosophy. Modern philosophy technically starts with Descartes, so it’s a good place to start, or to get re-acquainted with philosophy in general.</p>
+
+<p>I’ve been reading through the Discourse again, and have found it to be more interesting and relatable this time around (particularly about lessons learned while traveling, but that’s a topic for another post).</p>
+
+<p>What’s particularly interesting here is that a lot of what Descartes talks about seems very relevant for software engineers who wish to create their own software framework from scratch.</p>
+
+<p>I’m sorry, I know that sounds pretty pretentious and crazy.</p>
+
+<p>This isn’t as far-fetched as it may seem at first. Be patient!</p>
+
+<p>But first, some background…</p>
+
+<h3 id="what-was-descartes-up-to-does-french-count-as-a-programming-language">What was Descartes up to? Does French count as a programming language?</h3>
+
+<p><a href="http://commons.wikimedia.org/wiki/File:Ren%C3%A9_Descartes_i_samtal_med_Sveriges_drottning,_Kristina.jpg"><img src="http://davidbcalhoun.com/wp-content/uploads/2012/10/René_Descartes_i_samtal_med_Sveriges_drottning_Kristina.jpeg" alt="Rene Descartes" title="Rene Descartes" width="581" height="539" class="aligncenter size-full wp-image-975" /></a><br />
+<em>“Oh my! I find your foundations to be awfully shaky.”</em> (note: not an actual Descartes quote)</p>
+
+<blockquote>
+  <p>Philosophy has been pursued for many centuries by the best minds, and yet everything in it is still disputed and hence doubtful; and I wasn’t so arrogant as to hope to achieve more in philosophy than others had done. Considering how many different opinions learned men may maintain on a single question—where at most one can be true—I regarded everything that was merely probable as being near enough to false. -<a href="http://en.wikipedia.org/wiki/Discourse_on_the_Method">Descartes, Discourse on Method</a></p>
+</blockquote>
+
+<p>Descartes’s task, if you’ll remember, is intense self-examination where he throws out any questionable belief in order to build a strong foundation of clear and unquestionable beliefs. He doubts literally everything, until he comes to the one thing that can’t be doubted: that there is obviously <em>something</em> doing the doubting. Namely himself. This is where the concept “I think, therefore I am” comes from (“Je pense, donc je suis”, and in Latin as “Cogito ergo sum” in a later work).</p>
+
+<h3 id="the-software-engineer-tie-in">The software engineer tie-in</h3>
+
+<p>Software engineers, I’ve found, when given the chance, are likewise just as skeptical of the “status quo”. They take a look at the landscape around them, but find themselves dissatisfied and unable to find a perfectly suitable software framework. Of course many people do find close approximations and are perfectly happy using an existing framework. On the other hand, there are definitely purists who believe the proper thing to do is to create their own tailor-made framework from the ground up. Descartes would definitely fit into this latter category.</p>
+
+<p>What I’ve found over my short career in software is that engineers like to build custom frameworks. Lots of custom frameworks. And they often times like to build them in a purist way, from the ground up.</p>
+
+<p>Building your own framework turns out not only to be more interesting and fun (rather than maintaining some existing framework), but it’s also supposedly a better way to ensure a lack of cruft, and to ensure a firm foundation. A foundation which has no component that is unneeded or of which can be doubted.</p>
+
+<p>The danger of doing otherwise, it’s thought, is that after investing the effort to learn an existing framework, one might find it wasn’t that great after all. Or worse, that it had questionable foundations which would need to be patched up. This is not unlike the task of learning an existing philosophical system, only to see holes poked in its very foundations (as the quote above states, this is essentially what philosophers have been doing for centuries – poking holes in each other’s foundations).</p>
+
+<h3 id="better-than-maintaining-the-old">Better than maintaining the old</h3>
+
+<blockquote>
+  <p>Regarding the opinions which I had previously held, I couldn’t do better than set out to get rid of them all at one go, so as then to replace them afterwards with better opinions or even with the same ones after I had straightened them out using reason’s plumb-line. I ﬁrmly believed that this would let me conduct my life much better than if I were to build only on old foundations and rely only on principles that I had accepted in my youth without ever examining whether they were true. Even if I were to see various difﬁculties in this project, they weren’t insurmountable, and weren’t comparable with the difﬁculties involved in reforming even minor matters affecting public institutions. -<a href="http://en.wikipedia.org/wiki/Discourse_on_the_Method">Descartes, Discourse on Method</a></p>
+</blockquote>
+
+<p>The huge drawback of “going at it on our own” is of course the fact that <em>we</em> are now responsible for creating the entire foundation and each component of our custom framework. Descartes would be perfectly fine with this.</p>
+
+<p>And this is exactly what he did with himself: he tore down everything he thought he knew to be true, then started to slowly build up his philosophy bit by bit. Better to do this than to patch old shaky foundations in existing philosophies.</p>
+
+<h3 id="reusing-old-bits">Reusing old bits</h3>
+
+<p><a href="http://commons.wikimedia.org/wiki/File:Descartesmaison.jpg"><img src="http://davidbcalhoun.com/wp-content/uploads/2012/10/Descartesmaison.jpeg" alt="Descartes&#039;s house" title="Descartes&#039;s house" width="395" height="597" class="aligncenter size-full wp-image-979" /></a><br />
+<em>Descartes’s house. Hmm, not sure the foundations are secure here…</em></p>
+
+<p>Interestingly enough, parts of old beliefs (old frameworks) may still find their way in, but only after intense scrutiny:</p>
+
+<blockquote>
+  <p>Just as in demolishing an old house we usually keep the materials for use in building a new one, so in destroying all those opinions of mine that I judged to be ill-founded I made various observations and acquired many experiences that I have since used in establishing more certain opinions. -<a href="http://en.wikipedia.org/wiki/Discourse_on_the_Method">Descartes, Discourse on Method</a></p>
+</blockquote>
+
+<p>In other words, there’s some good bits out there that have already been created. Might as well reuse them if they’re good enough.</p>
+
+<h3 id="philosophy-as-a-preview-of-the-future-of-software-development">Philosophy as a preview of the future of software development</h3>
+
+<p>Obviously philosophy didn’t stop with Descartes. He did become the foundation for others in the modern tradition to build on (namely Spinoza and Leibniz, and most others who came after him), but of course that wasn’t the end of it. The famous “cogito ergo sum”, the foundation of Descartes’s philosophy and seemingly common sense, <a href="http://en.wikipedia.org/wiki/Cogito_ergo_sum#Criticisms">hasn’t even been immune from criticism</a>.</p>
+
+<p>Folks have continued to build philosophies and have continued to be unsatisfied with what’s out there, or unconvinced that it’s even useful in this age.</p>
+
+<p>I believe we approach software frameworks, software itself, and even programming languages the same way. Unsatisfied with what’s out there, people will continue to build new things and new tools which work for the time being for certain groups of people.</p>
+
+<p>Inevitably, a new generation of developers, not unlike a new generation of philosophers, will eventually tear it all down and start over again.</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Why is Philosophy still important?]]></title>
+    <link href="http://davidbcalhoun.com/2012/why-is-philosophy-still-important"/>
+    <updated>2012-05-06T00:00:00-07:00</updated>
+    <id>http://davidbcalhoun.com/2012/why-is-philosophy-still-important</id>
+    <content type="html"><![CDATA[<p>This was posted on <a href="http://www.reddit.com/r/philosophy/comments/sw0t2/why_is_philosophy_still_important/">reddit</a> recently, so I thought I’d copy my response here.</p>
+
+<p>First, just a quick introduction! There’s been a lot of thought recently that philosophy is useless. The main arguments seem to be that</p>
+
+<ol>
+  <li>science has replaced any need for philosophy</li>
+  <li>philosophy is a useless subject to study in college</li>
+</ol>
+
+<p>For the latter argument, I recently recorded my thoughts, <a href="http://davidbcalhoun.com/b/2012-03-17-the-value-of-a-philosophy-degree.mp3">and you can hear them here</a>. For the first argument, read on…</p>
+
+<p>In short: science helps us live longer, whereas philosophy helps us live better.</p>
+
+<p>It’s true that there’s a lot of philosophy that is very academic and not so useful, but at its core, philosophy is a striving towards figuring out what is true and worthwhile, and what it means to live a meaningful and worthwhile life. That’s something off-limits for science, because science can tell us how things are empirically, but it can’t prescribe how we should then live.</p>
+
+<p>It so happens that we already believe many things to be true and have many attitudes and dispositions towards things, whether we realize it or not. That’s what you might call a person’s personal philosophy. A person may hate philosophy, but it would be true to say that their “anti-philosophy” is a type of philosophy. In short, we all have a philosophy already. Shouldn’t we then examine it logically and try to improve it, and make sure it gets closer to the truth?</p>
+
+<p>It also happens that our world is saturated with manipulation of people’s philosophies. Advertisements and an envy of other’s belongings has saturated our consumer culture and has turned into a sort of philosophy of its own, and sadly a way of life. There’s also much manipulation of attitudes and thought in politics, which is how politics have turned into a game of image and often times broad, false promises. Money and a lust for fame have also corrupted the sciences to some degree, and have turned it into a bit of a game to get research funding from large corporations, so nothing in the world is off-limits it seems.</p>
+
+<p>Philosophy gives us the tools to recognize these things for what they are, and gives us some defenses against them that the common person might not have. (incidentally, I recommend reading On Bullshit for more of a taste of how our world is saturated in BS)</p>
+
+<p>I believe there’s a few big reasons philosophy is downplayed and ridiculed in our culture today. The main reason is that there’s no real way to make it profitable, unlike the sciences. If we’re living in a consumer culture that assigns some value to things based on money, then naturally we will value less the things which aren’t profitable. When it comes down to it, we really are living in a culture that values more the computer science graduate who goes to join a company such as Zynga to produce banal (borrowing a favorite word from David Foster Wallace) ripoff games. We value this person more than someone who stays in academia to pursue truth and knowledge, and we ridicule them for not coming out into the real world, working a real job, and making a ton of money, which is after all the highest end according to to our current thinking (which is in itself a philosophy).</p>
+
+<p>I have more to say about all this, but I’ll keep this short. <img src="http://davidbcalhoun.com/wp-includes/images/smilies/icon_smile.gif" alt=":)" class="wp-smiley" /> </p>
+
+<p>(For a bit of perspective, I’m saying this as someone who makes way more money than I need working for big corporations doing web dev work, but is looking to go back and study more philosophy in school eventually.)</p>
+
+]]></content>
+  </entry>
+  
+</feed>

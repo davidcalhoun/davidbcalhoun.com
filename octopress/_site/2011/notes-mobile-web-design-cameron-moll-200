@@ -1,0 +1,206 @@
+<h3 id='whats_this'>What&#8217;s this?</h3>
+
+<p>These are some notes I collect as I read through Cameron Moll&#8217;s <a href='http://www.amazon.com/Mobile-Web-Design-Cameron-Moll/dp/0615185916'>Mobile Web Design</a>.</p>
+
+<h3 id='introduction'>Introduction</h3>
+
+<ol>
+<li>Further info:</li>
+</ol>
+
+<p>Designing the Mobile User Experience (Barbara Ballard)<br />dotMobi Web Developer&#8217;s Guide (dev.mobi)<br />Global Authoring Practices for the Mobile Web (Luca Passani) (passani.it/gap)<br />Constant Touch: A Global History of the Mobile Web (Jon Agar)<br />Personal, Portable, Pedestrian: Mobile Phones in Japanese Life (Mizuko Ito)<br />Mobile Interaction Design (Matt Jones)</p>
+
+<ol>
+<li>iPhone released just before publication</li>
+</ol>
+
+<h3 id='mobile_web_fundamentals'>Mobile Web Fundamentals</h3>
+
+<ol>
+<li>
+<p><a href='http://communities-dominate.blogs.com/brands/2007/01/putting_27_bill.html'>Putting 2.7 Billion in Context: Mobile Phone Users</a></p>
+</li>
+
+<li>
+<p>Phone is smaller. Different input methods. Searching for specific data (directions or a phone number) rather than a truckload of data available via the desktop. One handed interaction.</p>
+</li>
+
+<li>
+<p>Limitations: small screen size, difficulty of data input, user agent inconsistency</p>
+</li>
+</ol>
+
+<p>Opportunities: location-specific data, on-the-go-messaging, voice communication.</p>
+
+<ol>
+<li>
+<p>Weather Channel &#8211; greater reach on mobile web compared to desktop (<a href='http://www.comscore.com/Press_Events/Press_Releases/2007/05/Mobile_Web_Usage_Grows_in_UK'>source</a>)</p>
+</li>
+
+<li>
+<p>Rollable display &#8211; Polymer Vision Readius (<a href='http://www.youtube.com/watch?v=uQMBzXaCmqY'>video</a>)</p>
+</li>
+</ol>
+
+<p>Many devices and user agents, making testing expensive and impractical. Emulators and testing on multiple devices will lead to successful deployment.</p>
+
+<ol>
+<li>Opera Mini &#8211; far better UI than most native browsers</li>
+</ol>
+
+<p>Mostly must be installed manually, except for T-Mobile shipping hundreds of thousands with it pre-installed</p>
+
+<ol>
+<li>
+<p>&#8220;…the mobile web experience is often a small screen, intermittent, one-handed experience&#8221;</p>
+</li>
+
+<li>
+<p>understanding of target audience, their usage and what they want, and the contextual relevance (phone numbers, etc.) of data</p>
+</li>
+
+<li>
+<p>Initiate a phone call: wtai scheme for WML, tel scheme for HTML.</p>
+</li>
+</ol>
+
+<p>Some browsers (Opera Mini, Safari Mobile) automatically convert links to phone numbers</p>
+
+<p>WML scheme to add a number to the address book: wtai://wp/ap;+5555555;Amy%20Miller</p>
+
+<ol>
+<li>
+<p>carrier myopia: devs thinking the only way to reach the audience is by landing on the carrier deck. Mobile User Experience Conference (MEX) 2007: &#8220;Tearing down the walled garden will enhance the mobile content experience and release value for the industry. The objective should be a free market for content and applications, based on open standards and accessible to all. We think the current fragmentation of formats and channels to market is holding back growth.&#8221;</p>
+</li>
+
+<li>
+<p>&#8220;cell phone&#8221; is an outdated term. Use &#8220;mobile&#8221; or &#8220;device&#8221;.</p>
+</li>
+
+<li>
+<p>Japanese market: &#8220;keitai&#8221; (=&#8221;something you carry with you&#8221;)</p>
+</li>
+</ol>
+
+<h3 id='four_methods_revisited'>Four Methods, Revisited</h3>
+
+<ol>
+<li>
+<p><a href='http://www.cameronmoll.com/archives/000398.html'>Mobile Web Design ~ The Series</a> (Cameron Moll, 2005)</p>
+</li>
+
+<li>
+<p>Method 1: Do nothing. If the markup is meaningful and standards-based, the better mobile browsers can adapt.</p>
+</li>
+
+<li>
+<p>Good browsers such as the iPhone&#8217;s allow the viewing of the full site (with zooming).</p>
+</li>
+
+<li>
+<p>Advantages: mobile browsers shoulder the burden of reformatting content, no additional effort needed, users have same content and possibly the same experience as on a PC</p>
+</li>
+</ol>
+
+<p>Disadvantages: doesn&#8217;t address contextual relevance or exploit device capabilities, users with zoom-enabled devices are a small market share</p>
+
+<ol>
+<li>Method 2: Reduce images and styling</li>
+</ol>
+
+<p>-presentation styling and images reduced on the fly</p>
+
+<p>mowser.com (Russell Beattie, formerly Yahoo! Mobile)<br />skweezer.net &#8211; an older service dating back to 2001</p>
+
+<p>2-minute mobile mod: <a href='http://www.mikeindustries.com/blog/archive/2005/07/make-your-site-mobile-friendly'>http://www.mikeindustries.com/blog/archive/2005/07/make-your-site-mobile-friendly</a></p>
+
+<ol>
+<li>Advantages: relies on implied hierarchy in HTML markup, viewable by a variety of devices, faster download, many browsers override CSS anyway, so why bother?</li>
+</ol>
+
+<p>Disadvantages: ignores contextual relevance of mobility, file size may still be excessive</p>
+
+<p>Method 3: Use Handheld Style Sheets</p>
+
+<ol>
+<li>
+<p>media=&#8221;handheld&#8221; style sheet</p>
+</li>
+
+<li>
+<p>Not widely supported.</p>
+</li>
+</ol>
+
+<p>Advantages: handheld style sheet is built into CSS, at most one extra style sheet, one web address<br />Disadvantages: ignores contextual relevance of mobility, media=&#8221;handheld&#8221; support is inconsistent and nearly unreliable</p>
+
+<p>Method 4: Create Mobile-Optimized Content</p>
+
+<ol>
+<li>
+<p>Kayak.com/moby</p>
+</li>
+
+<li>
+<p>Advantages: contextually relevant (addresses first how the content is consumed, and presentation secondly), pages are leaner</p>
+</li>
+</ol>
+
+<p>Disadvantages: denies access to content by making assumptions about the user and device, two sets of files, alternate web addresses</p>
+
+<ol>
+<li>Author&#8217;s opinion: doing nothing and mobile-optimized content are the two viable approaches</li>
+</ol>
+
+<h3 id='xhtmlcss_development'>XHTML/CSS Development</h3>
+
+<ol>
+<li>
+<p>WML deck and card metaphor. Decline giving way to XHTML. WAP protocol, WML language.</p>
+</li>
+
+<li>
+<p>With WAP 2.0, XHTML-MP is the preferred markup language</p>
+</li>
+
+<li>
+<p><a href='http://www.cameronmoll.com/mobile/mkp'>Markup Test Pages</a>, <a href='http://www.cameronmoll.com/archives/000577.html'>Mobile Web Design: Tips &#38; Techniques (2005)</a></p>
+</li>
+
+<li>
+<p>No need to define new standards just for the web. Same regardless of device: &#8220;The underlying standards for the greater web, regardless of device, person, or place, are the same: semantic markup, separation of structure and presentation, accessibility, and so on.&#8221;</p>
+</li>
+</ol>
+
+<p><a href='http://www.w3.org/TR/mobile-bp/'>W3C Mobile Web Best Practices 1.0</a></p>
+
+<p><a href='http://passani.it/gap'>Global Authoring Practices for the Mobile Web (Luca Passani)</a></p>
+
+<ol>
+<li>XHTML-MP template</li>
+</ol>
+<pre class='HTML' name='code'>&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+&lt;!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+&lt;head&gt;
+  &lt;title&gt;Site Title&lt;/title&gt;
+  &lt;link rel="stylesheet" type="text/css" href="mobile.css"/&gt;
+  &lt;meta http-equiv="Cache-Control" content="max-age=600" /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Page Heading&lt;/h1&gt;
+  &lt;p&gt;Content&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<ol>
+<li>
+<p><a href='http://www.developershome.com/wap/xhtmlmp'>DeveloperHome.com&#8217;s XHTML-MP Tutorial</a></p>
+</li>
+
+<li>
+<p><a href='http://htmllint.itc.keio.ac.jp/htmllink/tagslist.cgi?HTMLVersion=XHTML-MP'>XHTML-MP Tags List</a></p>
+</li>
+</ol>
+
+<p>Good case examples:<br /><a href='http://flickr.com/mob'>Flickr Mobile</a><br /><a href='http://mobile.fandango.com'>Fandango Mobile</a></p>

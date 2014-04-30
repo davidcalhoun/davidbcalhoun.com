@@ -1,0 +1,490 @@
+<h3 id='introduction'>Introduction</h3>
+
+<p>If you read <a href='http://davidbcalhoun.com/2010/on-designing-a-mobile-webpage'>part 4</a> of this series, you&#8217;ll know that because of the variety of screen sizes, the best way to develop for mobile is to develop fluid layouts that take 100% of the available space on the screen.</p>
+
+<p>What you probably didn&#8217;t think of is that there&#8217;s different screen widths <em>even on the same device</em>! This is due to screen orientation. And when the user changes the screen orientation, stuff may break (hey, it&#8217;s not a perfect world). In my experience this has meant needing to tweak percentage widths on elements, but I imagine there&#8217;s even more needs. Imagine an image carousel that can only fit three images across in portrait mode but can possibly fit four images in landscape mode. It might be nice to re-initialize the carousel to accommodate a forth image when the phone is in landscape mode (then again, that might create a lot of unnecessary overhead&#8230;).</p>
+
+<p>In any case, I hope you can agree that it would sometimes be useful to know the screen orientation.</p>
+
+<h3 id='id1'><pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'>REXML could not parse this XML/HTML: 
+&lt;div class=&quot;codecolorer-container text twitlight&quot; style=&quot;overflow:auto;white-space:nowrap;width:435px;&quot;&gt;</pre></h3>
+<table cellpadding='0' cellspacing='0'>
+    <tr>
+      <td class='line-numbers'>
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class='text codecolorer'>
+          window.orientation
+        </div>
+      </td>
+    </tr>
+  </table><pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'>REXML could not parse this XML/HTML: 
+&lt;/div&gt;</pre>
+<p>and the</p>
+<div class='codecolorer-container text twitlight' style='overflow:auto;white-space:nowrap;width:435px;'>
+  <table cellpadding='0' cellspacing='0'>
+    <tr>
+      <td class='line-numbers'>
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class='text codecolorer'>
+          orientationchange
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+<p>event&lt;/h3&gt; Luckily on the latest smartphones you have some goodies available to you that you don&#8217;t have on the desktop (since desktop users aren&#8217;t in the habit of constantly turning their screens sideways!).</p>
+
+<p><strong>&lt;/p&gt; <pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'>REXML could not parse this XML/HTML: 
+&lt;div class=&quot;codecolorer-container text twitlight&quot; style=&quot;overflow:auto;white-space:nowrap;width:435px;&quot;&gt;
+  &lt;table cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;
+    &lt;tr&gt;
+      &lt;td class=&quot;line-numbers&quot;&gt;
+        &lt;div&gt;
+          1&lt;br /&gt;
+        &lt;/div&gt;
+      &lt;/td&gt;</pre></strong></p>
+
+<pre><code>  &lt;td&gt;
+    &lt;div class=&quot;text codecolorer&quot;&gt;
+      window.orientation
+    &lt;/div&gt;
+  &lt;/td&gt;
+&lt;/tr&gt;</code></pre>
+<pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'>REXML could not parse this XML/HTML: 
+  &lt;/table&gt;</pre><pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'>REXML could not parse this XML/HTML: 
+&lt;/div&gt;</pre><pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'>REXML could not parse this XML/HTML: 
+&lt;/b&gt;</pre>
+<p><strong>&lt;/p&gt; <pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'>REXML could not parse this XML/HTML: 
+&lt;div class=&quot;codecolorer-container text twitlight&quot; style=&quot;overflow:auto;white-space:nowrap;width:435px;&quot;&gt;
+  &lt;table cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;
+    &lt;tr&gt;
+      &lt;td class=&quot;line-numbers&quot;&gt;
+        &lt;div&gt;
+          1&lt;br /&gt;
+        &lt;/div&gt;
+      &lt;/td&gt;</pre></strong></p>
+
+<pre><code>  &lt;td&gt;
+    &lt;div class=&quot;text codecolorer&quot;&gt;
+      orientationchange event
+    &lt;/div&gt;
+  &lt;/td&gt;
+&lt;/tr&gt;</code></pre>
+<pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'>REXML could not parse this XML/HTML: 
+  &lt;/table&gt;</pre><pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'>REXML could not parse this XML/HTML: 
+&lt;/div&gt;</pre><pre class='markdown-html-error' style='border: solid 3px red; background-color: pink'>REXML could not parse this XML/HTML: 
+&lt;/b&gt;</pre><pre class='JScript' name='code'>// DOM Level 0 (avoid)
+window.onorientationchange = function(){};
+
+// DOM Level 2
+window.addEventListener('orientationchange', function(){}, false);
+</pre>
+<p><a href='http://www.iphonemicrosites.com/articles/6-tips-to-optimize-your-current-site-for-the-iphone/'>Some websites</a> recommend using</p>
+<div class='codecolorer-container text twitlight' style='overflow:auto;white-space:nowrap;width:435px;'>
+  <table cellpadding='0' cellspacing='0'>
+    <tr>
+      <td class='line-numbers'>
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class='text codecolorer'>
+          orientationchange
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+<p>to dynamically add an</p>
+<div class='codecolorer-container text twitlight' style='overflow:auto;white-space:nowrap;width:435px;'>
+  <table cellpadding='0' cellspacing='0'>
+    <tr>
+      <td class='line-numbers'>
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class='text codecolorer'>
+          orient
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+<p>attribute on the</p>
+<div class='codecolorer-container text twitlight' style='overflow:auto;white-space:nowrap;width:435px;'>
+  <table cellpadding='0' cellspacing='0'>
+    <tr>
+      <td class='line-numbers'>
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class='text codecolorer'>
+          body
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+<p>element and target the orientation with CSS selectors (</p>
+<div class='codecolorer-container text twitlight' style='overflow:auto;white-space:nowrap;width:435px;'>
+  <table cellpadding='0' cellspacing='0'>
+    <tr>
+      <td class='line-numbers'>
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class='text codecolorer'>
+          body[orient=landscape]
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+<p>), <em>but this is in error</em>. As it turns out,</p>
+<div class='codecolorer-container text twitlight' style='overflow:auto;white-space:nowrap;width:435px;'>
+  <table cellpadding='0' cellspacing='0'>
+    <tr>
+      <td class='line-numbers'>
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class='text codecolorer'>
+          orientationchange
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+<p>is only fired AFTER the screen has been rotated (which also <a href='http://www.stubbornella.org/content/2009/03/27/reflows-repaints-css-performance-making-your-javascript-slow/'>triggers a CSS reflow</a>), which means this attribute is updated later (after the reflow). And unfortunately editing this</p>
+<div class='codecolorer-container text twitlight' style='overflow:auto;white-space:nowrap;width:435px;'>
+  <table cellpadding='0' cellspacing='0'>
+    <tr>
+      <td class='line-numbers'>
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class='text codecolorer'>
+          orient
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+<p>attribute doesn&#8217;t trigger another CSS reflow. The result? When you rotate the device, these new CSS styles don&#8217;t get applied!</p>
+
+<p>The fix is to add the orientation as a CSS class, which does trigger a CSS reflow. So our code at this point will look something like this:</p>
+<pre class='JScript' name='code'>(function(){
+var init = function() {
+  var updateOrientation = function() {
+    var orientation = window.orientation;
+    
+    switch(orientation) {
+      case 90: case -90:
+        orientation = 'landscape';
+      break;
+      default:
+        orientation = 'portrait';
+    }
+    
+    // set the class on the HTML element (i.e. )
+    document.body.parentNode.setAttribute('class', orientation);
+  };
+  
+  // event triggered every 90 degrees of rotation
+  window.addEventListener('orientationchange', updateOrientation, false);
+  
+  // initialize the orientation
+  updateOrientation();
+}
+
+window.addEventListener('DOMContentLoaded', init, false);
+
+})();
+</pre><p>
+  Now we can target elements like this in CSS:
+</p><pre class='CSS' name='code'>
+.portrait body div { width: 10%; }
+.landscape body div { width: 15%; }
+</pre><h3>
+  With a little help from media queries
+</h3><p>
+  You may have heard of <a href='https://developer.mozilla.org/en/css/media_queries'>media queries</a> being used to target mobile devices (based on screen pixel width) or to <a href='http://www.bdoran.co.uk/2010/07/19/detecting-the-iphone4-and-resolution-with-javascript-or-php/'>target the iPhone 4&#8242;s Retina display</a>, but you may not have known that you can also target screen orientation!
+</p><pre class='CSS' name='code'>
+@media all and (orientation: portrait) {
+  body div { width: 10%; }
+}
+
+@media all and (orientation: landscape) {
+  body div { width: 15%; }
+}
+</pre><p>
+  The orientation media query is available on iOS 3.2+, Android 2.0+, and some other browsers.
+</p><p>
+  This is a lot cleaner than the above JavaScript example in the sense that it&#8217;s pure CSS, and it&#8217;s part of the CSS that gets reflowed when the screen is rotated.
+</p><p>
+  (Minor note: iOS 4 on the iPhone Simulator running 4.0.0 looks like it&#8217;s stuck in landscape orientation, but the media queries work correctly on my 3GS with 4.0.1)
+</p><h3>
+  Fallback: when window.orientation and media queries aren&#8217;t available&#8230;
+</h3><p>
+  If
+</p><div class='codecolorer-container text twitlight' style='overflow:auto;white-space:nowrap;width:435px;'>
+  <table cellpadding='0' cellspacing='0'>
+    <tr>
+      <td class='line-numbers'>
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class='text codecolorer'>
+          window.orientation
+        </div>
+      </td>
+    </tr>
+  </table>
+</div><p>
+  isn&#8217;t available on a device, chances are the
+</p><div class='codecolorer-container text twitlight' style='overflow:auto;white-space:nowrap;width:435px;'>
+  <table cellpadding='0' cellspacing='0'>
+    <tr>
+      <td class='line-numbers'>
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class='text codecolorer'>
+          orientationchange
+        </div>
+      </td>
+    </tr>
+  </table>
+</div><p>
+  event and media queries (for orientation) will also not be available.  Oh no, what do we do now?
+</p><p>
+  Even though this isn&#8217;t an entirely foolproof method, we can dynamically measure the window width and height and guess orientation based on that:
+</p><pre class='JS' name='code'>
+(function(){
+var HTMLNode = document.body.parentNode;
+var updateOrientation = function() {  
+  // landscape when width is biggest, otherwise portrait
+  var orientation = (window.innerWidth > window.innerHeight) ? 'landscape': 'portrait';
+  
+  // set the class on the HTML element (i.e. )
+  HTMLNode.setAttribute('class', orientation);
+}
+var init = function() {
+  // initialize the orientation
+  updateOrientation();
+  
+  // update every 5 seconds
+  setInterval(updateOrientation, 5000);
+}
+window.addEventListener('DOMContentLoaded', init, false);
+})();
+</pre><p>
+  Ok, so it&#8217;s not pretty, but it seems to work.  The overhead in this fallback example is the fact that we have to use a polling technique (in this case every 5 seconds [5000 milliseconds]) to check for changes in orientation.
+</p><p>
+  Note: there&#8217;s also the strong possibility that these browsers will not support the
+</p><div class='codecolorer-container text twitlight' style='overflow:auto;white-space:nowrap;width:435px;'>
+  <table cellpadding='0' cellspacing='0'>
+    <tr>
+      <td class='line-numbers'>
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class='text codecolorer'>
+          DOMContentLoaded
+        </div>
+      </td>
+    </tr>
+  </table>
+</div><p>
+  event, but we&#8217;ll ignore that for the purposes of this article. (if you have problems, change
+</p><div class='codecolorer-container text twitlight' style='overflow:auto;white-space:nowrap;width:435px;'>
+  <table cellpadding='0' cellspacing='0'>
+    <tr>
+      <td class='line-numbers'>
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class='text codecolorer'>
+          DOMContentLoaded
+        </div>
+      </td>
+    </tr>
+  </table>
+</div><p>
+  to
+</p><div class='codecolorer-container text twitlight' style='overflow:auto;white-space:nowrap;width:435px;'>
+  <table cellpadding='0' cellspacing='0'>
+    <tr>
+      <td class='line-numbers'>
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class='text codecolorer'>
+          load
+        </div>
+      </td>
+    </tr>
+  </table>
+</div><p>
+  )
+</p><h3>
+  Putting it all together
+</h3><p>
+  Ok, so if you want the fallback example to work in addition to newer methods, unless you want to duplicate your CSS, then avoid using media queries to target orientation.  Instead we&#8217;ll rely on adding a class to the
+</p><div class='codecolorer-container text twitlight' style='overflow:auto;white-space:nowrap;width:435px;'>
+  <table cellpadding='0' cellspacing='0'>
+    <tr>
+      <td class='line-numbers'>
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class='text codecolorer'>
+          html
+        </div>
+      </td>
+    </tr>
+  </table>
+</div><p>
+  tag (or the
+</p><div class='codecolorer-container text twitlight' style='overflow:auto;white-space:nowrap;width:435px;'>
+  <table cellpadding='0' cellspacing='0'>
+    <tr>
+      <td class='line-numbers'>
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class='text codecolorer'>
+          body
+        </div>
+      </td>
+    </tr>
+  </table>
+</div><p>
+  tag if you prefer).
+</p><p>
+  Once we put everything together, we get something that looks like this:
+</p><pre class='JScript' name='code'>
+(function(){
+var supportsOrientation = (typeof window.orientation == 'number' &#038;&#038; typeof window.onorientationchange == 'object');
+var HTMLNode = document.body.parentNode;
+var updateOrientation = function() {
+  // rewrite the function depending on what's supported
+  if(supportsOrientation) {
+    updateOrientation = function() {
+      var orientation = window.orientation;
+    
+      switch(orientation) {
+        case 90: case -90:
+          orientation = 'landscape';
+        break;
+        default:
+          orientation = 'portrait';
+      }
+      
+      // set the class on the HTML element (i.e. )
+      HTMLNode.setAttribute('class', orientation);
+    }
+  } else {
+    updateOrientation = function() {
+      // landscape when width is biggest, otherwise portrait
+      var orientation = (window.innerWidth > window.innerHeight) ? 'landscape': 'portrait';
+
+      // set the class on the HTML element (i.e. )
+      HTMLNode.setAttribute('class', orientation);
+    }
+  }
+  
+  updateOrientation();
+}
+var init = function() {
+  // initialize the orientation
+  updateOrientation();
+  
+  if(supportsOrientation) {
+    window.addEventListener('orientationchange', updateOrientation, false);
+  } else {
+    // fallback: update every 5 seconds
+    setInterval(updateOrientation, 5000);
+  }
+
+}
+window.addEventListener('DOMContentLoaded', init, false);
+})();
+</pre><p>
+  Minified (540 bytes):
+</p><pre class='JScript' name='code'>
+(function(){var e=typeof window.orientation=="number"&#038;&#038;typeof window.onorientationchange=="object",f=document.body.parentNode;function c(){c=e?function(){var d=window.orientation;switch(d){case 90:case -90:d="landscape";break;default:d="portrait"}f.setAttribute("class",d)}:function(){f.setAttribute("class",window.innerWidth>window.innerHeight?"landscape":"portrait")};c()}window.addEventListener("DOMContentLoaded",function(){c();e?window.addEventListener("orientationchange",c,false):setInterval(c,5E3)},false)})();
+</pre><h3>
+  Conclusion
+</h3><p>
+  And that&#8217;s it!  Now we can reliably target different screen orientations with some straightforward CSS:
+</p><pre class='CSS' name='code'>
+.portrait body div { width: 10%; }
+.landscape body div { width: 15%; }
+</pre><p>
+  Again, in my experience I&#8217;ve used this to fix bugs.  But I&#8217;m sure you can find more creative uses for it!
+</p><h3>
+  Related
+</h3><p>
+  <a href='http://www.nczonline.net/blog/2010/04/06/ipad-web-development-tips/'>iPad web development tips (Nicholas C. Zakas)</a><br />
+  <a href='http://ajaxian.com/archives/iphone-windowonorientationchange-code'>iPhone window.onorientationchange Code (Ajaxian)</a><br />
+  <a href='http://www.quirksmode.org/blog/archives/2010/04/the_orientation.html'>The orientation media query (Quirksmode)</a>
+</p><h3>
+  More from the Mobile Web series:
+</h3><p>
+  <a href='http://davidbcalhoun.com/2010/viewport-metatag'>Part 1: The viewport metatag</a><br />
+  <a href='http://davidbcalhoun.com/2010/the-mobile-developers-toolkit-mobile-web-part-2'>Part 2: The mobile developer’s toolkit</a><br />
+  <a href='http://davidbcalhoun.com/2010/designing-buttons-that-dont-suck'>Part 3: Designing buttons that don’t suck</a><br />
+  <a href='http://davidbcalhoun.com/2010/on-designing-a-mobile-webpage'>Part 4: On designing a mobile webpage</a><br />
+  <a href='http://davidbcalhoun.com/2010/using-mobile-specific-html-css-javascript'>Part 5: Using mobile-specific HTML, CSS, and JavaScript</a><br />
+  <a href='http://davidbcalhoun.com/2010/dealing-with-device-orientation'>Part 6: Dealing with device orientation</a><br />
+  <a href='http://davidbcalhoun.com/2010/mobile-javascript-libraries-and-frameworks'>Part 7: Mobile JavaScript libraries and frameworks</a>
+</p>

@@ -1,0 +1,95 @@
+<p><a href='http://davidbcalhoun.com/wp-content/uploads/2010/09/momo.jpg'><img alt='' class='size-large wp-image-464' src='http://davidbcalhoun.com/wp-content/uploads/2010/09/momo-1024x768.jpg' title='momo' width='100%' /></a><em>Mobile Monday panel left to right: Wesley Yun (RIM), Jared Benson (Punchcut), Anne Sullivan (Microsoft/Tellme Networks), Chris Nesladek (Google), Sue Booker (Nokia) (taken with my iPhone 3GS)</em></p>
+
+<p>I just came back from <a href='http://www.mobilemonday.us/?p=424'>Mobile Monday Silicon Valley: Best Practices for Mobile Design</a> at the <a href='http://www.computerhistory.org/'>Computer History Museum</a> in Mountain View. This was a panel discussion with representatives from Google, Microsoft, Nokia, RIM, and Punchcut. There were quite a few little nuggets of wisdom which I tried to write down in bullet form:</p>
+
+<h4 id='sue_booker_ued_nokia'>Sue Booker, UED (Nokia)</h4>
+
+<ul>
+<li>1 trillion revenue worldwide from disabled users. 60m disabled users in the US.</li>
+
+<li>assume the user is multitasking</li>
+
+<li>apps will be used in totally unexpected ways</li>
+
+<li>not just physical disabilities.. also people in different situations or environmental limitations (no voice, no audio, limited bandwidth, etc)</li>
+
+<li>introduce new complicated functionality gradually. It&#8217;s easy to tell if it&#8217;s a new user or a repeat user, so slowly give repeat users more info.</li>
+
+<li>final takeaway: think of all types of users</li>
+</ul>
+
+<h4 id='chris_nesladek_commerce_ui_lead_google'>Chris Nesladek, Commerce UI Lead (Google)</h4>
+
+<ul>
+<li>
+<li>keep it simple</li>
+</li>
+
+<li>
+<li>content is king</li>
+</li>
+
+<li>
+<li>make it fun</li>
+</li>
+
+<li>
+<li>make it fast</li>
+</li>
+
+<li>
+<li>do one thing as an experiment</li>
+</li>
+
+<li>new UI challenge in the future: flexible screens?</li>
+
+<li>discoverability of new features&#8230; for an Android feature: link to video demo on vimeo</li>
+
+<li>final takeaway: designers, make friends with developers, because that&#8217;s how the best products get made</li>
+</ul>
+
+<h4 id='anne_sullivan_ui_designer_microsofttellme_networks'>Anne Sullivan, UI Designer (Microsoft/Tellme Networks)</h4>
+
+<ul>
+<li>her focus: designing for speech on mobile</li>
+
+<li>problem: discoverability of speech</li>
+
+<li>understand the capabilities and limitations of speech</li>
+
+<li>graceful degradation for speech: what happens when a voice command isn&#8217;t recognized?</li>
+
+<li>be transparent about what happens about processing in the background. For instance, geolocation. Allow the user to change or override this info.</li>
+
+<li>paper prototypes are very helpful</li>
+
+<li>discoverability of voice command activation is hard.. have to test on device itself (i.e. to find the right button placement, etc.)</li>
+
+<li>final takeaway: forget powerpoint! do presentations on the phone itself</li>
+</ul>
+
+<h4 id='jared_benson_design_punchcut'><a href='http://twitter.com/benson'>Jared Benson</a>, Design (Punchcut)</h4>
+
+<ul>
+<li>iterate quickly</li>
+
+<li>no substitute for device itself</li>
+
+<li>final takeaway: involve designers from the beginning</li>
+</ul>
+
+<h4 id='wesley_yun_ux_rim'><a href='http://twitter.com/nuysew'>Wesley Yun</a>, UX (RIM)</h4>
+
+<ul>
+<li>don&#8217;t make assumptions about touch interfaces (common gestures). The touchscreen is still pretty new, so not everyone is used to this yet</li>
+
+<li>don&#8217;t be too clever for your users. Think of users first, and do what makes sense.</li>
+
+<li>prototype and fail quickly. If you&#8217;re not failing, you&#8217;re not innovating</li>
+
+<li>make sure unusual new interaction isn&#8217;t a core functionality (for instance, four-fingered scroll)</li>
+
+<li>if you make something redundant, you&#8217;ve failed as a designer</li>
+
+<li>final takeaway: make it obvious to users</li>
+</ul>

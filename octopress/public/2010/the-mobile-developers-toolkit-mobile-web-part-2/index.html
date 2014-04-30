@@ -1,0 +1,291 @@
+
+<!DOCTYPE HTML>
+<html lang="en-GB">
+<head>
+	<meta charset="utf-8">
+	<title>The mobile developer&#8217;s toolkit (Mobile web part 2)  | David Calhoun's blog</title>
+
+	<meta name="author" content="David Calhoun">
+
+<meta name="description" content="Tools of the trade You’re no mobile developer unless you have the tools to develop on mobile! And while it’s good to own at least one of the &hellip;"> <meta name="keywords" content="">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="David Calhoun's blog" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="/javascripts/html5.js"></script><![endif]-->
+	
+
+</head>
+
+
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">David Calhoun's blog</a></h1>
+<span class="tagline"></span>
+<!-- <nav id="main-nav"><ul>
+	<li><a href="/about">About</a></li>
+	<li><a href="/archives">Archives</a></li>
+	<li><a href="/contact">Contact</a></li>
+</ul>
+</nav> -->
+<!-- <nav id="mobile-nav"> -->
+<!-- 	<div class="alignleft menu"> -->
+<!-- 		<a class="button">Menu</a> -->
+<!-- 		<div class="container"><ul>
+	<li><a href="/about">About</a></li>
+	<li><a href="/archives">Archives</a></li>
+	<li><a href="/contact">Contact</a></li>
+</ul>
+</div> -->
+<!-- 	</div> -->
+<!-- </nav> -->
+
+
+</header>
+
+	<div id="content" class="inner"><article class="post">
+	<header>
+		<h2 class="title">The Mobile Developer&#8217;s Toolkit (Mobile Web Part 2)</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-05-11T00:00:00-07:00" pubdate data-updated="true">May 11<span>th</span>, 2010</time></div>
+	</header>
+	<div class="entry-content"><h3 id="tools-of-the-trade">Tools of the trade</h3>
+
+<p>You’re no mobile developer unless you have the tools to develop on mobile! And while it’s good to own at least one of the smartphones you’re developing on, it’s probably unrealistic to think that you’re going to go out of your way to buy several other unlocked smartphones just to test with. So you should have the next best thing: an SDK!</p>
+
+<p>But an SDK is just one of the tools of the trade. Here’s links to more things to get you started!</p>
+
+<h3 id="sdks-emulators-and-simulators">SDKs, Emulators and Simulators</h3>
+
+<p>Short of having access to a real phone, the next best thing is to have an emulator/simulator. And good news: all the major smartphones have SDKs available for you!</p>
+
+<p><a href="http://developer.apple.com/">iPhone SDK</a> (Mac OS X only) – the quintessential SDK for the quintessential smartphone. Includes iPhone simulator.<br />
+<a href="http://developer.android.com/sdk">Android SDK</a> (Mac OS X, Windows, and Linux)<br />
+<a href="http://developer.palm.com/">Palm webOS SDK</a> (Mac OS X, Windows, and Linux) – emulator for Palm Pre, Pixi, etc. Also check out Ares, the browser-based tool for creating web apps.<br />
+<a href="https://developer.mozilla.org/En/Mobile">Firefox Mobile emulator (aka Fennec)</a> – mobile version of Firefox being developed for new Nokias and soon Androids<br />
+<a href="http://www.opera.com/developer/tools/">Opera Mobile emulator</a> – this is the fastest emulator of the bunch, in terms of downloading and launching the program. Painless installation.<br />
+<a href="http://www.opera.com/mini/demo/">Opera Mini Simulator</a> (Browser-based Java applet) – In-browser simulator. Note that Opera Mini is different than Opera Mobile.<br />
+<a href="http://developer.windowsphone.com/windows-phone-7-series/">Windows Phone 7 Series emulator</a></p>
+
+<p>For a more complete list, see <a href="http://www.mobilexweb.com/emulators">Maximiliano Firtman’s Mobile Emulators &#038; Simulators: The Ultimate Guide</a></p>
+
+<h3 id="device-labs">Device labs</h3>
+
+<p>These are services which allow you to test on actual devices in a lab.</p>
+
+<p><a href="http://www.perfectomobile.com/">Perfecto Mobile</a></p>
+
+<p><a href="http://mite.keynote.com/">Keynote MITE (Mobile Interactive Testing Environment)</a> (Windows only) – a glorified user agent switcher. Doesn’t have testing of real devices.</p>
+
+<p><a href="http://www.deviceanywhere.com/">DeviceAnywhere</a> (Java-based software that runs on Windows and Mac OSX) – a service that lets you test on actual mobile devices sitting in labs around the world. It has a tendency to be a bit clunky, but there’s no real alternatives on the market. Only subscribe to this if you intend on supporting more than just smartphones.</p>
+
+<h3 id="mobile-javascript-libraries">Mobile JavaScript libraries</h3>
+
+<p>I’ve created <a href="http://davidbcalhoun.com/2010/mobile-javascript-libraries-and-frameworks">a separate entry for the mobile libraries and frameworks now available</a>.</p>
+
+<h3 id="hybrid-web--native">Hybrid (web + native)</h3>
+
+<p>The concept is simple: use what you know to create an app with HTML/CSS/JS and turn it into a marketable native app with one of these “wrapper” services.</p>
+
+<p><a href="http://www.phonegap.com/">PhoneGap</a><br />
+<a href="http://www.appcelerator.com/products/titanium-mobile-application-development/">appcelerator’s Titanium Mobile</a><br />
+<a href="http://www.quickconnectfamily.org/">QuickConnectFamily</a><br />
+<a href="http://rhomobile.com/">Rhomobile</a> (HTML-based)</p>
+
+<h3 id="user-agent-switchers">User agent switchers</h3>
+
+<p>Many websites sniff a browser’s user agent to detect if it’s a mobile device. As a developer this presents a challenge, because a lot of development is done on a desktop browser. With a user agent switcher, a developer can masquerade their desktop browser as a mobile browser.</p>
+
+<p><a href="https://addons.mozilla.org/en-US/firefox/addon/59/">Firefox addon: User Agent Switcher</a></p>
+
+<p>Safari: Enable the Develop toolbar (click on Safari -&gt; Preferences -&gt; Advanced) and click on Develop -&gt; User Agent. Select a predefined user agent or enter a custom agent by selecting “Other…”</p>
+
+<p>Chrome: There is no easy way to do this (note that the one user agent switcher extension for Chrome doesn’t work). Currently the only way is to set command line flags:</p>
+
+<div class="instructions">
+  <p>
+    To change the user agent of Chrome in Windows:
+  </p>
+  
+  <ol>
+    <li>
+      Make a copy of the shortcut to Chrome.
+    </li>
+    <li>
+      Right click the copy and select Properties.
+    </li>
+    <li>
+      In the Target field append &ndash;&ndash;user-agent=&#8221;myagent&#8221;
+    </li>
+  </ol>
+  
+  <p>
+    Example Target: “C:\Documents and Settings\Username\Local Settings\Application Data\Google\Chrome\Application\chrome.exe” &ndash;&ndash;user-agent=”Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)”
+  </p>
+</div>
+
+<div class="instructions">
+  <p>
+    To change the user agent of Chrome in Mac OSX:
+  </p>
+  
+  <ol>
+    <li>
+      Open Terminal
+    </li>
+    <li>
+      Enter the following into terminal: /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome &ndash;&ndash;user-agent=&#8221;myagent&#8221;
+    </li>
+  </ol>
+  
+  <p>
+    Example command: /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome &ndash;&ndash;user-agent=”Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)”
+  </p>
+</div>
+
+<h3 id="mobile-detection">Mobile detection</h3>
+
+<p>On the server side, mobile detection is mostly done by user agent sniffing (thus the need for the user agent switchers above), but there are <a href="http://wiki.forum.nokia.com/index.php/Detecting_Mobile_Devices_on_Web_Services">a few other methods</a>.</p>
+
+<p>“Lite” user agent detection: these methods implement a simple server-side function (commonly in PHP) to detect common mobile user agents. There’s a few versions, mostly based on code by <a href="//andymoore.info">Andy Moore</a>. There’s one implemented in the <a href="http://plugins.svn.wordpress.org/wordpress-mobile-pack/trunk/plugins/wpmp_switcher/lite_detection.php">WordPress Mobile Pack</a> and <a href="http://wiki.forum.nokia.com/index.php/Detecting_Mobile_Devices_on_Web_Services">a similar one described on the Nokia developer forums</a>.</p>
+
+<p><a href="http://wurfl.sourceforge.net/">WURFL (Wireless Universal Resource File)</a> – a 10+ year old project that is still being used and gaining momentum. It’s beneficial because it’s open source and it offers a lot of valuable information about devices.</p>
+
+<p><a href="http://deviceatlas.com/">DeviceAtlas</a> – essentially a commercial version of WURFL</p>
+
+<h3 id="reporting-bugs">Reporting bugs</h3>
+
+<p>Everybody’s human. All this new cutting-edge stuff isn’t exactly bug-free. Help squash bugs by reporting them on the project’s website. For best results, show a simplified example of the bug in action (try not to post big hunks of code!).</p>
+
+<p><a href="https://bugs.webkit.org/">WebKit Bugzilla</a><br />
+<a href="http://source.android.com/report-bugs">Android: Report bugs</a></p>
+
+<h3 id="blogs">Blogs</h3>
+
+<p>Keep up to date! There’s new stuff happening all the time on the mobile web.</p>
+
+<p><a href="http://www.quirksmode.org/blog/">QuirksBlog</a> – blog of <a href="http://twitter.com/ppk">Peter-Paul Koch (PPK)</a>, who is known for documenting and researching cross-browser inconsistencies. As of the last several years he’s been focusing on documenting mobile browser bugs.</p>
+
+<p><a href="http://daringfireball.net/">Daring Fireball</a> – John Gruber’s blog with a cultlike following. Frequently reports on mobile happenings, especially stuff relating to Apple.</p>
+
+<p><a href="http://webkit.org/blog/">Surfin’ Safari – The WebKit Blog</a><br />
+<a href="http://android-developers.blogspot.com/">Android Developers blog</a><br />
+<a href="http://blogs.msdn.com/iemobile/">IE for Windows Phone Team Weblog</a><br />
+<a href="http://my.opera.com/operamobile/blog/">Opera Mobile Blog</a><br />
+<a href="http://blogs.blackberry.com/">Inside BlackBerry – The Official BlackBerry Blog</a></p>
+
+<p><a href="http://ymobileblog.com/">Yahoo! Mobile Blog</a><br />
+<a href="http://googlemobile.blogspot.com/">Google Mobile Blog</a></p>
+
+<h3 id="miscellaneous">Miscellaneous</h3>
+
+<p><a href="http://mobile.yahoo.com/devcenter">Yahoo! Blueprint</a> – framework for normalizing cross-browser issues across thousands of devices</p>
+
+<h3 id="more-from-the-mobile-web-series">More from the Mobile Web series:</h3>
+
+<p><a href="http://davidbcalhoun.com/2010/viewport-metatag">Part 1: The viewport metatag</a><br />
+<a href="http://davidbcalhoun.com/2010/the-mobile-developers-toolkit-mobile-web-part-2">Part 2: The mobile developer’s toolkit</a><br />
+<a href="http://davidbcalhoun.com/2010/designing-buttons-that-dont-suck">Part 3: Designing buttons that don’t suck</a><br />
+<a href="http://davidbcalhoun.com/2010/on-designing-a-mobile-webpage">Part 4: On designing a mobile webpage</a><br />
+<a href="http://davidbcalhoun.com/2010/using-mobile-specific-html-css-javascript">Part 5: Using mobile-specific HTML, CSS, and JavaScript</a><br />
+<a href="http://davidbcalhoun.com/2010/dealing-with-device-orientation">Part 6: Dealing with device orientation</a><br />
+<a href="http://davidbcalhoun.com/2010/mobile-javascript-libraries-and-frameworks">Part 7: Mobile JavaScript libraries and frameworks</a></p>
+
+</div>
+
+</article>
+
+	
+	<div class="share">
+	  <!-- <ul> -->
+	  <!--   <li>
+  <a href="https://twitter.com/intent/tweet?text=The mobile developer&#8217;s toolkit (Mobile web part 2) by @&url=http://davidbcalhoun.com/2010/the-mobile-developers-toolkit-mobile-web-part-2" title="Share The mobile developer&#8217;s toolkit (Mobile web part 2) on Twitter">
+    <img src="/images/social/twitter.png" />
+  </a>
+</li>
+ -->
+	  <!--   <li>
+  <a href="https://www.facebook.com/sharer.php?u=http://davidbcalhoun.com/2010/the-mobile-developers-toolkit-mobile-web-part-2" title="Share The mobile developer&#8217;s toolkit (Mobile web part 2) on Facebook">
+    <img src="/images/social/facebook.png" />
+  </a>
+</li>
+ -->
+	  <!--   <li>
+  <a href="https://plus.google.com/share?url=http://davidbcalhoun.com/2010/the-mobile-developers-toolkit-mobile-web-part-2" title="Share The mobile developer&#8217;s toolkit (Mobile web part 2) on Google Plus">
+    <img src="/images/social/google.png" />
+  </a>
+</li>
+ -->
+	  <!-- </ul> -->
+	</div>
+
+
+
+
+<section id="comment">
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+	<footer id="footer" class="inner"><br>
+<br>
+<br>
+<br>
+&copy; 2014
+
+    David Calhoun
+
+</footer>
+	<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="/javascripts/slash.js"></script> -->
+<!-- <script src="/javascripts/hyphenator.js"></script> -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'davidbcalhoun';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://davidbcalhoun.com/2010/the-mobile-developers-toolkit-mobile-web-part-2';
+        var disqus_url = 'http://davidbcalhoun.com/2010/the-mobile-developers-toolkit-mobile-web-part-2';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+<script src="/javascripts/main.js"></script>
+<!-- <script src="/javascripts/negative-scroll-blur.js"></script> -->
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-5530615-3', 'davidbcalhoun.com');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,351 @@
+
+<!DOCTYPE HTML>
+<html lang="en-GB">
+<head>
+	<meta charset="utf-8">
+	<title>Notes: Mobile Web Design (Cameron Moll, 2007)  | David Calhoun's blog</title>
+
+	<meta name="author" content="David Calhoun">
+
+<meta name="description" content="What’s this? These are some notes I collect as I read through Cameron Moll’s Mobile Web Design. Introduction Further info: Designing the Mobile User &hellip;"> <meta name="keywords" content="">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="David Calhoun's blog" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="/javascripts/html5.js"></script><![endif]-->
+	
+
+</head>
+
+
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">David Calhoun's blog</a></h1>
+<span class="tagline"></span>
+<!-- <nav id="main-nav"><ul>
+	<li><a href="/about">About</a></li>
+	<li><a href="/archives">Archives</a></li>
+	<li><a href="/contact">Contact</a></li>
+</ul>
+</nav> -->
+<!-- <nav id="mobile-nav"> -->
+<!-- 	<div class="alignleft menu"> -->
+<!-- 		<a class="button">Menu</a> -->
+<!-- 		<div class="container"><ul>
+	<li><a href="/about">About</a></li>
+	<li><a href="/archives">Archives</a></li>
+	<li><a href="/contact">Contact</a></li>
+</ul>
+</div> -->
+<!-- 	</div> -->
+<!-- </nav> -->
+
+
+</header>
+
+	<div id="content" class="inner"><article class="post">
+	<header>
+		<h2 class="title">Notes: Mobile Web Design (Cameron Moll, 2007)</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-01-21T00:00:00-08:00" pubdate data-updated="true">Jan 21<span>st</span>, 2011</time></div>
+	</header>
+	<div class="entry-content"><h3 id="what8217s-this">What’s this?</h3>
+
+<p>These are some notes I collect as I read through Cameron Moll’s <a href="http://www.amazon.com/Mobile-Web-Design-Cameron-Moll/dp/0615185916">Mobile Web Design</a>.</p>
+
+<h3 id="introduction">Introduction</h3>
+
+<ol>
+  <li>Further info:</li>
+</ol>
+
+<p>Designing the Mobile User Experience (Barbara Ballard)<br />
+dotMobi Web Developer’s Guide (dev.mobi)<br />
+Global Authoring Practices for the Mobile Web (Luca Passani) (passani.it/gap)<br />
+Constant Touch: A Global History of the Mobile Web (Jon Agar)<br />
+Personal, Portable, Pedestrian: Mobile Phones in Japanese Life (Mizuko Ito)<br />
+Mobile Interaction Design (Matt Jones)</p>
+
+<ol>
+  <li>iPhone released just before publication</li>
+</ol>
+
+<h3 id="mobile-web-fundamentals">Mobile Web Fundamentals</h3>
+
+<ol>
+  <li>
+    <p><a href="http://communities-dominate.blogs.com/brands/2007/01/putting_27_bill.html">Putting 2.7 Billion in Context: Mobile Phone Users</a></p>
+  </li>
+  <li>
+    <p>Phone is smaller. Different input methods. Searching for specific data (directions or a phone number) rather than a truckload of data available via the desktop. One handed interaction.</p>
+  </li>
+  <li>
+    <p>Limitations: small screen size, difficulty of data input, user agent inconsistency</p>
+  </li>
+</ol>
+
+<p>Opportunities: location-specific data, on-the-go-messaging, voice communication.</p>
+
+<ol>
+  <li>
+    <p>Weather Channel – greater reach on mobile web compared to desktop (<a href="http://www.comscore.com/Press_Events/Press_Releases/2007/05/Mobile_Web_Usage_Grows_in_UK">source</a>)</p>
+  </li>
+  <li>
+    <p>Rollable display – Polymer Vision Readius (<a href="http://www.youtube.com/watch?v=uQMBzXaCmqY">video</a>)</p>
+  </li>
+</ol>
+
+<p>Many devices and user agents, making testing expensive and impractical. Emulators and testing on multiple devices will lead to successful deployment.</p>
+
+<ol>
+  <li>Opera Mini – far better UI than most native browsers</li>
+</ol>
+
+<p>Mostly must be installed manually, except for T-Mobile shipping hundreds of thousands with it pre-installed</p>
+
+<ol>
+  <li>
+    <p>“…the mobile web experience is often a small screen, intermittent, one-handed experience”</p>
+  </li>
+  <li>
+    <p>understanding of target audience, their usage and what they want, and the contextual relevance (phone numbers, etc.) of data</p>
+  </li>
+  <li>
+    <p>Initiate a phone call: wtai scheme for WML, tel scheme for HTML.</p>
+  </li>
+</ol>
+
+<p>Some browsers (Opera Mini, Safari Mobile) automatically convert links to phone numbers</p>
+
+<p>WML scheme to add a number to the address book: wtai://wp/ap;+5555555;Amy%20Miller</p>
+
+<ol>
+  <li>
+    <p>carrier myopia: devs thinking the only way to reach the audience is by landing on the carrier deck. Mobile User Experience Conference (MEX) 2007: “Tearing down the walled garden will enhance the mobile content experience and release value for the industry. The objective should be a free market for content and applications, based on open standards and accessible to all. We think the current fragmentation of formats and channels to market is holding back growth.”</p>
+  </li>
+  <li>
+    <p>“cell phone” is an outdated term. Use “mobile” or “device”.</p>
+  </li>
+  <li>
+    <p>Japanese market: “keitai” (=”something you carry with you”)</p>
+  </li>
+</ol>
+
+<h3 id="four-methods-revisited">Four Methods, Revisited</h3>
+
+<ol>
+  <li>
+    <p><a href="http://www.cameronmoll.com/archives/000398.html">Mobile Web Design ~ The Series</a> (Cameron Moll, 2005)</p>
+  </li>
+  <li>
+    <p>Method 1: Do nothing. If the markup is meaningful and standards-based, the better mobile browsers can adapt.</p>
+  </li>
+  <li>
+    <p>Good browsers such as the iPhone’s allow the viewing of the full site (with zooming).</p>
+  </li>
+  <li>
+    <p>Advantages: mobile browsers shoulder the burden of reformatting content, no additional effort needed, users have same content and possibly the same experience as on a PC</p>
+  </li>
+</ol>
+
+<p>Disadvantages: doesn’t address contextual relevance or exploit device capabilities, users with zoom-enabled devices are a small market share</p>
+
+<ol>
+  <li>Method 2: Reduce images and styling</li>
+</ol>
+
+<p>-presentation styling and images reduced on the fly</p>
+
+<p>mowser.com (Russell Beattie, formerly Yahoo! Mobile)<br />
+skweezer.net – an older service dating back to 2001</p>
+
+<p>2-minute mobile mod: <a href="http://www.mikeindustries.com/blog/archive/2005/07/make-your-site-mobile-friendly">http://www.mikeindustries.com/blog/archive/2005/07/make-your-site-mobile-friendly</a></p>
+
+<ol>
+  <li>Advantages: relies on implied hierarchy in HTML markup, viewable by a variety of devices, faster download, many browsers override CSS anyway, so why bother?</li>
+</ol>
+
+<p>Disadvantages: ignores contextual relevance of mobility, file size may still be excessive</p>
+
+<p>Method 3: Use Handheld Style Sheets</p>
+
+<ol>
+  <li>
+    <p>media=”handheld” style sheet</p>
+  </li>
+  <li>
+    <p>Not widely supported.</p>
+  </li>
+</ol>
+
+<p>Advantages: handheld style sheet is built into CSS, at most one extra style sheet, one web address<br />
+Disadvantages: ignores contextual relevance of mobility, media=”handheld” support is inconsistent and nearly unreliable</p>
+
+<p>Method 4: Create Mobile-Optimized Content</p>
+
+<ol>
+  <li>
+    <p>Kayak.com/moby</p>
+  </li>
+  <li>
+    <p>Advantages: contextually relevant (addresses first how the content is consumed, and presentation secondly), pages are leaner</p>
+  </li>
+</ol>
+
+<p>Disadvantages: denies access to content by making assumptions about the user and device, two sets of files, alternate web addresses</p>
+
+<ol>
+  <li>Author’s opinion: doing nothing and mobile-optimized content are the two viable approaches</li>
+</ol>
+
+<h3 id="xhtmlcss-development">XHTML/CSS Development</h3>
+
+<ol>
+  <li>
+    <p>WML deck and card metaphor. Decline giving way to XHTML. WAP protocol, WML language.</p>
+  </li>
+  <li>
+    <p>With WAP 2.0, XHTML-MP is the preferred markup language</p>
+  </li>
+  <li>
+    <p><a href="http://www.cameronmoll.com/mobile/mkp">Markup Test Pages</a>, <a href="http://www.cameronmoll.com/archives/000577.html">Mobile Web Design: Tips &#038; Techniques (2005)</a></p>
+  </li>
+  <li>
+    <p>No need to define new standards just for the web. Same regardless of device: “The underlying standards for the greater web, regardless of device, person, or place, are the same: semantic markup, separation of structure and presentation, accessibility, and so on.”</p>
+  </li>
+</ol>
+
+<p><a href="http://www.w3.org/TR/mobile-bp/">W3C Mobile Web Best Practices 1.0</a></p>
+
+<p><a href="http://passani.it/gap">Global Authoring Practices for the Mobile Web (Luca Passani)</a></p>
+
+<ol>
+  <li>XHTML-MP template</li>
+</ol>
+
+<pre name="code" class="HTML">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+&lt;!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+&lt;head&gt;
+  &lt;title&gt;Site Title&lt;/title&gt;
+  &lt;link rel="stylesheet" type="text/css" href="mobile.css"/&gt;
+  &lt;meta http-equiv="Cache-Control" content="max-age=600" /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Page Heading&lt;/h1&gt;
+  &lt;p&gt;Content&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<ol>
+  <li>
+    <p><a href="http://www.developershome.com/wap/xhtmlmp">DeveloperHome.com’s XHTML-MP Tutorial</a></p>
+  </li>
+  <li>
+    <p><a href="http://htmllint.itc.keio.ac.jp/htmllink/tagslist.cgi?HTMLVersion=XHTML-MP">XHTML-MP Tags List</a></p>
+  </li>
+</ol>
+
+<p>Good case examples:<br />
+<a href="http://flickr.com/mob">Flickr Mobile</a><br />
+<a href="http://mobile.fandango.com">Fandango Mobile</a></p>
+
+</div>
+
+</article>
+
+	
+	<div class="share">
+	  <!-- <ul> -->
+	  <!--   <li>
+  <a href="https://twitter.com/intent/tweet?text=Notes: Mobile Web Design (Cameron Moll, 2007) by @&url=http://davidbcalhoun.com/2011/notes-mobile-web-design-cameron-moll-200" title="Share Notes: Mobile Web Design (Cameron Moll, 2007) on Twitter">
+    <img src="/images/social/twitter.png" />
+  </a>
+</li>
+ -->
+	  <!--   <li>
+  <a href="https://www.facebook.com/sharer.php?u=http://davidbcalhoun.com/2011/notes-mobile-web-design-cameron-moll-200" title="Share Notes: Mobile Web Design (Cameron Moll, 2007) on Facebook">
+    <img src="/images/social/facebook.png" />
+  </a>
+</li>
+ -->
+	  <!--   <li>
+  <a href="https://plus.google.com/share?url=http://davidbcalhoun.com/2011/notes-mobile-web-design-cameron-moll-200" title="Share Notes: Mobile Web Design (Cameron Moll, 2007) on Google Plus">
+    <img src="/images/social/google.png" />
+  </a>
+</li>
+ -->
+	  <!-- </ul> -->
+	</div>
+
+
+
+
+<section id="comment">
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+	<footer id="footer" class="inner"><br>
+<br>
+<br>
+<br>
+&copy; 2014
+
+    David Calhoun
+
+</footer>
+	<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="/javascripts/slash.js"></script> -->
+<!-- <script src="/javascripts/hyphenator.js"></script> -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'davidbcalhoun';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://davidbcalhoun.com/2011/notes-mobile-web-design-cameron-moll-200';
+        var disqus_url = 'http://davidbcalhoun.com/2011/notes-mobile-web-design-cameron-moll-200';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+<script src="/javascripts/main.js"></script>
+<!-- <script src="/javascripts/negative-scroll-blur.js"></script> -->
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-5530615-3', 'davidbcalhoun.com');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>

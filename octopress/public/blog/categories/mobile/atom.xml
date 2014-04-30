@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: mobile | David Calhoun's blog]]></title>
+  <link href="http://davidbcalhoun.com/blog/categories/mobile/atom.xml" rel="self"/>
+  <link href="http://davidbcalhoun.com/"/>
+  <updated>2014-04-16T17:30:52-07:00</updated>
+  <id>http://davidbcalhoun.com/</id>
+  <author>
+    <name><![CDATA[David Calhoun]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[The mobile web is dead (and we have killed it)]]></title>
+    <link href="http://davidbcalhoun.com/2014/the-mobile-web-is-dead-and-we-have-killed-it"/>
+    <updated>2014-04-14T00:00:00-07:00</updated>
+    <id>http://davidbcalhoun.com/2014/the-mobile-web-is-dead-and-we-have-killed-it</id>
+    <content type="html"><![CDATA[<p>The mobile web is dead.</p>
+
+<p><em>(Banner: would you like to download the app?)</em></p>
+
+<p>The mobile web remains dead.</p>
+
+<p><em>(Splash screen: download the app!)</em></p>
+
+<p>And <strong>we</strong> have killed it.</p>
+
+<p><em>(JavaScript prompt: “Yahoo! can serve you more accurate local weather and news if you enable location services”)</em></p>
+
+<p>Yet its shadow still looms.</p>
+
+<p><em>(Prompt: Yahoo! would like to use your Current Location)</em></p>
+
+<p>How shall we comfort ourselves, the murderers of all murderers?</p>
+
+<p><em>(“Do you want to change your search engine to Yahoo?”)</em></p>
+
+<p><em>(“This forum has an app for iPhone and iPod Touch!  Click OK to learn more about Tapatalk.”)</em></p>
+
+<p>(adapted from <a href="http://en.wikipedia.org/wiki/God_is_dead">Nietzsche’s “God is dead”</a>)</p>
+
+<h3 id="download-the-app-is-king-content-is-secondary">“Download the app” is king; content is secondary</h3>
+<p><a href="https://plus.google.com/u/0/+ChristianHeilmann/posts/Tkpqip4uZpB"><img src="http://davidbcalhoun.com/wp-content/uploads/2014/paul-irish-native-apps-eating-our-lunch.png" /></a></p>
+
+<p>What you tried to read above was not entirely different from my once-a-year curiosity visit to Yahoo’s mobile homepage (ok, minus the jab at the much-hated Tapatalk).  During the course of one visit and one search, those really are all the prompts which got in the way of what I was trying to accomplish on the site.</p>
+
+<p>While I’d love to pick on Yahoo in particular, mobile users know this common experience all too well.</p>
+
+<p>The sad truth is that the primary content of many mobile sites is now a big giant “Download the app here” button.  How strange that we find ourseles in a world where the secondary content is that which the user is actually interested in.</p>
+
+<h3 id="native-vs-web">Native vs. Web</h3>
+<p>Like most things, we humans like to create dichotomies, and we did the same with native and web, persistently thinking them to be mutually exclusive.</p>
+
+<p>For a short time, it seemed, contrary to mobile platforms that came before, that the revolutionary smartphone of 2007 would have developers creating a flurry of web apps:</p>
+
+<blockquote>
+  <p>The full Safari engine is inside of iPhone. And so, you can write amazing Web 2.0 and Ajax apps <em>that look exactly and behave exactly like apps on the iPhone</em>. And these apps can integrate perfectly with iPhone services. They can make a call, they can send an email, they can look up a location on Google Maps. And guess what? There’s no SDK that you need! You’ve got everything you need if you know how to write apps using the most modern web standards to write amazing apps for the iPhone today. So developers, we think we’ve got a very sweet story for you. You can begin building your iPhone apps today. (<a href="http://youtu.be/8Vq993Td6ys?t=37s">Steve Jobs at WWDC 2007</a>, emphasis mine)</p>
+</blockquote>
+
+<p>Interestingly, even in that keynote you can see shades of web apps being pitted against native apps.  And what would both developers and consumers rather have: an emulated native experience, or a true native experience?  Most folks have always wanted the latter, and the latter has consistently delivered a better user experience.</p>
+
+<p>Very talented developers have created “native-like” experiences on the web, including the old iPhone user guide (powered by <a href="http://davidbcalhoun.com/2009/pastrykit-digging-into-an-apple-pie/">PastryKit</a>), but all along it’s been native apps which have required less effort and less clever tricks for smooth user interfaces.  However, this being said, it should also be noted that many native apps today actually have a web view component, and end users are often unaware of this fact.</p>
+
+<p>In 2007, after the release of the first iPhone, the web app vision was soon abandoned after a somewhat lackluster and uncoordinated response from us developers.  Apple also realized the monetary potential of native apps and a wildly successful centralized App Store, a path that’s led us to our current situation:</p>
+
+<p><a href="http://blog.flurry.com/bid/109749/Apps-Solidify-Leadership-Six-Years-into-the-Mobile-Revolution"><img src="http://davidbcalhoun.com/wp-content/uploads/2014/apps-dominate.jpg" alt="Apps Continue to Dominate the Mobile Web: 2013 saw 80% of time spent in apps and 20% of time on the mobile web, whereas 2014 is currently seeing 86% app usage and 14% mobile web usage." /></a></p>
+
+<h3 id="keep-calm-and-carry-on-">Keep Calm and Carry On… ?</h3>
+<p>The web isn’t going away anytime soon, and that means the mobile web is also here to stay, even if less people are using it.  But it unfortunately means less emphasis on mobile experiences, which means less demand for mobile web developers.</p>
+
+<p>It means that the mobile web, and probably the larger web as a whole, will only be considered as an afterthought, if considered at all.  We’ve already witnessed this happening with the mobile web being considered a sort of sub/side topic of responsive web design.</p>
+
+<h3 id="extremely-depressing-related-links">Extremely depressing related links</h3>
+<ul>
+  <li><a href="http://youtu.be/8Vq993Td6ys?t=37s">Video: Steve Jobs espousing web apps at the iPhone launch in 2007</a></li>
+  <li><a href="http://www.youtube.com/watch?v=19g4n0ZxiYM">Video: Paul Irish - The Mobile Web Is In Deep Trouble</a></li>
+  <li><a href="http://blog.flurry.com/bid/109749/Apps-Solidify-Leadership-Six-Years-into-the-Mobile-Revolution">Apps Continue to Dominate the Mobile Web</a></li>
+  <li><a href="http://techcrunch.com/2012/09/11/mark-zuckerberg-our-biggest-mistake-with-mobile-was-betting-too-much-on-html5/">Mark Zuckerberg: Our Biggest Mistake Was Betting Too Much On HTML5</a></li>
+</ul>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Introducing Negative Scroll Blur (for browsers that support CSS filters)]]></title>
+    <link href="http://davidbcalhoun.com/2013/introducing-negative-scroll-blur-for-browsers-that-support-css-filters"/>
+    <updated>2013-11-23T00:00:00-08:00</updated>
+    <id>http://davidbcalhoun.com/2013/introducing-negative-scroll-blur-for-browsers-that-support-css-filters</id>
+    <content type="html"><![CDATA[<p><a href="http://davidbcalhoun.com/a/negative-scroll-blur.html">Demo</a></p>
+
+<p>Just for fun, I wanted to reproduce a cool but completely superfluous UI I saw in the updated Foursquare app recently. Basically, when the user tries to scroll past the upper bound of the app/page, the header image becomes blurred.</p>
+
+<p>We can do the same thing on the web by listening for negative scroll and then using (abusing?) CSS filters.</p>
+
+<h3 id="video">Video</h3>
+
+<p><a href="http://www.youtube.com/watch?feature=player_embedded&amp;v=wfuVM1P_qgg " target="_blank"><img src="http://img.youtube.com/vi/wfuVM1P_qgg/0.jpg" alt="Negative Scroll Blur" width="480" height="360" /></a></p>
+
+<h3 id="extra-tweaks-for-mobile">Extra tweaks for mobile</h3>
+
+<p>Note that there’s an extra trick for iOS, which presents problems I had forgotten about (namely, no negative scroll, and a scroll listener which fires once at the end of scrolling). That’s why I had to throw in some extra logic for touchstart/touchmove/touchend.</p>
+
+<h3 id="links">Links</h3>
+
+<p><a href="http://davidbcalhoun.com/a/negative-scroll-blur.html">Demo</a><br />
+<a href="https://github.com/davidcalhoun/negative-scroll-blur">Github</a></p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Quick style comparison of mobile image search sites]]></title>
+    <link href="http://davidbcalhoun.com/2013/comparison-of-mobile-image-search-sites"/>
+    <updated>2013-05-10T00:00:00-07:00</updated>
+    <id>http://davidbcalhoun.com/2013/comparison-of-mobile-image-search-sites</id>
+    <content type="html"><![CDATA[<p>The other day I glanced at a classmate using <a href="http://www.baidu.com/">Baidu</a> to perform an image search and was impressed with their presentation:</p>
+
+<p><a href="http://davidbcalhoun.com/wp-content/uploads/2013/05/baidu-mobile-image-search.jpg"><img src="http://davidbcalhoun.com/wp-content/uploads/2013/05/baidu-mobile-image-search.jpg" alt="Baidu mobile image search" width="320" height="480" class="aligncenter size-full wp-image-1163" /></a></p>
+
+<p>Note the nice big images and the lack of margins around images. After seeing this presentation, I realized that the common approach of adding margins around images is pretty unnecessary.</p>
+
+<p>I also noticed that the images are a variety of sizes, leading to a less sterile experience. There’s surely some clever math going on behind the scenes here to make sure the images appear “justified” (to use a word from the recent Flickr redesign).</p>
+
+<h3 id="google">Google</h3>
+
+<p><a href="http://davidbcalhoun.com/wp-content/uploads/2013/05/google-mobile-image-search.jpg"><img src="http://davidbcalhoun.com/wp-content/uploads/2013/05/google-mobile-image-search.jpg" alt="Google mobile image search" width="320" height="480" class="aligncenter size-full wp-image-1166" /></a></p>
+
+<p>Note the smaller photos, which sometimes causes features on images to be indiscernable.</p>
+
+<p>Also note the more common approach of adding margins around the images. This seems to remove a lot of space which could otherwise be used to show more details of images, which is the approach Baidu takes.</p>
+
+<h3 id="bing">Bing</h3>
+
+<p><a href="http://davidbcalhoun.com/wp-content/uploads/2013/05/bing-mobile-image-search.jpg"><img src="http://davidbcalhoun.com/wp-content/uploads/2013/05/bing-mobile-image-search.jpg" alt="Bing mobile image search" width="320" height="480" class="aligncenter size-full wp-image-1169" /></a></p>
+
+<p>Bing uses a nicely-designed slick interface with a black background, which I tend to like a bit better.</p>
+
+<p>However, all its images are cropped or resized to be exactly the same size, leading to a more sterile gridlike experience.</p>
+
+<p>Also, just a minor complaint, but the search magnifying glass appears to be a tiny bit blurry, especially compared to the sharpness of the Bing logo. But it’s barely noticeable, especially compared to Yahoo (below).</p>
+
+<h3 id="yahoo">Yahoo!</h3>
+
+<p><a href="http://davidbcalhoun.com/wp-content/uploads/2013/05/yahoo-mobile-image-search.jpg"><img src="http://davidbcalhoun.com/wp-content/uploads/2013/05/yahoo-mobile-image-search.jpg" alt="Yahoo mobile image search" width="320" height="480" class="aligncenter size-full wp-image-1167" /></a></p>
+
+<p>Yahoo has nice big images, actually a bit too big. Bit it also appears to suffer from the approach Bing uses to resize photos to make their dimensions exactly the same.</p>
+
+<p>Again note the common white margins around the images.</p>
+
+<p>The non-retina top graphics (logo and search button) are so blurry and distracting that I have to at least mention them here. These images look blurry on every modern phone on the market today, and it’s sad to me that neither developers nor QA cared enough about this to do something about it.</p>
+
+<p>Strangely, these images look fine on the main “Web” tab, but they are distractingly blurry on this Images view as well as others.</p>
+
+<h3 id="flickr-mobile-app-ios">Flickr mobile app (iOS)</h3>
+
+<p><a href="http://davidbcalhoun.com/wp-content/uploads/2013/05/flickr-mobile-app-image-search.jpg"><img src="http://davidbcalhoun.com/wp-content/uploads/2013/05/flickr-mobile-app-image-search.jpg" alt="Flickr mobile app image search" width="320" height="480" class="aligncenter size-full wp-image-1164" /></a></p>
+
+<p>The Flickr app itself has some decently-sized images, but here again we see the image margins at work. This is also present on the “justified view” on the desktop site, so I suppose they wanted to be consistent.</p>
+
+<h3 id="flickr-mobile-web">Flickr mobile web</h3>
+
+<p><a href="http://davidbcalhoun.com/wp-content/uploads/2013/05/flickr-mobile-web-image-search.jpg"><img src="http://davidbcalhoun.com/wp-content/uploads/2013/05/flickr-mobile-web-image-search.jpg" alt="Flickr mobile web image search" width="320" height="480" class="aligncenter size-full wp-image-1165" /></a></p>
+
+<p>This is certainly the worst out of the bunch. It’s a real waste of space, with small images sacrificed for textual information that’s a little excessive for this screen.</p>
+
+<p>I think this is just due to the website’s age. Flickr’s mobile website is much neglected and is showing its age. I would be really nice to see updates to match the nice progress they’ve made with the “justified layout” that you can see on their desktop site and mobile app.</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Response to &#8220;What’s next for mobile now that adaptive design has failed?&#8221;]]></title>
+    <link href="http://davidbcalhoun.com/2012/response-to-whats-next-for-mobile-now-that-adaptive-design-has-failed"/>
+    <updated>2012-05-23T00:00:00-07:00</updated>
+    <id>http://davidbcalhoun.com/2012/response-to-whats-next-for-mobile-now-that-adaptive-design-has-failed</id>
+    <content type="html"><![CDATA[<p>There’s been a flurry of response to <a href="http://venturebeat.com/2012/05/22/adaptive-design-has-failed/">this article, entitled “What’s next for mobile now that adaptive design has failed?”</a>.</p>
+
+<p>There’s many problems with this article, so it’s hard to know where to start.</p>
+
+<p>I will admit that defenders of responsive design have come out of the woodwork in trashing this article, but I suppose I count myself among them, being a proponent of responsive design. I still see the web heading that direction, and I definitely don’t see it heading in the direction the author of the article has described.</p>
+
+<h3 id="adaptive--responsive">Adaptive != Responsive</h3>
+
+<p>Like others have said, adaptive isn’t the same as responsive. I hate that both have become buzzwords to be thrown around by execs, but they should at least be used appropriately. (see <a href="http://www.linkedin.com/answers/technology/web-development/TCH_WDD/961492-23942997">this page</a> for a good discussion of the differences). This article conflates the two.</p>
+
+<p>I’ll assume for the purpose of this argument that we’re referring to responsive design.</p>
+
+<h3 id="unproven-assumption-responsive-design-has-failed">Unproven assumption: responsive design has failed</h3>
+
+<p>There’s an assumption that responsive design has failed, but no argument for it, which means by the end of the article it remains an assumption. I’ll assume its purpose was solely as an attention-seeking headline. Not much more to be said there, so let’s pass over it.</p>
+
+<h3 id="tablets--magazines-vertical-scroll--bad-pagination--good">Tablets = Magazines?, Vertical Scroll = Bad?, Pagination = Good?</h3>
+
+<p>There’s an assumption that users equate tablets to magazines, and therefore expect to swipe through pages. I believe there’s some sort of interaction or deal the author has with Pressly (which he mentions and has retweeted on Twitter), so I can understand why they’d be pushing their agenda and usage model, which is very much of the “iPad-magazine-page-flip” sort.</p>
+
+<p>But there’s a reason pagination is still an optional feature not turned on by default in apps such as Instapaper: it’s because users are very familiar and comfortable with vertical scrolling of content on the web, and possibly in some cases more comfortable than a page-based format. They are as comfortable with vertical scrolling as the author would say they are with turning the pages of a magazine.</p>
+
+<p>I’m the age where I’ve seen the decline of newspapers and magazines and am actually more comfortable with a vertical-scrolling interface as opposed to a page-flipping interface as older folks might be used to in magazines.</p>
+
+<p>Just because the interaction model worked for an older medium doesn’t mean it’ll work or is even the best for new mediums. If that were true, we’d still have rotary dial inputs on our touchscreen phones, simply because some phone exec insisted that users were more familiar and comfortable with the rotary dial interaction model.</p>
+
+<h3 id="users-love-those-full-screen-ads">Users Love Those Full-Screen Ads</h3>
+
+<p>Users do NOT like full-screen ads. To think otherwise can be very rightly said to be a delusion of grandeur. Go to the app store, look at the iPad CNET app reviews, and tell me that users are thrilled about seeing a full-screen ad pop over their content when they open the app. Quite the opposite, that turns out to be the main complaint by a long shot, or at least it was for a long while after the app was released. I know. I was there to see it happen, and to see a blind eye turned toward the problem.</p>
+
+<h3 id="successful-advertising--successful-user-experience">Successful advertising != Successful User Experience</h3>
+
+<p>Advertising isn’t a gauge of user experience. This is the hubris and the downfall of CBS and anyone who believes otherwise. More ad revenue means more aggressive ads, more fullscreen ads, and more ways to trick the user into clicking ads. This is the opposite of a good user experience. The real user base isn’t there to click on ads – they’re there to read content, and everything else is a distraction. This is the catch-22 of this model, and those that don’t see that will never know they need to toe the line and maintain a delicate balance. Worst of all, those who completely miss the point will mistake successful advertising with a successful user experience (which here is as easily conflated as adaptive and responsive design have been).</p>
+
+<p>Sometimes companies don’t realize there’s a point of no return when ads (which are necessary in some minimal form) become too distracting and actually make it more difficult to get to content, resulting in users abandoning the site in the long term, or taking measures to churn the site through AdBlock or Instapaper or other measures that preserve the content, while discarding the distracting bits (usually ads and other tricks to get the user to stay on the site longer by showing “related content”, which is ultimately a way to trick the user into staying to view more ads).</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[iPhone 4S, iPhone 4, and iPhone 3GS photo comparison]]></title>
+    <link href="http://davidbcalhoun.com/2011/iphone-4s-iphone-4-and-iphone-3gs-photo-comparison"/>
+    <updated>2011-10-14T00:00:00-07:00</updated>
+    <id>http://davidbcalhoun.com/2011/iphone-4s-iphone-4-and-iphone-3gs-photo-comparison</id>
+    <content type="html"><![CDATA[<p>More photos likely to come.. this is just after I unboxed my new 4S. Time to play with it a bit!</p>
+
+<h3 id="iphone-4s">iPhone 4S</h3>
+
+<p><a href="http://davidbcalhoun.com/wp-content/uploads/2011/10/4S.jpg"><img src="http://davidbcalhoun.com/wp-content/uploads/2011/10/4S-1024x768.jpg" alt="Canon 7D, shot with an iPhone 4S" title="Canon 7D, shot with an iPhone 4S" width="1024" height="768" class="aligncenter size-large wp-image-824" /></a></p>
+
+<h3 id="iphone-4">iPhone 4</h3>
+
+<p><a href="http://davidbcalhoun.com/wp-content/uploads/2011/10/4.jpg"><img src="http://davidbcalhoun.com/wp-content/uploads/2011/10/4-1024x764.jpg" alt="Canon 7D, shot with an iPhone 4" title="Canon 7D, shot with an iPhone 4" width="1024" height="764" class="aligncenter size-large wp-image-825" /></a></p>
+
+<h3 id="iphone-3gs">iPhone 3GS</h3>
+
+<p><a href="http://davidbcalhoun.com/wp-content/uploads/2011/10/3GS.jpg"><img src="http://davidbcalhoun.com/wp-content/uploads/2011/10/3GS-1024x768.jpg" alt="Canon 7D, shot with an iPhone 3GS" title="Canon 7D, shot with an iPhone 3GS" width="1024" height="768" class="aligncenter size-large wp-image-826" /></a></p>
+
+<h3 id="iphone-3gs-alternate-white-balance-point">iPhone 3GS (alternate white balance point)</h3>
+
+<p><a href="http://davidbcalhoun.com/wp-content/uploads/2011/10/3GS-alt.jpg"><img src="http://davidbcalhoun.com/wp-content/uploads/2011/10/3GS-alt-1024x768.jpg" alt="Canon 7D, shot with an iPhone 3GS" title="Canon 7D, shot with an iPhone 3GS" width="1024" height="768" class="aligncenter size-large wp-image-827" /></a></p>
+
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,53 @@
+<p>For the last six months, I&#8217;ve mainly been using imiwa? for iOS to look up Japanese words whenever I don&#8217;t know them (mostly in class). However, I found that I built up big lists without ever reviewing them.</p>
+
+<p>The best way to review is of course through Anki, but it was a laborious process to import each word one-by-one. I should&#8217;ve figured there was an easier way!</p>
+
+<h3 id='step_1_export_list_and_email_to_yourself'>Step 1: Export list and email to yourself</h3>
+
+<p>Most good apps, including imiwa?, include an export function. They may export directly to an Anki file (all the easier!), or they may export to a tab-delimited file, as imiwa? does. For this tutorial I&#8217;ll assume you have a dictionary that does the latter, and for the purpose of this quick tutorial, I&#8217;ll use screenshots from imiwa? on iOS as a guide.</p>
+
+<p>Your first step is to open up imiwa? and go to the Lists tab (click the icon at the bottom):</p>
+
+<p><a href='http://davidbcalhoun.com/wp-content/uploads/2013/02/imiwa-ios-list.jpg'><img alt='imiwa-ios-list' class='aligncenter size-large wp-image-1026' height='480' src='http://davidbcalhoun.com/wp-content/uploads/2013/02/imiwa-ios-list.jpg' width='320' /></a></p>
+
+<p>Click on the list you want to export, then click on the icon next to the Edit button at the top of the screen:</p>
+
+<p><a href='http://davidbcalhoun.com/wp-content/uploads/2013/02/imiwa-ios-list-export.jpg'><img alt='imiwa-ios-list-export' class='aligncenter size-full wp-image-1029' height='480' src='http://davidbcalhoun.com/wp-content/uploads/2013/02/imiwa-ios-list-export.jpg' width='320' /></a></p>
+
+<p>At this point we have a few options. Choose the bottom option (&#8220;Tab separated values&#8221;):</p>
+
+<p><a href='http://davidbcalhoun.com/wp-content/uploads/2013/02/imiwa-ios-tab-separated-values-export.jpg'><img alt='imiwa-ios-tab-separated-values-export' class='aligncenter size-large wp-image-1028' height='480' src='http://davidbcalhoun.com/wp-content/uploads/2013/02/imiwa-ios-tab-separated-values-export.jpg' width='320' /></a></p>
+
+<p>After a little processing, imiwa? will finish and direct you to the email app, where you need to email the list to yourself. Just type in your email address and hit Send:</p>
+
+<p><a href='http://davidbcalhoun.com/wp-content/uploads/2013/02/imiwa-ios-email-to-self.jpg'><img alt='imiwa-ios-email-to-self' class='aligncenter size-large wp-image-1025' height='480' src='http://davidbcalhoun.com/wp-content/uploads/2013/02/imiwa-ios-email-to-self.jpg' width='320' /></a></p>
+
+<h3 id='step_2_download_and_import_to_desktop_anki'>Step 2: Download and import to desktop Anki</h3>
+
+<p>Now switch to your desktop and download the file you emailed to yourself. It should look something like this:</p>
+
+<p><a href='http://davidbcalhoun.com/wp-content/uploads/2013/02/imiwa-ios-tab-separated-values-export-sample.png'><img alt='imiwa-ios-tab-separated-values-export-sample' class='aligncenter size-large wp-image-1027' height='294' src='http://davidbcalhoun.com/wp-content/uploads/2013/02/imiwa-ios-tab-separated-values-export-sample-1024x588.png' width='512' /></a></p>
+
+<p>Note that there&#8217;s a lot of &#8220;junk&#8221; data that we won&#8217;t need when we import into Anki. Don&#8217;t worry, there&#8217;s a way to get rid of it!</p>
+
+<p>Now open up Anki, click File -&gt; Import&#8230; and select the file you downloaded (from the email you send to yourself).</p>
+
+<h3 id='step_3_hide_junk_columns_from_anki'>Step 3: Hide junk columns from Anki</h3>
+
+<p>When you import the file, you&#8217;ll get prompted with a screen that looks like this:</p>
+
+<p><a href='http://davidbcalhoun.com/wp-content/uploads/2013/02/anki-tab-delimited-import.png'><img alt='anki-tab-delimited-import' class='aligncenter size-large wp-image-1024' height='438' src='http://davidbcalhoun.com/wp-content/uploads/2013/02/anki-tab-delimited-import-1024x876.png' width='512' /></a></p>
+
+<p>This allows you to tell Anki which deck to import into (you probably will want to create a brand new deck), but most importantly you need to tell Anki which fields are import.</p>
+
+<p>Here&#8217;s a typical line from a list I imported:</p>
+
+<p>&#8220;JMDICT 1431110 直接 ちょくせつ direct, immediate, personal, firsthand L41-50&#8243;</p>
+
+<p>In other words:</p>
+
+<p>&#8220;1. <span>Junk</span> 2. <span>Junk</span> 3. Expression 4. Reading 5. Meaning 6. <span>Junk</span>&#8221;</p>
+
+<p>On this screen in Anki, hit the Change button for fields 1, 2, and 6, and be sure to tell Anki to ignore them. For the rest of the fields, match them up appropriately (Field 3 is Expression, Field 4 is Reading, Field 5 is Meaning).</p>
+
+<p>Now click the Import button, and you magically have a new Anki deck to work through!</p>

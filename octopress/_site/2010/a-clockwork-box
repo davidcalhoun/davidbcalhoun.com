@@ -1,0 +1,51 @@
+<div class='intro'>
+  <img alt='Clockwork Orange cover' class='left alignleft size-full wp-image-174' height='320' src='http://davidbcalhoun.com/wp-content/uploads/2010/03/clockwork-box.png' title='Clockwork Orange cover' width='450' /> <div>
+    With CSS there are always various ways to accomplish something. After reading this short tidbit, you should be familiar with the various ways of controlling the size of an element&#8217;s padding, border, and margin, and you should know what the handy &#8220;clockwork&#8221; tip is, and how it will be useful to remember when you&#8217;re putting your CSS into practice.
+  </div>
+</div>
+<h3 id='equal_values_on_all_four_sides'>Equal values on all four sides</h3>
+
+<p>If all four values (top, right, bottom, and left) are equal, then you simply write the following:</p>
+<pre class='css' name='code'>padding: 1px;
+border-width: 1px;
+margin: 1px;
+</pre>
+<h3 id='the_longhand_way'>The longhand way</h3>
+
+<p>If you don&#8217;t want equal values on all four sides, then you can specify each side individually:</p>
+<pre class='css' name='code'>padding-top: 1px;
+padding-right: 2px;
+padding-bottom: 3px;
+padding-left: 4px;
+
+border-top-width: 1px;
+border-right-width: 2px;
+border-bottom-width: 3px;
+border-left-width: 4px;
+
+margin-top: 1px;
+margin-right: 2px;
+margin-bottom: 3px;
+margin-left: 4px;
+</pre>
+<h3 id='the_shortcut_like_clockwork'>The shortcut (like clockwork)</h3>
+
+<p>However this seems to be quite a hassle typing out each property, so you&#8217;ll find it&#8217;s much easier to use the following shorthand, which is in this order: top, right, bottom, left (think of the hands going clockwise around a clock). The following is equivalent to the above code:</p>
+<pre class='css' name='code'>padding: 1px 2px 3px 4px;
+border-width: 1px 2px 3px 4px;
+margin: 1px 2px 3px 4px;
+</pre>
+<h3 id='other_shorthands'>Other shorthands</h3>
+
+<p>This is the style I find myself writing in most often, but there are two other shorthand styles you should be aware of:</p>
+<pre class='css' name='code'>padding: 1px 2px 3px;  /* top, left/right, bottom */
+padding: 1px 2px;      /* top/bottom, left/right */
+</pre>
+<h3 id='summary'>Summary</h3>
+
+<p>In short, there are various ways to define the padding, border, and margin on an element. Here&#8217;s a recap, with padding used as an example:</p>
+<pre class='css' name='code'>padding: 1px;              /* 1 value: top/right/bottom/left     */
+padding: 1px 2px;          /* 2 values: top/bottom, left/right   */
+padding: 1px 2px 3px;      /* 3 values: top, left/right, bottom  */
+padding: 1px 2px 3px 4px;  /* 4 values: top, right, bottom, left */
+</pre>
