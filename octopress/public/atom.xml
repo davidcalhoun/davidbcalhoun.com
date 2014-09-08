@@ -4,13 +4,162 @@
   <title><![CDATA[David Calhoun's blog]]></title>
   <link href="http://davidbcalhoun.com/atom.xml" rel="self"/>
   <link href="http://davidbcalhoun.com/"/>
-  <updated>2014-09-07T23:41:01-07:00</updated>
+  <updated>2014-09-08T01:19:19-07:00</updated>
   <id>http://davidbcalhoun.com/</id>
   <author>
     <name><![CDATA[David Calhoun]]></name>
     
   </author>
 
+  
+  <entry>
+    <title type="html"><![CDATA[async.parallel with a simple timeout (node.js)]]></title>
+    <link href="http://davidbcalhoun.com/2014/async.parallel-with-a-simple-timeout-node-js/"/>
+    <updated>2014-09-08T00:36:52-07:00</updated>
+    <id>http://davidbcalhoun.com/2014/async.parallel-with-a-simple-timeout-node-js</id>
+    <content type="html"><![CDATA[<p>A while back I had a need for a general timeout option for async.parallel and was surprised I couldn’t find much information about how to do it.  I was using async.parallel to make a lot of REST calls in parallel, but one of them was getting blocked by a firewall, resulting in an eventual timeout minutes later.</p>
+
+<p>One option was to specify a shorter timeout for each individual REST call, including the one causing the problem.  But I wanted a simpler solution: a general timeout for that specific async.parallel instance that made it clear all tasks should finish within a certain period of time. Otherwise return a timeout as an error, allowing the program to continue (and retry if necessary).</p>
+
+<p>It was somewhat surprising there wasn’t an option built into async.parallel, as I could imagine other folks must have had the same problem at some point in time.</p>
+
+<p>In any case, I wrote a pretty simple wrapper function that gets the job done (see example usage below):</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+<strong><a href="#n10" name="n10">10</a></strong>
+<a href="#n11" name="n11">11</a>
+<a href="#n12" name="n12">12</a>
+<a href="#n13" name="n13">13</a>
+<a href="#n14" name="n14">14</a>
+<a href="#n15" name="n15">15</a>
+<a href="#n16" name="n16">16</a>
+<a href="#n17" name="n17">17</a>
+<a href="#n18" name="n18">18</a>
+<a href="#n19" name="n19">19</a>
+<strong><a href="#n20" name="n20">20</a></strong>
+<a href="#n21" name="n21">21</a>
+<a href="#n22" name="n22">22</a>
+<a href="#n23" name="n23">23</a>
+<a href="#n24" name="n24">24</a>
+<a href="#n25" name="n25">25</a>
+<a href="#n26" name="n26">26</a>
+<a href="#n27" name="n27">27</a>
+<a href="#n28" name="n28">28</a>
+<a href="#n29" name="n29">29</a>
+<strong><a href="#n30" name="n30">30</a></strong>
+<a href="#n31" name="n31">31</a>
+<a href="#n32" name="n32">32</a>
+<a href="#n33" name="n33">33</a>
+<a href="#n34" name="n34">34</a>
+<a href="#n35" name="n35">35</a>
+<a href="#n36" name="n36">36</a>
+<a href="#n37" name="n37">37</a>
+<a href="#n38" name="n38">38</a>
+<a href="#n39" name="n39">39</a>
+<strong><a href="#n40" name="n40">40</a></strong>
+<a href="#n41" name="n41">41</a>
+<a href="#n42" name="n42">42</a>
+<a href="#n43" name="n43">43</a>
+<a href="#n44" name="n44">44</a>
+<a href="#n45" name="n45">45</a>
+<a href="#n46" name="n46">46</a>
+<a href="#n47" name="n47">47</a>
+<a href="#n48" name="n48">48</a>
+<a href="#n49" name="n49">49</a>
+<strong><a href="#n50" name="n50">50</a></strong>
+<a href="#n51" name="n51">51</a>
+<a href="#n52" name="n52">52</a>
+<a href="#n53" name="n53">53</a>
+<a href="#n54" name="n54">54</a>
+<a href="#n55" name="n55">55</a>
+<a href="#n56" name="n56">56</a>
+<a href="#n57" name="n57">57</a>
+<a href="#n58" name="n58">58</a>
+<a href="#n59" name="n59">59</a>
+<strong><a href="#n60" name="n60">60</a></strong>
+<a href="#n61" name="n61">61</a>
+<a href="#n62" name="n62">62</a>
+<a href="#n63" name="n63">63</a>
+<a href="#n64" name="n64">64</a>
+</pre></td>
+  <td class="code"><pre><span class="keyword">var</span> async = require(<span class="string"><span class="delimiter">'</span><span class="content">async</span><span class="delimiter">'</span></span>);
+
+<span class="comment">//  async.parallel with optional timeout (options.timeout)</span>
+<span class="keyword">function</span> <span class="function">parallel</span>(options, tasks, cb) {
+  options = options || {};  <span class="comment">//  default to {}</span>
+  <span class="keyword">var</span> timedOut = <span class="predefined-constant">false</span>;     <span class="comment">//  initial state</span>
+  <span class="keyword">if</span>(<span class="keyword">typeof</span> options.timeout == <span class="string"><span class="delimiter">'</span><span class="content">number</span><span class="delimiter">'</span></span>) {
+    <span class="comment">//  use the timeout wrapper</span>
+
+    setTimeout(<span class="keyword">function</span>(){
+      <span class="comment">//  set flag so if async.parallel below ever completes, we'll know we already errored out</span>
+      timedOut = <span class="predefined-constant">true</span>;
+
+      <span class="comment">//  callback with error and no data</span>
+      cb(<span class="string"><span class="delimiter">'</span><span class="content">async.parallel timed out out after </span><span class="delimiter">'</span></span> + options.timeout + <span class="string"><span class="delimiter">'</span><span class="content">ms.</span><span class="delimiter">'</span></span>, <span class="predefined-constant">null</span>);
+    }, options.timeout);
+
+    async.parallel(tasks, <span class="keyword">function</span>(err, result){
+      <span class="comment">//  after all tasks are complete</span>
+
+      <span class="keyword">if</span>(timeOut) <span class="keyword">return</span>;  <span class="comment">//  noop and return (already timed out, cb already executed)</span>
+      cb(err, result);     <span class="comment">//  never timed out, just passthrough the data to the cb</span>
+    });
+  } <span class="keyword">else</span> {
+    <span class="comment">//  no timeout specified, so passthrough to async.parallel</span>
+
+    async.parallel(tasks, cb);
+  }
+}
+
+
+<span class="comment">//  example usage</span>
+parallel({<span class="key">timeout</span>: <span class="integer">10000</span>}, [  <span class="comment">//  10 second timeout</span>
+  <span class="keyword">function</span>(){ ... },
+  <span class="keyword">function</span>(){ ... }
+],
+<span class="keyword">function</span>(err, results) {
+  <span class="keyword">if</span>(err) {
+    <span class="comment">//  timeouts can now be handled here</span>
+  }
+});
+
+
+<span class="comment">//  an example forcing a timeout to occur</span>
+parallel({
+  <span class="key">timeout</span>: <span class="integer">1000</span>   <span class="comment">//  1 second timeout</span>
+},
+[
+  <span class="keyword">function</span>(done){
+    <span class="comment">//  task 1 completes in 100ms</span>
+    setTimeout(<span class="keyword">function</span>(){
+      done(<span class="predefined-constant">null</span>, <span class="string"><span class="delimiter">'</span><span class="content">foo</span><span class="delimiter">'</span></span>);
+    }, <span class="integer">100</span>);
+  },
+  <span class="keyword">function</span>(done){
+    <span class="comment">//  task 2 completes in 2000ms, forcing a timeout error</span>
+    setTimeout(<span class="keyword">function</span>(){
+      done(<span class="predefined-constant">null</span>, <span class="string"><span class="delimiter">'</span><span class="content">bar</span><span class="delimiter">'</span></span>);
+    }, <span class="integer">2000</span>);
+  }
+],
+<span class="keyword">function</span>(err, results) {
+  <span class="comment">//  err = 'async.parallel timed out out after 1000ms.'</span>
+});
+</pre></td>
+</tr></table>
+</div>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Milky Way galaxyrise from Maui]]></title>
@@ -1521,58 +1670,6 @@ Today <a href="http://www.bbc.co.uk/news/world-us-canada-22820711">President Oba
 <h3 id="video">Video</h3>
 
 <p>Here’s a video if you’re not in the mood to read (view in HD so you can read the text!):</p>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Initial thoughts on the Retina MacBook Pro (after a few minutes at the store)]]></title>
-    <link href="http://davidbcalhoun.com/2012/initial-thoughts-on-the-retina-macbook-pro-after-a-few-minutes-at-the-store"/>
-    <updated>2012-06-19T00:00:00-07:00</updated>
-    <id>http://davidbcalhoun.com/2012/initial-thoughts-on-the-retina-macbook-pro-after-a-few-minutes-at-the-store</id>
-    <content type="html"><![CDATA[<p>After work today, I stopped by the old bustling Apple Store in Palo Alto. I was there for a bit of a peek at what my next blank check to Apple would bring me.</p>
-
-<p>I was between tables going back and forth between the updated MacBook Pro (non-retina) and the Retina MacBook Pro and came away with some initial impressions. I couldn’t find these sort of “impartial” impressions elsewhere, so I thought I’d record these impressions for myself.</p>
-
-<h3 id="prima-facie">Prima facie</h3>
-
-<p>Initial thoughts: the screen seemed to be slightly more crisp, especially the icons in the dock. However, the form factor made more of an impression than the screen: the laptop is significantly lighter than previous models I’ve used (for the record, I use a late 2008 MBP at home, and have been using newer MacBook Pros for work purposes). I picked up the laptop expecting it to be nearly as heavy as what I’m used to, and overcompensated when lifting it up. That’s a good thing.</p>
-
-<p>The lady at the store opened up iPhoto and showed me a few photos. It seemed to be crisper, but nothing like the noticeable difference when I upgraded from an iPhone 3GS to an iPhone 4S. She also opened up the Apple homepage on the Retina display and on a non-Retina, and pointed out a specific piece of text. In this case it was text in a graphic. We had to shuffle back and forth in order to be convinced. In this case we were actually looking at the text on a graphic on the Apple site):</p>
-
-<p><a href="http://images.apple.com/home/images/macbookpro_title.png"><img src="http://davidbcalhoun.com/wp-content/uploads/2012/06/non-retina.png" alt="Non-retina text" title="Non-retina text" width="374" height="124" class="aligncenter size-full wp-image-905" /></a></p>
-
-<p><a href="http://images.apple.com/home/images/macbookpro_title_2x.png"><img src="http://davidbcalhoun.com/wp-content/uploads/2012/06/retina.png" alt="Retina text" title="Retina text" width="748" height="248" class="aligncenter size-full wp-image-906" /></a></p>
-
-<p>Non-retina (top) and Retina (bottom) graphics at native resolution.</p>
-
-<p>(technical note: the Retina version is served via JavaScript – see <a href="http://blog.cloudfour.com/how-apple-com-will-serve-retina-images-to-new-ipads/">http://blog.cloudfour.com/how-apple-com-will-serve-retina-images-to-new-ipads/</a>)</p>
-
-<h3 id="good-for-photo-editing">Good for photo editing?</h3>
-
-<p>The differences in the text and dock icons was easier to see than the difference between photos in iPhoto. As an amateur photographer, I’m unsure if this makes a difference. When editing photos, instead of zooming my head closer to the screen I end up leaving my head stationary and zooming with controls in the photo editing program I use. The Retina screen makes the experience a bit nicer, but obviously isn’t a requirement for producing good detailed photos. For photographers, I think there’s an apt analogy. The Retina screen is kind of like an expensive lens: it definitely help, but it won’t guarantee good photos, and not all good photos are necessarily taken with good lenses.</p>
-
-<h3 id="application-support-or-lack-thereof">Application support (or lack thereof)</h3>
-
-<p>One thing that was also evident is that not everything is ready for the Retina screen. Photoshop surprisingly didn’t support it, even though the saleslady mentioned they had an early look at the Retina MacBook Pro. Surprisingly, not even the Apple Store greeting/icons on the demo mode laptops was ready for the screen (it was visibly pixelated).</p>
-
-<p>The guy next to me predictably loaded up Microsoft Word and complained about it looking ugly (apparently he got the memo and wanted to act surprised). Like other programs, it’s just a matter of time until they fix it. Whatever, I can deal with that.</p>
-
-<p>I tried to load up YouTube in Safari, but I didn’t have a good 1080p video to test (for the record, I tried this one, which doesn’t look too great at 1080p: <a href="http://www.youtube.com/watch?v=pjC72RIDt_A">http://www.youtube.com/watch?v=pjC72RIDt_A</a>). I’ll have to try again later.</p>
-
-<h3 id="testing-out-different-viewing-distances">Testing out different viewing distances</h3>
-
-<p>Lastly, I tried several viewing distance tests. I found that at my normal viewing distance (sorry I don’t have measurements) I could definitely tell that things were a little sharper, but again, the difference was slight. As I moved back, it didn’t take long for the difference to be indiscernible compared to the non-Retina screen. Starting again from normal viewing distance, the closer I got, the easier it was to tell that it was a “Retina” screen. In my mind, there’s a logical reason “Retina” came first to the iPhone, then the iPad, and now the MacBook Pro, in that order. It simply becomes less discernable at longer viewing distances.</p>
-
-<h3 id="afterthoughts-impact-on-web-development">Afterthoughts: impact on web development?</h3>
-
-<p>At least on my initial impression, it didn’t seem that the new Retina screen necessitated too much of a change in websites offering higher-resolution graphics. They can get along just fine not upgrading, but I suppose folks will enjoy high-res graphics when they see it.</p>
-
-<p>It’s now been a few years after the iPhone 4 was released, and years since high pixel density Android phones have been on the market, and I still still see noticeably blurry graphics on mobile sites. Hopefully at the greater viewing distance afforded by the MacBook Pro, there will be less of a shock at seeing the contrast between sharp text and a blurry photo. Perhaps a laptop is a nice compromise: good enough to enjoy “Retina” graphics where supported, but not too distracting when graphics aren’t optimized for the high pixel density.</p>
-
-<h3 id="tldr-too-long-didn8217t-read">TLDR (Too long, didn’t read)</h3>
-
-<p>TLDR/Conclusion: the light form factor was more of a sell for me than the Retina screen. Though the Retina screen is nice, it’s hard to justify the purchase on that alone. However, the purchase becomes justified when coupled with a nice processor bump and nice form factor. Since I’ve been waiting to upgrade for a while, it’s only a matter of time before I get one. But as I don’t NEED one yet, I’ll wait until prices drop a bit (as they always do).</p>
 
 ]]></content>
   </entry>

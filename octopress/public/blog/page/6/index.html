@@ -7,7 +7,8 @@
 
 	<meta name="author" content="David Calhoun">
 
-<meta name="description" content="JavaScript Asteroids – blow up any webpage with this bookmarklet! JS1k contest – and the winner PromoteJS – Google bombing with a good intent. &hellip;"> <meta name="keywords" content="">
+<meta name="description" content="General word of caution: not all of these HTML5 simplifications are compatible with older browsers. Test it for yourself before implementing!
+1. The &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -46,6 +47,257 @@
 </header>
 
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/2010/top-ten-things-html5-makes-simpler">
+			
+				Top Ten Things HTML5 Makes Simpler</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-10-07T00:00:00-07:00" pubdate data-updated="true">Oct 7<span>th</span>, 2010</time></div>
+	</header>
+	<div class="entry-content">
+		<p><b>General word of caution: not all of these HTML5 simplifications are compatible with older browsers.  Test it for yourself before implementing!</b></p>
+<h3>1. The doctype</h3>
+<p>The old:</p>
+<pre name="code" class="html">
+&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01//EN&quot;
+&quot;http://www.w3.org/TR/html4/strict.dtd&quot;&gt;
+</pre>
+<p>The new:</p>
+<pre name="code" class="html">
+&lt;!DOCTYPE html&gt;
+</pre>
+<h3>2. charset</h3>
+<p>The old:</p>
+<pre name="code" class="html">
+&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;
+</pre>
+<p>The new:</p>
+<pre name="code" class="html">
+&lt;meta charset=&quot;utf-8&quot;&gt;
+</pre>
+<h3>3. The link tag&#8217;s
+<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br /></div></td><td><div class="text codecolorer">type</div></td></tr></tbody></table></div>
+<p>attribute
+<p>The old:</p>
+<pre name="code" class="html">
+&lt;link href=&quot;style.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;
+</pre>
+<p>The new (omit the</p>
+<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br /></div></td><td><div class="text codecolorer">type</div></td></tr></tbody></table></div>
+<p>attribute):</p>
+<pre name="code" class="html">
+&lt;link href=&quot;style.css&quot; rel=&quot;stylesheet&quot; /&gt;
+</pre>
+<p>This one may be a bit controversial, but the HTML5 spec actually tells browser vendors not to treat the</p>
+<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br /></div></td><td><div class="text codecolorer">type</div></td></tr></tbody></table></div>
+<p>attribute as the final word, which makes it seem pretty redundant:</p>
+<blockquote><p>User agents must not consider the type attribute authoritative — upon fetching the resource, user agents must not use the type attribute to determine its actual type. Only the actual type (as defined in the next paragraph) is used to determine whether to apply the resource, not the aforementioned assumed type. -<a href="http://dev.w3.org/html5/spec/Overview.html#the-link-element">W3C HTML5 spec</a></p></blockquote>
+<p>The spec then goes on to state that the browser must effectively determine the type by examining the</p>
+<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br /></div></td><td><div class="text codecolorer">Content-Type</div></td></tr></tbody></table></div>
+<p>sent back in the header from the server when requesting the CSS file.  If this extra work is already being performed and there&#8217;s no noticeable downside of omitting the</p>
+<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br /></div></td><td><div class="text codecolorer">type</div></td></tr></tbody></table></div>
+<p>attribute, then it seems pretty redundant.  Save the extra bytes by omitting it!</p>
+<h3>4. The script tag&#8217;s
+<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br /></div></td><td><div class="text codecolorer">type</div></td></tr></tbody></table></div>
+<p>attribute
+<p>The old:</p>
+<pre name="code" class="html">
+&lt;script src=&quot;script.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+</pre>
+<p>The new:</p>
+<pre name="code" class="html">
+&lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
+</pre>
+<p>According the the W3C, if the</p>
+<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br /></div></td><td><div class="text codecolorer">type</div></td></tr></tbody></table></div>
+<p>attribute isn&#8217;t present, it should default to</p>
+<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br /></div></td><td><div class="text codecolorer">text/javascript</div></td></tr></tbody></table></div>
+<p>:</p>
+<blockquote><p>The type attribute gives the language of the script or format of the data. If the attribute is present, its value must be a valid MIME type. The charset parameter must not be specified. <b>The default, which is used if the attribute is absent, is &#8220;text/javascript&#8221;.</b><a href="http://dev.w3.org/html5/spec/Overview.html#script">-W3C HTML5 spec</a></p></blockquote>
+<h3>5. The script tag&#8217;s
+<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br /></div></td><td><div class="text codecolorer">async</div></td></tr></tbody></table></div>
+<p>and</p>
+<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br /></div></td><td><div class="text codecolorer">defer</div></td></tr></tbody></table></div>
+<p>attributes
+<p>Moving scripts to the bottom of a document is <a href="http://developer.yahoo.com/performance/">one of the top performance tips</a> and one of the easiest ways to speed up a website.  This is because script downloading (in older browsers) and parsing/executing is done synchronously, that is, in a way which blocks everything else which comes after them.  </p>
+<p>It&#8217;s not too hard to move the scripts to the bottom, but wouldn&#8217;t it be handy if there was an attribute we could add on the script to make it behave, no matter where it&#8217;s located?  Now there is!  Check out the async attribute:</p>
+<pre name="code" class="html">
+&lt;script async src=&quot;script.js&quot;&gt;&lt;/script&gt;
+</pre>
+<p>This tells the browser to download and execute the script asynchronously, without blocking the rendering of elements below it.  There&#8217;s one catch: scripts with this attribute aren&#8217;t guaranteed to run in the order they appear in the document, which is their default behavior when the</p>
+<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br /></div></td><td><div class="text codecolorer">async</div></td></tr></tbody></table></div>
+<p>attribute isn&#8217;t present.  So be careful or this will definitely lead to code dependency issues.</p>
+<p>The</p>
+<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br /></div></td><td><div class="text codecolorer">defer</div></td></tr></tbody></table></div>
+<p>attribute is an older attribute with a similar goal:</p>
+<pre name="code" class="html">
+&lt;script defer src=&quot;script.js&quot;&gt;&lt;/script&gt;
+</pre>
+<p>Believe it or not, this attribute was first implemented in IE4!  It tells the browser the same thing: to download and execute the script in such a way that it doesn&#8217;t block the elements below it from rendering.  The difference from</p>
+<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br /></div></td><td><div class="text codecolorer">async</div></td></tr></tbody></table></div>
+<p>is that</p>
+<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br /></div></td><td><div class="text codecolorer">defer</div></td></tr></tbody></table></div>
+<p>executes the scripts in the order they appear in the document.</p>
+<h3>6. placeholder and autofocus attributes</h3>
+<p>The</p>
+<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br /></div></td><td><div class="text codecolorer">placeholder</div></td></tr></tbody></table></div>
+<p>attribute can be added to</p>
+<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br /></div></td><td><div class="text codecolorer">input</div></td></tr></tbody></table></div>
+<p>and</p>
+<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br /></div></td><td><div class="text codecolorer">textarea</div></td></tr></tbody></table></div>
+<p>elements.  This is a piece of interaction that was originally accomplished with a bit of JavaScript: placeholder text (usually gray in appearance) appears in a text field, but disappears when the user focuses on it (and reappears if the user moves focus without typing any text).</p>
+<pre name="code" class="html">
+&lt;input type=&quot;text&quot; placeholder=&quot;Search&quot;&gt;
+&lt;textarea type=&quot;text&quot; placeholder=&quot;Search&quot;&gt;&lt;/textarea&gt;
+</pre>
+<p>Similarly, the</p>
+<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br /></div></td><td><div class="text codecolorer">autofocus</div></td></tr></tbody></table></div>
+<p>attribute creates some interaction that was originally developed with JavaScript: when the page loads, focus on a specified form element.  Now all you have to do is add the attribute to make the same thing work with without JavaScript!  The</p>
+<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br /></div></td><td><div class="text codecolorer">autofocus</div></td></tr></tbody></table></div>
+<p>tag can be added to</p>
+<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br /></div></td><td><div class="text codecolorer">input</div></td></tr></tbody></table></div>
+<p>,</p>
+<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br /></div></td><td><div class="text codecolorer">select</div></td></tr></tbody></table></div>
+<p>,</p>
+<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br /></div></td><td><div class="text codecolorer">textarea</div></td></tr></tbody></table></div>
+<p>, and</p>
+<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br /></div></td><td><div class="text codecolorer">button</div></td></tr></tbody></table></div>
+<p>tags:</p>
+<pre name="code" class="html">
+&lt;input type=&quot;text&quot; autofocus&gt;&lt;/input&gt;
+</pre>
+<h3>7. JavaScript: localStorage and sessionStorage</h3>
+<p>When coding JavaScript, instead of having to deal with cookies, which are quite limiting in terms of storage space, you now have the option to use</p>
+<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br /></div></td><td><div class="text codecolorer">localStorage</div></td></tr></tbody></table></div>
+<p>and</p>
+<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br /></div></td><td><div class="text codecolorer">sessionStorage</div></td></tr></tbody></table></div>
+<p>.  The size limit may depend on the browser, but it seems to have been set at a minimum of 5mb per domain.  It may also be the case that the size limit for sessionStorage may be larger (which <a href="http://social.msdn.microsoft.com/Forums/en-US/iewebdevelopment/thread/1fe562b8-1a16-42ca-a02f-280630958bcc">seems to be the case for IE8 and possibly IE9</a>).</p>
+<p>It should be noted, if it wasn&#8217;t immediately obvious from their names, that</p>
+<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br /></div></td><td><div class="text codecolorer">localStorage</div></td></tr></tbody></table></div>
+<p>data persists across sessions (just like cookies) and</p>
+<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br /></div></td><td><div class="text codecolorer">sessionStorage</div></td></tr></tbody></table></div>
+<p>data persists only for the length of the browser session.</p>
+<p>It should also be noted that data can only be stored in this way in key-value pairs, where the values can only be strings.  This presents a problem when trying to store JSON objects, and requires you to go through the extra step of using JSON.stringify(myObj) before storing your data.</p>
+<p>Here&#8217;s an example of how easy it is to use</p>
+<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br /></div></td><td><div class="text codecolorer">localStorage</div></td></tr></tbody></table></div>
+<p>and</p>
+<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br /></div></td><td><div class="text codecolorer">sessionStorage</div></td></tr></tbody></table></div>
+<p>:</p>
+<pre name="code" class="JScript">
+// localStorage - data can be retrieved by the site after user closes the browser!
+localStorage.userName = "Biff Tannen";
+
+// sessionStorage - data only persists for the current session
+sessionStorage.userMood = "Angry";
+</pre>
+<h3>8. Caching</h3>
+<p>Traditionally, you could only control caching on your website through primarily headers (Cache-Control and Expires headers).  Now through the use of the <a href="http://diveintohtml5.org/offline.html">cache manifest</a>, developers have more control over which components they want to be cached.  Theoretically, controlling this caching is now as easy as changing one file (instead of having to change server configurations and such).</p>
+<p>Setting up the cache manifest is relatively easy:</p>
+<p>1. Add this line to your</p>
+<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br /></div></td><td><div class="text codecolorer">.htaccess</div></td></tr></tbody></table></div>
+<p>file or Apache configuration:</p>
+<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br /></div></td><td><div class="text codecolorer">AddType text/cache-manifest .manifest</div></td></tr></tbody></table></div>
+<p>2. Create a file.  For this example we&#8217;ll call it</p>
+<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br /></div></td><td><div class="text codecolorer">cache.manifest</div></td></tr></tbody></table></div>
+<p>.  This file contains a list of files that should be cached:</p>
+<pre>
+CACHE MANIFEST
+# version 1
+/style.css
+/script.js
+/image.jpg
+</pre>
+<p>3. Add the manifest attribute on the</p>
+<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br /></div></td><td><div class="text codecolorer">html</div></td></tr></tbody></table></div>
+<p>element, pointing to your</p>
+<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br /></div></td><td><div class="text codecolorer">cache.manifest</div></td></tr></tbody></table></div>
+<p>file:</p>
+<pre name="code" class="html">
+&lt;html manifest=&quot;/cache.manifest&quot;&gt;
+</pre>
+<p>Now these files specified will be cached.  They will only be redownloaded if our</p>
+<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br /></div></td><td><div class="text codecolorer">cache.manifest</div></td></tr></tbody></table></div>
+<p>file is changed in any way.  That&#8217;s why there&#8217;s a comment with the version number.  Simply update the version to force the browser to redownload the files:</p>
+<pre>
+CACHE MANIFEST
+# version 2
+/style.css
+/script.js
+/image.jpg
+</pre>
+<h3>9. Form input validation</h3>
+<p>HTML5 has a ton of new features for forms, one of which is handy form validation which requires no JavaScript.  In the days before Ajax, form validation was perhaps the most useful feature of JavaScript, giving developers the ability to prevent unnecessary roundtrips to the server for forms with incomplete or invalid data.</p>
+<p>Now you can use the</p>
+<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br /></div></td><td><div class="text codecolorer">required</div></td></tr></tbody></table></div>
+<p>attribute to make sure a particular input is filled out.  The browser won&#8217;t send the form without the completed input:</p>
+<pre name="code" class="html">
+&lt;input type=&quot;text&quot; name=&quot;email&quot; required&gt;
+</pre>
+<p>There&#8217;s much more to be said about improvements to forms in general, in addition to some other handy form validation tools such as the <a href="http://dev.w3.org/html5/spec/Overview.html#the-min-and-max-attributes">
+<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br /></div></td><td><div class="text codecolorer">min</div></td></tr></tbody></table></div>
+<p>and</p>
+<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br /></div></td><td><div class="text codecolorer">max</div></td></tr></tbody></table></div>
+<p>attributes and the <a href="http://dev.w3.org/html5/spec/Overview.html#the-placeholder-attribute">
+<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="line-numbers"><div>1<br /></div></td><td><div class="text codecolorer">pattern</div></td></tr></tbody></table></div>
+<p>attribute.</p>
+<h3>10. Video (and <a href="http://html5doctor.com/native-audio-in-the-browser/">audio</a>)</h3>
+<p>The old (common example using a Flash container in an object):</p>
+<pre name="code" class="html">
+&lt;object width=&quot;500&quot; height=&quot;350&quot;&gt;
+  &lt;param name=&quot;movie&quot; value=&quot;flashcontainer.swf&quot;&gt;
+  &lt;embed src=&quot;flashcontainer.swf&quot; width=&quot;500&quot; height=&quot;350&quot;&gt;
+  &lt;/embed&gt;
+&lt;/object&gt;
+</pre>
+<p>The new:</p>
+<pre name="code" class="html">
+&lt;video id=&quot;movie&quot; width=&quot;500&quot; height=&quot;350&quot; controls&gt;
+  &lt;source src=&quot;movie.mp4&quot; /&gt;
+  &lt;source src=&quot;movie.webm&quot; type=&#x27;video/webm; codecs=&quot;vp8, vorbis&quot;&#x27; /&gt;
+  &lt;source src=&quot;movie.ogv&quot; type=&#x27;video/ogg; codecs=&quot;theora, vorbis&quot;&#x27; /&gt;
+&lt;/video&gt;
+</pre>
+<p>Ok, so the simplicity of this one is the most debatable.  The thing that&#8217;s tricky about this is that you have to encode the movie into several different formats, because of the differing implementations on browsers out there.</p>
+<p>Also, here&#8217;s an example with a Flash fallback (read more <a href="http://diveintohtml5.org/video.html">here</a>):</p>
+<pre name="code" class="html">
+&lt;video id=&quot;movie&quot; width=&quot;500&quot; height=&quot;350&quot; controls&gt;
+  &lt;source src=&quot;movie.mp4&quot; /&gt;
+  &lt;source src=&quot;movie.webm&quot; type=&#x27;video/webm; codecs=&quot;vp8, vorbis&quot;&#x27; /&gt;
+  &lt;source src=&quot;movie.ogv&quot; type=&#x27;video/ogg; codecs=&quot;theora, vorbis&quot;&#x27; /&gt;
+  &lt;object width=&quot;500&quot; height=&quot;350&quot;&gt;
+    &lt;param name=&quot;movie&quot; value=&quot;flashcontainer.swf&quot;&gt;
+    &lt;embed src=&quot;flashcontainer.swf&quot; width=&quot;500&quot; height=&quot;350&quot;&gt;
+    &lt;/embed&gt;
+  &lt;/object&gt;
+&lt;/video&gt;
+</pre>
+<h3>Related</h3>
+<p><a href="http://davidbcalhoun.com/2010/basic-html5-template">Basic HTML5 template</a><br />
+<a href="http://www.w3.org/TR/html5-diff/">W3C: HTML5 differences</a></p>
+</a></p></a></p></p></h3></p></h3></p></h3>
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post">
@@ -1520,153 +1772,6 @@ if(typeof cases[foo] == 'function') {
 
 </article>
 
-
-    <article class="post">
-	<header>
-		<h2 class="title">
-			
-			<a href="/2010/open-web-camp-ii-stanford">
-			
-				Open Web Camp II at Stanford (July 17, 2010)</a>
-		</h2>
-		<div class="meta date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-07-17T00:00:00-07:00" pubdate data-updated="true">Jul 17<span>th</span>, 2010</time></div>
-	</header>
-	<div class="entry-content">
-		<p>Open Web Camp II at Stanford today was a blast! Lots of information. Plenty I’m already familiar with, but also lots I learned.</p>
-
-<p>I woke up late, only to see people tweeting about the conference (doh!), so I missed seeing Molly Holzschlag. But I arrived just in time to see…</p>
-
-<h3 id="estelle-weyl-8220css3-implementable-features8221">Estelle Weyl: “CSS3 Implementable Features”</h3>
-
-<div class="image-block full">
-  <a href="http://www.flickr.com/photos/franksvalli/4803724562/"><img src="http://davidbcalhoun.com/wp-content/uploads/2010/07/owc2-1.jpg" alt="Estelle Weyl" title="Estelle Weyl" width="800" height="676" class="aligncenter size-full wp-image-373" /></a><cite>Estelle Weyl (<a href="http://twitter.com/estellevw">@estellevw</a>)</cite>
-</div>
-
-<p>Estelle’s talk was about what features of CSS3 are available to use right now. She covered all the usual: border radius, text shadow, box shadow, tilted images, etc. And she showed off Paul Irish’s <a href="http://css3please.com/">css3please.com</a>, which greatly helps implement these cross-browser, with even the filter hacks required to pull it off in IE! (no word about the performance hit of these IE hacks, which I’m sure I’ve read about somewhere…)</p>
-
-<p>One of the cool new things I learned was that you can use CSS shorthands to declare border-radius (rounded corner) values. So instead of this mess (courtesy of <a href="http://border-radius.com/">border-radius.com</a>):</p>
-
-<pre name="code" class="css">-webkit-border-top-left-radius: 1px;
--webkit-border-top-right-radius: 2px;
--webkit-border-bottom-right-radius: 3px;
--webkit-border-bottom-left-radius: 4px;
--moz-border-radius-topleft: 1px;
--moz-border-radius-topright: 2px;
--moz-border-radius-bottomright: 3px;
--moz-border-radius-bottomleft: 4px;
-border-top-left-radius: 1px;
-border-top-right-radius: 2px;
-border-bottom-right-radius: 3px;
-border-bottom-left-radius: 4px;
-</pre>
-
-<p>All you need to do is this, which is equivalent to the above (disclaimer: I’m not sure about the compatibility of this shorthand!):</p>
-
-<pre name="code" class="css">-moz-border-radius: 10px 20px 30px 40px;
--webkit-border-radius: 10px 20px 30px 40px;
-border-radius: 10px 20px 30px 40px;
-</pre>
-
-<p>Or if you get bored of doing a perfectly rounded border radius, you can also do elliptical border radius (again, I’m unsure about the compatibility!):</p>
-
-<pre name="code" class="css">-moz-border-radius: 20px / 10px;
--webkit-border-radius: 20px / 10px;
-border-radius: 20px / 10px;
-</pre>
-
-<h3 id="matt-henry-8220going-mobile8221">Matt Henry: “Going Mobile”</h3>
-
-<div class="image-block full">
-  <a href="http://www.flickr.com/photos/franksvalli/4803731530/"><img src="http://davidbcalhoun.com/wp-content/uploads/2010/07/owc2-2.jpg" alt="Matt Henry" title="Matt Henry" width="800" height="533" class="aligncenter size-full wp-image-374" /></a><cite>Matt Henry (<a href="http://twitter.com/greenideas">@greenideas</a>)</cite>
-</div>
-
-<p>I’ve worked closely with Matt at <a href="http://mobile.yahoo.com/">Yahoo! Mobile</a> for the past year, so not much was new for me. It seemed that the audience really dug the talk though (lots of questions were asked!).</p>
-
-<p>Essentially, Matt explained that you have to make at least two different versions of your website: one for feature phones and one for smartphones like the iPhone, and with the help of something like <a href="http://wurfl.sourceforge.net/">WURFL</a>, detect the phone and direct the user to the appropriate site.</p>
-
-<p>Matt also emphasized that feature phone browsers are terrible, much worse than IE6.</p>
-
-<p>As part of a response to someone’s question, Matt talked about the idea of feature detection on smart phones, essentially saying that by the time you’ve sent the JavaScript feature detection to the device, it’s already too late, and in some cases might end up crashing the browser (for feature phones that have an extremely small page weight such as 9KB). So for now it looks like user agent sniffing on the server-side is the way to go.</p>
-
-<p>And there was a brief shoutout for <a href="http://mobile.yahoo.com/developers">Yahoo! Blueprint</a>, which renders a website across thousands of phones.</p>
-
-<h3 id="victor-tsaran-and-todd-kloots-8220accessibility-1018243">Victor Tsaran and Todd Kloots: “Accessibility 101″</h3>
-
-<div class="image-block full">
-  <a href="http://www.flickr.com/photos/franksvalli/4803726232/"><img src="http://davidbcalhoun.com/wp-content/uploads/2010/07/owc2-3.jpg" alt="Victor Tsaran (left) and Todd Kloots (right)" title="Victor Tsaran (left) and Todd Kloots (right)" width="800" height="540" class="aligncenter size-full wp-image-375" /></a><cite>Victor Tsaran (<a href="http://twitter.com/vick08">@vick08</a>) and Todd Kloots (<a href="http://twitter.com/todd">@todd</a>)</cite>
-</div>
-
-<p>Before joining Twitter, Todd Kloots spent some time with Victor Tsaran at Yahoo! on accessibility.</p>
-
-<p>In this talk they went over common misunderstandings and showed that even today, big companies such as <a href="http://digg.com">Digg.com</a> are still not investing in making their site accessible.</p>
-
-<p>This was a pretty high level overview of basic accessibility, including an introduction to screen readers and ARIA attributes.</p>
-
-<p>Here’s some of the stuff covered:<br />
--making forms accessible with fieldset and legend elements and linking captions to their inputs.<br />
--adding alt tags to images even if blank (so the screen reader doesn’t announce the entire URL)<br />
--the title tag doesn’t make things more accessible, whereas the alt tag does<br />
--screen readers obey display: none and visibility: hidden and that to hide something from normal users you have to position it offscreen (with negative left or text-indent).<br />
--how to make basic tables accessible by taking advantage of table summary and caption, as well as putting tables headings into the &lt;thead&gt; element.</p>
-
-<p>I’m still trying to absorb it, but Todd also mentioned that a simple anchor tag for a button didn’t semantically make sense, and that it was more semantic to have a span wrapped around a &lt;button&gt;. I guess I either don’t understand fully or I just disagree, since a &lt;button&gt; appears within a form and sometimes it just may be a cleaner solution to use a simple anchor tag. I guess I will need to look into this more.</p>
-
-<h3 id="joseph-r-lewis-8220refactoring-for-mobile8221">Joseph R. Lewis: “Refactoring for Mobile”</h3>
-
-<div class="image-block full">
-  <a href="http://www.flickr.com/photos/franksvalli/4803099119/"><img src="http://davidbcalhoun.com/wp-content/uploads/2010/07/owc2-4.jpg" alt="Joseph R. Lewis" title="Joseph R. Lewis" width="800" height="533" class="aligncenter size-full wp-image-376" /></a><cite>Joseph R. Lewis (<a href="http://twitter.com/sanbeiji">@sanbeiji</a>)</cite>
-</div>
-
-<p>This talk was basically a live demo of implementing CSS media queries in a WordPress installation to make an iPhone-friendly version of the site. There was a good use of the viewport tag, media queries, @font-face, text-shadow, box-shadow, border-radius, etc.</p>
-
-<p>One surprising thing I learned was that apparently Mobile Safari recognizes border-radius without the webkit prefix? I’m going to follow up on this.</p>
-
-<h3 id="dirk-ginader-82205-layers-of-web-accessibility8221">Dirk Ginader: “5 layers of web accessibility”</h3>
-
-<div class="image-block full">
-  <a href="http://www.flickr.com/photos/franksvalli/4803100401/"><img src="http://davidbcalhoun.com/wp-content/uploads/2010/07/owc2-5.jpg" alt="Dirk Ginader" title="Dirk Ginader" width="800" height="533" class="aligncenter size-full wp-image-377" /></a><cite>Dirk Ginader (<a href="http://twitter.com/ginader">@ginader</a>)</cite>
-</div>
-
-<p>Dirk is another Yahoo! (we’re everywhere!) whose presentation was also about accessibility.</p>
-
-<p>As web developers, we’re already familiar with three layers of the web:</p>
-
-<p>-HTML, responsible for content<br />
--CSS, responsible for presentation<br />
--JavaScript, responsible for interaction</p>
-
-<p>Dirk introduced another two levels:</p>
-
-<p>-CSS for JavaScript: special styling for when the full-featured JavaScript is available (this can be used by having JS add a “js” class to the document, and therefore writing CSS rules with “.js” in the front)<br />
--WAI-ARIA: special HTML attributes to help define roles, landmarks, allow the developer to give instructions directly through the screen reader, etc.</p>
-
-<p>Also a few more points:<br />
--use the JavaScript focus() method for events (alerts that are injected at the top of the document and are otherwise ignored by the screen reader, windows that open and close, etc.)<br />
--:hover CSS pseudoclass is for the mouse only.. be sure to also use the :focus pseudoclass! (my note: this is also important on mobile, for touch devices!)</p>
-
-<h3 id="summary">Summary</h3>
-
-<p>Overall a great day. The food was pricey but good, and the whole event was free, so I can’t complain! Nice event, I just wish I could’ve seen the other talks in the other tracks!</p>
-
-
-		
-		
-	</div>
-
-</article>
-
 <nav id="pagenavi">
     
         <a href="/blog/page/5/" class="prev">Previous</a>
@@ -1681,10 +1786,7 @@ border-radius: 20px / 10px;
 <br>
 <br>
 &copy; 2014
-
-    David Calhoun
-
-</footer>
+<a href="mailto:david.b.calhoun@gmail.com">David Calhoun</a> (<a href="https://twitter.com/franksvalli">@franksvalli</a>) - <a href="https://www.linkedin.com/in/davidcalhoun">LinkedIn</a> - <a href="http://themaingate.net/resume/">Resume</a></footer>
 	<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="/javascripts/slash.js"></script> -->
 <!-- <script src="/javascripts/hyphenator.js"></script> -->

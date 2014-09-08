@@ -7,9 +7,7 @@
 
 	<meta name="author" content="David Calhoun">
 
-<meta name="description" content="Mobile Flickr for iPhone 1.2 released
-Firefox Home For iPhone Approved, Lets You Sync Bookmarks, Open Tabs And More
-Opera Mobile 10.1 for S60: W3C &hellip;"> <meta name="keywords" content="">
+<meta name="description" content="Open Web Camp II at Stanford today was a blast! Lots of information. Plenty I’m already familiar with, but also lots I learned. I woke up late, only &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -48,6 +46,153 @@ Opera Mobile 10.1 for S60: W3C &hellip;"> <meta name="keywords" content="">
 </header>
 
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/2010/open-web-camp-ii-stanford">
+			
+				Open Web Camp II at Stanford (July 17, 2010)</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-07-17T00:00:00-07:00" pubdate data-updated="true">Jul 17<span>th</span>, 2010</time></div>
+	</header>
+	<div class="entry-content">
+		<p>Open Web Camp II at Stanford today was a blast! Lots of information. Plenty I’m already familiar with, but also lots I learned.</p>
+
+<p>I woke up late, only to see people tweeting about the conference (doh!), so I missed seeing Molly Holzschlag. But I arrived just in time to see…</p>
+
+<h3 id="estelle-weyl-8220css3-implementable-features8221">Estelle Weyl: “CSS3 Implementable Features”</h3>
+
+<div class="image-block full">
+  <a href="http://www.flickr.com/photos/franksvalli/4803724562/"><img src="http://davidbcalhoun.com/wp-content/uploads/2010/07/owc2-1.jpg" alt="Estelle Weyl" title="Estelle Weyl" width="800" height="676" class="aligncenter size-full wp-image-373" /></a><cite>Estelle Weyl (<a href="http://twitter.com/estellevw">@estellevw</a>)</cite>
+</div>
+
+<p>Estelle’s talk was about what features of CSS3 are available to use right now. She covered all the usual: border radius, text shadow, box shadow, tilted images, etc. And she showed off Paul Irish’s <a href="http://css3please.com/">css3please.com</a>, which greatly helps implement these cross-browser, with even the filter hacks required to pull it off in IE! (no word about the performance hit of these IE hacks, which I’m sure I’ve read about somewhere…)</p>
+
+<p>One of the cool new things I learned was that you can use CSS shorthands to declare border-radius (rounded corner) values. So instead of this mess (courtesy of <a href="http://border-radius.com/">border-radius.com</a>):</p>
+
+<pre name="code" class="css">-webkit-border-top-left-radius: 1px;
+-webkit-border-top-right-radius: 2px;
+-webkit-border-bottom-right-radius: 3px;
+-webkit-border-bottom-left-radius: 4px;
+-moz-border-radius-topleft: 1px;
+-moz-border-radius-topright: 2px;
+-moz-border-radius-bottomright: 3px;
+-moz-border-radius-bottomleft: 4px;
+border-top-left-radius: 1px;
+border-top-right-radius: 2px;
+border-bottom-right-radius: 3px;
+border-bottom-left-radius: 4px;
+</pre>
+
+<p>All you need to do is this, which is equivalent to the above (disclaimer: I’m not sure about the compatibility of this shorthand!):</p>
+
+<pre name="code" class="css">-moz-border-radius: 10px 20px 30px 40px;
+-webkit-border-radius: 10px 20px 30px 40px;
+border-radius: 10px 20px 30px 40px;
+</pre>
+
+<p>Or if you get bored of doing a perfectly rounded border radius, you can also do elliptical border radius (again, I’m unsure about the compatibility!):</p>
+
+<pre name="code" class="css">-moz-border-radius: 20px / 10px;
+-webkit-border-radius: 20px / 10px;
+border-radius: 20px / 10px;
+</pre>
+
+<h3 id="matt-henry-8220going-mobile8221">Matt Henry: “Going Mobile”</h3>
+
+<div class="image-block full">
+  <a href="http://www.flickr.com/photos/franksvalli/4803731530/"><img src="http://davidbcalhoun.com/wp-content/uploads/2010/07/owc2-2.jpg" alt="Matt Henry" title="Matt Henry" width="800" height="533" class="aligncenter size-full wp-image-374" /></a><cite>Matt Henry (<a href="http://twitter.com/greenideas">@greenideas</a>)</cite>
+</div>
+
+<p>I’ve worked closely with Matt at <a href="http://mobile.yahoo.com/">Yahoo! Mobile</a> for the past year, so not much was new for me. It seemed that the audience really dug the talk though (lots of questions were asked!).</p>
+
+<p>Essentially, Matt explained that you have to make at least two different versions of your website: one for feature phones and one for smartphones like the iPhone, and with the help of something like <a href="http://wurfl.sourceforge.net/">WURFL</a>, detect the phone and direct the user to the appropriate site.</p>
+
+<p>Matt also emphasized that feature phone browsers are terrible, much worse than IE6.</p>
+
+<p>As part of a response to someone’s question, Matt talked about the idea of feature detection on smart phones, essentially saying that by the time you’ve sent the JavaScript feature detection to the device, it’s already too late, and in some cases might end up crashing the browser (for feature phones that have an extremely small page weight such as 9KB). So for now it looks like user agent sniffing on the server-side is the way to go.</p>
+
+<p>And there was a brief shoutout for <a href="http://mobile.yahoo.com/developers">Yahoo! Blueprint</a>, which renders a website across thousands of phones.</p>
+
+<h3 id="victor-tsaran-and-todd-kloots-8220accessibility-1018243">Victor Tsaran and Todd Kloots: “Accessibility 101″</h3>
+
+<div class="image-block full">
+  <a href="http://www.flickr.com/photos/franksvalli/4803726232/"><img src="http://davidbcalhoun.com/wp-content/uploads/2010/07/owc2-3.jpg" alt="Victor Tsaran (left) and Todd Kloots (right)" title="Victor Tsaran (left) and Todd Kloots (right)" width="800" height="540" class="aligncenter size-full wp-image-375" /></a><cite>Victor Tsaran (<a href="http://twitter.com/vick08">@vick08</a>) and Todd Kloots (<a href="http://twitter.com/todd">@todd</a>)</cite>
+</div>
+
+<p>Before joining Twitter, Todd Kloots spent some time with Victor Tsaran at Yahoo! on accessibility.</p>
+
+<p>In this talk they went over common misunderstandings and showed that even today, big companies such as <a href="http://digg.com">Digg.com</a> are still not investing in making their site accessible.</p>
+
+<p>This was a pretty high level overview of basic accessibility, including an introduction to screen readers and ARIA attributes.</p>
+
+<p>Here’s some of the stuff covered:<br />
+-making forms accessible with fieldset and legend elements and linking captions to their inputs.<br />
+-adding alt tags to images even if blank (so the screen reader doesn’t announce the entire URL)<br />
+-the title tag doesn’t make things more accessible, whereas the alt tag does<br />
+-screen readers obey display: none and visibility: hidden and that to hide something from normal users you have to position it offscreen (with negative left or text-indent).<br />
+-how to make basic tables accessible by taking advantage of table summary and caption, as well as putting tables headings into the &lt;thead&gt; element.</p>
+
+<p>I’m still trying to absorb it, but Todd also mentioned that a simple anchor tag for a button didn’t semantically make sense, and that it was more semantic to have a span wrapped around a &lt;button&gt;. I guess I either don’t understand fully or I just disagree, since a &lt;button&gt; appears within a form and sometimes it just may be a cleaner solution to use a simple anchor tag. I guess I will need to look into this more.</p>
+
+<h3 id="joseph-r-lewis-8220refactoring-for-mobile8221">Joseph R. Lewis: “Refactoring for Mobile”</h3>
+
+<div class="image-block full">
+  <a href="http://www.flickr.com/photos/franksvalli/4803099119/"><img src="http://davidbcalhoun.com/wp-content/uploads/2010/07/owc2-4.jpg" alt="Joseph R. Lewis" title="Joseph R. Lewis" width="800" height="533" class="aligncenter size-full wp-image-376" /></a><cite>Joseph R. Lewis (<a href="http://twitter.com/sanbeiji">@sanbeiji</a>)</cite>
+</div>
+
+<p>This talk was basically a live demo of implementing CSS media queries in a WordPress installation to make an iPhone-friendly version of the site. There was a good use of the viewport tag, media queries, @font-face, text-shadow, box-shadow, border-radius, etc.</p>
+
+<p>One surprising thing I learned was that apparently Mobile Safari recognizes border-radius without the webkit prefix? I’m going to follow up on this.</p>
+
+<h3 id="dirk-ginader-82205-layers-of-web-accessibility8221">Dirk Ginader: “5 layers of web accessibility”</h3>
+
+<div class="image-block full">
+  <a href="http://www.flickr.com/photos/franksvalli/4803100401/"><img src="http://davidbcalhoun.com/wp-content/uploads/2010/07/owc2-5.jpg" alt="Dirk Ginader" title="Dirk Ginader" width="800" height="533" class="aligncenter size-full wp-image-377" /></a><cite>Dirk Ginader (<a href="http://twitter.com/ginader">@ginader</a>)</cite>
+</div>
+
+<p>Dirk is another Yahoo! (we’re everywhere!) whose presentation was also about accessibility.</p>
+
+<p>As web developers, we’re already familiar with three layers of the web:</p>
+
+<p>-HTML, responsible for content<br />
+-CSS, responsible for presentation<br />
+-JavaScript, responsible for interaction</p>
+
+<p>Dirk introduced another two levels:</p>
+
+<p>-CSS for JavaScript: special styling for when the full-featured JavaScript is available (this can be used by having JS add a “js” class to the document, and therefore writing CSS rules with “.js” in the front)<br />
+-WAI-ARIA: special HTML attributes to help define roles, landmarks, allow the developer to give instructions directly through the screen reader, etc.</p>
+
+<p>Also a few more points:<br />
+-use the JavaScript focus() method for events (alerts that are injected at the top of the document and are otherwise ignored by the screen reader, windows that open and close, etc.)<br />
+-:hover CSS pseudoclass is for the mouse only.. be sure to also use the :focus pseudoclass! (my note: this is also important on mobile, for touch devices!)</p>
+
+<h3 id="summary">Summary</h3>
+
+<p>Overall a great day. The food was pricey but good, and the whole event was free, so I can’t complain! Nice event, I just wish I could’ve seen the other talks in the other tracks!</p>
+
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post">
@@ -1397,41 +1542,6 @@ Total:                 10669.4ms +/- 1.0%
 
 </article>
 
-
-    <article class="post">
-	<header>
-		<h2 class="title">
-			
-			<a href="/2010/mobile-first-luke-wroblewski-on-mobile-design">
-			
-				Mobile First: Luke Wroblewski on Mobile Design</a>
-		</h2>
-		<div class="meta date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-06-05T00:00:00-07:00" pubdate data-updated="true">Jun 5<span>th</span>, 2010</time></div>
-	</header>
-	<div class="entry-content">
-		<p><a href="http://5by5.tv/bigwebshow/6"><img src="http://davidbcalhoun.com/wp-content/uploads/2010/06/luke-wroblewski-mobile-first1.png" alt="Click to play Luke Wroblewski: Mobile First" title="Click to play Luke Wroblewski: Mobile First" width="474" height="285" class="aligncenter size-full wp-image-271" /></a></p>
-
-<p>In <a href="http://5by5.tv/bigwebshow/6">episode 6 of The Big Web Show</a>, <a href="//lukew.com/">Luke Wroblewski</a> gives his “Mobile First” talk, explaining his philosophy for designing for mobile, the challenges, and a look at the road ahead. Luke explains that because of the limitations on mobile, developers are forced to really optimize the user experience for mobile. Often times this mobile experience turns out much better than on the desktop, where the “gluttony of resources” results in distracting and excessive webpages.</p>
-
-
-		
-		
-	</div>
-
-</article>
-
 <nav id="pagenavi">
     
         <a href="/blog/page/6/" class="prev">Previous</a>
@@ -1446,10 +1556,7 @@ Total:                 10669.4ms +/- 1.0%
 <br>
 <br>
 &copy; 2014
-
-    David Calhoun
-
-</footer>
+<a href="mailto:david.b.calhoun@gmail.com">David Calhoun</a> (<a href="https://twitter.com/franksvalli">@franksvalli</a>) - <a href="https://www.linkedin.com/in/davidcalhoun">LinkedIn</a> - <a href="http://themaingate.net/resume/">Resume</a></footer>
 	<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="/javascripts/slash.js"></script> -->
 <!-- <script src="/javascripts/hyphenator.js"></script> -->

@@ -81,7 +81,7 @@ body {
 	font-size: 16px;
 }
 
-body a {
+#content a {
 	color: #000000;
 	font-family: arial;
 }
@@ -108,7 +108,10 @@ body #header h1 {
 }
 
 body #header a {
-	color: #979797;
+   color: #A4B4C4;
+   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+   font-weight: 300;
+   letter-spacing: -0.01em;
 }
 
 body #header a:hover {
@@ -134,7 +137,7 @@ body .entry-content video {
 
 .meta.date {
 	text-align: left;
-	color: #DEDEDE;
+	color: #8A8B96;
 	font-size: 0.85em;
 }
 
@@ -142,8 +145,13 @@ body .post .has-image {
 	text-align: center;
 }
 
+.title {
+	font-family: "HelveticaNeue-CondensedBold", "Helvetica Neue", "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif; font-weight:600; font-stretch:condensed;
+	letter-spacing: 0.02em;
+}
+
 .post {
-	padding-top: 20px;
+	padding-top: 5px;
 
 }
 
@@ -162,6 +170,13 @@ table .negative {
 	background-color: rgba(255, 110, 110, 0.65);
 }
 
+#footer a {
+	color: #1C5894;
+	&:hover {
+		color: #0067CE;
+	}
+}
+
 
 /* disqus */
 #disqus_thread iframe #footer,
@@ -176,7 +191,7 @@ table .negative {
 		width: 95%;
 	}
 	#header {
-		margin-top: 0.5em;
+		margin-top: 10px;
 		padding-bottom: 0;
 	}
 	.CodeRay .line-numbers,

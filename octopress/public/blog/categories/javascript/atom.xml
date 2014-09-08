@@ -4,7 +4,7 @@
   <title><![CDATA[Category: javascript | David Calhoun's blog]]></title>
   <link href="http://davidbcalhoun.com/blog/categories/javascript/atom.xml" rel="self"/>
   <link href="http://davidbcalhoun.com/"/>
-  <updated>2014-09-07T23:41:01-07:00</updated>
+  <updated>2014-09-08T01:19:19-07:00</updated>
   <id>http://davidbcalhoun.com/</id>
   <author>
     <name><![CDATA[David Calhoun]]></name>
@@ -12,6 +12,155 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[async.parallel with a simple timeout (node.js)]]></title>
+    <link href="http://davidbcalhoun.com/2014/async.parallel-with-a-simple-timeout-node-js/"/>
+    <updated>2014-09-08T00:36:52-07:00</updated>
+    <id>http://davidbcalhoun.com/2014/async.parallel-with-a-simple-timeout-node-js</id>
+    <content type="html"><![CDATA[<p>A while back I had a need for a general timeout option for async.parallel and was surprised I couldn’t find much information about how to do it.  I was using async.parallel to make a lot of REST calls in parallel, but one of them was getting blocked by a firewall, resulting in an eventual timeout minutes later.</p>
+
+<p>One option was to specify a shorter timeout for each individual REST call, including the one causing the problem.  But I wanted a simpler solution: a general timeout for that specific async.parallel instance that made it clear all tasks should finish within a certain period of time. Otherwise return a timeout as an error, allowing the program to continue (and retry if necessary).</p>
+
+<p>It was somewhat surprising there wasn’t an option built into async.parallel, as I could imagine other folks must have had the same problem at some point in time.</p>
+
+<p>In any case, I wrote a pretty simple wrapper function that gets the job done (see example usage below):</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+<strong><a href="#n10" name="n10">10</a></strong>
+<a href="#n11" name="n11">11</a>
+<a href="#n12" name="n12">12</a>
+<a href="#n13" name="n13">13</a>
+<a href="#n14" name="n14">14</a>
+<a href="#n15" name="n15">15</a>
+<a href="#n16" name="n16">16</a>
+<a href="#n17" name="n17">17</a>
+<a href="#n18" name="n18">18</a>
+<a href="#n19" name="n19">19</a>
+<strong><a href="#n20" name="n20">20</a></strong>
+<a href="#n21" name="n21">21</a>
+<a href="#n22" name="n22">22</a>
+<a href="#n23" name="n23">23</a>
+<a href="#n24" name="n24">24</a>
+<a href="#n25" name="n25">25</a>
+<a href="#n26" name="n26">26</a>
+<a href="#n27" name="n27">27</a>
+<a href="#n28" name="n28">28</a>
+<a href="#n29" name="n29">29</a>
+<strong><a href="#n30" name="n30">30</a></strong>
+<a href="#n31" name="n31">31</a>
+<a href="#n32" name="n32">32</a>
+<a href="#n33" name="n33">33</a>
+<a href="#n34" name="n34">34</a>
+<a href="#n35" name="n35">35</a>
+<a href="#n36" name="n36">36</a>
+<a href="#n37" name="n37">37</a>
+<a href="#n38" name="n38">38</a>
+<a href="#n39" name="n39">39</a>
+<strong><a href="#n40" name="n40">40</a></strong>
+<a href="#n41" name="n41">41</a>
+<a href="#n42" name="n42">42</a>
+<a href="#n43" name="n43">43</a>
+<a href="#n44" name="n44">44</a>
+<a href="#n45" name="n45">45</a>
+<a href="#n46" name="n46">46</a>
+<a href="#n47" name="n47">47</a>
+<a href="#n48" name="n48">48</a>
+<a href="#n49" name="n49">49</a>
+<strong><a href="#n50" name="n50">50</a></strong>
+<a href="#n51" name="n51">51</a>
+<a href="#n52" name="n52">52</a>
+<a href="#n53" name="n53">53</a>
+<a href="#n54" name="n54">54</a>
+<a href="#n55" name="n55">55</a>
+<a href="#n56" name="n56">56</a>
+<a href="#n57" name="n57">57</a>
+<a href="#n58" name="n58">58</a>
+<a href="#n59" name="n59">59</a>
+<strong><a href="#n60" name="n60">60</a></strong>
+<a href="#n61" name="n61">61</a>
+<a href="#n62" name="n62">62</a>
+<a href="#n63" name="n63">63</a>
+<a href="#n64" name="n64">64</a>
+</pre></td>
+  <td class="code"><pre><span class="keyword">var</span> async = require(<span class="string"><span class="delimiter">'</span><span class="content">async</span><span class="delimiter">'</span></span>);
+
+<span class="comment">//  async.parallel with optional timeout (options.timeout)</span>
+<span class="keyword">function</span> <span class="function">parallel</span>(options, tasks, cb) {
+  options = options || {};  <span class="comment">//  default to {}</span>
+  <span class="keyword">var</span> timedOut = <span class="predefined-constant">false</span>;     <span class="comment">//  initial state</span>
+  <span class="keyword">if</span>(<span class="keyword">typeof</span> options.timeout == <span class="string"><span class="delimiter">'</span><span class="content">number</span><span class="delimiter">'</span></span>) {
+    <span class="comment">//  use the timeout wrapper</span>
+
+    setTimeout(<span class="keyword">function</span>(){
+      <span class="comment">//  set flag so if async.parallel below ever completes, we'll know we already errored out</span>
+      timedOut = <span class="predefined-constant">true</span>;
+
+      <span class="comment">//  callback with error and no data</span>
+      cb(<span class="string"><span class="delimiter">'</span><span class="content">async.parallel timed out out after </span><span class="delimiter">'</span></span> + options.timeout + <span class="string"><span class="delimiter">'</span><span class="content">ms.</span><span class="delimiter">'</span></span>, <span class="predefined-constant">null</span>);
+    }, options.timeout);
+
+    async.parallel(tasks, <span class="keyword">function</span>(err, result){
+      <span class="comment">//  after all tasks are complete</span>
+
+      <span class="keyword">if</span>(timeOut) <span class="keyword">return</span>;  <span class="comment">//  noop and return (already timed out, cb already executed)</span>
+      cb(err, result);     <span class="comment">//  never timed out, just passthrough the data to the cb</span>
+    });
+  } <span class="keyword">else</span> {
+    <span class="comment">//  no timeout specified, so passthrough to async.parallel</span>
+
+    async.parallel(tasks, cb);
+  }
+}
+
+
+<span class="comment">//  example usage</span>
+parallel({<span class="key">timeout</span>: <span class="integer">10000</span>}, [  <span class="comment">//  10 second timeout</span>
+  <span class="keyword">function</span>(){ ... },
+  <span class="keyword">function</span>(){ ... }
+],
+<span class="keyword">function</span>(err, results) {
+  <span class="keyword">if</span>(err) {
+    <span class="comment">//  timeouts can now be handled here</span>
+  }
+});
+
+
+<span class="comment">//  an example forcing a timeout to occur</span>
+parallel({
+  <span class="key">timeout</span>: <span class="integer">1000</span>   <span class="comment">//  1 second timeout</span>
+},
+[
+  <span class="keyword">function</span>(done){
+    <span class="comment">//  task 1 completes in 100ms</span>
+    setTimeout(<span class="keyword">function</span>(){
+      done(<span class="predefined-constant">null</span>, <span class="string"><span class="delimiter">'</span><span class="content">foo</span><span class="delimiter">'</span></span>);
+    }, <span class="integer">100</span>);
+  },
+  <span class="keyword">function</span>(done){
+    <span class="comment">//  task 2 completes in 2000ms, forcing a timeout error</span>
+    setTimeout(<span class="keyword">function</span>(){
+      done(<span class="predefined-constant">null</span>, <span class="string"><span class="delimiter">'</span><span class="content">bar</span><span class="delimiter">'</span></span>);
+    }, <span class="integer">2000</span>);
+  }
+],
+<span class="keyword">function</span>(err, results) {
+  <span class="comment">//  err = 'async.parallel timed out out after 1000ms.'</span>
+});
+</pre></td>
+</tr></table>
+</div>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[What is AMD, CommonJS, and UMD?]]></title>
@@ -1556,69 +1705,6 @@ window.foo &#038;&#038; foo.bar &#038;&#038; (foo.bar());
 <p>Just a word of caution about using Method 2: it’s obviously less clear what’s going on here. Your own cleverness might actually result in unnecessary confusion, especially of other people work in the same code base and they’re at different levels of understanding. In these cases we should first strive to be clear, and then only clever if it’s not at the expense of being clear.</p>
 
 <p>It’s also likely that a code minifier would take care of this cleverness for us at build time, giving us the best of both worlds.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[JavaScript news resources]]></title>
-    <link href="http://davidbcalhoun.com/2011/javascript-news-resources"/>
-    <updated>2011-01-14T00:00:00-08:00</updated>
-    <id>http://davidbcalhoun.com/2011/javascript-news-resources</id>
-    <content type="html"><![CDATA[<p>There’s an overwhelming amount of information being pumped out of the JavaScript community each week, but how do you keep up with it? Here’s some sources to keep you busy.</p>
-
-<h3 id="twitter">Twitter</h3>
-
-<p>This merits a category of its own. This has replaced the RSS reader for a lot of folks, or at the very least supplemented it.</p>
-
-<p>I’ve consistently recommended <a href="http://twitter.com/#!/nathansmith/javascript/">Nathan Smith’s list of JavaScript folks</a>. When I’m diligent, I keep up with this several times a week and <a href="http://twitter.com/#!/franksvalli/favorites/">favorite items from the feed</a> to be considered for inclusion in that week’s <a href="http://jsmag.com/blog/">JSMag Blog update</a>.</p>
-
-<h3 id="aggregators-and-communities">Aggregators and communities</h3>
-
-<p><a href="http://www.delicious.com/recent/javascript">Delicious</a><br />
-<a href="https://github.com/languages/JavaScript">Github</a><br />
-Reddit: <a href="http://www.reddit.com/r/web_design/">web_design</a> and <a href="http://www.reddit.com/r/javascript/">javascript</a><br />
-<a href="http://groups.google.com/group/jsmentors">JSMentors</a></p>
-
-<h3 id="blogs">Blogs</h3>
-
-<p><a href="http://www.google.com/reader/bundle/user%2F00060481582380134484%2Fbundle%2FJavaScript">JavaScript Google Reader bundle</a><br />
-<a href="http://www.google.com/reader/bundle/user%2F00060481582380134484%2Fbundle%2FJavaScript%20People">JavaScript People Blogs – Google Reader bundle</a></p>
-
-<p><a href="http://hacks.mozilla.org/articles/">Mozilla articles on hacks.mozilla.org</a><br />
-<a href="http://msdn.microsoft.com/en-us/scriptjunkie/">Script Junkie</a><br />
-<a href="http://dailyjs.com/">DailyJS</a> – very frequently updated news by Alex Young<br />
-<a href="http://www.quirksmode.org/blog/">QuirksBlog (ppk)</a> – focus on mobile<br />
-<a href="http://javascriptweblog.wordpress.com/">JavaScript, JavaScript (Angus Croll)</a><br />
-<a href="http://ejohn.org/category/blog/">John Resig’s blog</a> – unfortunately not too active lately (check out <a href="http://twitter.com/#!/jeresig">his Twitter</a> for more updated info)<br />
-<a href="http://ajaxian.com/">Ajaxian</a> – used to be THE source for news, but it isn’t updated too much anymore</p>
-
-<p>…and many more. Check out <a href="http://blog.reybango.com/2010/12/15/what-to-read-to-get-up-to-speed-in-javascript/">Rey Bango’s “What to Read to Get Up to Speed in JavaScript”</a> for more.</p>
-
-<h3 id="browser-blogs">Browser blogs</h3>
-
-<p>It’s important to know what’s going down in the browser world. These have mixed content, so it’s not just JavaScript.</p>
-
-<p><a href="http://webkit.org/blog/">Surfin’ Safari</a><br />
-<a href="http://blog.chromium.org/">The Chromium Blog</a><br />
-<a href="http://blog.mozilla.com/">The Mozilla Blog</a></p>
-
-<h3 id="weekly-news">Weekly news</h3>
-
-<p>These sources attempt to do the legwork for you and round up the most important articles each week. (Disclaimer: I currently write for JSMag!)</p>
-
-<p><a href="http://javascriptweekly.com/">JavaScript Weekly</a>: a weekly email newsletter<br />
-<a href="http://badassjs.com/">Badass JS</a><br />
-<a href="http://jsmag.com/blog/">JSMag blog</a></p>
-
-<h3 id="podcasts-and-videos">Podcasts and Videos</h3>
-
-<p><a href="http://www.aminutewithbrendan.com/">A Minute With Brendan</a><br />
-<a href="http://node.minutewith.com/">node.minutewith</a><br />
-<a href="http://developer.yahoo.com/yui/theater/">YUI Theatre</a><br />
-<a href="http://nodeup.com/">Node Up</a></p>
-
-<p>Am I missing anything (I’m very sure)? Post a link below in the comments. Thanks!</p>
-
 ]]></content>
   </entry>
   
