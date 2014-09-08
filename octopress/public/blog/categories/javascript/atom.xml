@@ -4,7 +4,7 @@
   <title><![CDATA[Category: javascript | David Calhoun's blog]]></title>
   <link href="http://davidbcalhoun.com/blog/categories/javascript/atom.xml" rel="self"/>
   <link href="http://davidbcalhoun.com/"/>
-  <updated>2014-04-30T12:28:30-07:00</updated>
+  <updated>2014-09-07T23:41:01-07:00</updated>
   <id>http://davidbcalhoun.com/</id>
   <author>
     <name><![CDATA[David Calhoun]]></name>
@@ -241,7 +241,7 @@ module.exports = {
         define([<span class="string"><span class="delimiter">'</span><span class="content">jquery</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">underscore</span><span class="delimiter">'</span></span>], factory);
     } <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">typeof</span> exports === <span class="string"><span class="delimiter">'</span><span class="content">object</span><span class="delimiter">'</span></span>) {
         <span class="comment">// Node, CommonJS-like</span>
-        module.exports = factory(require(<span class="string"><span class="delimiter">'</span><span class="content">jquery</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">underscore</span><span class="delimiter">'</span></span>));
+        module.exports = factory(require(<span class="string"><span class="delimiter">'</span><span class="content">jquery</span><span class="delimiter">'</span></span>), require(<span class="string"><span class="delimiter">'</span><span class="content">underscore</span><span class="delimiter">'</span></span>));
     } <span class="keyword">else</span> {
         <span class="comment">// Browser globals (root is window)</span>
         root.returnExports = factory(root.jQuery, root._);
@@ -261,6 +261,8 @@ module.exports = {
 </pre></td>
 </tr></table>
 </div>
+
+<p>(Sep 2014 edit: fixed syntax for CommonJS in the last example)</p>
 ]]></content>
   </entry>
   

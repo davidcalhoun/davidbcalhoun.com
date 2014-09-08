@@ -7,7 +7,7 @@
 
 	<meta name="author" content="David Calhoun">
 
-<meta name="description" content="Yesterday John Gruber wrote about Apple’s PastryKit, iPhone’s JavaScript framework that’s been discovered “in the wild” on the iPhone user guide at &hellip;"> <meta name="keywords" content="">
+<meta name="description" content="In case you hadn’t seen it yet, John Resig was kind enough to stop by Yahoo! for the December Bayjax meetup. Here’s the video: Usually developers &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -46,6 +46,48 @@
 </header>
 
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/2009/video-john-resig-testing-performance-analysis-and-jquery-1-4">
+			
+				Video: John Resig &#8211; Testing, Performance Analysis, and jQuery 1.4</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-12-21T00:00:00-08:00" pubdate data-updated="true"></time></div>
+	</header>
+	<div class="entry-content">
+		<p>In case you hadn’t seen it yet, <a href="http://ejohn.org/">John Resig</a> was kind enough to stop by Yahoo! for the December <a href="http://www.meetup.com/BayJax/">Bayjax</a> meetup. Here’s the <a href="http://developer.yahoo.com/yui/theater/video.php?v=resig-testing">video</a>:</p>
+
+<div class="video" style="width:576px; height: 324px;">
+</div>
+
+<p>Usually developers are more interested in just getting the dang code to work, and as a result actual the testing and maintenance of JavaScript isn’t talked about too much, so I’m sure this will be new territory for many developers. And since it’s John Resig speaking, there was of course a bit about using <a href="http://testswarm.com/">TestSwarm</a>, a testing distributed framework-agnostic automated testing tool (that’s a mouthful!).</p>
+
+<p>Included in the talk are good things to note while testing, such as the fact unless you’re running Firefox or Chrome on Windows, all test times have a margin of error of up to 15ms (not to be confused with <a href="http://www.quirksmode.org/blog/archives/2009/08/when_to_read_ou.html">PPK’s observation of the delay between JavaScript computation and browser rendering</a>).</p>
+
+<p>(via <a href="http://www.yuiblog.com/blog/2009/12/16/video-resig-testing-and-jquery/">YUIBlog</a>)</p>
+
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post">
@@ -917,55 +959,12 @@ jQuery(<span class="string"><span class="delimiter">&quot;</span><span class="co
 
 </article>
 
-
-    <article class="post">
-	<header>
-		<h2 class="title">
-			
-			<a href="/2009/ie-mobile-6-12-problem-browser-ignores-the-specificity-of-css-display-styles">
-			
-				IE Mobile 6.12 Problem: Browser Ignores the Specificity of CSS Display Styles</a>
-		</h2>
-		<div class="meta date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-08-31T00:00:00-07:00" pubdate data-updated="true">Aug 31<span>st</span>, 2009</time></div>
-	</header>
-	<div class="entry-content">
-		<p><strong>UPDATE:</strong> I found that the problem is actually that inline-block is completely unsupported in this version of IE Mobile, and is likely also unsupported in IE Mobile 7, which is also based on IE4. This is in contrast to desktop IE6, where inline-block is supported on elements that are natively inline (span, em, etc.).</p>
-
-<p>Just found this today, for what it’s worth.  If you’re unlucky enough to be working with older Windows Mobile phones you have probably realized that the browser is based on IE6, which all the desktop web developers notoriously complain about constantly.</p>
-
-<p>Though the mobile version of IE6 has most of the same issues as its desktop counterpart, IEMobile introduces some new random problems.  And in most cases there’s no handy web resources to help you out, since almost everyone develops for the desktop.</p>
-
-<p>This particular IEMobile quirk is a specificity problem.  We have a parent element styled with display: block and the child element is styled with display: inline-block or display: inline.  We’ve made the child CSS selector more specific so it <em>should</em> override the parent:</p>
-
-<pre name="code" class="css">.parent { display: block; }
-.parent .child { display: inline-block; }</pre>
-
-<p>This works on the desktop version of IE6!  But not in IEMobile 6.12, where the child element is still displayed as a block.  The same thing happens when we change the “.parent .child” style to “display: inline;”, but interestingly not when we change it to “display: none;”, where the style is correctly recognized and applied.  Doh!</p>
-
-<p>And FYI: I checked and found that this bug is <em>not</em> occurring on IEMobile 8.12</p>
-
-		
-		
-	</div>
-
-</article>
-
 <nav id="pagenavi">
     
         <a href="/blog/page/8/" class="prev">Previous</a>
     
+    
+        <a href="/blog/page/10/" class="next">Next</a>
     
 </nav>
 </div>

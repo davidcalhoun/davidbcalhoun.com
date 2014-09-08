@@ -124,7 +124,7 @@ And keeping in the same pattern as the above examples, the more complicated case
             define(['jquery', 'underscore'], factory);
         } else if (typeof exports === 'object') {
             // Node, CommonJS-like
-            module.exports = factory(require('jquery', 'underscore'));
+            module.exports = factory(require('jquery'), require('underscore'));
         } else {
             // Browser globals (root is window)
             root.returnExports = factory(root.jQuery, root._);
@@ -142,3 +142,6 @@ And keeping in the same pattern as the above examples, the more complicated case
         }
     }));
 {:lang="javascript"}
+
+
+(Sep 2014 edit: fixed syntax for CommonJS in the last example)
