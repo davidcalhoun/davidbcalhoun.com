@@ -64,26 +64,49 @@
 	</header>
 	<div class="entry-content"><p>In general it’s a good practice to check for the existence of something before blindly using it by faith and hoping it works. There are various times during the execution of scripts when a variable may not be defined, it may be null, or it might be an empty string. These are three things that are easily conflated. A good way to look at this is thinking of these as having increasing levels of existence (getting a bit philosophical here for a moment…):</p>
 
-<pre name="code" class="JScript">foo0;             // existence level 0 (creates the error "not defined")
-var foo1;         // existence level 1 ("undefined" - variable declared but not defined/initialized)
-var foo2 = null;  // existence level 2 (variable initialized, but isn't an Object, Number, String, etc)
-var foo3 = "";    // existence level 3 (variable initialized to an empty String)
-var foo4 = "bar"; // existence level 4 (variable initialized to String "foo")
-</pre>
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+</pre></td>
+  <td class="code"><pre>foo0;             <span class="comment">// existence level 0 (creates the error &quot;not defined&quot;)</span>
+<span class="keyword">var</span> foo1;         <span class="comment">// existence level 1 (&quot;undefined&quot; - variable declared but not defined/initialized)</span>
+<span class="keyword">var</span> foo2 = <span class="predefined-constant">null</span>;  <span class="comment">// existence level 2 (variable initialized, but isn't an Object, Number, String, etc)</span>
+<span class="keyword">var</span> foo3 = <span class="string"><span class="delimiter">&quot;</span><span class="delimiter">&quot;</span></span>;    <span class="comment">// existence level 3 (variable initialized to an empty String)</span>
+<span class="keyword">var</span> foo4 = <span class="string"><span class="delimiter">&quot;</span><span class="content">bar</span><span class="delimiter">&quot;</span></span>; <span class="comment">// existence level 4 (variable initialized to String &quot;foo&quot;)</span>
+</pre></td>
+</tr></table>
+</div>
 
 <p>Generally it would be handy if we had some way to filter out everything but the very last line. We simply want to check for these cases without the script entirely blowing up, as it does with the first line:</p>
 
-<pre name="code" class="JScript">foo;  // ReferenceError: foo is not defined
-</pre>
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+</pre></td>
+  <td class="code"><pre>foo;  <span class="comment">// ReferenceError: foo is not defined</span>
+</pre></td>
+</tr></table>
+</div>
 
 <p>We’re not particularly doing anything useful with foo here, but notice that the script fails out anyway. At this point any code that follows will not be executed. Your first instinct might be “Oh! I know how to contain these errors! We’ll use a try-catch!”:</p>
 
-<pre name="code" class="JScript">try {
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+</pre></td>
+  <td class="code"><pre><span class="keyword">try</span> {
   foo;
-} catch(e) {
-  e.message;  // "foo is not defined"
+} <span class="keyword">catch</span>(e) {
+  e.message;  <span class="comment">// &quot;foo is not defined&quot;</span>
 }
-</pre>
+</pre></td>
+</tr></table>
+</div>
 
 <p>The script still fails, but not critically, so your script continues to execute. But this turns out to aversely affect performance. The basic lesson here is that try-catch can be useful in some situations, but shouldn’t be used where alternatives are available.</p>
 
@@ -91,56 +114,69 @@ var foo4 = "bar"; // existence level 4 (variable initialized to String "foo")
 
 <p>JavaScript has quite a useful remedy for this:</p>
 
-<pre name="code" class="JScript">typeof foo; // "undefined"
-</pre>
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+</pre></td>
+  <td class="code"><pre><span class="keyword">typeof</span> foo; <span class="comment">// &quot;undefined&quot;</span>
+</pre></td>
+</tr></table>
+</div>
 
 <p>Unlike everything else in JavaScript, typeof will deal with whatever you throw at it, including undefined variables. So you can use it as a simple check before using a variable that might not exist:</p>
 
-<pre name="code" class="JScript">if(typeof foo !== "undefined") {
-  // do something with foo
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+</pre></td>
+  <td class="code"><pre><span class="keyword">if</span>(<span class="keyword">typeof</span> foo !== <span class="string"><span class="delimiter">&quot;</span><span class="content">undefined</span><span class="delimiter">&quot;</span></span>) {
+  <span class="comment">// do something with foo</span>
 }
-</pre>
-
-<p>Note that this is easy to confuse with the</p>
-
-<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;">
-  <table cellspacing="0" cellpadding="0">
-    <tr>
-      <td class="line-numbers">
-        <div>
-          1<br />
-        </div>
-      </td>
-      
-      <td>
-        <div class="text codecolorer">
-          undefined
-        </div>
-      </td>
-    </tr>
-  </table>
+</pre></td>
+</tr></table>
 </div>
 
-<p>keyword, which in this case doesn’t help us one bit, as it gives us a fatal error:</p>
+<p>Note that this is easy to confuse with the <code>undefined</code> keyword, which in this case doesn’t help us one bit, as it gives us a fatal error:</p>
 
-<pre name="code" class="JScript">if(foo !== undefined) {  // ReferenceError: foo is not defined
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+</pre></td>
+  <td class="code"><pre><span class="keyword">if</span>(foo !== <span class="predefined-constant">undefined</span>) {  <span class="comment">// ReferenceError: foo is not defined</span>
 
 }
-</pre>
+</pre></td>
+</tr></table>
+</div>
 
 <p>This filters out our first two cases, since they both evaluate to “undefined”:</p>
 
-<pre name="code" class="JScript">typeof foo; // "undefined"
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+</pre></td>
+  <td class="code"><pre><span class="keyword">typeof</span> foo; <span class="comment">// &quot;undefined&quot;</span>
 
-var bar;
-typeof bar; // "undefined"
-</pre>
+<span class="keyword">var</span> bar;
+<span class="keyword">typeof</span> bar; <span class="comment">// &quot;undefined&quot;</span>
+</pre></td>
+</tr></table>
+</div>
 
 <p>But this turns out not to work well for our other conditions, which evaluate differently:</p>
 
-<pre name="code" class="JScript">typeof null;  // "object" (what?!)
-typeof "";    // "string"
-</pre>
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+</pre></td>
+  <td class="code"><pre><span class="keyword">typeof</span> <span class="predefined-constant">null</span>;  <span class="comment">// &quot;object&quot; (what?!)</span>
+<span class="keyword">typeof</span> <span class="string"><span class="delimiter">&quot;</span><span class="delimiter">&quot;</span></span>;    <span class="comment">// &quot;string&quot;</span>
+</pre></td>
+</tr></table>
+</div>
 
 <p>So we need to add other “if” conditions to check.. but there turns out to be a better way!</p>
 
@@ -150,379 +186,303 @@ typeof "";    // "string"
 
 <p>“How handy!” you might think. Except in the following unexpected cases:</p>
 
-<pre name="code" class="JScript">if("0") {
-  // this will run because "0" is true
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+</pre></td>
+  <td class="code"><pre><span class="keyword">if</span>(<span class="string"><span class="delimiter">&quot;</span><span class="content">0</span><span class="delimiter">&quot;</span></span>) {
+  <span class="comment">// this will run because &quot;0&quot; is true</span>
 }
 
-if("false") {
-  // this will run because "false" is true
+<span class="keyword">if</span>(<span class="string"><span class="delimiter">&quot;</span><span class="content">false</span><span class="delimiter">&quot;</span></span>) {
+  <span class="comment">// this will run because &quot;false&quot; is true</span>
 }
-</pre>
-
-<p>To see what JavaScript will cast a value to without having to use an</p>
-
-<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;">
-  <table cellspacing="0" cellpadding="0">
-    <tr>
-      <td class="line-numbers">
-        <div>
-          1<br />
-        </div>
-      </td>
-      
-      <td>
-        <div class="text codecolorer">
-          if
-        </div>
-      </td>
-    </tr>
-  </table>
+</pre></td>
+</tr></table>
 </div>
 
-<p>statement, we could create a new Boolean value with the following:</p>
+<p>To see what JavaScript will cast a value to without having to use an <code>if</code> statement, we could create a new Boolean value with the following:</p>
 
-<pre name="code" class="JScript">Boolean(0);    // false
-Boolean("0");  // true
-</pre>
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+</pre></td>
+  <td class="code"><pre>Boolean(<span class="integer">0</span>);    <span class="comment">// false</span>
+Boolean(<span class="string"><span class="delimiter">&quot;</span><span class="content">0</span><span class="delimiter">&quot;</span></span>);  <span class="comment">// true</span>
+</pre></td>
+</tr></table>
+</div>
 
 <p>Or we can use the less intuitive but quick way of using double exclamation marks (this will probably award you cleverness points in someone’s book.. hopefully those points actually matter):</p>
 
-<pre name="code" class="JScript">!!0;    // false
-!!"0";  // true
-</pre>
-
-<p>This works because !foo converts foo to a Boolean but negates its original value, turning it on its head. !!foo converts foo to a Boolean and flips it back to its expected value, which is the same value that’s evaluated by our</p>
-
-<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;">
-  <table cellspacing="0" cellpadding="0">
-    <tr>
-      <td class="line-numbers">
-        <div>
-          1<br />
-        </div>
-      </td>
-      
-      <td>
-        <div class="text codecolorer">
-          if
-        </div>
-      </td>
-    </tr>
-  </table>
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+</pre></td>
+  <td class="code"><pre>!!<span class="integer">0</span>;    <span class="comment">// false</span>
+!!<span class="string"><span class="delimiter">&quot;</span><span class="content">0</span><span class="delimiter">&quot;</span></span>;  <span class="comment">// true</span>
+</pre></td>
+</tr></table>
 </div>
 
-<p>statement.</p>
+<p>This works because !foo converts foo to a Boolean but negates its original value, turning it on its head. !!foo converts foo to a Boolean and flips it back to its expected value, which is the same value that’s evaluated by our <code>if</code> statement.</p>
 
 <p>Using this ALMOST gives us the answer we’re looking for:</p>
 
-<pre name="code" class="JScript">!!foo0; // ReferenceError: foo0 is not defined
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+<strong><a href="#n10" name="n10">10</a></strong>
+<a href="#n11" name="n11">11</a>
+<a href="#n12" name="n12">12</a>
+<a href="#n13" name="n13">13</a>
+</pre></td>
+  <td class="code"><pre>!!foo0; <span class="comment">// ReferenceError: foo0 is not defined</span>
 
-var foo1;
-!!foo1; // false
+<span class="keyword">var</span> foo1;
+!!foo1; <span class="comment">// false</span>
 
-var foo2 = null;
-!!foo2; // false (same as !!null)
+<span class="keyword">var</span> foo2 = <span class="predefined-constant">null</span>;
+!!foo2; <span class="comment">// false (same as !!null)</span>
 
-var foo3 = "";
-!!foo3; // false (same as !!"")
+<span class="keyword">var</span> foo3 = <span class="string"><span class="delimiter">&quot;</span><span class="delimiter">&quot;</span></span>;
+!!foo3; <span class="comment">// false (same as !!&quot;&quot;)</span>
 
-var foo4 = "bar";
-!!foot4; // true (same as !!"bar")
-</pre>
-
-<p>Excluding the first example, now we can test for uninitialized variables (foo1), null variables (foo2), and empty strings (foo3) all with just an</p>
-
-<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;">
-  <table cellspacing="0" cellpadding="0">
-    <tr>
-      <td class="line-numbers">
-        <div>
-          1<br />
-        </div>
-      </td>
-      
-      <td>
-        <div class="text codecolorer">
-          if
-        </div>
-      </td>
-    </tr>
-  </table>
+<span class="keyword">var</span> foo4 = <span class="string"><span class="delimiter">&quot;</span><span class="content">bar</span><span class="delimiter">&quot;</span></span>;
+!!foot4; <span class="comment">// true (same as !!&quot;bar&quot;)</span>
+</pre></td>
+</tr></table>
 </div>
 
-<p>statement:</p>
+<p>Excluding the first example, now we can test for uninitialized variables (foo1), null variables (foo2), and empty strings (foo3) all with just an <code>if</code> statement:</p>
 
-<pre name="code" class="JScript">if(foo1) {
-  // do something with foo1
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+<strong><a href="#n10" name="n10">10</a></strong>
+<a href="#n11" name="n11">11</a>
+</pre></td>
+  <td class="code"><pre><span class="keyword">if</span>(foo1) {
+  <span class="comment">// do something with foo1</span>
 }
 
-if(foo2) {
-  // do something with foo2
+<span class="keyword">if</span>(foo2) {
+  <span class="comment">// do something with foo2</span>
 }
 
-if(foo3) {
-  // do something with foo3
+<span class="keyword">if</span>(foo3) {
+  <span class="comment">// do something with foo3</span>
 }
-</pre>
+</pre></td>
+</tr></table>
+</div>
 
 <p>Dang… so close! But we can’t yet test the first case without an error:</p>
 
-<pre name="code" class="JScript">if(foo0) {  // ReferenceError: foo0 is not defined
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+</pre></td>
+  <td class="code"><pre><span class="keyword">if</span>(foo0) {  <span class="comment">// ReferenceError: foo0 is not defined</span>
 
 }
-</pre>
+</pre></td>
+</tr></table>
+</div>
 
 <h3 id="foo-versus-windowfoo-and-thisfoo">foo versus window.foo and this.foo</h3>
 
 <p>The secret to our solution lies in how JavaScript handles undefined variables versus undefined properties. Here’s a quick reminder on the difference between the two:</p>
 
-<pre name="code" class="JScript">// variable foo
-var foo;
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+<a href="#n6" name="n6">6</a>
+</pre></td>
+  <td class="code"><pre><span class="comment">// variable foo</span>
+<span class="keyword">var</span> foo;
 
-// property bar (and object variable foo)
-var foo = {};  // create an empty object to add bar too
-foo.bar = "";
-</pre>
+<span class="comment">// property bar (and object variable foo)</span>
+<span class="keyword">var</span> foo = {};  <span class="comment">// create an empty object to add bar too</span>
+foo.bar = <span class="string"><span class="delimiter">&quot;</span><span class="delimiter">&quot;</span></span>;
+</pre></td>
+</tr></table>
+</div>
 
 <p>The difference between these makes all the difference whether a fatal error occurs:</p>
 
-<pre name="code" class="JScript">foo;  // ReferenceError: foo is not defined
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+</pre></td>
+  <td class="code"><pre>foo;  <span class="comment">// ReferenceError: foo is not defined</span>
 
-var foo = {};
-foo.bar;  // undefined
-foo.blah; // undefined
-</pre>
-
-<p>We can randomly invent and check any property of</p>
-
-<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;">
-  <table cellspacing="0" cellpadding="0">
-    <tr>
-      <td class="line-numbers">
-        <div>
-          1<br />
-        </div>
-      </td>
-      
-      <td>
-        <div class="text codecolorer">
-          foo
-        </div>
-      </td>
-    </tr>
-  </table>
+<span class="keyword">var</span> foo = {};
+foo.bar;  <span class="comment">// undefined</span>
+foo.blah; <span class="comment">// undefined</span>
+</pre></td>
+</tr></table>
 </div>
 
-<p>we want, and the code will keep chugging along:</p>
+<p>We can randomly invent and check any property of <code>foo</code> we want, and the code will keep chugging along:</p>
 
-<pre name="code" class="JScript">var foo = {};
-foo.something = "hello";
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+<strong><a href="#n10" name="n10">10</a></strong>
+</pre></td>
+  <td class="code"><pre><span class="keyword">var</span> foo = {};
+foo.something = <span class="string"><span class="delimiter">&quot;</span><span class="content">hello</span><span class="delimiter">&quot;</span></span>;
 
-if(foo.bar) { // undefined, interpreted as false (same as !!foo.bar)
-  // never runs
+<span class="keyword">if</span>(foo.bar) { <span class="comment">// undefined, interpreted as false (same as !!foo.bar)</span>
+  <span class="comment">// never runs</span>
 }
 
-if(foo.something) {
-  foo.something;  // "hello"
+<span class="keyword">if</span>(foo.something) {
+  foo.something;  <span class="comment">// &quot;hello&quot;</span>
 }
-</pre>
-
-<p>Now comes the magic. If you know anything about JavaScript running in the browser, you know that all global variables are part of the</p>
-
-<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;">
-  <table cellspacing="0" cellpadding="0">
-    <tr>
-      <td class="line-numbers">
-        <div>
-          1<br />
-        </div>
-      </td>
-      
-      <td>
-        <div class="text codecolorer">
-          window
-        </div>
-      </td>
-    </tr>
-  </table>
+</pre></td>
+</tr></table>
 </div>
 
-<p>object. This means</p>
+<p>Now comes the magic. If you know anything about JavaScript running in the browser, you know that all global variables are part of the <code>window</code> object. This means <code>foo</code> and <code>window.foo</code> are equivalent:</p>
 
-<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;">
-  <table cellspacing="0" cellpadding="0">
-    <tr>
-      <td class="line-numbers">
-        <div>
-          1<br />
-        </div>
-      </td>
-      
-      <td>
-        <div class="text codecolorer">
-          foo
-        </div>
-      </td>
-    </tr>
-  </table>
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+<a href="#n6" name="n6">6</a>
+</pre></td>
+  <td class="code"><pre><span class="keyword">var</span> foo;
+
+foo === window.foo;  <span class="comment">// true</span>
+
+<span class="comment">// &quot;this&quot; is another bag of worms, but note this anyway</span>
+<span class="local-variable">this</span>.foo === window.foo;
+</pre></td>
+</tr></table>
 </div>
-
-<p>and</p>
-
-<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;">
-  <table cellspacing="0" cellpadding="0">
-    <tr>
-      <td class="line-numbers">
-        <div>
-          1<br />
-        </div>
-      </td>
-      
-      <td>
-        <div class="text codecolorer">
-          window.foo
-        </div>
-      </td>
-    </tr>
-  </table>
-</div>
-
-<p>are equivalent:</p>
-
-<pre name="code" class="JScript">var foo;
-
-foo === window.foo;  // true
-
-// "this" is another bag of worms, but note this anyway
-this.foo === window.foo;
-</pre>
 
 <p>So technically our variable foo is a <em>property</em> of the window object. So we should be able to check for any arbitrary variable in the window scope now!</p>
 
-<pre name="code" class="JScript">window.foo;  // undefined (not a fatal error!)
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+</pre></td>
+  <td class="code"><pre>window.foo;  <span class="comment">// undefined (not a fatal error!)</span>
 
-// even though we're checking for the same thing, we get a fatal error…
-foo;  // ReferenceError: foo is not defined
-</pre>
+<span class="comment">// even though we're checking for the same thing, we get a fatal error…</span>
+foo;  <span class="comment">// ReferenceError: foo is not defined</span>
+</pre></td>
+</tr></table>
+</div>
 
 <h3 id="practical-uses">Practical uses</h3>
 
 <p>Now as long as we have a global entry point for our code, we can write our code in such a way that it won’t ever give us a fatal error if our variables aren’t yet defined:</p>
 
-<pre name="code" class="JScript">if(window.foo &#038;&#038; foo.bar) {
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+</pre></td>
+  <td class="code"><pre><span class="keyword">if</span>(window.foo &amp;&amp; foo.bar) {
   foo.bar();
 }
-</pre>
-
-<p>Of course nothing happens, because we haven’t defined foo. But why doesn’t foo.bar give us a fatal error? Because the first test,</p>
-
-<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;">
-  <table cellspacing="0" cellpadding="0">
-    <tr>
-      <td class="line-numbers">
-        <div>
-          1<br />
-        </div>
-      </td>
-      
-      <td>
-        <div class="text codecolorer">
-          window.foo
-        </div>
-      </td>
-    </tr>
-  </table>
+</pre></td>
+</tr></table>
 </div>
 
-<p>failed out. It would be useless processing for the JavaScript engine to also evaluate the second statement, because the end result will still be the same (false &#038;&#038; true results in false, false &#038;&#038; false results in false). So it doesn’t get so far as</p>
+<p>Of course nothing happens, because we haven’t defined foo. But why doesn’t foo.bar give us a fatal error? Because the first test, <code>window.foo</code> failed out. It would be useless processing for the JavaScript engine to also evaluate the second statement, because the end result will still be the same (false &#038;&#038; true results in false, false &#038;&#038; false results in false). So it doesn’t get so far as <code>foo.bar</code>.</p>
 
-<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;">
-  <table cellspacing="0" cellpadding="0">
-    <tr>
-      <td class="line-numbers">
-        <div>
-          1<br />
-        </div>
-      </td>
-      
-      <td>
-        <div class="text codecolorer">
-          foo.bar
-        </div>
-      </td>
-    </tr>
-  </table>
-</div>
+<p>And now the code will work properly when we hook up our code to our <code>foo</code> global namespace:</p>
 
-<p>.</p>
-
-<p>And now the code will work properly when we hook up our code to our</p>
-
-<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;">
-  <table cellspacing="0" cellpadding="0">
-    <tr>
-      <td class="line-numbers">
-        <div>
-          1<br />
-        </div>
-      </td>
-      
-      <td>
-        <div class="text codecolorer">
-          foo
-        </div>
-      </td>
-    </tr>
-  </table>
-</div>
-
-<p>global namespace:</p>
-
-<pre name="code" class="JScript">var foo = {
-  bar: function() {
-    alert("hello world");
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+</pre></td>
+  <td class="code"><pre><span class="keyword">var</span> foo = {
+  <span class="function">bar</span>: <span class="keyword">function</span>() {
+    alert(<span class="string"><span class="delimiter">&quot;</span><span class="content">hello world</span><span class="delimiter">&quot;</span></span>);
   }
 }
 
-if(window.foo &#038;&#038; foo.bar) {
-  foo.bar();  // "hello world"
+<span class="keyword">if</span>(window.foo &amp;&amp; foo.bar) {
+  foo.bar();  <span class="comment">// &quot;hello world&quot;</span>
 }
-</pre>
+</pre></td>
+</tr></table>
+</div>
 
 <h3 id="shorthand">Shorthand</h3>
 
 <p>It’s becoming common to see an abbreviation for the above code. Check out the following two methods, which accomplish the same thing:</p>
 
-<pre name="code" class="JScript">// Method 1
-if(window.foo &#038;&#038; foo.bar) {
-  foo.bar();  // "hello world"
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+</pre></td>
+  <td class="code"><pre><span class="comment">// Method 1</span>
+<span class="keyword">if</span>(window.foo &amp;&amp; foo.bar) {
+  foo.bar();  <span class="comment">// &quot;hello world&quot;</span>
 }
 
-// Method 2
-window.foo &#038;&#038; foo.bar &#038;&#038; (foo.bar());
-</pre>
-
-<p>Don’t get too scared.. these blocks of code are equivalent. Method 2 is shorter, but it simply goes something like this: if window.foo isn’t set, stop evaluating this line (just as above in the</p>
-
-<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;">
-  <table cellspacing="0" cellpadding="0">
-    <tr>
-      <td class="line-numbers">
-        <div>
-          1<br />
-        </div>
-      </td>
-      
-      <td>
-        <div class="text codecolorer">
-          if
-        </div>
-      </td>
-    </tr>
-  </table>
+<span class="comment">// Method 2</span>
+window.foo &amp;&amp; foo.bar &amp;&amp; (foo.bar());
+</pre></td>
+</tr></table>
 </div>
 
-<p>statement). Otherwise, if foo.bar exists then execute the code in parentheses, which gives us an alert (“hello world”);</p>
+<p>Don’t get too scared.. these blocks of code are equivalent. Method 2 is shorter, but it simply goes something like this: if window.foo isn’t set, stop evaluating this line (just as above in the <code>if</code> statement). Otherwise, if foo.bar exists then execute the code in parentheses, which gives us an alert (“hello world”);</p>
 
 <p>Just a word of caution about using Method 2: it’s obviously less clear what’s going on here. Your own cleverness might actually result in unnecessary confusion, especially of other people work in the same code base and they’re at different levels of understanding. In these cases we should first strive to be clear, and then only clever if it’s not at the expense of being clear.</p>
 

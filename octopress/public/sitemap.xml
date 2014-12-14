@@ -236,7 +236,7 @@
         <loc>
             http://davidbcalhoun.com/2011/checking-for-undefined-null-and-empty-variables-in-javascript
         </loc>
-        <lastmod>2014-04-13T19:49:31-07:00</lastmod>
+        <lastmod>2014-10-12T11:57:45-07:00</lastmod>
     </url>
     <url>
         <loc>
@@ -274,7 +274,7 @@
         <loc>
             http://davidbcalhoun.com/2011/different-ways-of-defining-functions-in-javascript-this-is-madness
         </loc>
-        <lastmod>2014-04-13T19:49:31-07:00</lastmod>
+        <lastmod>2014-10-12T11:47:05-07:00</lastmod>
     </url>
     <url>
         <loc>http://davidbcalhoun.com/2011/when-to-base64-encode-images-and-when-not-to</loc>
@@ -425,16 +425,20 @@
         <lastmod>2014-09-08T01:19:15-07:00</lastmod>
     </url>
     <url>
+        <loc>http://davidbcalhoun.com/2014/the-city-is-a-medium-the-medium-is-the-message/</loc>
+        <lastmod>2014-09-16T20:55:42-07:00</lastmod>
+    </url>
+    <url>
         <loc>http://davidbcalhoun.com/blog/archives/</loc>
-        <lastmod>2014-09-08T01:19:15-07:00</lastmod>
+        <lastmod>2014-10-12T11:57:45-07:00</lastmod>
     </url>
     <url>
         <loc>http://davidbcalhoun.com/blog/</loc>
-        <lastmod>2014-09-08T01:19:15-07:00</lastmod>
+        <lastmod>2014-10-12T11:57:45-07:00</lastmod>
     </url>
     <url>
         <loc>http://davidbcalhoun.com/</loc>
-        <lastmod>2014-09-08T01:19:15-07:00</lastmod>
+        <lastmod>2014-10-12T11:57:45-07:00</lastmod>
     </url>
     <url>
         <loc>http://davidbcalhoun.com/robots.txt</loc>

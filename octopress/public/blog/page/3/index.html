@@ -7,7 +7,7 @@
 
 	<meta name="author" content="David Calhoun">
 
-<meta name="description" content="After work today, I stopped by the old bustling Apple Store in Palo Alto. I was there for a bit of a peek at what my next blank check to Apple would &hellip;"> <meta name="keywords" content="">
+<meta name="description" content="Introduction (check out the Demo) A while back I had a bit of a field day messing around with input type=”range”, trying to replicate the “unlock &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -46,6 +46,147 @@
 </header>
 
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/2012/more-fun-with-webkit-pseudoelements-webkit-search-cancel-button-or-pseudoclass-inception">
+			
+				More Fun With WebKit Pseudoelements: -webkit-search-cancel-button (or: Pseudoclass Inception)</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-10T00:00:00-07:00" pubdate data-updated="true">Aug 10<span>th</span>, 2012</time></div>
+	</header>
+	<div class="entry-content">
+		<h3 id="introduction">Introduction</h3>
+
+<p>(check out the <strong><a href="http://davidbcalhoun.com/a/webkit-search-cancel-button.html">Demo</a></strong>)</p>
+
+<p>A while back I had a bit of a field day <a href="http://davidbcalhoun.com/2011/implementing-iphone-slider-unlock-with-input-type-range">messing around with input type=”range”</a>, trying to replicate the “unlock slider” on iOS using CSS, targeting special WebKit-only CSS pseudoelements such as webkit-slider-thumb.</p>
+
+<p>Well, now I’m at it again, this time with a much simpler use case, trying to implement a custom “clear” button on search field inputs (note that this only works on input type=”search”):</p>
+
+<p><a href="http://davidbcalhoun.com/a/webkit-search-cancel-button.html"><img src="http://davidbcalhoun.com/wp-content/uploads/2012/08/custom-webkit-search-cancel-button.png" alt="Custom webkit-search-cancel-button" title="Custom webkit-search-cancel-button" width="239" height="145" class="aligncenter size-full wp-image-914" /></a></p>
+
+<h3 id="details-about-the-implementation">Details about the implementation</h3>
+
+<p>It turns out this is relatively easy to do, and is somewhat supported, at least in the latest Chrome and Safari 6. Note that it does work on iOS6, but not on iOS5, but the positioning is slightly different from the other implementations. No idea about Android, so I’ll leave that for someone else to find out. <img src="http://davidbcalhoun.com/wp-includes/images/smilies/icon_smile.gif" alt=":)" class="wp-smiley" /> </p>
+
+<p>So how do we do it? First, we need the special WebKit CSS pseudoselector (<code>-webkit-search-cancel-button</code>), and secondly, we need to use that to wipe out the default WebKit styling (with -webkit-appearance: none;):</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+</pre></td>
+  <td class="code"><pre><span class="pseudo-class">::-webkit-search-cancel-button</span> {   // <span class="key">select</span> <span class="key">all</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">X</span><span class="delimiter">&quot;</span></span> <span class="key">buttons</span> <span class="key">in</span> <span class="key">search</span> <span class="key">inputs</span>
+    <span class="key">-webkit-appearance</span>: <span class="value">none</span>;      // <span class="key">hide</span> <span class="key">the</span> <span class="key">default</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">X</span><span class="delimiter">&quot;</span></span> <span class="key">button</span>
+}
+</pre></td>
+</tr></table>
+</div>
+
+<p>You would think that the next step might be adding our own custom background-image to this element, but unfortunately it won’t work that easily (of course).</p>
+
+<p>What we need now is a little bit of trickery, using an <code>:after</code> pseudoclass on the pseduoclass (!?). The result is a bit of “pseudoclass Inception”:</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+<strong><a href="#n10" name="n10">10</a></strong>
+<a href="#n11" name="n11">11</a>
+<a href="#n12" name="n12">12</a>
+<a href="#n13" name="n13">13</a>
+<a href="#n14" name="n14">14</a>
+<a href="#n15" name="n15">15</a>
+<a href="#n16" name="n16">16</a>
+<a href="#n17" name="n17">17</a>
+<a href="#n18" name="n18">18</a>
+<a href="#n19" name="n19">19</a>
+<strong><a href="#n20" name="n20">20</a></strong>
+<a href="#n21" name="n21">21</a>
+<a href="#n22" name="n22">22</a>
+<a href="#n23" name="n23">23</a>
+<a href="#n24" name="n24">24</a>
+<a href="#n25" name="n25">25</a>
+<a href="#n26" name="n26">26</a>
+<a href="#n27" name="n27">27</a>
+<a href="#n28" name="n28">28</a>
+<a href="#n29" name="n29">29</a>
+<strong><a href="#n30" name="n30">30</a></strong>
+</pre></td>
+  <td class="code"><pre><span class="pseudo-class">::-webkit-search-cancel-button</span> {   <span class="comment">/* select all &quot;X&quot; buttons in search inputs */</span>
+    <span class="key">-webkit-appearance</span>: <span class="value">none</span>;      <span class="comment">/* hide the default &quot;X&quot; button */</span>
+}
+
+<span class="pseudo-class">::-webkit-search-cancel-button</span><span class="pseudo-class">:after</span> {  <span class="comment">/* generate content after all &quot;X&quot; buttons */</span>
+    <span class="key">content</span>: <span class="string"><span class="delimiter">'</span><span class="delimiter">'</span></span>;    <span class="comment">/* required for :after content to show */</span>
+    <span class="key">display</span>: <span class="value">block</span>;
+
+    <span class="comment">/*
+     * Setup dimensions for the custom icon.  Note that these dimensions seem to
+     * affect positioning.
+     */</span>
+    <span class="key">width</span>: <span class="float">14px</span>;
+    <span class="key">height</span>: <span class="float">10px</span>;
+    
+    <span class="comment">/*
+     * Base64 encoded custom &quot;X&quot; icon
+     * Natively 30x30, but downscaled for highres screens
+     */</span>
+    <span class="key">background-image</span>: <span class="function"><span class="delimiter">url(</span><span class="content">data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAn0lEQVR42u3UMQrDMBBEUZ9WfQqDmm22EaTyjRMHAlM5K+Y7lb0wnUZPIKHlnutOa+25Z4D++MRBX98MD1V/trSppLKHqj9TTBWKcoUqffbUcbBBEhTjBOV4ja4l4OIAZThEOV6jHO8ARXD+gPPvKMABinGOrnu6gTNUawrcQKNCAQ7QeTxORzle3+sDfjJpPCqhJh7GixZq4rHcc9l5A9qZ+WeBhgEuAAAAAElFTkSuQmCC</span><span class="delimiter">)</span></span>;
+
+    <span class="comment">/* setup all the background tweaks for our custom icon */</span>
+    <span class="key">background-repeat</span>: <span class="value">no-repeat</span>;
+
+    <span class="comment">/* icon size */</span>
+    <span class="key">background-size</span>: <span class="float">10px</span>;
+
+    <span class="comment">/* note: this positioning will need to be tweaked for iOS */</span>
+    <span class="key">background-position</span>: <span class="value">top</span> <span class="value">left</span>;
+}
+</pre></td>
+</tr></table>
+</div>
+
+<p>So it turns out you can still whatever you like in there really, even text content (see the last text input in the <a href="http://davidbcalhoun.com/a/webkit-search-cancel-button.html">demo</a>). You may even need to tweak the positioning a bit, in which case you can learn from the same example (you will need to set position:relative on the cancel button itself to anchor the position:absolute <code>:after</code> content – check out the code).</p>
+
+<h3 id="final-notes">Final notes</h3>
+
+<p>Note that this is just an experiment, not a robust use case that I’m recommending as a cross-browser solution (obviously, since it’s WebKit-only).</p>
+
+<p>In the case of wanting to implement something similar cross-browser, I recommend absolutely-positioning a button element over an input element, then adding the appropriate right-padding to the input as necessary, then hooking up the “clear all text” behavior with the help of JavaScript.</p>
+
+<h3 id="video">Video</h3>
+
+<p>Here’s a video if you’re not in the mood to read (view in HD so you can read the text!):</p>
+
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post">
@@ -910,686 +1051,6 @@
 <a href="http://davidbcalhoun.com/2010/iphone-4-sunspider-test-results">iPhone 4 SunSpider test results (22% faster than iPhone 3GS)</a><br />
 <a href="http://davidbcalhoun.com/2010/sunspider-ios-3-1-3-versus-ios-4-gm">JavaScript SunSpider test: iOS 3.1.3 versus iOS 4 GM</a><br />
 <a href="http://davidbcalhoun.com/2010/javascript-sunspider-htc-evo-versus-htc-incredible-versus-nexus-one">JavaScript SunSpider: HTC Evo versus HTC Incredible versus Nexus One</a></p>
-
-
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post">
-	<header>
-		<h2 class="title">
-			
-			<a href="/2011/mobile-performance-manifesto">
-			
-				Mobile Performance Manifesto</a>
-		</h2>
-		<div class="meta date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-10-11T00:00:00-07:00" pubdate data-updated="true">Oct 11<span>th</span>, 2011</time></div>
-	</header>
-	<div class="entry-content">
-		<p><img src="http://davidbcalhoun.com/wp-content/uploads/2011/10/odometer.jpg" alt="" title="Dashboard with odometer" width="800" height="299" class="aligncenter size-full wp-image-806" /></p>
-
-<p>Earlier this year I gave a <a href="http://www.meetup.com/SF-Web-Performance-Group/events/16116764">talk</a> (<a href="http://davidbcalhoun.com/present/mobile-performance/">slides</a>) outlining the latest and greatest in mobile performance, including a bit of my own unscientific research into carrier latency and bandwidth thanks to <a href="https://github.com/yahoo/boomerang">boomerang.js</a>.</p>
-
-<p>I realized that interest in mobile performance has exploded recently, especially with <a href="http://www.stevesouders.com/blog/2011/01/10/announcing-my-focus-on-mobile/">Steve Souders announcing his focus on mobile</a>, and I thought it was time for an update, this time in blog form. Also, my old <a href="http://davidbcalhoun.com/present/mobile-performance/">slides</a> have been somewhat embarrassing. For some strange reason, at the time I wanted to give <a href="http://meyerweb.com/eric/tools/s5/">S5</a> a try – that outdated, ancient, not-performant slideshow framework. The result is a slideshow on performance that loads slowly… doh! (incidentally, I recommend <a href="http://imakewebthings.github.com/deck.js/">deck.js</a> as an alternative).</p>
-
-<p>In any case, it was time for a roundup of mobile performance best practices, in blog form. I’m not sure if it’s properly called a manifesto, but it is what it is! Onward!</p>
-
-<h3 id="for-fun-latency-and-bandwidth-tests">For fun: Latency and bandwidth tests</h3>
-
-<p>Before we start.. just a little fun data! It’s always been a pleasure to fiddle around with <a href="https://github.com/yahoo/boomerang">boomerang.js</a> and compare results. With my latest trip to Japan, I had the opportunity to run Boomerang on Japan’s <a href="http://en.wikipedia.org/wiki/EMOBILE_Limited">e-mobile</a> 3G network in the remotest of places, up in Hakuba/Nagano in the Japanese alps.</p>
-
-<p>When I got back, I ran the same tests from downtown San Francisco, which was closer to my California-based test server, and should’ve been faster, right? Theoretically…</p>
-
-<h4 id="boomerang-tests-running-on-a-california-hosted-server">Boomerang Tests (running on a California-hosted server)</h4>
-
-<table style="width: 100%;">
-  <th>
-    <td>
-      Verizon 3G (SF)
-    </td>
-    
-    <td>
-      ATT 3G (SF)
-    </td>
-    
-    <td>
-      e-mobile 3G (Hakuba)
-    </td>
-  </th>
-  
-  <tr>
-    <td>
-      Latency
-    </td>
-    
-    <td class="positive">
-      251ms
-    </td>
-    
-    <td>
-      901ms
-    </td>
-    
-    <td>
-      401ms
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      Bandwidth
-    </td>
-    
-    <td>
-      62kbps
-    </td>
-    
-    <td>
-      3kbps
-    </td>
-    
-    <td class="positive">
-      95kbps
-    </td>
-  </tr>
-</table>
-
-<p>Yes, e-mobile didn’t have the greatest ping, but it handily beat ATT, even though it was going across the entire Pacific Ocean! Note that it came out the best in the bandwidth tests however… </p>
-
-<p>(Note: it’s unknown if or how <a href="http://stevesouders.com/ms/">Steve Souders’s latest research</a> affects these findings)</p>
-
-<p>There’s a lot of factors that could’ve been involved, so look to something like <a href="http://opensignalmaps.com/">OpenSignalMaps</a> for more data.</p>
-
-<p>Ok, onto the tips!</p>
-
-<h3 id="page-organization">Page Organization</h3>
-
-<p><img src="http://davidbcalhoun.com/wp-content/uploads/2011/10/mobile-site-organization.png" alt="" title="Smart phone versus feature phone website organization" width="645" height="633" class="aligncenter size-full wp-image-793" /></p>
-
-<p>For feature phones that have little to no caching, aggressively combine requests (deliver HTML/CSS/JS all in one package). For smart phones, take advantage of caching by mirroring desktop frontend best practices: separate HTML, CSS, and JS so they can be cached (per-session and across sessions).</p>
-
-<p>There’s old research about <a href="http://www.yuiblog.com/blog/2008/02/06/iphone-cacheability/">extremely small cache sizes on iOS in particular</a>, but this research has been followed up on by more recent research by <a href="http://www.yuiblog.com/blog/2010/07/12/mobile-browser-cache-limits-revisited/">Ryan Grove (Yahoo!)</a> and <a href="http://www.stevesouders.com/blog/2010/07/12/mobile-cache-file-sizes/">Steve Souders (Google)</a>, which shows that we shouldn’t be so paranoid, since caching is pretty decent across all the major mobile browsers.</p>
-
-<p>Of particular interest is a browser’s capability to cache files in a current session, browsing from page-to-page, which is what most users will end up doing (caching of the page across sessions is another matter). What is the maximum file size a browser will cache during a session? The <a href="http://www.browserscope.org/user/tests/table/agt1YS1wcm9maWxlcnINCxIEVGVzdBj_1OsBDA?v=3&#038;layout=simple&#038;f=Max%20js%20Cache%20Size%20(kB)">results (via Browserscope)</a> end up being encouraging:</p>
-
-<table style="width: 100%;">
-  <th>
-    <td>
-      Maximum Cache Size (MB)
-    </td>
-  </th>
-  
-  <tr>
-    <td>
-      Android 2.1
-    </td>
-    
-    <td>
-      4+
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      Android 2.2
-    </td>
-    
-    <td>
-      2
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      Android 2.3
-    </td>
-    
-    <td>
-      2
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      Android 3.0
-    </td>
-    
-    <td>
-      4+
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      Blackberry 6.0.0
-    </td>
-    
-    <td>
-      4+
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      iPad 4.3.5
-    </td>
-    
-    <td>
-      4+
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      iPad 5.0
-    </td>
-    
-    <td>
-      4+
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      iPhone 4.3.5
-    </td>
-    
-    <td>
-      4+
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      iPhone 5.0
-    </td>
-    
-    <td>
-      4+
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      Opera Mini 4
-    </td>
-    
-    <td>
-      4+
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      Opera Mini 5
-    </td>
-    
-    <td>
-      4+
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      Opera Mini 6
-    </td>
-    
-    <td>
-      4+
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      webOS 2.0
-    </td>
-    
-    <td>
-      1
-    </td>
-  </tr>
-</table>
-
-<h3 id="avoid-redirects-foocom---mfoocom">Avoid redirects (foo.com -&gt; m.foo.com)</h3>
-
-<p>If possible, perform the redirection behind the scenes on the server, which should be transparent to the user. When a user performs a Google search and clicks on your page, they’re already getting redirected once by Google (check it yourself). Your own redirects are adding a second redirect where there need not be one.</p>
-
-<h3 id="optimize-images">Optimize Images</h3>
-
-<p><a href="http://filamentgroup.com/examples/responsive-images-new/demos/A-Default/demo.html"><img src="http://davidbcalhoun.com/wp-content/uploads/2011/10/responsive-images.jpg" alt="" title="Responsive images" width="600" height="423" class="aligncenter size-full wp-image-796" /></a><br />
-Deliver appropriately-sized images to devices. The philosophy of responsive design makes it easy to simply downscale images to fit the screen, but avoid this where possible, as this means wasted bandwidth.</p>
-
-<p>You can optimize images through CSS media queries or in JavaScript (see below). Though you want to reduce your dependence on cookies, it may be a good idea to store these width/height values into a cookie (or localStorage if you are fetching images in nontraditional ways) so the values can be read by the server, which can deliver appropriately-sized images. This technique has been <a href="http://filamentgroup.com/lab/responsive_images_experimenting_with_context_aware_image_sizing/">implemented by Filament Group</a>, so you should probably read about their experiences before trying to roll your own.</p>
-
-<p>Also note that where applicable, at the expense of performance you may want to serve higher resolution images for better screens, such as for Retina displays (which can be detected with JavaScript or CSS).</p>
-
-<h4 id="javascript-examples">JavaScript examples</h4>
-
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-</pre></td>
-  <td class="code"><pre>window.innerHeight;       <span class="comment">// max height actually available</span>
-window.innerWidth;        <span class="comment">// max width actually available</span>
-window.devicePixelRatio;  <span class="comment">// pixel density (standard is 1, high resolution is generally &gt; 1)</span>
-</pre></td>
-</tr></table>
-</div>
-
-<p>(note that <code>screen.width</code> and <code>screen.height</code> are also available to tell you the dimensions of the entire screen, but this isn’t all available due to the space taken by the OS and browser chrome)</p>
-
-<h4 id="media-query-examples">Media query examples</h4>
-
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-<a href="#n12" name="n12">12</a>
-<a href="#n13" name="n13">13</a>
-<a href="#n14" name="n14">14</a>
-</pre></td>
-  <td class="code"><pre><span class="directive">@media</span> <span class="type">only</span> <span class="error">s</span><span class="error">c</span><span class="error">r</span><span class="error">e</span><span class="error">e</span><span class="error">n</span> <span class="error">a</span><span class="error">n</span><span class="error">d</span> (<span class="error">m</span><span class="error">a</span><span class="error">x</span><span class="error">-</span><span class="error">w</span><span class="error">i</span><span class="error">d</span><span class="error">t</span><span class="error">h</span>: <span class="float">480px</span>) {
-  <span class="comment">/* small screen styles */</span>
-}
-
-<span class="directive">@media</span> <span class="type">only</span> <span class="error">s</span><span class="error">c</span><span class="error">r</span><span class="error">e</span><span class="error">e</span><span class="error">n</span> <span class="error">a</span><span class="error">n</span><span class="error">d</span> (<span class="error">m</span><span class="error">i</span><span class="error">n</span><span class="error">-</span><span class="error">w</span><span class="error">i</span><span class="error">d</span><span class="error">t</span><span class="error">h</span>: <span class="float">481px</span>) {
-  <span class="comment">/* large screen styles */</span>
-}
-
-<span class="directive">@media</span> (<span class="type">-webkit-min-device-pixel-ratio</span>: <span class="float">1.5</span>),
-       (<span class="error">-</span><span class="error">o</span><span class="error">-</span><span class="error">m</span><span class="error">i</span><span class="error">n</span><span class="error">-</span><span class="error">d</span><span class="error">e</span><span class="error">v</span><span class="error">i</span><span class="error">c</span><span class="error">e</span><span class="error">-</span><span class="error">p</span><span class="error">i</span><span class="error">x</span><span class="error">e</span><span class="error">l</span><span class="error">-</span><span class="error">r</span><span class="error">a</span><span class="error">t</span><span class="error">i</span><span class="error">o</span>: <span class="float">3</span>/<span class="float">2</span>),
-       (<span class="error">m</span><span class="error">i</span><span class="error">n</span><span class="error">-</span><span class="error">-</span><span class="error">m</span><span class="error">o</span><span class="error">z</span><span class="error">-</span><span class="error">d</span><span class="error">e</span><span class="error">v</span><span class="error">i</span><span class="error">c</span><span class="error">e</span><span class="error">-</span><span class="error">p</span><span class="error">i</span><span class="error">x</span><span class="error">e</span><span class="error">l</span><span class="error">-</span><span class="error">r</span><span class="error">a</span><span class="error">t</span><span class="error">i</span><span class="error">o</span>: <span class="float">1.5</span>),
-       (<span class="error">m</span><span class="error">i</span><span class="error">n</span><span class="error">-</span><span class="error">d</span><span class="error">e</span><span class="error">v</span><span class="error">i</span><span class="error">c</span><span class="error">e</span><span class="error">-</span><span class="error">p</span><span class="error">i</span><span class="error">x</span><span class="error">e</span><span class="error">l</span><span class="error">-</span><span class="error">r</span><span class="error">a</span><span class="error">t</span><span class="error">i</span><span class="error">o</span>: <span class="float">1.5</span>) {
-  <span class="comment">/* high resolution styles */</span>
-}
-</pre></td>
-</tr></table>
-</div>
-
-<h3 id="navigatorconnection-android-only">navigator.connection (Android only)</h3>
-
-<p>Use <a href="http://davidbcalhoun.com/2010/using-navigator-connection-android">navigator.connection</a> if it’s available to serve different assets based on connection speed (3G vs WIFI, for instance).</p>
-
-<p>Here’s the contents of the <code>navigator.connection</code> object (with a phone running on a 3G connection):</p>
-
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-</pre></td>
-  <td class="code"><pre>{
-  <span class="key">type</span>: <span class="integer">4</span>,
-  <span class="key">UNKNOWN</span>: <span class="integer">0</span>,
-  <span class="key">ETHERNET</span>: <span class="integer">1</span>,
-  <span class="key">WIFI</span>: <span class="integer">2</span>,
-  <span class="key">CELL_2G</span>: <span class="integer">3</span>,
-  <span class="key">CELL_3G</span>: <span class="integer">4</span>
-}
-</pre></td>
-</tr></table>
-</div>
-
-<p>And an example of how you could write code for each type:</p>
-
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-</pre></td>
-  <td class="code"><pre>(<span class="keyword">function</span>(){  <span class="comment">// sandbox our code</span>
-  <span class="keyword">if</span>(!navigator.connection) navigator.connection = {<span class="key">type</span>:<span class="integer">0</span>, <span class="key">UNKNOWN</span>: <span class="integer">0</span>};  <span class="comment">// polyfill</span>
-  <span class="keyword">var</span> connection = navigator.connection;
-  
-  <span class="keyword">if</span>(connection.type === connection.WIFI || connection.type === connection.ETHERNET) {
-    <span class="comment">// high bandwidth</span>
-  } <span class="keyword">else</span> {
-    <span class="comment">// normal bandwidth</span>
-  }
-})();
-</pre></td>
-</tr></table>
-</div>
-
-<p>Here’s how we might be able to use <a href="http://modernizr.com/">Modernizr</a> to help us out:</p>
-
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-</pre></td>
-  <td class="code"><pre>(<span class="keyword">function</span>(){  <span class="comment">// sandbox our code</span>
-  <span class="keyword">if</span>(!navigator.connection) navigator.connection = {<span class="key">type</span>:<span class="integer">0</span>, <span class="key">UNKNOWN</span>: <span class="integer">0</span>};  <span class="comment">// polyfill</span>
-  <span class="keyword">var</span> connection = navigator.connection;
-  
-  <span class="comment">// add a custom test to Modernizr</span>
-  Modernizr.addTest(<span class="string"><span class="delimiter">'</span><span class="content">highbandwidth</span><span class="delimiter">'</span></span>, <span class="keyword">function</span>(){
-    <span class="keyword">return</span> connection.type === connection.WIFI || connection.type === connection.ETHERNET;
-  });
-
-})();
-</pre></td>
-</tr></table>
-</div>
-
-<p>We can now target special high-bandwidth assets with CSS:</p>
-
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-</pre></td>
-  <td class="code"><pre><span class="class">.highbandwidth</span> <span class="class">.logo</span> {<span class="key">background-image</span>:<span class="function"><span class="delimiter">url(</span><span class="content">'logo-high.jpg'</span><span class="delimiter">)</span></span>;}
-<span class="class">.no-highbandwidth</span> <span class="class">.logo</span> {<span class="key">background-image</span>:<span class="function"><span class="delimiter">url(</span><span class="content">'logo.jpg'</span><span class="delimiter">)</span></span>;}
-</pre></td>
-</tr></table>
-</div>
-
-<h3 id="base64-encode-small-ui-images">base64 encode small UI images</h3>
-
-<p>You can base64 encode binary image data in HTML and CSS:</p>
-
-<h4 id="html">HTML</h4>
-
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-</pre></td>
-  <td class="code"><pre><span class="tag">&lt;img</span> <span class="attribute-name">src</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUA</span>
-<span class="content">AAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO</span>
-<span class="content">9TXL0Y4OHwAAAABJRU5ErkJggg==</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">alt</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Red dot</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-</pre></td>
-</tr></table>
-</div>
-
-<h4 id="css">CSS</h4>
-
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-</pre></td>
-  <td class="code"><pre><span class="class">.dot</span> {
-  <span class="key">background-image</span>: <span class="function"><span class="delimiter">url(</span><span class="content">'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUA  </span></span>
-<span class="value">AAAFCAYAAACNbyblAAAAHElEQVQI12P4</span>//<span class="float">8</span>/<span class="value">w38GIAXDIBKE0DHxgljNBAAO</span>  
-<span class="float">9</span><span class="value">TXL0Y4OHwAAAABJRU5ErkJggg</span>==<span class="string"><span class="delimiter">'</span><span class="content">)</span><span class="delimiter">;</span></span>
-}
-</pre></td>
-</tr></table>
-</div>
-
-<p>There seems to be the mistaken belief floating around that base64 images aren’t cacheable. However, because you can embed them in your CSS, base64 encoded images will be cached along with the rest of your CSS.</p>
-
-<p>You’ll probably just want to limit this to small UI icons however. I wrote a <a href="http://davidbcalhoun.com/2011/when-to-base64-encode-images-and-when-not-to">quick post on the drawbacks, and also a comparison with sprites</a>.</p>
-
-<p>If you’re using Compass/SASS, base64 encoding images is pretty trivial and easy to maintain with the <a href="http://compass-style.org/reference/compass/helpers/inline-data/">inline-image helper</a>.</p>
-
-<h3 id="unicode-and-emoji">Unicode and Emoji</h3>
-
-<p>☆ (HTML entity: #9734)<br />
-<img src="http://davidbcalhoun.com/wp-content/uploads/2011/10/emoji3.png" alt="" title="Emoji" width="18" height="18" /> (HTML entity: <code>#x1f468</code>)</p>
-
-<p>Before even considering base64 images, take advantage of icons that are already made for you: unicode characters and <a href="http://pukupi.com/post/1964">emoji</a> (where supported). Keep in mind that these will look different across browsers, so this might not be an option for everyone.</p>
-
-<p>Because of inconsistent implementations of Emoji character codes between Asian carriers, representatives from Apple and Google made a <a href="http://en.wikipedia.org/wiki/Emoji#Emoji_in_the_Unicode_standard">proposal to add Emoji to the Unicode standard</a>. Unfortunately it seems that only iPhone supports them for now. Here’s a <a href="http://www.unicode.org/charts/PDF/U1F300.pdf">handy chart of all the Unicode emoji characters available</a>.</p>
-
-<h3 id="take-advantage-of-css3">Take advantage of CSS3</h3>
-
-<p>CSS3 offers many replacements for things we needed images for previously. RGBA values replace the need for a semitransparent image for overlays and such. Likewise, border-radius, box shadow, linear-gradients, radial-gradients all reduce the need for images.</p>
-
-<p>However, do be aware that though phones support these new features, it doesn’t mean they’re necessarily ready for primetime. Something I’ve encountered recently to remind me of this fact is <a href="http://code.google.com/p/android/issues/detail?id=767">severe color banding issues when using a CSS radial gradient</a>. The solution was to fake the radial gradient using two linear gradients, or to (unfortunately) use an old-fashioned image.</p>
-
-<h3 id="avoid-using-cookies">Avoid using cookies</h3>
-
-<p>Cookies get thrown into <em>every</em> request on a per-domain basis, so limit your usage of them. Use localStorage/sessionStorage instead, where possible.</p>
-
-<h3 id="app-cache">App cache</h3>
-
-<p>Take advantage of the HTML5 app cache, though it’s an unwieldy beast to tame. This will mean you will need to make your site work offline, which might be tricky.</p>
-
-<p>Assets that are traditionally cached get rechecked on page refresh (the server sends back a 304 response if your cache is still up-to-date). Whereas with the app cache, only one file (your manifest) is rechecked on page load.</p>
-
-<h3 id="deferred-javascript-execution">Deferred JavaScript execution</h3>
-
-<p><img src="http://davidbcalhoun.com/wp-content/uploads/2011/10/gmail-deferred-javascript-execution.png" alt="" title="Gmail deferred JavaScript execution" width="497" height="450" class="aligncenter size-full wp-image-810" /></p>
-
-<p>We know that deferring downloading of scripts is advantageous (by placing scripts at the bottom of a page or by using the <code>async</code> attribute), but deferred execution of JavaScript is even more important. Sure, we can use the <code>defer</code> attribute, but that’s only really relevant for when the page is loading (<code>defer</code> lets the browser know that the UI doesn’t depend on the JavaScript, so it can be safely deferred).</p>
-
-<p>But what about JavaScript that runs after the page loads, such as XHR and JSONP requests? What does this mean for the user? It means that the UI freezes up unexpectedly when JavaScript is being downloaded and executed in the background. But this doesn’t mean that you want to completely avoid background downloading of JavaScript. The Gmail mobile team came up with a <a href="http://googlecode.blogspot.com/2009/09/gmail-for-mobile-html5-series-reducing.html">clever solution</a>: by commenting all of their code and dynamically eval’ing it when needed, they split up the JavaScript downloading from its execution.</p>
-
-<h3 id="perceived-performance">Perceived performance</h3>
-
-<p>Do whatever you have to do to let the user know that the UI is still responding. This sometimes means faking that something is happening. Communication is key! If they clicked on a button, give some indication that they clicked on it. If they clicked on something that requires a request to the network, show a spinner right away, even if it means you haven’t even sent out a request. The user doesn’t need to know the nitty-gritty details – they just want to know that their intent was communicated.</p>
-
-<h3 id="onclick-delay">Onclick delay</h3>
-
-<p>On several major mobile operating systems there’s a several hundred millisecond delay on the onclick event. This is because of the double-tap-to-zoom functionality. When a user first taps on the screen, there’s a hard-coded delay that waits for the second tap. If there’s no second tap, the onclick event is then fired. Unfortunately the only way to get around the delay is to tap into touch events instead, which is a bit more complicated than it appears on first glance.</p>
-
-<p>For an overview of some of the challenges of implementing the workaround, see <a href="http://code.google.com/mobile/articles/fast_buttons.html">this article by Google’s Ryan Fioravanti</a>.</p>
-
-<h3 id="take-advantage-of-hardware-acceleration">Take advantage of hardware acceleration</h3>
-
-<p>Use hardware-accelerated CSS transforms where possible (translate3d, translateZ, rotate3d, and scale3d). An element that is hardware accelerated is turned into a graphic, which is perfect for the GPU to manipulate, taking away the burden from the CPU.</p>
-
-<p>However, the GPU isn’t all-powerful, so don’t try to apply hardware accelerations to everything. Also, these elements still need to be refreshed periodically, and it turns out that you can make some good optimizations here. First, you’ll want to debug the composited layers on your desktop browser:</p>
-
-<h4 id="debugging-hardware-acceleration">Debugging hardware acceleration</h4>
-
-<p><a href="http://www.webkit.org/blog-files/3d-transforms/poster-circle.html"><img src="http://davidbcalhoun.com/wp-content/uploads/2011/10/debug-composited-layers-hardware-acceleration.png" alt="" title="WebKit&#039;s poster circle demo with and without the debug information" width="767" height="399" class="aligncenter size-full wp-image-803" /></a><br />
-<em>Chrome</em></p>
-
-<ol>
-  <li>Type the following in the address bar: about:flags</li>
-  <li>“Composited render layer borders” -&gt; Enable</li>
-</ol>
-
-<p><em>Safari</em></p>
-
-<ol>
-  <li>Open a terminal</li>
-  <li>$ defaults write com.apple.Safari IncludeInternalDebugMenu 1</li>
-  <li>$ defaults write com.apple.Safari CA_COLOR_OPAQUE 1</li>
-  <li>Open (or restart) Safari</li>
-  <li>Debug -&gt; Show Compositing Borders</li>
-</ol>
-
-<p>(to turn these off, run the same commands with a boolean FALSE: i.e. <code>defaults write com.apple.Safari CA_COLOR_OPAQUE FALSE</code>)</p>
-
-<p>Keep in mind that each composited layer has a limited width and height. For instance, if you’re creating an image carousel, chances are the dimensions of the element will be too big to fit the layer into memory as one piece. This means that when the element is animated, the GPU has to break up the layer manually into several manageable chunks. It’s much better to chunk it yourself. To do this, you trigger hardware acceleration on each chunk.</p>
-
-<p>So you will change this:</p>
-
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-</pre></td>
-  <td class="code"><pre><span class="class">.carousel</span> {
-  <span class="key">-webkit-transform</span>: <span class="error">t</span><span class="error">r</span><span class="error">a</span><span class="error">n</span><span class="error">s</span><span class="error">l</span><span class="error">a</span><span class="error">t</span><span class="error">e</span><span class="float">3</span><span class="error">d</span>(<span class="float">0</span>,<span class="float">0</span>,<span class="float">0</span>);  <span class="comment">/* or translateZ(0); */</span>
-}
-</pre></td>
-</tr></table>
-</div>
-
-<p>To this:</p>
-
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-</pre></td>
-  <td class="code"><pre><span class="class">.carousel</span> {
-  <span class="key">-webkit-transform</span>: <span class="error">t</span><span class="error">r</span><span class="error">a</span><span class="error">n</span><span class="error">s</span><span class="error">l</span><span class="error">a</span><span class="error">t</span><span class="error">e</span><span class="float">3</span><span class="error">d</span>(<span class="float">0</span>,<span class="float">0</span>,<span class="float">0</span>);  <span class="comment">/* or translateZ(0); */</span>
-}
-
-<span class="class">.carousel-pane</span> {
-  <span class="key">-webkit-transform</span>: <span class="error">t</span><span class="error">r</span><span class="error">a</span><span class="error">n</span><span class="error">s</span><span class="error">l</span><span class="error">a</span><span class="error">t</span><span class="error">e</span><span class="float">3</span><span class="error">d</span>(<span class="float">0</span>,<span class="float">0</span>,<span class="float">0</span>);  <span class="comment">/* or translateZ(0); */</span>
-}
-</pre></td>
-</tr></table>
-</div>
-
-<p>Where carousel-pane represents each child element of the carousel.</p>
-
-<p>More info: <a href="http://dl.dropbox.com/u/5618867/mseeley-2011-09-27-html5devconf.pdf">(slides) WebKit in Your Living Room (Matt Seeley, Netflix)</a></p>
-
-<p>Also see <a href="http://www.html5rocks.com/en/mobile/optimization-and-performance.html">HTML5 Techniques for Optimizing Mobile Performance</a>.</p>
-
-<h3 id="http-pipelining">HTTP Pipelining</h3>
-
-<p><a href="http://www.blaze.io/mobile/http-pipelining-big-in-mobile/"><img src="http://davidbcalhoun.com/wp-content/uploads/2011/10/pipelining.png" alt="HTTP Pipelining diagram" title="HTTP Pipelining (via Blaze.io)" width="640" height="445" class="aligncenter size-full wp-image-783" /></a></p>
-
-<p>Take advantage of <a href="http://www.blaze.io/mobile/http-pipelining-big-in-mobile/">HTTP Pipelining</a>, which is often overlooked, but has broad support on mobile. This virtually eliminates round trip times, for all but the first request.</p>
-
-<p>Opera and Android support pipelining, and the newly released iOS 5 has added support for it.</p>
-
-<p>Great! So how do you make sure your server is taking advantage of pipelining?</p>
-
-<blockquote>
-  <p>The first request to every server is sent by itself (only one request on the connection), and the browser looks for two properties in the response:</p>
-
-  <ol>
-    <li>Use of HTTP/1.1</li>
-    <li>An explicit “Connection: Keep-Alive” header (required by Android)</li>
-  </ol>
-
-  <p><a href="http://www.blaze.io/mobile/http-pipelining-big-in-mobile/">-Blaze.io</a> </p>
-</blockquote>
-
-<p>If these criteria are met, subsequent requests will be pipelined. Sweet!</p>
-
-<h3 id="dns-prefetching">DNS Prefetching</h3>
-
-<p>Take advantage of <a href="https://developer.mozilla.org/En/Controlling_DNS_prefetching">DNS Prefetching</a>. This theoretically speeds up load times, but there have been <a href="http://www.mydigitallife.info/turn-off-dns-prefetching-in-google-chrome-to-fix-resolving-host-and-cannot-load-page-error/">some issues</a>, so be sure to test it.</p>
-
-<p>To turn off DNS Prefetching, serve this meta tag:</p>
-
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-</pre></td>
-  <td class="code"><pre><span class="tag">&lt;meta</span> <span class="attribute-name">http-equiv</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">x-dns-prefetch-control</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">content</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">off</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-</pre></td>
-</tr></table>
-</div>
-
-<p>You can also explicitly force a DNS lookup:</p>
-
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-</pre></td>
-  <td class="code"><pre><span class="tag">&lt;link</span> <span class="attribute-name">rel</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">dns-prefetch</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">http://www.example.com/</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-</pre></td>
-</tr></table>
-</div>
-
-<h3 id="avoid-library-code-bloat">Avoid library code bloat</h3>
-
-<p>If you’re developing for smart phones, you may be able to dramatically reduce the data over the wire by simply using new JavaScript APIs instead of a full-blown library or framework such as jQuery Mobile (which is rather a UI framework and depends on the desktop version of jQuery).</p>
-
-<p>Among the things offered by newer browsers, which should reduce your dependence on a library:</p>
-
-<ul>
-  <li><a href="https://developer.mozilla.org/En/DOM/Document.querySelector">querySelector</a>/<a href="https://developer.mozilla.org/en/DOM/document.querySelectorAll">querySelectorAll</a>: CSS selectors that replace the need for a selector engine</li>
-  <li><a href="https://developer.mozilla.org/en/DOM/document.getElementsByClassName">getElementsByClassName</a></li>
-  <li><a href="https://developer.mozilla.org/en/DOM/element.classList">classList</a> – replaces the need for hasClass, addClass, removeClass helpers (available on iOS5, but not sure what else)</li>
-  <li><a href="https://developer.mozilla.org/En/XMLHttpRequest/Using_XMLHttpRequest">XMLHttpRequest</a> – it’s probably time to learn how to do this natively instead of using a wrapper that takes care of IE’s old implementation that requests an ActiveX object. <a href="http://hacks.mozilla.org/2009/07/cross-site-xmlhttprequest-with-cors/">Cross-Origin Resource Sharing</a> also means we can easily share resources across domains.</li>
-  <li><a href="https://developer.mozilla.org/en/DOM/Manipulating_the_browser_history">HTML5 history (pushState, etc)</a> – though an <a href="https://bugs.webkit.org/show_bug.cgi?id=42940">older bug</a> means you should maybe hold off for now (note: the fix is present in iOS 5, which is based on a newer WebKit)</li>
-  <li><a href="http://www.the-art-of-web.com/html/html5-form-validation/">HTML5 Form Validation</a> reduces our need for JavaScript-based validation</li>
-  <li>HTML5 input types that reduce our need for custom UI controls (date, time, slider [range], etc)</li>
-</ul>
-
-<p>You’ll want to consider using either a library that was optimized for the browsers you’re targeting (such as <a href="http://zeptojs.com/">Zepto.js</a>) or simply bring in <a href="http://microjs.com/">a microlibrary for specific tasks you want to perform</a>.</p>
-
-<h3 id="clientside-databases">Clientside databases</h3>
-
-<p>Most mobile browsers currently support WebSQL, which is being phased out in support of indexedDB, which is not widely implemented. However, if you use a wrapper such as <a href="http://westcoastlogic.com/lawnchair/">Lawnchair</a>, the transition from one to the other is relatively painless.</p>
-
-<h3 id="todo-testing">TODO: testing</h3>
-
-<h3 id="more">More</h3>
-
-<p>(to be expanded on later)</p>
-
-<ul>
-  <li>use standard desktop best practices (for smart phones)</li>
-  <li>requestAnimationFrame instead of setTimeout</li>
-  <li>setImmediate (where available) instead of setTimeout(fn(){},0)</li>
-  <li>Ajax parsing times: you might want to use Multipart XHR so you can yield the process as it’s going through big responses (to prevent the UI locking up)</li>
-  <li>avoid rgba, box shadows, text shadow, etc, as this greatly degrades performance (especially on animations)</li>
-  <li>high resolution screens may suffer from animation/transition slowness – it’s been shown that manipulating the viewport tag to scale the page <a href="http://29a.ch/2011/5/27/fast-html5-canvas-on-iphone-mobile-safari-performance">will speed up canvas rendering</a>, and <a href="http://paulbakaus.com/2011/10/10/scroller-vs-scrollability-deathmatch/">high-dpi scaling concerns are also evident in CSS transforms</a></li>
-  <li><a href="http://joehewitt.com/2011/10/05/fast-animation-with-ios-webkit">WebKit animations are faster than animations done via JavaScript</a></li>
-  <li>if you do use JavaScript-based animations, limit the UI updates to ~17ms, which is equivalent to 60fps, which is the fastest your display will refresh anyway, so it’s pointless to try to do anything faster than that. Keep track of the time since the last UI update and don’t do anything if 17ms haven’t passed.</li>
-</ul>
-
-<h3 id="on-the-horizon8230">On the horizon…</h3>
-
-<ul>
-  <li><a href="http://www.chromium.org/spdy">SPDY</a>: already implemented in Amazon’s Silk browser for Kindle. Will possibly be on Android phones <a href="http://androidandme.com/2011/10/news/google-chrome-is-finally-coming-to-an-android-device-near-you/">when the browser is powered by Chrome</a></li>
-  <li>indexedDB replacing WebSQL</li>
-</ul>
-
-<h3 id="tools">Tools</h3>
-
-<p><a href="http://stevesouders.com/mobileperf/mobileperfbkm.php">Mobile Perf bookmarklet</a><br />
-<a href="http://calendar.perfplanet.com/2010/mobile-performance-analysis-using-pcapperf/">pcapperf (Packet Capture Web Performance Analyzer)</a><br />
-<a href="http://www.blaze.io/mobile/">Blaze Mobitest</a> – tests the loading time of your site on actual phones</p>
-
-<h3 id="more-resources">More Resources</h3>
-
-<p><a href="http://www.w3.org/TR/mwabp/">Mobile Web Application Best Practices</a><br />
-<a href="http://stevesouders.com/mobileperf/">Mobile Performance (Steve Souders)</a><br />
-<a href="http://www.strangeloopnetworks.com/web-performance-optimization-hub/topics/mobile/">Strangeloop Web Performance Hub / Mobile</a></p>
-
-<p>(odometer image via <a href="http://www.flickr.com/photos/henrybloomfield/4442900025/">henrybloomfield on Flickr</a>)</p>
 
 
 		

@@ -7,14 +7,7 @@
 
 	<meta name="author" content="David Calhoun">
 
-<meta name="description" content="The skinny: here’s a neat little trick to reduce the amount of code users have to type to instantiate objects: 1
-2
-3
-4
-5
-6
-7
-8 function jQuery(str, &hellip;"> <meta name="keywords" content="">
+<meta name="description" content="class Singleton { private static $instance; public static function getInstance() { if(!isset(self::$instance)) { $c = __CLASS__; self::$instance = &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -53,6 +46,65 @@
 </header>
 
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/2009/php-tidbit-dead-simple-singleton">
+			
+				PHP Tidbit: Dead Simple Singleton</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-09-14T00:00:00-07:00" pubdate data-updated="true">Sep 14<span>th</span>, 2009</time></div>
+	</header>
+	<div class="entry-content">
+		<pre name="code" class="php">class Singleton {
+    private static $instance;
+    public static function getInstance() {
+        if(!isset(self::$instance)) {
+            $c = __CLASS__;
+            self::$instance = new $c();
+        }
+        return self::$instance;
+    }
+}</pre>
+
+<p>And the explanation…</p>
+
+<pre name="code" class="php">class Singleton {
+    private static $instance;               // static variable to hold our 1 instance
+
+    public static function getInstance() {  // function to get the 1 instance
+        if(!isset(self::$instance)) {       // this will only run once (and instantiate once)
+            $c = __CLASS__;                 // get the class (Singleton)
+            self::$instance = new $c();     // instantiate the class and store it in our variable
+        }
+        return self::$instance;             // return the instance
+    }
+
+    public static function myFunction() {   // we can get to this through Singleton::getInstance()-&gt;myFunction()
+        // ...
+    }
+}</pre>
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post">

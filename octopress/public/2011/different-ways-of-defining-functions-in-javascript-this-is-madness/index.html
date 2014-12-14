@@ -68,7 +68,7 @@
 
 <p>The aim of this is just an accessible tour of the landscape, just so you know what’s out there and what the basic differences are. Do be sure to check out the “further reading” section as well! Much of this is based on <a href="http://kangax.github.com/nfe/">Juriy “kangax” Zaytsev’s article</a>, which goes into more depth. But I found that there wasn’t just one reference to show all the different variable declarations.</p>
 
-<p>How about ways to execute functions? That opens up another can of worms, and incidentally opens up the possibility for a future post on that topic. <img src="http://davidbcalhoun.com/wp-includes/images/smilies/icon_smile.gif" alt=":)" class="wp-smiley" /> </p>
+<p>How about ways to execute functions? That opens up another can of worms, and incidentally opens up the possibility for a future post on that topic. :)</p>
 
 <h3 id="overview-different-ways-of-declaring-functions">Overview: different ways of declaring functions</h3>
 
@@ -98,7 +98,7 @@
 
 <h3 id="function-declarations-function-a">Function declarations: function A(){};</h3>
 
-<p>Function declarations are probably the most familiar and oldest way of doing things in JavaScript land. This creates a variable A which is accessible in the current scope. Scope is a separate topic, so we’ll do everything in the global scope for all these examples (something you want to avoid usually).</p>
+<p>Function declarations are probably the most familiar and oldest way of doing things in JavaScript land. This creates a variable A which is accessible in the current scope. Scope is a separate topic, so well do everything in the global scope for all these examples (something you want to avoid usually).</p>
 
 <h4 id="hoisting">1. Hoisting</h4>
 
@@ -145,13 +145,13 @@ A();
 
 <h3 id="function-expressions-var-b--function">Function expressions: var B = function(){};</h3>
 
-<p>A function expression looks similar to function declarations, except that the function is assigned to a variable name. Though functions are not primitive values in JavaScript, this is the way they can be utilized to their full effect in this functional language. Functions are “<a href="http://en.wikipedia.org/wiki/First-class_function">first class</a>“:</p>
+<p>A function expression looks similar to function declarations, except that the function is assigned to a variable name. Though functions are not primitive values in JavaScript, this is the way they can be utilized to their full effect in this functional language. Functions are “<a href="http://en.wikipedia.org/wiki/First-class_function">first class</a>”:</p>
 
 <blockquote>
   <p>“[JavaScript] supports passing functions as arguments to other functions, returning them as the values from other functions, and assigning them to variables or storing them in data structures”</p>
 </blockquote>
 
-<h4 id="anonymous-functions-they-don8217t-need-names">1. Anonymous functions (they don’t need names)</h4>
+<h4 id="anonymous-functions-they-dont-need-names">1. Anonymous functions (they don’t need names)</h4>
 
 <p>The function name is optional in function expressions, and we call these anonymous. Here we’re setting the variable B equal to an anonymous function:</p>
 
@@ -219,7 +219,7 @@ B2();  <span class="comment">// TypeError (B2 is undefined)</span>
 </tr></table>
 </div>
 
-<p>The second example gives us an error because only the variable B2′s declaration is hoisted, but not its definition, thus the “undefined” error.</p>
+<p>The second example gives us an error because only the variable B2’s declaration is hoisted, but not its definition, thus the “undefined” error.</p>
 
 <h3 id="function-expressions-with-grouping-operators-var-c--function">Function expressions with grouping operators: var C = (function(){});</h3>
 
@@ -237,9 +237,9 @@ B2();  <span class="comment">// TypeError (B2 is undefined)</span>
 </tr></table>
 </div>
 
-<p>Why does one work and the other doesn’t? The first example is a function declaration, and we learned above that we can’t declare them anonymously – that is, they must have a name. That’s why we’re getting the syntax error.</p>
+<p>Why does one work and the other doesn’t? The first example is a function declaration, and we learned above that we can’t declare them anonymously - that is, they must have a name. That’s why we’re getting the syntax error.</p>
 
-<p>The second example is using parenthesis – grouping operators – and is therefore evaluated differently, as a function expression. The grouping operators are the things we use to help show what should be evaluated first, as in mathematical problems. We’re saying “evaluate this first, then take the result and do something with it”:</p>
+<p>The second example is using parenthesis - grouping operators - and is therefore evaluated differently, as a function expression. The grouping operators are the things we use to help show what should be evaluated first, as in mathematical problems. We’re saying “evaluate this first, then take the result and do something with it”:</p>
 
 <div><table class="CodeRay"><tr>
   <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
@@ -251,7 +251,7 @@ B2();  <span class="comment">// TypeError (B2 is undefined)</span>
 </tr></table>
 </div>
 
-<p>In the first example we’re saying “first add 1 and 2, then take the result and multiply by 3″, whereas in the second example we’re saying “first multiply 2 and 3, then take the result and add 1″.</p>
+<p>In the first example we’re saying “first add 1 and 2, then take the result and multiply by 3”, whereas in the second example we’re saying “first multiply 2 and 3, then take the result and add 1”.</p>
 
 <p>Because functions are first class, we can use similar grouping operators. Here’s a facetious example, but it shows how we can essentially drop in a function in the same way:</p>
 
@@ -337,7 +337,7 @@ countdown(<span class="integer">5</span>);
 
 <p>As a <a href="http://kangax.github.com/nfe/">few</a> <a href="http://javascriptweblog.wordpress.com/2010/07/06/function-declarations-vs-function-expressions/">have</a> pointed out, giving previously anonymous functions names helps in debugging, since the function name shows up on the call stack.</p>
 
-<h4 id="quirks-jscript8217s-bad-implementation">4. Quirks: JScript’s bad implementation</h4>
+<h4 id="quirks-jscripts-bad-implementation">4. Quirks: JScript’s bad implementation</h4>
 
 <p><a href="http://kangax.github.com/nfe/">kangax</a> points out that named function expressions are basically poison to JScript, Internet Explorer’s implementation of JavaScript.</p>
 
@@ -480,7 +480,7 @@ foo();
 
 <p>In other words, <em>don’t use the Function constructor</em>.</p>
 
-<h3 id="special-case-8211-object-constructor-var-g--new-function-foo">Special case – object constructor: var G = new function foo(){};</h3>
+<h3 id="special-case---object-constructor-var-g--new-function-foo">Special case - object constructor: var G = new function foo(){};</h3>
 
 <p>I saved this for last because we’re not really defining a function, though we are using the function keyword, so it’s worth noting at least.</p>
 
@@ -510,7 +510,7 @@ foo();
 
 <p><a href="http://benalman.com/news/2010/11/immediately-invoked-function-expression/">Immediately-Invoked Function Expression (IIFE) (Ben Alman)</a></p>
 
-<p><a href="https://developer.mozilla.org/en/JavaScript/Reference/Functions_and_function_scope">Functions and function scope</a> (Mozilla Developer Network – MDN)</p>
+<p><a href="https://developer.mozilla.org/en/JavaScript/Reference/Functions_and_function_scope">Functions and function scope</a> (Mozilla Developer Network - MDN)</p>
 
 <p><a href="http://stackoverflow.com/questions/1140089/how-does-an-anonymous-function-in-javascript-work">How does an anonymous function in JavaScript work? (StackOverflow)</a></p>
 

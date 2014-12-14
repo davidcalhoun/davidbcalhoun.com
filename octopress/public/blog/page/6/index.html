@@ -7,8 +7,7 @@
 
 	<meta name="author" content="David Calhoun">
 
-<meta name="description" content="General word of caution: not all of these HTML5 simplifications are compatible with older browsers. Test it for yourself before implementing!
-1. The &hellip;"> <meta name="keywords" content="">
+<meta name="description" content="Introduction When people started to learn about the HTML5 doctype, they kind of freaked out a little, not knowing how older browsers would handle it &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -47,6 +46,131 @@
 </header>
 
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/2010/what-happens-when-we-serve-javascript-with-random-mime-types">
+			
+				What Happens When We Serve JavaScript With Random MIME Types?</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-11-01T00:00:00-07:00" pubdate data-updated="true">Nov 1<span>st</span>, 2010</time></div>
+	</header>
+	<div class="entry-content">
+		<h3 id="introduction">Introduction</h3>
+
+<p>When people started to learn about the HTML5 doctype, they kind of freaked out a little, not knowing how older browsers would handle it. A <a href="http://www.dustindiaz.com/skinny-on-doctypes/">post by Dustin Diaz</a> prompted me to test out how pages rendered (in QuirksMode or Standards Mode) with a little help from</p>
+
+<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;">
+  <table cellspacing="0" cellpadding="0">
+    <tr>
+      <td class="line-numbers">
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class="text codecolorer">
+          document.compatMode
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<p>, and <a href="http://themaingate.net/dev/html/all-you-need-is-doctype-html">I found that surprisingly every browser rendered in Standards Mode with the new doctype</a>. In other words, no need to worry!</p>
+
+<p>There’s another welcome simplification (<a href="http://davidbcalhoun.com/2010/top-ten-things-html5-makes-simpler">along with others</a>): the “type” attribute is no longer necessary on script tags:</p>
+
+<blockquote>
+  <p>The type attribute gives the language of the script or format of the data. If the attribute is present, its value must be a valid MIME type. The charset parameter must not be specified. <strong>The default, which is used if the attribute is absent, is “text/javascript”.</strong> <a href="http://dev.w3.org/html5/spec/Overview.html#script">-W3C HTML5 spec</a></p>
+</blockquote>
+
+<p>Which means that this is all that’s required now:</p>
+
+<pre name="code" class="html">&lt;script src="script.js"&gt;&lt;/script&gt;
+</pre>
+
+<p>But how do older browsers handle this? Also, what if we send some crazy Content-Type back in the response header? To make matters more confusing, I noticed that different CDNs send back different Content-Types: <a href="http://yui.yahooapis.com/3.2.0/build/yui/yui-min.js">YUI</a> and <a href="http://code.jquery.com/jquery-1.4.3.min.js">jQuery</a>‘s CDNs send back “application/x-javascript” whereas <a href="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js">Google’s CDN</a> serving jQuery sends back “text/javascript; charset=UTF-8″.</p>
+
+<p>So does it really matter what the Content-Type is? Let’s find out!</p>
+
+<h3 id="setting-up-the-tests">Setting up the tests</h3>
+
+<p>The test is fairly simple: I have six JavaScript files that all write to the DOM when they’re executed successfully. Each of these files has a different file extension (js.one, js.two, js.three, etc) and each is served with an extension determined by the .htaccess file, which is in the same directory, and contains this bit of magic:</p>
+
+<pre>AddType text/javascript .one
+AddType application/x-javascript .two
+AddType application/javascript .three
+AddType text/ecmascript .four
+AddType text/jscript .five
+AddType text/foo .six
+</pre>
+
+<p>My index.html contains a little helper utility for each of these scripts to use:</p>
+
+<pre name="code" class="JScript">var TEST = {
+  node: document.body,
+  addMessage: function(message) {
+    var p = document.createElement('p');
+    p.innerHTML = message;
+    this.node.appendChild(p);
+  }
+}
+</pre>
+
+<p>TEST.addMessage() is simply a glorified document.write. As each of the six scripts is run, they’ll write out a message to the page essentially saying “I’m here! It worked!”.</p>
+
+<h3 id="results">Results</h3>
+
+<p>All the browsers I tested worked better than expected. It turns out that Content-Type doesn’t even matter. I made up my own content type “text/foo”, served the file successfully, and it still executed as JavaScript!</p>
+
+<p>I tried all the major A-grade browsers (yes, including IE6-8), plus other random browsers through <a href="http://browsershots.org/">Browsershots.org</a>.</p>
+
+<p>One thing I still need to try is IE9, which <a href="http://twitter.com/#!/paul_irish/status/29416115232">Paul Irish said may not work</a>. I’ll give it a test… soon.</p>
+
+<h3 id="additional-test-1-playing-with-the-8220type8221-attribute">Additional test #1: playing with the “type” attribute</h3>
+
+<p>Instead of messing around with the MIME type sent back in the response header, what happens when we mess around with the “type” attribute on the script tag? For instance:</p>
+
+<pre name="code" class="HTML">&lt;script type="text/foo"&gt;&lt;/script&gt;
+</pre>
+
+<p>Using the same testing technique as above, I found these results to be more pronounced. Browsers were more picky. For instance, Chrome and Safari ran all the content types successfully except my made-up “text/foo”. Firefox was even more picky, choosing not to recognize the type “text/jscript”. I’d imagine there’s similar results with other browsers such as IE.</p>
+
+<p>…But none of that really matters now! Simply omit the type attribute and everything seems to work fine (except possibly not in IE9?).</p>
+
+<h3 id="additional-test-2-content-type-and-caching">Additional test #2: content type and caching</h3>
+
+<p><a href="http://twitter.com/#!/bluesmoon/status/29418676869">Philip Tellis</a> wanted to know if Content-Type had any bearing on how the browser caches data. For instance, if something previously requested has the same filename but a different content type, is there a cache hit (304 code returned) or miss?</p>
+
+<p>In the first test I made a page that requested a file. Then in a not-too-fancy way I changed the content type through .htaccess on the fly and made another request. A 304 code was returned even with the new content type, so it was clear that this traditional caching method wasn’t affected.</p>
+
+<p>In my second test I instead changed the “type” attribute on the script tag itself (in the HTML). The file was still cached normally, even after the type changed.</p>
+
+<p>I only tested in Chrome, Safari, and Firefox, so the story might be different in IE. Anyhow, this is an edge case anyway and more of a test out of curiosity! It seems the way browsers handle caching in these instances is truly RESTful, that is, the current state of the file is determined entirely by the filename.</p>
+
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post">
@@ -1476,294 +1600,6 @@ Total:                 322.2ms +/- 4.9%
 <a href="http://davidbcalhoun.com/2010/sunspider-ios-3-1-3-versus-ios-4-gm">JavaScript SunSpider test: iOS 3.1.3 versus iOS 4 GM</a><br />
 <a href="http://davidbcalhoun.com/2010/javascript-sunspider-htc-evo-versus-htc-incredible-versus-nexus-one">JavaScript SunSpider: HTC Evo versus HTC Incredible versus Nexus One</a><br />
 <a href="http://www.sencha.com/blog/2010/08/18/blackberry-torch-the-html5-developer-scorecard/">Sencha: BlackBerry Torch: The HTML5 Developer Scorecard</a></p>
-
-
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post">
-	<header>
-		<h2 class="title">
-			
-			<a href="/2010/is-hash-faster-than-switch-in-javascript">
-			
-				Is a Hash Faster Than a Switch in JavaScript?</a>
-		</h2>
-		<div class="meta date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-08-17T00:00:00-07:00" pubdate data-updated="true">Aug 17<span>th</span>, 2010</time></div>
-	</header>
-	<div class="entry-content">
-		<p>I stumbled across this concept recently and I thought I’d share it, because I don’t generally see this pattern being used. More importantly, I also share test results that show that maybe it’s not always a good idea to use this pattern…</p>
-
-<h3 id="the-problem-with-switch-statements">The problem with Switch statements</h3>
-
-<p>The basic switch statement in JavaScript looks something like this:</p>
-
-<pre name="code" class="JScript">var foo = 'c';
-
-switch(foo) {
-  case 'a':
-  break;
-
-  case 'b':
-  break;
-
-  case 'c':
-  break;
-
-  default:
-}
-</pre>
-
-<p>So what’s wrong with this? The JS engine has to examine a bunch of unrelated cases until it finds the relevant one, executes the code, then breaks out of the switch because the job is done (this is why it’s important to break!). In the above example we had to go through case A and case B until finally reaching case C. What’s worse is that if it didn’t match any of these cases, the JS engine has to jump through ALL of the cases before it reaches Default, the fall-through case.</p>
-
-<p>Actually it’s not so bad, as long as there are a limited number of cases. It’s probably no big deal if you only have a few cases to jump through. The problem gets bigger as your number of cases increases (some of you may know this as <a href="http://en.wikipedia.org/wiki/Big_O_notation">O(n)</a>). What happens when there’s 10 cases? Then there’s potentially 10 checks on cases (assuming what ended up being executed was the default). 100 cases? Then potentially 100 checks.</p>
-
-<p>What would be better is if there were a way to reduce the number of checks. One way would be to put the most frequently used cases at the top. This would alleviate some of the pain, but you still end up with extra processing while the JS checks each case. It would be ideal to avoid this extra processing altogether.</p>
-
-<h3 id="an-alternative-the-hash-table">An alternative: The hash table</h3>
-
-<p>There is a way to avoid this extra processing! It’s by leading the code directly where it needs to go, without unnecessary checking of unrelated cases.</p>
-
-<p>You can do this using a hash. In JavaScript we accomplish this with an object:</p>
-
-<pre name="code" class="JScript">var foo = 'c';
-var cases = {};
-cases['a'] = function() {
-  alert('I am A!');
-};
-cases['b'] = function() {
-  alert('I am B!');
-};
-cases['c'] = function() {
-  alert('I am C!');
-}
-
-if(typeof cases[foo] == 'function') {
-  // only executes if we've defined it above
-  cases[foo]();  // I am C!
-} else {
-  // default (the fallthrough)
-}
-</pre>
-
-<p>There we go! No extra case checking here. We’ve led the JS straight to the code we want to execute!</p>
-
-<h3 id="performance-improvement8230">Performance improvement…?</h3>
-
-<p>So.. this hash lookup seems faster in theory, but what about in practice? Unfortunately I ended up with some mixed results…</p>
-
-<p>I created a <a href="http://jsperf.com/switch-vs-hash/3">simple performance test on jsperf.com</a> and got these results:</p>
-
-<table>
-  <tr>
-    <td>
-      Browser
-    </td>
-    
-    <td>
-      Switch ops/sec
-    </td>
-    
-    <td>
-      Hash table ops/sec
-    </td>
-    
-    <td>
-      % Difference
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      Chrome 6.0.490.1 dev
-    </td>
-    
-    <td class="negative">
-      34,606,469
-    </td>
-    
-    <td class="positive">
-      43,329,587
-    </td>
-    
-    <td class="positive">
-      25% faster
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      Safari 5.0
-    </td>
-    
-    <td class="positive">
-      16,777,216
-    </td>
-    
-    <td class="negative">
-      10,854,824
-    </td>
-    
-    <td class="negative">
-      35% slower
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      Opera 10.61
-    </td>
-    
-    <td class="positive">
-      4,405,782
-    </td>
-    
-    <td class="negative">
-      2,719,336
-    </td>
-    
-    <td class="negative">
-      38% slower
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      Firefox 3.6.3
-    </td>
-    
-    <td class="positive">
-      2,785,802
-    </td>
-    
-    <td class="negative">
-      2,400,586
-    </td>
-    
-    <td class="negative">
-      14% slower
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      IE6
-    </td>
-    
-    <td class="negative">
-      147,870
-    </td>
-    
-    <td class="positive">
-      206,869
-    </td>
-    
-    <td class="positive">
-      40% faster
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      IE7
-    </td>
-    
-    <td class="negative">
-      144,735
-    </td>
-    
-    <td class="positive">
-      191,179
-    </td>
-    
-    <td class="positive">
-      32% faster
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      IE8
-    </td>
-    
-    <td class="negative">
-      350,085
-    </td>
-    
-    <td class="positive">
-      472,417
-    </td>
-    
-    <td class="positive">
-      35% faster
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      Mobile Safari (iOS4 on iPhone 3GS)
-    </td>
-    
-    <td class="positive">
-      668,053
-    </td>
-    
-    <td class="negative">
-      416,366
-    </td>
-    
-    <td class="negative">
-      37% slower
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      Android (2.2 on Nexus One)
-    </td>
-    
-    <td class="negative">
-      605,693
-    </td>
-    
-    <td class="positive">
-      864,591
-    </td>
-    
-    <td class="positive">
-      42% faster
-    </td>
-  </tr>
-</table>
-
-<ul>
-  <li>Ops/sec = Operations per second. Higher is better<br />
-** Chrome, Safari, Opera, and Firefox were tested on Mac OSX 10.6.4 2.53GHz Intel Core i5. IE tests were run on Windows 7 64bit 2.4GHz Quad Core</li>
-</ul>
-
-<h3 id="the-results">The Results</h3>
-
-<p>From the results, it looks like the hash optimization is only a benefit for Chrome, IE6-IE8, and Android. That’s quite a specific sampling. My guess is that the other browsers have implemented some sort of Switch statement optimizations that actually turn the hash optimization into an antipattern.</p>
-
-<h3 id="more-info">More info</h3>
-
-<p>Although I first read about this online, by no surprise this trick also appears in <a href="http://www.nczonline.net/">Nicholas Zakas’s</a> <a href="http://www.amazon.com/Performance-JavaScript-Faster-Application-Interfaces/dp/059680279X">High Performance JavaScript</a> in a section on “Lookup Tables” (p. 72).</p>
 
 
 		
