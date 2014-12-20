@@ -7,7 +7,7 @@
 
 	<meta name="author" content="David Calhoun">
 
-<meta name="description" content="Apparently it’s no longer possible to easily download Android versions 2.0 and 2.0.1 from the AVD Manager. I noticed this problem when I got a new &hellip;"> <meta name="keywords" content="">
+<meta name="description" content="Result table Test Evo (2.1) Incredible (2.1) Nexus One (2.2) Total 16167ms 15237ms 5452ms 3D 2014ms 1835ms 946ms Access 2126ms 1892ms 463ms Bitops &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -46,6 +46,265 @@
 </header>
 
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/2010/javascript-sunspider-htc-evo-versus-htc-incredible-versus-nexus-one">
+			
+				JavaScript SunSpider: HTC Evo Versus HTC Incredible Versus Nexus One</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-06-10T00:00:00-07:00" pubdate data-updated="true">Jun 10<span>th</span>, 2010</time></div>
+	</header>
+	<div class="entry-content">
+		<h3 id="result-table">Result table</h3>
+
+<table>
+  <tr>
+    <td>
+      Test
+    </td>
+    
+    <td>
+      Evo (2.1)
+    </td>
+    
+    <td>
+      Incredible (2.1)
+    </td>
+    
+    <td>
+      Nexus One (2.2)
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Total
+    </td>
+    
+    <td>
+      16167ms
+    </td>
+    
+    <td>
+      15237ms
+    </td>
+    
+    <td class="positive">
+      5452ms
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      3D
+    </td>
+    
+    <td>
+      2014ms
+    </td>
+    
+    <td>
+      1835ms
+    </td>
+    
+    <td class="positive">
+      946ms
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Access
+    </td>
+    
+    <td>
+      2126ms
+    </td>
+    
+    <td>
+      1892ms
+    </td>
+    
+    <td class="positive">
+      463ms
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Bitops
+    </td>
+    
+    <td>
+      1519ms
+    </td>
+    
+    <td>
+      1591ms
+    </td>
+    
+    <td class="positive">
+      360ms
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Controlflow
+    </td>
+    
+    <td>
+      243ms
+    </td>
+    
+    <td>
+      206ms
+    </td>
+    
+    <td class="positive">
+      20ms
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Crypto
+    </td>
+    
+    <td>
+      1033ms
+    </td>
+    
+    <td>
+      1003ms
+    </td>
+    
+    <td class="positive">
+      344ms
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Date
+    </td>
+    
+    <td>
+      1849ms
+    </td>
+    
+    <td>
+      1896ms
+    </td>
+    
+    <td class="positive">
+      639ms
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Math
+    </td>
+    
+    <td>
+      1684ms
+    </td>
+    
+    <td>
+      1419ms
+    </td>
+    
+    <td class="positive">
+      602ms
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Regexp
+    </td>
+    
+    <td>
+      1779ms
+    </td>
+    
+    <td>
+      1673ms
+    </td>
+    
+    <td class="positive">
+      155ms
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      String
+    </td>
+    
+    <td>
+      3920ms
+    </td>
+    
+    <td>
+      3722ms
+    </td>
+    
+    <td class="positive">
+      1923ms
+    </td>
+  </tr>
+</table>
+
+<h3 id="thoughts">Thoughts</h3>
+
+<p>The Incredible is just slightly faster than the Evo, to the point where it’s probably negligible or within a margin of error. Both of these phones run on Android 2.1 with HTC’s Sense UI modifications, and represent the latest and greatest in Android phones available on the market today. Both run on the same 1GHz Snapdragon processor (QSD8650). The Nexus One is a bit older, and runs with an older version of the Snapdragon processor (QSD8250), however it still runs at 1GHz just like the other two phones.</p>
+
+<p>As you can see the Nexus One blows away all the competition because it’s running Android 2.2 Froyo. These results were quite a shock to me and are quite impressive. These results even blow away Apple’s new iOS 4 running on my iPhone 3GS, which clocked in at a total time of 13787ms compared to the Nexus One’s startling 5452ms.</p>
+
+<h3 id="testing-methodology">Testing methodology</h3>
+
+<p>Test: <a href="http://www2.webkit.org/perf/sunspider-0.9.1/sunspider-0.9.1/driver.html">SunSpider 0.9.1</a></p>
+
+<p>Devices: HTC Evo (Android 2.1), HTC Incredible (Android 2.1), HTC Nexus One (Android 2.2)</p>
+
+<p>The SunSpider test was run five times on each phone. The phone was completely turned off and on before each test. The most extreme values of the five tests were thrown out, and the resulting four tests were averaged (sometimes from three tests when the values were very close together).</p>
+
+<p>Raw results:</p>
+
+<p><a href="http://davidbcalhoun.com/wp-content/uploads/2010/sunspider-htc-evo.html">SunSpider HTC Evo results (5 tests)</a></p>
+
+<p><a href="http://davidbcalhoun.com/wp-content/uploads/2010/sunspider-htc-incredible.html">SunSpider HTC Incredible results (5 tests)</a></p>
+
+<p><a href="http://davidbcalhoun.com/wp-content/uploads/2010/sunspider-nexus-one.html">SunSpider HTC Nexus One results (5 tests)</a></p>
+
+<h3 id="related-links">Related links</h3>
+
+<p><a href="http://davidbcalhoun.com/2010/sunspider-ios-3-1-3-versus-ios-4-gm">JavaScript SunSpider test: iOS 3.1.3 versus iOS 4 GM</a></p>
+
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post">
@@ -999,415 +1258,6 @@ padding: 1px 2px 3px 4px;  /* 4 values: top, right, bottom, left */
     <p>
     </p>
 </li></ul>
-
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post">
-	<header>
-		<h2 class="title">
-			
-			<a href="/2010/iphone-traffic-decreasing-jan2009-to-jan2010">
-			
-				Overall iPhone Browser Traffic Share Is Decreasing (Jan2009 to Jan2010)</a>
-		</h2>
-		<div class="meta date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-02-18T00:00:00-08:00" pubdate data-updated="true">Feb 18<span>th</span>, 2010</time></div>
-	</header>
-	<div class="entry-content">
-		<p>According to the statistics available on [statcounter.com][1], from January 2009 to January 2010, iPhone browser traffic share actually <em>decreased</em>, not increased, as one might expect.</p>
-
-<p>This is likely due to new competition from Android phones, as well as the possibility that more users are simply using iPhone <em>native</em> apps instead of web apps.</p>
-
-<p>In any case, in my opinion <em>these</em> are the figures we ought to be looking at, not overall phone sales, as others such as [PPK][2] concentrate on. If we don’t use computer sales as an estimate of desktop browser share, then why should we use phone sales as an estimate of mobile browser share? Just because someone has a phone with a pre-installed browser doesn’t lead them to actually use it.</p>
-
-<p>In any case, here’s the statistics, with a few surprises:</p>
-
-<ul>
-  <li>iPhone/iTouch web traffic share decreased in the US and worldwide</li>
-  <li>BlackBerry gained market share</li>
-  <li>NetFront gained market share (this somewhat baffled me)</li>
-</ul>
-
-<p>And now for the stats…</p>
-
-<div class="percentages">
-  <h3>
-    Worldwide mobile browser traffic (% share)
-  </h3>
-  
-  <table>
-    <tr>
-      <td>
-        Device
-      </td>
-      
-      <td>
-        2009 %
-      </td>
-      
-      <td>
-        2010 %
-      </td>
-      
-      <td>
-        % change
-      </td>
-    </tr>
-    
-    <tr>
-      <td>
-        Opera
-      </td>
-      
-      <td>
-        24.69
-      </td>
-      
-      <td>
-        25.53
-      </td>
-      
-      <td class="positive">
-        +0.84
-      </td>
-    </tr>
-    
-    <tr>
-      <td>
-        iPhone
-      </td>
-      
-      <td>
-        23.06
-      </td>
-      
-      <td>
-        21.52
-      </td>
-      
-      <td class="negative">
-        -1.54&lt;/td <tr>
-          <td>
-            Nokia
-          </td>
-          
-          <td>
-            17.78
-          </td>
-          
-          <td>
-            18.53
-          </td>
-          
-          <td class="positive">
-            +1.75&lt;/td <tr>
-              <td>
-                iTouch
-              </td>
-              
-              <td>
-                12.89
-              </td>
-              
-              <td>
-                11.6
-              </td>
-              
-              <td class="negative">
-                -1.29&lt;/td <tr>
-                  <td>
-                    BlackBerry
-                  </td>
-                  
-                  <td>
-                    4.91
-                  </td>
-                  
-                  <td>
-                    9.85
-                  </td>
-                  
-                  <td class="positive">
-                    +4.94&lt;/td <tr>
-                      <td>
-                        Android
-                      </td>
-                      
-                      <td>
-                        1.92
-                      </td>
-                      
-                      <td>
-                        4.54
-                      </td>
-                      
-                      <td class="positive">
-                        +2.62&lt;/td <tr>
-                          <td>
-                            NetFront
-                          </td>
-                          
-                          <td>
-                            1.35
-                          </td>
-                          
-                          <td>
-                            3.27
-                          </td>
-                          
-                          <td class="positive">
-                            +1.92&lt;/td <tr>
-                              <td>
-                                Sony PSP
-                              </td>
-                              
-                              <td>
-                                4.38
-                              </td>
-                              
-                              <td>
-                                1.2
-                              </td>
-                              
-                              <td class="negative">
-                                -3.18&lt;/td <tr>
-                                  <td>
-                                    Openwave
-                                  </td>
-                                  
-                                  <td>
-                                    2.61
-                                  </td>
-                                  
-                                  <td>
-                                    0.97
-                                  </td>
-                                  
-                                  <td class="negative">
-                                    -1.64&lt;/td <tr>
-                                      <td>
-                                        (Other)
-                                      </td>
-                                      
-                                      <td>
-                                        6.41
-                                      </td>
-                                      
-                                      <td>
-                                        2.98
-                                      </td>
-                                      
-                                      <td class="negative">
-                                        -3.43&lt;/td    <div class="percentages">
-                                          <h3>
-                                            US mobile browser traffic (% share)
-                                          </h3>
-                                          
-                                          <table>
-                                            <tr>
-                                              <td>
-                                                Device
-                                              </td>
-                                              
-                                              <td>
-                                                2009 %
-                                              </td>
-                                              
-                                              <td>
-                                                2010 %
-                                              </td>
-                                              
-                                              <td>
-                                                % change
-                                              </td>
-                                            </tr>
-                                            
-                                            <tr>
-                                              <td>
-                                                iPhone
-                                              </td>
-                                              
-                                              <td>
-                                                37.01
-                                              </td>
-                                              
-                                              <td>
-                                                32.96
-                                              </td>
-                                              
-                                              <td class="negative">
-                                                -4.05
-                                              </td>
-                                            </tr>
-                                            
-                                            <tr>
-                                              <td>
-                                                iTouch
-                                              </td>
-                                              
-                                              <td>
-                                                23.49
-                                              </td>
-                                              
-                                              <td>
-                                                20.62
-                                              </td>
-                                              
-                                              <td class="negative">
-                                                -2.87&lt;/td <tr>
-                                                  <td>
-                                                    BlackBerry
-                                                  </td>
-                                                  
-                                                  <td>
-                                                    11.37
-                                                  </td>
-                                                  
-                                                  <td>
-                                                    19.32
-                                                  </td>
-                                                  
-                                                  <td class="positive">
-                                                    +7.95&lt;/td <tr>
-                                                      <td>
-                                                        Android
-                                                      </td>
-                                                      
-                                                      <td>
-                                                        5.19
-                                                      </td>
-                                                      
-                                                      <td>
-                                                        11.9
-                                                      </td>
-                                                      
-                                                      <td class="positive">
-                                                        +6.71&lt;/td <tr>
-                                                          <td>
-                                                            Sony PSP
-                                                          </td>
-                                                          
-                                                          <td>
-                                                            7.68
-                                                          </td>
-                                                          
-                                                          <td>
-                                                            2.18
-                                                          </td>
-                                                          
-                                                          <td class="negative">
-                                                            -5.5&lt;/td <tr>
-                                                              <td>
-                                                                Opera
-                                                              </td>
-                                                              
-                                                              <td>
-                                                                3.56
-                                                              </td>
-                                                              
-                                                              <td>
-                                                                3.06
-                                                              </td>
-                                                              
-                                                              <td class="negative">
-                                                                -0.5&lt;/td <tr>
-                                                                  <td>
-                                                                    Openwave
-                                                                  </td>
-                                                                  
-                                                                  <td>
-                                                                    3.07
-                                                                  </td>
-                                                                  
-                                                                  <td>
-                                                                    2.04
-                                                                  </td>
-                                                                  
-                                                                  <td class="negative">
-                                                                    -1.03&lt;/td <tr>
-                                                                      <td>
-                                                                        NetFront
-                                                                      </td>
-                                                                      
-                                                                      <td>
-                                                                        1
-                                                                      </td>
-                                                                      
-                                                                      <td>
-                                                                        2.26
-                                                                      </td>
-                                                                      
-                                                                      <td class="positive">
-                                                                        +1.26&lt;/td <tr>
-                                                                          <td>
-                                                                            IEMobile
-                                                                          </td>
-                                                                          
-                                                                          <td>
-                                                                            3.12
-                                                                          </td>
-                                                                          
-                                                                          <td>
-                                                                            0.74
-                                                                          </td>
-                                                                          
-                                                                          <td class="negative">
-                                                                            -2.38&lt;/td <tr>
-                                                                              <td>
-                                                                                (Other)
-                                                                              </td>
-                                                                              
-                                                                              <td>
-                                                                                4.5
-                                                                              </td>
-                                                                              
-                                                                              <td>
-                                                                                4.92
-                                                                              </td>
-                                                                              
-                                                                              <td class="positive">
-                                                                                +0.42&lt;/td    <p>
-                                                                                  Predictions for 2010:
-                                                                                </p>
-                                                                                
-                                                                                <ul>
-                                                                                  <li>
-                                                                                    Android continues to increase market share
-                                                                                  </li>
-                                                                                  <li>
-                                                                                    Decrease in NetFront market share (opposite of current trend)
-                                                                                  </li>
-                                                                                  <li>
-                                                                                    Microsoft Windows Phone 7 Series reverses downward IE trend
-                                                                                  </li>
-                                                                                  <li>
-                                                                                    iPad grows in market share (this is a given, but will it break the top 10?)
-                                                                                  </li>
-                                                                                </ul>
-                                                                                
-                                                                                <p>
-                                                                                  Source: <a href="http://gs.statcounter.com/#mobile_browser-ww-monthly-200901-201001">statcounter.com</a>
-                                                                                </p>
-
- [1]: http://gs.statcounter.com/#mobile_browser-ww-monthly-200901-201001
- [2]: http://www.quirksmode.org/blog/archives/2010/02/the_iphone_obse.html
-</td></tr></td></tr></td></tr></td></tr></td></tr></td></tr></td></tr></td></tr></td></tr></table></div></td></tr></td></tr></td></tr></td></tr></td></tr></td></tr></td></tr></td></tr></td></tr></table></div>
 
 		
 		

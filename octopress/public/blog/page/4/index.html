@@ -7,7 +7,7 @@
 
 	<meta name="author" content="David Calhoun">
 
-<meta name="description" content="Earlier this year I gave a talk (slides) outlining the latest and greatest in mobile performance, including a bit of my own unscientific research &hellip;"> <meta name="keywords" content="">
+<meta name="description" content="Result table (SunSpider 0.9.1, all devices running iOS 5) Test iPhone 4S iPhone 4 iPhone 3GS Total 2270ms 3483ms 4903ms 3D 281ms 486ms 672ms Access &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -46,6 +46,297 @@
 </header>
 
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/2011/ios5-sunspider-iphone-4s-vs-iphone-4-vs-iphone-3gs">
+			
+				iOS5 SunSpider: iPhone 4S vs iPhone 4 vs iPhone 3GS</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-10-14T00:00:00-07:00" pubdate data-updated="true">Oct 14<span>th</span>, 2011</time></div>
+	</header>
+	<div class="entry-content">
+		<h3 id="result-table-sunspider-091-all-devices-running-ios-5">Result table (SunSpider 0.9.1, all devices running iOS 5)</h3>
+
+<table style="width: 100%;">
+  <tr>
+    <td>
+      Test
+    </td>
+    
+    <td>
+      iPhone 4S
+    </td>
+    
+    <td>
+      iPhone 4
+    </td>
+    
+    <td>
+      iPhone 3GS
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Total
+    </td>
+    
+    <td class="positive">
+      2270ms
+    </td>
+    
+    <td>
+      3483ms
+    </td>
+    
+    <td>
+      4903ms
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      3D
+    </td>
+    
+    <td class="positive">
+      281ms
+    </td>
+    
+    <td>
+      486ms
+    </td>
+    
+    <td>
+      672ms
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Access
+    </td>
+    
+    <td class="positive">
+      279ms
+    </td> 
+    
+    <td>
+      410ms
+    </td>
+    
+    <td>
+      614ms
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Bitops
+    </td>
+    
+    <td class="positive">
+      177ms
+    </td>
+    
+    <td>
+      200ms
+    </td>
+    
+    <td>
+      270ms
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Controlflow
+    </td>
+    
+    <td class="positive">
+      20ms
+    </td>
+    
+    <td>
+      26ms
+    </td> 
+    
+    <td>
+      34ms
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Crypto
+    </td>
+    
+    <td class="positive">
+      164ms
+    </td>
+    
+    <td>
+      211ms
+    </td>
+    
+    <td>
+      315ms
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Date
+    </td>
+    
+    <td class="positive">
+      332ms
+    </td>
+    
+    <td>
+      528ms
+    </td>
+    
+    <td>
+      770ms
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Math
+    </td>
+    
+    <td class="positive">
+      219ms
+    </td>
+    
+    <td>
+      433ms
+    </td>
+    
+    <td>
+      553ms
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Regexp
+    </td>
+    
+    <td class="positive">
+      88ms
+    </td>
+    
+    <td>
+      117ms
+    </td>
+    
+    <td>
+      151ms
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      String
+    </td>
+    
+    <td class="positive">
+      711ms
+    </td>
+    
+    <td>
+      1072ms
+    </td>
+    
+    <td>
+      1525ms
+    </td>
+  </tr>
+</table>
+
+<h3 id="raw-results">Raw results</h3>
+
+<p><a href="http://www.webkit.org/perf/sunspider-0.9.1/sunspider-0.9.1/results.html?%7B%22v%22:%20%22sunspider-0.9.1%22,%20%223d-cube%22:%5B98,100,97,101,98,98,99,99,100,105%5D,%223d-morph%22:%5B72,75,72,74,72,74,72,72,72,73%5D,%223d-raytrace%22:%5B107,107,108,111,108,108,108,109,110,108%5D,%22access-binary-trees%22:%5B48,48,53,51,47,49,51,54,52,47%5D,%22access-fannkuch%22:%5B121,120,124,120,121,121,120,120,125,120%5D,%22access-nbody%22:%5B70,72,71,71,71,72,70,70,69,70%5D,%22access-nsieve%22:%5B35,40,38,38,37,35,35,36,38,37%5D,%22bitops-3bit-bits-in-byte%22:%5B29,29,29,28,29,29,29,29,29,29%5D,%22bitops-bits-in-byte%22:%5B39,36,37,39,37,36,36,37,38,37%5D,%22bitops-bitwise-and%22:%5B47,48,48,46,49,48,49,51,48,47%5D,%22bitops-nsieve-bits%22:%5B65,63,62,62,62,62,63,63,63,62%5D,%22controlflow-recursive%22:%5B19,20,20,20,19,20,20,19,20,20%5D,%22crypto-aes%22:%5B94,96,96,100,103,102,96,96,96,99%5D,%22crypto-md5%22:%5B36,37,37,38,37,36,39,36,38,39%5D,%22crypto-sha1%22:%5B29,28,30,28,30,29,29,28,29,29%5D,%22date-format-tofte%22:%5B171,182,167,168,170,172,167,170,181,172%5D,%22date-format-xparb%22:%5B160,159,161,158,160,168,162,156,159,158%5D,%22math-cordic%22:%5B81,79,76,77,77,77,78,77,76,77%5D,%22math-partial-sums%22:%5B92,92,92,92,94,92,92,91,92,94%5D,%22math-spectral-norm%22:%5B49,49,49,49,51,49,49,50,48,52%5D,%22regexp-dna%22:%5B91,87,88,87,88,88,88,87,88,87%5D,%22string-base64%22:%5B89,88,86,92,87,91,96,87,87,87%5D,%22string-fasta%22:%5B91,92,92,91,94,94,95,95,89,89%5D,%22string-tagcloud%22:%5B144,147,147,145,144,145,144,144,148,150%5D,%22string-unpack-code%22:%5B246,243,238,244,254,249,243,249,240,238%5D,%22string-validate-input%22:%5B145,134,136,137,140,137,137,137,141,149%5D%7D">iPhone 4S (iOS5)</a></p>
+
+<p><a href="http://www.webkit.org/perf/sunspider-0.9.1/sunspider-0.9.1/results.html?%7B%22v%22:%20%22sunspider-0.9.1%22,%20%223d-cube%22:%5B175,179,192,175,180,174,181,174,173,182%5D,%223d-morph%22:%5B138,137,136,135,136,135,136,137,144,135%5D,%223d-raytrace%22:%5B166,171,174,174,166,178,168,167,169,168%5D,%22access-binary-trees%22:%5B61,61,62,58,57,56,57,56,60,57%5D,%22access-fannkuch%22:%5B141,142,143,146,141,142,148,142,146,148%5D,%22access-nbody%22:%5B154,152,147,146,144,148,146,154,146,149%5D,%22access-nsieve%22:%5B59,59,57,67,58,60,57,58,59,59%5D,%22bitops-3bit-bits-in-byte%22:%5B29,29,29,28,34,29,28,28,29,28%5D,%22bitops-bits-in-byte%22:%5B40,40,41,40,41,40,42,41,41,41%5D,%22bitops-bitwise-and%22:%5B58,59,60,58,60,58,59,62,58,58%5D,%22bitops-nsieve-bits%22:%5B71,76,70,75,71,69,72,71,70,70%5D,%22controlflow-recursive%22:%5B26,25,25,26,25,26,25,25,26,27%5D,%22crypto-aes%22:%5B124,132,124,124,126,123,123,125,122,127%5D,%22crypto-md5%22:%5B48,48,48,50,50,50,50,50,50,50%5D,%22crypto-sha1%22:%5B36,37,36,35,36,37,36,37,36,36%5D,%22date-format-tofte%22:%5B265,267,265,314,259,260,257,266,263,260%5D,%22date-format-xparb%22:%5B258,265,258,259,265,259,259,264,259,260%5D,%22math-cordic%22:%5B291,141,141,141,147,140,140,141,178,140%5D,%22math-partial-sums%22:%5B174,173,179,180,171,174,171,179,177,171%5D,%22math-spectral-norm%22:%5B102,98,97,98,97,97,99,100,99,98%5D,%22regexp-dna%22:%5B115,114,114,116,115,119,122,112,120,122%5D,%22string-base64%22:%5B120,123,116,121,114,118,116,115,117,117%5D,%22string-fasta%22:%5B128,125,122,129,122,130,129,131,123,128%5D,%22string-tagcloud%22:%5B208,209,209,206,215,210,210,209,211,219%5D,%22string-unpack-code%22:%5B401,412,410,413,406,422,412,413,410,414%5D,%22string-validate-input%22:%5B205,208,199,200,205,207,206,212,206,211%5D%7D">iPhone 4 (iOS5)</a></p>
+
+<p><a href="http://www.webkit.org/perf/sunspider-0.9.1/sunspider-0.9.1/results.html?%7B%22v%22:%20%22sunspider-0.9.1%22,%20%223d-cube%22:%5B245,251,245,317,247,244,250,249,250,250%5D,%223d-morph%22:%5B191,184,186,189,186,190,202,190,194,188%5D,%223d-raytrace%22:%5B222,226,223,222,229,227,234,229,227,231%5D,%22access-binary-trees%22:%5B86,87,87,93,89,89,92,92,94,85%5D,%22access-fannkuch%22:%5B189,188,190,189,350,187,188,189,188,190%5D,%22access-nbody%22:%5B195,194,193,204,585,196,198,199,194,194%5D,%22access-nsieve%22:%5B83,94,86,82,84,83,83,83,82,84%5D,%22bitops-3bit-bits-in-byte%22:%5B38,40,37,38,38,43,40,38,38,40%5D,%22bitops-bits-in-byte%22:%5B70,54,53,58,62,55,59,55,54,54%5D,%22bitops-bitwise-and%22:%5B78,78,79,79,82,79,77,76,77,79%5D,%22bitops-nsieve-bits%22:%5B93,94,94,95,93,94,93,93,101,99%5D,%22controlflow-recursive%22:%5B34,34,32,34,33,34,33,33,36,35%5D,%22crypto-aes%22:%5B365,173,173,174,174,184,177,172,170,171%5D,%22crypto-md5%22:%5B101,65,64,68,67,69,65,66,65,67%5D,%22crypto-sha1%22:%5B75,49,48,50,51,48,49,54,49,49%5D,%22date-format-tofte%22:%5B618,358,357,361,373,365,367,482,379,372%5D,%22date-format-xparb%22:%5B408,360,349,354,371,365,371,369,359,363%5D,%22math-cordic%22:%5B199,191,192,188,188,188,190,188,190,191%5D,%22math-partial-sums%22:%5B228,227,228,225,229,232,227,232,229,227%5D,%22math-spectral-norm%22:%5B160,132,131,131,130,131,131,130,133,130%5D,%22regexp-dna%22:%5B158,149,148,151,150,149,152,148,153,148%5D,%22string-base64%22:%5B164,163,176,167,171,172,175,172,181,174%5D,%22string-fasta%22:%5B227,187,176,179,167,175,176,189,176,172%5D,%22string-tagcloud%22:%5B303,288,270,277,284,289,282,284,281,284%5D,%22string-unpack-code%22:%5B1029,531,527,523,543,545,553,545,538,541%5D,%22string-validate-input%22:%5B296,300,297,299,299,293,298,320,296,296%5D%7D">iPhone 3GS (iOS5)</a></p>
+
+<h3 id="bonus-fishietank4-10-fish-canvas-test">Bonus: <a href="http://ie.microsoft.com/testdrive/Performance/FishIETank/">FishIETank</a> (10 fish) (Canvas test)</h3>
+
+<table style="width: 100%;">
+  <tr>
+    <td>
+      Test
+    </td>
+    
+    <td>
+      iPhone 4S
+    </td>
+    
+    <td>
+      iPhone 4
+    </td>
+    
+    <td>
+      iPhone 3GS
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Total
+    </td>
+    
+    <td class="positive">
+      50fps
+    </td>
+    
+    <td>
+      35fps
+    </td>
+    
+    <td>
+      25fps
+    </td>
+  </tr>
+</table>
+
+<p>One thing to note here: the 3GS has a bit of an advantage because of a non-retina screen. However, it’s still outperformed easily by the iPhone 4 and 4S.</p>
+
+<h3 id="related">Related</h3>
+
+<p><a href="http://davidbcalhoun.com/2011/javascript-sunspider-benchmark-ios-4-3-vs-ios-4-0">JavaScript SunSpider benchmark: iOS 4.3 vs iOS 4.0</a><br />
+<a href="http://davidbcalhoun.com/2010/blackberry-torch-sunspider-results-javascript-benchmark">BlackBerry Torch SunSpider results (JavaScript benchmark)</a><br />
+<a href="http://davidbcalhoun.com/2010/iphone-4-sunspider-test-results">iPhone 4 SunSpider test results (22% faster than iPhone 3GS)</a><br />
+<a href="http://davidbcalhoun.com/2010/sunspider-ios-3-1-3-versus-ios-4-gm">JavaScript SunSpider test: iOS 3.1.3 versus iOS 4 GM</a><br />
+<a href="http://davidbcalhoun.com/2010/javascript-sunspider-htc-evo-versus-htc-incredible-versus-nexus-one">JavaScript SunSpider: HTC Evo versus HTC Incredible versus Nexus One</a></p>
+
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post">
@@ -2868,462 +3159,6 @@ foo();
 
 <p>I’ll surely learn another programming language, but not for its own sake, unless my life is in reasonably good order.</p>
 
-
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post">
-	<header>
-		<h2 class="title">
-			
-			<a href="/2011/checking-for-undefined-null-and-empty-variables-in-javascript">
-			
-				Checking for Undefined, Null, and Empty Variables in JavaScript</a>
-		</h2>
-		<div class="meta date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-02-11T00:00:00-08:00" pubdate data-updated="true">Feb 11<span>th</span>, 2011</time></div>
-	</header>
-	<div class="entry-content">
-		<p>In general it’s a good practice to check for the existence of something before blindly using it by faith and hoping it works. There are various times during the execution of scripts when a variable may not be defined, it may be null, or it might be an empty string. These are three things that are easily conflated. A good way to look at this is thinking of these as having increasing levels of existence (getting a bit philosophical here for a moment…):</p>
-
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-</pre></td>
-  <td class="code"><pre>foo0;             <span class="comment">// existence level 0 (creates the error &quot;not defined&quot;)</span>
-<span class="keyword">var</span> foo1;         <span class="comment">// existence level 1 (&quot;undefined&quot; - variable declared but not defined/initialized)</span>
-<span class="keyword">var</span> foo2 = <span class="predefined-constant">null</span>;  <span class="comment">// existence level 2 (variable initialized, but isn't an Object, Number, String, etc)</span>
-<span class="keyword">var</span> foo3 = <span class="string"><span class="delimiter">&quot;</span><span class="delimiter">&quot;</span></span>;    <span class="comment">// existence level 3 (variable initialized to an empty String)</span>
-<span class="keyword">var</span> foo4 = <span class="string"><span class="delimiter">&quot;</span><span class="content">bar</span><span class="delimiter">&quot;</span></span>; <span class="comment">// existence level 4 (variable initialized to String &quot;foo&quot;)</span>
-</pre></td>
-</tr></table>
-</div>
-
-<p>Generally it would be handy if we had some way to filter out everything but the very last line. We simply want to check for these cases without the script entirely blowing up, as it does with the first line:</p>
-
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-</pre></td>
-  <td class="code"><pre>foo;  <span class="comment">// ReferenceError: foo is not defined</span>
-</pre></td>
-</tr></table>
-</div>
-
-<p>We’re not particularly doing anything useful with foo here, but notice that the script fails out anyway. At this point any code that follows will not be executed. Your first instinct might be “Oh! I know how to contain these errors! We’ll use a try-catch!”:</p>
-
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">try</span> {
-  foo;
-} <span class="keyword">catch</span>(e) {
-  e.message;  <span class="comment">// &quot;foo is not defined&quot;</span>
-}
-</pre></td>
-</tr></table>
-</div>
-
-<p>The script still fails, but not critically, so your script continues to execute. But this turns out to aversely affect performance. The basic lesson here is that try-catch can be useful in some situations, but shouldn’t be used where alternatives are available.</p>
-
-<h3 id="typeof-foo">typeof foo</h3>
-
-<p>JavaScript has quite a useful remedy for this:</p>
-
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">typeof</span> foo; <span class="comment">// &quot;undefined&quot;</span>
-</pre></td>
-</tr></table>
-</div>
-
-<p>Unlike everything else in JavaScript, typeof will deal with whatever you throw at it, including undefined variables. So you can use it as a simple check before using a variable that might not exist:</p>
-
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">if</span>(<span class="keyword">typeof</span> foo !== <span class="string"><span class="delimiter">&quot;</span><span class="content">undefined</span><span class="delimiter">&quot;</span></span>) {
-  <span class="comment">// do something with foo</span>
-}
-</pre></td>
-</tr></table>
-</div>
-
-<p>Note that this is easy to confuse with the <code>undefined</code> keyword, which in this case doesn’t help us one bit, as it gives us a fatal error:</p>
-
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">if</span>(foo !== <span class="predefined-constant">undefined</span>) {  <span class="comment">// ReferenceError: foo is not defined</span>
-
-}
-</pre></td>
-</tr></table>
-</div>
-
-<p>This filters out our first two cases, since they both evaluate to “undefined”:</p>
-
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">typeof</span> foo; <span class="comment">// &quot;undefined&quot;</span>
-
-<span class="keyword">var</span> bar;
-<span class="keyword">typeof</span> bar; <span class="comment">// &quot;undefined&quot;</span>
-</pre></td>
-</tr></table>
-</div>
-
-<p>But this turns out not to work well for our other conditions, which evaluate differently:</p>
-
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">typeof</span> <span class="predefined-constant">null</span>;  <span class="comment">// &quot;object&quot; (what?!)</span>
-<span class="keyword">typeof</span> <span class="string"><span class="delimiter">&quot;</span><span class="delimiter">&quot;</span></span>;    <span class="comment">// &quot;string&quot;</span>
-</pre></td>
-</tr></table>
-</div>
-
-<p>So we need to add other “if” conditions to check.. but there turns out to be a better way!</p>
-
-<h3 id="exploiting-loose-typing">Exploiting loose typing</h3>
-
-<p>JavaScript is a loosely typed language, which means that it will “automagically” cast variables into other types when necessary (i.e. when adding a Number to a String), sometimes resulting in the unexpected. For instance, whenever we use the “if” statement, the expected input is a Boolean true/false value. If JavaScript gets anything other than a Boolean, such as a String or a Number, instead of blowing up completely (as in strictly typed languages such as C), it’ll cast the variable into a Boolean for you.</p>
-
-<p>“How handy!” you might think. Except in the following unexpected cases:</p>
-
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">if</span>(<span class="string"><span class="delimiter">&quot;</span><span class="content">0</span><span class="delimiter">&quot;</span></span>) {
-  <span class="comment">// this will run because &quot;0&quot; is true</span>
-}
-
-<span class="keyword">if</span>(<span class="string"><span class="delimiter">&quot;</span><span class="content">false</span><span class="delimiter">&quot;</span></span>) {
-  <span class="comment">// this will run because &quot;false&quot; is true</span>
-}
-</pre></td>
-</tr></table>
-</div>
-
-<p>To see what JavaScript will cast a value to without having to use an <code>if</code> statement, we could create a new Boolean value with the following:</p>
-
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-</pre></td>
-  <td class="code"><pre>Boolean(<span class="integer">0</span>);    <span class="comment">// false</span>
-Boolean(<span class="string"><span class="delimiter">&quot;</span><span class="content">0</span><span class="delimiter">&quot;</span></span>);  <span class="comment">// true</span>
-</pre></td>
-</tr></table>
-</div>
-
-<p>Or we can use the less intuitive but quick way of using double exclamation marks (this will probably award you cleverness points in someone’s book.. hopefully those points actually matter):</p>
-
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-</pre></td>
-  <td class="code"><pre>!!<span class="integer">0</span>;    <span class="comment">// false</span>
-!!<span class="string"><span class="delimiter">&quot;</span><span class="content">0</span><span class="delimiter">&quot;</span></span>;  <span class="comment">// true</span>
-</pre></td>
-</tr></table>
-</div>
-
-<p>This works because !foo converts foo to a Boolean but negates its original value, turning it on its head. !!foo converts foo to a Boolean and flips it back to its expected value, which is the same value that’s evaluated by our <code>if</code> statement.</p>
-
-<p>Using this ALMOST gives us the answer we’re looking for:</p>
-
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-<a href="#n12" name="n12">12</a>
-<a href="#n13" name="n13">13</a>
-</pre></td>
-  <td class="code"><pre>!!foo0; <span class="comment">// ReferenceError: foo0 is not defined</span>
-
-<span class="keyword">var</span> foo1;
-!!foo1; <span class="comment">// false</span>
-
-<span class="keyword">var</span> foo2 = <span class="predefined-constant">null</span>;
-!!foo2; <span class="comment">// false (same as !!null)</span>
-
-<span class="keyword">var</span> foo3 = <span class="string"><span class="delimiter">&quot;</span><span class="delimiter">&quot;</span></span>;
-!!foo3; <span class="comment">// false (same as !!&quot;&quot;)</span>
-
-<span class="keyword">var</span> foo4 = <span class="string"><span class="delimiter">&quot;</span><span class="content">bar</span><span class="delimiter">&quot;</span></span>;
-!!foot4; <span class="comment">// true (same as !!&quot;bar&quot;)</span>
-</pre></td>
-</tr></table>
-</div>
-
-<p>Excluding the first example, now we can test for uninitialized variables (foo1), null variables (foo2), and empty strings (foo3) all with just an <code>if</code> statement:</p>
-
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">if</span>(foo1) {
-  <span class="comment">// do something with foo1</span>
-}
-
-<span class="keyword">if</span>(foo2) {
-  <span class="comment">// do something with foo2</span>
-}
-
-<span class="keyword">if</span>(foo3) {
-  <span class="comment">// do something with foo3</span>
-}
-</pre></td>
-</tr></table>
-</div>
-
-<p>Dang… so close! But we can’t yet test the first case without an error:</p>
-
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">if</span>(foo0) {  <span class="comment">// ReferenceError: foo0 is not defined</span>
-
-}
-</pre></td>
-</tr></table>
-</div>
-
-<h3 id="foo-versus-windowfoo-and-thisfoo">foo versus window.foo and this.foo</h3>
-
-<p>The secret to our solution lies in how JavaScript handles undefined variables versus undefined properties. Here’s a quick reminder on the difference between the two:</p>
-
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-</pre></td>
-  <td class="code"><pre><span class="comment">// variable foo</span>
-<span class="keyword">var</span> foo;
-
-<span class="comment">// property bar (and object variable foo)</span>
-<span class="keyword">var</span> foo = {};  <span class="comment">// create an empty object to add bar too</span>
-foo.bar = <span class="string"><span class="delimiter">&quot;</span><span class="delimiter">&quot;</span></span>;
-</pre></td>
-</tr></table>
-</div>
-
-<p>The difference between these makes all the difference whether a fatal error occurs:</p>
-
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-</pre></td>
-  <td class="code"><pre>foo;  <span class="comment">// ReferenceError: foo is not defined</span>
-
-<span class="keyword">var</span> foo = {};
-foo.bar;  <span class="comment">// undefined</span>
-foo.blah; <span class="comment">// undefined</span>
-</pre></td>
-</tr></table>
-</div>
-
-<p>We can randomly invent and check any property of <code>foo</code> we want, and the code will keep chugging along:</p>
-
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-</pre></td>
-  <td class="code"><pre><span class="keyword">var</span> foo = {};
-foo.something = <span class="string"><span class="delimiter">&quot;</span><span class="content">hello</span><span class="delimiter">&quot;</span></span>;
-
-<span class="keyword">if</span>(foo.bar) { <span class="comment">// undefined, interpreted as false (same as !!foo.bar)</span>
-  <span class="comment">// never runs</span>
-}
-
-<span class="keyword">if</span>(foo.something) {
-  foo.something;  <span class="comment">// &quot;hello&quot;</span>
-}
-</pre></td>
-</tr></table>
-</div>
-
-<p>Now comes the magic. If you know anything about JavaScript running in the browser, you know that all global variables are part of the <code>window</code> object. This means <code>foo</code> and <code>window.foo</code> are equivalent:</p>
-
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">var</span> foo;
-
-foo === window.foo;  <span class="comment">// true</span>
-
-<span class="comment">// &quot;this&quot; is another bag of worms, but note this anyway</span>
-<span class="local-variable">this</span>.foo === window.foo;
-</pre></td>
-</tr></table>
-</div>
-
-<p>So technically our variable foo is a <em>property</em> of the window object. So we should be able to check for any arbitrary variable in the window scope now!</p>
-
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-</pre></td>
-  <td class="code"><pre>window.foo;  <span class="comment">// undefined (not a fatal error!)</span>
-
-<span class="comment">// even though we're checking for the same thing, we get a fatal error…</span>
-foo;  <span class="comment">// ReferenceError: foo is not defined</span>
-</pre></td>
-</tr></table>
-</div>
-
-<h3 id="practical-uses">Practical uses</h3>
-
-<p>Now as long as we have a global entry point for our code, we can write our code in such a way that it won’t ever give us a fatal error if our variables aren’t yet defined:</p>
-
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">if</span>(window.foo &amp;&amp; foo.bar) {
-  foo.bar();
-}
-</pre></td>
-</tr></table>
-</div>
-
-<p>Of course nothing happens, because we haven’t defined foo. But why doesn’t foo.bar give us a fatal error? Because the first test, <code>window.foo</code> failed out. It would be useless processing for the JavaScript engine to also evaluate the second statement, because the end result will still be the same (false &#038;&#038; true results in false, false &#038;&#038; false results in false). So it doesn’t get so far as <code>foo.bar</code>.</p>
-
-<p>And now the code will work properly when we hook up our code to our <code>foo</code> global namespace:</p>
-
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">var</span> foo = {
-  <span class="function">bar</span>: <span class="keyword">function</span>() {
-    alert(<span class="string"><span class="delimiter">&quot;</span><span class="content">hello world</span><span class="delimiter">&quot;</span></span>);
-  }
-}
-
-<span class="keyword">if</span>(window.foo &amp;&amp; foo.bar) {
-  foo.bar();  <span class="comment">// &quot;hello world&quot;</span>
-}
-</pre></td>
-</tr></table>
-</div>
-
-<h3 id="shorthand">Shorthand</h3>
-
-<p>It’s becoming common to see an abbreviation for the above code. Check out the following two methods, which accomplish the same thing:</p>
-
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-</pre></td>
-  <td class="code"><pre><span class="comment">// Method 1</span>
-<span class="keyword">if</span>(window.foo &amp;&amp; foo.bar) {
-  foo.bar();  <span class="comment">// &quot;hello world&quot;</span>
-}
-
-<span class="comment">// Method 2</span>
-window.foo &amp;&amp; foo.bar &amp;&amp; (foo.bar());
-</pre></td>
-</tr></table>
-</div>
-
-<p>Don’t get too scared.. these blocks of code are equivalent. Method 2 is shorter, but it simply goes something like this: if window.foo isn’t set, stop evaluating this line (just as above in the <code>if</code> statement). Otherwise, if foo.bar exists then execute the code in parentheses, which gives us an alert (“hello world”);</p>
-
-<p>Just a word of caution about using Method 2: it’s obviously less clear what’s going on here. Your own cleverness might actually result in unnecessary confusion, especially of other people work in the same code base and they’re at different levels of understanding. In these cases we should first strive to be clear, and then only clever if it’s not at the expense of being clear.</p>
-
-<p>It’s also likely that a code minifier would take care of this cleverness for us at build time, giving us the best of both worlds.</p>
 
 		
 		

@@ -203,10 +203,28 @@ table .negative {
 
 .entry-content {
 	figure {
-		margin: 0;
+		margin: 1em 0 0;
 		figcaption {
+			margin-top: -0.2em;
+			margin-left: 0.1em;
+			line-height: 1.4em;
 			font-size: 80%;
 			font-style: italic;
+		}
+
+		&.center {
+			img {
+				display: block;
+				margin: 0 auto;
+			}
+
+			figcaption {
+				margin-top: 0.2em;
+				text-align: center;
+				line-height: 1.4em;
+				font-size: 80%;
+				font-style: italic;
+			}
 		}
 	}
 }

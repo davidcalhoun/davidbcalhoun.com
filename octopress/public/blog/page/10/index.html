@@ -7,7 +7,7 @@
 
 	<meta name="author" content="David Calhoun">
 
-<meta name="description" content="class Singleton { private static $instance; public static function getInstance() { if(!isset(self::$instance)) { $c = __CLASS__; self::$instance = &hellip;"> <meta name="keywords" content="">
+<meta name="description" content="JavaScript has functional scope. Meaning that if you (properly) define variables within functions, those variables remain accessible only inside the &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -46,6 +46,70 @@
 </header>
 
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/2009/javascript-tidbit-block-scope-with-let">
+			
+				JavaScript Tidbit: Block Scope With &#8220;let&#8221;</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-09-15T00:00:00-07:00" pubdate data-updated="true">Sep 15<span>th</span>, 2009</time></div>
+	</header>
+	<div class="entry-content">
+		<p>JavaScript has <strong>functional scope</strong>. Meaning that if you (properly) define variables within functions, those variables remain accessible only inside the function.</p>
+
+<p><strong>Block scope</strong>, on the other hand, defines scope within a block of code, usually defined by braces. JavaScript now has block scope as of version 1.7, which means it’s available in these browsers:</p>
+
+<ul>
+  <li>Firefox 2+</li>
+</ul>
+
+<p>Block scope is enabled in JavaScript with the use of “let”:</p>
+
+<pre name="code" class="JScript">let(x=100) {
+    alert(x);
+};</pre>
+
+<p>It also works perfectly well on one line, without the use of braces:</p>
+
+<pre name="code" class="JScript">let(x=100) alert(x);</pre>
+
+<p>Note that we can define global variables with the same name outside the block scope and the variables won’t interfere with each other:</p>
+
+<pre name="code" class="JScript">x = 200;
+let(x=100) alert(x);
+alert(x);
+// result: 100, 200
+</pre>
+
+<p>Note that there’s a slight caveat – not only is this not available in any version of IE, but it also requires a special script type declaration in order to work (at least for Firefox): <strong>type=”text/javascript;version=1.7″</strong></p>
+
+<p>References:<br />
+<a href="http://en.wikipedia.org/wiki/JavaScript#Versions">JavaScript Versions</a><br />
+<a href="http://www.youtube.com/watch?v=0LKDImgRfrg#t=32m2s">Video: Best Practices in Javascript Library Design (John Resig)</a><br />
+<a href="https://developer.mozilla.org/en/New_in_JavaScript_1.7">New in JavaScript 1.7</a></p>
+
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post">

@@ -7,7 +7,7 @@
 
 	<meta name="author" content="David Calhoun">
 
-<meta name="description" content="This is just a fun little video demo into the inner workings of today’s Google Doodle. Nothing you can’t do yourself with Firebug or Web Inspector ( &hellip;"> <meta name="keywords" content="">
+<meta name="description" content="In general it’s a good practice to check for the existence of something before blindly using it by faith and hoping it works. There are various &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -46,6 +46,462 @@
 </header>
 
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/2011/checking-for-undefined-null-and-empty-variables-in-javascript">
+			
+				Checking for Undefined, Null, and Empty Variables in JavaScript</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-02-11T00:00:00-08:00" pubdate data-updated="true">Feb 11<span>th</span>, 2011</time></div>
+	</header>
+	<div class="entry-content">
+		<p>In general it’s a good practice to check for the existence of something before blindly using it by faith and hoping it works. There are various times during the execution of scripts when a variable may not be defined, it may be null, or it might be an empty string. These are three things that are easily conflated. A good way to look at this is thinking of these as having increasing levels of existence (getting a bit philosophical here for a moment…):</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+</pre></td>
+  <td class="code"><pre>foo0;             <span class="comment">// existence level 0 (creates the error &quot;not defined&quot;)</span>
+<span class="keyword">var</span> foo1;         <span class="comment">// existence level 1 (&quot;undefined&quot; - variable declared but not defined/initialized)</span>
+<span class="keyword">var</span> foo2 = <span class="predefined-constant">null</span>;  <span class="comment">// existence level 2 (variable initialized, but isn't an Object, Number, String, etc)</span>
+<span class="keyword">var</span> foo3 = <span class="string"><span class="delimiter">&quot;</span><span class="delimiter">&quot;</span></span>;    <span class="comment">// existence level 3 (variable initialized to an empty String)</span>
+<span class="keyword">var</span> foo4 = <span class="string"><span class="delimiter">&quot;</span><span class="content">bar</span><span class="delimiter">&quot;</span></span>; <span class="comment">// existence level 4 (variable initialized to String &quot;foo&quot;)</span>
+</pre></td>
+</tr></table>
+</div>
+
+<p>Generally it would be handy if we had some way to filter out everything but the very last line. We simply want to check for these cases without the script entirely blowing up, as it does with the first line:</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+</pre></td>
+  <td class="code"><pre>foo;  <span class="comment">// ReferenceError: foo is not defined</span>
+</pre></td>
+</tr></table>
+</div>
+
+<p>We’re not particularly doing anything useful with foo here, but notice that the script fails out anyway. At this point any code that follows will not be executed. Your first instinct might be “Oh! I know how to contain these errors! We’ll use a try-catch!”:</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+</pre></td>
+  <td class="code"><pre><span class="keyword">try</span> {
+  foo;
+} <span class="keyword">catch</span>(e) {
+  e.message;  <span class="comment">// &quot;foo is not defined&quot;</span>
+}
+</pre></td>
+</tr></table>
+</div>
+
+<p>The script still fails, but not critically, so your script continues to execute. But this turns out to aversely affect performance. The basic lesson here is that try-catch can be useful in some situations, but shouldn’t be used where alternatives are available.</p>
+
+<h3 id="typeof-foo">typeof foo</h3>
+
+<p>JavaScript has quite a useful remedy for this:</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+</pre></td>
+  <td class="code"><pre><span class="keyword">typeof</span> foo; <span class="comment">// &quot;undefined&quot;</span>
+</pre></td>
+</tr></table>
+</div>
+
+<p>Unlike everything else in JavaScript, typeof will deal with whatever you throw at it, including undefined variables. So you can use it as a simple check before using a variable that might not exist:</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+</pre></td>
+  <td class="code"><pre><span class="keyword">if</span>(<span class="keyword">typeof</span> foo !== <span class="string"><span class="delimiter">&quot;</span><span class="content">undefined</span><span class="delimiter">&quot;</span></span>) {
+  <span class="comment">// do something with foo</span>
+}
+</pre></td>
+</tr></table>
+</div>
+
+<p>Note that this is easy to confuse with the <code>undefined</code> keyword, which in this case doesn’t help us one bit, as it gives us a fatal error:</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+</pre></td>
+  <td class="code"><pre><span class="keyword">if</span>(foo !== <span class="predefined-constant">undefined</span>) {  <span class="comment">// ReferenceError: foo is not defined</span>
+
+}
+</pre></td>
+</tr></table>
+</div>
+
+<p>This filters out our first two cases, since they both evaluate to “undefined”:</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+</pre></td>
+  <td class="code"><pre><span class="keyword">typeof</span> foo; <span class="comment">// &quot;undefined&quot;</span>
+
+<span class="keyword">var</span> bar;
+<span class="keyword">typeof</span> bar; <span class="comment">// &quot;undefined&quot;</span>
+</pre></td>
+</tr></table>
+</div>
+
+<p>But this turns out not to work well for our other conditions, which evaluate differently:</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+</pre></td>
+  <td class="code"><pre><span class="keyword">typeof</span> <span class="predefined-constant">null</span>;  <span class="comment">// &quot;object&quot; (what?!)</span>
+<span class="keyword">typeof</span> <span class="string"><span class="delimiter">&quot;</span><span class="delimiter">&quot;</span></span>;    <span class="comment">// &quot;string&quot;</span>
+</pre></td>
+</tr></table>
+</div>
+
+<p>So we need to add other “if” conditions to check.. but there turns out to be a better way!</p>
+
+<h3 id="exploiting-loose-typing">Exploiting loose typing</h3>
+
+<p>JavaScript is a loosely typed language, which means that it will “automagically” cast variables into other types when necessary (i.e. when adding a Number to a String), sometimes resulting in the unexpected. For instance, whenever we use the “if” statement, the expected input is a Boolean true/false value. If JavaScript gets anything other than a Boolean, such as a String or a Number, instead of blowing up completely (as in strictly typed languages such as C), it’ll cast the variable into a Boolean for you.</p>
+
+<p>“How handy!” you might think. Except in the following unexpected cases:</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+</pre></td>
+  <td class="code"><pre><span class="keyword">if</span>(<span class="string"><span class="delimiter">&quot;</span><span class="content">0</span><span class="delimiter">&quot;</span></span>) {
+  <span class="comment">// this will run because &quot;0&quot; is true</span>
+}
+
+<span class="keyword">if</span>(<span class="string"><span class="delimiter">&quot;</span><span class="content">false</span><span class="delimiter">&quot;</span></span>) {
+  <span class="comment">// this will run because &quot;false&quot; is true</span>
+}
+</pre></td>
+</tr></table>
+</div>
+
+<p>To see what JavaScript will cast a value to without having to use an <code>if</code> statement, we could create a new Boolean value with the following:</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+</pre></td>
+  <td class="code"><pre>Boolean(<span class="integer">0</span>);    <span class="comment">// false</span>
+Boolean(<span class="string"><span class="delimiter">&quot;</span><span class="content">0</span><span class="delimiter">&quot;</span></span>);  <span class="comment">// true</span>
+</pre></td>
+</tr></table>
+</div>
+
+<p>Or we can use the less intuitive but quick way of using double exclamation marks (this will probably award you cleverness points in someone’s book.. hopefully those points actually matter):</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+</pre></td>
+  <td class="code"><pre>!!<span class="integer">0</span>;    <span class="comment">// false</span>
+!!<span class="string"><span class="delimiter">&quot;</span><span class="content">0</span><span class="delimiter">&quot;</span></span>;  <span class="comment">// true</span>
+</pre></td>
+</tr></table>
+</div>
+
+<p>This works because !foo converts foo to a Boolean but negates its original value, turning it on its head. !!foo converts foo to a Boolean and flips it back to its expected value, which is the same value that’s evaluated by our <code>if</code> statement.</p>
+
+<p>Using this ALMOST gives us the answer we’re looking for:</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+<strong><a href="#n10" name="n10">10</a></strong>
+<a href="#n11" name="n11">11</a>
+<a href="#n12" name="n12">12</a>
+<a href="#n13" name="n13">13</a>
+</pre></td>
+  <td class="code"><pre>!!foo0; <span class="comment">// ReferenceError: foo0 is not defined</span>
+
+<span class="keyword">var</span> foo1;
+!!foo1; <span class="comment">// false</span>
+
+<span class="keyword">var</span> foo2 = <span class="predefined-constant">null</span>;
+!!foo2; <span class="comment">// false (same as !!null)</span>
+
+<span class="keyword">var</span> foo3 = <span class="string"><span class="delimiter">&quot;</span><span class="delimiter">&quot;</span></span>;
+!!foo3; <span class="comment">// false (same as !!&quot;&quot;)</span>
+
+<span class="keyword">var</span> foo4 = <span class="string"><span class="delimiter">&quot;</span><span class="content">bar</span><span class="delimiter">&quot;</span></span>;
+!!foot4; <span class="comment">// true (same as !!&quot;bar&quot;)</span>
+</pre></td>
+</tr></table>
+</div>
+
+<p>Excluding the first example, now we can test for uninitialized variables (foo1), null variables (foo2), and empty strings (foo3) all with just an <code>if</code> statement:</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+<strong><a href="#n10" name="n10">10</a></strong>
+<a href="#n11" name="n11">11</a>
+</pre></td>
+  <td class="code"><pre><span class="keyword">if</span>(foo1) {
+  <span class="comment">// do something with foo1</span>
+}
+
+<span class="keyword">if</span>(foo2) {
+  <span class="comment">// do something with foo2</span>
+}
+
+<span class="keyword">if</span>(foo3) {
+  <span class="comment">// do something with foo3</span>
+}
+</pre></td>
+</tr></table>
+</div>
+
+<p>Dang… so close! But we can’t yet test the first case without an error:</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+</pre></td>
+  <td class="code"><pre><span class="keyword">if</span>(foo0) {  <span class="comment">// ReferenceError: foo0 is not defined</span>
+
+}
+</pre></td>
+</tr></table>
+</div>
+
+<h3 id="foo-versus-windowfoo-and-thisfoo">foo versus window.foo and this.foo</h3>
+
+<p>The secret to our solution lies in how JavaScript handles undefined variables versus undefined properties. Here’s a quick reminder on the difference between the two:</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+<a href="#n6" name="n6">6</a>
+</pre></td>
+  <td class="code"><pre><span class="comment">// variable foo</span>
+<span class="keyword">var</span> foo;
+
+<span class="comment">// property bar (and object variable foo)</span>
+<span class="keyword">var</span> foo = {};  <span class="comment">// create an empty object to add bar too</span>
+foo.bar = <span class="string"><span class="delimiter">&quot;</span><span class="delimiter">&quot;</span></span>;
+</pre></td>
+</tr></table>
+</div>
+
+<p>The difference between these makes all the difference whether a fatal error occurs:</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+</pre></td>
+  <td class="code"><pre>foo;  <span class="comment">// ReferenceError: foo is not defined</span>
+
+<span class="keyword">var</span> foo = {};
+foo.bar;  <span class="comment">// undefined</span>
+foo.blah; <span class="comment">// undefined</span>
+</pre></td>
+</tr></table>
+</div>
+
+<p>We can randomly invent and check any property of <code>foo</code> we want, and the code will keep chugging along:</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+<strong><a href="#n10" name="n10">10</a></strong>
+</pre></td>
+  <td class="code"><pre><span class="keyword">var</span> foo = {};
+foo.something = <span class="string"><span class="delimiter">&quot;</span><span class="content">hello</span><span class="delimiter">&quot;</span></span>;
+
+<span class="keyword">if</span>(foo.bar) { <span class="comment">// undefined, interpreted as false (same as !!foo.bar)</span>
+  <span class="comment">// never runs</span>
+}
+
+<span class="keyword">if</span>(foo.something) {
+  foo.something;  <span class="comment">// &quot;hello&quot;</span>
+}
+</pre></td>
+</tr></table>
+</div>
+
+<p>Now comes the magic. If you know anything about JavaScript running in the browser, you know that all global variables are part of the <code>window</code> object. This means <code>foo</code> and <code>window.foo</code> are equivalent:</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+<a href="#n6" name="n6">6</a>
+</pre></td>
+  <td class="code"><pre><span class="keyword">var</span> foo;
+
+foo === window.foo;  <span class="comment">// true</span>
+
+<span class="comment">// &quot;this&quot; is another bag of worms, but note this anyway</span>
+<span class="local-variable">this</span>.foo === window.foo;
+</pre></td>
+</tr></table>
+</div>
+
+<p>So technically our variable foo is a <em>property</em> of the window object. So we should be able to check for any arbitrary variable in the window scope now!</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+</pre></td>
+  <td class="code"><pre>window.foo;  <span class="comment">// undefined (not a fatal error!)</span>
+
+<span class="comment">// even though we're checking for the same thing, we get a fatal error…</span>
+foo;  <span class="comment">// ReferenceError: foo is not defined</span>
+</pre></td>
+</tr></table>
+</div>
+
+<h3 id="practical-uses">Practical uses</h3>
+
+<p>Now as long as we have a global entry point for our code, we can write our code in such a way that it won’t ever give us a fatal error if our variables aren’t yet defined:</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+</pre></td>
+  <td class="code"><pre><span class="keyword">if</span>(window.foo &amp;&amp; foo.bar) {
+  foo.bar();
+}
+</pre></td>
+</tr></table>
+</div>
+
+<p>Of course nothing happens, because we haven’t defined foo. But why doesn’t foo.bar give us a fatal error? Because the first test, <code>window.foo</code> failed out. It would be useless processing for the JavaScript engine to also evaluate the second statement, because the end result will still be the same (false &#038;&#038; true results in false, false &#038;&#038; false results in false). So it doesn’t get so far as <code>foo.bar</code>.</p>
+
+<p>And now the code will work properly when we hook up our code to our <code>foo</code> global namespace:</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+</pre></td>
+  <td class="code"><pre><span class="keyword">var</span> foo = {
+  <span class="function">bar</span>: <span class="keyword">function</span>() {
+    alert(<span class="string"><span class="delimiter">&quot;</span><span class="content">hello world</span><span class="delimiter">&quot;</span></span>);
+  }
+}
+
+<span class="keyword">if</span>(window.foo &amp;&amp; foo.bar) {
+  foo.bar();  <span class="comment">// &quot;hello world&quot;</span>
+}
+</pre></td>
+</tr></table>
+</div>
+
+<h3 id="shorthand">Shorthand</h3>
+
+<p>It’s becoming common to see an abbreviation for the above code. Check out the following two methods, which accomplish the same thing:</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+</pre></td>
+  <td class="code"><pre><span class="comment">// Method 1</span>
+<span class="keyword">if</span>(window.foo &amp;&amp; foo.bar) {
+  foo.bar();  <span class="comment">// &quot;hello world&quot;</span>
+}
+
+<span class="comment">// Method 2</span>
+window.foo &amp;&amp; foo.bar &amp;&amp; (foo.bar());
+</pre></td>
+</tr></table>
+</div>
+
+<p>Don’t get too scared.. these blocks of code are equivalent. Method 2 is shorter, but it simply goes something like this: if window.foo isn’t set, stop evaluating this line (just as above in the <code>if</code> statement). Otherwise, if foo.bar exists then execute the code in parentheses, which gives us an alert (“hello world”);</p>
+
+<p>Just a word of caution about using Method 2: it’s obviously less clear what’s going on here. Your own cleverness might actually result in unnecessary confusion, especially of other people work in the same code base and they’re at different levels of understanding. In these cases we should first strive to be clear, and then only clever if it’s not at the expense of being clear.</p>
+
+<p>It’s also likely that a code minifier would take care of this cleverness for us at build time, giving us the best of both worlds.</p>
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post">
@@ -1582,80 +2038,6 @@ console.log(foo);
 <h4 id="the-dom">The DOM</h4>
 
 <p>…</p>
-
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post">
-	<header>
-		<h2 class="title">
-			
-			<a href="/2010/mobile-javascript-libraries-and-frameworks">
-			
-				Mobile JavaScript Libraries and Frameworks (Mobile Web Part 7)</a>
-		</h2>
-		<div class="meta date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-12-06T00:00:00-08:00" pubdate data-updated="true">Dec 6<span>th</span>, 2010</time></div>
-	</header>
-	<div class="entry-content">
-		<h3 id="intro">Intro</h3>
-
-<p>This is designed to be a “living” post of available materials which will hopefully be updated frequently.</p>
-
-<p>Right now there’s not much, just some links, but I hope to keep adding materials, so check back!</p>
-
-<h3 id="the-list">The List</h3>
-
-<p><a href="http://www.sencha.com/products/touch/">Sencha Touch</a><br />
-<a href="http://www.phonegap.com/">PhoneGap</a> – native wrapper which provides access to native hardware through their own JavaScript APIs<br />
-<a href="http://jquerymobile.com/">jQuery Mobile</a> – a separate mobile UI which has jQuery as a dependency<br />
-<a href="http://developer.apple.com/iad/">iAd</a> – an update to Apple’s PastryKit, but probably intended only for ads<br />
-<a href="http://zeptojs.com/">Zepto.js</a><br />
-<a href="http://joapp.com/">Jo HTML5 Mobile App Framework</a><br />
-<a href="http://touch.sproutcore.com/hedwig/">Sproutcore Touch</a><br />
-<a href="http://unify.github.com/unify/">Unify</a><br />
-<a href="http://developer.yahoo.com/yui/3/">YUI3</a> – the desktop library has taken its first steps in supporting mobile (there’s no separate version just for mobile)<br />
-<a href="http://www.springsource.org/spring-mobile">Spring Mobile</a>: an extension to Spring MVC.<br />
-<a href="http://pyxismobile.com/">pyxis mobile</a><br />
-<a href="http://www.winktoolkit.org/">Wink Toolkit</a><br />
-<a href="http://chocolatechipmobile.wordpress.com/">ChocolateChip Mobile</a><br />
-<a href="http://webapp-net.com/">WebApp.Net</a><br />
-<a href="http://paularmstrongdesigns.com/projects/basejs/">baseJS</a><br />
-<a href="http://xuijs.com/">XUI</a><br />
-<a href="http://iwebkit.net/">iWebKit</a><br />
-<a href="http://www.jqtouch.com/">jQTouch</a><br />
-<a href="http://notes.sencha.com/post/1483278482/wed-like-to-extend-a-warm-welcome-to-one-of-our">MooTouch</a> – acquired and integrated into Sencha<br />
-<a href="http://code.google.com/p/iphone-universal/">UiUIKit (Universal iPhone UI Kit)</a><br />
-<a href="http://code.google.com/p/ciui-dev/">CiUI</a> – CNET iPhone UI<br />
-<a href="">UiUIKit</a><br />
-<a href="http://www.iui-js.org/">iUI</a> (<a href="http://code.google.com/p/iui/">on Google Code</a>) – the first library for the iPhone as far as I know.<br />
-<a href="http://davidbcalhoun.com/2009/pastrykit-digging-into-an-apple-pie">PastryKit</a> – Apple’s proprietary framework, peeked into just for curiousity (not recommended for use)</p>
-
-<h3 id="more-from-the-mobile-web-series">More from the Mobile Web series:</h3>
-
-<p><a href="http://davidbcalhoun.com/2010/viewport-metatag">Part 1: The viewport metatag</a><br />
-<a href="http://davidbcalhoun.com/2010/the-mobile-developers-toolkit-mobile-web-part-2">Part 2: The mobile developer’s toolkit</a><br />
-<a href="http://davidbcalhoun.com/2010/designing-buttons-that-dont-suck">Part 3: Designing buttons that don’t suck</a><br />
-<a href="http://davidbcalhoun.com/2010/on-designing-a-mobile-webpage">Part 4: On designing a mobile webpage</a><br />
-<a href="http://davidbcalhoun.com/2010/using-mobile-specific-html-css-javascript">Part 5: Using mobile-specific HTML, CSS, and JavaScript</a><br />
-<a href="http://davidbcalhoun.com/2010/dealing-with-device-orientation">Part 6: Dealing with device orientation</a><br />
-<a href="http://davidbcalhoun.com/2010/mobile-javascript-libraries-and-frameworks">Part 7: Mobile JavaScript libraries and frameworks</a></p>
-
 
 		
 		
