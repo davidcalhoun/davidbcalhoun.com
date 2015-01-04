@@ -182,4 +182,4 @@ I remember being fascinated with the ceilings here when I was a kid, so forgive 
 {% imgcap http://davidbcalhoun.com/wp-content/uploads/2014/2014-06-hearst-castle-library-5D__2707-david-calhoun.jpg 1000 666 Hearst Castle library (Photo copyright David Calhoun)  %}
 
 
-Stay tuned for part two!
+This is a two-part post.  If you liked this one, also be sure to check out [part two](http://davidbcalhoun.com/2014/my-year-in-photos-2014-part-2/).

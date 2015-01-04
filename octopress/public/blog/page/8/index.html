@@ -7,7 +7,7 @@
 
 	<meta name="author" content="David Calhoun">
 
-<meta name="description" content="Result table Test Evo (2.1) Incredible (2.1) Nexus One (2.2) Total 16167ms 15237ms 5452ms 3D 2014ms 1835ms 946ms Access 2126ms 1892ms 463ms Bitops &hellip;"> <meta name="keywords" content="">
+<meta name="description" content="Result table Test iOS 3.1.3 (3GS) iOS 4 GM (3GS) % change Total 15396ms 13787ms -10.5% 3D 2411ms 1917ms -20.5% Access 1884ms 1893ms +0.5% Bitops &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -46,6 +46,261 @@
 </header>
 
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/2010/sunspider-ios-3-1-3-versus-ios-4-gm">
+			
+				JavaScript SunSpider Test: iOS 3.1.3 Versus iOS 4 GM</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-06-10T00:00:00-07:00" pubdate data-updated="true">Jun 10<span>th</span>, 2010</time></div>
+	</header>
+	<div class="entry-content">
+		<h3 id="result-table">Result table</h3>
+
+<table>
+  <tr>
+    <td>
+      Test
+    </td>
+    
+    <td>
+      iOS 3.1.3 (3GS)
+    </td>
+    
+    <td>
+      iOS 4 GM (3GS)
+    </td>
+    
+    <td>
+      % change
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Total
+    </td>
+    
+    <td>
+      15396ms
+    </td>
+    
+    <td>
+      13787ms
+    </td>
+    
+    <td class="positive">
+      -10.5%
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      3D
+    </td>
+    
+    <td>
+      2411ms
+    </td>
+    
+    <td>
+      1917ms
+    </td>
+    
+    <td class="positive">
+      -20.5%
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Access
+    </td>
+    
+    <td>
+      1884ms
+    </td>
+    
+    <td>
+      1893ms
+    </td>
+    
+    <td class="negative">
+      +0.5%
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Bitops
+    </td>
+    
+    <td>
+      1044ms
+    </td>
+    
+    <td>
+      1239ms
+    </td>
+    
+    <td class="negative">
+      +18.7%
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Controlflow
+    </td>
+    
+    <td>
+      143ms
+    </td>
+    
+    <td>
+      221ms
+    </td>
+    
+    <td class="negative">
+      +54.5%
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Crypto
+    </td>
+    
+    <td>
+      982ms
+    </td>
+    
+    <td>
+      850ms
+    </td>
+    
+    <td class="positive">
+      -13.4%
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Date
+    </td>
+    
+    <td>
+      1355ms
+    </td>
+    
+    <td>
+      1065ms
+    </td>
+    
+    <td class="positive">
+      -21.4%
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Math
+    </td>
+    
+    <td>
+      2053ms
+    </td>
+    
+    <td>
+      1511ms
+    </td>
+    
+    <td class="positive">
+      -26.4%
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Regexp
+    </td>
+    
+    <td>
+      1616ms
+    </td>
+    
+    <td>
+      1916ms
+    </td>
+    
+    <td class="negative">
+      +18.6%
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      String
+    </td>
+    
+    <td>
+      3908ms
+    </td>
+    
+    <td>
+      3175ms
+    </td>
+    
+    <td class="positive">
+      -18.8%
+    </td>
+  </tr>
+</table>
+
+<h3 id="thoughts">Thoughts</h3>
+
+<p>After running these SunSpider tests, it looks like overall there’s significant speed gains between iOS 3.1.3 and iOS 4 GM. However, it’s concerning from these tests there were some things that actually ran <em>slower</em> on iOS 4. This either represents a real speed loss between the versions, a margin of error, or some flaw or inconsistency while testing. Or maybe I possibly have some wrong setting on my phone? Any input would be appreciated.</p>
+
+<h3 id="testing-methodology">Testing methodology</h3>
+
+<p>Test: <a href="http://www2.webkit.org/perf/sunspider-0.9.1/sunspider-0.9.1/driver.html">SunSpider 0.9.1</a></p>
+
+<p>Device: iPhone 3GS</p>
+
+<p>The test was run five separate times on the same phone for each version of the OS. The phone was completely turned off and on before each test.</p>
+
+<p>The most extreme values of the five tests were thrown out, and the resulting four tests were averaged (sometimes from three tests when the values were very close together). I’m no statistics expert, so if you’d like to work it out for yourself, here are my raw test results:</p>
+
+<p><a href="http://davidbcalhoun.com/wp-content/uploads/2010/iOS-3.1.3.html">SunSpider iOS 3.1.3 results (5 tests)</a></p>
+
+<p><a href="http://davidbcalhoun.com/wp-content/uploads/2010/iOS-4-GM.html">SunSpider iOS 4 results (5 tests)</a></p>
+
+<h3 id="related-links">Related links</h3>
+
+<p><a href="http://www.medialets.com/blog/2009/06/24/speed-test-iphone-3gs-even-faster-than-apple-claims/">Speed Test: iPhone 3GS Even Faster than Apple Claims</a></p>
+
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post">
@@ -1180,91 +1435,6 @@ padding: 1px 2px 3px 4px;  /* 4 values: top, right, bottom, left */
 
 </article>
 
-
-    <article class="post">
-	<header>
-		<h2 class="title">
-			
-			<a href="/2010/links-for-the-week-of-february-14-2010">
-			
-				Links for the Week of February 14, 2010</a>
-		</h2>
-		<div class="meta date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-02-21T00:00:00-08:00" pubdate data-updated="true">Feb 21<span>st</span>, 2010</time></div>
-	</header>
-	<div class="entry-content">
-		<h3 id="general-links">General links</h3>
-
-<ul class="links">
-  <li>
-    <a href="http://igoro.com/archive/what-really-happens-when-you-navigate-to-a-url/">What really happens when you navigate to a URL</a> &#8211; great in-depth explanation of computer-to-server transactions. With pictures! <li>
-      <a href="http://googlegeodevelopers.blogspot.com/2010/02/update-on-qualified-developer-program.html">(Google) Update on Qualified Developer Program</a> &#8211; some insight into the motivation behind <a href="http://code.google.com/qualify/">Google&#8217;s Qualified Developer Program</a>
-    </li> 
-    <h3>
-      HTML5/CSS3 and new web technology
-    </h3>
-    
-    <ul class="links">
-      <li>
-        <a href="http://www.slideshare.net/madrobby/i-cant-believe-its-not-flash">I Can&#8217;t Believe It&#8217;s Not Flash: Thomas Fuchs&#8217;s slides from his presentation at Webstock 2010</a>
-      </li>
-      <li>
-        <a href="http://designinformer.com/use-css3-now/">You Can Use CSS3 Right Now</a>
-      </li>
-      <li>
-        <a href="http://devsnippets.com/article/designing-with-html5-css3.html">Designing for the Future with HTML5+CSS3 : Tutorials and Best Practices</a>
-      </li>
-    </ul>
-    
-    <h3>
-      Mobile
-    </h3>
-    
-    <ul class="links">
-      <li>
-        <a href="http://www.engadget.com/2010/02/17/windows-phone-7-series-everything-you-ever-wanted-to-know/?s=t5">Windows Phone 7 Series: everything you ever wanted to know</a> &#8211; many details on Microsoft&#8217;s new phone OS announced this week.
-      </li>
-      <li>
-        <a href="http://www.engadget.com/2010/02/16/rim-demos-new-webkit-based-blackberry-browser-at-mwc-its-fas/">RIM demos new WebKit-based BlackBerry browser at MWC &#8212; it&#8217;s fast!</a> &#8211; BlackBerry also had an announcement of their own: their new Webkit-based browser in development since their acquisition of Torch Mobile. Torch was developing the <a href="http://en.wikipedia.org/wiki/Iris_Browser">Iris Browser</a>, which was one of the few browsers to score 100/100 on the Acid3 test. Its JavaScript engine was WebKit&#8217;s Nitro (aka SquirrelFish Extreme (SFX), formerly known as JavaScriptCore)
-      </li>
-    </ul>
-    
-    <h3>
-      Videos
-    </h3>
-    
-    <h4>
-      BlackBerry showing off its new WebKit Browser
-    </h4>
-    
-    <p>
-    </p>
-    
-    <h4>
-      Engadget&#8217;s hands-on demo of Windows Phone 7 Series
-    </h4>
-    
-    <p>
-    </p>
-</li></ul>
-
-		
-		
-	</div>
-
-</article>
-
 <nav id="pagenavi">
     
         <a href="/blog/page/7/" class="prev">Previous</a>
@@ -1278,7 +1448,7 @@ padding: 1px 2px 3px 4px;  /* 4 values: top, right, bottom, left */
 <br>
 <br>
 <br>
-&copy; 2014
+&copy; 2015
 <a href="mailto:david.b.calhoun@gmail.com">David Calhoun</a> (<a href="https://twitter.com/franksvalli">@franksvalli</a>) - <a href="https://www.linkedin.com/in/davidcalhoun">LinkedIn</a> - <a href="http://themaingate.net/resume/">Resume</a></footer>
 	<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="/javascripts/slash.js"></script> -->

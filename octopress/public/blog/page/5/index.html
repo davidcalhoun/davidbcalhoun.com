@@ -7,7 +7,7 @@
 
 	<meta name="author" content="David Calhoun">
 
-<meta name="description" content="In general it’s a good practice to check for the existence of something before blindly using it by faith and hoping it works. There are various &hellip;"> <meta name="keywords" content="">
+<meta name="description" content="(OR “The Post In Which I Conflate Programming and Philosophy” OR “The Programmer’s Existentialist Crisis”) I woke up this morning to read Dmitry A. &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -46,6 +46,62 @@
 </header>
 
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/2011/improving-yourself-as-a-programmer-versus-as-a-human-being">
+			
+				Improving Yourself as a Programmer Versus as a Human Being</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-02-20T00:00:00-08:00" pubdate data-updated="true">Feb 20<span>th</span>, 2011</time></div>
+	</header>
+	<div class="entry-content">
+		<p>(OR “The Post In Which I Conflate Programming and Philosophy” OR “The Programmer’s Existentialist Crisis”)</p>
+
+<p>I woke up this morning to read Dmitry A. Soshnikov’s tweet:<br />
+<a href="http://twitter.com/#!/DmitrySoshnikov/status/39356492058607616"><img src="http://davidbcalhoun.com/wp-content/uploads/2011/02/two-programming-languages.png" alt="Have one-two langs in which you are a master and know professionally, and in addition, consider alternative langs. Your experience will grow." width="661" height="318" class="aligncenter size-full wp-image-639" /></a></p>
+
+<p>While this seems like good advice for aspiring programmers, I can’t help but think what this means for those who will buy into this. Us programmers have a keen ability to sit and focus on problems for extended periods of time, usually to the detriment of everything else around us. From the perspective of “real life”, we might as well be sitting in a basement somewhere playing World of Warcraft. Sure, programming is more productive, profitable, and surely not brainless, but at the end of the day we could still only be sitting in a basement somewhere. What I mean to say here is that we’re not actually living our actual lives doing these things.</p>
+
+<p>I realize Dmitry was only talking about learning another programming language for professional life, but for me and so many others, professional life is not easily separated from personal life. We don’t just work during the week during work hours. We can’t just turn off our minds and stop thinking about it when we go home. I end up thinking about programming or web design puzzles in my leisure time and on weekends, largely <em>because I enjoy doing so</em>. But when I see something questioning whether I should be devoting even more of this time to learning another programming language, I think about what I could be doing instead. Put another way, I think about what is missing and neglected in my life, and how those things will remain missing and neglected.</p>
+
+<p>Socrates famously said <a href="http://en.wikiquote.org/wiki/Socrates#Apology">“The unexamined life is not worth living”</a>. He, along with those who followed in his immediate footsteps (famously, Plato and Aristotle) were concerned with how us mere mortals should live our lives, and more particularly how we should lead <em>good</em> lives. The sad fact about (western) philosophy is that it’s turned into a shadow of its former self, now plagued by millennia of self-doubt and failed grandiose systems. But it seems the original Socratic intention of finding how to lead a <em>good</em> life is still an admirable goal, even if we disagree on how exactly to achieve it.</p>
+
+<p>Socrates also had a bit to say about those seeking to be experts in their field, and he couldn’t resist getting in a jab at his wife in the process:</p>
+
+<blockquote>
+  <p>It is the example of the rider who wishes to become an expert horseman: “None of your soft-mouthed, docile animals for me,” he says; “the horse for me to own must show some spirit” in the belief, no doubt, if he can manage such an animal, it will be easy enough to deal with every other horse besides. And that is just my case. I wish to deal with human beings, to associate with man in general; hence my choice of wife. I know full well, if I can tolerate her spirit, I can with ease attach myself to every human being else.</p>
+</blockquote>
+
+<p>Yes, Socrates essentially just compared his wife with a horse. A wild horse, to be exact.</p>
+
+<p>I’m unsure if this translates well into learning programming languages. Does this mean we should learn the worst languages first, so that the rest of the languages we learn will be comparably easy? I hope not, that seems like quite a lot of wasted time. But I certainly agree that <em>the first languages we learn shouldn’t be the easiest</em>. This might only make us frustrated in the long run. So perhaps we can learn something from Socrates’s quote after all, if taken with a grain of salt.</p>
+
+<p>So should we still strive to become experts in our field? I believe that’s an admirable and acceptable goal, but it shouldn’t be our main goal. We should first be concerned with leading good lives. I myself have a LONG way to go on this point, believe me.</p>
+
+<p>I’ll surely learn another programming language, but not for its own sake, unless my life is in reasonably good order.</p>
+
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post">
@@ -1946,105 +2002,6 @@ myAPI.publicFunction();  // 'Foo'
 
 </article>
 
-
-    <article class="post">
-	<header>
-		<h2 class="title">
-			
-			<a href="/2010/book-javascript">
-			
-				Book: JavaScript</a>
-		</h2>
-		<div class="meta date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-12-09T00:00:00-08:00" pubdate data-updated="true">Dec 9<span>th</span>, 2010</time></div>
-	</header>
-	<div class="entry-content">
-		<p>…</p>
-
-<h3 id="functions">Functions</h3>
-
-<h4 id="parenthesis-and-function-execution">Parenthesis and function execution</h4>
-
-<p>Parenthesis kick off the execution of a function:</p>
-
-<pre name="code" class="JScript">function foo() {
-	return true;
-}
-
-typeof foo;    // "function"
-typeof foo();  // "boolean"
-</pre>
-
-<p>Both of these are related to the function we just defined, but notice that a function reference without parenthesis is simply a pointer to the function and nothing more. The function with parenthesis executes our function and returns a result (true, which is of type “boolean”). We can assign these to variables:</p>
-
-<pre name="code" class="JScript">var myFunction = foo;  // store the function pointer
-var myResult = foo();  // store the result of executing the function
-
-typeof myFunction;     // "function"
-typeof myResult;       // "boolean"
-</pre>
-
-<h4 id="passing-parameters">Passing parameters</h4>
-
-<p>-params<br />
--passing objects</p>
-
-<h4 id="self-executing-anonymous-functions">Self-executing anonymous functions</h4>
-
-<p>A self-executing anonymous function is an unnamed function that’s simply executed immediately after being defined. Here’s an example:</p>
-
-<pre name="code" class="JScript">(function(){})();
-</pre>
-
-<p>Just as above, we can pass in parameters:</p>
-
-<pre name="code" class="JScript">(function(param){
-	param;  // "foo"
-})('foo');
-</pre>
-
-<p>Why on earth would you want to use this? As it turns out, this is a nice way to sandbox your code and is preferred to simply declaring code out in the open. Have a look at the difference:</p>
-
-<pre name="code" class="JScript">// Old way (antipattern!)
-var foo = 'bar';
-console.log(foo);
-
-// New way (sandboxed)
-(function(){
-	var foo = 'bar';
-	console.log(foo);
-})();
-</pre>
-
-<p>These two methods run the same code and achieve the same end, but the second example is sandboxed because we say it has “functional scope” and not “global scope”.</p>
-
-<h4 id="scope">Scope</h4>
-
-<h4 id="function-declaration-vs-function-literal">Function declaration vs. function literal</h4>
-
-<h4 id="function-hoisting">Function hoisting</h4>
-
-<h4 id="the-dom">The DOM</h4>
-
-<p>…</p>
-
-		
-		
-	</div>
-
-</article>
-
 <nav id="pagenavi">
     
         <a href="/blog/page/4/" class="prev">Previous</a>
@@ -2058,7 +2015,7 @@ console.log(foo);
 <br>
 <br>
 <br>
-&copy; 2014
+&copy; 2015
 <a href="mailto:david.b.calhoun@gmail.com">David Calhoun</a> (<a href="https://twitter.com/franksvalli">@franksvalli</a>) - <a href="https://www.linkedin.com/in/davidcalhoun">LinkedIn</a> - <a href="http://themaingate.net/resume/">Resume</a></footer>
 	<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="/javascripts/slash.js"></script> -->
