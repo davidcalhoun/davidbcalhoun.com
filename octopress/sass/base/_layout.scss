@@ -12,14 +12,8 @@ body{
 	font-weight: 300;
 	line-height: 1.5;
 	background: $color-background;
-	@media screen and (max-width: 1040px){
-        width: 60%;
-		margin: 0 auto;
-	}
 	@media screen and (max-width: 600px){
 		font-size: 13px;
-        width: 80%;        
-		margin: 0 auto;
 	}
 }
 

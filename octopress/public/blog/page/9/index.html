@@ -7,7 +7,7 @@
 
 	<meta name="author" content="David Calhoun">
 
-<meta name="description" content="General links What really happens when you navigate to a URL &#8211; great in-depth explanation of computer-to-server transactions. With pictures! ( &hellip;"> <meta name="keywords" content="">
+<meta name="description" content="The frontend engineer lives at the intersection between design and engineering, and this is perhaps nowhere more true than in the world of mobile. &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -46,6 +46,778 @@
 </header>
 
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/2010/on-designing-a-mobile-webpage">
+			
+				On Designing a Mobile Webpage (Mobile Web Part 4)</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-05-26T00:00:00-07:00" pubdate data-updated="true">May 26<span>th</span>, 2010</time></div>
+	</header>
+	<div class="entry-content">
+		<p>The frontend engineer lives at the intersection between design and engineering, and this is perhaps nowhere more true than in the world of mobile. In order to make a usable desktop website, an engineer must have at least some sense of design, and fortunately a lot of this has been standardized over the years. But the world of mobile is full of more unknowns, and the field is changing rapidly, especially lately from the shift away from older feature phones to the focus on smartphones. As such, the mobile engineer has to be on their toes in the sense of both design and engineering.</p>
+
+<p>The focus of this article is on mobile design in general. I’m by no means an expert, but these are some things I’ve found to be essential and basic topics. Hopefully you will find this useful!</p>
+
+<h3 id="only-one-column">Only one column?</h3>
+
+<p>Mobile websites should only have one column of main content. This point is stressed again and again in mobile design, and for good reason: the paradigm of multi-column layouts is fairly well-entrenched in desktop design, but it’s simply not an option for a well-designed mobile site.</p>
+
+<p>To illustrate this point, the following two images are both 320 pixels wide, which is a common smartphone width in portrait mode. The image on the left is the Yahoo! front page (<a href="http://yahoo.com">yahoo.com</a>) in its three-column fixed width desktop size, and the image on the right is Yahoo! mobile’s front page (<a href="http://m.yahoo.com">m.yahoo.com</a>):</p>
+
+<p><img src="http://davidbcalhoun.com/wp-content/uploads/2010/05/yahoo-frontpage.jpg" alt="" title="Yahoo desktop front page" width="320" height="288" class="alignleft size-full wp-image-243 left-margin-large" style="padding: 0 0 6em 0;" /><img src="http://davidbcalhoun.com/wp-content/uploads/2010/05/yahoo-mobile.jpg" alt="" title="Yahoo Mobile front page" width="320" height="482" class="alignleft size-full wp-image-244 left-margin-large" /></p>
+
+<p>This might not be a fair comparison, as the desktop version isn’t optimized for mobile, so you can’t even read the text without zooming in. However, even if the size of the text was increased, it’s apparent that three columns is just too much, both because of screen width concerns as well as concerns about too much content. There’s simply too much information being crammed down the user’s throat. Chances are the user only wants to check a few things and then put the phone back in their pocket, and this three-column version of the site is preventing them from doing that.</p>
+
+<h3 id="modules-modules-modules">Modules, modules, modules</h3>
+
+<p>It’s helpful to think of a webpage as being composed of modules. If you’re converting a desktop website into a mobile site then you must essentially think of the website as bits of rearrangeable components:</p>
+
+<p><img src="http://davidbcalhoun.com/wp-content/uploads/2010/05/mobile-modules.png" alt="" title="Components of a website, broken into modules" width="774" height="479" class="size-full wp-image-253" /> 
+What you’re doing is essentially grabbing your most important components and making sure they appear at the top, then stacking each module on top of each other. And don’t forget we do have variable screen widths on mobile (even on phones themselves, since they can be either in portrait or landscape mode), so we should be sure that each module is taking up 100% of the available screen space. In more technical terms, yes, this means we have to make a fluid layout.</p>
+
+<h3 id="clarity-and-concision">Clarity and concision</h3>
+
+<p>It’s important to be both clear and concise in presentation. On the desktop we can get away with a certain amount of screen bloat, but users always appreciate simple sites when they come across them. This is a huge part of what made Google so successful: users came to the site for one thing, search, and the site was kept simple to facilitate that interaction.</p>
+
+<p>As it turns out, it’s quite hard to be clear and concise. I like to compare this to writing papers for school. Often we were given assignments that needed to be a minimum of X amount of words or pages, and it was sometimes challenging to find information to meet this minimum. Fortunately (or unfortunately) many students developed a highly refined skill of BSing to fill the word limit. But were you ever given an assignment where there was a word/page MAXIMUM? This turns out to be much harder to write for, mostly because you can’t BS it. You have to identify the fluff, the nonessential bits, and surgically remove them from your paper. (As a side note, in the area of computer science, notice how many HUGE tomes there are out there compared to smaller books. I would venture to guess that engineers have a hard time being concise.)</p>
+
+<p>This is just the problem we now face with mobile. We know how to fill up webpages with fluff: add an RSS feed here, add a module that ties into Facebook there, add another feed here, stick a relatively unimportant module there, add an excessive amount of social sharing buttons, and presto, we have a website that looks pretty active. But how does that translate to mobile? The questions you’re forced to ask yourself are: “do I really need this data feed displayed here?”, “do I need this huge Facebook module here taking up space?”. Or more positive questions like “what are the things users will come to my site to check, and how do I make it easier for them to find those things?”.</p>
+
+<p>In the case of the last question, it’s easy to see from the above screenshots what Yahoo mobile thought was most important: Mail, Search, and News, all of which are visible at the top of the page. Think about your website’s main two or three features and try to make those just as visible.</p>
+
+<h3 id="useful-links">Useful links</h3>
+
+<p><a href="http://www.w3.org/TR/mobile-bp/">W3C Mobile Web Best Practices 1.0</a><br />
+<a href="http://carsonified.com/blog/dev/tips-and-tricks-for-developing-mobile-widgets/">Tips and Tricks for developing Mobile Widgets</a></p>
+
+<h3 id="more-from-the-mobile-web-series">More from the Mobile Web series:</h3>
+
+<p><a href="http://davidbcalhoun.com/2010/viewport-metatag">Part 1: The viewport metatag</a><br />
+<a href="http://davidbcalhoun.com/2010/the-mobile-developers-toolkit-mobile-web-part-2">Part 2: The mobile developer’s toolkit</a><br />
+<a href="http://davidbcalhoun.com/2010/designing-buttons-that-dont-suck">Part 3: Designing buttons that don’t suck</a><br />
+<a href="http://davidbcalhoun.com/2010/on-designing-a-mobile-webpage">Part 4: On designing a mobile webpage</a><br />
+<a href="http://davidbcalhoun.com/2010/using-mobile-specific-html-css-javascript">Part 5: Using mobile-specific HTML, CSS, and JavaScript</a><br />
+<a href="http://davidbcalhoun.com/2010/dealing-with-device-orientation">Part 6: Dealing with device orientation</a><br />
+<a href="http://davidbcalhoun.com/2010/mobile-javascript-libraries-and-frameworks">Part 7: Mobile JavaScript libraries and frameworks</a></p>
+
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/2010/designing-buttons-that-dont-suck">
+			
+				Designing Buttons That Don&#8217;t Suck (Mobile Web Part 3)</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-05-19T00:00:00-07:00" pubdate data-updated="true">May 19<span>th</span>, 2010</time></div>
+	</header>
+	<div class="entry-content">
+		<p>A button is something that seems to be made just for mobile: it’s designed to be big and easy to activate, as opposed to small and harder to activate, like normal text links. This seems ideal for a mobile devices, which have a small display area and whose form of input is a person’s (relatively) fat finger interacting with the screen. Contrast this with the desktop, where the display area is much larger and the input device, the mouse, is a much more highly refined and sensitive pointing device.</p>
+
+<p>But you probably don’t want to make everything into a button. After all, there’s still a place for good old fashioned anchor tags. So what do you make into a button? Simple: areas of your website that get frequent usage. For instance, [mobile.twitter.com][1] has buttons for Search, Refresh results, and More (display more tweets), but leaves other things as anchors/hyperlinks, such as usernames and links in tweets. Basically, use common sense. You should have a mixture of both buttons and hyperlinks.</p>
+
+<p>There’s a distinction to be made between form input buttons and other things that look like buttons. The former occurs within a Form tag and can be used to submit a form of data when clicked (and you can [style it up all you want][2]!). The latter is simply an Anchor tag disguised as a big clickable button, which is the focus of this article.</p>
+
+<p>A button can be a very useful thing, and can make the user experience much much better. Yet it’s surprisingly easy to fail to create a proper button.</p>
+
+<h3 id="how-to-fail-at-creating-a-button">How to fail at creating a button</h3>
+
+<p>See if you can tell the difference between these two buttons:</p>
+
+<div class="button-container">
+  <div class="incorrect button">
+    <a href="#">More</a>
+  </div>
+  
+  <p>
+    <a href="#" class="correct button">More</a>  <p>
+      If the difference isn&#8217;t immediately apparent, try mousing over the following buttons:
+    </p>
+    
+    <div class="button-container hovers">
+      <div class="incorrect button">
+        <a href="#">More</a>
+      </div>
+      
+      <p>
+        <a href="#" class="correct button">More</a>  <p>
+          What&#8217;s the problem? The button on the top is only clickable when hovering over the text. In other words, it looks like a button but it acts just like a regular hyperlink. This is a common problem that I&#8217;ve seen a LOT, and I&#8217;ve even seen it on major websites (in fact, the faulty button is inspired by the live code on <a href="http://mobile.twitter.com">mobile.twitter.com</a>).
+        </p>
+        
+        <h3>
+          How does this happen?
+        </h3>
+        
+        <p>
+          My theory is that when a design is passed down to a developer, the developer may think their job ends when their code produces output that looks like the original design documents. But they fail to take into consideration the actual usability of the website.
+        </p>
+        
+        <p>
+          This is a simple mistake, but it definitely causes frustration when I find it on websites. And I find myself even more annoyed when I see this while browsing websites with my iPhone. It basically tells me that the developers don&#8217;t use their own website. That&#8217;s not a good impression to leave with your visitors.
+        </p>
+        
+        <h3>
+          Summary
+        </h3>
+        
+        <p>
+          In summary, buttons are an important part of your mobile website. They are designed to be easy to activate, so make sure that frequently used functions on your website are buttons. Also, don&#8217;t be lazy: TEST your code for usability and don&#8217;t assume that the product is done when it looks identical to the design specs.
+        </p>
+        
+        <h3>
+          More from the Mobile Web series:
+        </h3>
+        
+        <p>
+          <a href="http://davidbcalhoun.com/2010/viewport-metatag">Part 1: The viewport metatag</a><br /> <a href="http://davidbcalhoun.com/2010/the-mobile-developers-toolkit-mobile-web-part-2">Part 2: The mobile developer’s toolkit</a><br /> <a href="http://davidbcalhoun.com/2010/designing-buttons-that-dont-suck">Part 3: Designing buttons that don’t suck</a><br /> <a href="http://davidbcalhoun.com/2010/on-designing-a-mobile-webpage">Part 4: On designing a mobile webpage</a><br /> <a href="http://davidbcalhoun.com/2010/using-mobile-specific-html-css-javascript">Part 5: Using mobile-specific HTML, CSS, and JavaScript</a><br /> <a href="http://davidbcalhoun.com/2010/dealing-with-device-orientation">Part 6: Dealing with device orientation</a><br /> <a href="http://davidbcalhoun.com/2010/mobile-javascript-libraries-and-frameworks">Part 7: Mobile JavaScript libraries and frameworks</a>
+        </p>
+
+ [1]: http://mobile.twitter.com
+ [2]: http://girliemac.com/blog/2010/02/04/css3-box-shadow-with-inset-values-the-aqua-button-rerevisited/
+</p></div></p></div>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/2010/the-mobile-developers-toolkit-mobile-web-part-2">
+			
+				The Mobile Developer&#8217;s Toolkit (Mobile Web Part 2)</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-05-11T00:00:00-07:00" pubdate data-updated="true">May 11<span>th</span>, 2010</time></div>
+	</header>
+	<div class="entry-content">
+		<h3 id="tools-of-the-trade">Tools of the trade</h3>
+
+<p>You’re no mobile developer unless you have the tools to develop on mobile! And while it’s good to own at least one of the smartphones you’re developing on, it’s probably unrealistic to think that you’re going to go out of your way to buy several other unlocked smartphones just to test with. So you should have the next best thing: an SDK!</p>
+
+<p>But an SDK is just one of the tools of the trade. Here’s links to more things to get you started!</p>
+
+<h3 id="sdks-emulators-and-simulators">SDKs, Emulators and Simulators</h3>
+
+<p>Short of having access to a real phone, the next best thing is to have an emulator/simulator. And good news: all the major smartphones have SDKs available for you!</p>
+
+<p><a href="http://developer.apple.com/">iPhone SDK</a> (Mac OS X only) – the quintessential SDK for the quintessential smartphone. Includes iPhone simulator.<br />
+<a href="http://developer.android.com/sdk">Android SDK</a> (Mac OS X, Windows, and Linux)<br />
+<a href="http://developer.palm.com/">Palm webOS SDK</a> (Mac OS X, Windows, and Linux) – emulator for Palm Pre, Pixi, etc. Also check out Ares, the browser-based tool for creating web apps.<br />
+<a href="https://developer.mozilla.org/En/Mobile">Firefox Mobile emulator (aka Fennec)</a> – mobile version of Firefox being developed for new Nokias and soon Androids<br />
+<a href="http://www.opera.com/developer/tools/">Opera Mobile emulator</a> – this is the fastest emulator of the bunch, in terms of downloading and launching the program. Painless installation.<br />
+<a href="http://www.opera.com/mini/demo/">Opera Mini Simulator</a> (Browser-based Java applet) – In-browser simulator. Note that Opera Mini is different than Opera Mobile.<br />
+<a href="http://developer.windowsphone.com/windows-phone-7-series/">Windows Phone 7 Series emulator</a></p>
+
+<p>For a more complete list, see <a href="http://www.mobilexweb.com/emulators">Maximiliano Firtman’s Mobile Emulators &#038; Simulators: The Ultimate Guide</a></p>
+
+<h3 id="device-labs">Device labs</h3>
+
+<p>These are services which allow you to test on actual devices in a lab.</p>
+
+<p><a href="http://www.perfectomobile.com/">Perfecto Mobile</a></p>
+
+<p><a href="http://mite.keynote.com/">Keynote MITE (Mobile Interactive Testing Environment)</a> (Windows only) – a glorified user agent switcher. Doesn’t have testing of real devices.</p>
+
+<p><a href="http://www.deviceanywhere.com/">DeviceAnywhere</a> (Java-based software that runs on Windows and Mac OSX) – a service that lets you test on actual mobile devices sitting in labs around the world. It has a tendency to be a bit clunky, but there’s no real alternatives on the market. Only subscribe to this if you intend on supporting more than just smartphones.</p>
+
+<h3 id="mobile-javascript-libraries">Mobile JavaScript libraries</h3>
+
+<p>I’ve created <a href="http://davidbcalhoun.com/2010/mobile-javascript-libraries-and-frameworks">a separate entry for the mobile libraries and frameworks now available</a>.</p>
+
+<h3 id="hybrid-web--native">Hybrid (web + native)</h3>
+
+<p>The concept is simple: use what you know to create an app with HTML/CSS/JS and turn it into a marketable native app with one of these “wrapper” services.</p>
+
+<p><a href="http://www.phonegap.com/">PhoneGap</a><br />
+<a href="http://www.appcelerator.com/products/titanium-mobile-application-development/">appcelerator’s Titanium Mobile</a><br />
+<a href="http://www.quickconnectfamily.org/">QuickConnectFamily</a><br />
+<a href="http://rhomobile.com/">Rhomobile</a> (HTML-based)</p>
+
+<h3 id="user-agent-switchers">User agent switchers</h3>
+
+<p>Many websites sniff a browser’s user agent to detect if it’s a mobile device. As a developer this presents a challenge, because a lot of development is done on a desktop browser. With a user agent switcher, a developer can masquerade their desktop browser as a mobile browser.</p>
+
+<p><a href="https://addons.mozilla.org/en-US/firefox/addon/59/">Firefox addon: User Agent Switcher</a></p>
+
+<p>Safari: Enable the Develop toolbar (click on Safari -&gt; Preferences -&gt; Advanced) and click on Develop -&gt; User Agent. Select a predefined user agent or enter a custom agent by selecting “Other…”</p>
+
+<p>Chrome: There is no easy way to do this (note that the one user agent switcher extension for Chrome doesn’t work). Currently the only way is to set command line flags:</p>
+
+<div class="instructions">
+  <p>
+    To change the user agent of Chrome in Windows:
+  </p>
+  
+  <ol>
+    <li>
+      Make a copy of the shortcut to Chrome.
+    </li>
+    <li>
+      Right click the copy and select Properties.
+    </li>
+    <li>
+      In the Target field append &ndash;&ndash;user-agent=&#8221;myagent&#8221;
+    </li>
+  </ol>
+  
+  <p>
+    Example Target: “C:\Documents and Settings\Username\Local Settings\Application Data\Google\Chrome\Application\chrome.exe” &ndash;&ndash;user-agent=”Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)”
+  </p>
+</div>
+
+<div class="instructions">
+  <p>
+    To change the user agent of Chrome in Mac OSX:
+  </p>
+  
+  <ol>
+    <li>
+      Open Terminal
+    </li>
+    <li>
+      Enter the following into terminal: /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome &ndash;&ndash;user-agent=&#8221;myagent&#8221;
+    </li>
+  </ol>
+  
+  <p>
+    Example command: /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome &ndash;&ndash;user-agent=”Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)”
+  </p>
+</div>
+
+<h3 id="mobile-detection">Mobile detection</h3>
+
+<p>On the server side, mobile detection is mostly done by user agent sniffing (thus the need for the user agent switchers above), but there are <a href="http://wiki.forum.nokia.com/index.php/Detecting_Mobile_Devices_on_Web_Services">a few other methods</a>.</p>
+
+<p>“Lite” user agent detection: these methods implement a simple server-side function (commonly in PHP) to detect common mobile user agents. There’s a few versions, mostly based on code by <a href="//andymoore.info">Andy Moore</a>. There’s one implemented in the <a href="http://plugins.svn.wordpress.org/wordpress-mobile-pack/trunk/plugins/wpmp_switcher/lite_detection.php">WordPress Mobile Pack</a> and <a href="http://wiki.forum.nokia.com/index.php/Detecting_Mobile_Devices_on_Web_Services">a similar one described on the Nokia developer forums</a>.</p>
+
+<p><a href="http://wurfl.sourceforge.net/">WURFL (Wireless Universal Resource File)</a> – a 10+ year old project that is still being used and gaining momentum. It’s beneficial because it’s open source and it offers a lot of valuable information about devices.</p>
+
+<p><a href="http://deviceatlas.com/">DeviceAtlas</a> – essentially a commercial version of WURFL</p>
+
+<h3 id="reporting-bugs">Reporting bugs</h3>
+
+<p>Everybody’s human. All this new cutting-edge stuff isn’t exactly bug-free. Help squash bugs by reporting them on the project’s website. For best results, show a simplified example of the bug in action (try not to post big hunks of code!).</p>
+
+<p><a href="https://bugs.webkit.org/">WebKit Bugzilla</a><br />
+<a href="http://source.android.com/report-bugs">Android: Report bugs</a></p>
+
+<h3 id="blogs">Blogs</h3>
+
+<p>Keep up to date! There’s new stuff happening all the time on the mobile web.</p>
+
+<p><a href="http://www.quirksmode.org/blog/">QuirksBlog</a> – blog of <a href="http://twitter.com/ppk">Peter-Paul Koch (PPK)</a>, who is known for documenting and researching cross-browser inconsistencies. As of the last several years he’s been focusing on documenting mobile browser bugs.</p>
+
+<p><a href="http://daringfireball.net/">Daring Fireball</a> – John Gruber’s blog with a cultlike following. Frequently reports on mobile happenings, especially stuff relating to Apple.</p>
+
+<p><a href="http://webkit.org/blog/">Surfin’ Safari – The WebKit Blog</a><br />
+<a href="http://android-developers.blogspot.com/">Android Developers blog</a><br />
+<a href="http://blogs.msdn.com/iemobile/">IE for Windows Phone Team Weblog</a><br />
+<a href="http://my.opera.com/operamobile/blog/">Opera Mobile Blog</a><br />
+<a href="http://blogs.blackberry.com/">Inside BlackBerry – The Official BlackBerry Blog</a></p>
+
+<p><a href="http://ymobileblog.com/">Yahoo! Mobile Blog</a><br />
+<a href="http://googlemobile.blogspot.com/">Google Mobile Blog</a></p>
+
+<h3 id="miscellaneous">Miscellaneous</h3>
+
+<p><a href="http://mobile.yahoo.com/devcenter">Yahoo! Blueprint</a> – framework for normalizing cross-browser issues across thousands of devices</p>
+
+<h3 id="more-from-the-mobile-web-series">More from the Mobile Web series:</h3>
+
+<p><a href="http://davidbcalhoun.com/2010/viewport-metatag">Part 1: The viewport metatag</a><br />
+<a href="http://davidbcalhoun.com/2010/the-mobile-developers-toolkit-mobile-web-part-2">Part 2: The mobile developer’s toolkit</a><br />
+<a href="http://davidbcalhoun.com/2010/designing-buttons-that-dont-suck">Part 3: Designing buttons that don’t suck</a><br />
+<a href="http://davidbcalhoun.com/2010/on-designing-a-mobile-webpage">Part 4: On designing a mobile webpage</a><br />
+<a href="http://davidbcalhoun.com/2010/using-mobile-specific-html-css-javascript">Part 5: Using mobile-specific HTML, CSS, and JavaScript</a><br />
+<a href="http://davidbcalhoun.com/2010/dealing-with-device-orientation">Part 6: Dealing with device orientation</a><br />
+<a href="http://davidbcalhoun.com/2010/mobile-javascript-libraries-and-frameworks">Part 7: Mobile JavaScript libraries and frameworks</a></p>
+
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/2010/viewport-metatag">
+			
+				The Viewport Metatag (Mobile Web Part 1)</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-05-06T00:00:00-07:00" pubdate data-updated="true">May 6<span>th</span>, 2010</time></div>
+	</header>
+	<div class="entry-content">
+		<h3 id="the-skinny">The skinny</h3>
+
+<p>Use this:</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+</pre></td>
+  <td class="code"><pre><span class="tag">&lt;meta</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">viewport</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">content</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">width=device-width, initial-scale=1.0</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+</pre></td>
+</tr></table>
+</div>
+
+<h3 id="introduction">Introduction</h3>
+
+<p>This series of posts is intended to introduce web developers to basic techniques for designing for the mobile web. It assumes at least a basic knowledge of creating desktop websites.</p>
+
+<h3 id="the-problem">The problem</h3>
+
+<p>Ok, so you’ve settled down to learn how to write a website for a mobile device using your current knowledge of building desktop websites. So you start off with some pretty basic HTML:</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+<strong><a href="#n10" name="n10">10</a></strong>
+</pre></td>
+  <td class="code"><pre><span class="doctype">&lt;!doctype html&gt;</span>
+<span class="tag">&lt;html&gt;</span>
+<span class="tag">&lt;head&gt;</span>
+    <span class="tag">&lt;title&gt;</span>Hello world!<span class="tag">&lt;/title&gt;</span>
+<span class="tag">&lt;/head&gt;</span>
+
+<span class="tag">&lt;body&gt;</span>
+<span class="tag">&lt;p&gt;</span>Hello world!<span class="tag">&lt;/p&gt;</span>
+<span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span>
+</pre></td>
+</tr></table>
+</div>
+
+<p>Ok! You can’t get much simpler than that. You check it out and it looks good on all the desktop browsers, since there’s really no opportunity yet for any cross-browser inconsistencies. And then you check it out on your mobile device:</p>
+
+<p><a href="http://davidbcalhoun.com/wp-content/uploads/2010/05/hello-world-iphone.png"><img src="http://davidbcalhoun.com/wp-content/uploads/2010/05/hello-world-iphone.png" alt="" title="hello-world-iphone" width="320" height="480" class="size-full wp-image-199" /></a>Hello World on the iPhone</p>
+
+<p>Doh! Where’d we go wrong? The text is obviously way too small to read without zooming in.</p>
+
+<p>This is the first lesson in making mobile websites: width is your enemy. This is the first of many countless problems with device width you will encounter. Fair warning.</p>
+
+<p>If you think about it logically, it seems to make sense: mobile Safari took a look at the page and assumed it was a document designed for the desktop, which is true of the vast majority of websites. So it gave the website a width of 980 pixels and presented it zoomed out. Which is why we can’t read anything until we zoom into the page.</p>
+
+<h3 id="viewport">Viewport</h3>
+
+<p>But this is no good! What we need to do is tell the browser that this webpage is optimized for mobile. And this is where the viewport metatag comes into the picture.</p>
+
+<p>Now we tweak our Hello World just a bit…</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+<strong><a href="#n10" name="n10">10</a></strong>
+<a href="#n11" name="n11">11</a>
+<a href="#n12" name="n12">12</a>
+</pre></td>
+  <td class="code"><pre><span class="doctype">&lt;!doctype html&gt;</span>
+<span class="tag">&lt;html&gt;</span>
+<span class="tag">&lt;head&gt;</span>
+    <span class="tag">&lt;title&gt;</span>Hello world!<span class="tag">&lt;/title&gt;</span>
+
+    <span class="tag">&lt;meta</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">viewport</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">content</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">width=device-width</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+<span class="tag">&lt;/head&gt;</span>
+
+<span class="tag">&lt;body&gt;</span>
+<span class="tag">&lt;p&gt;</span>Hello world!<span class="tag">&lt;/p&gt;</span>
+<span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span>
+</pre></td>
+</tr></table>
+</div>
+
+<p>And we get this…<br />
+<a href="http://davidbcalhoun.com/wp-content/uploads/2010/05/hello-world-viewport-iphone.png"><img src="http://davidbcalhoun.com/wp-content/uploads/2010/05/hello-world-viewport-iphone.png" alt="" title="hello-world-viewport-iphone" class="aligncenter size-full wp-image-203" width="320" height="480" /></a>Hello World with the Viewport tag</p>
+
+<p>Much better! By setting the viewport width equal to “device-width”, we’re essentially telling it that the device width is 320px, not the default value of 980px that it guessed. If we set width=320 it would achieve the same result on the iPhone and a few other smartphones, but not all phones have this exact width, so it’s best to simply set device-width and let the mobile browser figure it out.</p>
+
+<p>This viewport metatag is supported on many smartphones, from iPhone to Android to webOS (Palm) to even Internet Explorer Mobile, Opera Mini and Opera Mobile.</p>
+
+<p>At the end of the day here’s what the standard viewport looks like, as grabbed from <a href="http://m.yahoo.com">m.yahoo.com</a>:</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+</pre></td>
+  <td class="code"><pre><span class="tag">&lt;meta</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">viewport</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">content</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+</pre></td>
+</tr></table>
+</div>
+
+<p>EDIT: It’s been discussed a bit, and it seems that preventing the user from scaling the page (pinch zooming) isn’t necessarily desirable. So here’s a version of the tag that allows the user to pinch zoom:</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+</pre></td>
+  <td class="code"><pre><span class="tag">&lt;meta</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">viewport</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">content</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">width=device-width, initial-scale=1.0</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+</pre></td>
+</tr></table>
+</div>
+
+<h3 id="more-fun-with-the-viewport-tag">More fun with the viewport tag</h3>
+
+<p>In addition to solving our biggest concern with the width of the content, the viewport tag has more options to play with:</p>
+
+<table class="datatable-medium">
+  <tr>
+    <td>
+      Property
+    </td>
+    
+    <td>
+      Description
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      width
+    </td>
+    
+    <td>
+      Width of the viewport in pixels (or device-width). If width isn&#8217;t set, it defaults to a desktop size (980px on mobile Safari).
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      height
+    </td>
+    
+    <td>
+      Height of the viewport in pixels (or device-height). Generally you don&#8217;t need to worry about setting this property.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      initial-scale
+    </td>
+    
+    <td>
+      (0 to 10.0) Multiplier that sets the scale of the page after its initial display. Safe bet: if you need to set it, set it to 1.0. Larger values = zoomed in, smaller values = zoomed out
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      minimum-scale
+    </td>
+    
+    <td>
+      (0 to 10.0) The minimum multiplier the user can &#8220;zoom out&#8221; to. Defaults to 0.25 on mobile Safari.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      maximum-scale
+    </td>
+    
+    <td>
+      (0 to 10.0) The minimum multiplier the user can &#8220;zoom in&#8221; to. Defaults to 1.6 on mobile Safari.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      user-scalable
+    </td>
+    
+    <td>
+      (yes/no) Whether to allow a user from scaling in/out (zooming in/out). Default to &#8220;yes&#8221; on mobile Safari.
+    </td>
+  </tr>
+</table>
+
+<h3 id="feature-phones-when-viewport-isnt-available">Feature phones: when viewport isn’t available…</h3>
+
+<p>Unfortunately the viewport tag is relatively new and as such isn’t universally supported, especially if you’re working on older feature phones. But there are some older methods at your disposal for identifying your website as optimized for mobile:</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+</pre></td>
+  <td class="code"><pre><span class="tag">&lt;meta</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">HandheldFriendly</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">content</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">true</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+</pre></td>
+</tr></table>
+</div>
+
+<p>This tag was originally used to identify mobile content in AvantGo browsers, but has now been made the general standard for identifying mobile websites. However, it’s unknown what range of browsers support this meta tag.</p>
+
+<p>Another tag at your disposal is a Windows-proprietary meta tag that also took root and eventually became used as another means of identifying mobile content. The drawback with this tag is that a specific width must be given, which doesn’t make it as flexible as the viewport tag (see above). Again, it’s unknown what the support for this tag is:</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+</pre></td>
+  <td class="code"><pre><span class="tag">&lt;meta</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">MobileOptimized</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">content</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">320</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+</pre></td>
+</tr></table>
+</div>
+
+<p>Lastly, your website will be identified as a mobile optimized site if your doctype is either XHTML-MP or WML. However, this is becoming less and less the case these days, as browsers begin to support good old HTML4.01 and HTML5+.</p>
+
+<p>(info for this section comes from <a href="http://www.amazon.com/gp/product/B003U890OQ/ref=pd_lpo_k2_dp_sr_1?pf_rd_p=486539851&#038;pf_rd_s=lpo-top-stripe-1&#038;pf_rd_t=201&#038;pf_rd_i=143022620X&#038;pf_rd_m=ATVPDKIKX0DER&#038;pf_rd_r=017307F07YKBPJX46DXB">Beginning Smartphone Web Development</a>)</p>
+
+<h3 id="custom-android-properties">Custom Android properties</h3>
+
+<p><a href="http://developer.android.com/reference/android/webkit/WebView.html">The official Android documentation</a> lists a special property they’ve added to the meta tag: target-densitydpi. This property essentially allows developers to specify which screen resolution the page has been developed for, or more specifically how to handle the scaling of media such as images.</p>
+
+<p>Here’s an example of the tag in action:</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+</pre></td>
+  <td class="code"><pre><span class="tag">&lt;meta</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">viewport</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">content</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">target-densitydpi=device-dpi</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
+</pre></td>
+</tr></table>
+</div>
+
+<h3 id="references">References</h3>
+
+<p><a href="http://developer.apple.com/safari/library/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html">Safari HTML Reference: Supported Meta Tags</a><br />
+<a href="http://learnthemobileweb.com/tag/mobile-web-development/page/3/">Mobile META Tags</a></p>
+
+<h3 id="more-from-the-mobile-web-series">More from the Mobile Web series:</h3>
+<ul>
+  <li><a href="http://davidbcalhoun.com/2010/viewport-metatag">Part 1: The viewport metatag</a>  </li>
+  <li><a href="http://davidbcalhoun.com/2010/the-mobile-developers-toolkit-mobile-web-part-2">Part 2: The mobile developer’s toolkit</a>  </li>
+  <li><a href="http://davidbcalhoun.com/2010/designing-buttons-that-dont-suck">Part 3: Designing buttons that don’t suck</a>  </li>
+  <li><a href="http://davidbcalhoun.com/2010/on-designing-a-mobile-webpage">Part 4: On designing a mobile webpage</a>  </li>
+  <li><a href="http://davidbcalhoun.com/2010/using-mobile-specific-html-css-javascript">Part 5: Using mobile-specific HTML, CSS, and JavaScript</a>  </li>
+  <li><a href="http://davidbcalhoun.com/2010/dealing-with-device-orientation">Part 6: Dealing with device orientation</a>  </li>
+  <li><a href="http://davidbcalhoun.com/2010/mobile-javascript-libraries-and-frameworks">Part 7: Mobile JavaScript libraries and frameworks</a></li>
+</ul>
+
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/2010/a-clockwork-box">
+			
+				A Clockwork Box</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-03-02T00:00:00-08:00" pubdate data-updated="true">Mar 2<span>nd</span>, 2010</time></div>
+	</header>
+	<div class="entry-content">
+		<div class="intro">
+  <img src="http://davidbcalhoun.com/wp-content/uploads/2010/03/clockwork-box.png" alt="Clockwork Orange cover" title="Clockwork Orange cover" width="450" height="320" class="left alignleft size-full wp-image-174" /> <div>
+    With CSS there are always various ways to accomplish something. After reading this short tidbit, you should be familiar with the various ways of controlling the size of an element&#8217;s padding, border, and margin, and you should know what the handy &#8220;clockwork&#8221; tip is, and how it will be useful to remember when you&#8217;re putting your CSS into practice.
+  </div>
+</div>
+
+<h3 id="equal-values-on-all-four-sides">Equal values on all four sides</h3>
+
+<p>If all four values (top, right, bottom, and left) are equal, then you simply write the following:</p>
+
+<pre name="code" class="css">padding: 1px;
+border-width: 1px;
+margin: 1px;
+</pre>
+
+<h3 id="the-longhand-way">The longhand way</h3>
+
+<p>If you don’t want equal values on all four sides, then you can specify each side individually:</p>
+
+<pre name="code" class="css">padding-top: 1px;
+padding-right: 2px;
+padding-bottom: 3px;
+padding-left: 4px;
+
+border-top-width: 1px;
+border-right-width: 2px;
+border-bottom-width: 3px;
+border-left-width: 4px;
+
+margin-top: 1px;
+margin-right: 2px;
+margin-bottom: 3px;
+margin-left: 4px;
+</pre>
+
+<h3 id="the-shortcut-like-clockwork">The shortcut (like clockwork)</h3>
+
+<p>However this seems to be quite a hassle typing out each property, so you’ll find it’s much easier to use the following shorthand, which is in this order: top, right, bottom, left (think of the hands going clockwise around a clock). The following is equivalent to the above code:</p>
+
+<pre name="code" class="css">padding: 1px 2px 3px 4px;
+border-width: 1px 2px 3px 4px;
+margin: 1px 2px 3px 4px;
+</pre>
+
+<h3 id="other-shorthands">Other shorthands</h3>
+
+<p>This is the style I find myself writing in most often, but there are two other shorthand styles you should be aware of:</p>
+
+<pre name="code" class="css">padding: 1px 2px 3px;  /* top, left/right, bottom */
+padding: 1px 2px;      /* top/bottom, left/right */
+</pre>
+
+<h3 id="summary">Summary</h3>
+
+<p>In short, there are various ways to define the padding, border, and margin on an element. Here’s a recap, with padding used as an example:</p>
+
+<pre name="code" class="css">padding: 1px;              /* 1 value: top/right/bottom/left     */
+padding: 1px 2px;          /* 2 values: top/bottom, left/right   */
+padding: 1px 2px 3px;      /* 3 values: top, left/right, bottom  */
+padding: 1px 2px 3px 4px;  /* 4 values: top, right, bottom, left */
+</pre>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/2010/links-for-the-week-of-february-21-2010">
+			
+				Links for the Week of February 21, 2010</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-02-28T00:00:00-08:00" pubdate data-updated="true">Feb 28<span>th</span>, 2010</time></div>
+	</header>
+	<div class="entry-content">
+		<h3 id="general-links">General links</h3>
+
+<ul class="links">
+  <li>
+    <a href="http://www.bytearray.org/?p=1470">Video: Flash performance on the Nexus One</a>
+  </li>
+  <li>
+    <a href="http://www.jwz.org/doc/censorzilla.html">censorzilla</a>
+  </li>
+  <li>
+    <a href="http://www.phpclasses.org/blog/post/117-PHP-compiler-performance.html">PHP compiler performance &#8211; PHP Classes blog</a>
+  </li>
+</ul>
+
+<h3 id="mobile">Mobile</h3>
+
+<ul class="links">
+  <li>
+    <a href="http://spyrestudios.com/10-great-tools-to-create-a-mobile-version-of-your-site/">10 Great Tools to Create a Mobile Version of Your Site</a>
+  </li>
+</ul>
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post">
@@ -974,580 +1746,6 @@ body { color: #rgb; }</pre>
 
 <p><a href="http://www.w3schools.com/html/html_colors.asp">HTML Colors</a></p>
 
-
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post">
-	<header>
-		<h2 class="title">
-			
-			<a href="/2009/video-john-resig-testing-performance-analysis-and-jquery-1-4">
-			
-				Video: John Resig &#8211; Testing, Performance Analysis, and jQuery 1.4</a>
-		</h2>
-		<div class="meta date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-12-21T00:00:00-08:00" pubdate data-updated="true"></time></div>
-	</header>
-	<div class="entry-content">
-		<p>In case you hadn’t seen it yet, <a href="http://ejohn.org/">John Resig</a> was kind enough to stop by Yahoo! for the December <a href="http://www.meetup.com/BayJax/">Bayjax</a> meetup. Here’s the <a href="http://developer.yahoo.com/yui/theater/video.php?v=resig-testing">video</a>:</p>
-
-<div class="video" style="width:576px; height: 324px;">
-</div>
-
-<p>Usually developers are more interested in just getting the dang code to work, and as a result actual the testing and maintenance of JavaScript isn’t talked about too much, so I’m sure this will be new territory for many developers. And since it’s John Resig speaking, there was of course a bit about using <a href="http://testswarm.com/">TestSwarm</a>, a testing distributed framework-agnostic automated testing tool (that’s a mouthful!).</p>
-
-<p>Included in the talk are good things to note while testing, such as the fact unless you’re running Firefox or Chrome on Windows, all test times have a margin of error of up to 15ms (not to be confused with <a href="http://www.quirksmode.org/blog/archives/2009/08/when_to_read_ou.html">PPK’s observation of the delay between JavaScript computation and browser rendering</a>).</p>
-
-<p>(via <a href="http://www.yuiblog.com/blog/2009/12/16/video-resig-testing-and-jquery/">YUIBlog</a>)</p>
-
-
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post">
-	<header>
-		<h2 class="title">
-			
-			<a href="/2009/pastrykit-digging-into-an-apple-pie">
-			
-				PastryKit: Digging Into an Apple Pie</a>
-		</h2>
-		<div class="meta date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-12-16T00:00:00-08:00" pubdate data-updated="true">Dec 16<span>th</span>, 2009</time></div>
-	</header>
-	<div class="entry-content">
-		<p>Yesterday <a href="http://daringfireball.net/2009/12/pastrykit">John Gruber wrote about Apple’s PastryKit</a>, iPhone’s JavaScript framework that’s been discovered “in the wild” on the iPhone user guide at <a href="http://help.apple.com/iphone/3/mobile/">http://help.apple.com/iphone/3/mobile/</a>. There’s a few ways to access the page:</p>
-
-<ul>
-  <li>with an actual iPhone or iTouch</li>
-  <li>by browsing with an iPhone/iTouch user agent. If you’re using Safari, enable the Developer menu in Safari&gt;Preferences&gt;Advanced and switching user agents by clicking on Develope&gt;User Agent</li>
-</ul>
-
-<h3 id="what8217s-all-the-big-fuss">What’s all the big fuss?</h3>
-
-<p>John was particularly interested in the responsiveness and native-like interaction of flinging through long lists, the fact the address bar is completely hidden, and the possibility of having a toolbar fixed to the top of the page. PastryKit makes all of these things possible and implements them better than anything else. And the result is nearly indistinguishable from a native app. Here’s a video I made of the iPhone user guide in action, powered by PastryKit. This is running on Safari – it’s not a native app!</p>
-
-<div style="align: center; margin: 1em auto; width: 640px;">
-</div>
-
-<h3 id="pastrykit-has-been-here-for-a-while">PastryKit has been here for a while</h3>
-
-<p>As John Gruber points out, the code for PastryKit has been there for quite a while now. <a href="http://stackoverflow.com/questions/1143589/what-is-the-pastrykit-framework">Stack Overflow has a question about it</a> that was asked way back in July, and there are several more <a href="http://twitter.com/jQTouch/status/6146839190">recent references</a> to it by jQTouch developer David Kaneda on Twitter. Of course, since John’s post there’s been an explosion of interest in the form of even more tweets!</p>
-
-<p>Hopefully with all of this increased attention, we’ll see Apple take notice and address it. Here’s hoping, anyway.</p>
-
-<h3 id="some-interesting-features">Some interesting features</h3>
-
-<p>There’s even more interesting takeaways from the PastryKit code, and I’m sure I’ve just barely scratched the surface:</p>
-
-<ul>
-  <li>implements its own form of Object-Oriented programming (obj.inherits and obj.synthetizes properties). When modules are declared, they’re registered as a PK Class (i.e. PKClass(PKBarButtonItem) registers PKBarButtonItem as a PK Class)</li>
-  <li>CSS3 wrapper functions (PKUtils.t() is a wrapper for translate3d, etc.)</li>
-  <li>no single library namespace (surprisingly) – which means there are many many global variables. This however is somewhat acceptable, as all variables are prefixed with “PK” and are declared to be constant (const PKStartEvent, const PKEndEvent) and cannot be overwritten.</li>
-</ul>
-
-<p>There’s also some interesting takeaways not from PastryKit itself, but from the way the iPhone user guide is implemented. Most of the data on the page – including each menu icon (base64 encoded) – is located in a single 650kb JSON-encoded file called content.json. This means the initial loading of the page is quite slower than the user would normally expect, but once the initial payload has been delivered, it’s a relatively smooth browsing experience thereafter.</p>
-
-<p>And as John Gruber already pointed out, this data is stored locally with the help of HTML5, allowing the user to continue reading even while offline!</p>
-
-<div id="attachment_75" style="width: 329px" class="wp-caption aligncenter">
-  <img src="http://davidbcalhoun.com/wp-content/uploads/2009/12/apple-pastrykit.png" alt="iPhone user guide in Safari" title="iPhone user guide in Safari" width="319" height="480" class="size-full wp-image-75" /><p class="wp-caption-text">
-    iPhone user guide in Safari
-  </p>
-</div>
-
-<h3 id="pastrykit-unminified-and-explained-sorta">PastryKit unminified and explained (sorta)</h3>
-
-<p>What I’m excited to show you now is a result of a bit of effort to make PastryKit more intelligible. Though there’s a <a href="http://help.apple.com/iphone/3/mobile/dist/PastryKit-ug-compact.js">minified version of the code</a> on Apple’s website, it’s not obfuscated (and rendered unintelligible), so not all hope is lost! With the help of <a href="http://jsbeautifier.org/">jsbeautifier.org</a> we can now see the slightly unminified version of the code: <a href="http://davidbcalhoun.com/pastrykit/PastryKit.js">PastryKit.js unminified</a>.</p>
-
-<p>The next thing I did was separate each module into its own file. I was able to separate the code into 27 numbered files, with the original ordering preserved (to prevent issues with dependencies). Viewing the code in this way definitely helps make sense of it all. You can download these separate files as part of a little unofficial SDK I made, which also includes a copy of the iPhone user guide with the JS iPhone-only redirect removed: <a href="http://davidbcalhoun.com/pastrykit/pastrykit-sdk.zip">PastryKit unofficial SDK</a>.</p>
-
-<h3 id="pastrykit-modules">PastryKit modules</h3>
-
-<p>The following is an explanation of each module I found. The descriptions are definitely incomplete and possibly inaccurate, so any comments or help is appreciated. But this should hopefully shed some light on the matter!</p>
-
-<ul>
-  <li>PKUtils – general helper functions (PKUtils.t() is a wrapper for CSS translate3d, PKUtils.degreesToRadians(), etc, etc.)</li>
-  <li>PKEventTriage – general event handler</li>
-  <li>PKPropertyTriage – handlePropertyChange() method – ?</li>
-  <li>Element – helper functions added to HTML Element prototype</li>
-  <li>Node – adds getNearestView() method to HTML Node prototype</li>
-  <li>PKClass – custom-rolled class with with “inherits” and “synthetizes” properties</li>
-  <li>PKObject – custom-rolled object with observer pattern. Most modules extend from this.</li>
-  <li>PKPoint – wrapper for WebKitPoint – used for touch events?</li>
-  <li>PKSize – wrapper for width/height properties</li>
-  <li>PKImage (inherits PKObject) – helper for creating Image elements and knowing when it’s finished loading (but doesn’t add the image to the DOM)</li>
-  <li>PKAnimator – basic animation tweens</li>
-  <li>PKTransition – helper for proprietary Webkit CSS transitions</li>
-  <li>PKTransaction – interacts with PKTransition – ?</li>
-  <li>PKView (extends PKObject) – manages a view, such as handling events that occur within that view – ?</li>
-  <li>PKContentView (extends PKView) – ?</li>
-  <li>PKRootView (extends PKContentView) – ?</li>
-  <li>PKScrollIndicator (extends PKView) – custom scrollbar</li>
-  <li>PKScrollView (extends PKView) – handles dynamically positioning the page when it’s scrolled</li>
-  <li>PKTableView (extends PKScrollView) – handles more touch/scroll events?</li>
-  <li>PKCellPath – ?</li>
-  <li>PKTableViewCell (extends PKView) – ?</li>
-  <li>PKToolbar (extends PKView) – manages the top toolbar</li>
-  <li>PKNavigationView (extends PKView) – manages bottom navigation bar</li>
-  <li>PKNavigationItem (extends PKObject) – manages bottom navigation buttons</li>
-  <li>PKControl (extends PKView) – manages generic controls</li>
-  <li>PKBarButtonItem (extends PKControl) – manages button controls</li>
-  <li>PKSearchBar.js (extends PKView) – manages the search bar</li>
-</ul>
-
-<h3 id="conclusion-after-a-first-glance">Conclusion after a first glance</h3>
-
-<p>As far as I can tell, this is no full-fledged JavaScript library. At least not for now.</p>
-
-<p>On first glance PastryKit seems to be at most a nice development framework for making web apps with the same look-and-feel of native iPhone apps. And this framework in many ways does this better than anything out there (at the moment).</p>
-
-<p>I echo the sentiments of Gruber – I do hope we hear more about this from Apple!</p>
-
-
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post">
-	<header>
-		<h2 class="title">
-			
-			<a href="/2009/javascript-tidbit-special-variables-_-etc">
-			
-				JavaScript Tidbit: Special Variables ($, $$, _, Etc)</a>
-		</h2>
-		<div class="meta date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-12-08T00:00:00-08:00" pubdate data-updated="true">Dec 8<span>th</span>, 2009</time></div>
-	</header>
-	<div class="entry-content">
-		<p>You’re probably used to typical variables names such as the following:</p>
-
-<pre name="code" class="JScript">var personName = 'Joe';</pre>
-
-<p>You may not realize it, but there are some non-alphanumeric variables at your disposal.</p>
-
-<h3 id="using-">Using $</h3>
-
-<p>For instance, the $ variable has been made popular by several JavaScript libraries, most notably <a href="http://jquery.com/">jQuery</a>. You can use it to alias operations that are commonly performed, such as the following (1):</p>
-
-<pre name="code" class="JScript">var $ = document.getElementById;
-var myElement = $('targetElement');</pre>
-
-<p>If you declare this variable outside of a function it will be a global variable and will compete with libraries that use the same global variable, so it’s probably best not to use it.</p>
-
-<p>Interestingly, originally the dollar sign $ was originally intended for “mechanically generated code” (2), but as the usage of the symbol has become popular for other purposes, it looks like <a href="http://www.ecma-international.org/publications/standards/Ecma-262.htm">the latest version of JavaScript (ECMAScript 5th edition) now officially “oks” its use</a>:</p>
-
-<blockquote>
-  <p>This standard specifies specific character additions: The dollar sign ($) and the underscore (_) are permitted anywhere in an IdentifierName.</p>
-</blockquote>
-
-<h3 id="using--1">Using $$</h3>
-
-<p>Some have come up with the solution of simply using two or more $$ symbols in order to distinguish the variable from libraries that just use a single $:</p>
-
-<pre name="code" class="JScript">var $$ = document.getElementById;
-var myElement = $$('targetElement');</pre>
-
-<h3 id="using--2">Using _</h3>
-
-<p>You will find that you can use the underscore _ in the same way to alias variables and functions:</p>
-
-<pre name="code" class="JScript">var _ = document.getElementById;
-var myElement = _('targetElement');</pre>
-
-<h3 id="other-symbols">Other symbols</h3>
-
-<p>If you’re really getting adventurous, you can even try using other symbols such as square root √, which seems to work just fine, just as $ and _ above. The only problem: it’s quite inconvenient using it, since it’s not available on any keyboards (except through some crazy key combinations perhaps).</p>
-
-<p>Or you can put the symbol to use doing what you would naturally think it should do…</p>
-
-<pre name="code" class="JScript">var √ = Math.sqrt;
-alert(√(4));   // 2</pre>
-
-<h3 id="references">References</h3>
-
-<p>(1) <a href="http://www.amazon.com/Even-Faster-Web-Sites-Performance/dp/0596522304">Even Faster Web Sites</a>, p. 128<br />
-(2) <a href="http://stackoverflow.com/questions/205853/why-would-a-javascript-variable-start-with-a-dollar-sign">Stackoverflow: Why would a javascript variable start with a dollar sign?</a></p>
-
-
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post">
-	<header>
-		<h2 class="title">
-			
-			<a href="/2009/passing-data-to-functions-in-javascript">
-			
-				Ways of Passing Data to Functions in JavaScript</a>
-		</h2>
-		<div class="meta date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-12-04T00:00:00-08:00" pubdate data-updated="true">Dec 4<span>th</span>, 2009</time></div>
-	</header>
-	<div class="entry-content">
-		<p>Passing data is quite important in functional programming languages like JavaScript. When there are multiple functions (which is most of the time), there needs to be a way to pass data between the functions. This is done by passing values in parenthesis: myFunction(myData). Even when there is no data to be passed, we still have to declare and execute functions by using parenthesis: myFunction().</p>
-
-<h3 id="simple-passing">Simple Passing</h3>
-
-<p>I’ve already referred to the common method of passing data. Here’s an example of the code in action:</p>
-
-<pre name="code" class="JScript">function greeting (name) {
-    alert('Hello ' + name);
-}
-var personsName = 'Joe';
-greeting(personsName);  // Hello Joe</pre>
-
-<p>This example only passes one variable to the function. Note that we can get rid of the variable personsName and make the string on the fly. So the code above is equivalent to this:</p>
-
-<pre name="code" class="JScript">function greeting (name) {
-    alert('Hello ' + name);
-}
-greeting('Joe');  // Hello Joe</pre>
-
-<p>Ok. Now let’s suppose we have a function that accepts two variables:</p>
-
-<pre name="code" class="JScript">function greeting (firstName, lastName) {
-    alert('Hello ' + firstName + ' ' + lastName);
-}
-greeting('Joe', 'Schmoe');  // Hello Joe Schmoe</pre>
-
-<p>This doesn’t look too hard. But there’s a catch – the person writing the code has to remember the order of variables to pass in. Suppose they call the function like this:</p>
-
-<pre name="code" class="JScript">function greeting (firstName, lastName) {
-    alert('Hello ' + firstName + ' ' + lastName);
-}
-greeting('Schmoe', 'Joe');  // Hello Schmoe Joe</pre>
-
-<p>That’s no good! This isn’t the result we want. In the case of firstName and lastName the variable order isn’t too hard to remember, but in other cases the variables aren’t in any logical order, which can cause confusion.</p>
-
-<h3 id="no-constructor-overloading">No constructor overloading</h3>
-
-<p>Unlike other languages such as C++ and Java, JavaScript has no <a href="http://en.wikipedia.org/wiki/Method_overloading">constructor overloading</a>. In fact, JavaScript is (for better or worse) not even strict about enforcing the number of variables passed in. For example, the following code works fine and throws no errors, even though we’re not passing in a variable in the function call:</p>
-
-<pre name="code" class="JScript">function test (someVar) {
-    // do stuff
-};
-test();  // no errors!</pre>
-
-<p>It’s only when you try to use someVar within the function that causes the problems. Otherwise, everything’s working just fine and dandy.</p>
-
-<p>What happens if we try the other case scenario: pass in more variables than the function expects? No errors again:</p>
-
-<pre name="code" class="JScript">function test () {
-    // do stuff
-};
-test('testing 123');  // again, no errors</pre>
-
-<p>And what happens if we try to declare a function with the same name? No errors, but the previous function is overwritten (this is generally to be avoided of course):</p>
-
-<pre name="code" class="JScript">function test () {
-    alert('First function');
-};
-function test () {
-    alert('Second function');
-};
-test();  // Second function</pre>
-
-<p>Because JavaScript has no function overloading, all it takes to overwrite another function is to redeclare a function with the same name. It doesn’t matter what sort of arguments they accept.</p>
-
-<h3 id="passing-with-the-help-of-the-arguments-object">Passing with the help of the arguments object</h3>
-
-<p>As it turns out, JavaScript has a handy arguments object to access the arguments passed into each function:</p>
-
-<pre name="code" class="JScript">function test () {
-    alert(arguments[0]);    // testing 123
-};
-test('testing 123');</pre>
-
-<p>In the above case the arguments object acts just as an array – it’s 0-indexed and can be used to access any arbitrary number of arguments. But arguments also has an interesting and useful property: length. Using arguments.length, we can traverse the array of arguments. This is handy in cases where we might want to add an arbitrary number of elements together:</p>
-
-<pre name="code" class="JScript">function add () {
-    var sumTotal = 0;                        // initialize total to 0
-
-    for(var i=0; i&lt;arguments.length; i++) {  // for each argument
-        sumTotal += arguments[i];            // add current argument to total
-    }
-    
-    alert(sumTotal);
-};
-add(2, 3, 4);  // 9
-add(1, 1, 1, 1, 1, 1, 1, 1, 1);  // 9
-</pre>
-
-<h3 id="passing-an-object">Passing an object</h3>
-
-<p>JavaScript libraries such as <a href="http://developer.yahoo.com/yui/">YUI</a> have already learned that the variable order is a common nuisance and an opportunity to introduce errors, so they’ve come up with a solution: pass a single object to the function. It ends up looking something like this:</p>
-
-<pre name="code" class="JScript">function greeting (obj) {
-    alert('Hello ' + obj.first + ' ' + obj.last);
-}
-var nameObject = {};
-nameObject.first = 'Joe';
-nameObject.last = 'Schmoe';
-greeting(nameObject);  // Hello Joe Schmoe</pre>
-
-<p>Now the variables become properties of a single object which is passed into the function. And it doesn’t matter which order the properties are declared in, which is a great relief to the developer.</p>
-
-<p>Note that we can simplify the above code:</p>
-
-<pre name="code" class="JScript">function greeting (obj) {
-    alert('Hello ' + obj.first + ' ' + obj.last);
-}
-var nameObject = {
-    first: 'Joe',
-    last: 'Schmoe'
-};
-greeting(nameObject);  // Hello Joe Schmoe</pre>
-
-<p>And we can simplify even further:</p>
-
-<pre name="code" class="JScript">function greeting (obj) {
-    alert('Hello ' + obj.first + ' ' + obj.last);
-}
-greeting({
-    first: 'Joe',
-    last: 'Schmoe'
-});  // Hello Joe Schmoe</pre>
-
-<p>This is the form commonly used in these JavaScript libraries. It’s easy to copy-and-paste example code, but it might not always be so obvious what’s going on behind the scenes. You can see that just as we bypassed declaring a named variable in the Simple Passing model (with greeting(”)), here we use the same shortcut and bypass declaring a named object (with greeting({})).</p>
-
-<h3 id="call-and-apply">call() and apply()</h3>
-
-<p>These two methods have different techniques for passing data to functions, but I’m going to have to hold off on them for now. It’s a bit complicated, since they’re only used to execute methods (functions) in other object contexts. But seeing as I need to explain object context to get into that, I’ll save that for a future entry!</p>
-
-
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post">
-	<header>
-		<h2 class="title">
-			
-			<a href="/2009/php-dealing-with-stuff-that-doesnt-exist">
-			
-				PHP: Dealing With Stuff That Doesn&#8217;t Exist</a>
-		</h2>
-		<div class="meta date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-12-01T00:00:00-08:00" pubdate data-updated="true">Dec 1<span>st</span>, 2009</time></div>
-	</header>
-	<div class="entry-content">
-		<h3 id="introduction">Introduction</h3>
-
-<p>As the application you’re coding becomes more and more complex, there’s more of an opportunity for things to go wrong in all sorts of unforseen ways.  One of these problems is variables or functions that don’t exist.  The problem is when you code in such a way that you presuppose their existence. But their existence isn’t guaranteed!</p>
-
-<p>A simple case of this happening is when you’re dealing with user input.  As it turns out, the user didn’t fill out a text field, but the variable for that text field still gets passed around as if it did exist.  More specifically, the variable gets set, but it gets set to an empty string (”).</p>
-
-<h3 id="check-that-the-variable-isn8217t-empty">Check that the variable isn’t empty</h3>
-
-<p>A common way of dealing with this is to check that the variable isn’t empty before using it:</p>
-
-<pre name="code" class="PHP">$name = 'Joe';
-if($name != '') {
-	echo 'Hello ' . $name;
-}</pre>
-
-<p>This turns out to be ALMOST equivalent to the following, which uses <a href="http://www.php.net/manual/en/function.empty.php">empty()</a>:</p>
-
-<pre name="code" class="PHP">$name = 'Joe';
-if(!empty($name)) {  // make sure $name isn't empty
-    echo 'Hello ' . $name;
-}
-</pre>
-
-<p>However, as <a href="http://www.zachstronaut.com/posts/2009/02/09/careful-with-php-empty.html">Zachary Johnson</a> points out, empty($variable) evaluates to true when $variable=’0′, so you may want to avoid using this.</p>
-
-<h3 id="check-that-the-variable-is-defined">Check that the variable is defined</h3>
-
-<p>There’s another case we haven’t tried yet: what happens if we haven’t defined the variable?</p>
-
-<pre name="code" class="PHP">error_reporting(E_ALL);
-if($name != '') {
-	echo 'Hello' . $name;
-}</pre>
-
-<p>Nothing catastrophic happens, but if we turn on error reporting, we can see that PHP is a bit upset. We get a notice that the variable $name is undefined, yet we’re trying to evaluate it. The value hasn’t been set yet. And there’s a function to check for that:</p>
-
-<pre name="code" class="PHP">$name = 'Joe';
-if(isset($name)) {
-	echo 'Variable is set';
-}</pre>
-
-<p>We can combine what we’ve learned into the following:</p>
-
-<pre name="code" class="PHP">$name = 'Joe';
-if(isset($name) &#038;&#038; $name != '') {
-	echo 'Hello ' . $name;
-}</pre>
-
-<p>There’s one neat thing here – if $name isn’t set, it evaluates the first part of the If condition as false (isset($name)) and doesn’t even look at the second part of the If condition ($name != ”). This is because it doesn’t matter what comes after, it will still evaluate to false (false &#038;&#038; true evaluates to false, and false &#038;&#038; false evaluates to false). Looking at the rest of the If condition is a waste of CPU cycles, so PHP doesn’t do it!</p>
-
-<p>We can confirm this with the following code, which evaluates to false on the first If condition, then doesn’t even try to evaluate the call to a nonexisting function, and thus gives no errors:</p>
-
-<pre name="code" class="PHP">if(false &#038;&#038; function_that_doesnt_exist()) {
-	// do stuff here
-}</pre>
-
-<h3 id="check-if-a-function-exists">Check if a function exists</h3>
-
-<p>For functions there’s a similar helper called <a href="http://us3.php.net/manual/en/function.function-exists.php">function_exists()</a>:</p>
-
-<pre name="code" class="PHP">function my_function() { }
-if(function_exists('my_function')) {
-	my_function();
-}</pre>
-
-<p>And it doesn’t matter if your function is declared before or after you call it! Check it out – this works fine:</p>
-
-<pre name="code" class="PHP">if(function_exists('my_function')) {
-	my_function();
-}
-function my_function() { }</pre>
-
-<h3 id="check-if-an-object8217s-method-exists">Check if an object’s method exists</h3>
-
-<p>Similarly to checking if functions exist, we can check for the existence of functions belonging to an object (we call these the object’s methods) with <a href="http://php.net/manual/en/function.method-exists.php">method_exists()</a>:</p>
-
-<pre name="code" class="PHP">// Create a test class
-class myClass {
-	// Create a test function
-	public function my_function() {}
-}
-
-// Instantiate the class
-$myObject = new myClass();
-
-// Check to see if the test function exists
-if(method_exists($myObject, 'my_function')) {
-	// Do stuff here
-}</pre>
-
-
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post">
-	<header>
-		<h2 class="title">
-			
-			<a href="/2009/another-iemobile-bug-classes-and-id-not-supported-on-the-html-element">
-			
-				IEMobile 6/7 Bug: Classes and Id Not Supported on the HTML Element</a>
-		</h2>
-		<div class="meta date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-12-01T00:00:00-08:00" pubdate data-updated="true">Dec 1<span>st</span>, 2009</time></div>
-	</header>
-	<div class="entry-content">
-		<p>As it turns out, IEMobile 6/7 (and presumably anything earlier) doesn’t support classes and ids that are attached to the HTML element. I confirmed this on both IEMobile 6 and 7. Fortunately it looks to be fixed in IEMobile 8 (which makes sense, since it works fine in desktop IE6, which it’s based on).</p>
-
-<p>The consequence of this is that adding an id/class to the html tag will result in the style not being applied to the document:</p>
-
-<pre name="code" class="html">&lt;!doctype html&gt;
-&lt;html id="a" class="b"&gt;
-&lt;head&gt;
-	&lt;title&gt;Cascade test&lt;/title&gt;
-	
-	&lt;style type="text/css" media="screen"&gt;
-		#a span { color: red; }     /* style isn't applied in IEMobile 6/7 */
-		.b span { color: yellow; }  /* style isn't applied in IEMobile 6/7 */
-	&lt;/style&gt;
-&lt;/head&gt;
-
-&lt;body&gt;
-&lt;span&gt;Testing 123&lt;/span&gt;
-&lt;/body&gt;
-
-&lt;/html&gt;</pre>
 
 		
 		

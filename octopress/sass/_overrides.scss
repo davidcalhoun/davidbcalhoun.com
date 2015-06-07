@@ -27,6 +27,7 @@ table.CodeRay td {
       margin: 0px;
   }
 }
+
 .CodeRay .line { background-color: $line-nb-bg }
 .CodeRay span.line-numbers { padding: 0px 10px 0px 0px }
 
@@ -38,6 +39,9 @@ table.CodeRay td {
 
 .CodeRay .code {
 	text-align: left;
+	pre {
+		line-height: 1.6;
+	}
 }
 
 .CodeRay .code,
@@ -78,7 +82,9 @@ table.CodeRay td {
 
 /* ------------------ */
 body {
-	font-size: 16px;
+	font-size: 18px;
+	margin: 0 auto;
+	max-width: 1000px;
 }
 
 #content a {
@@ -116,11 +122,6 @@ body #header a {
 
 body #header a:hover {
 	color: #3D3F52;
-}
-
-body {
-	margin: auto;
-	max-width: 1000px;
 }
 
 body .entry-content video {
@@ -186,12 +187,22 @@ table .negative {
 	display: none;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1000px) {
 	body {
-		width: 95%;
+		margin: 0 0.5em;
 	}
 	#header {
-		margin-top: 10px;
+		h1 {
+			margin: 10px auto 5px;
+		}
+	}
+}
+
+@media screen and (max-width: 600px) {
+	body {
+		font-size: 15px;
+	}
+	#header {
 		padding-bottom: 0;
 	}
 	.CodeRay .line-numbers,

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: the bible | David Calhoun's blog]]></title>
+  <link href="http://davidbcalhoun.com/blog/categories/the-bible/atom.xml" rel="self"/>
+  <link href="http://davidbcalhoun.com/"/>
+  <updated>2015-05-16T23:22:22-07:00</updated>
+  <id>http://davidbcalhoun.com/</id>
+  <author>
+    <name><![CDATA[David Calhoun]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[The Beatitudes]]></title>
+    <link href="http://davidbcalhoun.com/2015/the-beatitudes/"/>
+    <updated>2015-03-09T00:29:10-07:00</updated>
+    <id>http://davidbcalhoun.com/2015/the-beatitudes</id>
+    <content type="html"><![CDATA[<p>Blessed are the poor in spirit, for theirs is the kingdom of heaven.</p>
+
+<p>Blessed are those who mourn, for they shall be comforted.</p>
+
+<p>Blessed are the meek, for they shall inherit the earth.</p>
+
+<p>Blessed are those who hunger and thirst for righteousness, for they shall be satisfied.</p>
+
+<p>Blessed are the merciful, for they shall obtain mercy.</p>
+
+<p>Blessed are the pure in heart, for they shall see God.</p>
+
+<p>Blessed are the peacemakers, for they shall be called sons of God.</p>
+
+<p>Blessed are those who are persecuted for righteousness’ sake, for theirs is the kingdom of heaven.</p>
+
+<p>Blessed are you when men revile you and persecute you and utter all kinds of evil against you falsely on my account. Rejoice and be glad, for your reward is great in heaven, for so men persecuted the prophets who were before you.</p>
+]]></content>
+  </entry>
+  
+</feed>

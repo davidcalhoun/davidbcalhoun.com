@@ -7,7 +7,7 @@
 
 	<meta name="author" content="David Calhoun">
 
-<meta name="description" content="Introduction One of the things that’s always been confusing to me is that there are multiple ways to declare variables in JavaScript, and some ways &hellip;"> <meta name="keywords" content="">
+<meta name="description" content="In case you hadn’t seen it yet, John Resig was kind enough to stop by Yahoo! for the December Bayjax meetup. Here’s the video: Usually developers &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -46,6 +46,580 @@
 </header>
 
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/2009/video-john-resig-testing-performance-analysis-and-jquery-1-4">
+			
+				Video: John Resig &#8211; Testing, Performance Analysis, and jQuery 1.4</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-12-21T00:00:00-08:00" pubdate data-updated="true"></time></div>
+	</header>
+	<div class="entry-content">
+		<p>In case you hadn’t seen it yet, <a href="http://ejohn.org/">John Resig</a> was kind enough to stop by Yahoo! for the December <a href="http://www.meetup.com/BayJax/">Bayjax</a> meetup. Here’s the <a href="http://developer.yahoo.com/yui/theater/video.php?v=resig-testing">video</a>:</p>
+
+<div class="video" style="width:576px; height: 324px;">
+</div>
+
+<p>Usually developers are more interested in just getting the dang code to work, and as a result actual the testing and maintenance of JavaScript isn’t talked about too much, so I’m sure this will be new territory for many developers. And since it’s John Resig speaking, there was of course a bit about using <a href="http://testswarm.com/">TestSwarm</a>, a testing distributed framework-agnostic automated testing tool (that’s a mouthful!).</p>
+
+<p>Included in the talk are good things to note while testing, such as the fact unless you’re running Firefox or Chrome on Windows, all test times have a margin of error of up to 15ms (not to be confused with <a href="http://www.quirksmode.org/blog/archives/2009/08/when_to_read_ou.html">PPK’s observation of the delay between JavaScript computation and browser rendering</a>).</p>
+
+<p>(via <a href="http://www.yuiblog.com/blog/2009/12/16/video-resig-testing-and-jquery/">YUIBlog</a>)</p>
+
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/2009/pastrykit-digging-into-an-apple-pie">
+			
+				PastryKit: Digging Into an Apple Pie</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-12-16T00:00:00-08:00" pubdate data-updated="true">Dec 16<span>th</span>, 2009</time></div>
+	</header>
+	<div class="entry-content">
+		<p>Yesterday <a href="http://daringfireball.net/2009/12/pastrykit">John Gruber wrote about Apple’s PastryKit</a>, iPhone’s JavaScript framework that’s been discovered “in the wild” on the iPhone user guide at <a href="http://help.apple.com/iphone/3/mobile/">http://help.apple.com/iphone/3/mobile/</a>. There’s a few ways to access the page:</p>
+
+<ul>
+  <li>with an actual iPhone or iTouch</li>
+  <li>by browsing with an iPhone/iTouch user agent. If you’re using Safari, enable the Developer menu in Safari&gt;Preferences&gt;Advanced and switching user agents by clicking on Develope&gt;User Agent</li>
+</ul>
+
+<h3 id="what8217s-all-the-big-fuss">What’s all the big fuss?</h3>
+
+<p>John was particularly interested in the responsiveness and native-like interaction of flinging through long lists, the fact the address bar is completely hidden, and the possibility of having a toolbar fixed to the top of the page. PastryKit makes all of these things possible and implements them better than anything else. And the result is nearly indistinguishable from a native app. Here’s a video I made of the iPhone user guide in action, powered by PastryKit. This is running on Safari – it’s not a native app!</p>
+
+<div style="align: center; margin: 1em auto; width: 640px;">
+</div>
+
+<h3 id="pastrykit-has-been-here-for-a-while">PastryKit has been here for a while</h3>
+
+<p>As John Gruber points out, the code for PastryKit has been there for quite a while now. <a href="http://stackoverflow.com/questions/1143589/what-is-the-pastrykit-framework">Stack Overflow has a question about it</a> that was asked way back in July, and there are several more <a href="http://twitter.com/jQTouch/status/6146839190">recent references</a> to it by jQTouch developer David Kaneda on Twitter. Of course, since John’s post there’s been an explosion of interest in the form of even more tweets!</p>
+
+<p>Hopefully with all of this increased attention, we’ll see Apple take notice and address it. Here’s hoping, anyway.</p>
+
+<h3 id="some-interesting-features">Some interesting features</h3>
+
+<p>There’s even more interesting takeaways from the PastryKit code, and I’m sure I’ve just barely scratched the surface:</p>
+
+<ul>
+  <li>implements its own form of Object-Oriented programming (obj.inherits and obj.synthetizes properties). When modules are declared, they’re registered as a PK Class (i.e. PKClass(PKBarButtonItem) registers PKBarButtonItem as a PK Class)</li>
+  <li>CSS3 wrapper functions (PKUtils.t() is a wrapper for translate3d, etc.)</li>
+  <li>no single library namespace (surprisingly) – which means there are many many global variables. This however is somewhat acceptable, as all variables are prefixed with “PK” and are declared to be constant (const PKStartEvent, const PKEndEvent) and cannot be overwritten.</li>
+</ul>
+
+<p>There’s also some interesting takeaways not from PastryKit itself, but from the way the iPhone user guide is implemented. Most of the data on the page – including each menu icon (base64 encoded) – is located in a single 650kb JSON-encoded file called content.json. This means the initial loading of the page is quite slower than the user would normally expect, but once the initial payload has been delivered, it’s a relatively smooth browsing experience thereafter.</p>
+
+<p>And as John Gruber already pointed out, this data is stored locally with the help of HTML5, allowing the user to continue reading even while offline!</p>
+
+<div id="attachment_75" style="width: 329px" class="wp-caption aligncenter">
+  <img src="http://davidbcalhoun.com/wp-content/uploads/2009/12/apple-pastrykit.png" alt="iPhone user guide in Safari" title="iPhone user guide in Safari" width="319" height="480" class="size-full wp-image-75" /><p class="wp-caption-text">
+    iPhone user guide in Safari
+  </p>
+</div>
+
+<h3 id="pastrykit-unminified-and-explained-sorta">PastryKit unminified and explained (sorta)</h3>
+
+<p>What I’m excited to show you now is a result of a bit of effort to make PastryKit more intelligible. Though there’s a <a href="http://help.apple.com/iphone/3/mobile/dist/PastryKit-ug-compact.js">minified version of the code</a> on Apple’s website, it’s not obfuscated (and rendered unintelligible), so not all hope is lost! With the help of <a href="http://jsbeautifier.org/">jsbeautifier.org</a> we can now see the slightly unminified version of the code: <a href="http://davidbcalhoun.com/pastrykit/PastryKit.js">PastryKit.js unminified</a>.</p>
+
+<p>The next thing I did was separate each module into its own file. I was able to separate the code into 27 numbered files, with the original ordering preserved (to prevent issues with dependencies). Viewing the code in this way definitely helps make sense of it all. You can download these separate files as part of a little unofficial SDK I made, which also includes a copy of the iPhone user guide with the JS iPhone-only redirect removed: <a href="http://davidbcalhoun.com/pastrykit/pastrykit-sdk.zip">PastryKit unofficial SDK</a>.</p>
+
+<h3 id="pastrykit-modules">PastryKit modules</h3>
+
+<p>The following is an explanation of each module I found. The descriptions are definitely incomplete and possibly inaccurate, so any comments or help is appreciated. But this should hopefully shed some light on the matter!</p>
+
+<ul>
+  <li>PKUtils – general helper functions (PKUtils.t() is a wrapper for CSS translate3d, PKUtils.degreesToRadians(), etc, etc.)</li>
+  <li>PKEventTriage – general event handler</li>
+  <li>PKPropertyTriage – handlePropertyChange() method – ?</li>
+  <li>Element – helper functions added to HTML Element prototype</li>
+  <li>Node – adds getNearestView() method to HTML Node prototype</li>
+  <li>PKClass – custom-rolled class with with “inherits” and “synthetizes” properties</li>
+  <li>PKObject – custom-rolled object with observer pattern. Most modules extend from this.</li>
+  <li>PKPoint – wrapper for WebKitPoint – used for touch events?</li>
+  <li>PKSize – wrapper for width/height properties</li>
+  <li>PKImage (inherits PKObject) – helper for creating Image elements and knowing when it’s finished loading (but doesn’t add the image to the DOM)</li>
+  <li>PKAnimator – basic animation tweens</li>
+  <li>PKTransition – helper for proprietary Webkit CSS transitions</li>
+  <li>PKTransaction – interacts with PKTransition – ?</li>
+  <li>PKView (extends PKObject) – manages a view, such as handling events that occur within that view – ?</li>
+  <li>PKContentView (extends PKView) – ?</li>
+  <li>PKRootView (extends PKContentView) – ?</li>
+  <li>PKScrollIndicator (extends PKView) – custom scrollbar</li>
+  <li>PKScrollView (extends PKView) – handles dynamically positioning the page when it’s scrolled</li>
+  <li>PKTableView (extends PKScrollView) – handles more touch/scroll events?</li>
+  <li>PKCellPath – ?</li>
+  <li>PKTableViewCell (extends PKView) – ?</li>
+  <li>PKToolbar (extends PKView) – manages the top toolbar</li>
+  <li>PKNavigationView (extends PKView) – manages bottom navigation bar</li>
+  <li>PKNavigationItem (extends PKObject) – manages bottom navigation buttons</li>
+  <li>PKControl (extends PKView) – manages generic controls</li>
+  <li>PKBarButtonItem (extends PKControl) – manages button controls</li>
+  <li>PKSearchBar.js (extends PKView) – manages the search bar</li>
+</ul>
+
+<h3 id="conclusion-after-a-first-glance">Conclusion after a first glance</h3>
+
+<p>As far as I can tell, this is no full-fledged JavaScript library. At least not for now.</p>
+
+<p>On first glance PastryKit seems to be at most a nice development framework for making web apps with the same look-and-feel of native iPhone apps. And this framework in many ways does this better than anything out there (at the moment).</p>
+
+<p>I echo the sentiments of Gruber – I do hope we hear more about this from Apple!</p>
+
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/2009/javascript-tidbit-special-variables-_-etc">
+			
+				JavaScript Tidbit: Special Variables ($, $$, _, Etc)</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-12-08T00:00:00-08:00" pubdate data-updated="true">Dec 8<span>th</span>, 2009</time></div>
+	</header>
+	<div class="entry-content">
+		<p>You’re probably used to typical variables names such as the following:</p>
+
+<pre name="code" class="JScript">var personName = 'Joe';</pre>
+
+<p>You may not realize it, but there are some non-alphanumeric variables at your disposal.</p>
+
+<h3 id="using-">Using $</h3>
+
+<p>For instance, the $ variable has been made popular by several JavaScript libraries, most notably <a href="http://jquery.com/">jQuery</a>. You can use it to alias operations that are commonly performed, such as the following (1):</p>
+
+<pre name="code" class="JScript">var $ = document.getElementById;
+var myElement = $('targetElement');</pre>
+
+<p>If you declare this variable outside of a function it will be a global variable and will compete with libraries that use the same global variable, so it’s probably best not to use it.</p>
+
+<p>Interestingly, originally the dollar sign $ was originally intended for “mechanically generated code” (2), but as the usage of the symbol has become popular for other purposes, it looks like <a href="http://www.ecma-international.org/publications/standards/Ecma-262.htm">the latest version of JavaScript (ECMAScript 5th edition) now officially “oks” its use</a>:</p>
+
+<blockquote>
+  <p>This standard specifies specific character additions: The dollar sign ($) and the underscore (_) are permitted anywhere in an IdentifierName.</p>
+</blockquote>
+
+<h3 id="using--1">Using $$</h3>
+
+<p>Some have come up with the solution of simply using two or more $$ symbols in order to distinguish the variable from libraries that just use a single $:</p>
+
+<pre name="code" class="JScript">var $$ = document.getElementById;
+var myElement = $$('targetElement');</pre>
+
+<h3 id="using--2">Using _</h3>
+
+<p>You will find that you can use the underscore _ in the same way to alias variables and functions:</p>
+
+<pre name="code" class="JScript">var _ = document.getElementById;
+var myElement = _('targetElement');</pre>
+
+<h3 id="other-symbols">Other symbols</h3>
+
+<p>If you’re really getting adventurous, you can even try using other symbols such as square root √, which seems to work just fine, just as $ and _ above. The only problem: it’s quite inconvenient using it, since it’s not available on any keyboards (except through some crazy key combinations perhaps).</p>
+
+<p>Or you can put the symbol to use doing what you would naturally think it should do…</p>
+
+<pre name="code" class="JScript">var √ = Math.sqrt;
+alert(√(4));   // 2</pre>
+
+<h3 id="references">References</h3>
+
+<p>(1) <a href="http://www.amazon.com/Even-Faster-Web-Sites-Performance/dp/0596522304">Even Faster Web Sites</a>, p. 128<br />
+(2) <a href="http://stackoverflow.com/questions/205853/why-would-a-javascript-variable-start-with-a-dollar-sign">Stackoverflow: Why would a javascript variable start with a dollar sign?</a></p>
+
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/2009/passing-data-to-functions-in-javascript">
+			
+				Ways of Passing Data to Functions in JavaScript</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-12-04T00:00:00-08:00" pubdate data-updated="true">Dec 4<span>th</span>, 2009</time></div>
+	</header>
+	<div class="entry-content">
+		<p>Passing data is quite important in functional programming languages like JavaScript. When there are multiple functions (which is most of the time), there needs to be a way to pass data between the functions. This is done by passing values in parenthesis: myFunction(myData). Even when there is no data to be passed, we still have to declare and execute functions by using parenthesis: myFunction().</p>
+
+<h3 id="simple-passing">Simple Passing</h3>
+
+<p>I’ve already referred to the common method of passing data. Here’s an example of the code in action:</p>
+
+<pre name="code" class="JScript">function greeting (name) {
+    alert('Hello ' + name);
+}
+var personsName = 'Joe';
+greeting(personsName);  // Hello Joe</pre>
+
+<p>This example only passes one variable to the function. Note that we can get rid of the variable personsName and make the string on the fly. So the code above is equivalent to this:</p>
+
+<pre name="code" class="JScript">function greeting (name) {
+    alert('Hello ' + name);
+}
+greeting('Joe');  // Hello Joe</pre>
+
+<p>Ok. Now let’s suppose we have a function that accepts two variables:</p>
+
+<pre name="code" class="JScript">function greeting (firstName, lastName) {
+    alert('Hello ' + firstName + ' ' + lastName);
+}
+greeting('Joe', 'Schmoe');  // Hello Joe Schmoe</pre>
+
+<p>This doesn’t look too hard. But there’s a catch – the person writing the code has to remember the order of variables to pass in. Suppose they call the function like this:</p>
+
+<pre name="code" class="JScript">function greeting (firstName, lastName) {
+    alert('Hello ' + firstName + ' ' + lastName);
+}
+greeting('Schmoe', 'Joe');  // Hello Schmoe Joe</pre>
+
+<p>That’s no good! This isn’t the result we want. In the case of firstName and lastName the variable order isn’t too hard to remember, but in other cases the variables aren’t in any logical order, which can cause confusion.</p>
+
+<h3 id="no-constructor-overloading">No constructor overloading</h3>
+
+<p>Unlike other languages such as C++ and Java, JavaScript has no <a href="http://en.wikipedia.org/wiki/Method_overloading">constructor overloading</a>. In fact, JavaScript is (for better or worse) not even strict about enforcing the number of variables passed in. For example, the following code works fine and throws no errors, even though we’re not passing in a variable in the function call:</p>
+
+<pre name="code" class="JScript">function test (someVar) {
+    // do stuff
+};
+test();  // no errors!</pre>
+
+<p>It’s only when you try to use someVar within the function that causes the problems. Otherwise, everything’s working just fine and dandy.</p>
+
+<p>What happens if we try the other case scenario: pass in more variables than the function expects? No errors again:</p>
+
+<pre name="code" class="JScript">function test () {
+    // do stuff
+};
+test('testing 123');  // again, no errors</pre>
+
+<p>And what happens if we try to declare a function with the same name? No errors, but the previous function is overwritten (this is generally to be avoided of course):</p>
+
+<pre name="code" class="JScript">function test () {
+    alert('First function');
+};
+function test () {
+    alert('Second function');
+};
+test();  // Second function</pre>
+
+<p>Because JavaScript has no function overloading, all it takes to overwrite another function is to redeclare a function with the same name. It doesn’t matter what sort of arguments they accept.</p>
+
+<h3 id="passing-with-the-help-of-the-arguments-object">Passing with the help of the arguments object</h3>
+
+<p>As it turns out, JavaScript has a handy arguments object to access the arguments passed into each function:</p>
+
+<pre name="code" class="JScript">function test () {
+    alert(arguments[0]);    // testing 123
+};
+test('testing 123');</pre>
+
+<p>In the above case the arguments object acts just as an array – it’s 0-indexed and can be used to access any arbitrary number of arguments. But arguments also has an interesting and useful property: length. Using arguments.length, we can traverse the array of arguments. This is handy in cases where we might want to add an arbitrary number of elements together:</p>
+
+<pre name="code" class="JScript">function add () {
+    var sumTotal = 0;                        // initialize total to 0
+
+    for(var i=0; i&lt;arguments.length; i++) {  // for each argument
+        sumTotal += arguments[i];            // add current argument to total
+    }
+    
+    alert(sumTotal);
+};
+add(2, 3, 4);  // 9
+add(1, 1, 1, 1, 1, 1, 1, 1, 1);  // 9
+</pre>
+
+<h3 id="passing-an-object">Passing an object</h3>
+
+<p>JavaScript libraries such as <a href="http://developer.yahoo.com/yui/">YUI</a> have already learned that the variable order is a common nuisance and an opportunity to introduce errors, so they’ve come up with a solution: pass a single object to the function. It ends up looking something like this:</p>
+
+<pre name="code" class="JScript">function greeting (obj) {
+    alert('Hello ' + obj.first + ' ' + obj.last);
+}
+var nameObject = {};
+nameObject.first = 'Joe';
+nameObject.last = 'Schmoe';
+greeting(nameObject);  // Hello Joe Schmoe</pre>
+
+<p>Now the variables become properties of a single object which is passed into the function. And it doesn’t matter which order the properties are declared in, which is a great relief to the developer.</p>
+
+<p>Note that we can simplify the above code:</p>
+
+<pre name="code" class="JScript">function greeting (obj) {
+    alert('Hello ' + obj.first + ' ' + obj.last);
+}
+var nameObject = {
+    first: 'Joe',
+    last: 'Schmoe'
+};
+greeting(nameObject);  // Hello Joe Schmoe</pre>
+
+<p>And we can simplify even further:</p>
+
+<pre name="code" class="JScript">function greeting (obj) {
+    alert('Hello ' + obj.first + ' ' + obj.last);
+}
+greeting({
+    first: 'Joe',
+    last: 'Schmoe'
+});  // Hello Joe Schmoe</pre>
+
+<p>This is the form commonly used in these JavaScript libraries. It’s easy to copy-and-paste example code, but it might not always be so obvious what’s going on behind the scenes. You can see that just as we bypassed declaring a named variable in the Simple Passing model (with greeting(”)), here we use the same shortcut and bypass declaring a named object (with greeting({})).</p>
+
+<h3 id="call-and-apply">call() and apply()</h3>
+
+<p>These two methods have different techniques for passing data to functions, but I’m going to have to hold off on them for now. It’s a bit complicated, since they’re only used to execute methods (functions) in other object contexts. But seeing as I need to explain object context to get into that, I’ll save that for a future entry!</p>
+
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/2009/php-dealing-with-stuff-that-doesnt-exist">
+			
+				PHP: Dealing With Stuff That Doesn&#8217;t Exist</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-12-01T00:00:00-08:00" pubdate data-updated="true">Dec 1<span>st</span>, 2009</time></div>
+	</header>
+	<div class="entry-content">
+		<h3 id="introduction">Introduction</h3>
+
+<p>As the application you’re coding becomes more and more complex, there’s more of an opportunity for things to go wrong in all sorts of unforseen ways.  One of these problems is variables or functions that don’t exist.  The problem is when you code in such a way that you presuppose their existence. But their existence isn’t guaranteed!</p>
+
+<p>A simple case of this happening is when you’re dealing with user input.  As it turns out, the user didn’t fill out a text field, but the variable for that text field still gets passed around as if it did exist.  More specifically, the variable gets set, but it gets set to an empty string (”).</p>
+
+<h3 id="check-that-the-variable-isn8217t-empty">Check that the variable isn’t empty</h3>
+
+<p>A common way of dealing with this is to check that the variable isn’t empty before using it:</p>
+
+<pre name="code" class="PHP">$name = 'Joe';
+if($name != '') {
+	echo 'Hello ' . $name;
+}</pre>
+
+<p>This turns out to be ALMOST equivalent to the following, which uses <a href="http://www.php.net/manual/en/function.empty.php">empty()</a>:</p>
+
+<pre name="code" class="PHP">$name = 'Joe';
+if(!empty($name)) {  // make sure $name isn't empty
+    echo 'Hello ' . $name;
+}
+</pre>
+
+<p>However, as <a href="http://www.zachstronaut.com/posts/2009/02/09/careful-with-php-empty.html">Zachary Johnson</a> points out, empty($variable) evaluates to true when $variable=’0′, so you may want to avoid using this.</p>
+
+<h3 id="check-that-the-variable-is-defined">Check that the variable is defined</h3>
+
+<p>There’s another case we haven’t tried yet: what happens if we haven’t defined the variable?</p>
+
+<pre name="code" class="PHP">error_reporting(E_ALL);
+if($name != '') {
+	echo 'Hello' . $name;
+}</pre>
+
+<p>Nothing catastrophic happens, but if we turn on error reporting, we can see that PHP is a bit upset. We get a notice that the variable $name is undefined, yet we’re trying to evaluate it. The value hasn’t been set yet. And there’s a function to check for that:</p>
+
+<pre name="code" class="PHP">$name = 'Joe';
+if(isset($name)) {
+	echo 'Variable is set';
+}</pre>
+
+<p>We can combine what we’ve learned into the following:</p>
+
+<pre name="code" class="PHP">$name = 'Joe';
+if(isset($name) &#038;&#038; $name != '') {
+	echo 'Hello ' . $name;
+}</pre>
+
+<p>There’s one neat thing here – if $name isn’t set, it evaluates the first part of the If condition as false (isset($name)) and doesn’t even look at the second part of the If condition ($name != ”). This is because it doesn’t matter what comes after, it will still evaluate to false (false &#038;&#038; true evaluates to false, and false &#038;&#038; false evaluates to false). Looking at the rest of the If condition is a waste of CPU cycles, so PHP doesn’t do it!</p>
+
+<p>We can confirm this with the following code, which evaluates to false on the first If condition, then doesn’t even try to evaluate the call to a nonexisting function, and thus gives no errors:</p>
+
+<pre name="code" class="PHP">if(false &#038;&#038; function_that_doesnt_exist()) {
+	// do stuff here
+}</pre>
+
+<h3 id="check-if-a-function-exists">Check if a function exists</h3>
+
+<p>For functions there’s a similar helper called <a href="http://us3.php.net/manual/en/function.function-exists.php">function_exists()</a>:</p>
+
+<pre name="code" class="PHP">function my_function() { }
+if(function_exists('my_function')) {
+	my_function();
+}</pre>
+
+<p>And it doesn’t matter if your function is declared before or after you call it! Check it out – this works fine:</p>
+
+<pre name="code" class="PHP">if(function_exists('my_function')) {
+	my_function();
+}
+function my_function() { }</pre>
+
+<h3 id="check-if-an-object8217s-method-exists">Check if an object’s method exists</h3>
+
+<p>Similarly to checking if functions exist, we can check for the existence of functions belonging to an object (we call these the object’s methods) with <a href="http://php.net/manual/en/function.method-exists.php">method_exists()</a>:</p>
+
+<pre name="code" class="PHP">// Create a test class
+class myClass {
+	// Create a test function
+	public function my_function() {}
+}
+
+// Instantiate the class
+$myObject = new myClass();
+
+// Check to see if the test function exists
+if(method_exists($myObject, 'my_function')) {
+	// Do stuff here
+}</pre>
+
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/2009/another-iemobile-bug-classes-and-id-not-supported-on-the-html-element">
+			
+				IEMobile 6/7 Bug: Classes and Id Not Supported on the HTML Element</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-12-01T00:00:00-08:00" pubdate data-updated="true">Dec 1<span>st</span>, 2009</time></div>
+	</header>
+	<div class="entry-content">
+		<p>As it turns out, IEMobile 6/7 (and presumably anything earlier) doesn’t support classes and ids that are attached to the HTML element. I confirmed this on both IEMobile 6 and 7. Fortunately it looks to be fixed in IEMobile 8 (which makes sense, since it works fine in desktop IE6, which it’s based on).</p>
+
+<p>The consequence of this is that adding an id/class to the html tag will result in the style not being applied to the document:</p>
+
+<pre name="code" class="html">&lt;!doctype html&gt;
+&lt;html id="a" class="b"&gt;
+&lt;head&gt;
+	&lt;title&gt;Cascade test&lt;/title&gt;
+	
+	&lt;style type="text/css" media="screen"&gt;
+		#a span { color: red; }     /* style isn't applied in IEMobile 6/7 */
+		.b span { color: yellow; }  /* style isn't applied in IEMobile 6/7 */
+	&lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;span&gt;Testing 123&lt;/span&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</pre>
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post">
@@ -385,55 +959,12 @@ jQuery(<span class="string"><span class="delimiter">&quot;</span><span class="co
 
 </article>
 
-
-    <article class="post">
-	<header>
-		<h2 class="title">
-			
-			<a href="/2009/ie-mobile-6-12-problem-browser-ignores-the-specificity-of-css-display-styles">
-			
-				IE Mobile 6.12 Problem: Browser Ignores the Specificity of CSS Display Styles</a>
-		</h2>
-		<div class="meta date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-08-31T00:00:00-07:00" pubdate data-updated="true">Aug 31<span>st</span>, 2009</time></div>
-	</header>
-	<div class="entry-content">
-		<p><strong>UPDATE:</strong> I found that the problem is actually that inline-block is completely unsupported in this version of IE Mobile, and is likely also unsupported in IE Mobile 7, which is also based on IE4. This is in contrast to desktop IE6, where inline-block is supported on elements that are natively inline (span, em, etc.).</p>
-
-<p>Just found this today, for what it’s worth.  If you’re unlucky enough to be working with older Windows Mobile phones you have probably realized that the browser is based on IE6, which all the desktop web developers notoriously complain about constantly.</p>
-
-<p>Though the mobile version of IE6 has most of the same issues as its desktop counterpart, IEMobile introduces some new random problems.  And in most cases there’s no handy web resources to help you out, since almost everyone develops for the desktop.</p>
-
-<p>This particular IEMobile quirk is a specificity problem.  We have a parent element styled with display: block and the child element is styled with display: inline-block or display: inline.  We’ve made the child CSS selector more specific so it <em>should</em> override the parent:</p>
-
-<pre name="code" class="css">.parent { display: block; }
-.parent .child { display: inline-block; }</pre>
-
-<p>This works on the desktop version of IE6!  But not in IEMobile 6.12, where the child element is still displayed as a block.  The same thing happens when we change the “.parent .child” style to “display: inline;”, but interestingly not when we change it to “display: none;”, where the style is correctly recognized and applied.  Doh!</p>
-
-<p>And FYI: I checked and found that this bug is <em>not</em> occurring on IEMobile 8.12</p>
-
-		
-		
-	</div>
-
-</article>
-
 <nav id="pagenavi">
     
         <a href="/blog/page/9/" class="prev">Previous</a>
     
+    
+        <a href="/blog/page/11/" class="next">Next</a>
     
 </nav>
 </div>

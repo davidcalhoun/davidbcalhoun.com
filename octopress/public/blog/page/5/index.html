@@ -7,7 +7,7 @@
 
 	<meta name="author" content="David Calhoun">
 
-<meta name="description" content="(OR “The Post In Which I Conflate Programming and Philosophy” OR “The Programmer’s Existentialist Crisis”) I woke up this morning to read Dmitry A. &hellip;"> <meta name="keywords" content="">
+<meta name="description" content="This is madness! This… is… JavaScript! In JavaScript, there’s many different ways of doing something. This is both a good thing and a bad thing. To &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -46,6 +46,1408 @@
 </header>
 
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/2011/different-ways-of-defining-functions-in-javascript-this-is-madness">
+			
+				Different Ways of Defining Functions in JavaScript (This Is Madness!)</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-06-24T00:00:00-07:00" pubdate data-updated="true">Jun 24<span>th</span>, 2011</time></div>
+	</header>
+	<div class="entry-content">
+		<h3 id="this-is-madness-this8230-is8230-javascript">This is madness! This… is… JavaScript!</h3>
+
+<p>In JavaScript, there’s many different ways of doing something. This is both a good thing and a bad thing. To the newcomer this is definitely a bad thing, as it means not only more things to learn, but more little caveats and more places to go wrong. And so it is with declaring functions!</p>
+
+<p>The aim of this is just an accessible tour of the landscape, just so you know what’s out there and what the basic differences are. Do be sure to check out the “further reading” section as well! Much of this is based on <a href="http://kangax.github.com/nfe/">Juriy “kangax” Zaytsev’s article</a>, which goes into more depth. But I found that there wasn’t just one reference to show all the different variable declarations.</p>
+
+<p>How about ways to execute functions? That opens up another can of worms, and incidentally opens up the possibility for a future post on that topic. :)</p>
+
+<h3 id="overview-different-ways-of-declaring-functions">Overview: different ways of declaring functions</h3>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+</pre></td>
+  <td class="code"><pre><span class="keyword">function</span> <span class="function">A</span>(){};             <span class="comment">// function declaration</span>
+<span class="keyword">var</span> <span class="function">B</span> = <span class="keyword">function</span>(){};       <span class="comment">// function expression</span>
+<span class="keyword">var</span> C = (<span class="keyword">function</span>(){});     <span class="comment">// function expression with grouping operators</span>
+<span class="keyword">var</span> <span class="function">D</span> = <span class="keyword">function</span> <span class="function">foo</span>(){};   <span class="comment">// named function expression</span>
+<span class="keyword">var</span> E = (<span class="keyword">function</span>(){        <span class="comment">// immediately-invoked function expression (IIFE) that returns a function</span>
+  <span class="keyword">return</span> <span class="keyword">function</span>(){}
+})();
+<span class="keyword">var</span> F = <span class="keyword">new</span> Function();     <span class="comment">// Function constructor</span>
+<span class="keyword">var</span> G = <span class="keyword">new</span> <span class="keyword">function</span>(){};   <span class="comment">// special case: object constructor</span>
+</pre></td>
+</tr></table>
+</div>
+
+<h3 id="function-declarations-function-a">Function declarations: function A(){};</h3>
+
+<p>Function declarations are probably the most familiar and oldest way of doing things in JavaScript land. This creates a variable A which is accessible in the current scope. Scope is a separate topic, so well do everything in the global scope for all these examples (something you want to avoid usually).</p>
+
+<h4 id="hoisting">1. Hoisting</h4>
+
+<p>The interesting thing about these is that they are “hoisted” to the top of their scope, which means this code:</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+</pre></td>
+  <td class="code"><pre>A();
+<span class="keyword">function</span> <span class="function">A</span>(){
+  console.log(<span class="string"><span class="delimiter">'</span><span class="content">foo</span><span class="delimiter">'</span></span>);
+};
+</pre></td>
+</tr></table>
+</div>
+
+<p>Gets executed as this code:</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+</pre></td>
+  <td class="code"><pre><span class="keyword">function</span> <span class="function">A</span>(){
+  console.log(<span class="string"><span class="delimiter">'</span><span class="content">foo</span><span class="delimiter">'</span></span>);
+};
+A();
+</pre></td>
+</tr></table>
+</div>
+
+<p>Which practically means that, yes, you can call the functions before they’re written in your code. It won’t matter, because the entire function gets hoisted to the top of its containing scope. (This is contrasted with variables, which only have their declaration hoisted, not their contents, as we’ll see in the next section).</p>
+
+<h4 id="no-function-declarations-in-if-statements-or-loops-etch4">2. No function declarations in <code>if</code> statements (or loops, etc)&lt;/h4&gt;</h4>
+<p>You can’t define functions this way in expressions, for example <code>if</code> statements, which is common if we want to define different versions of a function for different circumstances, usually to address browser inconsistencies. Well, you <em>can</em> in some implementations, but the way the code is processed is inconsistent (kangax has documented the inconsistencies <a href="http://kangax.github.com/nfe/">here</a>). If you want to use this pattern, use function expressions instead.</p>
+
+<h4 id="functions-declarations-must-have-names">3. Functions declarations must have names</h4>
+
+<p>This method doesn’t allow you to create anonymous functions, meaning that you always have to give it an identifier (in this case we’ve used “A”).</p>
+
+<h3 id="function-expressions-var-b--function">Function expressions: var B = function(){};</h3>
+
+<p>A function expression looks similar to function declarations, except that the function is assigned to a variable name. Though functions are not primitive values in JavaScript, this is the way they can be utilized to their full effect in this functional language. Functions are “<a href="http://en.wikipedia.org/wiki/First-class_function">first class</a>”:</p>
+
+<blockquote>
+  <p>“[JavaScript] supports passing functions as arguments to other functions, returning them as the values from other functions, and assigning them to variables or storing them in data structures”</p>
+</blockquote>
+
+<h4 id="anonymous-functions-they-dont-need-names">1. Anonymous functions (they don’t need names)</h4>
+
+<p>The function name is optional in function expressions, and we call these anonymous. Here we’re setting the variable B equal to an anonymous function:</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+</pre></td>
+  <td class="code"><pre><span class="keyword">var</span> <span class="function">B</span> = <span class="keyword">function</span>(){};
+</pre></td>
+</tr></table>
+</div>
+
+<h4 id="variable-declaration-hoisting">2. Variable declaration hoisting</h4>
+
+<p>Variable declarations are hoisted to the top of their scope, somewhat similarly to function hoisting <em>except</em> the contents of the variable are not hoisted as well. This happens with all variables, and it means it’s now happening with our functions, now that we’re assigning them to variables.</p>
+
+<p>This code:</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+</pre></td>
+  <td class="code"><pre><span class="keyword">var</span> <span class="function">A</span> = <span class="keyword">function</span>(){};
+<span class="keyword">var</span> <span class="function">B</span> = <span class="keyword">function</span>(){};
+<span class="keyword">var</span> <span class="function">C</span> = <span class="keyword">function</span>(){};
+</pre></td>
+</tr></table>
+</div>
+
+<p>Will be executed as this:</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+</pre></td>
+  <td class="code"><pre><span class="keyword">var</span> A, B, C;  <span class="comment">// variable declarations are hoisted</span>
+<span class="function">A</span> = <span class="keyword">function</span>(){};
+<span class="function">B</span> = <span class="keyword">function</span>(){};
+<span class="function">C</span> = <span class="keyword">function</span>(){};
+</pre></td>
+</tr></table>
+</div>
+
+<p>Therefore the order of setting and calling this type of function is important:</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+</pre></td>
+  <td class="code"><pre><span class="comment">// this works</span>
+<span class="keyword">var</span> <span class="function">B</span> = <span class="keyword">function</span>(){};
+B();
+
+<span class="comment">// this doesn't work</span>
+B2();  <span class="comment">// TypeError (B2 is undefined)</span>
+<span class="keyword">var</span> <span class="function">B2</span> = <span class="keyword">function</span>(){};
+</pre></td>
+</tr></table>
+</div>
+
+<p>The second example gives us an error because only the variable B2’s declaration is hoisted, but not its definition, thus the “undefined” error.</p>
+
+<h3 id="function-expressions-with-grouping-operators-var-c--function">Function expressions with grouping operators: var C = (function(){});</h3>
+
+<p>These really aren’t different from plain old function expressions and aren’t really seen in the wild (so maybe they’re just good for JavaScript quizzes?). Recently this way of declaring functions was brought up in <a href="http://ironjs.wordpress.com/2011/06/22/my-gripes-with-javascript/">this article</a> and confused some folks including myself.</p>
+
+<p>Here’s a good way to see what’s happening:</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+</pre></td>
+  <td class="code"><pre><span class="keyword">function</span>(){};  <span class="comment">// SyntaxError</span>
+(<span class="keyword">function</span>(){});
+</pre></td>
+</tr></table>
+</div>
+
+<p>Why does one work and the other doesn’t? The first example is a function declaration, and we learned above that we can’t declare them anonymously - that is, they must have a name. That’s why we’re getting the syntax error.</p>
+
+<p>The second example is using parenthesis - grouping operators - and is therefore evaluated differently, as a function expression. The grouping operators are the things we use to help show what should be evaluated first, as in mathematical problems. We’re saying “evaluate this first, then take the result and do something with it”:</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+</pre></td>
+  <td class="code"><pre>(<span class="integer">1</span> + <span class="integer">2</span>) * <span class="integer">3</span>;  <span class="comment">// 9</span>
+<span class="integer">1</span> + (<span class="integer">2</span> * <span class="integer">3</span>);  <span class="comment">// 7</span>
+</pre></td>
+</tr></table>
+</div>
+
+<p>In the first example we’re saying “first add 1 and 2, then take the result and multiply by 3”, whereas in the second example we’re saying “first multiply 2 and 3, then take the result and add 1”.</p>
+
+<p>Because functions are first class, we can use similar grouping operators. Here’s a facetious example, but it shows how we can essentially drop in a function in the same way:</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+</pre></td>
+  <td class="code"><pre>(<span class="keyword">function</span>(){} + <span class="integer">1</span>);  <span class="comment">// function(){}1</span>
+</pre></td>
+</tr></table>
+</div>
+
+<p>The result is a string (because toString is being called on the function, then added/appended with 1), but you get the idea I hope.</p>
+
+<p>When the JavaScript engine encounters the opening parenthesis here, we’re essentially saying “ok, start grouping this together with something else”. Using our technical terms, we’re telling the engine that we’re not making a function declaration, but instead a function expression. And then we can assign the result to a variable:</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+</pre></td>
+  <td class="code"><pre>(<span class="keyword">function</span>(){});           <span class="comment">// resulting function not assigned</span>
+<span class="keyword">var</span> foo = (<span class="keyword">function</span>(){}); <span class="comment">// resulting function assigned to foo</span>
+<span class="keyword">var</span> <span class="function">bar</span> = <span class="keyword">function</span>(){};   <span class="comment">// resulting function assigned to bar</span>
+</pre></td>
+</tr></table>
+</div>
+
+<p>Here we can see that foo and bar are really just the same, because in foo we’re not grouping the function together with anything but itself.</p>
+
+<h3 id="named-function-expression-var-d--function-foo">Named function expression: var D = function foo(){};</h3>
+
+<p>Here we have our same old friend, the function expression. But instead of assigning the variable to an anonymous function, we’re assigning it to a named function (with the name foo).</p>
+
+<h4 id="the-function-name-is-only-accessible-within-the-function">1. The function name is only accessible within the function</h4>
+
+<p>We haven’t exposed the function name (foo) to the enclosing scope (in this case the global scope):</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+</pre></td>
+  <td class="code"><pre><span class="keyword">var</span> <span class="function">D</span> = <span class="keyword">function</span> <span class="function">foo</span>(){
+  console.log(<span class="keyword">typeof</span> foo);
+};
+D();                       <span class="comment">// function</span>
+console.log(<span class="keyword">typeof</span> foo);   <span class="comment">// undefined</span>
+</pre></td>
+</tr></table>
+</div>
+
+<h4 id="useful-for-recursion">2. Useful for recursion</h4>
+
+<p>Because the function’s name is accessible in the function itself, this turns out to be useful for recursive functions, much more useful than the plain old anonymous function.</p>
+
+<p>Here’s a trivial recursive function to illustrate calling itself from within the named function expression:</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+</pre></td>
+  <td class="code"><pre><span class="keyword">var</span> <span class="function">countdown</span> = <span class="keyword">function</span> <span class="function">a</span>(count){
+  <span class="keyword">if</span>(count &gt; <span class="integer">0</span>) {
+    count--;
+    <span class="keyword">return</span> a(count);  <span class="comment">// we can also do this: a(--count), which is less clear</span>
+  }
+  console.log(<span class="string"><span class="delimiter">'</span><span class="content">end of recursive function</span><span class="delimiter">'</span></span>);
+}
+countdown(<span class="integer">5</span>);
+</pre></td>
+</tr></table>
+</div>
+
+<h4 id="useful-for-debugging">3. Useful for debugging</h4>
+
+<p>As a <a href="http://kangax.github.com/nfe/">few</a> <a href="http://javascriptweblog.wordpress.com/2010/07/06/function-declarations-vs-function-expressions/">have</a> pointed out, giving previously anonymous functions names helps in debugging, since the function name shows up on the call stack.</p>
+
+<h4 id="quirks-jscripts-bad-implementation">4. Quirks: JScript’s bad implementation</h4>
+
+<p><a href="http://kangax.github.com/nfe/">kangax</a> points out that named function expressions are basically poison to JScript, Internet Explorer’s implementation of JavaScript.</p>
+
+<p>The named function becomes a global variable, is hoisted like a function declaration, and actually ends up creating multiple instances of the same function.</p>
+
+<h3 id="immediately-invoked-function-expressions-iife-var-e--functionreturn-function">Immediately-invoked function expressions (IIFE): var E = (function(){return function(){}})();</h3>
+
+<p>“Execute this function, whose return value is another function, and assign that to the variable E”. This may seem like magic, but it’s actually quite simple, and the pattern is powerful and has useful applications, the most famous of which is the <a href="http://www.klauskomenda.com/code/javascript-programming-patterns/#module">module pattern</a>.</p>
+
+<p>First we’ll use an example that doesn’t look like magic:</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+</pre></td>
+  <td class="code"><pre><span class="keyword">var</span> <span class="function">foo</span> = <span class="keyword">function</span>(){
+  <span class="keyword">return</span> <span class="string"><span class="delimiter">'</span><span class="content">bar</span><span class="delimiter">'</span></span>;
+};
+<span class="keyword">var</span> output = foo();
+console.log(output);  <span class="comment">// 'bar'</span>
+</pre></td>
+</tr></table>
+</div>
+
+<p>We already learned about grouping operators above, so you should feel comfortable with saying this is equivalent:</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+</pre></td>
+  <td class="code"><pre><span class="keyword">var</span> <span class="function">foo</span> = <span class="keyword">function</span>(){
+  <span class="keyword">return</span> <span class="string"><span class="delimiter">'</span><span class="content">bar</span><span class="delimiter">'</span></span>;
+};
+<span class="keyword">var</span> output = (foo)(); <span class="comment">// note the extra grouping operators</span>
+console.log(output);  <span class="comment">// 'bar'</span>
+</pre></td>
+</tr></table>
+</div>
+
+<p>Since foo is pointing to our function expression, we know that we can simply refrain from using the variable “foo” and drop in the entire function as an anonymous function (since functions are first class, after all!):</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+</pre></td>
+  <td class="code"><pre><span class="keyword">var</span> output = (<span class="keyword">function</span>(){
+  <span class="keyword">return</span> <span class="string"><span class="delimiter">'</span><span class="content">bar</span><span class="delimiter">'</span></span>;
+})();
+console.log(output);  <span class="comment">// 'bar'</span>
+</pre></td>
+</tr></table>
+</div>
+
+<p>Hey wait, we just arrived at the magical resulting function! It turns out to be not so magical after all, once we break it down and see it for what it is. It’s simply shorthand for the code we wrote originally, where we defined a function, executed it, and defined output to be its return value.</p>
+
+<p>I’ve included this method on the list of declaring functions because we can assign the return value to itself be a function:</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+</pre></td>
+  <td class="code"><pre><span class="keyword">var</span> E = (<span class="keyword">function</span>(){
+  <span class="keyword">return</span> <span class="keyword">function</span>(){}
+})();
+</pre></td>
+</tr></table>
+</div>
+
+<h4 id="applications">Applications</h4>
+
+<p>There are good applications for this, including information hiding using in the module pattern, (<a href="http://ejohn.org/blog/partial-functions-in-javascript/">partial application</a>, for example), and other clever uses of it. It’s definitely not a trivial pattern.</p>
+
+<h3 id="function-constructor-var-f--new-function">Function constructor: var F = new Function();</h3>
+
+<p>This method is extremely old and it’s not recommended to be used. You pass in an unlimited number of arguments in the front, then the actual function body appears as a string in the last argument (because it’s a string, it’s effectively the equivalent of eval(), and isn’t recommended).</p>
+
+<h4 id="defining-the-function">1. Defining the function</h4>
+
+<p>You can create a function like this:</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+</pre></td>
+  <td class="code"><pre><span class="keyword">var</span> F = <span class="keyword">new</span> Function(<span class="string"><span class="delimiter">'</span><span class="content">arg1</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">arg2</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">console.log(arg1 + &quot;, &quot; + arg2)</span><span class="delimiter">'</span></span>);
+F(<span class="string"><span class="delimiter">'</span><span class="content">foo</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">bar</span><span class="delimiter">'</span></span>);  <span class="comment">// 'foo, bar'</span>
+</pre></td>
+</tr></table>
+</div>
+
+<h4 id="you-dont-need-the-new-operatorh4">2. You don’t need the <code>new</code> operator&lt;/h4&gt;</h4>
+<p>You can simply write <code>var F = Function();</code> to get the same result.</p>
+
+<h4 id="quirks">3. Quirks</h4>
+
+<p>The <a href="https://developer.mozilla.org/en/JavaScript/Reference/Functions_and_function_scope#Function_constructor_vs._function_declaration_vs._function_expression">MDN docs</a> have some good examples of the quirks, including the fact that functions declared with the Function constructor don’t inherit their current scope properly (i.e. a closure isn’t formed).</p>
+
+<p>What this means is that they don’t have access to variables in their enclosing scope, which isn’t particularly useful:</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+<strong><a href="#n10" name="n10">10</a></strong>
+<a href="#n11" name="n11">11</a>
+<a href="#n12" name="n12">12</a>
+</pre></td>
+  <td class="code"><pre><span class="keyword">function</span> <span class="function">foo</span>(){
+  <span class="keyword">var</span> bar = <span class="string"><span class="delimiter">'</span><span class="content">blah</span><span class="delimiter">'</span></span>;
+  
+  <span class="keyword">var</span> first = <span class="keyword">new</span> Function(<span class="string"><span class="delimiter">'</span><span class="content">console.log(typeof bar)</span><span class="delimiter">'</span></span>);
+  first();   <span class="comment">// undefined</span>
+  
+  <span class="keyword">var</span> <span class="function">second</span> = <span class="keyword">function</span>(){
+    console.log(<span class="keyword">typeof</span> bar);
+  }
+  second();  <span class="comment">// string</span>
+}
+foo();
+</pre></td>
+</tr></table>
+</div>
+
+<p>In the function “first”, we’re using the Function constructor, so it doesn’t have access to the variable bar. However, if we use the function “second”, which is a function expression, it does in fact have access to variables defined in its enclosing scope (via closure).</p>
+
+<p>In other words, <em>don’t use the Function constructor</em>.</p>
+
+<h3 id="special-case---object-constructor-var-g--new-function-foo">Special case - object constructor: var G = new function foo(){};</h3>
+
+<p>I saved this for last because we’re not really defining a function, though we are using the function keyword, so it’s worth noting at least.</p>
+
+<p><code>new function(){};</code> creates a new object and invokes the anonymous function as its constructor. If an object is returned from the function, that becomes the resulting object, otherwise a new object is created from scratch and function is executed in the context of that new function (let’s save the details for another post!).</p>
+
+<p>It’s a bit unusual to see it in this form. Let’s do it the proper way:</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+</pre></td>
+  <td class="code"><pre><span class="keyword">var</span> <span class="function">Person</span> = <span class="keyword">function</span>(){
+  console.log(<span class="local-variable">this</span>);  <span class="comment">// Person</span>
+}
+<span class="keyword">var</span> joe = <span class="keyword">new</span> Person();
+</pre></td>
+</tr></table>
+</div>
+
+<p>So really with the new operator, we are giving it a new ‘this’ context and then executing the given function with that new context. Much different than the function definitions we’ve been dealing with above! This does into a whole new topic, and we’ll save that for later!</p>
+
+<h3 id="further-reading">Further reading</h3>
+
+<p><a href="http://kangax.github.com/nfe/">Named function expressions demystified</a> (kangax)</p>
+
+<p><a href="http://benalman.com/news/2010/11/immediately-invoked-function-expression/">Immediately-Invoked Function Expression (IIFE) (Ben Alman)</a></p>
+
+<p><a href="https://developer.mozilla.org/en/JavaScript/Reference/Functions_and_function_scope">Functions and function scope</a> (Mozilla Developer Network - MDN)</p>
+
+<p><a href="http://stackoverflow.com/questions/1140089/how-does-an-anonymous-function-in-javascript-work">How does an anonymous function in JavaScript work? (StackOverflow)</a></p>
+
+<p><a href="http://javascriptweblog.wordpress.com/2010/07/06/function-declarations-vs-function-expressions/">Function Declarations vs. Function Expressions (JavaScript, JavaScript by Angus Croll)</a></p>
+
+<p><a href="http://www.amazon.com/gp/product/0596805527/">JavaScript: The Definitive Guide</a> (classic book by David Flanagan)</p>
+
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/2011/on-professional-self-worth">
+			
+				On Professional Self-worth</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-06-21T00:00:00-07:00" pubdate data-updated="true">Jun 21<span>st</span>, 2011</time></div>
+	</header>
+	<div class="entry-content">
+		<p>Huge huge rant incoming, but all is not said and done, and much is open for debate of course. Counterpoints and criticisms are more than welcome in the comments. This is just my opinion based on my experience at this point in time.</p>
+
+<h3 id="self-worth-the-rich-man-and-the-poor-man">Self-worth: the rich man and the poor man</h3>
+
+<p>For a long while there have been places in the world that view self-worth as largely tied to wealth.  No doubt there is more than just money, as even within the rich community there’s a distinction between the established rich and the “nouveau riche”, or the newly rich.  One is ranked higher than the other, but nonetheless the rich are themselves seen as being more important than the average person.</p>
+
+<p>You might not believe me.  That means it’s time for a thought experiment!</p>
+
+<p>One way to hammer home this point is to posit a classic thought experiment.  There are two people – one rich and one poor – and this is all the information we have about them (this is important).  Assuming that one of them will die in some horrific way and we can only choose to save one, most people would probably save the rich person (assuming they don’t have a bias or some psychological complex against rich folks).  Remember, we have no other information about them other than one is rich and one is poor.  The aim of the thought experiment, rather than trying to give a realistic scenario, is to simply try to show us that we give the rich person preference.  At least ij the case where we have no other information.</p>
+
+<p>And it’s not even that we think we might receive a reward from the rich person!  Even if we figure that in, we still give preference to the rich person, probably in part because we think that they must be somewhat more important than the poor person.  They must have acquired that money some way, after all.  Possobly even through hard work.  The poor person, we assume, must be poor for a reason, and that might be through sheer laziness.  So we have a hard worker versus a lazy worker… which one is more worthy to live?  And it’s only those hasty assumptions that we have to deal with.</p>
+
+<h3 id="professional-worth-employees-of-famous-and-nonfamous-companies">Professional worth: employees of famous and nonfamous companies</h3>
+
+<p>Laying aside issues of money for a moment, let’s perform a similar thought experiment, except with different people.  One person works at company X, which no one has really heard of, and the other person works at company Y, which at the time is a wildly famous and reputable company.  Because this industry is so fickle and subject to change, at the time of this writing this famous company might be Facebook, Google, or Twitter.  Or any other company which has the tech zeitgeist or mojo at the time.</p>
+
+<p>Assuming we know nothing else but the people’s employers (and laying aside biases and hatred for certain companies), if we put these people on the line, the one employee of a no-name company and the other employee of a famous company, we would probably choose to save the latter.  For much of the same reasons as above.  For instance, this person got a job at Facebook, so they must be smart and a hard worker.  On the other hand, the person at the no-name company (i.e. the vast majority of people out there) is probably not as smart or not as hard-working.  After all, if they were, then they would’ve been at (famous company) by now!  Therefore they are undoubtedly less worthy professionally, and by hasty extension, less worthy as a human being (remember, we have no other information to base our conclusion off of).</p>
+
+<p>So it is!  Death to the employee of the nonfamous company!</p>
+
+<h3 id="work-history-first-impressions-and-professional-self-worth">Work history, first impressions, and professional self-worth</h3>
+
+<p>We chose to save the rich person and the Facebook engineer. The good thing is that luckily almost no one thinks in these horrible black-and-white terms, and we always take into account other available factors.  For instance, as an example of a poor person we might have Mother Teresa and as a rich person we might have mean old Donald Trump.  No one in their right mind would send Mother Teresa off to the gallows while letting Trump off (regardless of what you think of Trump really).</p>
+
+<p>The problem here is that although we do take into account different factors, professionally we (and recruiters) weigh our work history much too heavily in the grand scheme of things.  We take other factors into consideration, sure, but work history is a huge deciding factor as far as people are paid attention to, give off good first impressions, or are even given a single glance by recruiters.</p>
+
+<p>This isn’t totally unwarranted, I should say.  Chances are, if someone worked at a few famous companies, there’s a good chance they are a better than average engineer, even though there’s no guarantee of this (there are always exceptions).  But that’s not the problem here.  The problem is because this is given a disproportionate amount of weight, people start to view this as THE deciding factor in whether to work for a company.  Name-brand recognition becomes a goal-in-itself.  Money always matters, sure, but professionally there is little that can beat having a reputable name brand on a resume.</p>
+
+<p>So what happens in practice?  An engineer becomes employed at a famous big company, is put to work maintaining some existing platforms, and at the end of a year perhaps learns some things that make them a better engineer.  But the same person instead working for some no-name startup might in the same period of time learn many more technologies, solve many more problems, and have a bit more freedom and opportunity to create (though they won’t necessarily learn best practices or scaling issues that typically come with famous large companies, but there’s more to being a good engineer than that!).  Each gets an opportunity to get their hands dirty with different varieties of dirt.  At the end of the day, I would say the latter very well becomes a more well-rounded engineer, instead of a generic single-functioned cog in some big company machine.</p>
+
+<p>Ok, now my bias is showing through brilliantly!</p>
+
+<p>Let’s at least say, for the purposes of argument, that both engineers are equally skilled (though this is hard to quantify, though, obviously).  So who do the recruiters contact, the employee at the famous company or the employee at the nonfamous company?  Who gets more attention from people in general when they’re asked where they work?  In short, whose professional life is a priori more highly valued?  You already know the answer.</p>
+
+<h3 id="final-thoughts">Final thoughts</h3>
+
+<p>We MUST become more confident of our skills (I need to work on this myself), and we must be tough enough and realistic enough to know our own professional worth.  Appearances count for much in this world, and too much at that.  But what better to maintain if we are authentic human beings: an appearance or something deeper?</p>
+
+<p>Famous companies do look good on resumes in the same way Ivy Leagues colleges look good on the very same piece of paper.  But don’t make this a deciding factor when choosing an employer.  It’s true that it will help you find more jobs and get more respect in the long run, but then you are wasting your time doing something you don’t want to do for the duration, for a company that exists for its own ends, not the ends of its employees (this is true of most companies out there, to be fair).  If you are ok wasting your time for a cause such as this, then go for it. It seems some people are ok with that.  At the very least be aware of it.</p>
+
+<p>So what happens to the passionate engineers who actually do want to work for a famous company for reasons other than brand recognition?  They might not always get the job.  But it’s definitely not the end of the world.  No one should be disheartened because Google turned them away for not being able to answer today’s technological equivalent of “how many angels can dance on the head of a pin” (or other mental masturbation puzzles).  In the end it’s you that makes you a worthy professional and a good engineer.  If your job doesn’t actually give you a chance to be one, you can still become one on your own.  I would say most people are capable of this if they invest the effort.</p>
+
+<p>But working for a famous company, and for its own sake?  It doesn’t necessarily make you a good engineer, any more than wearing glasses and dressing in a suit gives more validity to your opinions (even though many people sadly tend to think otherwise).</p>
+
+<p>(Note to self: I wrote this on the banks of the Kamogawa River in Kyoto on my iPad. I was enjoying the moment and obviously in a contemplative mood!)</p>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/2011/new-mobile-safari-stuff-in-ios5-position-fixed-overflow-scroll-new-input-type-support-web-workers-ecmascript-5">
+			
+				New Mobile Safari Stuff in iOS5: Position:fixed, Overflow:scroll, New Input Type Support, Web Workers, ECMAScript 5</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-06-07T00:00:00-07:00" pubdate data-updated="true">Jun 7<span>th</span>, 2011</time></div>
+	</header>
+	<div class="entry-content">
+		<p>(note: this is based on the first iOS5 beta [9A5220p] and is subject to change on final release)</p>
+
+<p>It looks like there’s finally some major improvements in mobile Safari, some of which I’ve found below on my “first glance” after downloading the SDK. Chime in if you find anything yourself!</p>
+
+<h3 id="bad-news-first">Bad news first</h3>
+
+<p>Much to my disappointment, browser-based file uploads are still not supported (<a href="http://frontendstuff.com/html/examples/input-type-file.html">input type=”file”</a>), even though they have been supported on Android since version 2.2 (which they have <a href="http://davidbcalhoun.com/2011/android-3-0-honeycomb-is-first-to-implement-the-device-api">continued to improve and refine</a>). The best use case for this is uploading pictures and videos straight from the browser, but Apple seems more interested in making those functions possible directly from the operating system itself, supporting only big names like Twitter and YouTube. So much for the little guys.</p>
+
+<p>There’s other stuff on my wishlist that hasn’t yet been implemented, such as <s>WebGL and</s> indexedDB, along with some HTML5 input types, but regardless it’s good to see some real progress in iOS 5. (update: it appears that some WebGL features are starting to be supported, although the demos I tried didn’t seem to work).</p>
+
+<p>Now let’s move on to the awesome new stuff that IS implemented!</p>
+
+<h3 id="positionfixed">position:fixed</h3>
+
+<p>A point of contention since the original iPhone was released in 2007, position:fixed now works on iOS5! What this means to developers: it’s now very easy to create top and bottom toolbars for your web apps. (there’s a long history of hacks and workarounds which will still need to be implemented as a fallback for the time being, but I’ll save that for another post. I should also mention that position:fixed has worked on Android since version 2.2, and webOS seems to support a somewhat hacky implementation).</p>
+
+<p>Here’s a <a href="http://www.youtube.com/watch?v=JFzv3ETwfms">video demo of position:fixed on iOS5</a>:</p>
+
+<p>(check out the <a href="http://frontendstuff.com/css/examples/position-fixed.html">demo</a> for yourself)</p>
+
+<h3 id="overflowscroll">overflow:scroll</h3>
+
+<p>This is a similar problem to position:fixed, but now it works on iOS5! For content that doesn’t fit in its container element, previously the content was completely cut off (similarly with iframes). On the desktop we have the option to show scrollbars instead, allowing the user to scroll to see the content, but iOS made this difficult by requiring two fingers to scroll. Now overflow:scroll works and the user can scroll through the container’s content with a single finger. Developers can use new CSS to enable native scrolling (with scrollbars and momentum):</p>
+
+<div class="codecolorer-container text twitlight" style="overflow:auto;white-space:nowrap;width:435px;">
+  <table cellspacing="0" cellpadding="0">
+    <tr>
+      <td class="line-numbers">
+        <div>
+          1<br />
+        </div>
+      </td>
+      
+      <td>
+        <div class="text codecolorer">
+          -webkit-overflow-scrolling: touch;
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<p>(via <a href="http://johanbrook.com/browsers/native-momentum-scrolling-ios-5/">Johan Brook</a>).</p>
+
+<p>It’s assumed that it’s up to the developer to implement some sort of visual indicator to let the user know they can interact with the element.</p>
+
+<p>One criticism so far: there’s no inertia scroll on this element, so it doesn’t quite feel the same as scrolling the page.</p>
+
+<p>Here’s a quick <a href="http://www.youtube.com/watch?v=KwpZ1F6dW5U">video demo of overflow:scroll on iOS 5</a>.</p>
+
+<p>(check out the <a href="http://frontendstuff.com/css/examples/overflow-scroll.html">demo</a> for yourself)</p>
+
+<h3 id="new-input-types">New Input Types</h3>
+
+<p>HTML5 defined many new helpful input types, and mobile operating systems have been slowly implementing them and creating optimized keyboards for the inputs. iOS5 now supports these input types: date, datetime, month, time, range. Click on the images to see their respective demo pages:</p>
+
+<p><a href="http://frontendstuff.com/html/input-type-date.html"><img src="http://davidbcalhoun.com/wp-content/uploads/2011/06/ios-date-input.png" alt="iOS Date Input" title="iOS Date Input" width="320" height="480" class="size-full wp-image-677" /></a><a href="http://frontendstuff.com/html/input-type-datetime.html"><img src="http://davidbcalhoun.com/wp-content/uploads/2011/06/ios-datetime-input.png" alt="iOS Datetime Input" title="iOS Datetime Input" width="320" height="480" class="size-full wp-image-678" /></a><a href="http://frontendstuff.com/html/input-type-month.html"><img src="http://davidbcalhoun.com/wp-content/uploads/2011/06/ios-month-input.png" alt="iOS Month Input" title="iOS Month Input" width="320" height="480" class="size-full wp-image-680" /></a><a href="http://frontendstuff.com/html/input-type-time.html"><img src="http://davidbcalhoun.com/wp-content/uploads/2011/06/ios-time-input.png" alt="iOS Time Input" title="iOS Time Input" width="320" height="480" class="size-full wp-image-682" /></a><a href="http://frontendstuff.com/html/input-type-range.html"><img src="http://davidbcalhoun.com/wp-content/uploads/2011/06/ios-range-input.png" alt="iOS Range Input" title="iOS Range Input" width="320" height="480" class="size-full wp-image-681" /></a></p>
+
+<p>And a fun one – <a href="http://davidbcalhoun.com/2011/implementing-iphone-slider-unlock-with-input-type-range">my iPhone slider hack based on input type range</a>, which now actually works on the iPhone itself (because input type=”range” is now supported)!</p>
+
+<p><a href="http://davidbcalhoun.com/a/iphone-slider.html"><img src="http://davidbcalhoun.com/wp-content/uploads/2011/06/ios-iphone-slider-in-html.png" alt="iOS Slider implemented with Range Input" title="iOS Slider implemented with Range Input" width="320" height="480" class="aligncenter size-full wp-image-679" /></a></p>
+
+<h3 id="web-workers-javascript">Web Workers (JavaScript)</h3>
+
+<p>JavaScript is single-threaded, and it happens to run on the same thread as the UI, which means computationally expensive operations can lead to an unresponsive UI, and no one likes that. Web Workers help by offloading tasks to another thread and only returning output when it needs to. In other words, it’s a good thing for us web developers.</p>
+
+<p>According to my own tests, Web Workers seemed to be briefly enabled on early versions of iOS3, but were soon disabled thereafter. Now with iOS5, they’re back again!</p>
+
+<h3 id="new-ecmascript-5-stuff-javascript">New ECMAScript 5 stuff (JavaScript)</h3>
+
+<p>(based on <a href="http://kangax.github.com/es5-compat-table/">kangax’s ECMAScript 5 compatibility table</a>)</p>
+
+<table>
+  <tr>
+    <td>
+      Feature
+    </td>
+    
+    <td>
+      iOS 4.3.2
+    </td>
+    
+    <td>
+      iOS 5 beta 1
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Object.create
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Object.defineProperty
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Object.defineProperties
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Object.getPrototypeOf
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Object.keys
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Object.seal
+    </td>
+    
+    <td class="negative">
+      No
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Object.freeze
+    </td>
+    
+    <td class="negative">
+      No
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Object.preventExtensions
+    </td>
+    
+    <td class="negative">
+      No
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Object.isSealed
+    </td>
+    
+    <td class="negative">
+      No
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Object.isFrozen
+    </td>
+    
+    <td class="negative">
+      No
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Object.isExtensible
+    </td>
+    
+    <td class="negative">
+      No
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Object.getOwnPropertyDescriptor
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Object.getOwnPropertyNames
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Date.prototype.toISOString
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Date.prototype.toISOString
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Date.prototype.toISOString
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Date.now
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      JSON
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Function.prototype.bind
+    </td>
+    
+    <td class="negative">
+      No
+    </td>
+    
+    <td class="negative">
+      No
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      String.prototype.trim
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Array.prototype.indexOf
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Array.prototype.lastIndexOf
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Array.prototype.every
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Array.prototype.some
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Array.prototype.forEach
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Array.prototype.map
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Array.prototype.filter
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Array.prototype.reduce
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Array.prototype.reduceRight
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Getter in property initializer
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Setter in property initializer
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Property access on strings
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Reserved words as property names
+    </td>
+    
+    <td class="negative">
+      No
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Strict mode
+    </td>
+    
+    <td class="negative">
+      No
+    </td>
+    
+    <td class="positive">
+      Yes
+    </td>
+  </tr>
+</table>
+
+<h3 id="html5test-score">HTML5Test score</h3>
+
+<p>iOS 4.3.2 scores 206 (7 bonus points) on the <a href="http://html5test.com/">HTML5 Test</a>, whereas iOS 5 beta scores 267 (9 bonus points). Much of these gains seem to be made in the “Forms” and “Parsing rules” sections, as well as the “Web Workers” section.</p>
+
+<h3 id="miscellaneous-new-stuff">Miscellaneous new stuff</h3>
+
+<ul>
+  <li>Inline SVG in text/html</li>
+  <li>float32array, int8array, int16array, int32array in JavaScript</li>
+  <li>window.matchmedia() (JavaScript)</li>
+  <li>
+    <s>onsearch Event (JavaScript)</s>
+    <p>– it looks like this was just broken in later iOS 4.3 builds, but it’s back now in iOS 5</p>
+  </li>
+  <li>MathML elements recognized (based on <a href="http://html5test.com/">html5test</a>)</li>
+  <li>Improved speed of Canvas rendering (<a href="https://twitter.com/#!/KesieV/status/78067470501543936">source</a>)</li>
+  <li>UIWebView and home screen web apps now running on Nitro? (expected but not tested)</li>
+  <li>Newly supported CSS gradient syntax (-webkit-linear-gradient versus the older -webkit-gradient syntax)</li>
+  <li><a href="https://developer.mozilla.org/en/DOM/element.classList">classList</a> (JavaScript)</li>
+  <li>A major WebKit HTML5 History (popstate) bug is <a href="https://bugs.webkit.org/show_bug.cgi?id=42940">now fixed</a></li>
+  <li><a href="http://html5demos.com/contenteditable">contentEditable</a> now works properly</li>
+</ul>
+
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/2011/the-incredibly-painful-way-of-getting-an-rss-feed-of-a-twitter-list">
+			
+				The Incredibly Painful Way of Getting an RSS Feed of a Twitter List</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-06-05T00:00:00-07:00" pubdate data-updated="true">Jun 5<span>th</span>, 2011</time></div>
+	</header>
+	<div class="entry-content">
+		<p>(why does Twitter make it so hard? What did RSS ever do to it?)</p>
+
+<h3 id="the-skinny">The skinny</h3>
+
+<p>The Twitter API appears to support two methods for getting RSS feeds of lists. Both of these methods are pretty buried and their API docs don’t help too much, but nonetheless both of these feeds work:</p>
+
+<blockquote>
+  <p><a href="http://api.twitter.com/1/nathansmith/lists/javascript/statuses.atom">http://api.twitter.com/1/nathansmith/lists/javascript/statuses.atom</a></p>
+</blockquote>
+
+<p>If you have the list ID (requires using some dev tools – see below), you can also use this format:</p>
+
+<blockquote>
+  <p><a href="http://api.twitter.com/1/lists/statuses.atom?list_id=41981352">http://api.twitter.com/1/lists/statuses.atom?list_id=41981352</a></p>
+</blockquote>
+
+<h3 id="the-explanation">The explanation</h3>
+
+<p>As it turns out, getting an RSS feed of a Twitter list is no easy task, at least from what I’ve found. Twitter has largely replaced RSS for me, in terms of getting the latest and greatest information, and maybe Twitter wants to keep it that way by having me rely on their service instead of an RSS feed. That’s how it seems to me anyway (this is also evidenced by their <a href="https://support.twitter.com/groups/31-twitter-basics/topics/111-features/articles/15361-how-to-find-your-rss-feed">killing off of making RSS feeds easily discoverable</a> but still making the feed available as long as you can figure out your Twitter user id (which is a task in itself), for instance here’s my RSS feed: <a href="https://twitter.com/statuses/user_timeline/16521889.rss">https://twitter.com/statuses/user_timeline/16521889.rss</a>). I’d say this is simply a conspiracy against RSS feeds and developers in general, which is the direction Twitter is headed these days.</p>
+
+<p>In any case, I digress! I want to get an RSS feed of a Twitter list. Great! All I should have to do is go to the page of the list and subscribe to the RSS feed. But.. there’s no RSS feed. Hmm.</p>
+
+<h3 id="google-is-your-friend8230-most-of-the-time">Google is your friend… most of the time</h3>
+
+<p>A search for “twitter list rss” comes up with links to implementing an RSS feed via Yahoo Pipes as well as pages referring to an appspot service that now 404s (<a href="http://twiterlist2rss.appspot.com/">twiterlist2rss</a>). In any case, they are both not what I’m looking for. Which means I have to get creative. Which means… my options at this point are screen scraping (made harder by the fact that Twitter content is now served with JavaScript) or.. gasp.. using their API!</p>
+
+<h3 id="twitter-rest-api-to-the-rescue">Twitter REST API to the rescue</h3>
+
+<p>After digging through the API docs, I found just the page I was looking for, <a href="http://dev.twitter.com/doc/get/lists/statuses">detailing the REST service for Twitter lists</a>.</p>
+
+<p>As it turns out, the basic structure for requesting list data is as follows:</p>
+
+<blockquote>
+  <p>http://api.twitter.com/version/lists/statuses.format</p>
+</blockquote>
+
+<p>As a newbie Twitter developer, there were a couple of things wrong here. First, what’s the version of the API I’m supposed to use? From other examples on the web (outside of the documentation…) I just assumed I’d be using version 1, and that seemed to work. Ok, whatever, we’ll go with 1:</p>
+
+<blockquote>
+  <p>http://api.twitter.com/1/lists/statuses.format</p>
+</blockquote>
+
+<p>Second step: this API is actually quite nice, and will return data in three different formats: xml, json, or atom (RSS!). Ok, now we’re making progress!</p>
+
+<blockquote>
+  <p>http://api.twitter.com/1/lists/statuses.atom</p>
+</blockquote>
+
+<h3 id="where8217s-this-listid-you-speak-of">Where’s this list_id you speak of?</h3>
+
+<p>Now to pass in the info – I need to pass in the list ID in a key called “list_id”. The only problem is… where do I find the list ID? For the purposes of this example I’ll use <a href="https://twitter.com/#!/nathansmith/javascript">Nathan Smith’s excellent JavaScript developers list</a>. To normal human beings, this list might be called “nathansmith/javascript”, but a Twitter ID is numerical, so that’s not what we’re looking for.</p>
+
+<p>So.. I assume at this point I can use some of the Twitter developer tools and fiddle around with them until I find an API call that will translate the human-readable list name into a numerical ID. But no.. I don’t want to download anything, I don’t want to investigate more of the API or go down any more rabbit holes.</p>
+
+<p>It’s time to cut this rabbit hole short and do a bit of investigating. So I pulled up the list, opened up Web Inspector in Chrome, and took a look at the Network tab in the hopes of seeing an API call with an ID I was looking for…</p>
+
+<p>…And I found it! Somewhere down the line, Twitter was calling statuses.json with this request:</p>
+
+<blockquote>
+  <p>https://api.twitter.com/1/lists/statuses.json?list_id=41981352&#038;include_entities=1&#038;include_available_features=1&#038;contributor_details=true</p>
+</blockquote>
+
+<p>There’s our list_id (and incidentally, the same API call [with json instead of atom].. which shows that Web Inspector is more useful than API docs sometimes)! After a short copy-paste, all the pieces of my Frankenstein API call have been put together:</p>
+
+<blockquote>
+  <p><a href="http://api.twitter.com/1/lists/statuses.atom?list_id=41981352">http://api.twitter.com/1/lists/statuses.atom?list_id=41981352</a></p>
+</blockquote>
+
+<p>And it works, without having to mess around with OAuth or authentication, registering an app, or whatever. Of course now we can refer back to the API docs and mess around with some parameters to get just the data I’m looking for. Maybe most useful to developers is the handy ability to get easily paginated results:</p>
+
+<blockquote>
+  <p><a href="http://api.twitter.com/1/lists/statuses.atom?list_id=41981352&#038;page=2">http://api.twitter.com/1/lists/statuses.atom?list_id=41981352&#038;page=2</a></p>
+</blockquote>
+
+<p>There’s also what would be a handy “count” variable, but it’s altogether useless as it appears to be ignored. The API always returned 20 results for me.</p>
+
+<p>In any case, there you have it! The incredibly roundabout way to get an RSS feed of your favorite Twitter list.</p>
+
+<h3 id="update"><strong>UPDATE</strong></h3>
+
+<p>Thanks to <a href="http://sociable.co/2011/05/05/as-twitter-protects-its-ecosystem-heres-how-to-create-an-rss-feed-of-a-twitter-list/">this site</a>, it looks like there’s a more straightforward way of getting the RSS feed. Using the same list we were trying to get above, it looks like this also works:</p>
+
+<blockquote>
+  <p>http://api.twitter.com/1/nathansmith/lists/javascript/statuses.atom</p>
+</blockquote>
+
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/2011/android-3-0-honeycomb-is-first-to-implement-the-device-api">
+			
+				Android 3.0 Honeycomb Is First to Implement the Device API</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-02-24T00:00:00-08:00" pubdate data-updated="true">Feb 24<span>th</span>, 2011</time></div>
+	</header>
+	<div class="entry-content">
+		<p>I fired up the newly released Android 3.0 SDK to run some tests and found they’ve implemented part of the long-awaited <a href="http://www.w3.org/2009/dap/">Device API</a> (aka the Media Capture API). From your browser you can now upload pictures and videos from the camera as well as sounds from the microphone. The returned data should be available to manipulate via the <a href="http://www.w3.org/TR/FileAPI/">File API</a> (although I haven’t yet tested this).</p>
+
+<p>I made a <a href="http://www.youtube.com/watch?v=L1XqvLOi-3I">short video demo</a> with some explanation:</p>
+
+<p>Here’s the code so you can play around with it for yourself!</p>
+
+<pre name="code" class="html">&lt;form enctype="multipart/form-data" method="post"&gt;
+  &lt;h2&gt;Regular file upload&lt;/h2&gt;
+  &lt;input type="file"&gt;&lt;/input&gt;
+  
+  &lt;h2&gt;capture=camera&lt;/h2&gt;
+  &lt;input type="file" accept="image/*;capture=camera"&gt;&lt;/input&gt;
+  
+  &lt;h2&gt;capture=camcorder&lt;/h2&gt;
+  &lt;input type="file" accept="video/*;capture=camcorder"&gt;&lt;/input&gt;
+  
+  &lt;h2&gt;capture=microphone&lt;/h2&gt;
+  &lt;input type="file" accept="audio/*;capture=microphone"&gt;&lt;/input&gt;
+&lt;/form&gt;
+</pre>
+
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/2011/my-oreilly-books-wishlist">
+			
+				My O&#8217;Reilly Books Wishlist</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-02-22T00:00:00-08:00" pubdate data-updated="true">Feb 22<span>nd</span>, 2011</time></div>
+	</header>
+	<div class="entry-content">
+		<h3 id="introduction">Introduction</h3>
+
+<p>Ok, so this post is only here in the hopes I’ll actually win something. <img src="http://davidbcalhoun.com/wp-includes/images/smilies/icon_razz.gif" alt=":P" class="wp-smiley" /> </p>
+
+<p><a href="http://oreilly.com/new-year-2011.html">O’Reilly Books has a promotion</a> where a random winner will receive up to $500 of books on their wishlist, provided they post the list somewhere online. You can probably see why this is here then!</p>
+
+<h3 id="the-list">The List</h3>
+
+<p><a href="http://oreilly.com/catalog/9780596807788/">Programming the Mobile Web</a> ($50)<br />
+<a href="http://oreilly.com/catalog/9780596155254/">Palm webOS</a> ($45)<br />
+<a href="http://oreilly.com/catalog/9781449381561/">MongoDB: The Definitive Guide</a> ($40)<br />
+<a href="http://oreilly.com/catalog/9781449393847/">JavaScript: The Definitive Guide: Rough Cuts Version, Sixth Edition</a> ($50)<br />
+<a href="http://oreilly.com/catalog/9780596806026/">HTML5: Up and Running</a> ($30)<br />
+<a href="http://oreilly.com/catalog/9781449383268/">Building Android Apps with HTML, CSS, and JavaScript</a> ($30)<br />
+<a href="http://oreilly.com/catalog/9780596805784/">Building iPhone Apps with HTML, CSS, and JavaScript</a> ($30)<br />
+<a href="http://oreilly.com/catalog/9780596157609/">HTML &#038; CSS: The Good Parts</a> ($35)<br />
+<a href="http://oreilly.com/catalog/9781449393908/">HTML5 Canvas</a> ($40)<br />
+<a href="http://oreilly.com/catalog/9780596159771/">jQuery Cookbook</a> ($35)<br />
+<a href="http://oreilly.com/catalog/9781449390501/">Learning Android</a> ($35)<br />
+<a href="http://oreilly.com/catalog/9780596155933/">CSS Cookbook, Third Edition</a> ($50)</p>
+
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post">
@@ -885,1115 +2287,6 @@ Total:                  5357.3ms +/- 2.3%
 <a href="http://davidbcalhoun.com/2010/iphone-4-sunspider-test-results">iPhone 4 SunSpider test results (22% faster than iPhone 3GS)</a><br />
 <a href="http://davidbcalhoun.com/2010/sunspider-ios-3-1-3-versus-ios-4-gm">JavaScript SunSpider test: iOS 3.1.3 versus iOS 4 GM</a><br />
 <a href="http://davidbcalhoun.com/2010/javascript-sunspider-htc-evo-versus-htc-incredible-versus-nexus-one">JavaScript SunSpider: HTC Evo versus HTC Incredible versus Nexus One</a></p>
-
-
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post">
-	<header>
-		<h2 class="title">
-			
-			<a href="/2011/notes-mobile-web-design-cameron-moll-200">
-			
-				Notes: Mobile Web Design (Cameron Moll, 2007)</a>
-		</h2>
-		<div class="meta date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-01-21T00:00:00-08:00" pubdate data-updated="true">Jan 21<span>st</span>, 2011</time></div>
-	</header>
-	<div class="entry-content">
-		<h3 id="what8217s-this">What’s this?</h3>
-
-<p>These are some notes I collect as I read through Cameron Moll’s <a href="http://www.amazon.com/Mobile-Web-Design-Cameron-Moll/dp/0615185916">Mobile Web Design</a>.</p>
-
-<h3 id="introduction">Introduction</h3>
-
-<ol>
-  <li>Further info:</li>
-</ol>
-
-<p>Designing the Mobile User Experience (Barbara Ballard)<br />
-dotMobi Web Developer’s Guide (dev.mobi)<br />
-Global Authoring Practices for the Mobile Web (Luca Passani) (passani.it/gap)<br />
-Constant Touch: A Global History of the Mobile Web (Jon Agar)<br />
-Personal, Portable, Pedestrian: Mobile Phones in Japanese Life (Mizuko Ito)<br />
-Mobile Interaction Design (Matt Jones)</p>
-
-<ol>
-  <li>iPhone released just before publication</li>
-</ol>
-
-<h3 id="mobile-web-fundamentals">Mobile Web Fundamentals</h3>
-
-<ol>
-  <li>
-    <p><a href="http://communities-dominate.blogs.com/brands/2007/01/putting_27_bill.html">Putting 2.7 Billion in Context: Mobile Phone Users</a></p>
-  </li>
-  <li>
-    <p>Phone is smaller. Different input methods. Searching for specific data (directions or a phone number) rather than a truckload of data available via the desktop. One handed interaction.</p>
-  </li>
-  <li>
-    <p>Limitations: small screen size, difficulty of data input, user agent inconsistency</p>
-  </li>
-</ol>
-
-<p>Opportunities: location-specific data, on-the-go-messaging, voice communication.</p>
-
-<ol>
-  <li>
-    <p>Weather Channel – greater reach on mobile web compared to desktop (<a href="http://www.comscore.com/Press_Events/Press_Releases/2007/05/Mobile_Web_Usage_Grows_in_UK">source</a>)</p>
-  </li>
-  <li>
-    <p>Rollable display – Polymer Vision Readius (<a href="http://www.youtube.com/watch?v=uQMBzXaCmqY">video</a>)</p>
-  </li>
-</ol>
-
-<p>Many devices and user agents, making testing expensive and impractical. Emulators and testing on multiple devices will lead to successful deployment.</p>
-
-<ol>
-  <li>Opera Mini – far better UI than most native browsers</li>
-</ol>
-
-<p>Mostly must be installed manually, except for T-Mobile shipping hundreds of thousands with it pre-installed</p>
-
-<ol>
-  <li>
-    <p>“…the mobile web experience is often a small screen, intermittent, one-handed experience”</p>
-  </li>
-  <li>
-    <p>understanding of target audience, their usage and what they want, and the contextual relevance (phone numbers, etc.) of data</p>
-  </li>
-  <li>
-    <p>Initiate a phone call: wtai scheme for WML, tel scheme for HTML.</p>
-  </li>
-</ol>
-
-<p>Some browsers (Opera Mini, Safari Mobile) automatically convert links to phone numbers</p>
-
-<p>WML scheme to add a number to the address book: wtai://wp/ap;+5555555;Amy%20Miller</p>
-
-<ol>
-  <li>
-    <p>carrier myopia: devs thinking the only way to reach the audience is by landing on the carrier deck. Mobile User Experience Conference (MEX) 2007: “Tearing down the walled garden will enhance the mobile content experience and release value for the industry. The objective should be a free market for content and applications, based on open standards and accessible to all. We think the current fragmentation of formats and channels to market is holding back growth.”</p>
-  </li>
-  <li>
-    <p>“cell phone” is an outdated term. Use “mobile” or “device”.</p>
-  </li>
-  <li>
-    <p>Japanese market: “keitai” (=”something you carry with you”)</p>
-  </li>
-</ol>
-
-<h3 id="four-methods-revisited">Four Methods, Revisited</h3>
-
-<ol>
-  <li>
-    <p><a href="http://www.cameronmoll.com/archives/000398.html">Mobile Web Design ~ The Series</a> (Cameron Moll, 2005)</p>
-  </li>
-  <li>
-    <p>Method 1: Do nothing. If the markup is meaningful and standards-based, the better mobile browsers can adapt.</p>
-  </li>
-  <li>
-    <p>Good browsers such as the iPhone’s allow the viewing of the full site (with zooming).</p>
-  </li>
-  <li>
-    <p>Advantages: mobile browsers shoulder the burden of reformatting content, no additional effort needed, users have same content and possibly the same experience as on a PC</p>
-  </li>
-</ol>
-
-<p>Disadvantages: doesn’t address contextual relevance or exploit device capabilities, users with zoom-enabled devices are a small market share</p>
-
-<ol>
-  <li>Method 2: Reduce images and styling</li>
-</ol>
-
-<p>-presentation styling and images reduced on the fly</p>
-
-<p>mowser.com (Russell Beattie, formerly Yahoo! Mobile)<br />
-skweezer.net – an older service dating back to 2001</p>
-
-<p>2-minute mobile mod: <a href="http://www.mikeindustries.com/blog/archive/2005/07/make-your-site-mobile-friendly">http://www.mikeindustries.com/blog/archive/2005/07/make-your-site-mobile-friendly</a></p>
-
-<ol>
-  <li>Advantages: relies on implied hierarchy in HTML markup, viewable by a variety of devices, faster download, many browsers override CSS anyway, so why bother?</li>
-</ol>
-
-<p>Disadvantages: ignores contextual relevance of mobility, file size may still be excessive</p>
-
-<p>Method 3: Use Handheld Style Sheets</p>
-
-<ol>
-  <li>
-    <p>media=”handheld” style sheet</p>
-  </li>
-  <li>
-    <p>Not widely supported.</p>
-  </li>
-</ol>
-
-<p>Advantages: handheld style sheet is built into CSS, at most one extra style sheet, one web address<br />
-Disadvantages: ignores contextual relevance of mobility, media=”handheld” support is inconsistent and nearly unreliable</p>
-
-<p>Method 4: Create Mobile-Optimized Content</p>
-
-<ol>
-  <li>
-    <p>Kayak.com/moby</p>
-  </li>
-  <li>
-    <p>Advantages: contextually relevant (addresses first how the content is consumed, and presentation secondly), pages are leaner</p>
-  </li>
-</ol>
-
-<p>Disadvantages: denies access to content by making assumptions about the user and device, two sets of files, alternate web addresses</p>
-
-<ol>
-  <li>Author’s opinion: doing nothing and mobile-optimized content are the two viable approaches</li>
-</ol>
-
-<h3 id="xhtmlcss-development">XHTML/CSS Development</h3>
-
-<ol>
-  <li>
-    <p>WML deck and card metaphor. Decline giving way to XHTML. WAP protocol, WML language.</p>
-  </li>
-  <li>
-    <p>With WAP 2.0, XHTML-MP is the preferred markup language</p>
-  </li>
-  <li>
-    <p><a href="http://www.cameronmoll.com/mobile/mkp">Markup Test Pages</a>, <a href="http://www.cameronmoll.com/archives/000577.html">Mobile Web Design: Tips &#038; Techniques (2005)</a></p>
-  </li>
-  <li>
-    <p>No need to define new standards just for the web. Same regardless of device: “The underlying standards for the greater web, regardless of device, person, or place, are the same: semantic markup, separation of structure and presentation, accessibility, and so on.”</p>
-  </li>
-</ol>
-
-<p><a href="http://www.w3.org/TR/mobile-bp/">W3C Mobile Web Best Practices 1.0</a></p>
-
-<p><a href="http://passani.it/gap">Global Authoring Practices for the Mobile Web (Luca Passani)</a></p>
-
-<ol>
-  <li>XHTML-MP template</li>
-</ol>
-
-<pre name="code" class="HTML">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
-&lt;!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd"&gt;
-&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
-&lt;head&gt;
-  &lt;title&gt;Site Title&lt;/title&gt;
-  &lt;link rel="stylesheet" type="text/css" href="mobile.css"/&gt;
-  &lt;meta http-equiv="Cache-Control" content="max-age=600" /&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;h1&gt;Page Heading&lt;/h1&gt;
-  &lt;p&gt;Content&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</pre>
-
-<ol>
-  <li>
-    <p><a href="http://www.developershome.com/wap/xhtmlmp">DeveloperHome.com’s XHTML-MP Tutorial</a></p>
-  </li>
-  <li>
-    <p><a href="http://htmllint.itc.keio.ac.jp/htmllink/tagslist.cgi?HTMLVersion=XHTML-MP">XHTML-MP Tags List</a></p>
-  </li>
-</ol>
-
-<p>Good case examples:<br />
-<a href="http://flickr.com/mob">Flickr Mobile</a><br />
-<a href="http://mobile.fandango.com">Fandango Mobile</a></p>
-
-
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post">
-	<header>
-		<h2 class="title">
-			
-			<a href="/2011/implementing-iphone-slider-unlock-with-input-type-range">
-			
-				Implementing iPhone&#8217;s Slider Unlock With Input Type=&#8221;range&#8221;</a>
-		</h2>
-		<div class="meta date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-01-16T00:00:00-08:00" pubdate data-updated="true">Jan 16<span>th</span>, 2011</time></div>
-	</header>
-	<div class="entry-content">
-		<p>(check out the live <a href="http://davidbcalhoun.com/a/iphone-slider.html">demo</a>)</p>
-
-<h3 id="introduction">Introduction</h3>
-
-<p>After reading <a href="http://glazkov.com/2011/01/14/what-the-heck-is-shadow-dom/">“What the Heck is Shadow DOM?”</a> I was inspired to see how far I could style the <input type="range" /> element. Pretty far, as it turns out!</p>
-
-<p>My goal was to change the input’s default appearance:</p>
-
-<p><img src="http://davidbcalhoun.com/wp-content/uploads/2011/01/input-range.png" alt="The default appearance for input type=range" title="The default appearance for input type=range" width="144" height="25" class="aligncenter size-full wp-image-567" /></p>
-
-<p>To the visual appearance of the iPhone’s unlock slider:</p>
-
-<p><img src="http://davidbcalhoun.com/wp-content/uploads/2011/01/iphone-slider-native.png" alt="The iPhone's unlock slider" title="The iPhone's unlock slider" width="300" height="69" class="aligncenter size-full wp-image-566" /></p>
-
-<p>As far as I can tell, only WebKit-based browsers and Opera have implemented input type=”range”. Mobile Safari hasn’t yet implemented it as of iOS 4.2 and Android also hasn’t fully implemented it as of Android 2.3 (although curiously the elements are styleable but not yet interactive). Surprisingly, the only mobile OS to implement this input type seems to be BlackBerry OS 6.</p>
-
-<p>However, the focus here will be to get this working on just Chrome and WebKit. This will make it a bit easier to do this proof of concept. So we’ll be using lots of “-webkit” vendor prefixed CSS.</p>
-
-<h3 id="what-we-have-to-work-with">What we have to work with</h3>
-
-<p>Of course we have our simple range input:</p>
-
-<pre name="code" class="html">&lt;input type="range"&gt;
-</pre>
-
-<p>Which looks like this:</p>
-
-<p><img src="http://davidbcalhoun.com/wp-content/uploads/2011/01/input-range.png" alt="The default appearance for input type=range" title="The default appearance for input type=range" width="144" height="25" class="aligncenter size-full wp-image-567" /></p>
-
-<p>We can target the input itself with a CSS attribute selector:</p>
-
-<pre name="code" class="CSS">input[type='range'] {}
-</pre>
-
-<p>And if we want, we can transform it into a vertical slider by changing the “-webkit-appearance” property:</p>
-
-<pre name="code" class="CSS">input[type='range'] {
-    -webkit-appearance: slider-vertical;
-}
-</pre>
-
-<p>Which looks like this:</p>
-
-<p><img src="http://davidbcalhoun.com/wp-content/uploads/2011/01/input-range-vertical.png" alt="Input range in a vertical orientation" title="Input range in a vertical orientation" width="25" height="119" class="aligncenter size-full wp-image-579" /></p>
-
-<p>If we want to style it as if it was any other element, there’s a slight catch, as we first have to set “-webkit-appearance” to “none” and then add our customizations (this appears to mean that we can’t actually style vertical sliders…). Here we’ll set the background color as a simple demo:</p>
-
-<pre name="code" class="CSS">input[type='range'] {
-    -webkit-appearance: none;
-    background-color: gray;
-}
-</pre>
-
-<p>This outputs the following:</p>
-
-<p><img src="http://davidbcalhoun.com/wp-content/uploads/2011/01/input-range-gray-background.png" alt="Input range with a gray background" title="Input range with a gray background" width="129" height="15" class="aligncenter size-full wp-image-577" /></p>
-
-<p>Most interestingly, we can target and style the slider button itself with CSS, although we can’t get access to it with JavaScript (for the time being anyhow). Here we’ll style it a slightly darker shade of gray:</p>
-
-<pre name="code" class="CSS">input[type='range'] {
-    -webkit-appearance: none;
-    background-color: gray;
-}
-
-input[type='range']::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    background-color: #444;
-    width: 15px;
-    height: 20px;
-}
-</pre>
-
-<p>Which results in this:<br />
-<img src="http://davidbcalhoun.com/wp-content/uploads/2011/01/input-range-styled.png" alt="Input range with a gray background and a slightly darker slider control" title="Input range with a gray background and a slightly darker slider control" width="129" height="20" class="aligncenter size-full wp-image-583" /></p>
-
-<p>Now all the pieces are in place to fully style the input!</p>
-
-<h3 id="styling-the-background">Styling the background</h3>
-
-<p>This part’s no big deal. We just want to set up the width/height, slap on some handy rounded corners, and add a very slight background gradient:</p>
-
-<pre name="code" class="CSS">input[type='range'] {
-    -webkit-appearance: none;
-    width: 280px;
-    height: 46px;
-    padding: 3px;
-    -webkit-border-radius: 15px;
-    border-radius: 15px;
-    border: 1px solid #525252;
-    background-image: -webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #000000),
-        color-stop(1, #222222)
-    );
-}
-</pre>
-
-<p>Now we have the backdrop in place:</p>
-
-<p><img src="http://davidbcalhoun.com/wp-content/uploads/2011/01/iphone-slider-background.png" alt="iPhone slider background" title="iPhone slider background" width="288" height="54" class="aligncenter size-full wp-image-585" /></p>
-
-<h3 id="styling-the-button">Styling the button</h3>
-
-<p>To get the button, we’ll add some width/height and rounded corners. Here we’ll also need a more complicated background gradient as well as an arrow icon. Your first instinct might be to add more markup to hook the arrow icon to, but remember that this is impossible. We’re working in the “shadow DOM” of elements created and maintained by the browser itself. We can style the existing elements but we can’t create any new ones.</p>
-
-<p>So what do we do? Take advantage of multiple backgrounds! We can specify the background as both the arrow image and the gradient we need. In this case we’ll also base64 encode the small image to avoid an extra HTTP request.</p>
-
-<p>The CSS for the button looks like this:</p>
-
-<pre name="code" class="CSS">input[type='range']::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 68px;
-    height: 44px;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAYCAYAAAB0kZQKAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAASJJREFUeNpi7OnpYaAC0AXiF0D8mhzNTAzUASBHnAdim4F0BAhIA/EBIC4aSEeAADMQ9wLxRiDmHyhHwIAfNHqMiXZEcXExGJMCiNCjCMTHgDiTkFmM////p4rXe3t78Rm0DIjTgfgLNkkWoGZQij7MQFsQBY2aICC+Rq80gQ2oA/EZIE4YSEeAACcQzwfimVD2gDgCBtKgiVZlIB0BAgbQbBwykI5A5I4BtPsaNLfcHKiQWADEJiAHDERIfAfiLKgjBiQ67kCD/zK2NAFqjMyi0AJQVnPCI78GiBNxFttQF6ZToVjG5ohfoLoOiKcMVO54BA3+swPVntgKxIbEOIAWjvgLxJVA7APE7waisHoKxBFAfGSgSszL0MLnBTmaAQIMAKg/OsrT7JG8AAAAAElFTkSuQmCC'),
-    -webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #fefefe),
-        color-stop(0.49, #dddddd),
-        color-stop(0.51, #d1d1d1),
-        color-stop(1, #a1a1a1)
-    );
-    background-repeat: no-repeat;
-    background-position: 50%;
-}
-</pre>
-
-<p>Which outputs this:<br />
-<img src="http://davidbcalhoun.com/wp-content/uploads/2011/01/iphone-slider-button.png" alt="" title="iPhone slider button styled" width="288" height="54" class="aligncenter size-full wp-image-587" /></p>
-
-<h3 id="slide-to-unlock8221-text">“Slide to unlock” text</h3>
-
-<p>Now we’re getting somewhere! And now we’re approaching the limits of what we can do without getting pretty creative. We need some “slide to unlock” text in the background.</p>
-
-<p>The first thing to do is to move the slider all the way to the left, to the default position. We do this through HTML by setting the value to 0:</p>
-
-<pre name="code" class="HTML">&lt;input type="range" value="0"&gt;
-</pre>
-
-<p>Ok, that wasn’t too hard. But what about the text? We can’t modify anything in the input itself, because it doesn’t contain any element to display text. And we can’t dynamically add text with JavaScript, because again, it’s the shadow DOM! What we can do is create a separate text element outside of the input and position it on top of the slider using absolute positioning.</p>
-
-<p>But this would be no good, since the text would appear over the button itself. What we want is for the text to show up in-between the button and the background. Since we can style both of these with CSS, we can control the stacking order with good old z-index!</p>
-
-<p>And while we’re at it, we might as well animate the “spotlight” effect on the text. We can do this with a combination of a semitransparent -webkit-mask and animations (see below).</p>
-
-<p>First we have the HTML, which has changed a bit. For positioning and grouping, we need a wrapped element for the input and the span of text:</p>
-
-<pre name="code" class="HTML">&lt;div class="iphone-slider"&gt;
-    &lt;input type="range" value="0"&gt;&lt;/input&gt;
-    &lt;span&gt;slide to unlock&lt;/span&gt;
-&lt;/div&gt;
-</pre>
-
-<p>The final complete CSS is as follows:</p>
-
-<pre name="code" class="CSS">.iphone-slider {
-    width: 280px;
-    height: 46px;
-    
-    /* set the wrapper as the anchor element for positioning */
-    position: relative;
-}
-
-.iphone-slider input {
-    -webkit-appearance: none;
-    width: 100%;
-    background: #ddd;
-    padding: 3px;
-    border: 1px solid #525252;
-    -webkit-border-radius: 15px;
-    border-radius: 15px;
-    background-image: -webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #000000),
-        color-stop(1, #222222)
-    );
-}
-
-.iphone-slider input::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    
-    /* position the button on top of everything */
-    z-index: 100;
-    position: relative;
-    
-    width: 68px;
-    height: 44px;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    
-    /* arrow and button gradient */
-    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAYCAYAAAB0kZQKAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAASJJREFUeNpi7OnpYaAC0AXiF0D8mhzNTAzUASBHnAdim4F0BAhIA/EBIC4aSEeAADMQ9wLxRiDmHyhHwIAfNHqMiXZEcXExGJMCiNCjCMTHgDiTkFmM////p4rXe3t78Rm0DIjTgfgLNkkWoGZQij7MQFsQBY2aICC+Rq80gQ2oA/EZIE4YSEeAACcQzwfimVD2gDgCBtKgiVZlIB0BAgbQbBwykI5A5I4BtPsaNLfcHKiQWADEJiAHDERIfAfiLKgjBiQ67kCD/zK2NAFqjMyi0AJQVnPCI78GiBNxFttQF6ZToVjG5ohfoLoOiKcMVO54BA3+swPVntgKxIbEOIAWjvgLxJVA7APE7waisHoKxBFAfGSgSszL0MLnBTmaAQIMAKg/OsrT7JG8AAAAAElFTkSuQmCC'),
-    -webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #fefefe),
-        color-stop(0.49, #dddddd),
-        color-stop(0.51, #d1d1d1),
-        color-stop(1, #a1a1a1)
-    );
-    background-repeat: no-repeat;
-    background-position: 50%;
-}
-
-.iphone-slider span {
-    /* position the text just under the button in the stacking order */
-    position: absolute;
-    z-index: 99;
-    top: 30%;
-    left: 37%;
-    
-    font-family: "Helvetica Neue", Helvetica, sans;
-    font-size: 24px;
-    color: white;
-    cursor: default;
-    -webkit-user-select: none;
-    
-    /* semitransparent gradient mask to animate over the text */
-    -webkit-mask-image: -webkit-gradient(
-        linear,
-        left top,
-        right top,
-        color-stop(0, rgba(0,0,0,0.3)),
-        color-stop(0.45, rgba(0,0,0,0.3)),
-        color-stop(0.5, rgba(0,0,0,1)),
-        color-stop(0.55, rgba(0,0,0,0.3)),
-        color-stop(1, rgba(0,0,0,0.3))
-    );
-    -webkit-mask-size: 1000px;
-    -webkit-mask-repeat: no-repeat;
-    -webkit-animation-timing-function: ease-in-out;
-    -webkit-animation: text-spotlight 4s infinite;
-}
-
-/* animate the webkit-mark over the text */
-@-webkit-keyframes text-spotlight {
-  0% {
-    -webkit-mask-position: -800px;
-  }
-  
-  100% {
-    -webkit-mask-position: 0px;
-  }
-}
-</pre>
-
-<p>This renders as the following:</p>
-
-<p><img src="http://davidbcalhoun.com/wp-content/uploads/2011/01/iphone-slider-mask.png" alt="" title="The final result" width="288" height="52" class="aligncenter size-full wp-image-589" /></p>
-
-<p>Which looks pretty dang close the the native iPhone slider if I do say so myself! (perhaps the arrow could use some box-shadow to make it pop a bit more however).</p>
-
-<h3 id="just-a-bit-of-javascript">Just a bit of JavaScript</h3>
-
-<p>Since we’ve come this far, we might as well make the experience as authentic as possible. Here I’ve thrown in some JavaScript to check if the slider has been fully moved to the right, giving the user notification that the phone is unlocked.</p>
-
-<p>Also, you’ll notice the opacity of the text slowly fade as the slider is moved farther to the right. This mimics the actual experience on the iPhone.</p>
-
-<p>Here’s the JavaScript to make this work:</p>
-
-<pre name="code" class="JScript">(function() {
-  // variable declarations
-  var slider, sliderInput, sliderButton, sliderText, sliderTimeout, sliderOnchange, unlockCheck;
-  
-  // cache our DOM elements in variables
-  slider = document.querySelector('.iphone-slider');
-  sliderInput = slider.querySelector('input');
-  sliderButton = sliderInput.querySelector('::-webkit-slider-thumb');
-  sliderText = slider.querySelector('span');
-  
-  /*
-      Check if it's been unlocked, else return the
-      button back to the left side (default position).
-  */
-  unlockCheck = function() {
-    if(sliderInput.value == 100) {
-      sliderText.innerHTML = 'Unlocked!';
-      sliderInput.value = 0;
-      sliderText.style.opacity = 1;
-    } else {
-      setTimeout(function(){
-        sliderInput.value = 0;
-        sliderText.style.opacity = 1;
-      }, 1000);
-    }
-  };
-  
-  sliderOnchange = function() {
-    /*
-        Set the opacity of the text relative to the value
-        on the input range.
-    */
-    sliderText.style.opacity = ((100 - sliderInput.value) / 200);
-    
-    /*
-        Add a timeout to prevent the function from being called
-        on EVERY onchange event.
-    */
-    clearTimeout(sliderTimeout);
-    sliderTimeout = setTimeout(unlockCheck, 300);
-  }
-  
-  slider.onchange = sliderOnchange;
-})();
-</pre>
-
-<h3 id="live-example">Live example</h3>
-
-<p>Here’s a <a href="http://www.youtube.com/watch?v=lC_pcRZgNm0">video</a> of the slider in action:  </p>
-
-<p>If you’re running Safari or Chrome, you should be able to see and interact with the <a href="http://davidbcalhoun.com/a/iphone-slider.html">standalone demo</a>.</p>
-
-<p>Sweet! Well, that was fun! This was some good practice of using a ton of good stuff: border radius, gradients, multiple backgrounds, data URI images, webkit-mask-image, webkit-animation, and of course styleable input ranges via webkit-slider-thumb.</p>
-
-<p>UPDATE: <a href="http://peter.sh/2011/05/inspectable-shadow-dom-the-file-browser-and-new-default-avatars/">Chrome has now made the shadow DOM inspectable</a>.</p>
-
-
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post">
-	<header>
-		<h2 class="title">
-			
-			<a href="/2011/javascript-news-resources">
-			
-				JavaScript News Resources</a>
-		</h2>
-		<div class="meta date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-01-14T00:00:00-08:00" pubdate data-updated="true">Jan 14<span>th</span>, 2011</time></div>
-	</header>
-	<div class="entry-content">
-		<p>There’s an overwhelming amount of information being pumped out of the JavaScript community each week, but how do you keep up with it? Here’s some sources to keep you busy.</p>
-
-<h3 id="twitter">Twitter</h3>
-
-<p>This merits a category of its own. This has replaced the RSS reader for a lot of folks, or at the very least supplemented it.</p>
-
-<p>I’ve consistently recommended <a href="http://twitter.com/#!/nathansmith/javascript/">Nathan Smith’s list of JavaScript folks</a>. When I’m diligent, I keep up with this several times a week and <a href="http://twitter.com/#!/franksvalli/favorites/">favorite items from the feed</a> to be considered for inclusion in that week’s <a href="http://jsmag.com/blog/">JSMag Blog update</a>.</p>
-
-<h3 id="aggregators-and-communities">Aggregators and communities</h3>
-
-<p><a href="http://www.delicious.com/recent/javascript">Delicious</a><br />
-<a href="https://github.com/languages/JavaScript">Github</a><br />
-Reddit: <a href="http://www.reddit.com/r/web_design/">web_design</a> and <a href="http://www.reddit.com/r/javascript/">javascript</a><br />
-<a href="http://groups.google.com/group/jsmentors">JSMentors</a></p>
-
-<h3 id="blogs">Blogs</h3>
-
-<p><a href="http://www.google.com/reader/bundle/user%2F00060481582380134484%2Fbundle%2FJavaScript">JavaScript Google Reader bundle</a><br />
-<a href="http://www.google.com/reader/bundle/user%2F00060481582380134484%2Fbundle%2FJavaScript%20People">JavaScript People Blogs – Google Reader bundle</a></p>
-
-<p><a href="http://hacks.mozilla.org/articles/">Mozilla articles on hacks.mozilla.org</a><br />
-<a href="http://msdn.microsoft.com/en-us/scriptjunkie/">Script Junkie</a><br />
-<a href="http://dailyjs.com/">DailyJS</a> – very frequently updated news by Alex Young<br />
-<a href="http://www.quirksmode.org/blog/">QuirksBlog (ppk)</a> – focus on mobile<br />
-<a href="http://javascriptweblog.wordpress.com/">JavaScript, JavaScript (Angus Croll)</a><br />
-<a href="http://ejohn.org/category/blog/">John Resig’s blog</a> – unfortunately not too active lately (check out <a href="http://twitter.com/#!/jeresig">his Twitter</a> for more updated info)<br />
-<a href="http://ajaxian.com/">Ajaxian</a> – used to be THE source for news, but it isn’t updated too much anymore</p>
-
-<p>…and many more. Check out <a href="http://blog.reybango.com/2010/12/15/what-to-read-to-get-up-to-speed-in-javascript/">Rey Bango’s “What to Read to Get Up to Speed in JavaScript”</a> for more.</p>
-
-<h3 id="browser-blogs">Browser blogs</h3>
-
-<p>It’s important to know what’s going down in the browser world. These have mixed content, so it’s not just JavaScript.</p>
-
-<p><a href="http://webkit.org/blog/">Surfin’ Safari</a><br />
-<a href="http://blog.chromium.org/">The Chromium Blog</a><br />
-<a href="http://blog.mozilla.com/">The Mozilla Blog</a></p>
-
-<h3 id="weekly-news">Weekly news</h3>
-
-<p>These sources attempt to do the legwork for you and round up the most important articles each week. (Disclaimer: I currently write for JSMag!)</p>
-
-<p><a href="http://javascriptweekly.com/">JavaScript Weekly</a>: a weekly email newsletter<br />
-<a href="http://badassjs.com/">Badass JS</a><br />
-<a href="http://jsmag.com/blog/">JSMag blog</a></p>
-
-<h3 id="podcasts-and-videos">Podcasts and Videos</h3>
-
-<p><a href="http://www.aminutewithbrendan.com/">A Minute With Brendan</a><br />
-<a href="http://node.minutewith.com/">node.minutewith</a><br />
-<a href="http://developer.yahoo.com/yui/theater/">YUI Theatre</a><br />
-<a href="http://nodeup.com/">Node Up</a></p>
-
-<p>Am I missing anything (I’m very sure)? Post a link below in the comments. Thanks!</p>
-
-
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post">
-	<header>
-		<h2 class="title">
-			
-			<a href="/2011/what-happens-when-you-have-no-javascript-fallback">
-			
-				What Happens When You Have No JavaScript Fallback?</a>
-		</h2>
-		<div class="meta date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-01-12T00:00:00-08:00" pubdate data-updated="true">Jan 12<span>th</span>, 2011</time></div>
-	</header>
-	<div class="entry-content">
-		<p><a href="http://davidbcalhoun.com/wp-content/uploads/2011/01/twitter-fallback.png"><img src="http://davidbcalhoun.com/wp-content/uploads/2011/01/twitter-fallback.png" alt="" title="Twitter no-JavaScript fallback" width="1036" height="772" class="aligncenter size-full wp-image-556" /></a></p>
-
-<p>Here’s an example of what happens when your interface completely relies on JavaScript. There’s code with translated <a href="http://en.wikipedia.org/wiki/Mojibake">mojibake</a> of some sort which caused the JavaScript to break. The code wasn’t in a try-catch block, so it caused all of the code on the page to fail, thus presenting me with the only part of the screen that wasn’t generated by JavaScript: the completely useless header.</p>
-
-<p>Where’s the tweets!?</p>
-
-
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post">
-	<header>
-		<h2 class="title">
-			
-			<a href="/2011/how-to-spot-outdated-javascript">
-			
-				How to Spot Outdated JavaScript</a>
-		</h2>
-		<div class="meta date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-01-07T00:00:00-08:00" pubdate data-updated="true">Jan 7<span>th</span>, 2011</time></div>
-	</header>
-	<div class="entry-content">
-		<h3 id="introduction">Introduction</h3>
-
-<p>Those that are just setting out to learn JavaScript are typically overwhelmed by the amount of online resources to be found about learning JavaScript. Not only this, but every webpage visited presents a potential learning opportunity just by inspecting the source.</p>
-
-<p>However, not all resources are guaranteed to be up-to-date. JavaScript has been around for over a decade, and coding standards have changed drastically over time. While a code snippet may still work in today’s browsers, you may unknowingly be using an outdated practice that might eventually lead to a bit of embarrassment.</p>
-
-<p>You may sometimes find these old practices mixed in with good and modern code. It seems that folks might learn new code styles without necessarily casting away all their old habits. So keep in mind not to throw out the baby with the bathwater!</p>
-
-<p>Here’s some old practices that should help you spot old outdated code. </p>
-
-<h3 id="global-variables">Global variables</h3>
-
-<pre name="code" class="JScript">function foo() {  // global function
-  greeting = 'Hello' + name;  // global function
-};
-name = 'James';  // global variable
-foo();
-</pre>
-
-<p>Tons of global variables is a sure sign of outdated code. Ideally you want to aim to have at most one global variable, which is a namespace for all your code to be written under. All variables in your functions should be defined with the ‘var’ keyword to ensure they don’t break out of their scope.</p>
-
-<p>Here’s an example where we defined one global variable entry point (myNamespace) for our code:</p>
-
-<pre name="code" class="JScript">var myNamespace = (function() {
-  // declare all variables with var
-  var greeting, name;
-  
-  name = 'James';
-  
-  greeting = function() {
-    return 'Hello ' + name;
-  };
-  
-  return {
-    greeting: greeting
-  }
-})();
-
-greeting();              // ERROR: not defined
-myNameSpace.greeting();  // 'Hello James'
-</pre>
-
-<h3 id="commented-cdata-blocks">Commented CDATA blocks</h3>
-
-<pre name="code" class="JScript">/* &lt;![CDATA[ */
-// code here
-/* ]]&gt; */
-</pre>
-
-<p>This appears in old scripts that are presented inline (instead of externally in a separate file). The original purpose of those was to get around HTML validator errors (and to conform to XHTML), but that appears to no longer be an issue with validators today. Also, the usage of HTML validators itself seems to be waning, although they may sometimes be helpful in the development of websites.</p>
-
-<h3 id="documentwrite">document.write()</h3>
-
-<pre name="code" class="JScript">document.write('foo');
-</pre>
-
-<p>The <a href="http://dev.w3.org/html5/spec/apis-in-html-documents.html#document.write">W3C</a>, along with most everyone else, warns against using this, as it may result in overwriting (blanking) the entire page and other unwanted behavior.</p>
-
-<p>It’s now used mostly by ads, and <a href="http://www.stevesouders.com/blog/2010/12/15/controljs-part-3/">developers have for years been trying to control them</a>. So don’t use it, unless you’re trying to prevent ads from using them. In other words, don’t use it unless you know what you’re doing.</p>
-
-<h3 id="inlined-event-handlers">Inlined event handlers</h3>
-
-<pre name="code" class="HTML">&lt;a onclick="myClickFunction()" href="http://foo.com"&gt;&lt;/a&gt;
-&lt;a onmouseover="myMouseoverFunction()" href="http://foo.com"&gt;&lt;/a&gt;
-&lt;form onsubmit="mySubmitFunction()" href="http://foo.com"&gt;&lt;/form&gt;
-</pre>
-
-<p>This mixes behavior with the actual content, which means when it’s time to make changes to the code, you likely have to change both the HTML and the JavaScript, instead of simply just the JavaScript. It also means that you may be serving useless content to users with JavaScript disabled (<a href="http://developer.yahoo.com/blogs/ydn/posts/2010/10/followup-how-many-users-have-javascript-disabled/">they’re still out there</a>, believe it or not). This also might have an affect on search engines, that might not be able to access this JavaScript-only content (although crawlers are getting more sophisticated and this may be less of an issue as time progresses).</p>
-
-<p>Instead, the very least you can do is add IDs to each element (or better, use a JavaScript selector engine) and hook into them in your JavaScript, which makes the code much easier to maintain:</p>
-
-<pre name="code" class="HTML">&lt;a id="link1" href="http://foo.com"&gt;&lt;/a&gt;
-&lt;a id="link2" href="http://foo.com"&gt;&lt;/a&gt;
-&lt;form id="myForm" href="http://foo.com"&gt;&lt;/form&gt;
-</pre>
-
-<pre name="code" class="JScript">(function() {  // sandbox everything
-  // variable declarations
-  var link1, link2, myForm;
-
-  window.onload = function() {  // or onDOMContentLoaded (wait for DOM to be ready)
-    // simple DOM selectors
-    link1 = document.getElementById('link1');
-    link2 = document.getElementById('link2');
-    myForm = document.getElementById('myForm');
-    
-    // well-supported older event handler
-    link1.onclick = function(){
-      // code
-    };
-    
-    // better (DOM2)
-    link1.addEventListener('click', function(){ // or attachEvent for IE
-      // code
-    },false);
-    
-    // etc...
-  }
-
-})();
-</pre>
-
-<p>link1.onclick is widely supported, but there’s a few downsides, including the fact you can only add ONE event listener on the element (it will be overwritten if you try to add another). Use addEventListener (attachEvent in IE) instead, or the method of your favorite JavaScript engine.</p>
-
-<p>In any case, the point here is to get the JavaScript out of the HTML and into the rest of your JavaScript.</p>
-
-<h3 id="inline-javascript-in-link-hrefs">Inline JavaScript in link hrefs</h3>
-
-<pre name="code" class="HTML">&lt;a href="javascript:doSomething()"&gt;&lt;/a&gt;
-&lt;a href="javascript:void(0)"&gt;&lt;/a&gt;
-</pre>
-
-<p>Both of these examples commit the same error as above – mixing JavaScript behavior with the HTML content. And the solution is similar: find these links with JavaScript (most simply by adding an id on them) and hook into them there.</p>
-
-<p>The second example brings up a good issue, and a point of contention. Ideally this would be a link to fallback content for users that have JavaScript disabled (and for search engines!), which would be a link to a new page (Flickr is an example of a modern site that uses this approach). For better or worse, however, you might be building a web app that only works with JavaScript, and you might want a link that only exists to kick off a JavaScript event.</p>
-
-<p>You’ll find that removing the href value or making it blank (href=””) might remove the styling from the link and no longer makes it clickable. An easy fix is to set the href equal to a hash tag (href=”#”). A side effect might be a “jump” to the top of the page after clicking the link, which requires and requires e.preventDefault() within the attached event. Href=”#” may soon become an antipattern (or maybe it is already), since you can also fix this with CSS styling:</p>
-
-<pre name="code" class="CSS">a { cursor: pointer; }
-</pre>
-
-<p>This gives the cursor a pointer when the user hovers over the link, even if it’s missing the href value.</p>
-
-<p>But again, this isn’t generally recommended. It’s better to make a non-JavaScript fallback by linking to an actual page, then overriding it with e.preventDefault() for JavaScript-enabled users!</p>
-
-<h3 id="slow-arrays">Slow arrays</h3>
-
-<pre name="code" class="JScript">var arr = [1, 2, 3, 4, 5];
-
-for(var x in arr) {
-  /* code */
-}
-
-for(var i=0; i &lt; arr.length; i++) {
-  /* code */
-}
-</pre>
-
-<p>For-in loops turn out to be quite slow while going through arrays, so only use them when iterating through properties of an object. The second for loop is much faster, but can be made faster still when we realize what’s being evaluated on each iteration:</p>
-
-<pre name="code" class="JScript">for(1; n; n) {}
-</pre>
-
-<p>The first statement is evaluated once (1 time) as the loop is initialized, and the second and third parts are evaluated on each run through the loop (n times). Because of this, just as removing fluff from the main body of the loop itself, we would also do well to remove fluff from these statements themselves. As it turns out, it’s quite slow finding the length of the array (arr.length) on each pass, and it’s not necessary to do it more than once since it’s not changing. So we can “cache” the length in a variable in the initializer:</p>
-
-<pre name="code" class="JScript">for(var i=0, len=arr.length; i &lt; len; i++) {
-  // code
-}
-</pre>
-
-<p>And faster yet is a while loop (keep in mind that it will run backwards), which stops when the counter hits 0, which is falsy, causing the loop to stop:</p>
-
-<pre name="code" class="JScript">var i = arr.length;
-while(i--) {
-  // code
-}
-</pre>
-
-<h3 id="new-object-new-array-new-function-etc">new Object(), new Array(), new Function(), etc</h3>
-
-<pre name="code" class="JScript">var obj  = new Object();
-var arr  = new Array();
-var func = new Function("param1", "param2", "return true;");
-</pre>
-
-<p>While these work, no one really uses them, as there exist less verbose and more common alternatives. Use these instead, which are exactly equal to the above code:</p>
-
-<pre name="code" class="JScript">var obj  = {};
-var arr  = [];
-var func = function(param1, param1) {return true;}
-</pre>
-
-<h3 id="alert">alert()</h3>
-
-<p>Ok, alert can sometimes still be useful for debugging, but generally you want to use console.log for that anyway. Generally you don’t want to ever prompt the user with alert() however. Its use on the desktop for mainstream use has long been discouraged.</p>
-
-<p>I’m still on the fence about using alert() however, as I think it’s pretty useful and not necessarily ugly in mobile browsers. I’ll spare you and save that for another post.</p>
-
-<h3 id="missing-semicolons">Missing semicolons</h3>
-
-<pre name="code" class="JScript">var name='Bill'
-alert('Hi ' + name)
-</pre>
-
-<p>The above code works fine because of a controversial feature of JavaScript called semicolon insertion. But doesn’t it make you feel dirty? It should, especially if you’ve read JavaScript: The Good Parts. Use semicolons for your own good and to prevent major headaches. Leave it to your JavaScript minifier to be clever in deciding when to remove them:</p>
-
-<pre name="code" class="JScript">var name='Bill';
-alert('Hi ' + name);
-</pre>
-
-<h3 id="code-for-particular-user-agents">Code for particular user agents</h3>
-
-<p>This is also a bit controversial, since unfortunately user agent sniffing is still sometimes necessary. However, in the past it was really abused with code such as this:</p>
-
-<pre name="code" class="JScript">isIE  = document.all;
-isNS4 = document.layers;
-isNS6 = document.getElementById;
-if(isIE) {
-  // code for IE
-} else if(isNS4) {
-  // code for Netscape 4
-} else if(isNS6) {
-  // code for Netscape 6
-}
-</pre>
-
-<p>(did I mention that any references to ancient browsers like Netscape is also a surefire sign of old code? But that’s probably too obvious…)</p>
-
-<p>This example detects browsers by features that only exist in each of these old browsers, but the same sin is committed by “sniffing” for words in the user agent string. The unfortunate result is fragmented code targeting each predetermined browser. Not to mention that it’s not future-proof, as it can’t properly anticipate newer browsers.</p>
-
-<p>The better method? If there’s a question about the availability of a method, simply check for it first before using it:</p>
-
-<pre name="code" class="JScript">if(document.addEventListener) {  // detect addEventListener
-  // Try the standard first
-  document.addEventListener('click', function(){}, false);
-} else if(document.attachEvent) {  // detect attachEvent
-  // Typically IE
-  document.attachEvent('onclick', function(){});
-}
-</pre>
-
-<p>This code is considered feature detection, which is much more acceptable. It also anticipates newer browsers such as IE9, which support addEventListener. This makes sure the code you write doesn’t condemn Internet Explorer to forever use attachEvent.</p>
-
-<h3 id="related-links">Related links</h3>
-
-<p>Christian Heilmann and PPK’s old posts inspired me to write this brief post. You can read much better rationale against using some of the things above at these links:</p>
-
-<p><a href="http://www.wait-till-i.com/2005/06/21/six-javascript-features-we-do-not-need-any-longer/">Six JavaScript features we do not need any longer (Christian Heilmann, 2005)</a></p>
-
-<p><a href="http://icant.co.uk/articles/from-dhtml-to-dom/from-dhtml-to-dom-scripting.html">From DHTML to DOM scripting (Christian Heilmann, 2006)</a></p>
-
-<p><a href="http://www.quirksmode.org/blog/archives/2005/06/three_javascrip_1.html">Three JavaScript articles and one best practice (PPK 2005)</a></p>
-
-
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post">
-	<header>
-		<h2 class="title">
-			
-			<a href="/2011/what-is-a-closure-in-javascript">
-			
-				What Is a Closure in JavaScript?</a>
-		</h2>
-		<div class="meta date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-01-03T00:00:00-08:00" pubdate data-updated="true">Jan 3<span>rd</span>, 2011</time></div>
-	</header>
-	<div class="entry-content">
-		<h3 id="intro">Intro</h3>
-
-<p>There have been many attempts to answer this question in a succinct way, but I haven’t really been satisfied by them. Here’s my attempt at a (relatively) concise explanation.</p>
-
-<p>This is adapted from a <a href="http://www.reddit.com/r/javascript/comments/eti86/can_somebody_explain_closures_to_me/c1atir1">reply I posted on reddit</a> which people seemed to have found useful.</p>
-
-<h3 id="broad-definition">Broad definition</h3>
-
-<p>Normally when people talk about closures in JavaScript, they’re talking about methods and properties that outlive the scope of their original function (more on that in a second), but actually the definition is a bit broader. A closure is how a function “closes over” (Crockford) its variables and creates a different scope for them out of the way of the global [window] scope. So an understanding of closures will require some understanding of scope, which is definitely a common stumbling block in first learning JavaScript.</p>
-
-<p>Essentially, closures make this possible:</p>
-
-<pre name="code" class="JScript">var a = 1;
-function(){
-  var a = 2;
-  a; // 2 (functional scope)
-};
-a;  // 1 (global scope)
-</pre>
-
-<h3 id="variables-that-survive-after-function-execution">Variables that survive after function execution</h3>
-
-<p>But when people get excited about closures, they’re not really talking about the example above, but about the ability for functional variables to outlive their original functional scope:</p>
-
-<pre name="code" class="JScript">var b = function() {
-  var myPrivateVar = 'Foo';
-  var myPublicVar = 'Bar';
-
-  return myPublicVar;
-};
-
-b();  // 'Bar'
-myPrivateVar;  // ERROR (not defined, because it was only defined in functional scope and is trying to be accessed from the global [window] scope)
-myPublicVar;   // ERROR (not defined)
-</pre>
-
-<p>But note that the original method name (myPublicVar) isn’t available – but the value IS available from what we exposed to the global scope through the variable ‘b’.</p>
-
-<h3 id="closures-and-the-module-pattern">Closures and the Module Pattern</h3>
-
-<p>How is this useful? This turns out to be the foundation for the Module Pattern in JavaScript – the building block of modern JavaScript applications. They’re in essence a glorified version of the block of code above, with the purpose of hiding the function’s private variables (this comes by default when declaring variables with the ‘var’ keyword in functions), and exposing public variables. And note that because functions are first class in JavaScript, those variables can even be references to functions themselves!</p>
-
-<p>So in essence this is the module pattern, with both private and public properties and methods:</p>
-
-<pre name="code" class="JScript">var myAPI = (function() {
-  var privateProperty = 'Foo';
-  var publicProperty = 'Bar';
-
-  var privateMethod = function() {
-    alert('I can only be executed from the scope of myAPI');
-  };
-
-  var publicMethod = function() {
-    alert('I am publicly accessible (through the global scope) because a reference to publicMethod is returned by myAPI');
-  };
-
-  // set up an object whose own property names (on the left) match the references to the internal, functionally-scoped methods (on the right)
-  var publicStuff = {
-    publicProperty: publicProperty,
-    publicMethod: publicMethod
-  };
-
-  // return our public object (myAPI is now equal to this object)
-  return publicStuff;
-})();   // immediately execute myAPI as a function, which returns an object that contains pointers to stuff in myAPI, which is exposed through myAPI.x, myAPI.y, etc
-</pre>
-
-<p>By the time we reach the last line of the above script, the function has stopped executing, but some original pieces of the function still live on! Because some references to functional variables were returned by the function, we can now access these through the “namespace” myAPI:</p>
-
-<pre name="code" class="JScript">myAPI.publicProperty;  // 'Bar'
-myAPI.publicMethod(); // (alert: 'I am publicly accessible'...)
-</pre>
-
-<p>But those variables that were not exposed are of course not accessible:</p>
-
-<pre name="code" class="JScript">myAPI.privateProperty;  // error (not defined)
-myAPI.privateMethod(); // error (not defined)
-</pre>
-
-<h3 id="access-to-unexposed-variables">Access to unexposed variables</h3>
-
-<p>Exposed public methods still have the context of the original function, meaning that they have access to all the function’s variables, public and private:</p>
-
-<pre name="code" class="JScript">var myAPI = (function(){
-  var privateProperty = 'Foo';
-
-  var publicFunction = function() {
-    // this function has access to privateProperty because it's in the same scope, even after the main function stops executing!
-    return privateProperty;
-  };
-  
-  // create a new object and return it
-  return {
-    publicFunction: publicFunction
-  };
-})();
-
-privateProperty;         // ERROR (not defined)
-myAPI.publicFunction();  // 'Foo'
-</pre>
-
-<p>There’s definitely more to be said here, but hopefully this helps!</p>
 
 
 		

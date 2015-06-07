@@ -16,66 +16,68 @@ In any case, I wrote a pretty simple wrapper function that gets the job done (se
 
 	var async = require('async');
 
-	//  async.parallel with optional timeout (options.timeout)
+	// async.parallel with optional timeout (options.timeoutMS)
 	function parallel(options, tasks, cb) {
-		options = options || {};  //  default to {}
-		var timedOut = false;     //  initial state
-		if(typeof options.timeout == 'number') {
-			//  use the timeout wrapper
+		//  sanity checks
+		options = options || {};
 
-			setTimeout(function(){
-				//  set flag so if async.parallel below ever completes, we'll know we already errored out
-				timedOut = true;
+		// no timeout wrapper; passthrough to async.parallel
+		if(typeof options.timeoutMS != 'number') return async.parallel(tasks, cb);
 
-				//  callback with error and no data
-				cb('async.parallel timed out out after ' + options.timeout + 'ms.', null);
-			}, options.timeout);
+		var timeout = setTimeout(function(){
+			// remove timeout, so we'll know we already erred out
+			timeout = null;
 
-			async.parallel(tasks, function(err, result){
-				//  after all tasks are complete
+			// error out
+			cb('async.parallel timed out out after ' + options.timeoutMS + 'ms.', null);
+		}, options.timeoutMS);
 
-				if(timeOut) return;  //  noop and return (already timed out, cb already executed)
-				cb(err, result);     //  never timed out, just passthrough the data to the cb
-			});
-		} else {
-			//  no timeout specified, so passthrough to async.parallel
+		async.parallel(tasks, function(err, result){
+			// after all tasks are complete
 
-			async.parallel(tasks, cb);
-		}
+			// noop if timeout was called and annulled
+			if(!timeout) return;
+
+			// cancel timeout (if timeout was set longer, and all parallel tasks finished sooner)
+			clearTimeout(timeout);
+
+			// passthrough the data to the cb
+			cb(err, result);
+		});
 	}
 
 
-	//  example usage
-	parallel({timeout: 10000}, [  //  10 second timeout
+	// example usage
+	parallel({timeoutMS: 10000}, [  // 10 second timeout
 		function(){ ... },
 		function(){ ... }
 	],
 	function(err, results) {
 		if(err) {
-			//  timeouts can now be handled here
+			// timeouts can now be handled here
 		}
 	});
 
 
-	//  an example forcing a timeout to occur
+	// an example forcing a timeout to occur
 	parallel({
-		timeout: 1000   //  1 second timeout
+		timeoutMS: 1000   // 1 second timeout
 	},
 	[
 		function(done){
-			//  task 1 completes in 100ms
+			// task 1 completes in 100ms
 			setTimeout(function(){
 				done(null, 'foo');
 			}, 100);
 		},
 		function(done){
-			//  task 2 completes in 2000ms, forcing a timeout error
+			// task 2 completes in 2000ms, forcing a timeout error
 			setTimeout(function(){
 				done(null, 'bar');
 			}, 2000);
 		}
 	],
 	function(err, results) {
-		//  err = 'async.parallel timed out out after 1000ms.'
+		// err = 'async.parallel timed out out after 1000ms.'
 	});
 {:lang="javascript"}
