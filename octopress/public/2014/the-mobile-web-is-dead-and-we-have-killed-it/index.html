@@ -1,6 +1,5 @@
-
-<!DOCTYPE HTML>
-<html lang="en-GB">
+<!doctype html>
+<html lang="en-US">
 <head>
 	<meta charset="utf-8">
 	<title>The mobile web is dead (and we have killed it)  | David Calhoun's blog</title>
@@ -22,30 +21,11 @@
 
 
 <body>
-	<header id="header" class="inner"><h1><a href="/">David Calhoun's blog</a></h1>
+	<header id="header" class="inner" role="banner" aria-labelledby="header_title"><h1><a href="/" id="header_title">David Calhoun's blog</a></h1>
 <span class="tagline"></span>
-<!-- <nav id="main-nav"><ul>
-	<li><a href="/about">About</a></li>
-	<li><a href="/archives">Archives</a></li>
-	<li><a href="/contact">Contact</a></li>
-</ul>
-</nav> -->
-<!-- <nav id="mobile-nav"> -->
-<!-- 	<div class="alignleft menu"> -->
-<!-- 		<a class="button">Menu</a> -->
-<!-- 		<div class="container"><ul>
-	<li><a href="/about">About</a></li>
-	<li><a href="/archives">Archives</a></li>
-	<li><a href="/contact">Contact</a></li>
-</ul>
-</div> -->
-<!-- 	</div> -->
-<!-- </nav> -->
-
 
 </header>
-
-	<div id="content" class="inner"><article class="post">
+	<div id="content" class="inner" role="main"><article class="post" role="main">
 	<header>
 		<h2 class="title">The Mobile Web Is Dead (and We Have Killed It)</h2>
 		<div class="meta date">
@@ -60,7 +40,7 @@
   
 
 
-<time datetime="2014-04-14T00:00:00-07:00" pubdate data-updated="true">Apr 14<span>th</span>, 2014</time></div>
+<time datetime="2014-04-14T00:00:00-07:00" pubdate data-updated="true"></time></div>
 	</header>
 	<div class="entry-content"><p>The mobile web is dead.</p>
 
@@ -160,11 +140,11 @@
 </div>
 </section>
 </div>
-	<footer id="footer" class="inner"><br>
+	<footer id="footer" class="inner" role="contentinfo"><br>
 <br>
 <br>
 <br>
-&copy; 2015
+&copy; 2016
 <a href="mailto:david.b.calhoun@gmail.com">David Calhoun</a> (<a href="https://twitter.com/franksvalli">@franksvalli</a>) - <a href="https://www.linkedin.com/in/davidcalhoun">LinkedIn</a> - <a href="http://themaingate.net/resume/">Resume</a></footer>
 	<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="/javascripts/slash.js"></script> -->
@@ -182,7 +162,7 @@
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
@@ -190,7 +170,7 @@
 
 
 
-<script src="/javascripts/main.js"></script>
+<script src="/javascripts/main.js" defer></script>
 <!-- <script src="/javascripts/negative-scroll-blur.js"></script> -->
 
 <script>

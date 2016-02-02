@@ -1,6 +1,5 @@
-
-<!DOCTYPE HTML>
-<html lang="en-GB">
+<!doctype html>
+<html lang="en-US">
 <head>
 	<meta charset="utf-8">
 	<title>When to base64 encode images (and when not to)  | David Calhoun's blog</title>
@@ -22,30 +21,11 @@
 
 
 <body>
-	<header id="header" class="inner"><h1><a href="/">David Calhoun's blog</a></h1>
+	<header id="header" class="inner" role="banner" aria-labelledby="header_title"><h1><a href="/" id="header_title">David Calhoun's blog</a></h1>
 <span class="tagline"></span>
-<!-- <nav id="main-nav"><ul>
-	<li><a href="/about">About</a></li>
-	<li><a href="/archives">Archives</a></li>
-	<li><a href="/contact">Contact</a></li>
-</ul>
-</nav> -->
-<!-- <nav id="mobile-nav"> -->
-<!-- 	<div class="alignleft menu"> -->
-<!-- 		<a class="button">Menu</a> -->
-<!-- 		<div class="container"><ul>
-	<li><a href="/about">About</a></li>
-	<li><a href="/archives">Archives</a></li>
-	<li><a href="/contact">Contact</a></li>
-</ul>
-</div> -->
-<!-- 	</div> -->
-<!-- </nav> -->
-
 
 </header>
-
-	<div id="content" class="inner"><article class="post">
+	<div id="content" class="inner" role="main"><article class="post" role="main">
 	<header>
 		<h2 class="title">When to Base64 Encode Images (and When Not To)</h2>
 		<div class="meta date">
@@ -60,7 +40,7 @@
   
 
 
-<time datetime="2011-08-28T00:00:00-07:00" pubdate data-updated="true">Aug 28<span>th</span>, 2011</time></div>
+<time datetime="2011-08-28T00:00:00-07:00" pubdate data-updated="true"></time></div>
 	</header>
 	<div class="entry-content"><h3 id="introduction">Introduction</h3>
 
@@ -78,7 +58,7 @@
 
 <ul>
   <li>hard to maintain and update: without some tool to help, manually editing and putting together image sprites is quite a chore</li>
-  <li><a href="http://blog.vlad1.com/2009/06/22/to-sprite-or-not-to-sprite/">increased memory consumption</a> (possibly very dramatic): this is often overlooked. The time to deliver the images is decreased at the expense of a bigger memory and CPU footprint, especially for large sprites and sprites with a lot of whitespace. </li>
+  <li><a href="http://blog.vlad1.com/2009/06/22/to-sprite-or-not-to-sprite/">increased memory consumption</a> (possibly very dramatic): this is often overlooked. The time to deliver the images is decreased at the expense of a bigger memory and CPU footprint, especially for large sprites and sprites with a lot of whitespace.</li>
   <li>bleedthrough: for sprites that don’t have much whitespace to separate images, there’s an increased chance of nearby images visibly bleeding through other elements, as in this case where bleedthrough was only seen on iOS (but looked fine on Chrome and Safari on the desktop). Note the bleedthrough under the CNN logo:<a href="http://davidbcalhoun.com/wp-content/uploads/2011/08/image-sprite-bleedthrough-example.png"><img src="http://davidbcalhoun.com/wp-content/uploads/2011/08/image-sprite-bleedthrough-example.png" alt="Example of image sprite bleedthrough on Reddit" width="360" height="75" class="aligncenter size-full wp-image-1157" /></a></li>
 </ul>
 
@@ -111,23 +91,13 @@
 
 <p>Just a note about the tables: they are comparing the binary form (original png or jpeg) with the base64 form as it would appear in a CSS stylesheet, and comparing each of those with their gzipped form, which is most likely how they would be sent down the wire. The CSS representation has a few practical declarations and looks something like this:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-</pre></td>
-  <td class="code"><pre><span class="class">.address-book--arrow</span> {
-  <span class="key">background-image</span>: <span class="function"><span class="delimiter">url(</span><span class="content">data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAp1JREFUeNqEU21IU1EYfu7unW5Ty6aBszYs6MeUjGVYokHYyH5E1B9rZWFEFPQnAwmy6Hc/oqhfJsRKSSZGH1JIIX3MNCsqLTD9o1Oj6ebnnDfvvefezrnbdCHhCw/n433P8z7nPe/hBEEAtX0U7hc164uwuvVSXKwZLoOmaRDim+7m9vZa0WiEKSUFFpNpCWlmMyypqTDRuYn6t3k8vmQ2gRDCxs0t9fW45F52aBTROJLtZl7nEZad2m+KtoQCQ0FBARyOCGRZ/q92I1WgqqXlfdd95VsrK8/pChIEqqpCkiQsiCII0aBQZZoWl8lzFDwsFjMl0DBLY8Lj41hBwK4jSQrWOIphL6xYyhwJDWGo6wFSaH1Y3PTCAsITE1oyAa8flhWkbSiCLX8vun11eiGIpiJ/z2nYdx5HqLdVV7elrOzsuqysL3rmBIGiKPizKCHHWY4PLVeQbnXAdegqdhy+hu8dDTBnbqQJZJ1A7u+vz7RaiymWCZgCRSF6Edk8b9cx+B/W6WuVxPaZnyiqXoPpyUmVYvkKTIFClHigEieKjYuSvETUllaF4GAUM1NT6ooaJDKx+aDfC9fByxj90REb+9ppmIoAscH/6leg8MS9DJXPAM9xHCM443K57C6biMjcHDaVVCHw9RmCA2/RGC5C00AqXk/m4p20HZK4CM/J3Zk9n0ecMBhDQnJHcrTisyMfdQXOilrdMfxcwoHq/fg5R59TiQV3hYGKo6X2J/c7LyQIjOx9GXhOw/zoJ8wEevRGyp53o/lGMNYsBgPtEwLecwov7/jGDKa1twT6o3KpL4MdZgGsWZLtfPr7f1q58k1JNHy7YYaM+J+K3Y2PmAIbRavX66229hrGVvvL5uzsHDEUvUu+NT1my78CDAAMK1a8/QaZCgAAAABJRU5ErkJggg==</span><span class="delimiter">)</span></span>;  
-  <span class="key">width</span>: <span class="float">16px</span>;
-  <span class="key">height</span>: <span class="float">16px</span>;
-  <span class="key">background-repeat</span>: <span class="value">no-repeat</span>;
+<pre lang="css"><code>.address-book--arrow {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAp1JREFUeNqEU21IU1EYfu7unW5Ty6aBszYs6MeUjGVYokHYyH5E1B9rZWFEFPQnAwmy6Hc/oqhfJsRKSSZGH1JIIX3MNCsqLTD9o1Oj6ebnnDfvvefezrnbdCHhCw/n433P8z7nPe/hBEEAtX0U7hc164uwuvVSXKwZLoOmaRDim+7m9vZa0WiEKSUFFpNpCWlmMyypqTDRuYn6t3k8vmQ2gRDCxs0t9fW45F52aBTROJLtZl7nEZad2m+KtoQCQ0FBARyOCGRZ/q92I1WgqqXlfdd95VsrK8/pChIEqqpCkiQsiCII0aBQZZoWl8lzFDwsFjMl0DBLY8Lj41hBwK4jSQrWOIphL6xYyhwJDWGo6wFSaH1Y3PTCAsITE1oyAa8flhWkbSiCLX8vun11eiGIpiJ/z2nYdx5HqLdVV7elrOzsuqysL3rmBIGiKPizKCHHWY4PLVeQbnXAdegqdhy+hu8dDTBnbqQJZJ1A7u+vz7RaiymWCZgCRSF6Edk8b9cx+B/W6WuVxPaZnyiqXoPpyUmVYvkKTIFClHigEieKjYuSvETUllaF4GAUM1NT6ooaJDKx+aDfC9fByxj90REb+9ppmIoAscH/6leg8MS9DJXPAM9xHCM443K57C6biMjcHDaVVCHw9RmCA2/RGC5C00AqXk/m4p20HZK4CM/J3Zk9n0ecMBhDQnJHcrTisyMfdQXOilrdMfxcwoHq/fg5R59TiQV3hYGKo6X2J/c7LyQIjOx9GXhOw/zoJ8wEevRGyp53o/lGMNYsBgPtEwLecwov7/jGDKa1twT6o3KpL4MdZgGsWZLtfPr7f1q58k1JNHy7YYaM+J+K3Y2PmAIbRavX66229hrGVvvL5uzsHDEUvUu+NT1my78CDAAMK1a8/QaZCgAAAABJRU5ErkJggg==);  
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
 }
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
 <p>Ok, onto the tests!</p>
 
@@ -757,11 +727,11 @@
 </div>
 </section>
 </div>
-	<footer id="footer" class="inner"><br>
+	<footer id="footer" class="inner" role="contentinfo"><br>
 <br>
 <br>
 <br>
-&copy; 2015
+&copy; 2016
 <a href="mailto:david.b.calhoun@gmail.com">David Calhoun</a> (<a href="https://twitter.com/franksvalli">@franksvalli</a>) - <a href="https://www.linkedin.com/in/davidcalhoun">LinkedIn</a> - <a href="http://themaingate.net/resume/">Resume</a></footer>
 	<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="/javascripts/slash.js"></script> -->
@@ -779,7 +749,7 @@
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
@@ -787,7 +757,7 @@
 
 
 
-<script src="/javascripts/main.js"></script>
+<script src="/javascripts/main.js" defer></script>
 <!-- <script src="/javascripts/negative-scroll-blur.js"></script> -->
 
 <script>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: agile | David Calhoun's blog]]></title>
+  <link href="http://davidbcalhoun.com/blog/categories/agile/atom.xml" rel="self"/>
+  <link href="http://davidbcalhoun.com/"/>
+  <updated>2016-01-26T10:21:31-08:00</updated>
+  <id>http://davidbcalhoun.com/</id>
+  <author>
+    <name><![CDATA[David Calhoun]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Agile personals ad]]></title>
+    <link href="http://davidbcalhoun.com/2015/agile-personals-ad/"/>
+    <updated>2015-10-08T20:12:42-07:00</updated>
+    <id>http://davidbcalhoun.com/2015/agile-personals-ad</id>
+    <content type="html"><![CDATA[<p>(In case you didn’t guess, this is a parody.  Please dont send me emails!)</p>
+
+<p>I’m looking to find a fit and lean partner who can iterate rapidly on our relationship. The MVP for this partner is someone who can keep me entertained with user stories. Bonus point if the stories have a point (or several, as long as we keep to fibonacci numbers, which I have a strange fetish for).</p>
+
+<p>Must be willing to get up out of bed each day and stand-up together with me.</p>
+
+<p>I had good velocity in my previous relationships, but when it came to intimacy, there were too many blockers. Probably because when it came to demo time, nothing ended up working.</p>
+
+<p>I do have a backlog of dates planned, but no worries - we can have a planning together to figure out the schedule.</p>
+]]></content>
+  </entry>
+  
+</feed>

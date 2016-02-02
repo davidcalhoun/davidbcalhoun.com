@@ -1,6 +1,5 @@
-
-<!DOCTYPE HTML>
-<html lang="en-GB">
+<!doctype html>
+<html lang="en-US">
 <head>
 	<meta charset="utf-8">
 	<title>Dealing with device orientation (Mobile web part 6)  | David Calhoun's blog</title>
@@ -22,30 +21,11 @@
 
 
 <body>
-	<header id="header" class="inner"><h1><a href="/">David Calhoun's blog</a></h1>
+	<header id="header" class="inner" role="banner" aria-labelledby="header_title"><h1><a href="/" id="header_title">David Calhoun's blog</a></h1>
 <span class="tagline"></span>
-<!-- <nav id="main-nav"><ul>
-	<li><a href="/about">About</a></li>
-	<li><a href="/archives">Archives</a></li>
-	<li><a href="/contact">Contact</a></li>
-</ul>
-</nav> -->
-<!-- <nav id="mobile-nav"> -->
-<!-- 	<div class="alignleft menu"> -->
-<!-- 		<a class="button">Menu</a> -->
-<!-- 		<div class="container"><ul>
-	<li><a href="/about">About</a></li>
-	<li><a href="/archives">Archives</a></li>
-	<li><a href="/contact">Contact</a></li>
-</ul>
-</div> -->
-<!-- 	</div> -->
-<!-- </nav> -->
-
 
 </header>
-
-	<div id="content" class="inner"><article class="post">
+	<div id="content" class="inner" role="main"><article class="post" role="main">
 	<header>
 		<h2 class="title">Dealing With Device Orientation (Mobile Web Part 6)</h2>
 		<div class="meta date">
@@ -60,7 +40,7 @@
   
 
 
-<time datetime="2010-08-24T00:00:00-07:00" pubdate data-updated="true">Aug 24<span>th</span>, 2010</time></div>
+<time datetime="2010-08-24T00:00:00-07:00" pubdate data-updated="true"></time></div>
 	</header>
 	<div class="entry-content"><h3 id="introduction">Introduction</h3>
 
@@ -92,101 +72,53 @@
 
 <p>The fix is to add the orientation as a CSS class, which does trigger a CSS reflow. So our code at this point will look something like this:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-<a href="#n12" name="n12">12</a>
-<a href="#n13" name="n13">13</a>
-<a href="#n14" name="n14">14</a>
-<a href="#n15" name="n15">15</a>
-<a href="#n16" name="n16">16</a>
-<a href="#n17" name="n17">17</a>
-<a href="#n18" name="n18">18</a>
-<a href="#n19" name="n19">19</a>
-<strong><a href="#n20" name="n20">20</a></strong>
-<a href="#n21" name="n21">21</a>
-<a href="#n22" name="n22">22</a>
-<a href="#n23" name="n23">23</a>
-<a href="#n24" name="n24">24</a>
-<a href="#n25" name="n25">25</a>
-<a href="#n26" name="n26">26</a>
-<a href="#n27" name="n27">27</a>
-</pre></td>
-  <td class="code"><pre>(<span class="keyword">function</span>(){
-<span class="keyword">var</span> <span class="function">init</span> = <span class="keyword">function</span>() {
-  <span class="keyword">var</span> <span class="function">updateOrientation</span> = <span class="keyword">function</span>() {
-    <span class="keyword">var</span> orientation = window.orientation;
+<pre lang="js"><code>(function(){
+var init = function() {
+  var updateOrientation = function() {
+    var orientation = window.orientation;
     
-    <span class="keyword">switch</span>(orientation) {
-      <span class="keyword">case</span> <span class="integer">90</span>: <span class="keyword">case</span> -<span class="integer">90</span>:
-        orientation = <span class="string"><span class="delimiter">'</span><span class="content">landscape</span><span class="delimiter">'</span></span>;
-      <span class="keyword">break</span>;
-      <span class="keyword">default</span>:
-        orientation = <span class="string"><span class="delimiter">'</span><span class="content">portrait</span><span class="delimiter">'</span></span>;
+    switch(orientation) {
+      case 90: case -90:
+        orientation = 'landscape';
+      break;
+      default:
+        orientation = 'portrait';
     }
     
-    <span class="comment">// set the class on the HTML element (i.e. )</span>
-    document.body.parentNode.setAttribute(<span class="string"><span class="delimiter">'</span><span class="content">class</span><span class="delimiter">'</span></span>, orientation);
+    // set the class on the HTML element (i.e. )
+    document.body.parentNode.setAttribute('class', orientation);
   };
   
-  <span class="comment">// event triggered every 90 degrees of rotation</span>
-  window.addEventListener(<span class="string"><span class="delimiter">'</span><span class="content">orientationchange</span><span class="delimiter">'</span></span>, updateOrientation, <span class="predefined-constant">false</span>);
+  // event triggered every 90 degrees of rotation
+  window.addEventListener('orientationchange', updateOrientation, false);
   
-  <span class="comment">// initialize the orientation</span>
+  // initialize the orientation
   updateOrientation();
 }
 
-window.addEventListener(<span class="string"><span class="delimiter">'</span><span class="content">DOMContentLoaded</span><span class="delimiter">'</span></span>, init, <span class="predefined-constant">false</span>);
+window.addEventListener('DOMContentLoaded', init, false);
 
 })();
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
 <p>Now we can target elements like this in CSS:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-</pre></td>
-  <td class="code"><pre><span class="class">.portrait</span> <span class="tag">body</span> <span class="tag">div</span> { <span class="key">width</span>: <span class="float">10%</span>; }
-<span class="class">.landscape</span> <span class="tag">body</span> <span class="tag">div</span> { <span class="key">width</span>: <span class="float">15%</span>; }
-</pre></td>
-</tr></table>
-</div>
+<pre lang="css"><code>.portrait body div { width: 10%; }
+.landscape body div { width: 15%; }
+</code></pre>
 
 <h3 id="with-a-little-help-from-media-queries">With a little help from media queries</h3>
 
 <p>You may have heard of <a href="https://developer.mozilla.org/en/css/media_queries">media queries</a> being used to target mobile devices (based on screen pixel width) or to <a href="http://www.bdoran.co.uk/2010/07/19/detecting-the-iphone4-and-resolution-with-javascript-or-php/">target the iPhone 4’s Retina display</a>, but you may not have known that you can also target screen orientation!</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-</pre></td>
-  <td class="code"><pre><span class="directive">@media</span> <span class="type">all</span> <span class="error">a</span><span class="error">n</span><span class="error">d</span> (<span class="error">o</span><span class="error">r</span><span class="error">i</span><span class="error">e</span><span class="error">n</span><span class="error">t</span><span class="error">a</span><span class="error">t</span><span class="error">i</span><span class="error">o</span><span class="error">n</span>: <span class="error">p</span><span class="error">o</span><span class="error">r</span><span class="error">t</span><span class="error">r</span><span class="error">a</span><span class="error">i</span><span class="error">t</span>) {
-  <span class="tag">body</span> <span class="tag">div</span> { <span class="key">width</span>: <span class="float">10%</span>; }
+<pre lang="css"><code>@media all and (orientation: portrait) {
+  body div { width: 10%; }
 }
 
-<span class="directive">@media</span> <span class="type">all</span> <span class="error">a</span><span class="error">n</span><span class="error">d</span> (<span class="error">o</span><span class="error">r</span><span class="error">i</span><span class="error">e</span><span class="error">n</span><span class="error">t</span><span class="error">a</span><span class="error">t</span><span class="error">i</span><span class="error">o</span><span class="error">n</span>: <span class="error">l</span><span class="error">a</span><span class="error">n</span><span class="error">d</span><span class="error">s</span><span class="error">c</span><span class="error">a</span><span class="error">p</span><span class="error">e</span>) {
-  <span class="tag">body</span> <span class="tag">div</span> { <span class="key">width</span>: <span class="float">15%</span>; }
+@media all and (orientation: landscape) {
+  body div { width: 15%; }
 }
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
 <p>The orientation media query is available on iOS 3.2+, Android 2.0+, and some other browsers.</p>
 
@@ -200,47 +132,25 @@ window.addEventListener(<span class="string"><span class="delimiter">'</span><sp
 
 <p>Even though this isn’t an entirely foolproof method, we can dynamically measure the window width and height and guess orientation based on that:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-<a href="#n12" name="n12">12</a>
-<a href="#n13" name="n13">13</a>
-<a href="#n14" name="n14">14</a>
-<a href="#n15" name="n15">15</a>
-<a href="#n16" name="n16">16</a>
-<a href="#n17" name="n17">17</a>
-<a href="#n18" name="n18">18</a>
-</pre></td>
-  <td class="code"><pre>(<span class="keyword">function</span>(){
-<span class="keyword">var</span> HTMLNode = document.body.parentNode;
-<span class="keyword">var</span> <span class="function">updateOrientation</span> = <span class="keyword">function</span>() {  
-  <span class="comment">// landscape when width is biggest, otherwise portrait</span>
-  <span class="keyword">var</span> orientation = (window.innerWidth &gt; window.innerHeight) ? <span class="string"><span class="delimiter">'</span><span class="content">landscape</span><span class="delimiter">'</span></span>: <span class="string"><span class="delimiter">'</span><span class="content">portrait</span><span class="delimiter">'</span></span>;
+<pre lang="js"><code>(function(){
+var HTMLNode = document.body.parentNode;
+var updateOrientation = function() {  
+  // landscape when width is biggest, otherwise portrait
+  var orientation = (window.innerWidth &gt; window.innerHeight) ? 'landscape': 'portrait';
   
-  <span class="comment">// set the class on the HTML element (i.e. )</span>
-  HTMLNode.setAttribute(<span class="string"><span class="delimiter">'</span><span class="content">class</span><span class="delimiter">'</span></span>, orientation);
+  // set the class on the HTML element (i.e. )
+  HTMLNode.setAttribute('class', orientation);
 }
-<span class="keyword">var</span> <span class="function">init</span> = <span class="keyword">function</span>() {
-  <span class="comment">// initialize the orientation</span>
+var init = function() {
+  // initialize the orientation
   updateOrientation();
   
-  <span class="comment">// update every 5 seconds</span>
-  setInterval(updateOrientation, <span class="integer">5000</span>);
+  // update every 5 seconds
+  setInterval(updateOrientation, 5000);
 }
-window.addEventListener(<span class="string"><span class="delimiter">'</span><span class="content">DOMContentLoaded</span><span class="delimiter">'</span></span>, init, <span class="predefined-constant">false</span>);
+window.addEventListener('DOMContentLoaded', init, false);
 })();
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
 <p>Ok, so it’s not pretty, but it seems to work.  The overhead in this fallback example is the fact that we have to use a polling technique (in this case every 5 seconds [5000 milliseconds]) to check for changes in orientation.</p>
 
@@ -252,127 +162,66 @@ window.addEventListener(<span class="string"><span class="delimiter">'</span><sp
 
 <p>Once we put everything together, we get something that looks like this:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-<a href="#n12" name="n12">12</a>
-<a href="#n13" name="n13">13</a>
-<a href="#n14" name="n14">14</a>
-<a href="#n15" name="n15">15</a>
-<a href="#n16" name="n16">16</a>
-<a href="#n17" name="n17">17</a>
-<a href="#n18" name="n18">18</a>
-<a href="#n19" name="n19">19</a>
-<strong><a href="#n20" name="n20">20</a></strong>
-<a href="#n21" name="n21">21</a>
-<a href="#n22" name="n22">22</a>
-<a href="#n23" name="n23">23</a>
-<a href="#n24" name="n24">24</a>
-<a href="#n25" name="n25">25</a>
-<a href="#n26" name="n26">26</a>
-<a href="#n27" name="n27">27</a>
-<a href="#n28" name="n28">28</a>
-<a href="#n29" name="n29">29</a>
-<strong><a href="#n30" name="n30">30</a></strong>
-<a href="#n31" name="n31">31</a>
-<a href="#n32" name="n32">32</a>
-<a href="#n33" name="n33">33</a>
-<a href="#n34" name="n34">34</a>
-<a href="#n35" name="n35">35</a>
-<a href="#n36" name="n36">36</a>
-<a href="#n37" name="n37">37</a>
-<a href="#n38" name="n38">38</a>
-<a href="#n39" name="n39">39</a>
-<strong><a href="#n40" name="n40">40</a></strong>
-<a href="#n41" name="n41">41</a>
-<a href="#n42" name="n42">42</a>
-<a href="#n43" name="n43">43</a>
-<a href="#n44" name="n44">44</a>
-<a href="#n45" name="n45">45</a>
-<a href="#n46" name="n46">46</a>
-</pre></td>
-  <td class="code"><pre>(<span class="keyword">function</span>(){
-<span class="keyword">var</span> supportsOrientation = (<span class="keyword">typeof</span> window.orientation == <span class="string"><span class="delimiter">'</span><span class="content">number</span><span class="delimiter">'</span></span> &amp;&amp; <span class="keyword">typeof</span> window.onorientationchange == <span class="string"><span class="delimiter">'</span><span class="content">object</span><span class="delimiter">'</span></span>);
-<span class="keyword">var</span> HTMLNode = document.body.parentNode;
-<span class="keyword">var</span> <span class="function">updateOrientation</span> = <span class="keyword">function</span>() {
-  <span class="comment">// rewrite the function depending on what's supported</span>
-  <span class="keyword">if</span>(supportsOrientation) {
-    <span class="function">updateOrientation</span> = <span class="keyword">function</span>() {
-      <span class="keyword">var</span> orientation = window.orientation;
+<pre lang="js"><code>(function(){
+var supportsOrientation = (typeof window.orientation == 'number' &amp;&amp; typeof window.onorientationchange == 'object');
+var HTMLNode = document.body.parentNode;
+var updateOrientation = function() {
+  // rewrite the function depending on what's supported
+  if(supportsOrientation) {
+    updateOrientation = function() {
+      var orientation = window.orientation;
     
-      <span class="keyword">switch</span>(orientation) {
-        <span class="keyword">case</span> <span class="integer">90</span>: <span class="keyword">case</span> -<span class="integer">90</span>:
-          orientation = <span class="string"><span class="delimiter">'</span><span class="content">landscape</span><span class="delimiter">'</span></span>;
-        <span class="keyword">break</span>;
-        <span class="keyword">default</span>:
-          orientation = <span class="string"><span class="delimiter">'</span><span class="content">portrait</span><span class="delimiter">'</span></span>;
+      switch(orientation) {
+        case 90: case -90:
+          orientation = 'landscape';
+        break;
+        default:
+          orientation = 'portrait';
       }
       
-      <span class="comment">// set the class on the HTML element (i.e. )</span>
-      HTMLNode.setAttribute(<span class="string"><span class="delimiter">'</span><span class="content">class</span><span class="delimiter">'</span></span>, orientation);
+      // set the class on the HTML element (i.e. )
+      HTMLNode.setAttribute('class', orientation);
     }
-  } <span class="keyword">else</span> {
-    <span class="function">updateOrientation</span> = <span class="keyword">function</span>() {
-      <span class="comment">// landscape when width is biggest, otherwise portrait</span>
-      <span class="keyword">var</span> orientation = (window.innerWidth &gt; window.innerHeight) ? <span class="string"><span class="delimiter">'</span><span class="content">landscape</span><span class="delimiter">'</span></span>: <span class="string"><span class="delimiter">'</span><span class="content">portrait</span><span class="delimiter">'</span></span>;
+  } else {
+    updateOrientation = function() {
+      // landscape when width is biggest, otherwise portrait
+      var orientation = (window.innerWidth &gt; window.innerHeight) ? 'landscape': 'portrait';
 
-      <span class="comment">// set the class on the HTML element (i.e. )</span>
-      HTMLNode.setAttribute(<span class="string"><span class="delimiter">'</span><span class="content">class</span><span class="delimiter">'</span></span>, orientation);
+      // set the class on the HTML element (i.e. )
+      HTMLNode.setAttribute('class', orientation);
     }
   }
   
   updateOrientation();
 }
-<span class="keyword">var</span> <span class="function">init</span> = <span class="keyword">function</span>() {
-  <span class="comment">// initialize the orientation</span>
+var init = function() {
+  // initialize the orientation
   updateOrientation();
   
-  <span class="keyword">if</span>(supportsOrientation) {
-    window.addEventListener(<span class="string"><span class="delimiter">'</span><span class="content">orientationchange</span><span class="delimiter">'</span></span>, updateOrientation, <span class="predefined-constant">false</span>);
-  } <span class="keyword">else</span> {
-    <span class="comment">// fallback: update every 5 seconds</span>
-    setInterval(updateOrientation, <span class="integer">5000</span>);
+  if(supportsOrientation) {
+    window.addEventListener('orientationchange', updateOrientation, false);
+  } else {
+    // fallback: update every 5 seconds
+    setInterval(updateOrientation, 5000);
   }
 
 }
-window.addEventListener(<span class="string"><span class="delimiter">'</span><span class="content">DOMContentLoaded</span><span class="delimiter">'</span></span>, init, <span class="predefined-constant">false</span>);
+window.addEventListener('DOMContentLoaded', init, false);
 })();
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
 <p>Minified (540 bytes):</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-</pre></td>
-  <td class="code"><pre>(<span class="keyword">function</span>(){<span class="keyword">var</span> e=<span class="keyword">typeof</span> window.orientation==<span class="string"><span class="delimiter">&quot;</span><span class="content">number</span><span class="delimiter">&quot;</span></span>&amp;&amp;<span class="keyword">typeof</span> window.onorientationchange==<span class="string"><span class="delimiter">&quot;</span><span class="content">object</span><span class="delimiter">&quot;</span></span>,f=document.body.parentNode;<span class="keyword">function</span> <span class="function">c</span>(){c=e?<span class="keyword">function</span>(){<span class="keyword">var</span> d=window.orientation;<span class="keyword">switch</span>(d){<span class="keyword">case</span> <span class="integer">90</span>:<span class="keyword">case</span> -<span class="integer">90</span>:d=<span class="string"><span class="delimiter">&quot;</span><span class="content">landscape</span><span class="delimiter">&quot;</span></span>;<span class="keyword">break</span>;<span class="keyword">default</span>:d=<span class="string"><span class="delimiter">&quot;</span><span class="content">portrait</span><span class="delimiter">&quot;</span></span>}f.setAttribute(<span class="string"><span class="delimiter">&quot;</span><span class="content">class</span><span class="delimiter">&quot;</span></span>,d)}:<span class="keyword">function</span>(){f.setAttribute(<span class="string"><span class="delimiter">&quot;</span><span class="content">class</span><span class="delimiter">&quot;</span></span>,window.innerWidth&gt;window.innerHeight?<span class="string"><span class="delimiter">&quot;</span><span class="content">landscape</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">portrait</span><span class="delimiter">&quot;</span></span>)};c()}window.addEventListener(<span class="string"><span class="delimiter">&quot;</span><span class="content">DOMContentLoaded</span><span class="delimiter">&quot;</span></span>,<span class="keyword">function</span>(){c();e?window.addEventListener(<span class="string"><span class="delimiter">&quot;</span><span class="content">orientationchange</span><span class="delimiter">&quot;</span></span>,c,<span class="predefined-constant">false</span>):setInterval(c,<span class="float">5E3</span>)},<span class="predefined-constant">false</span>)})();
-</pre></td>
-</tr></table>
-</div>
+<pre lang="js"><code>(function(){var e=typeof window.orientation=="number"&amp;&amp;typeof window.onorientationchange=="object",f=document.body.parentNode;function c(){c=e?function(){var d=window.orientation;switch(d){case 90:case -90:d="landscape";break;default:d="portrait"}f.setAttribute("class",d)}:function(){f.setAttribute("class",window.innerWidth&gt;window.innerHeight?"landscape":"portrait")};c()}window.addEventListener("DOMContentLoaded",function(){c();e?window.addEventListener("orientationchange",c,false):setInterval(c,5E3)},false)})();
+</code></pre>
 
 <h3 id="conclusion">Conclusion</h3>
 
 <p>And that’s it!  Now we can reliably target different screen orientations with some straightforward CSS:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-</pre></td>
-  <td class="code"><pre><span class="class">.portrait</span> <span class="tag">body</span> <span class="tag">div</span> { <span class="key">width</span>: <span class="float">10%</span>; }
-<span class="class">.landscape</span> <span class="tag">body</span> <span class="tag">div</span> { <span class="key">width</span>: <span class="float">15%</span>; }
-</pre></td>
-</tr></table>
-</div>
+<pre lang="css"><code>.portrait body div { width: 10%; }
+.landscape body div { width: 15%; }
+</code></pre>
 
 <p>Again, in my experience I’ve used this to fix bugs.  But I’m sure you can find more creative uses for it!</p>
 
@@ -428,11 +277,11 @@ window.addEventListener(<span class="string"><span class="delimiter">'</span><sp
 </div>
 </section>
 </div>
-	<footer id="footer" class="inner"><br>
+	<footer id="footer" class="inner" role="contentinfo"><br>
 <br>
 <br>
 <br>
-&copy; 2015
+&copy; 2016
 <a href="mailto:david.b.calhoun@gmail.com">David Calhoun</a> (<a href="https://twitter.com/franksvalli">@franksvalli</a>) - <a href="https://www.linkedin.com/in/davidcalhoun">LinkedIn</a> - <a href="http://themaingate.net/resume/">Resume</a></footer>
 	<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="/javascripts/slash.js"></script> -->
@@ -450,7 +299,7 @@ window.addEventListener(<span class="string"><span class="delimiter">'</span><sp
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
@@ -458,7 +307,7 @@ window.addEventListener(<span class="string"><span class="delimiter">'</span><sp
 
 
 
-<script src="/javascripts/main.js"></script>
+<script src="/javascripts/main.js" defer></script>
 <!-- <script src="/javascripts/negative-scroll-blur.js"></script> -->
 
 <script>

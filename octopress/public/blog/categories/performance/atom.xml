@@ -4,7 +4,7 @@
   <title><![CDATA[Category: performance | David Calhoun's blog]]></title>
   <link href="http://davidbcalhoun.com/blog/categories/performance/atom.xml" rel="self"/>
   <link href="http://davidbcalhoun.com/"/>
-  <updated>2015-05-16T23:22:22-07:00</updated>
+  <updated>2016-01-26T10:21:31-08:00</updated>
   <id>http://davidbcalhoun.com/</id>
   <author>
     <name><![CDATA[David Calhoun]]></name>
@@ -354,7 +354,7 @@
   </tr>
 </table>
 
-<p>Yes, e-mobile didn’t have the greatest ping, but it handily beat ATT, even though it was going across the entire Pacific Ocean! Note that it came out the best in the bandwidth tests however… </p>
+<p>Yes, e-mobile didn’t have the greatest ping, but it handily beat ATT, even though it was going across the entire Pacific Ocean! Note that it came out the best in the bandwidth tests however…</p>
 
 <p>(Note: it’s unknown if or how <a href="http://stevesouders.com/ms/">Steve Souders’s latest research</a> affects these findings)</p>
 
@@ -525,55 +525,30 @@ Deliver appropriately-sized images to devices. The philosophy of responsive desi
 
 <h4 id="javascript-examples">JavaScript examples</h4>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-</pre></td>
-  <td class="code"><pre>window.innerHeight;       <span class="comment">// max height actually available</span>
-window.innerWidth;        <span class="comment">// max width actually available</span>
-window.devicePixelRatio;  <span class="comment">// pixel density (standard is 1, high resolution is generally &gt; 1)</span>
-</pre></td>
-</tr></table>
-</div>
+<pre lang="javascript"><code>window.innerHeight;       // max height actually available
+window.innerWidth;        // max width actually available
+window.devicePixelRatio;  // pixel density (standard is 1, high resolution is generally &gt; 1)
+</code></pre>
 
 <p>(note that <code>screen.width</code> and <code>screen.height</code> are also available to tell you the dimensions of the entire screen, but this isn’t all available due to the space taken by the OS and browser chrome)</p>
 
 <h4 id="media-query-examples">Media query examples</h4>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-<a href="#n12" name="n12">12</a>
-<a href="#n13" name="n13">13</a>
-<a href="#n14" name="n14">14</a>
-</pre></td>
-  <td class="code"><pre><span class="directive">@media</span> <span class="type">only</span> <span class="error">s</span><span class="error">c</span><span class="error">r</span><span class="error">e</span><span class="error">e</span><span class="error">n</span> <span class="error">a</span><span class="error">n</span><span class="error">d</span> (<span class="error">m</span><span class="error">a</span><span class="error">x</span><span class="error">-</span><span class="error">w</span><span class="error">i</span><span class="error">d</span><span class="error">t</span><span class="error">h</span>: <span class="float">480px</span>) {
-  <span class="comment">/* small screen styles */</span>
+<pre lang="css"><code>@media only screen and (max-width: 480px) {
+  /* small screen styles */
 }
 
-<span class="directive">@media</span> <span class="type">only</span> <span class="error">s</span><span class="error">c</span><span class="error">r</span><span class="error">e</span><span class="error">e</span><span class="error">n</span> <span class="error">a</span><span class="error">n</span><span class="error">d</span> (<span class="error">m</span><span class="error">i</span><span class="error">n</span><span class="error">-</span><span class="error">w</span><span class="error">i</span><span class="error">d</span><span class="error">t</span><span class="error">h</span>: <span class="float">481px</span>) {
-  <span class="comment">/* large screen styles */</span>
+@media only screen and (min-width: 481px) {
+  /* large screen styles */
 }
 
-<span class="directive">@media</span> (<span class="type">-webkit-min-device-pixel-ratio</span>: <span class="float">1.5</span>),
-       (<span class="error">-</span><span class="error">o</span><span class="error">-</span><span class="error">m</span><span class="error">i</span><span class="error">n</span><span class="error">-</span><span class="error">d</span><span class="error">e</span><span class="error">v</span><span class="error">i</span><span class="error">c</span><span class="error">e</span><span class="error">-</span><span class="error">p</span><span class="error">i</span><span class="error">x</span><span class="error">e</span><span class="error">l</span><span class="error">-</span><span class="error">r</span><span class="error">a</span><span class="error">t</span><span class="error">i</span><span class="error">o</span>: <span class="float">3</span>/<span class="float">2</span>),
-       (<span class="error">m</span><span class="error">i</span><span class="error">n</span><span class="error">-</span><span class="error">-</span><span class="error">m</span><span class="error">o</span><span class="error">z</span><span class="error">-</span><span class="error">d</span><span class="error">e</span><span class="error">v</span><span class="error">i</span><span class="error">c</span><span class="error">e</span><span class="error">-</span><span class="error">p</span><span class="error">i</span><span class="error">x</span><span class="error">e</span><span class="error">l</span><span class="error">-</span><span class="error">r</span><span class="error">a</span><span class="error">t</span><span class="error">i</span><span class="error">o</span>: <span class="float">1.5</span>),
-       (<span class="error">m</span><span class="error">i</span><span class="error">n</span><span class="error">-</span><span class="error">d</span><span class="error">e</span><span class="error">v</span><span class="error">i</span><span class="error">c</span><span class="error">e</span><span class="error">-</span><span class="error">p</span><span class="error">i</span><span class="error">x</span><span class="error">e</span><span class="error">l</span><span class="error">-</span><span class="error">r</span><span class="error">a</span><span class="error">t</span><span class="error">i</span><span class="error">o</span>: <span class="float">1.5</span>) {
-  <span class="comment">/* high resolution styles */</span>
+@media (-webkit-min-device-pixel-ratio: 1.5),
+       (-o-min-device-pixel-ratio: 3/2),
+       (min--moz-device-pixel-ratio: 1.5),
+       (min-device-pixel-ratio: 1.5) {
+  /* high resolution styles */
 }
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
 <h3 id="navigatorconnection-android-only">navigator.connection (Android only)</h3>
 
@@ -581,95 +556,49 @@ window.devicePixelRatio;  <span class="comment">// pixel density (standard is 1,
 
 <p>Here’s the contents of the <code>navigator.connection</code> object (with a phone running on a 3G connection):</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-</pre></td>
-  <td class="code"><pre>{
-  <span class="key">type</span>: <span class="integer">4</span>,
-  <span class="key">UNKNOWN</span>: <span class="integer">0</span>,
-  <span class="key">ETHERNET</span>: <span class="integer">1</span>,
-  <span class="key">WIFI</span>: <span class="integer">2</span>,
-  <span class="key">CELL_2G</span>: <span class="integer">3</span>,
-  <span class="key">CELL_3G</span>: <span class="integer">4</span>
+<pre lang="javascript"><code>{
+  type: 4,
+  UNKNOWN: 0,
+  ETHERNET: 1,
+  WIFI: 2,
+  CELL_2G: 3,
+  CELL_3G: 4
 }
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
 <p>And an example of how you could write code for each type:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-</pre></td>
-  <td class="code"><pre>(<span class="keyword">function</span>(){  <span class="comment">// sandbox our code</span>
-  <span class="keyword">if</span>(!navigator.connection) navigator.connection = {<span class="key">type</span>:<span class="integer">0</span>, <span class="key">UNKNOWN</span>: <span class="integer">0</span>};  <span class="comment">// polyfill</span>
-  <span class="keyword">var</span> connection = navigator.connection;
+<pre lang="javascript"><code>(function(){  // sandbox our code
+  if(!navigator.connection) navigator.connection = {type:0, UNKNOWN: 0};  // polyfill
+  var connection = navigator.connection;
   
-  <span class="keyword">if</span>(connection.type === connection.WIFI || connection.type === connection.ETHERNET) {
-    <span class="comment">// high bandwidth</span>
-  } <span class="keyword">else</span> {
-    <span class="comment">// normal bandwidth</span>
+  if(connection.type === connection.WIFI || connection.type === connection.ETHERNET) {
+    // high bandwidth
+  } else {
+    // normal bandwidth
   }
 })();
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
 <p>Here’s how we might be able to use <a href="http://modernizr.com/">Modernizr</a> to help us out:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-</pre></td>
-  <td class="code"><pre>(<span class="keyword">function</span>(){  <span class="comment">// sandbox our code</span>
-  <span class="keyword">if</span>(!navigator.connection) navigator.connection = {<span class="key">type</span>:<span class="integer">0</span>, <span class="key">UNKNOWN</span>: <span class="integer">0</span>};  <span class="comment">// polyfill</span>
-  <span class="keyword">var</span> connection = navigator.connection;
+<pre lang="javascript"><code>(function(){  // sandbox our code
+  if(!navigator.connection) navigator.connection = {type:0, UNKNOWN: 0};  // polyfill
+  var connection = navigator.connection;
   
-  <span class="comment">// add a custom test to Modernizr</span>
-  Modernizr.addTest(<span class="string"><span class="delimiter">'</span><span class="content">highbandwidth</span><span class="delimiter">'</span></span>, <span class="keyword">function</span>(){
-    <span class="keyword">return</span> connection.type === connection.WIFI || connection.type === connection.ETHERNET;
+  // add a custom test to Modernizr
+  Modernizr.addTest('highbandwidth', function(){
+    return connection.type === connection.WIFI || connection.type === connection.ETHERNET;
   });
 
 })();
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
 <p>We can now target special high-bandwidth assets with CSS:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-</pre></td>
-  <td class="code"><pre><span class="class">.highbandwidth</span> <span class="class">.logo</span> {<span class="key">background-image</span>:<span class="function"><span class="delimiter">url(</span><span class="content">'logo-high.jpg'</span><span class="delimiter">)</span></span>;}
-<span class="class">.no-highbandwidth</span> <span class="class">.logo</span> {<span class="key">background-image</span>:<span class="function"><span class="delimiter">url(</span><span class="content">'logo.jpg'</span><span class="delimiter">)</span></span>;}
-</pre></td>
-</tr></table>
-</div>
+<pre lang="css"><code>.highbandwidth .logo {background-image:url('logo-high.jpg');}
+.no-highbandwidth .logo {background-image:url('logo.jpg');}
+</code></pre>
 
 <h3 id="base64-encode-small-ui-images">base64 encode small UI images</h3>
 
@@ -677,35 +606,19 @@ window.devicePixelRatio;  <span class="comment">// pixel density (standard is 1,
 
 <h4 id="html">HTML</h4>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-</pre></td>
-  <td class="code"><pre><span class="tag">&lt;img</span> <span class="attribute-name">src</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUA</span>
-<span class="content">AAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO</span>
-<span class="content">9TXL0Y4OHwAAAABJRU5ErkJggg==</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">alt</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Red dot</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-</pre></td>
-</tr></table>
-</div>
+<pre lang="html"><code>&lt;img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUA
+AAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO
+9TXL0Y4OHwAAAABJRU5ErkJggg==" alt="Red dot"&gt;
+</code></pre>
 
 <h4 id="css">CSS</h4>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-</pre></td>
-  <td class="code"><pre><span class="class">.dot</span> {
-  <span class="key">background-image</span>: <span class="function"><span class="delimiter">url(</span><span class="content">'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUA  </span></span>
-<span class="value">AAAFCAYAAACNbyblAAAAHElEQVQI12P4</span>//<span class="float">8</span>/<span class="value">w38GIAXDIBKE0DHxgljNBAAO</span>  
-<span class="float">9</span><span class="value">TXL0Y4OHwAAAABJRU5ErkJggg</span>==<span class="string"><span class="delimiter">'</span><span class="content">)</span><span class="delimiter">;</span></span>
+<pre lang="css"><code>.dot {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUA  
+AAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO  
+9TXL0Y4OHwAAAABJRU5ErkJggg==');
 }
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
 <p>There seems to be the mistaken belief floating around that base64 images aren’t cacheable. However, because you can embed them in your CSS, base64 encoded images will be cached along with the rest of your CSS.</p>
 
@@ -788,39 +701,21 @@ window.devicePixelRatio;  <span class="comment">// pixel density (standard is 1,
 
 <p>So you will change this:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-</pre></td>
-  <td class="code"><pre><span class="class">.carousel</span> {
-  <span class="key">-webkit-transform</span>: <span class="error">t</span><span class="error">r</span><span class="error">a</span><span class="error">n</span><span class="error">s</span><span class="error">l</span><span class="error">a</span><span class="error">t</span><span class="error">e</span><span class="float">3</span><span class="error">d</span>(<span class="float">0</span>,<span class="float">0</span>,<span class="float">0</span>);  <span class="comment">/* or translateZ(0); */</span>
+<pre lang="css"><code>.carousel {
+  -webkit-transform: translate3d(0,0,0);  /* or translateZ(0); */
 }
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
 <p>To this:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-</pre></td>
-  <td class="code"><pre><span class="class">.carousel</span> {
-  <span class="key">-webkit-transform</span>: <span class="error">t</span><span class="error">r</span><span class="error">a</span><span class="error">n</span><span class="error">s</span><span class="error">l</span><span class="error">a</span><span class="error">t</span><span class="error">e</span><span class="float">3</span><span class="error">d</span>(<span class="float">0</span>,<span class="float">0</span>,<span class="float">0</span>);  <span class="comment">/* or translateZ(0); */</span>
+<pre lang="css"><code>.carousel {
+  -webkit-transform: translate3d(0,0,0);  /* or translateZ(0); */
 }
 
-<span class="class">.carousel-pane</span> {
-  <span class="key">-webkit-transform</span>: <span class="error">t</span><span class="error">r</span><span class="error">a</span><span class="error">n</span><span class="error">s</span><span class="error">l</span><span class="error">a</span><span class="error">t</span><span class="error">e</span><span class="float">3</span><span class="error">d</span>(<span class="float">0</span>,<span class="float">0</span>,<span class="float">0</span>);  <span class="comment">/* or translateZ(0); */</span>
+.carousel-pane {
+  -webkit-transform: translate3d(0,0,0);  /* or translateZ(0); */
 }
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
 <p>Where carousel-pane represents each child element of the carousel.</p>
 
@@ -846,7 +741,7 @@ window.devicePixelRatio;  <span class="comment">// pixel density (standard is 1,
     <li>An explicit “Connection: Keep-Alive” header (required by Android)</li>
   </ol>
 
-  <p><a href="http://www.blaze.io/mobile/http-pipelining-big-in-mobile/">-Blaze.io</a> </p>
+  <p><a href="http://www.blaze.io/mobile/http-pipelining-big-in-mobile/">-Blaze.io</a></p>
 </blockquote>
 
 <p>If these criteria are met, subsequent requests will be pipelined. Sweet!</p>
@@ -857,23 +752,13 @@ window.devicePixelRatio;  <span class="comment">// pixel density (standard is 1,
 
 <p>To turn off DNS Prefetching, serve this meta tag:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-</pre></td>
-  <td class="code"><pre><span class="tag">&lt;meta</span> <span class="attribute-name">http-equiv</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">x-dns-prefetch-control</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">content</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">off</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-</pre></td>
-</tr></table>
-</div>
+<pre lang="html"><code>&lt;meta http-equiv="x-dns-prefetch-control" content="off"&gt;
+</code></pre>
 
 <p>You can also explicitly force a DNS lookup:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-</pre></td>
-  <td class="code"><pre><span class="tag">&lt;link</span> <span class="attribute-name">rel</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">dns-prefetch</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">http://www.example.com/</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-</pre></td>
-</tr></table>
-</div>
+<pre lang="html"><code>&lt;link rel="dns-prefetch" href="http://www.example.com/"&gt;
+</code></pre>
 
 <h3 id="avoid-library-code-bloat">Avoid library code bloat</h3>
 
@@ -959,7 +844,7 @@ window.devicePixelRatio;  <span class="comment">// pixel density (standard is 1,
 
 <ul>
   <li>hard to maintain and update: without some tool to help, manually editing and putting together image sprites is quite a chore</li>
-  <li><a href="http://blog.vlad1.com/2009/06/22/to-sprite-or-not-to-sprite/">increased memory consumption</a> (possibly very dramatic): this is often overlooked. The time to deliver the images is decreased at the expense of a bigger memory and CPU footprint, especially for large sprites and sprites with a lot of whitespace. </li>
+  <li><a href="http://blog.vlad1.com/2009/06/22/to-sprite-or-not-to-sprite/">increased memory consumption</a> (possibly very dramatic): this is often overlooked. The time to deliver the images is decreased at the expense of a bigger memory and CPU footprint, especially for large sprites and sprites with a lot of whitespace.</li>
   <li>bleedthrough: for sprites that don’t have much whitespace to separate images, there’s an increased chance of nearby images visibly bleeding through other elements, as in this case where bleedthrough was only seen on iOS (but looked fine on Chrome and Safari on the desktop). Note the bleedthrough under the CNN logo:<a href="http://davidbcalhoun.com/wp-content/uploads/2011/08/image-sprite-bleedthrough-example.png"><img src="http://davidbcalhoun.com/wp-content/uploads/2011/08/image-sprite-bleedthrough-example.png" alt="Example of image sprite bleedthrough on Reddit" width="360" height="75" class="aligncenter size-full wp-image-1157" /></a></li>
 </ul>
 
@@ -992,23 +877,13 @@ window.devicePixelRatio;  <span class="comment">// pixel density (standard is 1,
 
 <p>Just a note about the tables: they are comparing the binary form (original png or jpeg) with the base64 form as it would appear in a CSS stylesheet, and comparing each of those with their gzipped form, which is most likely how they would be sent down the wire. The CSS representation has a few practical declarations and looks something like this:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-</pre></td>
-  <td class="code"><pre><span class="class">.address-book--arrow</span> {
-  <span class="key">background-image</span>: <span class="function"><span class="delimiter">url(</span><span class="content">data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAp1JREFUeNqEU21IU1EYfu7unW5Ty6aBszYs6MeUjGVYokHYyH5E1B9rZWFEFPQnAwmy6Hc/oqhfJsRKSSZGH1JIIX3MNCsqLTD9o1Oj6ebnnDfvvefezrnbdCHhCw/n433P8z7nPe/hBEEAtX0U7hc164uwuvVSXKwZLoOmaRDim+7m9vZa0WiEKSUFFpNpCWlmMyypqTDRuYn6t3k8vmQ2gRDCxs0t9fW45F52aBTROJLtZl7nEZad2m+KtoQCQ0FBARyOCGRZ/q92I1WgqqXlfdd95VsrK8/pChIEqqpCkiQsiCII0aBQZZoWl8lzFDwsFjMl0DBLY8Lj41hBwK4jSQrWOIphL6xYyhwJDWGo6wFSaH1Y3PTCAsITE1oyAa8flhWkbSiCLX8vun11eiGIpiJ/z2nYdx5HqLdVV7elrOzsuqysL3rmBIGiKPizKCHHWY4PLVeQbnXAdegqdhy+hu8dDTBnbqQJZJ1A7u+vz7RaiymWCZgCRSF6Edk8b9cx+B/W6WuVxPaZnyiqXoPpyUmVYvkKTIFClHigEieKjYuSvETUllaF4GAUM1NT6ooaJDKx+aDfC9fByxj90REb+9ppmIoAscH/6leg8MS9DJXPAM9xHCM443K57C6biMjcHDaVVCHw9RmCA2/RGC5C00AqXk/m4p20HZK4CM/J3Zk9n0ecMBhDQnJHcrTisyMfdQXOilrdMfxcwoHq/fg5R59TiQV3hYGKo6X2J/c7LyQIjOx9GXhOw/zoJ8wEevRGyp53o/lGMNYsBgPtEwLecwov7/jGDKa1twT6o3KpL4MdZgGsWZLtfPr7f1q58k1JNHy7YYaM+J+K3Y2PmAIbRavX66229hrGVvvL5uzsHDEUvUu+NT1my78CDAAMK1a8/QaZCgAAAABJRU5ErkJggg==</span><span class="delimiter">)</span></span>;  
-  <span class="key">width</span>: <span class="float">16px</span>;
-  <span class="key">height</span>: <span class="float">16px</span>;
-  <span class="key">background-repeat</span>: <span class="value">no-repeat</span>;
+<pre lang="css"><code>.address-book--arrow {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAp1JREFUeNqEU21IU1EYfu7unW5Ty6aBszYs6MeUjGVYokHYyH5E1B9rZWFEFPQnAwmy6Hc/oqhfJsRKSSZGH1JIIX3MNCsqLTD9o1Oj6ebnnDfvvefezrnbdCHhCw/n433P8z7nPe/hBEEAtX0U7hc164uwuvVSXKwZLoOmaRDim+7m9vZa0WiEKSUFFpNpCWlmMyypqTDRuYn6t3k8vmQ2gRDCxs0t9fW45F52aBTROJLtZl7nEZad2m+KtoQCQ0FBARyOCGRZ/q92I1WgqqXlfdd95VsrK8/pChIEqqpCkiQsiCII0aBQZZoWl8lzFDwsFjMl0DBLY8Lj41hBwK4jSQrWOIphL6xYyhwJDWGo6wFSaH1Y3PTCAsITE1oyAa8flhWkbSiCLX8vun11eiGIpiJ/z2nYdx5HqLdVV7elrOzsuqysL3rmBIGiKPizKCHHWY4PLVeQbnXAdegqdhy+hu8dDTBnbqQJZJ1A7u+vz7RaiymWCZgCRSF6Edk8b9cx+B/W6WuVxPaZnyiqXoPpyUmVYvkKTIFClHigEieKjYuSvETUllaF4GAUM1NT6ooaJDKx+aDfC9fByxj90REb+9ppmIoAscH/6leg8MS9DJXPAM9xHCM443K57C6biMjcHDaVVCHw9RmCA2/RGC5C00AqXk/m4p20HZK4CM/J3Zk9n0ecMBhDQnJHcrTisyMfdQXOilrdMfxcwoHq/fg5R59TiQV3hYGKo6X2J/c7LyQIjOx9GXhOw/zoJ8wEevRGyp53o/lGMNYsBgPtEwLecwov7/jGDKa1twT6o3KpL4MdZgGsWZLtfPr7f1q58k1JNHy7YYaM+J+K3Y2PmAIbRavX66229hrGVvvL5uzsHDEUvUu+NT1my78CDAAMK1a8/QaZCgAAAABJRU5ErkJggg==);  
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
 }
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
 <p>Ok, onto the tests!</p>
 

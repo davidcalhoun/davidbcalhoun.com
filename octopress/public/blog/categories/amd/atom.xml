@@ -4,7 +4,7 @@
   <title><![CDATA[Category: amd | David Calhoun's blog]]></title>
   <link href="http://davidbcalhoun.com/blog/categories/amd/atom.xml" rel="self"/>
   <link href="http://davidbcalhoun.com/"/>
-  <updated>2015-05-16T23:22:22-07:00</updated>
+  <updated>2016-01-26T10:21:31-08:00</updated>
   <id>http://davidbcalhoun.com/</id>
   <author>
     <name><![CDATA[David Calhoun]]></name>
@@ -18,71 +18,42 @@
     <link href="http://davidbcalhoun.com/2014/what-is-amd-commonjs-and-umd/"/>
     <updated>2014-04-30T11:59:21-07:00</updated>
     <id>http://davidbcalhoun.com/2014/what-is-amd-commonjs-and-umd</id>
-    <content type="html"><![CDATA[<h3 id="intro">Intro</h3>
+    <content type="html"><![CDATA[<h2 id="intro">Intro</h2>
 <p>Over the years there’s been a steadily increasing ecosystem of JavaScript components to choose from.  The sheer amount of choices is fantastic, but this also infamously presents a difficulty when components are mixed-and-matched.  And it doesn’t take too long for budding developers to find out that not all components are built to play nicely together.</p>
 
 <p>To address these issues, the competing module specs AMD and CommonJS have appeared on the scene, allowing developers to write their code in an agreed-upon sandboxed and modularized way, so as not to “pollute the ecosystem”.</p>
 
-<h3 id="amd">AMD</h3>
+<h2 id="amd">AMD</h2>
 <p>Asynchronous Module Definition (AMD) has gained traction on the frontend, with RequireJS being the most popular implementation.</p>
 
 <p>Here’s module <code>foo</code> with a single dependency on <code>jquery</code>:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-</pre></td>
-  <td class="code"><pre><span class="comment">//    filename: foo.js</span>
-define([<span class="string"><span class="delimiter">'</span><span class="content">jquery</span><span class="delimiter">'</span></span>], <span class="keyword">function</span> (<span class="predefined">$</span>) {
-    <span class="comment">//    methods</span>
-    <span class="keyword">function</span> <span class="function">myFunc</span>(){};
+<pre lang="javascript"><code>//    filename: foo.js
+define(['jquery'], function ($) {
+    //    methods
+    function myFunc(){};
 
-    <span class="comment">//    exposed public methods</span>
-    <span class="keyword">return</span> myFunc;
+    //    exposed public methods
+    return myFunc;
 });
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
 <p>And a little more complicated example with multiple dependencies and multiple exposed methods:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-<a href="#n12" name="n12">12</a>
-<a href="#n13" name="n13">13</a>
-</pre></td>
-  <td class="code"><pre><span class="comment">//    filename: foo.js</span>
-define([<span class="string"><span class="delimiter">'</span><span class="content">jquery</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">underscore</span><span class="delimiter">'</span></span>], <span class="keyword">function</span> (<span class="predefined">$</span>, _) {
-    <span class="comment">//    methods</span>
-    <span class="keyword">function</span> <span class="function">a</span>(){};    <span class="comment">//    private because it's not returned (see below)</span>
-    <span class="keyword">function</span> <span class="function">b</span>(){};    <span class="comment">//    public because it's returned</span>
-    <span class="keyword">function</span> <span class="function">c</span>(){};    <span class="comment">//    public because it's returned</span>
+<pre lang="javascript"><code>//    filename: foo.js
+define(['jquery', 'underscore'], function ($, _) {
+    //    methods
+    function a(){};    //    private because it's not returned (see below)
+    function b(){};    //    public because it's returned
+    function c(){};    //    public because it's returned
 
-    <span class="comment">//    exposed public methods</span>
-    <span class="keyword">return</span> {
-        <span class="key">b</span>: b,
-        <span class="key">c</span>: c
+    //    exposed public methods
+    return {
+        b: b,
+        c: c
     }
 });
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
 <p>The first part of the define is an array of dependencies, while the second part is essentially the callback function which is only executed when the dependencies are available (script loaders like RequireJS take care of that part, including figuring out where the files are located).</p>
 
@@ -92,175 +63,94 @@ define([<span class="string"><span class="delimiter">'</span><span class="conten
 
 <p>And note, most importantly, that you can’t reference the variables <code>$</code> and <code>_</code> outside of the function, because it’s sandboxed from other code.  That’s the goal here!</p>
 
-<h3 id="commonjs">CommonJS</h3>
+<h2 id="commonjs">CommonJS</h2>
 
 <p>CommonJS is a style you may be familiar with if you’re written anything in Node (which uses a slight variant).  It’s also been gaining traction on the frontend with Browserify.</p>
 
 <p>Using the same format as before, here’s what our <code>foo</code> module looks like in CommonJS:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-</pre></td>
-  <td class="code"><pre><span class="comment">//    filename: foo.js</span>
+<pre lang="javascript"><code>//    filename: foo.js
 
-<span class="comment">//    dependencies</span>
-<span class="keyword">var</span> <span class="predefined">$</span> = require(<span class="string"><span class="delimiter">'</span><span class="content">jquery</span><span class="delimiter">'</span></span>);
+//    dependencies
+var $ = require('jquery');
 
-<span class="comment">//    methods</span>
-<span class="keyword">function</span> <span class="function">myFunc</span>(){};
+//    methods
+function myFunc(){};
 
-<span class="comment">//    exposed public method (single)</span>
+//    exposed public method (single)
 module.exports = myFunc;
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
 <p>And our more complicate example, with multiple dependencies and multiple exposed methods:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-<a href="#n12" name="n12">12</a>
-<a href="#n13" name="n13">13</a>
-<a href="#n14" name="n14">14</a>
-</pre></td>
-  <td class="code"><pre><span class="comment">//    filename: foo.js</span>
-<span class="keyword">var</span> <span class="predefined">$</span> = require(<span class="string"><span class="delimiter">'</span><span class="content">jquery</span><span class="delimiter">'</span></span>);
-<span class="keyword">var</span> _ = require(<span class="string"><span class="delimiter">'</span><span class="content">underscore</span><span class="delimiter">'</span></span>);
+<pre lang="javascript"><code>//    filename: foo.js
+var $ = require('jquery');
+var _ = require('underscore');
 
-<span class="comment">//    methods</span>
-<span class="keyword">function</span> <span class="function">a</span>(){};    <span class="comment">//    private because it's omitted from module.exports (see below)</span>
-<span class="keyword">function</span> <span class="function">b</span>(){};    <span class="comment">//    public because it's defined in module.exports</span>
-<span class="keyword">function</span> <span class="function">c</span>(){};    <span class="comment">//    public because it's defined in module.exports</span>
+//    methods
+function a(){};    //    private because it's omitted from module.exports (see below)
+function b(){};    //    public because it's defined in module.exports
+function c(){};    //    public because it's defined in module.exports
 
-<span class="comment">//    exposed public methods</span>
+//    exposed public methods
 module.exports = {
-    <span class="key">b</span>: b,
-    <span class="key">c</span>: c
+    b: b,
+    c: c
 };
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
-<h3 id="umd-universal-module-definition">UMD: Universal Module Definition</h3>
+<h2 id="umd-universal-module-definition">UMD: Universal Module Definition</h2>
 
 <p>Since CommonJS and AMD styles have both been equally popular, it seems there’s yet no consensus.  This has brought about the push for a “universal” pattern that supports both styles, which brings us to none other than the Universal Module Definition.</p>
 
 <p>The pattern is admittedly ugly, but is both AMD and CommonJS compatible, as well as supporting the old-style “global” variable definition:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-<a href="#n12" name="n12">12</a>
-<a href="#n13" name="n13">13</a>
-<a href="#n14" name="n14">14</a>
-<a href="#n15" name="n15">15</a>
-<a href="#n16" name="n16">16</a>
-<a href="#n17" name="n17">17</a>
-<a href="#n18" name="n18">18</a>
-</pre></td>
-  <td class="code"><pre>(<span class="keyword">function</span> (root, factory) {
-    <span class="keyword">if</span> (<span class="keyword">typeof</span> define === <span class="string"><span class="delimiter">'</span><span class="content">function</span><span class="delimiter">'</span></span> &amp;&amp; define.amd) {
-        <span class="comment">// AMD</span>
-        define([<span class="string"><span class="delimiter">'</span><span class="content">jquery</span><span class="delimiter">'</span></span>], factory);
-    } <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">typeof</span> exports === <span class="string"><span class="delimiter">'</span><span class="content">object</span><span class="delimiter">'</span></span>) {
-        <span class="comment">// Node, CommonJS-like</span>
-        module.exports = factory(require(<span class="string"><span class="delimiter">'</span><span class="content">jquery</span><span class="delimiter">'</span></span>));
-    } <span class="keyword">else</span> {
-        <span class="comment">// Browser globals (root is window)</span>
+<pre lang="javascript"><code>(function (root, factory) {
+    if (typeof define === 'function' &amp;&amp; define.amd) {
+        // AMD
+        define(['jquery'], factory);
+    } else if (typeof exports === 'object') {
+        // Node, CommonJS-like
+        module.exports = factory(require('jquery'));
+    } else {
+        // Browser globals (root is window)
         root.returnExports = factory(root.jQuery);
     }
-}(<span class="local-variable">this</span>, <span class="keyword">function</span> (<span class="predefined">$</span>) {
-    <span class="comment">//    methods</span>
-    <span class="keyword">function</span> <span class="function">myFunc</span>(){};
+}(this, function ($) {
+    //    methods
+    function myFunc(){};
 
-    <span class="comment">//    exposed public method</span>
-    <span class="keyword">return</span> myFunc;
+    //    exposed public method
+    return myFunc;
 }));
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
 <p>And keeping in the same pattern as the above examples, the more complicated case with multiple dependencies and multiple exposed methods:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-<a href="#n12" name="n12">12</a>
-<a href="#n13" name="n13">13</a>
-<a href="#n14" name="n14">14</a>
-<a href="#n15" name="n15">15</a>
-<a href="#n16" name="n16">16</a>
-<a href="#n17" name="n17">17</a>
-<a href="#n18" name="n18">18</a>
-<a href="#n19" name="n19">19</a>
-<strong><a href="#n20" name="n20">20</a></strong>
-<a href="#n21" name="n21">21</a>
-<a href="#n22" name="n22">22</a>
-<a href="#n23" name="n23">23</a>
-</pre></td>
-  <td class="code"><pre>(<span class="keyword">function</span> (root, factory) {
-    <span class="keyword">if</span> (<span class="keyword">typeof</span> define === <span class="string"><span class="delimiter">'</span><span class="content">function</span><span class="delimiter">'</span></span> &amp;&amp; define.amd) {
-        <span class="comment">// AMD</span>
-        define([<span class="string"><span class="delimiter">'</span><span class="content">jquery</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">underscore</span><span class="delimiter">'</span></span>], factory);
-    } <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">typeof</span> exports === <span class="string"><span class="delimiter">'</span><span class="content">object</span><span class="delimiter">'</span></span>) {
-        <span class="comment">// Node, CommonJS-like</span>
-        module.exports = factory(require(<span class="string"><span class="delimiter">'</span><span class="content">jquery</span><span class="delimiter">'</span></span>), require(<span class="string"><span class="delimiter">'</span><span class="content">underscore</span><span class="delimiter">'</span></span>));
-    } <span class="keyword">else</span> {
-        <span class="comment">// Browser globals (root is window)</span>
+<pre lang="javascript"><code>(function (root, factory) {
+    if (typeof define === 'function' &amp;&amp; define.amd) {
+        // AMD
+        define(['jquery', 'underscore'], factory);
+    } else if (typeof exports === 'object') {
+        // Node, CommonJS-like
+        module.exports = factory(require('jquery'), require('underscore'));
+    } else {
+        // Browser globals (root is window)
         root.returnExports = factory(root.jQuery, root._);
     }
-}(<span class="local-variable">this</span>, <span class="keyword">function</span> (<span class="predefined">$</span>, _) {
-    <span class="comment">//    methods</span>
-    <span class="keyword">function</span> <span class="function">a</span>(){};    <span class="comment">//    private because it's not returned (see below)</span>
-    <span class="keyword">function</span> <span class="function">b</span>(){};    <span class="comment">//    public because it's returned</span>
-    <span class="keyword">function</span> <span class="function">c</span>(){};    <span class="comment">//    public because it's returned</span>
+}(this, function ($, _) {
+    //    methods
+    function a(){};    //    private because it's not returned (see below)
+    function b(){};    //    public because it's returned
+    function c(){};    //    public because it's returned
 
-    <span class="comment">//    exposed public methods</span>
-    <span class="keyword">return</span> {
-        <span class="key">b</span>: b,
-        <span class="key">c</span>: c
+    //    exposed public methods
+    return {
+        b: b,
+        c: c
     }
 }));
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
 <p>(Sep 2014 edit: fixed syntax for CommonJS in the last example)</p>
 ]]></content>

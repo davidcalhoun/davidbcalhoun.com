@@ -1,13 +1,12 @@
-
-<!DOCTYPE HTML>
-<html lang="en-GB">
+<!doctype html>
+<html lang="en-US">
 <head>
 	<meta charset="utf-8">
 	<title>The viewport metatag (Mobile web part 1)  | David Calhoun's blog</title>
 
 	<meta name="author" content="David Calhoun">
 
-<meta name="description" content="The skinny Use this: 1 &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;/&gt; Introduction This series of &hellip;"> <meta name="keywords" content="">
+<meta name="description" content="The skinny Use this: &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"/&gt; Introduction This series of posts is intended to &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -22,30 +21,11 @@
 
 
 <body>
-	<header id="header" class="inner"><h1><a href="/">David Calhoun's blog</a></h1>
+	<header id="header" class="inner" role="banner" aria-labelledby="header_title"><h1><a href="/" id="header_title">David Calhoun's blog</a></h1>
 <span class="tagline"></span>
-<!-- <nav id="main-nav"><ul>
-	<li><a href="/about">About</a></li>
-	<li><a href="/archives">Archives</a></li>
-	<li><a href="/contact">Contact</a></li>
-</ul>
-</nav> -->
-<!-- <nav id="mobile-nav"> -->
-<!-- 	<div class="alignleft menu"> -->
-<!-- 		<a class="button">Menu</a> -->
-<!-- 		<div class="container"><ul>
-	<li><a href="/about">About</a></li>
-	<li><a href="/archives">Archives</a></li>
-	<li><a href="/contact">Contact</a></li>
-</ul>
-</div> -->
-<!-- 	</div> -->
-<!-- </nav> -->
-
 
 </header>
-
-	<div id="content" class="inner"><article class="post">
+	<div id="content" class="inner" role="main"><article class="post" role="main">
 	<header>
 		<h2 class="title">The Viewport Metatag (Mobile Web Part 1)</h2>
 		<div class="meta date">
@@ -60,19 +40,14 @@
   
 
 
-<time datetime="2010-05-06T00:00:00-07:00" pubdate data-updated="true">May 6<span>th</span>, 2010</time></div>
+<time datetime="2010-05-06T00:00:00-07:00" pubdate data-updated="true"></time></div>
 	</header>
 	<div class="entry-content"><h3 id="the-skinny">The skinny</h3>
 
 <p>Use this:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-</pre></td>
-  <td class="code"><pre><span class="tag">&lt;meta</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">viewport</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">content</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">width=device-width, initial-scale=1.0</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
-</pre></td>
-</tr></table>
-</div>
+<pre lang="html"><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"/&gt;
+</code></pre>
 
 <h3 id="introduction">Introduction</h3>
 
@@ -82,31 +57,17 @@
 
 <p>Ok, so you’ve settled down to learn how to write a website for a mobile device using your current knowledge of building desktop websites. So you start off with some pretty basic HTML:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-</pre></td>
-  <td class="code"><pre><span class="doctype">&lt;!doctype html&gt;</span>
-<span class="tag">&lt;html&gt;</span>
-<span class="tag">&lt;head&gt;</span>
-    <span class="tag">&lt;title&gt;</span>Hello world!<span class="tag">&lt;/title&gt;</span>
-<span class="tag">&lt;/head&gt;</span>
+<pre lang="html"><code>&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Hello world!&lt;/title&gt;
+&lt;/head&gt;
 
-<span class="tag">&lt;body&gt;</span>
-<span class="tag">&lt;p&gt;</span>Hello world!<span class="tag">&lt;/p&gt;</span>
-<span class="tag">&lt;/body&gt;</span>
-<span class="tag">&lt;/html&gt;</span>
-</pre></td>
-</tr></table>
-</div>
+&lt;body&gt;
+&lt;p&gt;Hello world!&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
 
 <p>Ok! You can’t get much simpler than that. You check it out and it looks good on all the desktop browsers, since there’s really no opportunity yet for any cross-browser inconsistencies. And then you check it out on your mobile device:</p>
 
@@ -124,35 +85,19 @@
 
 <p>Now we tweak our Hello World just a bit…</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-<a href="#n12" name="n12">12</a>
-</pre></td>
-  <td class="code"><pre><span class="doctype">&lt;!doctype html&gt;</span>
-<span class="tag">&lt;html&gt;</span>
-<span class="tag">&lt;head&gt;</span>
-    <span class="tag">&lt;title&gt;</span>Hello world!<span class="tag">&lt;/title&gt;</span>
+<pre lang="html"><code>&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Hello world!&lt;/title&gt;
 
-    <span class="tag">&lt;meta</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">viewport</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">content</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">width=device-width</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
-<span class="tag">&lt;/head&gt;</span>
+    &lt;meta name="viewport" content="width=device-width"/&gt;
+&lt;/head&gt;
 
-<span class="tag">&lt;body&gt;</span>
-<span class="tag">&lt;p&gt;</span>Hello world!<span class="tag">&lt;/p&gt;</span>
-<span class="tag">&lt;/body&gt;</span>
-<span class="tag">&lt;/html&gt;</span>
-</pre></td>
-</tr></table>
-</div>
+&lt;body&gt;
+&lt;p&gt;Hello world!&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
 
 <p>And we get this…<br />
 <a href="http://davidbcalhoun.com/wp-content/uploads/2010/05/hello-world-viewport-iphone.png"><img src="http://davidbcalhoun.com/wp-content/uploads/2010/05/hello-world-viewport-iphone.png" alt="" title="hello-world-viewport-iphone" class="aligncenter size-full wp-image-203" width="320" height="480" /></a>Hello World with the Viewport tag</p>
@@ -163,23 +108,13 @@
 
 <p>At the end of the day here’s what the standard viewport looks like, as grabbed from <a href="http://m.yahoo.com">m.yahoo.com</a>:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-</pre></td>
-  <td class="code"><pre><span class="tag">&lt;meta</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">viewport</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">content</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
-</pre></td>
-</tr></table>
-</div>
+<pre lang="html"><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/&gt;
+</code></pre>
 
 <p>EDIT: It’s been discussed a bit, and it seems that preventing the user from scaling the page (pinch zooming) isn’t necessarily desirable. So here’s a version of the tag that allows the user to pinch zoom:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-</pre></td>
-  <td class="code"><pre><span class="tag">&lt;meta</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">viewport</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">content</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">width=device-width, initial-scale=1.0</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
-</pre></td>
-</tr></table>
-</div>
+<pre lang="html"><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"/&gt;
+</code></pre>
 
 <h3 id="more-fun-with-the-viewport-tag">More fun with the viewport tag</h3>
 
@@ -202,7 +137,7 @@
     </td>
     
     <td>
-      Width of the viewport in pixels (or device-width). If width isn&#8217;t set, it defaults to a desktop size (980px on mobile Safari).
+      Width of the viewport in pixels (or device-width). If width isn't set, it defaults to a desktop size (980px on mobile Safari).
     </td>
   </tr>
   
@@ -212,7 +147,7 @@
     </td>
     
     <td>
-      Height of the viewport in pixels (or device-height). Generally you don&#8217;t need to worry about setting this property.
+      Height of the viewport in pixels (or device-height). Generally you don't need to worry about setting this property.
     </td>
   </tr>
   
@@ -232,7 +167,7 @@
     </td>
     
     <td>
-      (0 to 10.0) The minimum multiplier the user can &#8220;zoom out&#8221; to. Defaults to 0.25 on mobile Safari.
+      (0 to 10.0) The minimum multiplier the user can "zoom out" to. Defaults to 0.25 on mobile Safari.
     </td>
   </tr>
   
@@ -242,7 +177,7 @@
     </td>
     
     <td>
-      (0 to 10.0) The minimum multiplier the user can &#8220;zoom in&#8221; to. Defaults to 1.6 on mobile Safari.
+      (0 to 10.0) The minimum multiplier the user can "zoom in" to. Defaults to 1.6 on mobile Safari.
     </td>
   </tr>
   
@@ -252,7 +187,7 @@
     </td>
     
     <td>
-      (yes/no) Whether to allow a user from scaling in/out (zooming in/out). Default to &#8220;yes&#8221; on mobile Safari.
+      (yes/no) Whether to allow a user from scaling in/out (zooming in/out). Default to "yes" on mobile Safari.
     </td>
   </tr>
 </table>
@@ -261,25 +196,15 @@
 
 <p>Unfortunately the viewport tag is relatively new and as such isn’t universally supported, especially if you’re working on older feature phones. But there are some older methods at your disposal for identifying your website as optimized for mobile:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-</pre></td>
-  <td class="code"><pre><span class="tag">&lt;meta</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">HandheldFriendly</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">content</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">true</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
-</pre></td>
-</tr></table>
-</div>
+<pre lang="html"><code>&lt;meta name="HandheldFriendly" content="true"/&gt;
+</code></pre>
 
 <p>This tag was originally used to identify mobile content in AvantGo browsers, but has now been made the general standard for identifying mobile websites. However, it’s unknown what range of browsers support this meta tag.</p>
 
 <p>Another tag at your disposal is a Windows-proprietary meta tag that also took root and eventually became used as another means of identifying mobile content. The drawback with this tag is that a specific width must be given, which doesn’t make it as flexible as the viewport tag (see above). Again, it’s unknown what the support for this tag is:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-</pre></td>
-  <td class="code"><pre><span class="tag">&lt;meta</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">MobileOptimized</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">content</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">320</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
-</pre></td>
-</tr></table>
-</div>
+<pre lang="html"><code>&lt;meta name="MobileOptimized" content="320"/&gt;
+</code></pre>
 
 <p>Lastly, your website will be identified as a mobile optimized site if your doctype is either XHTML-MP or WML. However, this is becoming less and less the case these days, as browsers begin to support good old HTML4.01 and HTML5+.</p>
 
@@ -291,13 +216,8 @@
 
 <p>Here’s an example of the tag in action:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-</pre></td>
-  <td class="code"><pre><span class="tag">&lt;meta</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">viewport</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">content</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">target-densitydpi=device-dpi</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
-</pre></td>
-</tr></table>
-</div>
+<pre lang="html"><code>&lt;meta name="viewport" content="target-densitydpi=device-dpi" /&gt;
+</code></pre>
 
 <h3 id="references">References</h3>
 
@@ -306,12 +226,12 @@
 
 <h3 id="more-from-the-mobile-web-series">More from the Mobile Web series:</h3>
 <ul>
-  <li><a href="http://davidbcalhoun.com/2010/viewport-metatag">Part 1: The viewport metatag</a>  </li>
-  <li><a href="http://davidbcalhoun.com/2010/the-mobile-developers-toolkit-mobile-web-part-2">Part 2: The mobile developer’s toolkit</a>  </li>
-  <li><a href="http://davidbcalhoun.com/2010/designing-buttons-that-dont-suck">Part 3: Designing buttons that don’t suck</a>  </li>
-  <li><a href="http://davidbcalhoun.com/2010/on-designing-a-mobile-webpage">Part 4: On designing a mobile webpage</a>  </li>
-  <li><a href="http://davidbcalhoun.com/2010/using-mobile-specific-html-css-javascript">Part 5: Using mobile-specific HTML, CSS, and JavaScript</a>  </li>
-  <li><a href="http://davidbcalhoun.com/2010/dealing-with-device-orientation">Part 6: Dealing with device orientation</a>  </li>
+  <li><a href="http://davidbcalhoun.com/2010/viewport-metatag">Part 1: The viewport metatag</a></li>
+  <li><a href="http://davidbcalhoun.com/2010/the-mobile-developers-toolkit-mobile-web-part-2">Part 2: The mobile developer’s toolkit</a></li>
+  <li><a href="http://davidbcalhoun.com/2010/designing-buttons-that-dont-suck">Part 3: Designing buttons that don’t suck</a></li>
+  <li><a href="http://davidbcalhoun.com/2010/on-designing-a-mobile-webpage">Part 4: On designing a mobile webpage</a></li>
+  <li><a href="http://davidbcalhoun.com/2010/using-mobile-specific-html-css-javascript">Part 5: Using mobile-specific HTML, CSS, and JavaScript</a></li>
+  <li><a href="http://davidbcalhoun.com/2010/dealing-with-device-orientation">Part 6: Dealing with device orientation</a></li>
   <li><a href="http://davidbcalhoun.com/2010/mobile-javascript-libraries-and-frameworks">Part 7: Mobile JavaScript libraries and frameworks</a></li>
 </ul>
 
@@ -351,11 +271,11 @@
 </div>
 </section>
 </div>
-	<footer id="footer" class="inner"><br>
+	<footer id="footer" class="inner" role="contentinfo"><br>
 <br>
 <br>
 <br>
-&copy; 2015
+&copy; 2016
 <a href="mailto:david.b.calhoun@gmail.com">David Calhoun</a> (<a href="https://twitter.com/franksvalli">@franksvalli</a>) - <a href="https://www.linkedin.com/in/davidcalhoun">LinkedIn</a> - <a href="http://themaingate.net/resume/">Resume</a></footer>
 	<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="/javascripts/slash.js"></script> -->
@@ -373,7 +293,7 @@
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
@@ -381,7 +301,7 @@
 
 
 
-<script src="/javascripts/main.js"></script>
+<script src="/javascripts/main.js" defer></script>
 <!-- <script src="/javascripts/negative-scroll-blur.js"></script> -->
 
 <script>

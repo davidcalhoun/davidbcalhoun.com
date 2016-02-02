@@ -4,7 +4,7 @@
   <title><![CDATA[Category: javascript | David Calhoun's blog]]></title>
   <link href="http://davidbcalhoun.com/blog/categories/javascript/atom.xml" rel="self"/>
   <link href="http://davidbcalhoun.com/"/>
-  <updated>2015-05-16T23:22:22-07:00</updated>
+  <updated>2016-01-26T10:21:31-08:00</updated>
   <id>http://davidbcalhoun.com/</id>
   <author>
     <name><![CDATA[David Calhoun]]></name>
@@ -26,143 +26,73 @@
 
 <p>In any case, I wrote a pretty simple wrapper function that gets the job done (see example usage below):</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-<a href="#n12" name="n12">12</a>
-<a href="#n13" name="n13">13</a>
-<a href="#n14" name="n14">14</a>
-<a href="#n15" name="n15">15</a>
-<a href="#n16" name="n16">16</a>
-<a href="#n17" name="n17">17</a>
-<a href="#n18" name="n18">18</a>
-<a href="#n19" name="n19">19</a>
-<strong><a href="#n20" name="n20">20</a></strong>
-<a href="#n21" name="n21">21</a>
-<a href="#n22" name="n22">22</a>
-<a href="#n23" name="n23">23</a>
-<a href="#n24" name="n24">24</a>
-<a href="#n25" name="n25">25</a>
-<a href="#n26" name="n26">26</a>
-<a href="#n27" name="n27">27</a>
-<a href="#n28" name="n28">28</a>
-<a href="#n29" name="n29">29</a>
-<strong><a href="#n30" name="n30">30</a></strong>
-<a href="#n31" name="n31">31</a>
-<a href="#n32" name="n32">32</a>
-<a href="#n33" name="n33">33</a>
-<a href="#n34" name="n34">34</a>
-<a href="#n35" name="n35">35</a>
-<a href="#n36" name="n36">36</a>
-<a href="#n37" name="n37">37</a>
-<a href="#n38" name="n38">38</a>
-<a href="#n39" name="n39">39</a>
-<strong><a href="#n40" name="n40">40</a></strong>
-<a href="#n41" name="n41">41</a>
-<a href="#n42" name="n42">42</a>
-<a href="#n43" name="n43">43</a>
-<a href="#n44" name="n44">44</a>
-<a href="#n45" name="n45">45</a>
-<a href="#n46" name="n46">46</a>
-<a href="#n47" name="n47">47</a>
-<a href="#n48" name="n48">48</a>
-<a href="#n49" name="n49">49</a>
-<strong><a href="#n50" name="n50">50</a></strong>
-<a href="#n51" name="n51">51</a>
-<a href="#n52" name="n52">52</a>
-<a href="#n53" name="n53">53</a>
-<a href="#n54" name="n54">54</a>
-<a href="#n55" name="n55">55</a>
-<a href="#n56" name="n56">56</a>
-<a href="#n57" name="n57">57</a>
-<a href="#n58" name="n58">58</a>
-<a href="#n59" name="n59">59</a>
-<strong><a href="#n60" name="n60">60</a></strong>
-<a href="#n61" name="n61">61</a>
-<a href="#n62" name="n62">62</a>
-<a href="#n63" name="n63">63</a>
-<a href="#n64" name="n64">64</a>
-<a href="#n65" name="n65">65</a>
-<a href="#n66" name="n66">66</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">var</span> async = require(<span class="string"><span class="delimiter">'</span><span class="content">async</span><span class="delimiter">'</span></span>);
+<pre lang="javascript"><code>var async = require('async');
 
-<span class="comment">// async.parallel with optional timeout (options.timeoutMS)</span>
-<span class="keyword">function</span> <span class="function">parallel</span>(options, tasks, cb) {
-  <span class="comment">//  sanity checks</span>
-  options = options || {};
+// async.parallel with optional timeout (options.timeoutMS)
+function parallel(options, tasks, cb) {
+	//  sanity checks
+	options = options || {};
 
-  <span class="comment">// no timeout wrapper; passthrough to async.parallel</span>
-  <span class="keyword">if</span>(<span class="keyword">typeof</span> options.timeoutMS != <span class="string"><span class="delimiter">'</span><span class="content">number</span><span class="delimiter">'</span></span>) <span class="keyword">return</span> async.parallel(tasks, cb);
+	// no timeout wrapper; passthrough to async.parallel
+	if(typeof options.timeoutMS != 'number') return async.parallel(tasks, cb);
 
-  <span class="keyword">var</span> timeout = setTimeout(<span class="keyword">function</span>(){
-    <span class="comment">// remove timeout, so we'll know we already erred out</span>
-    timeout = <span class="predefined-constant">null</span>;
+	var timeout = setTimeout(function(){
+		// remove timeout, so we'll know we already erred out
+		timeout = null;
 
-    <span class="comment">// error out</span>
-    cb(<span class="string"><span class="delimiter">'</span><span class="content">async.parallel timed out out after </span><span class="delimiter">'</span></span> + options.timeoutMS + <span class="string"><span class="delimiter">'</span><span class="content">ms.</span><span class="delimiter">'</span></span>, <span class="predefined-constant">null</span>);
-  }, options.timeoutMS);
+		// error out
+		cb('async.parallel timed out out after ' + options.timeoutMS + 'ms.', null);
+	}, options.timeoutMS);
 
-  async.parallel(tasks, <span class="keyword">function</span>(err, result){
-    <span class="comment">// after all tasks are complete</span>
+	async.parallel(tasks, function(err, result){
+		// after all tasks are complete
 
-    <span class="comment">// noop if timeout was called and annulled</span>
-    <span class="keyword">if</span>(!timeout) <span class="keyword">return</span>;
+		// noop if timeout was called and annulled
+		if(!timeout) return;
 
-    <span class="comment">// cancel timeout (if timeout was set longer, and all parallel tasks finished sooner)</span>
-    clearTimeout(timeout);
+		// cancel timeout (if timeout was set longer, and all parallel tasks finished sooner)
+		clearTimeout(timeout);
 
-    <span class="comment">// passthrough the data to the cb</span>
-    cb(err, result);
-  });
+		// passthrough the data to the cb
+		cb(err, result);
+	});
 }
 
 
-<span class="comment">// example usage</span>
-parallel({<span class="key">timeoutMS</span>: <span class="integer">10000</span>}, [  <span class="comment">// 10 second timeout</span>
-  <span class="keyword">function</span>(){ ... },
-  <span class="keyword">function</span>(){ ... }
+// example usage
+parallel({timeoutMS: 10000}, [  // 10 second timeout
+	function(){ ... },
+	function(){ ... }
 ],
-<span class="keyword">function</span>(err, results) {
-  <span class="keyword">if</span>(err) {
-    <span class="comment">// timeouts can now be handled here</span>
-  }
+function(err, results) {
+	if(err) {
+		// timeouts can now be handled here
+	}
 });
 
 
-<span class="comment">// an example forcing a timeout to occur</span>
+// an example forcing a timeout to occur
 parallel({
-  <span class="key">timeoutMS</span>: <span class="integer">1000</span>   <span class="comment">// 1 second timeout</span>
+	timeoutMS: 1000   // 1 second timeout
 },
 [
-  <span class="keyword">function</span>(done){
-    <span class="comment">// task 1 completes in 100ms</span>
-    setTimeout(<span class="keyword">function</span>(){
-      done(<span class="predefined-constant">null</span>, <span class="string"><span class="delimiter">'</span><span class="content">foo</span><span class="delimiter">'</span></span>);
-    }, <span class="integer">100</span>);
-  },
-  <span class="keyword">function</span>(done){
-    <span class="comment">// task 2 completes in 2000ms, forcing a timeout error</span>
-    setTimeout(<span class="keyword">function</span>(){
-      done(<span class="predefined-constant">null</span>, <span class="string"><span class="delimiter">'</span><span class="content">bar</span><span class="delimiter">'</span></span>);
-    }, <span class="integer">2000</span>);
-  }
+	function(done){
+		// task 1 completes in 100ms
+		setTimeout(function(){
+			done(null, 'foo');
+		}, 100);
+	},
+	function(done){
+		// task 2 completes in 2000ms, forcing a timeout error
+		setTimeout(function(){
+			done(null, 'bar');
+		}, 2000);
+	}
 ],
-<span class="keyword">function</span>(err, results) {
-  <span class="comment">// err = 'async.parallel timed out out after 1000ms.'</span>
+function(err, results) {
+	// err = 'async.parallel timed out out after 1000ms.'
 });
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 ]]></content>
   </entry>
   
@@ -171,71 +101,42 @@ parallel({
     <link href="http://davidbcalhoun.com/2014/what-is-amd-commonjs-and-umd/"/>
     <updated>2014-04-30T11:59:21-07:00</updated>
     <id>http://davidbcalhoun.com/2014/what-is-amd-commonjs-and-umd</id>
-    <content type="html"><![CDATA[<h3 id="intro">Intro</h3>
+    <content type="html"><![CDATA[<h2 id="intro">Intro</h2>
 <p>Over the years there’s been a steadily increasing ecosystem of JavaScript components to choose from.  The sheer amount of choices is fantastic, but this also infamously presents a difficulty when components are mixed-and-matched.  And it doesn’t take too long for budding developers to find out that not all components are built to play nicely together.</p>
 
 <p>To address these issues, the competing module specs AMD and CommonJS have appeared on the scene, allowing developers to write their code in an agreed-upon sandboxed and modularized way, so as not to “pollute the ecosystem”.</p>
 
-<h3 id="amd">AMD</h3>
+<h2 id="amd">AMD</h2>
 <p>Asynchronous Module Definition (AMD) has gained traction on the frontend, with RequireJS being the most popular implementation.</p>
 
 <p>Here’s module <code>foo</code> with a single dependency on <code>jquery</code>:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-</pre></td>
-  <td class="code"><pre><span class="comment">//    filename: foo.js</span>
-define([<span class="string"><span class="delimiter">'</span><span class="content">jquery</span><span class="delimiter">'</span></span>], <span class="keyword">function</span> (<span class="predefined">$</span>) {
-    <span class="comment">//    methods</span>
-    <span class="keyword">function</span> <span class="function">myFunc</span>(){};
+<pre lang="javascript"><code>//    filename: foo.js
+define(['jquery'], function ($) {
+    //    methods
+    function myFunc(){};
 
-    <span class="comment">//    exposed public methods</span>
-    <span class="keyword">return</span> myFunc;
+    //    exposed public methods
+    return myFunc;
 });
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
 <p>And a little more complicated example with multiple dependencies and multiple exposed methods:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-<a href="#n12" name="n12">12</a>
-<a href="#n13" name="n13">13</a>
-</pre></td>
-  <td class="code"><pre><span class="comment">//    filename: foo.js</span>
-define([<span class="string"><span class="delimiter">'</span><span class="content">jquery</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">underscore</span><span class="delimiter">'</span></span>], <span class="keyword">function</span> (<span class="predefined">$</span>, _) {
-    <span class="comment">//    methods</span>
-    <span class="keyword">function</span> <span class="function">a</span>(){};    <span class="comment">//    private because it's not returned (see below)</span>
-    <span class="keyword">function</span> <span class="function">b</span>(){};    <span class="comment">//    public because it's returned</span>
-    <span class="keyword">function</span> <span class="function">c</span>(){};    <span class="comment">//    public because it's returned</span>
+<pre lang="javascript"><code>//    filename: foo.js
+define(['jquery', 'underscore'], function ($, _) {
+    //    methods
+    function a(){};    //    private because it's not returned (see below)
+    function b(){};    //    public because it's returned
+    function c(){};    //    public because it's returned
 
-    <span class="comment">//    exposed public methods</span>
-    <span class="keyword">return</span> {
-        <span class="key">b</span>: b,
-        <span class="key">c</span>: c
+    //    exposed public methods
+    return {
+        b: b,
+        c: c
     }
 });
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
 <p>The first part of the define is an array of dependencies, while the second part is essentially the callback function which is only executed when the dependencies are available (script loaders like RequireJS take care of that part, including figuring out where the files are located).</p>
 
@@ -245,175 +146,94 @@ define([<span class="string"><span class="delimiter">'</span><span class="conten
 
 <p>And note, most importantly, that you can’t reference the variables <code>$</code> and <code>_</code> outside of the function, because it’s sandboxed from other code.  That’s the goal here!</p>
 
-<h3 id="commonjs">CommonJS</h3>
+<h2 id="commonjs">CommonJS</h2>
 
 <p>CommonJS is a style you may be familiar with if you’re written anything in Node (which uses a slight variant).  It’s also been gaining traction on the frontend with Browserify.</p>
 
 <p>Using the same format as before, here’s what our <code>foo</code> module looks like in CommonJS:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-</pre></td>
-  <td class="code"><pre><span class="comment">//    filename: foo.js</span>
+<pre lang="javascript"><code>//    filename: foo.js
 
-<span class="comment">//    dependencies</span>
-<span class="keyword">var</span> <span class="predefined">$</span> = require(<span class="string"><span class="delimiter">'</span><span class="content">jquery</span><span class="delimiter">'</span></span>);
+//    dependencies
+var $ = require('jquery');
 
-<span class="comment">//    methods</span>
-<span class="keyword">function</span> <span class="function">myFunc</span>(){};
+//    methods
+function myFunc(){};
 
-<span class="comment">//    exposed public method (single)</span>
+//    exposed public method (single)
 module.exports = myFunc;
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
 <p>And our more complicate example, with multiple dependencies and multiple exposed methods:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-<a href="#n12" name="n12">12</a>
-<a href="#n13" name="n13">13</a>
-<a href="#n14" name="n14">14</a>
-</pre></td>
-  <td class="code"><pre><span class="comment">//    filename: foo.js</span>
-<span class="keyword">var</span> <span class="predefined">$</span> = require(<span class="string"><span class="delimiter">'</span><span class="content">jquery</span><span class="delimiter">'</span></span>);
-<span class="keyword">var</span> _ = require(<span class="string"><span class="delimiter">'</span><span class="content">underscore</span><span class="delimiter">'</span></span>);
+<pre lang="javascript"><code>//    filename: foo.js
+var $ = require('jquery');
+var _ = require('underscore');
 
-<span class="comment">//    methods</span>
-<span class="keyword">function</span> <span class="function">a</span>(){};    <span class="comment">//    private because it's omitted from module.exports (see below)</span>
-<span class="keyword">function</span> <span class="function">b</span>(){};    <span class="comment">//    public because it's defined in module.exports</span>
-<span class="keyword">function</span> <span class="function">c</span>(){};    <span class="comment">//    public because it's defined in module.exports</span>
+//    methods
+function a(){};    //    private because it's omitted from module.exports (see below)
+function b(){};    //    public because it's defined in module.exports
+function c(){};    //    public because it's defined in module.exports
 
-<span class="comment">//    exposed public methods</span>
+//    exposed public methods
 module.exports = {
-    <span class="key">b</span>: b,
-    <span class="key">c</span>: c
+    b: b,
+    c: c
 };
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
-<h3 id="umd-universal-module-definition">UMD: Universal Module Definition</h3>
+<h2 id="umd-universal-module-definition">UMD: Universal Module Definition</h2>
 
 <p>Since CommonJS and AMD styles have both been equally popular, it seems there’s yet no consensus.  This has brought about the push for a “universal” pattern that supports both styles, which brings us to none other than the Universal Module Definition.</p>
 
 <p>The pattern is admittedly ugly, but is both AMD and CommonJS compatible, as well as supporting the old-style “global” variable definition:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-<a href="#n12" name="n12">12</a>
-<a href="#n13" name="n13">13</a>
-<a href="#n14" name="n14">14</a>
-<a href="#n15" name="n15">15</a>
-<a href="#n16" name="n16">16</a>
-<a href="#n17" name="n17">17</a>
-<a href="#n18" name="n18">18</a>
-</pre></td>
-  <td class="code"><pre>(<span class="keyword">function</span> (root, factory) {
-    <span class="keyword">if</span> (<span class="keyword">typeof</span> define === <span class="string"><span class="delimiter">'</span><span class="content">function</span><span class="delimiter">'</span></span> &amp;&amp; define.amd) {
-        <span class="comment">// AMD</span>
-        define([<span class="string"><span class="delimiter">'</span><span class="content">jquery</span><span class="delimiter">'</span></span>], factory);
-    } <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">typeof</span> exports === <span class="string"><span class="delimiter">'</span><span class="content">object</span><span class="delimiter">'</span></span>) {
-        <span class="comment">// Node, CommonJS-like</span>
-        module.exports = factory(require(<span class="string"><span class="delimiter">'</span><span class="content">jquery</span><span class="delimiter">'</span></span>));
-    } <span class="keyword">else</span> {
-        <span class="comment">// Browser globals (root is window)</span>
+<pre lang="javascript"><code>(function (root, factory) {
+    if (typeof define === 'function' &amp;&amp; define.amd) {
+        // AMD
+        define(['jquery'], factory);
+    } else if (typeof exports === 'object') {
+        // Node, CommonJS-like
+        module.exports = factory(require('jquery'));
+    } else {
+        // Browser globals (root is window)
         root.returnExports = factory(root.jQuery);
     }
-}(<span class="local-variable">this</span>, <span class="keyword">function</span> (<span class="predefined">$</span>) {
-    <span class="comment">//    methods</span>
-    <span class="keyword">function</span> <span class="function">myFunc</span>(){};
+}(this, function ($) {
+    //    methods
+    function myFunc(){};
 
-    <span class="comment">//    exposed public method</span>
-    <span class="keyword">return</span> myFunc;
+    //    exposed public method
+    return myFunc;
 }));
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
 <p>And keeping in the same pattern as the above examples, the more complicated case with multiple dependencies and multiple exposed methods:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-<a href="#n12" name="n12">12</a>
-<a href="#n13" name="n13">13</a>
-<a href="#n14" name="n14">14</a>
-<a href="#n15" name="n15">15</a>
-<a href="#n16" name="n16">16</a>
-<a href="#n17" name="n17">17</a>
-<a href="#n18" name="n18">18</a>
-<a href="#n19" name="n19">19</a>
-<strong><a href="#n20" name="n20">20</a></strong>
-<a href="#n21" name="n21">21</a>
-<a href="#n22" name="n22">22</a>
-<a href="#n23" name="n23">23</a>
-</pre></td>
-  <td class="code"><pre>(<span class="keyword">function</span> (root, factory) {
-    <span class="keyword">if</span> (<span class="keyword">typeof</span> define === <span class="string"><span class="delimiter">'</span><span class="content">function</span><span class="delimiter">'</span></span> &amp;&amp; define.amd) {
-        <span class="comment">// AMD</span>
-        define([<span class="string"><span class="delimiter">'</span><span class="content">jquery</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">underscore</span><span class="delimiter">'</span></span>], factory);
-    } <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">typeof</span> exports === <span class="string"><span class="delimiter">'</span><span class="content">object</span><span class="delimiter">'</span></span>) {
-        <span class="comment">// Node, CommonJS-like</span>
-        module.exports = factory(require(<span class="string"><span class="delimiter">'</span><span class="content">jquery</span><span class="delimiter">'</span></span>), require(<span class="string"><span class="delimiter">'</span><span class="content">underscore</span><span class="delimiter">'</span></span>));
-    } <span class="keyword">else</span> {
-        <span class="comment">// Browser globals (root is window)</span>
+<pre lang="javascript"><code>(function (root, factory) {
+    if (typeof define === 'function' &amp;&amp; define.amd) {
+        // AMD
+        define(['jquery', 'underscore'], factory);
+    } else if (typeof exports === 'object') {
+        // Node, CommonJS-like
+        module.exports = factory(require('jquery'), require('underscore'));
+    } else {
+        // Browser globals (root is window)
         root.returnExports = factory(root.jQuery, root._);
     }
-}(<span class="local-variable">this</span>, <span class="keyword">function</span> (<span class="predefined">$</span>, _) {
-    <span class="comment">//    methods</span>
-    <span class="keyword">function</span> <span class="function">a</span>(){};    <span class="comment">//    private because it's not returned (see below)</span>
-    <span class="keyword">function</span> <span class="function">b</span>(){};    <span class="comment">//    public because it's returned</span>
-    <span class="keyword">function</span> <span class="function">c</span>(){};    <span class="comment">//    public because it's returned</span>
+}(this, function ($, _) {
+    //    methods
+    function a(){};    //    private because it's not returned (see below)
+    function b(){};    //    public because it's returned
+    function c(){};    //    public because it's returned
 
-    <span class="comment">//    exposed public methods</span>
-    <span class="keyword">return</span> {
-        <span class="key">b</span>: b,
-        <span class="key">c</span>: c
+    //    exposed public methods
+    return {
+        b: b,
+        c: c
     }
 }));
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
 <p>(Sep 2014 edit: fixed syntax for CommonJS in the last example)</p>
 ]]></content>
@@ -431,38 +251,20 @@ module.exports = {
 <h3 id="quiz-1-doubleinteger">Quiz 1: doubleInteger</h3>
 
 <h4 id="problem">Problem</h4>
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">function</span> <span class="function">doubleInteger</span>(i) {
-    <span class="comment">// i will be an integer. Double it and return it.</span>
+<pre lang="javascript"><code>function doubleInteger(i) {
+    // i will be an integer. Double it and return it.
 
-    <span class="keyword">return</span> i;
+    return i;
 }
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
 <h4 id="solution">Solution</h4>
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">function</span> <span class="function">doubleInteger</span>(i) {
-    <span class="comment">// i will be an integer. Double it and return it.</span>
+<pre lang="javascript"><code>function doubleInteger(i) {
+    // i will be an integer. Double it and return it.
     
-    <span class="keyword">return</span> i * <span class="integer">2</span>;
+    return i * 2;
 }
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
 <h4 id="explanation">Explanation</h4>
 
@@ -471,46 +273,24 @@ module.exports = {
 <h3 id="quiz-2-isnumbereven">Quiz 2: isNumberEven</h3>
 
 <h4 id="problem-1">Problem</h4>
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">function</span> <span class="function">isNumberEven</span>(i) {
-    <span class="comment">// i will be an integer. Return true if it’s even, and false if it isn’t.</span>
+<pre lang="javascript"><code>function isNumberEven(i) {
+    // i will be an integer. Return true if it’s even, and false if it isn’t.
 }
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
 <h4 id="solution-1">Solution</h4>
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">function</span> <span class="function">isNumberEven</span>(i) {
-    <span class="comment">// i will be an integer. Return true if it’s even, and false if it isn’t.</span>
+<pre lang="javascript"><code>function isNumberEven(i) {
+    // i will be an integer. Return true if it’s even, and false if it isn’t.
     
-    <span class="keyword">if</span>(i % <span class="integer">2</span> === ) {
-        <span class="comment">//  no remainder, so it must be an even number</span>
-        <span class="keyword">return</span> <span class="predefined-constant">true</span>;
-    } <span class="keyword">else</span> {
-        <span class="comment">//  remainder, so it must be odd.</span>
-        <span class="keyword">return</span> <span class="predefined-constant">false</span>;
+    if(i % 2 === ) {
+        //  no remainder, so it must be an even number
+        return true;
+    } else {
+        //  remainder, so it must be odd.
+        return false;
     }
 }
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
 <h4 id="explanation-1">Explanation</h4>
 
@@ -523,54 +303,28 @@ module.exports = {
 <h3 id="quiz-3-getfileextension">Quiz 3: getFileExtension</h3>
 
 <h4 id="problem-2">Problem</h4>
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">function</span> <span class="function">getFileExtension</span>(i) {
-    <span class="comment">// i will be a string, but it may not have a file extension.</span>
-    <span class="comment">// return the file extension (with no period) if it has one, otherwise false</span>
+<pre lang="javascript"><code>function getFileExtension(i) {
+    // i will be a string, but it may not have a file extension.
+    // return the file extension (with no period) if it has one, otherwise false
 }
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
 <h4 id="solution-2">Solution</h4>
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-<a href="#n12" name="n12">12</a>
-<a href="#n13" name="n13">13</a>
-<a href="#n14" name="n14">14</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">function</span> <span class="function">getFileExtension</span>(i) {
-    <span class="comment">// i will be a string, but it may not have a file extension.</span>
-    <span class="comment">// return the file extension (with no period) if it has one, otherwise false</span>
+<pre lang="javascript"><code>function getFileExtension(i) {
+    // i will be a string, but it may not have a file extension.
+    // return the file extension (with no period) if it has one, otherwise false
 
-    <span class="keyword">var</span> filenameArray = i.split(<span class="error">”</span>.<span class="error">”</span>);
+    var filenameArray = i.split(”.”);
 
-    <span class="keyword">if</span>(filenameArray.length &lt;= <span class="integer">1</span>) {
-        <span class="comment">//  i.e. “foo” becomes [“foo”] (array with 1 member)</span>
-        <span class="keyword">return</span> <span class="predefined-constant">false</span>;
-    } <span class="keyword">else</span> {
-        <span class="comment">//  must be an array with more than 1 member.  The extension must be at the end.</span>
-        <span class="keyword">return</span> filenameArray[filenameArray.length - <span class="integer">1</span>];
+    if(filenameArray.length &lt;= 1) {
+        //  i.e. “foo” becomes [“foo”] (array with 1 member)
+        return false;
+    } else {
+        //  must be an array with more than 1 member.  The extension must be at the end.
+        return filenameArray[filenameArray.length - 1];
     }
 }
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
 <h4 id="explanation-2">Explanation</h4>
 
@@ -578,23 +332,13 @@ module.exports = {
 
 <p>Strings have a handy function that splits them into an array: <code>split()</code>. For instance,</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-</pre></td>
-  <td class="code"><pre><span class="string"><span class="delimiter">&quot;</span><span class="content">foo.bar.baz</span><span class="delimiter">&quot;</span></span>.split(<span class="string"><span class="delimiter">&quot;</span><span class="content">.</span><span class="delimiter">&quot;</span></span>)
-</pre></td>
-</tr></table>
-</div>
+<pre lang="javascript"><code>"foo.bar.baz".split(".")
+</code></pre>
 
 <p>will output</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-</pre></td>
-  <td class="code"><pre>[<span class="string"><span class="delimiter">&quot;</span><span class="content">foo</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">bar</span><span class="delimiter">&quot;</span></span>, <span class="string"><span class="delimiter">&quot;</span><span class="content">baz</span><span class="delimiter">&quot;</span></span>]
-</pre></td>
-</tr></table>
-</div>
+<pre lang="javascript"><code>["foo", "bar", "baz"]
+</code></pre>
 
 <p>Notice that the periods have been removed, just as the prompt asked for!</p>
 
@@ -604,77 +348,40 @@ module.exports = {
 
 <p>We can find the index of the last member by taking into account array length (<code>filenameArray.length</code>) and the fact that the array is zero-indexed, meaning that we need to subtract 1 from this length. Now we know the extension exists and is at the end of the array, so all we need to do is return it:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">return</span> filenameArray[filenameArray.length - <span class="integer">1</span>];
-</pre></td>
-</tr></table>
-</div>
+<pre lang="javascript"><code>return filenameArray[filenameArray.length - 1];
+</code></pre>
 
 <h3 id="quiz-4-longeststring">Quiz 4: longestString</h3>
 
 <h4 id="problem-3">Problem</h4>
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">function</span> <span class="function">longestString</span>(i) {
-    <span class="comment">// i will be an array.</span>
-    <span class="comment">// return the longest string in the array</span>
+<pre lang="javascript"><code>function longestString(i) {
+    // i will be an array.
+    // return the longest string in the array
     
 }
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
 <h4 id="solution-3">Solution</h4>
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-<a href="#n12" name="n12">12</a>
-<a href="#n13" name="n13">13</a>
-<a href="#n14" name="n14">14</a>
-<a href="#n15" name="n15">15</a>
-<a href="#n16" name="n16">16</a>
-<a href="#n17" name="n17">17</a>
-<a href="#n18" name="n18">18</a>
-<a href="#n19" name="n19">19</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">function</span> <span class="function">longestString</span>(i) {
-    <span class="comment">// i will be an array.</span>
-    <span class="comment">// return the longest string in the array</span>
+<pre lang="javascript"><code>function longestString(i) {
+    // i will be an array.
+    // return the longest string in the array
  
-    <span class="keyword">var</span> longest = <span class="error">”</span><span class="error">”</span>,
+    var longest = ””,
         n, len;
 
-    <span class="keyword">for</span>(n=, len=i.length; n&lt;len; n++) {
-        <span class="keyword">if</span>(<span class="keyword">typeof</span> n[i] !== <span class="error">“</span>string<span class="error">”</span>) {
-            <span class="comment">//  not a string, go to next iteration of the loop</span>
-            <span class="keyword">continue</span>;
+    for(n=, len=i.length; n&lt;len; n++) {
+        if(typeof n[i] !== “string”) {
+            //  not a string, go to next iteration of the loop
+            continue;
         }
 
-        <span class="keyword">if</span>(n[i].length &gt; longest.length) {
-            <span class="comment">//  Current string is longer, so set it as the new longest string</span>
+        if(n[i].length &gt; longest.length) {
+            //  Current string is longer, so set it as the new longest string
             longest = n[i];
         }
     }   
 }
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
 <h4 id="explanation-3">Explanation</h4>
 
@@ -685,60 +392,31 @@ module.exports = {
 <h3 id="quiz-5-arraysum">Quiz 5: arraySum</h3>
 
 <h4 id="problem-4">Problem</h4>
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">function</span> <span class="function">arraySum</span>(i) {
-    <span class="comment">// i will be an array, containing integers, strings and/or arrays like itself.</span>
-    <span class="comment">// Sum all the integers you find, anywhere in the nest of arrays.   </span>
+<pre lang="javascript"><code>function arraySum(i) {
+    // i will be an array, containing integers, strings and/or arrays like itself.
+    // Sum all the integers you find, anywhere in the nest of arrays.   
 }
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
 <h4 id="solution-4">Solution</h4>
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-<a href="#n12" name="n12">12</a>
-<a href="#n13" name="n13">13</a>
-<a href="#n14" name="n14">14</a>
-<a href="#n15" name="n15">15</a>
-<a href="#n16" name="n16">16</a>
-<a href="#n17" name="n17">17</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">function</span> <span class="function">arraySum</span>(i) {
-    <span class="keyword">var</span> sum = ,
+<pre lang="javascript"><code>function arraySum(i) {
+    var sum = ,
         n, len;
 
-    <span class="keyword">if</span>(<span class="keyword">typeof</span> i === <span class="error">“</span>number<span class="error">”</span>) {
-        <span class="comment">//  i has been defined as a simple number through a recursive call</span>
+    if(typeof i === “number”) {
+        //  i has been defined as a simple number through a recursive call
         sum += i;
-    } <span class="keyword">else</span> <span class="keyword">if</span>(Array.isArray(i)) {
-        <span class="comment">//  i is an array, so iterate through it</span>
-        <span class="keyword">for</span>(n=, len=i.length; n&lt;len; n++) {
-            <span class="comment">//  recursive call</span>
+    } else if(Array.isArray(i)) {
+        //  i is an array, so iterate through it
+        for(n=, len=i.length; n&lt;len; n++) {
+            //  recursive call
             sum += arraySum(i[n]);
         }
     }
 
-    <span class="keyword">return</span> sum;
+    return sum;
 }
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
 <h4 id="explanation-4">Explanation</h4>
 
@@ -750,13 +428,8 @@ module.exports = {
 
 <p>Let’s see what happens when we input a basic array:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-</pre></td>
-  <td class="code"><pre>arraySum([<span class="integer">1</span>]);  <span class="comment">// 1</span>
-</pre></td>
-</tr></table>
-</div>
+<pre lang="javascript"><code>arraySum([1]);  // 1
+</code></pre>
 
 <p>Again the answer is 1, but this time the codepath was different. This time <code>Array.isArray([1])</code> was true, and the function was called recursively for each of the members in the array. That is to say, each member of the array (in this case the single member) was sent to arraySum as a simple integer. So the recursive call was the same as the original example: <code>arraySum(1)</code>, and the output was the same.</p>
 
@@ -764,13 +437,8 @@ module.exports = {
 
 <p>Note that this works quite well for even deeply nested arrays, since arraySum() has logic for arrays that will always return the sum of all of its deeply nested integers:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-</pre></td>
-  <td class="code"><pre>arraySum([<span class="integer">1</span>, [<span class="integer">2</span>,[<span class="integer">3</span>,[<span class="integer">4</span>,[<span class="integer">5</span>]]]]]);   <span class="comment">// 15</span>
-</pre></td>
-</tr></table>
-</div>
+<pre lang="javascript"><code>arraySum([1, [2,[3,[4,[5]]]]]);   // 15
+</code></pre>
 
 ]]></content>
   </entry>
@@ -790,29 +458,16 @@ module.exports = {
 
 <h3 id="overview-different-ways-of-declaring-functions">Overview: different ways of declaring functions</h3>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">function</span> <span class="function">A</span>(){};             <span class="comment">// function declaration</span>
-<span class="keyword">var</span> <span class="function">B</span> = <span class="keyword">function</span>(){};       <span class="comment">// function expression</span>
-<span class="keyword">var</span> C = (<span class="keyword">function</span>(){});     <span class="comment">// function expression with grouping operators</span>
-<span class="keyword">var</span> <span class="function">D</span> = <span class="keyword">function</span> <span class="function">foo</span>(){};   <span class="comment">// named function expression</span>
-<span class="keyword">var</span> E = (<span class="keyword">function</span>(){        <span class="comment">// immediately-invoked function expression (IIFE) that returns a function</span>
-  <span class="keyword">return</span> <span class="keyword">function</span>(){}
+<pre lang="javascript"><code>function A(){};             // function declaration
+var B = function(){};       // function expression
+var C = (function(){});     // function expression with grouping operators
+var D = function foo(){};   // named function expression
+var E = (function(){        // immediately-invoked function expression (IIFE) that returns a function
+  return function(){}
 })();
-<span class="keyword">var</span> F = <span class="keyword">new</span> Function();     <span class="comment">// Function constructor</span>
-<span class="keyword">var</span> G = <span class="keyword">new</span> <span class="keyword">function</span>(){};   <span class="comment">// special case: object constructor</span>
-</pre></td>
-</tr></table>
-</div>
+var F = new Function();     // Function constructor
+var G = new function(){};   // special case: object constructor
+</code></pre>
 
 <h3 id="function-declarations-function-a">Function declarations: function A(){};</h3>
 
@@ -822,35 +477,19 @@ module.exports = {
 
 <p>The interesting thing about these is that they are “hoisted” to the top of their scope, which means this code:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-</pre></td>
-  <td class="code"><pre>A();
-<span class="keyword">function</span> <span class="function">A</span>(){
-  console.log(<span class="string"><span class="delimiter">'</span><span class="content">foo</span><span class="delimiter">'</span></span>);
+<pre lang="javascript"><code>A();
+function A(){
+  console.log('foo');
 };
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
 <p>Gets executed as this code:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">function</span> <span class="function">A</span>(){
-  console.log(<span class="string"><span class="delimiter">'</span><span class="content">foo</span><span class="delimiter">'</span></span>);
+<pre lang="javascript"><code>function A(){
+  console.log('foo');
 };
 A();
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
 <p>Which practically means that, yes, you can call the functions before they’re written in your code. It won’t matter, because the entire function gets hoisted to the top of its containing scope. (This is contrasted with variables, which only have their declaration hoisted, not their contents, as we’ll see in the next section).</p>
 
@@ -873,13 +512,8 @@ A();
 
 <p>The function name is optional in function expressions, and we call these anonymous. Here we’re setting the variable B equal to an anonymous function:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">var</span> <span class="function">B</span> = <span class="keyword">function</span>(){};
-</pre></td>
-</tr></table>
-</div>
+<pre lang="javascript"><code>var B = function(){};
+</code></pre>
 
 <h4 id="variable-declaration-hoisting">2. Variable declaration hoisting</h4>
 
@@ -887,55 +521,29 @@ A();
 
 <p>This code:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">var</span> <span class="function">A</span> = <span class="keyword">function</span>(){};
-<span class="keyword">var</span> <span class="function">B</span> = <span class="keyword">function</span>(){};
-<span class="keyword">var</span> <span class="function">C</span> = <span class="keyword">function</span>(){};
-</pre></td>
-</tr></table>
-</div>
+<pre lang="javascript"><code>var A = function(){};
+var B = function(){};
+var C = function(){};
+</code></pre>
 
 <p>Will be executed as this:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">var</span> A, B, C;  <span class="comment">// variable declarations are hoisted</span>
-<span class="function">A</span> = <span class="keyword">function</span>(){};
-<span class="function">B</span> = <span class="keyword">function</span>(){};
-<span class="function">C</span> = <span class="keyword">function</span>(){};
-</pre></td>
-</tr></table>
-</div>
+<pre lang="javascript"><code>var A, B, C;  // variable declarations are hoisted
+A = function(){};
+B = function(){};
+C = function(){};
+</code></pre>
 
 <p>Therefore the order of setting and calling this type of function is important:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-</pre></td>
-  <td class="code"><pre><span class="comment">// this works</span>
-<span class="keyword">var</span> <span class="function">B</span> = <span class="keyword">function</span>(){};
+<pre lang="javascript"><code>// this works
+var B = function(){};
 B();
 
-<span class="comment">// this doesn't work</span>
-B2();  <span class="comment">// TypeError (B2 is undefined)</span>
-<span class="keyword">var</span> <span class="function">B2</span> = <span class="keyword">function</span>(){};
-</pre></td>
-</tr></table>
-</div>
+// this doesn't work
+B2();  // TypeError (B2 is undefined)
+var B2 = function(){};
+</code></pre>
 
 <p>The second example gives us an error because only the variable B2’s declaration is hoisted, but not its definition, thus the “undefined” error.</p>
 
@@ -945,57 +553,33 @@ B2();  <span class="comment">// TypeError (B2 is undefined)</span>
 
 <p>Here’s a good way to see what’s happening:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">function</span>(){};  <span class="comment">// SyntaxError</span>
-(<span class="keyword">function</span>(){});
-</pre></td>
-</tr></table>
-</div>
+<pre lang="javascript"><code>function(){};  // SyntaxError
+(function(){});
+</code></pre>
 
 <p>Why does one work and the other doesn’t? The first example is a function declaration, and we learned above that we can’t declare them anonymously - that is, they must have a name. That’s why we’re getting the syntax error.</p>
 
 <p>The second example is using parenthesis - grouping operators - and is therefore evaluated differently, as a function expression. The grouping operators are the things we use to help show what should be evaluated first, as in mathematical problems. We’re saying “evaluate this first, then take the result and do something with it”:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-</pre></td>
-  <td class="code"><pre>(<span class="integer">1</span> + <span class="integer">2</span>) * <span class="integer">3</span>;  <span class="comment">// 9</span>
-<span class="integer">1</span> + (<span class="integer">2</span> * <span class="integer">3</span>);  <span class="comment">// 7</span>
-</pre></td>
-</tr></table>
-</div>
+<pre lang="javascript"><code>(1 + 2) * 3;  // 9
+1 + (2 * 3);  // 7
+</code></pre>
 
 <p>In the first example we’re saying “first add 1 and 2, then take the result and multiply by 3”, whereas in the second example we’re saying “first multiply 2 and 3, then take the result and add 1”.</p>
 
 <p>Because functions are first class, we can use similar grouping operators. Here’s a facetious example, but it shows how we can essentially drop in a function in the same way:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-</pre></td>
-  <td class="code"><pre>(<span class="keyword">function</span>(){} + <span class="integer">1</span>);  <span class="comment">// function(){}1</span>
-</pre></td>
-</tr></table>
-</div>
+<pre lang="javascript"><code>(function(){} + 1);  // function(){}1
+</code></pre>
 
 <p>The result is a string (because toString is being called on the function, then added/appended with 1), but you get the idea I hope.</p>
 
 <p>When the JavaScript engine encounters the opening parenthesis here, we’re essentially saying “ok, start grouping this together with something else”. Using our technical terms, we’re telling the engine that we’re not making a function declaration, but instead a function expression. And then we can assign the result to a variable:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-</pre></td>
-  <td class="code"><pre>(<span class="keyword">function</span>(){});           <span class="comment">// resulting function not assigned</span>
-<span class="keyword">var</span> foo = (<span class="keyword">function</span>(){}); <span class="comment">// resulting function assigned to foo</span>
-<span class="keyword">var</span> <span class="function">bar</span> = <span class="keyword">function</span>(){};   <span class="comment">// resulting function assigned to bar</span>
-</pre></td>
-</tr></table>
-</div>
+<pre lang="javascript"><code>(function(){});           // resulting function not assigned
+var foo = (function(){}); // resulting function assigned to foo
+var bar = function(){};   // resulting function assigned to bar
+</code></pre>
 
 <p>Here we can see that foo and bar are really just the same, because in foo we’re not grouping the function together with anything but itself.</p>
 
@@ -1007,21 +591,12 @@ B2();  <span class="comment">// TypeError (B2 is undefined)</span>
 
 <p>We haven’t exposed the function name (foo) to the enclosing scope (in this case the global scope):</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">var</span> <span class="function">D</span> = <span class="keyword">function</span> <span class="function">foo</span>(){
-  console.log(<span class="keyword">typeof</span> foo);
+<pre lang="javascript"><code>var D = function foo(){
+  console.log(typeof foo);
 };
-D();                       <span class="comment">// function</span>
-console.log(<span class="keyword">typeof</span> foo);   <span class="comment">// undefined</span>
-</pre></td>
-</tr></table>
-</div>
+D();                       // function
+console.log(typeof foo);   // undefined
+</code></pre>
 
 <h4 id="useful-for-recursion">2. Useful for recursion</h4>
 
@@ -1029,27 +604,15 @@ console.log(<span class="keyword">typeof</span> foo);   <span class="comment">//
 
 <p>Here’s a trivial recursive function to illustrate calling itself from within the named function expression:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">var</span> <span class="function">countdown</span> = <span class="keyword">function</span> <span class="function">a</span>(count){
-  <span class="keyword">if</span>(count &gt; <span class="integer">0</span>) {
+<pre lang="javascript"><code>var countdown = function a(count){
+  if(count &gt; 0) {
     count--;
-    <span class="keyword">return</span> a(count);  <span class="comment">// we can also do this: a(--count), which is less clear</span>
+    return a(count);  // we can also do this: a(--count), which is less clear
   }
-  console.log(<span class="string"><span class="delimiter">'</span><span class="content">end of recursive function</span><span class="delimiter">'</span></span>);
+  console.log('end of recursive function');
 }
-countdown(<span class="integer">5</span>);
-</pre></td>
-</tr></table>
-</div>
+countdown(5);
+</code></pre>
 
 <h4 id="useful-for-debugging">3. Useful for debugging</h4>
 
@@ -1067,71 +630,38 @@ countdown(<span class="integer">5</span>);
 
 <p>First we’ll use an example that doesn’t look like magic:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">var</span> <span class="function">foo</span> = <span class="keyword">function</span>(){
-  <span class="keyword">return</span> <span class="string"><span class="delimiter">'</span><span class="content">bar</span><span class="delimiter">'</span></span>;
+<pre lang="javascript"><code>var foo = function(){
+  return 'bar';
 };
-<span class="keyword">var</span> output = foo();
-console.log(output);  <span class="comment">// 'bar'</span>
-</pre></td>
-</tr></table>
-</div>
+var output = foo();
+console.log(output);  // 'bar'
+</code></pre>
 
 <p>We already learned about grouping operators above, so you should feel comfortable with saying this is equivalent:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">var</span> <span class="function">foo</span> = <span class="keyword">function</span>(){
-  <span class="keyword">return</span> <span class="string"><span class="delimiter">'</span><span class="content">bar</span><span class="delimiter">'</span></span>;
+<pre lang="javascript"><code>var foo = function(){
+  return 'bar';
 };
-<span class="keyword">var</span> output = (foo)(); <span class="comment">// note the extra grouping operators</span>
-console.log(output);  <span class="comment">// 'bar'</span>
-</pre></td>
-</tr></table>
-</div>
+var output = (foo)(); // note the extra grouping operators
+console.log(output);  // 'bar'
+</code></pre>
 
 <p>Since foo is pointing to our function expression, we know that we can simply refrain from using the variable “foo” and drop in the entire function as an anonymous function (since functions are first class, after all!):</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">var</span> output = (<span class="keyword">function</span>(){
-  <span class="keyword">return</span> <span class="string"><span class="delimiter">'</span><span class="content">bar</span><span class="delimiter">'</span></span>;
+<pre lang="javascript"><code>var output = (function(){
+  return 'bar';
 })();
-console.log(output);  <span class="comment">// 'bar'</span>
-</pre></td>
-</tr></table>
-</div>
+console.log(output);  // 'bar'
+</code></pre>
 
 <p>Hey wait, we just arrived at the magical resulting function! It turns out to be not so magical after all, once we break it down and see it for what it is. It’s simply shorthand for the code we wrote originally, where we defined a function, executed it, and defined output to be its return value.</p>
 
 <p>I’ve included this method on the list of declaring functions because we can assign the return value to itself be a function:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">var</span> E = (<span class="keyword">function</span>(){
-  <span class="keyword">return</span> <span class="keyword">function</span>(){}
+<pre lang="javascript"><code>var E = (function(){
+  return function(){}
 })();
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
 <h4 id="applications">Applications</h4>
 
@@ -1145,15 +675,9 @@ console.log(output);  <span class="comment">// 'bar'</span>
 
 <p>You can create a function like this:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">var</span> F = <span class="keyword">new</span> Function(<span class="string"><span class="delimiter">'</span><span class="content">arg1</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">arg2</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">console.log(arg1 + &quot;, &quot; + arg2)</span><span class="delimiter">'</span></span>);
-F(<span class="string"><span class="delimiter">'</span><span class="content">foo</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">bar</span><span class="delimiter">'</span></span>);  <span class="comment">// 'foo, bar'</span>
-</pre></td>
-</tr></table>
-</div>
+<pre lang="javascript"><code>var F = new Function('arg1', 'arg2', 'console.log(arg1 + ", " + arg2)');
+F('foo', 'bar');  // 'foo, bar'
+</code></pre>
 
 <h4 id="you-dont-need-the-new-operatorh4">2. You don’t need the <code>new</code> operator&lt;/h4&gt;</h4>
 <p>You can simply write <code>var F = Function();</code> to get the same result.</p>
@@ -1164,35 +688,19 @@ F(<span class="string"><span class="delimiter">'</span><span class="content">foo
 
 <p>What this means is that they don’t have access to variables in their enclosing scope, which isn’t particularly useful:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-<a href="#n12" name="n12">12</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">function</span> <span class="function">foo</span>(){
-  <span class="keyword">var</span> bar = <span class="string"><span class="delimiter">'</span><span class="content">blah</span><span class="delimiter">'</span></span>;
+<pre lang="javascript"><code>function foo(){
+  var bar = 'blah';
   
-  <span class="keyword">var</span> first = <span class="keyword">new</span> Function(<span class="string"><span class="delimiter">'</span><span class="content">console.log(typeof bar)</span><span class="delimiter">'</span></span>);
-  first();   <span class="comment">// undefined</span>
+  var first = new Function('console.log(typeof bar)');
+  first();   // undefined
   
-  <span class="keyword">var</span> <span class="function">second</span> = <span class="keyword">function</span>(){
-    console.log(<span class="keyword">typeof</span> bar);
+  var second = function(){
+    console.log(typeof bar);
   }
-  second();  <span class="comment">// string</span>
+  second();  // string
 }
 foo();
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
 <p>In the function “first”, we’re using the Function constructor, so it doesn’t have access to the variable bar. However, if we use the function “second”, which is a function expression, it does in fact have access to variables defined in its enclosing scope (via closure).</p>
 
@@ -1206,19 +714,11 @@ foo();
 
 <p>It’s a bit unusual to see it in this form. Let’s do it the proper way:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">var</span> <span class="function">Person</span> = <span class="keyword">function</span>(){
-  console.log(<span class="local-variable">this</span>);  <span class="comment">// Person</span>
+<pre lang="javascript"><code>var Person = function(){
+  console.log(this);  // Person
 }
-<span class="keyword">var</span> joe = <span class="keyword">new</span> Person();
-</pre></td>
-</tr></table>
-</div>
+var joe = new Person();
+</code></pre>
 
 <p>So really with the new operator, we are giving it a new ‘this’ context and then executing the given function with that new context. Much different than the function definitions we’ve been dealing with above! This does into a whole new topic, and we’ll save that for later!</p>
 
@@ -1246,49 +746,26 @@ foo();
     <id>http://davidbcalhoun.com/2011/checking-for-undefined-null-and-empty-variables-in-javascript</id>
     <content type="html"><![CDATA[<p>In general it’s a good practice to check for the existence of something before blindly using it by faith and hoping it works. There are various times during the execution of scripts when a variable may not be defined, it may be null, or it might be an empty string. These are three things that are easily conflated. A good way to look at this is thinking of these as having increasing levels of existence (getting a bit philosophical here for a moment…):</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-</pre></td>
-  <td class="code"><pre>foo0;             <span class="comment">// existence level 0 (creates the error &quot;not defined&quot;)</span>
-<span class="keyword">var</span> foo1;         <span class="comment">// existence level 1 (&quot;undefined&quot; - variable declared but not defined/initialized)</span>
-<span class="keyword">var</span> foo2 = <span class="predefined-constant">null</span>;  <span class="comment">// existence level 2 (variable initialized, but isn't an Object, Number, String, etc)</span>
-<span class="keyword">var</span> foo3 = <span class="string"><span class="delimiter">&quot;</span><span class="delimiter">&quot;</span></span>;    <span class="comment">// existence level 3 (variable initialized to an empty String)</span>
-<span class="keyword">var</span> foo4 = <span class="string"><span class="delimiter">&quot;</span><span class="content">bar</span><span class="delimiter">&quot;</span></span>; <span class="comment">// existence level 4 (variable initialized to String &quot;foo&quot;)</span>
-</pre></td>
-</tr></table>
-</div>
+<pre lang="javascript"><code>foo0;             // existence level 0 (creates the error "not defined")
+var foo1;         // existence level 1 ("undefined" - variable declared but not defined/initialized)
+var foo2 = null;  // existence level 2 (variable initialized, but isn't an Object, Number, String, etc)
+var foo3 = "";    // existence level 3 (variable initialized to an empty String)
+var foo4 = "bar"; // existence level 4 (variable initialized to String "foo")
+</code></pre>
 
 <p>Generally it would be handy if we had some way to filter out everything but the very last line. We simply want to check for these cases without the script entirely blowing up, as it does with the first line:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-</pre></td>
-  <td class="code"><pre>foo;  <span class="comment">// ReferenceError: foo is not defined</span>
-</pre></td>
-</tr></table>
-</div>
+<pre lang="javascript"><code>foo;  // ReferenceError: foo is not defined
+</code></pre>
 
 <p>We’re not particularly doing anything useful with foo here, but notice that the script fails out anyway. At this point any code that follows will not be executed. Your first instinct might be “Oh! I know how to contain these errors! We’ll use a try-catch!”:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">try</span> {
+<pre lang="javascript"><code>try {
   foo;
-} <span class="keyword">catch</span>(e) {
-  e.message;  <span class="comment">// &quot;foo is not defined&quot;</span>
+} catch(e) {
+  e.message;  // "foo is not defined"
 }
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
 <p>The script still fails, but not critically, so your script continues to execute. But this turns out to aversely affect performance. The basic lesson here is that try-catch can be useful in some situations, but shouldn’t be used where alternatives are available.</p>
 
@@ -1296,69 +773,36 @@ foo();
 
 <p>JavaScript has quite a useful remedy for this:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">typeof</span> foo; <span class="comment">// &quot;undefined&quot;</span>
-</pre></td>
-</tr></table>
-</div>
+<pre lang="javascript"><code>typeof foo; // "undefined"
+</code></pre>
 
 <p>Unlike everything else in JavaScript, typeof will deal with whatever you throw at it, including undefined variables. So you can use it as a simple check before using a variable that might not exist:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">if</span>(<span class="keyword">typeof</span> foo !== <span class="string"><span class="delimiter">&quot;</span><span class="content">undefined</span><span class="delimiter">&quot;</span></span>) {
-  <span class="comment">// do something with foo</span>
+<pre lang="javascript"><code>if(typeof foo !== "undefined") {
+  // do something with foo
 }
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
 <p>Note that this is easy to confuse with the <code>undefined</code> keyword, which in this case doesn’t help us one bit, as it gives us a fatal error:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">if</span>(foo !== <span class="predefined-constant">undefined</span>) {  <span class="comment">// ReferenceError: foo is not defined</span>
+<pre lang="javascript"><code>if(foo !== undefined) {  // ReferenceError: foo is not defined
 
 }
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
 <p>This filters out our first two cases, since they both evaluate to “undefined”:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">typeof</span> foo; <span class="comment">// &quot;undefined&quot;</span>
+<pre lang="javascript"><code>typeof foo; // "undefined"
 
-<span class="keyword">var</span> bar;
-<span class="keyword">typeof</span> bar; <span class="comment">// &quot;undefined&quot;</span>
-</pre></td>
-</tr></table>
-</div>
+var bar;
+typeof bar; // "undefined"
+</code></pre>
 
 <p>But this turns out not to work well for our other conditions, which evaluate differently:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">typeof</span> <span class="predefined-constant">null</span>;  <span class="comment">// &quot;object&quot; (what?!)</span>
-<span class="keyword">typeof</span> <span class="string"><span class="delimiter">&quot;</span><span class="delimiter">&quot;</span></span>;    <span class="comment">// &quot;string&quot;</span>
-</pre></td>
-</tr></table>
-</div>
+<pre lang="javascript"><code>typeof null;  // "object" (what?!)
+typeof "";    // "string"
+</code></pre>
 
 <p>So we need to add other “if” conditions to check.. but there turns out to be a better way!</p>
 
@@ -1368,301 +812,157 @@ foo();
 
 <p>“How handy!” you might think. Except in the following unexpected cases:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">if</span>(<span class="string"><span class="delimiter">&quot;</span><span class="content">0</span><span class="delimiter">&quot;</span></span>) {
-  <span class="comment">// this will run because &quot;0&quot; is true</span>
+<pre lang="javascript"><code>if("0") {
+  // this will run because "0" is true
 }
 
-<span class="keyword">if</span>(<span class="string"><span class="delimiter">&quot;</span><span class="content">false</span><span class="delimiter">&quot;</span></span>) {
-  <span class="comment">// this will run because &quot;false&quot; is true</span>
+if("false") {
+  // this will run because "false" is true
 }
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
 <p>To see what JavaScript will cast a value to without having to use an <code>if</code> statement, we could create a new Boolean value with the following:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-</pre></td>
-  <td class="code"><pre>Boolean(<span class="integer">0</span>);    <span class="comment">// false</span>
-Boolean(<span class="string"><span class="delimiter">&quot;</span><span class="content">0</span><span class="delimiter">&quot;</span></span>);  <span class="comment">// true</span>
-</pre></td>
-</tr></table>
-</div>
+<pre lang="javascript"><code>Boolean(0);    // false
+Boolean("0");  // true
+</code></pre>
 
 <p>Or we can use the less intuitive but quick way of using double exclamation marks (this will probably award you cleverness points in someone’s book.. hopefully those points actually matter):</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-</pre></td>
-  <td class="code"><pre>!!<span class="integer">0</span>;    <span class="comment">// false</span>
-!!<span class="string"><span class="delimiter">&quot;</span><span class="content">0</span><span class="delimiter">&quot;</span></span>;  <span class="comment">// true</span>
-</pre></td>
-</tr></table>
-</div>
+<pre lang="javascript"><code>!!0;    // false
+!!"0";  // true
+</code></pre>
 
 <p>This works because !foo converts foo to a Boolean but negates its original value, turning it on its head. !!foo converts foo to a Boolean and flips it back to its expected value, which is the same value that’s evaluated by our <code>if</code> statement.</p>
 
 <p>Using this ALMOST gives us the answer we’re looking for:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-<a href="#n12" name="n12">12</a>
-<a href="#n13" name="n13">13</a>
-</pre></td>
-  <td class="code"><pre>!!foo0; <span class="comment">// ReferenceError: foo0 is not defined</span>
+<pre lang="javascript"><code>!!foo0; // ReferenceError: foo0 is not defined
 
-<span class="keyword">var</span> foo1;
-!!foo1; <span class="comment">// false</span>
+var foo1;
+!!foo1; // false
 
-<span class="keyword">var</span> foo2 = <span class="predefined-constant">null</span>;
-!!foo2; <span class="comment">// false (same as !!null)</span>
+var foo2 = null;
+!!foo2; // false (same as !!null)
 
-<span class="keyword">var</span> foo3 = <span class="string"><span class="delimiter">&quot;</span><span class="delimiter">&quot;</span></span>;
-!!foo3; <span class="comment">// false (same as !!&quot;&quot;)</span>
+var foo3 = "";
+!!foo3; // false (same as !!"")
 
-<span class="keyword">var</span> foo4 = <span class="string"><span class="delimiter">&quot;</span><span class="content">bar</span><span class="delimiter">&quot;</span></span>;
-!!foot4; <span class="comment">// true (same as !!&quot;bar&quot;)</span>
-</pre></td>
-</tr></table>
-</div>
+var foo4 = "bar";
+!!foot4; // true (same as !!"bar")
+</code></pre>
 
 <p>Excluding the first example, now we can test for uninitialized variables (foo1), null variables (foo2), and empty strings (foo3) all with just an <code>if</code> statement:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">if</span>(foo1) {
-  <span class="comment">// do something with foo1</span>
+<pre lang="javascript"><code>if(foo1) {
+  // do something with foo1
 }
 
-<span class="keyword">if</span>(foo2) {
-  <span class="comment">// do something with foo2</span>
+if(foo2) {
+  // do something with foo2
 }
 
-<span class="keyword">if</span>(foo3) {
-  <span class="comment">// do something with foo3</span>
+if(foo3) {
+  // do something with foo3
 }
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
 <p>Dang… so close! But we can’t yet test the first case without an error:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">if</span>(foo0) {  <span class="comment">// ReferenceError: foo0 is not defined</span>
+<pre lang="javascript"><code>if(foo0) {  // ReferenceError: foo0 is not defined
 
 }
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
 <h3 id="foo-versus-windowfoo-and-thisfoo">foo versus window.foo and this.foo</h3>
 
 <p>The secret to our solution lies in how JavaScript handles undefined variables versus undefined properties. Here’s a quick reminder on the difference between the two:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-</pre></td>
-  <td class="code"><pre><span class="comment">// variable foo</span>
-<span class="keyword">var</span> foo;
+<pre lang="javascript"><code>// variable foo
+var foo;
 
-<span class="comment">// property bar (and object variable foo)</span>
-<span class="keyword">var</span> foo = {};  <span class="comment">// create an empty object to add bar too</span>
-foo.bar = <span class="string"><span class="delimiter">&quot;</span><span class="delimiter">&quot;</span></span>;
-</pre></td>
-</tr></table>
-</div>
+// property bar (and object variable foo)
+var foo = {};  // create an empty object to add bar too
+foo.bar = "";
+</code></pre>
 
 <p>The difference between these makes all the difference whether a fatal error occurs:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-</pre></td>
-  <td class="code"><pre>foo;  <span class="comment">// ReferenceError: foo is not defined</span>
+<pre lang="javascript"><code>foo;  // ReferenceError: foo is not defined
 
-<span class="keyword">var</span> foo = {};
-foo.bar;  <span class="comment">// undefined</span>
-foo.blah; <span class="comment">// undefined</span>
-</pre></td>
-</tr></table>
-</div>
+var foo = {};
+foo.bar;  // undefined
+foo.blah; // undefined
+</code></pre>
 
 <p>We can randomly invent and check any property of <code>foo</code> we want, and the code will keep chugging along:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-</pre></td>
-  <td class="code"><pre><span class="keyword">var</span> foo = {};
-foo.something = <span class="string"><span class="delimiter">&quot;</span><span class="content">hello</span><span class="delimiter">&quot;</span></span>;
+<pre lang="javascript"><code>var foo = {};
+foo.something = "hello";
 
-<span class="keyword">if</span>(foo.bar) { <span class="comment">// undefined, interpreted as false (same as !!foo.bar)</span>
-  <span class="comment">// never runs</span>
+if(foo.bar) { // undefined, interpreted as false (same as !!foo.bar)
+  // never runs
 }
 
-<span class="keyword">if</span>(foo.something) {
-  foo.something;  <span class="comment">// &quot;hello&quot;</span>
+if(foo.something) {
+  foo.something;  // "hello"
 }
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
 <p>Now comes the magic. If you know anything about JavaScript running in the browser, you know that all global variables are part of the <code>window</code> object. This means <code>foo</code> and <code>window.foo</code> are equivalent:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">var</span> foo;
+<pre lang="javascript"><code>var foo;
 
-foo === window.foo;  <span class="comment">// true</span>
+foo === window.foo;  // true
 
-<span class="comment">// &quot;this&quot; is another bag of worms, but note this anyway</span>
-<span class="local-variable">this</span>.foo === window.foo;
-</pre></td>
-</tr></table>
-</div>
+// "this" is another bag of worms, but note this anyway
+this.foo === window.foo;
+</code></pre>
 
 <p>So technically our variable foo is a <em>property</em> of the window object. So we should be able to check for any arbitrary variable in the window scope now!</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-</pre></td>
-  <td class="code"><pre>window.foo;  <span class="comment">// undefined (not a fatal error!)</span>
+<pre lang="javascript"><code>window.foo;  // undefined (not a fatal error!)
 
-<span class="comment">// even though we're checking for the same thing, we get a fatal error…</span>
-foo;  <span class="comment">// ReferenceError: foo is not defined</span>
-</pre></td>
-</tr></table>
-</div>
+// even though we're checking for the same thing, we get a fatal error…
+foo;  // ReferenceError: foo is not defined
+</code></pre>
 
 <h3 id="practical-uses">Practical uses</h3>
 
 <p>Now as long as we have a global entry point for our code, we can write our code in such a way that it won’t ever give us a fatal error if our variables aren’t yet defined:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">if</span>(window.foo &amp;&amp; foo.bar) {
+<pre lang="javascript"><code>if(window.foo &amp;&amp; foo.bar) {
   foo.bar();
 }
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
 <p>Of course nothing happens, because we haven’t defined foo. But why doesn’t foo.bar give us a fatal error? Because the first test, <code>window.foo</code> failed out. It would be useless processing for the JavaScript engine to also evaluate the second statement, because the end result will still be the same (false &#038;&#038; true results in false, false &#038;&#038; false results in false). So it doesn’t get so far as <code>foo.bar</code>.</p>
 
 <p>And now the code will work properly when we hook up our code to our <code>foo</code> global namespace:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">var</span> foo = {
-  <span class="function">bar</span>: <span class="keyword">function</span>() {
-    alert(<span class="string"><span class="delimiter">&quot;</span><span class="content">hello world</span><span class="delimiter">&quot;</span></span>);
+<pre lang="javascript"><code>var foo = {
+  bar: function() {
+    alert("hello world");
   }
 }
 
-<span class="keyword">if</span>(window.foo &amp;&amp; foo.bar) {
-  foo.bar();  <span class="comment">// &quot;hello world&quot;</span>
+if(window.foo &amp;&amp; foo.bar) {
+  foo.bar();  // "hello world"
 }
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
 <h3 id="shorthand">Shorthand</h3>
 
 <p>It’s becoming common to see an abbreviation for the above code. Check out the following two methods, which accomplish the same thing:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-</pre></td>
-  <td class="code"><pre><span class="comment">// Method 1</span>
-<span class="keyword">if</span>(window.foo &amp;&amp; foo.bar) {
-  foo.bar();  <span class="comment">// &quot;hello world&quot;</span>
+<pre lang="javascript"><code>// Method 1
+if(window.foo &amp;&amp; foo.bar) {
+  foo.bar();  // "hello world"
 }
 
-<span class="comment">// Method 2</span>
+// Method 2
 window.foo &amp;&amp; foo.bar &amp;&amp; (foo.bar());
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
 <p>Don’t get too scared.. these blocks of code are equivalent. Method 2 is shorter, but it simply goes something like this: if window.foo isn’t set, stop evaluating this line (just as above in the <code>if</code> statement). Otherwise, if foo.bar exists then execute the code in parentheses, which gives us an alert (“hello world”);</p>
 

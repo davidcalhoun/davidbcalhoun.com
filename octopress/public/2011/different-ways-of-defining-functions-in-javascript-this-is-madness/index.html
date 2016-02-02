@@ -1,6 +1,5 @@
-
-<!DOCTYPE HTML>
-<html lang="en-GB">
+<!doctype html>
+<html lang="en-US">
 <head>
 	<meta charset="utf-8">
 	<title>Different ways of defining functions in JavaScript (this is madness!)  | David Calhoun's blog</title>
@@ -22,30 +21,11 @@
 
 
 <body>
-	<header id="header" class="inner"><h1><a href="/">David Calhoun's blog</a></h1>
+	<header id="header" class="inner" role="banner" aria-labelledby="header_title"><h1><a href="/" id="header_title">David Calhoun's blog</a></h1>
 <span class="tagline"></span>
-<!-- <nav id="main-nav"><ul>
-	<li><a href="/about">About</a></li>
-	<li><a href="/archives">Archives</a></li>
-	<li><a href="/contact">Contact</a></li>
-</ul>
-</nav> -->
-<!-- <nav id="mobile-nav"> -->
-<!-- 	<div class="alignleft menu"> -->
-<!-- 		<a class="button">Menu</a> -->
-<!-- 		<div class="container"><ul>
-	<li><a href="/about">About</a></li>
-	<li><a href="/archives">Archives</a></li>
-	<li><a href="/contact">Contact</a></li>
-</ul>
-</div> -->
-<!-- 	</div> -->
-<!-- </nav> -->
-
 
 </header>
-
-	<div id="content" class="inner"><article class="post">
+	<div id="content" class="inner" role="main"><article class="post" role="main">
 	<header>
 		<h2 class="title">Different Ways of Defining Functions in JavaScript (This Is Madness!)</h2>
 		<div class="meta date">
@@ -60,7 +40,7 @@
   
 
 
-<time datetime="2011-06-24T00:00:00-07:00" pubdate data-updated="true">Jun 24<span>th</span>, 2011</time></div>
+<time datetime="2011-06-24T00:00:00-07:00" pubdate data-updated="true"></time></div>
 	</header>
 	<div class="entry-content"><h3 id="this-is-madness-this8230-is8230-javascript">This is madness! This… is… JavaScript!</h3>
 
@@ -72,29 +52,16 @@
 
 <h3 id="overview-different-ways-of-declaring-functions">Overview: different ways of declaring functions</h3>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">function</span> <span class="function">A</span>(){};             <span class="comment">// function declaration</span>
-<span class="keyword">var</span> <span class="function">B</span> = <span class="keyword">function</span>(){};       <span class="comment">// function expression</span>
-<span class="keyword">var</span> C = (<span class="keyword">function</span>(){});     <span class="comment">// function expression with grouping operators</span>
-<span class="keyword">var</span> <span class="function">D</span> = <span class="keyword">function</span> <span class="function">foo</span>(){};   <span class="comment">// named function expression</span>
-<span class="keyword">var</span> E = (<span class="keyword">function</span>(){        <span class="comment">// immediately-invoked function expression (IIFE) that returns a function</span>
-  <span class="keyword">return</span> <span class="keyword">function</span>(){}
+<pre lang="javascript"><code>function A(){};             // function declaration
+var B = function(){};       // function expression
+var C = (function(){});     // function expression with grouping operators
+var D = function foo(){};   // named function expression
+var E = (function(){        // immediately-invoked function expression (IIFE) that returns a function
+  return function(){}
 })();
-<span class="keyword">var</span> F = <span class="keyword">new</span> Function();     <span class="comment">// Function constructor</span>
-<span class="keyword">var</span> G = <span class="keyword">new</span> <span class="keyword">function</span>(){};   <span class="comment">// special case: object constructor</span>
-</pre></td>
-</tr></table>
-</div>
+var F = new Function();     // Function constructor
+var G = new function(){};   // special case: object constructor
+</code></pre>
 
 <h3 id="function-declarations-function-a">Function declarations: function A(){};</h3>
 
@@ -104,35 +71,19 @@
 
 <p>The interesting thing about these is that they are “hoisted” to the top of their scope, which means this code:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-</pre></td>
-  <td class="code"><pre>A();
-<span class="keyword">function</span> <span class="function">A</span>(){
-  console.log(<span class="string"><span class="delimiter">'</span><span class="content">foo</span><span class="delimiter">'</span></span>);
+<pre lang="javascript"><code>A();
+function A(){
+  console.log('foo');
 };
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
 <p>Gets executed as this code:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">function</span> <span class="function">A</span>(){
-  console.log(<span class="string"><span class="delimiter">'</span><span class="content">foo</span><span class="delimiter">'</span></span>);
+<pre lang="javascript"><code>function A(){
+  console.log('foo');
 };
 A();
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
 <p>Which practically means that, yes, you can call the functions before they’re written in your code. It won’t matter, because the entire function gets hoisted to the top of its containing scope. (This is contrasted with variables, which only have their declaration hoisted, not their contents, as we’ll see in the next section).</p>
 
@@ -155,13 +106,8 @@ A();
 
 <p>The function name is optional in function expressions, and we call these anonymous. Here we’re setting the variable B equal to an anonymous function:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">var</span> <span class="function">B</span> = <span class="keyword">function</span>(){};
-</pre></td>
-</tr></table>
-</div>
+<pre lang="javascript"><code>var B = function(){};
+</code></pre>
 
 <h4 id="variable-declaration-hoisting">2. Variable declaration hoisting</h4>
 
@@ -169,55 +115,29 @@ A();
 
 <p>This code:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">var</span> <span class="function">A</span> = <span class="keyword">function</span>(){};
-<span class="keyword">var</span> <span class="function">B</span> = <span class="keyword">function</span>(){};
-<span class="keyword">var</span> <span class="function">C</span> = <span class="keyword">function</span>(){};
-</pre></td>
-</tr></table>
-</div>
+<pre lang="javascript"><code>var A = function(){};
+var B = function(){};
+var C = function(){};
+</code></pre>
 
 <p>Will be executed as this:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">var</span> A, B, C;  <span class="comment">// variable declarations are hoisted</span>
-<span class="function">A</span> = <span class="keyword">function</span>(){};
-<span class="function">B</span> = <span class="keyword">function</span>(){};
-<span class="function">C</span> = <span class="keyword">function</span>(){};
-</pre></td>
-</tr></table>
-</div>
+<pre lang="javascript"><code>var A, B, C;  // variable declarations are hoisted
+A = function(){};
+B = function(){};
+C = function(){};
+</code></pre>
 
 <p>Therefore the order of setting and calling this type of function is important:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-</pre></td>
-  <td class="code"><pre><span class="comment">// this works</span>
-<span class="keyword">var</span> <span class="function">B</span> = <span class="keyword">function</span>(){};
+<pre lang="javascript"><code>// this works
+var B = function(){};
 B();
 
-<span class="comment">// this doesn't work</span>
-B2();  <span class="comment">// TypeError (B2 is undefined)</span>
-<span class="keyword">var</span> <span class="function">B2</span> = <span class="keyword">function</span>(){};
-</pre></td>
-</tr></table>
-</div>
+// this doesn't work
+B2();  // TypeError (B2 is undefined)
+var B2 = function(){};
+</code></pre>
 
 <p>The second example gives us an error because only the variable B2’s declaration is hoisted, but not its definition, thus the “undefined” error.</p>
 
@@ -227,57 +147,33 @@ B2();  <span class="comment">// TypeError (B2 is undefined)</span>
 
 <p>Here’s a good way to see what’s happening:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">function</span>(){};  <span class="comment">// SyntaxError</span>
-(<span class="keyword">function</span>(){});
-</pre></td>
-</tr></table>
-</div>
+<pre lang="javascript"><code>function(){};  // SyntaxError
+(function(){});
+</code></pre>
 
 <p>Why does one work and the other doesn’t? The first example is a function declaration, and we learned above that we can’t declare them anonymously - that is, they must have a name. That’s why we’re getting the syntax error.</p>
 
 <p>The second example is using parenthesis - grouping operators - and is therefore evaluated differently, as a function expression. The grouping operators are the things we use to help show what should be evaluated first, as in mathematical problems. We’re saying “evaluate this first, then take the result and do something with it”:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-</pre></td>
-  <td class="code"><pre>(<span class="integer">1</span> + <span class="integer">2</span>) * <span class="integer">3</span>;  <span class="comment">// 9</span>
-<span class="integer">1</span> + (<span class="integer">2</span> * <span class="integer">3</span>);  <span class="comment">// 7</span>
-</pre></td>
-</tr></table>
-</div>
+<pre lang="javascript"><code>(1 + 2) * 3;  // 9
+1 + (2 * 3);  // 7
+</code></pre>
 
 <p>In the first example we’re saying “first add 1 and 2, then take the result and multiply by 3”, whereas in the second example we’re saying “first multiply 2 and 3, then take the result and add 1”.</p>
 
 <p>Because functions are first class, we can use similar grouping operators. Here’s a facetious example, but it shows how we can essentially drop in a function in the same way:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-</pre></td>
-  <td class="code"><pre>(<span class="keyword">function</span>(){} + <span class="integer">1</span>);  <span class="comment">// function(){}1</span>
-</pre></td>
-</tr></table>
-</div>
+<pre lang="javascript"><code>(function(){} + 1);  // function(){}1
+</code></pre>
 
 <p>The result is a string (because toString is being called on the function, then added/appended with 1), but you get the idea I hope.</p>
 
 <p>When the JavaScript engine encounters the opening parenthesis here, we’re essentially saying “ok, start grouping this together with something else”. Using our technical terms, we’re telling the engine that we’re not making a function declaration, but instead a function expression. And then we can assign the result to a variable:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-</pre></td>
-  <td class="code"><pre>(<span class="keyword">function</span>(){});           <span class="comment">// resulting function not assigned</span>
-<span class="keyword">var</span> foo = (<span class="keyword">function</span>(){}); <span class="comment">// resulting function assigned to foo</span>
-<span class="keyword">var</span> <span class="function">bar</span> = <span class="keyword">function</span>(){};   <span class="comment">// resulting function assigned to bar</span>
-</pre></td>
-</tr></table>
-</div>
+<pre lang="javascript"><code>(function(){});           // resulting function not assigned
+var foo = (function(){}); // resulting function assigned to foo
+var bar = function(){};   // resulting function assigned to bar
+</code></pre>
 
 <p>Here we can see that foo and bar are really just the same, because in foo we’re not grouping the function together with anything but itself.</p>
 
@@ -289,21 +185,12 @@ B2();  <span class="comment">// TypeError (B2 is undefined)</span>
 
 <p>We haven’t exposed the function name (foo) to the enclosing scope (in this case the global scope):</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">var</span> <span class="function">D</span> = <span class="keyword">function</span> <span class="function">foo</span>(){
-  console.log(<span class="keyword">typeof</span> foo);
+<pre lang="javascript"><code>var D = function foo(){
+  console.log(typeof foo);
 };
-D();                       <span class="comment">// function</span>
-console.log(<span class="keyword">typeof</span> foo);   <span class="comment">// undefined</span>
-</pre></td>
-</tr></table>
-</div>
+D();                       // function
+console.log(typeof foo);   // undefined
+</code></pre>
 
 <h4 id="useful-for-recursion">2. Useful for recursion</h4>
 
@@ -311,27 +198,15 @@ console.log(<span class="keyword">typeof</span> foo);   <span class="comment">//
 
 <p>Here’s a trivial recursive function to illustrate calling itself from within the named function expression:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">var</span> <span class="function">countdown</span> = <span class="keyword">function</span> <span class="function">a</span>(count){
-  <span class="keyword">if</span>(count &gt; <span class="integer">0</span>) {
+<pre lang="javascript"><code>var countdown = function a(count){
+  if(count &gt; 0) {
     count--;
-    <span class="keyword">return</span> a(count);  <span class="comment">// we can also do this: a(--count), which is less clear</span>
+    return a(count);  // we can also do this: a(--count), which is less clear
   }
-  console.log(<span class="string"><span class="delimiter">'</span><span class="content">end of recursive function</span><span class="delimiter">'</span></span>);
+  console.log('end of recursive function');
 }
-countdown(<span class="integer">5</span>);
-</pre></td>
-</tr></table>
-</div>
+countdown(5);
+</code></pre>
 
 <h4 id="useful-for-debugging">3. Useful for debugging</h4>
 
@@ -349,71 +224,38 @@ countdown(<span class="integer">5</span>);
 
 <p>First we’ll use an example that doesn’t look like magic:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">var</span> <span class="function">foo</span> = <span class="keyword">function</span>(){
-  <span class="keyword">return</span> <span class="string"><span class="delimiter">'</span><span class="content">bar</span><span class="delimiter">'</span></span>;
+<pre lang="javascript"><code>var foo = function(){
+  return 'bar';
 };
-<span class="keyword">var</span> output = foo();
-console.log(output);  <span class="comment">// 'bar'</span>
-</pre></td>
-</tr></table>
-</div>
+var output = foo();
+console.log(output);  // 'bar'
+</code></pre>
 
 <p>We already learned about grouping operators above, so you should feel comfortable with saying this is equivalent:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">var</span> <span class="function">foo</span> = <span class="keyword">function</span>(){
-  <span class="keyword">return</span> <span class="string"><span class="delimiter">'</span><span class="content">bar</span><span class="delimiter">'</span></span>;
+<pre lang="javascript"><code>var foo = function(){
+  return 'bar';
 };
-<span class="keyword">var</span> output = (foo)(); <span class="comment">// note the extra grouping operators</span>
-console.log(output);  <span class="comment">// 'bar'</span>
-</pre></td>
-</tr></table>
-</div>
+var output = (foo)(); // note the extra grouping operators
+console.log(output);  // 'bar'
+</code></pre>
 
 <p>Since foo is pointing to our function expression, we know that we can simply refrain from using the variable “foo” and drop in the entire function as an anonymous function (since functions are first class, after all!):</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">var</span> output = (<span class="keyword">function</span>(){
-  <span class="keyword">return</span> <span class="string"><span class="delimiter">'</span><span class="content">bar</span><span class="delimiter">'</span></span>;
+<pre lang="javascript"><code>var output = (function(){
+  return 'bar';
 })();
-console.log(output);  <span class="comment">// 'bar'</span>
-</pre></td>
-</tr></table>
-</div>
+console.log(output);  // 'bar'
+</code></pre>
 
 <p>Hey wait, we just arrived at the magical resulting function! It turns out to be not so magical after all, once we break it down and see it for what it is. It’s simply shorthand for the code we wrote originally, where we defined a function, executed it, and defined output to be its return value.</p>
 
 <p>I’ve included this method on the list of declaring functions because we can assign the return value to itself be a function:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">var</span> E = (<span class="keyword">function</span>(){
-  <span class="keyword">return</span> <span class="keyword">function</span>(){}
+<pre lang="javascript"><code>var E = (function(){
+  return function(){}
 })();
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
 <h4 id="applications">Applications</h4>
 
@@ -427,15 +269,9 @@ console.log(output);  <span class="comment">// 'bar'</span>
 
 <p>You can create a function like this:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">var</span> F = <span class="keyword">new</span> Function(<span class="string"><span class="delimiter">'</span><span class="content">arg1</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">arg2</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">console.log(arg1 + &quot;, &quot; + arg2)</span><span class="delimiter">'</span></span>);
-F(<span class="string"><span class="delimiter">'</span><span class="content">foo</span><span class="delimiter">'</span></span>, <span class="string"><span class="delimiter">'</span><span class="content">bar</span><span class="delimiter">'</span></span>);  <span class="comment">// 'foo, bar'</span>
-</pre></td>
-</tr></table>
-</div>
+<pre lang="javascript"><code>var F = new Function('arg1', 'arg2', 'console.log(arg1 + ", " + arg2)');
+F('foo', 'bar');  // 'foo, bar'
+</code></pre>
 
 <h4 id="you-dont-need-the-new-operatorh4">2. You don’t need the <code>new</code> operator&lt;/h4&gt;</h4>
 <p>You can simply write <code>var F = Function();</code> to get the same result.</p>
@@ -446,35 +282,19 @@ F(<span class="string"><span class="delimiter">'</span><span class="content">foo
 
 <p>What this means is that they don’t have access to variables in their enclosing scope, which isn’t particularly useful:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-<a href="#n12" name="n12">12</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">function</span> <span class="function">foo</span>(){
-  <span class="keyword">var</span> bar = <span class="string"><span class="delimiter">'</span><span class="content">blah</span><span class="delimiter">'</span></span>;
+<pre lang="javascript"><code>function foo(){
+  var bar = 'blah';
   
-  <span class="keyword">var</span> first = <span class="keyword">new</span> Function(<span class="string"><span class="delimiter">'</span><span class="content">console.log(typeof bar)</span><span class="delimiter">'</span></span>);
-  first();   <span class="comment">// undefined</span>
+  var first = new Function('console.log(typeof bar)');
+  first();   // undefined
   
-  <span class="keyword">var</span> <span class="function">second</span> = <span class="keyword">function</span>(){
-    console.log(<span class="keyword">typeof</span> bar);
+  var second = function(){
+    console.log(typeof bar);
   }
-  second();  <span class="comment">// string</span>
+  second();  // string
 }
 foo();
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
 <p>In the function “first”, we’re using the Function constructor, so it doesn’t have access to the variable bar. However, if we use the function “second”, which is a function expression, it does in fact have access to variables defined in its enclosing scope (via closure).</p>
 
@@ -488,19 +308,11 @@ foo();
 
 <p>It’s a bit unusual to see it in this form. Let’s do it the proper way:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">var</span> <span class="function">Person</span> = <span class="keyword">function</span>(){
-  console.log(<span class="local-variable">this</span>);  <span class="comment">// Person</span>
+<pre lang="javascript"><code>var Person = function(){
+  console.log(this);  // Person
 }
-<span class="keyword">var</span> joe = <span class="keyword">new</span> Person();
-</pre></td>
-</tr></table>
-</div>
+var joe = new Person();
+</code></pre>
 
 <p>So really with the new operator, we are giving it a new ‘this’ context and then executing the given function with that new context. Much different than the function definitions we’ve been dealing with above! This does into a whole new topic, and we’ll save that for later!</p>
 
@@ -554,11 +366,11 @@ foo();
 </div>
 </section>
 </div>
-	<footer id="footer" class="inner"><br>
+	<footer id="footer" class="inner" role="contentinfo"><br>
 <br>
 <br>
 <br>
-&copy; 2015
+&copy; 2016
 <a href="mailto:david.b.calhoun@gmail.com">David Calhoun</a> (<a href="https://twitter.com/franksvalli">@franksvalli</a>) - <a href="https://www.linkedin.com/in/davidcalhoun">LinkedIn</a> - <a href="http://themaingate.net/resume/">Resume</a></footer>
 	<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="/javascripts/slash.js"></script> -->
@@ -576,7 +388,7 @@ foo();
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
@@ -584,7 +396,7 @@ foo();
 
 
 
-<script src="/javascripts/main.js"></script>
+<script src="/javascripts/main.js" defer></script>
 <!-- <script src="/javascripts/negative-scroll-blur.js"></script> -->
 
 <script>

@@ -1,6 +1,5 @@
-
-<!DOCTYPE HTML>
-<html lang="en-GB">
+<!doctype html>
+<html lang="en-US">
 <head>
 	<meta charset="utf-8">
 	<title>Server side console.log  | David Calhoun's blog</title>
@@ -22,30 +21,11 @@
 
 
 <body>
-	<header id="header" class="inner"><h1><a href="/">David Calhoun's blog</a></h1>
+	<header id="header" class="inner" role="banner" aria-labelledby="header_title"><h1><a href="/" id="header_title">David Calhoun's blog</a></h1>
 <span class="tagline"></span>
-<!-- <nav id="main-nav"><ul>
-	<li><a href="/about">About</a></li>
-	<li><a href="/archives">Archives</a></li>
-	<li><a href="/contact">Contact</a></li>
-</ul>
-</nav> -->
-<!-- <nav id="mobile-nav"> -->
-<!-- 	<div class="alignleft menu"> -->
-<!-- 		<a class="button">Menu</a> -->
-<!-- 		<div class="container"><ul>
-	<li><a href="/about">About</a></li>
-	<li><a href="/archives">Archives</a></li>
-	<li><a href="/contact">Contact</a></li>
-</ul>
-</div> -->
-<!-- 	</div> -->
-<!-- </nav> -->
-
 
 </header>
-
-	<div id="content" class="inner"><article class="post">
+	<div id="content" class="inner" role="main"><article class="post" role="main">
 	<header>
 		<h2 class="title">Server Side console.log</h2>
 		<div class="meta date">
@@ -60,7 +40,7 @@
   
 
 
-<time datetime="2010-09-15T00:00:00-07:00" pubdate data-updated="true">Sep 15<span>th</span>, 2010</time></div>
+<time datetime="2010-09-15T00:00:00-07:00" pubdate data-updated="true"></time></div>
 	</header>
 	<div class="entry-content"><h3 id="the-problem">The problem</h3>
 
@@ -86,12 +66,12 @@
 
 <p>isn’t quite as easy.</p>
 
-<p>Probably the best available tool on mobile at the moment is mobile Safari’s console, which looks like the following when enabled (Settings -&gt; Safari -&gt; Developer -&gt; Debug Console):<br />
-&lt;div id=&#8221;attachment_453&#8221; style=&#8221;width: 710px&#8221; class=&#8221;wp-caption aligncenter&#8221;&gt;
-  <img src="http://davidbcalhoun.com/wp-content/uploads/2010/09/mobile-safari-console.png" alt="" title="mobile-safari-console" width="700" height="480" class="size-full wp-image-453" />&lt;p class=&#8221;wp-caption-text&#8221;&gt;
-    Mobile Safari’s debug console
-  &lt;/p&gt;
-&lt;/div&gt;</p>
+<p>Probably the best available tool on mobile at the moment is mobile Safari’s console, which looks like the following when enabled (Settings -&gt; Safari -&gt; Developer -&gt; Debug Console):</p>
+<div id="attachment_453" style="width: 710px" class="wp-caption aligncenter">
+  <img src="http://davidbcalhoun.com/wp-content/uploads/2010/09/mobile-safari-console.png" alt="" title="mobile-safari-console" width="700" height="480" class="size-full wp-image-453" /><p class="wp-caption-text">
+    Mobile Safari's debug console
+  </p>
+</div>
 
 <p>On the left you can see the debug console displayed above the document itself, and on the right is an example of what you might see after outputting an object or a string of text to</p>
 
@@ -356,11 +336,11 @@ console.toFile(navigator);
 </div>
 </section>
 </div>
-	<footer id="footer" class="inner"><br>
+	<footer id="footer" class="inner" role="contentinfo"><br>
 <br>
 <br>
 <br>
-&copy; 2015
+&copy; 2016
 <a href="mailto:david.b.calhoun@gmail.com">David Calhoun</a> (<a href="https://twitter.com/franksvalli">@franksvalli</a>) - <a href="https://www.linkedin.com/in/davidcalhoun">LinkedIn</a> - <a href="http://themaingate.net/resume/">Resume</a></footer>
 	<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="/javascripts/slash.js"></script> -->
@@ -378,7 +358,7 @@ console.toFile(navigator);
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
@@ -386,7 +366,7 @@ console.toFile(navigator);
 
 
 
-<script src="/javascripts/main.js"></script>
+<script src="/javascripts/main.js" defer></script>
 <!-- <script src="/javascripts/negative-scroll-blur.js"></script> -->
 
 <script>

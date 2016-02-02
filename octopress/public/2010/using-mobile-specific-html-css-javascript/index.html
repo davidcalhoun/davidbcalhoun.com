@@ -1,13 +1,12 @@
-
-<!DOCTYPE HTML>
-<html lang="en-GB">
+<!doctype html>
+<html lang="en-US">
 <head>
 	<meta charset="utf-8">
 	<title>Using mobile-specific HTML, CSS, and JavaScript (Mobile web part 5)  | David Calhoun's blog</title>
 
 	<meta name="author" content="David Calhoun">
 
-<meta name="description" content="(updated June 27, 2011) Mobile-specific HTML Viewport tag Use the viewport tag to properly fit the content to the screen: 1 &lt;meta name=&quot; &hellip;"> <meta name="keywords" content="">
+<meta name="description" content="(updated June 27, 2011) Mobile-specific HTML Viewport tag Use the viewport tag to properly fit the content to the screen: &lt;meta name="viewport" &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -22,30 +21,11 @@
 
 
 <body>
-	<header id="header" class="inner"><h1><a href="/">David Calhoun's blog</a></h1>
+	<header id="header" class="inner" role="banner" aria-labelledby="header_title"><h1><a href="/" id="header_title">David Calhoun's blog</a></h1>
 <span class="tagline"></span>
-<!-- <nav id="main-nav"><ul>
-	<li><a href="/about">About</a></li>
-	<li><a href="/archives">Archives</a></li>
-	<li><a href="/contact">Contact</a></li>
-</ul>
-</nav> -->
-<!-- <nav id="mobile-nav"> -->
-<!-- 	<div class="alignleft menu"> -->
-<!-- 		<a class="button">Menu</a> -->
-<!-- 		<div class="container"><ul>
-	<li><a href="/about">About</a></li>
-	<li><a href="/archives">Archives</a></li>
-	<li><a href="/contact">Contact</a></li>
-</ul>
-</div> -->
-<!-- 	</div> -->
-<!-- </nav> -->
-
 
 </header>
-
-	<div id="content" class="inner"><article class="post">
+	<div id="content" class="inner" role="main"><article class="post" role="main">
 	<header>
 		<h2 class="title">Using Mobile-specific HTML, CSS, and JavaScript (Mobile Web Part 5)</h2>
 		<div class="meta date">
@@ -60,7 +40,7 @@
   
 
 
-<time datetime="2010-06-29T00:00:00-07:00" pubdate data-updated="true">Jun 29<span>th</span>, 2010</time></div>
+<time datetime="2010-06-29T00:00:00-07:00" pubdate data-updated="true"></time></div>
 	</header>
 	<div class="entry-content"><p><em>(updated June 27, 2011)</em></p>
 
@@ -70,109 +50,58 @@
 
 <p>Use the <a href="http://davidbcalhoun.com/2010/viewport-metatag">viewport tag</a> to properly fit the content to the screen:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-</pre></td>
-  <td class="code"><pre><span class="tag">&lt;meta</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">viewport</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">content</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">width=device-width, initial-scale=1.0</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
-</pre></td>
-</tr></table>
-</div>
+<pre lang="html"><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"/&gt;
+</code></pre>
 
 <h4 id="tel-scheme2-to-initiate-phone-calls"><a href="http://www.rfc-editor.org/rfc/rfc3966.txt">Tel scheme</a> (to initiate phone calls)</h4>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-</pre></td>
-  <td class="code"><pre><span class="tag">&lt;a</span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">tel:18005555555</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>Call us at 1-800-555-5555<span class="tag">&lt;/a&gt;</span>
-</pre></td>
-</tr></table>
-</div>
+<pre lang="html"><code>&lt;a href="tel:18005555555"&gt;Call us at 1-800-555-5555&lt;/a&gt;
+</code></pre>
 
 <h4 id="sms-scheme3-to-initiate-text-messages"><a href="http://www.rfc-editor.org/rfc/rfc5724.txt">Sms scheme</a> (to initiate text messages)</h4>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-</pre></td>
-  <td class="code"><pre><span class="tag">&lt;a</span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">sms:18005555555</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-<span class="tag">&lt;a</span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">sms:18005555555,18005555556</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>                <span class="comment">&lt;!-- multiple recipients --&gt;</span>
-<span class="tag">&lt;a</span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">sms:18005555555?body=Text%20goes%20here</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>    <span class="comment">&lt;!-- predefined message body --&gt;</span>
-</pre></td>
-</tr></table>
-</div>
+<pre lang="html"><code>&lt;a href="sms:18005555555"&gt;
+&lt;a href="sms:18005555555,18005555556"&gt;                &lt;!-- multiple recipients --&gt;
+&lt;a href="sms:18005555555?body=Text%20goes%20here"&gt;    &lt;!-- predefined message body --&gt;
+</code></pre>
 
 <h4 id="disable-automatic-telephone-number-linking">Disable automatic telephone number linking</h4>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-</pre></td>
-  <td class="code"><pre><span class="tag">&lt;meta</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">format-detection</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">content</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">telephone=no</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-</pre></td>
-</tr></table>
-</div>
+<pre lang="html"><code>&lt;meta name="format-detection" content="telephone=no"&gt;
+</code></pre>
 
 <h4 id="ios-specific-html-some-work-on-android-as-well">iOS-specific HTML (some work on Android as well)</h4>
 
 <p>You also have access to several <a href="http://developer.apple.com/library/safari/#documentation/appleapplications/reference/safariwebcontent/configuringwebapplications/configuringwebapplications.html">Apple-specific tags to use in your iOS applications (iPhone, iPad, and don’t forget the iPod Touch!)</a>.</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-<a href="#n12" name="n12">12</a>
-<a href="#n13" name="n13">13</a>
-<a href="#n14" name="n14">14</a>
-<a href="#n15" name="n15">15</a>
-<a href="#n16" name="n16">16</a>
-<a href="#n17" name="n17">17</a>
-<a href="#n18" name="n18">18</a>
-<a href="#n19" name="n19">19</a>
-<strong><a href="#n20" name="n20">20</a></strong>
-</pre></td>
-  <td class="code"><pre><span class="comment">&lt;!-- iOS 1.1.3+: this is the icon that's used when the user adds your app to the home screen --&gt;</span>
+<pre lang="html"><code>&lt;!-- iOS 1.1.3+: this is the icon that's used when the user adds your app to the home screen --&gt;
 
-<span class="comment">&lt;!-- also works on Android! --&gt;</span>
-<span class="tag">&lt;link</span> <span class="attribute-name">rel</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">apple-touch-icon</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">icon.png</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
+&lt;!-- also works on Android! --&gt;
+&lt;link rel="apple-touch-icon" href="icon.png" /&gt;
 
-<span class="comment">&lt;!-- iOS 2.0+: tell iOS not to apply any glare effects to the icon --&gt;</span>
-<span class="tag">&lt;link</span> <span class="attribute-name">rel</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">apple-touch-icon-precomposed</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">icon.png</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
+&lt;!-- iOS 2.0+: tell iOS not to apply any glare effects to the icon --&gt;
+&lt;link rel="apple-touch-icon-precomposed" href="icon.png" /&gt;
 
-<span class="comment">&lt;!-- iOS 4.2+ icons for different resolutions --&gt;</span>
-<span class="tag">&lt;link</span> <span class="attribute-name">rel</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">apple-touch-icon</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">sizes</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">72x72</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">touch-icon-ipad.png</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
-<span class="tag">&lt;link</span> <span class="attribute-name">rel</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">apple-touch-icon</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">sizes</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">114x114</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">touch-icon-iphone4.png</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
+&lt;!-- iOS 4.2+ icons for different resolutions --&gt;
+&lt;link rel="apple-touch-icon" sizes="72x72" href="touch-icon-ipad.png" /&gt;
+&lt;link rel="apple-touch-icon" sizes="114x114" href="touch-icon-iphone4.png" /&gt;
 
-<span class="comment">&lt;!-- iOS 3+: full-screen startup splash screen image (must be 320x460) --&gt;</span>
-<span class="tag">&lt;link</span> <span class="attribute-name">rel</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">apple-touch-startup-image</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">startup.png</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
+&lt;!-- iOS 3+: full-screen startup splash screen image (must be 320x460) --&gt;
+&lt;link rel="apple-touch-startup-image" href="startup.png" /&gt;
 
-<span class="comment">&lt;!-- enable full-screen mode (only when launched from home screen) --&gt;</span>
-<span class="tag">&lt;meta</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">apple-mobile-web-app-capable</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">content</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">yes</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
+&lt;!-- enable full-screen mode (only when launched from home screen) --&gt;
+&lt;meta name="apple-mobile-web-app-capable" content="yes" /&gt;
 
-<span class="comment">&lt;!-- controls the appearance of the status bar in full-screen mode --&gt;</span>
-<span class="tag">&lt;meta</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">apple-mobile-web-app-status-bar-style</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">content</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">black</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
-</pre></td>
-</tr></table>
-</div>
+&lt;!-- controls the appearance of the status bar in full-screen mode --&gt;
+&lt;meta name="apple-mobile-web-app-status-bar-style" content="black" /&gt;
+</code></pre>
 
 <h4 id="turn-off-autocorrect-autocomplete-and-autocapitalize">Turn off autocorrect, autocomplete, and autocapitalize</h4>
 
 <p>And also some handy attributes to turn off annoying autocorrect features:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-</pre></td>
-  <td class="code"><pre><span class="tag">&lt;input</span> <span class="attribute-name">autocorrect</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">off</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">autocomplete</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">off</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">autocapitalize</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">off</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-</pre></td>
-</tr></table>
-</div>
+<pre lang="html"><code>&lt;input autocorrect="off" autocomplete="off" autocapitalize="off"&gt;
+</code></pre>
 
 <h3 id="mobile-specific-css">Mobile-specific CSS</h3>
 
@@ -182,17 +111,10 @@
 
 <p>Also, iOS 5 has additional CSS to give the native scrollbar and momentum/intertia to elements with overflow:scroll:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-</pre></td>
-  <td class="code"><pre><span class="tag">div</span> {
-  <span class="key">-webkit-overflow-scrolling</span>: <span class="value">touch</span>;
+<pre lang="css"><code>div {
+  -webkit-overflow-scrolling: touch;
 }
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
 <h4 id="media-queries">Media queries</h4>
 
@@ -200,75 +122,40 @@
 
 <p>You can use them two ways: 1) inline in a CSS stylesheet or 2) as the “media” attribute in the link tag, which loads an external stylesheet. The following is an example of inline CSS that’s applied only when the device is in portrait mode:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-</pre></td>
-  <td class="code"><pre><span class="directive">@media</span> <span class="type">all</span> <span class="error">a</span><span class="error">n</span><span class="error">d</span> (<span class="error">o</span><span class="error">r</span><span class="error">i</span><span class="error">e</span><span class="error">n</span><span class="error">t</span><span class="error">a</span><span class="error">t</span><span class="error">i</span><span class="error">o</span><span class="error">n</span>: <span class="error">p</span><span class="error">o</span><span class="error">r</span><span class="error">t</span><span class="error">r</span><span class="error">a</span><span class="error">i</span><span class="error">t</span>) {
-  <span class="tag">body</span> { }
-  <span class="tag">div</span> { }
+<pre lang="css"><code>@media all and (orientation: portrait) {
+  body { }
+  div { }
 }
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
 <p>Here’s the same media query using the other method, which points to an external stylesheet (not recommended):</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-</pre></td>
-  <td class="code"><pre><span class="error">&lt;</span><span class="tag">link</span> <span class="tag">rel</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">stylesheet</span><span class="delimiter">&quot;</span></span> <span class="tag">media</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">all and (orientation: portrait)</span><span class="delimiter">&quot;</span></span> <span class="tag">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">portrait.css</span><span class="delimiter">&quot;</span></span> /&gt;
-</pre></td>
-</tr></table>
-</div>
+<pre lang="css"><code>&lt;link rel="stylesheet" media="all and (orientation: portrait)" href="portrait.css" /&gt;
+</code></pre>
 
 <p>This is not recommended because it creates an additional HTTP request (bad for performance). Also, in the case of screen orientation, the separate CSS stylesheet is NOT downloaded when the screen is rotated.</p>
 
 <p>Here’s a few examples of using inline CSS:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-<a href="#n12" name="n12">12</a>
-<a href="#n13" name="n13">13</a>
-<a href="#n14" name="n14">14</a>
-<a href="#n15" name="n15">15</a>
-<a href="#n16" name="n16">16</a>
-<a href="#n17" name="n17">17</a>
-<a href="#n18" name="n18">18</a>
-</pre></td>
-  <td class="code"><pre>// <span class="tag">target</span> <span class="tag">small</span> <span class="tag">screens</span> (<span class="tag">mobile</span> <span class="tag">devices</span> <span class="tag">or</span> <span class="tag">small</span> <span class="tag">desktop</span> <span class="tag">windows</span>)
-<span class="directive">@media</span> <span class="type">only</span> <span class="error">s</span><span class="error">c</span><span class="error">r</span><span class="error">e</span><span class="error">e</span><span class="error">n</span> <span class="error">a</span><span class="error">n</span><span class="error">d</span> (<span class="error">m</span><span class="error">a</span><span class="error">x</span><span class="error">-</span><span class="error">w</span><span class="error">i</span><span class="error">d</span><span class="error">t</span><span class="error">h</span>: <span class="float">480px</span>) {
-  <span class="comment">/* CSS goes here */</span>
+<pre lang="css"><code>// target small screens (mobile devices or small desktop windows)
+@media only screen and (max-width: 480px) {
+  /* CSS goes here */
 }
 
-<span class="comment">/* high resolution screens */</span>
-<span class="directive">@media</span> (<span class="type">-webkit-min-device-pixel-ratio</span>: <span class="float">2</span>),
-             (<span class="error">m</span><span class="error">i</span><span class="error">n</span><span class="error">-</span><span class="error">-</span><span class="error">m</span><span class="error">o</span><span class="error">z</span><span class="error">-</span><span class="error">d</span><span class="error">e</span><span class="error">v</span><span class="error">i</span><span class="error">c</span><span class="error">e</span><span class="error">-</span><span class="error">p</span><span class="error">i</span><span class="error">x</span><span class="error">e</span><span class="error">l</span><span class="error">-</span><span class="error">r</span><span class="error">a</span><span class="error">t</span><span class="error">i</span><span class="error">o</span>: <span class="float">2</span>),
-             (<span class="error">m</span><span class="error">i</span><span class="error">n</span><span class="error">-</span><span class="error">r</span><span class="error">e</span><span class="error">s</span><span class="error">o</span><span class="error">l</span><span class="error">u</span><span class="error">t</span><span class="error">i</span><span class="error">o</span><span class="error">n</span>: <span class="float">300dpi</span>) {
-  <span class="tag">header</span> { <span class="key">background-image</span>: <span class="function"><span class="delimiter">url(</span><span class="content">header-highres.png</span><span class="delimiter">)</span></span>; }
+/* high resolution screens */
+@media (-webkit-min-device-pixel-ratio: 2),
+             (min--moz-device-pixel-ratio: 2),
+             (min-resolution: 300dpi) {
+  header { background-image: url(header-highres.png); }
 }
 
-<span class="comment">/* low resolution screens */</span>
-<span class="directive">@media</span> (<span class="type">-webkit-max-device-pixel-ratio</span>: <span class="float">1.5</span>),
-             (<span class="error">m</span><span class="error">a</span><span class="error">x</span><span class="error">-</span><span class="error">-</span><span class="error">m</span><span class="error">o</span><span class="error">z</span><span class="error">-</span><span class="error">d</span><span class="error">e</span><span class="error">v</span><span class="error">i</span><span class="error">c</span><span class="error">e</span><span class="error">-</span><span class="error">p</span><span class="error">i</span><span class="error">x</span><span class="error">e</span><span class="error">l</span><span class="error">-</span><span class="error">r</span><span class="error">a</span><span class="error">t</span><span class="error">i</span><span class="error">o</span>: <span class="float">1.5</span>),
-             (<span class="error">m</span><span class="error">a</span><span class="error">x</span><span class="error">-</span><span class="error">r</span><span class="error">e</span><span class="error">s</span><span class="error">o</span><span class="error">l</span><span class="error">u</span><span class="error">t</span><span class="error">i</span><span class="error">o</span><span class="error">n</span>: <span class="float">299dpi</span>) {
-  <span class="tag">header</span> { <span class="key">background-image</span>: <span class="function"><span class="delimiter">url(</span><span class="content">header-lowres.png</span><span class="delimiter">)</span></span>; }
+/* low resolution screens */
+@media (-webkit-max-device-pixel-ratio: 1.5),
+             (max--moz-device-pixel-ratio: 1.5),
+             (max-resolution: 299dpi) {
+  header { background-image: url(header-lowres.png); }
 }
-</pre></td>
-</tr></table>
-</div>
+</code></pre>
 
 <p>Read more: <a href="https://developer.mozilla.org/en/css/media_queries">Media queries (Mozilla Developer Center)</a></p>
 
@@ -347,33 +234,18 @@
 
 <p>While iOS is still lacking basic file inputs, Android is forging ahead, giving developers fine-grained control over content users can upload.</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-</pre></td>
-  <td class="code"><pre><span class="comment">&lt;!-- regular file upload (Android 2.2+, NO iOS) --&gt;</span>
-<span class="tag">&lt;input</span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">file</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/input&gt;</span>
+<pre lang="html"><code>&lt;!-- regular file upload (Android 2.2+, NO iOS) --&gt;
+&lt;input type="file"&gt;&lt;/input&gt;
 
-<span class="comment">&lt;!-- opens directly to the camera (Android 3.0+) --&gt;</span>
-<span class="tag">&lt;input</span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">file</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">accept</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">image/*;capture=camera</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/input&gt;</span>
+&lt;!-- opens directly to the camera (Android 3.0+) --&gt;
+&lt;input type="file" accept="image/*;capture=camera"&gt;&lt;/input&gt;
 
-<span class="comment">&lt;!-- opens directly to the camera in video mode (Android 3.0+) --&gt;</span>
-<span class="tag">&lt;input</span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">file</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">accept</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">video/*;capture=camcorder</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/input&gt;</span>
+&lt;!-- opens directly to the camera in video mode (Android 3.0+) --&gt;
+&lt;input type="file" accept="video/*;capture=camcorder"&gt;&lt;/input&gt;
 
-<span class="comment">&lt;!-- opens directly to the audio recorder (Android 3.0+) --&gt;</span>
-<span class="tag">&lt;input</span> <span class="attribute-name">type</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">file</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">accept</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">audio/*;capture=microphone</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/input&gt;</span>
-</pre></td>
-</tr></table>
-</div>
+&lt;!-- opens directly to the audio recorder (Android 3.0+) --&gt;
+&lt;input type="file" accept="audio/*;capture=microphone"&gt;&lt;/input&gt;
+</code></pre>
 
 <h4 id="blackberry-specific">BlackBerry specific</h4>
 
@@ -453,11 +325,11 @@
 </div>
 </section>
 </div>
-	<footer id="footer" class="inner"><br>
+	<footer id="footer" class="inner" role="contentinfo"><br>
 <br>
 <br>
 <br>
-&copy; 2015
+&copy; 2016
 <a href="mailto:david.b.calhoun@gmail.com">David Calhoun</a> (<a href="https://twitter.com/franksvalli">@franksvalli</a>) - <a href="https://www.linkedin.com/in/davidcalhoun">LinkedIn</a> - <a href="http://themaingate.net/resume/">Resume</a></footer>
 	<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="/javascripts/slash.js"></script> -->
@@ -475,7 +347,7 @@
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
@@ -483,7 +355,7 @@
 
 
 
-<script src="/javascripts/main.js"></script>
+<script src="/javascripts/main.js" defer></script>
 <!-- <script src="/javascripts/negative-scroll-blur.js"></script> -->
 
 <script>

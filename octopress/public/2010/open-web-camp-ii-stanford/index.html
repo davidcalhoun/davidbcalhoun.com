@@ -1,6 +1,5 @@
-
-<!DOCTYPE HTML>
-<html lang="en-GB">
+<!doctype html>
+<html lang="en-US">
 <head>
 	<meta charset="utf-8">
 	<title>Open Web Camp II at Stanford (July 17, 2010)  | David Calhoun's blog</title>
@@ -22,30 +21,11 @@
 
 
 <body>
-	<header id="header" class="inner"><h1><a href="/">David Calhoun's blog</a></h1>
+	<header id="header" class="inner" role="banner" aria-labelledby="header_title"><h1><a href="/" id="header_title">David Calhoun's blog</a></h1>
 <span class="tagline"></span>
-<!-- <nav id="main-nav"><ul>
-	<li><a href="/about">About</a></li>
-	<li><a href="/archives">Archives</a></li>
-	<li><a href="/contact">Contact</a></li>
-</ul>
-</nav> -->
-<!-- <nav id="mobile-nav"> -->
-<!-- 	<div class="alignleft menu"> -->
-<!-- 		<a class="button">Menu</a> -->
-<!-- 		<div class="container"><ul>
-	<li><a href="/about">About</a></li>
-	<li><a href="/archives">Archives</a></li>
-	<li><a href="/contact">Contact</a></li>
-</ul>
-</div> -->
-<!-- 	</div> -->
-<!-- </nav> -->
-
 
 </header>
-
-	<div id="content" class="inner"><article class="post">
+	<div id="content" class="inner" role="main"><article class="post" role="main">
 	<header>
 		<h2 class="title">Open Web Camp II at Stanford (July 17, 2010)</h2>
 		<div class="meta date">
@@ -60,7 +40,7 @@
   
 
 
-<time datetime="2010-07-17T00:00:00-07:00" pubdate data-updated="true">Jul 17<span>th</span>, 2010</time></div>
+<time datetime="2010-07-17T00:00:00-07:00" pubdate data-updated="true"></time></div>
 	</header>
 	<div class="entry-content"><p>Open Web Camp II at Stanford today was a blast! Lots of information. Plenty I’m already familiar with, but also lots I learned.</p>
 
@@ -139,7 +119,7 @@ border-radius: 20px / 10px;
 -screen readers obey display: none and visibility: hidden and that to hide something from normal users you have to position it offscreen (with negative left or text-indent).<br />
 -how to make basic tables accessible by taking advantage of table summary and caption, as well as putting tables headings into the &lt;thead&gt; element.</p>
 
-<p>I’m still trying to absorb it, but Todd also mentioned that a simple anchor tag for a button didn’t semantically make sense, and that it was more semantic to have a span wrapped around a &lt;button&gt;. I guess I either don’t understand fully or I just disagree, since a &lt;button&gt; appears within a form and sometimes it just may be a cleaner solution to use a simple anchor tag. I guess I will need to look into this more.</p>
+<p>I’m still trying to absorb it, but Todd also mentioned that a simple anchor tag for a button didn’t semantically make sense, and that it was more semantic to have a span wrapped around a <button>. I guess I either don’t understand fully or I just disagree, since a <button> appears within a form and sometimes it just may be a cleaner solution to use a simple anchor tag. I guess I will need to look into this more.</button></button></p>
 
 <h3 id="joseph-r-lewis-8220refactoring-for-mobile8221">Joseph R. Lewis: “Refactoring for Mobile”</h3>
 
@@ -214,11 +194,11 @@ border-radius: 20px / 10px;
 </div>
 </section>
 </div>
-	<footer id="footer" class="inner"><br>
+	<footer id="footer" class="inner" role="contentinfo"><br>
 <br>
 <br>
 <br>
-&copy; 2015
+&copy; 2016
 <a href="mailto:david.b.calhoun@gmail.com">David Calhoun</a> (<a href="https://twitter.com/franksvalli">@franksvalli</a>) - <a href="https://www.linkedin.com/in/davidcalhoun">LinkedIn</a> - <a href="http://themaingate.net/resume/">Resume</a></footer>
 	<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="/javascripts/slash.js"></script> -->
@@ -236,7 +216,7 @@ border-radius: 20px / 10px;
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
@@ -244,7 +224,7 @@ border-radius: 20px / 10px;
 
 
 
-<script src="/javascripts/main.js"></script>
+<script src="/javascripts/main.js" defer></script>
 <!-- <script src="/javascripts/negative-scroll-blur.js"></script> -->
 
 <script>

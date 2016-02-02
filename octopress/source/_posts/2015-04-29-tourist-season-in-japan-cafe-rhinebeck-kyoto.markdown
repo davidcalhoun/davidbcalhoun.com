@@ -30,10 +30,7 @@ Gaijin-to-gaijin interaction has always been really strange in Japan, like they 
 
 In addition to all the western tourists, there are of course also tons of Japanese tourists from other parts of Japan, coming to enjoy the cherry blossoms.  And like everyone else, they are scrambling to snap billions of photos of the damned blossoms with their selfie-sticks and tablets and random devices.
 
-<blockquote>
-"The cherries’ only fault: the crowds that gather when they bloom"
-Saigyo, 12th-century poet
-</blockquote>
+>"The cherries’ only fault: the crowds that gather when they bloom"<br>Saigyo, 12th-century poet
 
 When I returned to Todaiji in Nara to see the Great Buddha, there was of course a big crowd.  I picked this day to finally try my small Glidecam, my new gadget which is great for stabilizing video.
 

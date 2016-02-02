@@ -6,13 +6,13 @@ comments: true
 categories: javascript amd commonjs
 ---
 
-### Intro
+## Intro
 Over the years there's been a steadily increasing ecosystem of JavaScript components to choose from.  The sheer amount of choices is fantastic, but this also infamously presents a difficulty when components are mixed-and-matched.  And it doesn't take too long for budding developers to find out that not all components are built to play nicely together.
 
 To address these issues, the competing module specs AMD and CommonJS have appeared on the scene, allowing developers to write their code in an agreed-upon sandboxed and modularized way, so as not to "pollute the ecosystem".
 
 
-### AMD
+## AMD
 Asynchronous Module Definition (AMD) has gained traction on the frontend, with RequireJS being the most popular implementation.
 
 Here's module ```foo``` with a single dependency on ```jquery```:
@@ -53,7 +53,7 @@ Also note that we can map the dependencies to any arbitrary variables we want he
 And note, most importantly, that you can't reference the variables ```$``` and ```_``` outside of the function, because it's sandboxed from other code.  That's the goal here!
 
 
-### CommonJS
+## CommonJS
 
 CommonJS is a style you may be familiar with if you're written anything in Node (which uses a slight variant).  It's also been gaining traction on the frontend with Browserify.
 
@@ -89,7 +89,7 @@ And our more complicate example, with multiple dependencies and multiple exposed
     };
 {:lang="javascript"}
 
-### UMD: Universal Module Definition
+## UMD: Universal Module Definition
 
 Since CommonJS and AMD styles have both been equally popular, it seems there's yet no consensus.  This has brought about the push for a "universal" pattern that supports both styles, which brings us to none other than the Universal Module Definition.
 

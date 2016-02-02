@@ -1,20 +1,12 @@
-
-<!DOCTYPE HTML>
-<html lang="en-GB">
+<!doctype html>
+<html lang="en-US">
 <head>
 	<meta charset="utf-8">
 	<title>JavaScript Tidbit: Shorthand Object Instantiation  | David Calhoun's blog</title>
 
 	<meta name="author" content="David Calhoun">
 
-<meta name="description" content="The skinny: here’s a neat little trick to reduce the amount of code users have to type to instantiate objects: 1
-2
-3
-4
-5
-6
-7
-8 function jQuery(str, &hellip;"> <meta name="keywords" content="">
+<meta name="description" content="The skinny: here’s a neat little trick to reduce the amount of code users have to type to instantiate objects: function jQuery(str, con){ if ( window &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -29,30 +21,11 @@
 
 
 <body>
-	<header id="header" class="inner"><h1><a href="/">David Calhoun's blog</a></h1>
+	<header id="header" class="inner" role="banner" aria-labelledby="header_title"><h1><a href="/" id="header_title">David Calhoun's blog</a></h1>
 <span class="tagline"></span>
-<!-- <nav id="main-nav"><ul>
-	<li><a href="/about">About</a></li>
-	<li><a href="/archives">Archives</a></li>
-	<li><a href="/contact">Contact</a></li>
-</ul>
-</nav> -->
-<!-- <nav id="mobile-nav"> -->
-<!-- 	<div class="alignleft menu"> -->
-<!-- 		<a class="button">Menu</a> -->
-<!-- 		<div class="container"><ul>
-	<li><a href="/about">About</a></li>
-	<li><a href="/archives">Archives</a></li>
-	<li><a href="/contact">Contact</a></li>
-</ul>
-</div> -->
-<!-- 	</div> -->
-<!-- </nav> -->
-
 
 </header>
-
-	<div id="content" class="inner"><article class="post">
+	<div id="content" class="inner" role="main"><article class="post" role="main">
 	<header>
 		<h2 class="title">JavaScript Tidbit: Shorthand Object Instantiation</h2>
 		<div class="meta date">
@@ -67,31 +40,19 @@
   
 
 
-<time datetime="2009-09-14T00:00:00-07:00" pubdate data-updated="true">Sep 14<span>th</span>, 2009</time></div>
+<time datetime="2009-09-14T00:00:00-07:00" pubdate data-updated="true"></time></div>
 	</header>
 	<div class="entry-content"><p>The skinny: here’s a neat little trick to reduce the amount of code users have to type to instantiate objects:</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-</pre></td>
-  <td class="code"><pre><span class="keyword">function</span> <span class="function">jQuery</span>(str, con){
-    <span class="keyword">if</span> ( window == <span class="local-variable">this</span> )
-        <span class="keyword">return</span> <span class="keyword">new</span> jQuery(str, con);
-    <span class="comment">// ...</span>
+<pre lang="js"><code>function jQuery(str, con){
+    if ( window == this )
+        return new jQuery(str, con);
+    // ...
 }
 
-<span class="keyword">new</span> jQuery(<span class="string"><span class="delimiter">&quot;</span><span class="content">#foo</span><span class="delimiter">&quot;</span></span>); <span class="comment">// this is now equivalent...</span>
-jQuery(<span class="string"><span class="delimiter">&quot;</span><span class="content">#foo</span><span class="delimiter">&quot;</span></span>);     <span class="comment">// ...to this!</span>
-</pre></td>
-</tr></table>
-</div>
+new jQuery("#foo"); // this is now equivalent...
+jQuery("#foo");     // ...to this!
+</code></pre>
 
 <p>Explanation: when jQuery(“#foo”) is typed, the function first determines if the context in which it’s being called is the global object (window).  If it is, it returns an instantiation of itself.  When it’s instantiated, the context in which it’s being called is inside its own function, and NOT within the global object (window), thus it bypasses our little instantiation trick and moves on to execute any remaining code in the function.</p>
 
@@ -133,11 +94,11 @@ jQuery(<span class="string"><span class="delimiter">&quot;</span><span class="co
 </div>
 </section>
 </div>
-	<footer id="footer" class="inner"><br>
+	<footer id="footer" class="inner" role="contentinfo"><br>
 <br>
 <br>
 <br>
-&copy; 2015
+&copy; 2016
 <a href="mailto:david.b.calhoun@gmail.com">David Calhoun</a> (<a href="https://twitter.com/franksvalli">@franksvalli</a>) - <a href="https://www.linkedin.com/in/davidcalhoun">LinkedIn</a> - <a href="http://themaingate.net/resume/">Resume</a></footer>
 	<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="/javascripts/slash.js"></script> -->
@@ -155,7 +116,7 @@ jQuery(<span class="string"><span class="delimiter">&quot;</span><span class="co
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
@@ -163,7 +124,7 @@ jQuery(<span class="string"><span class="delimiter">&quot;</span><span class="co
 
 
 
-<script src="/javascripts/main.js"></script>
+<script src="/javascripts/main.js" defer></script>
 <!-- <script src="/javascripts/negative-scroll-blur.js"></script> -->
 
 <script>
