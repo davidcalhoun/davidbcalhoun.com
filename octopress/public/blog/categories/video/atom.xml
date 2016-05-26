@@ -4,7 +4,7 @@
   <title><![CDATA[Category: video | David Calhoun's blog]]></title>
   <link href="http://davidbcalhoun.com/blog/categories/video/atom.xml" rel="self"/>
   <link href="http://davidbcalhoun.com/"/>
-  <updated>2016-01-26T10:21:31-08:00</updated>
+  <updated>2016-05-26T09:01:40+09:00</updated>
   <id>http://davidbcalhoun.com/</id>
   <author>
     <name><![CDATA[David Calhoun]]></name>
@@ -14,21 +14,104 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Video: John Resig &#8211; Testing, Performance Analysis, and jQuery 1.4]]></title>
-    <link href="http://davidbcalhoun.com/2009/video-john-resig-testing-performance-analysis-and-jquery-1-4"/>
-    <updated>2009-12-21T00:00:00-08:00</updated>
-    <id>http://davidbcalhoun.com/2009/video-john-resig-testing-performance-analysis-and-jquery-1-4</id>
-    <content type="html"><![CDATA[<p>In case you hadn’t seen it yet, <a href="http://ejohn.org/">John Resig</a> was kind enough to stop by Yahoo! for the December <a href="http://www.meetup.com/BayJax/">Bayjax</a> meetup. Here’s the <a href="http://developer.yahoo.com/yui/theater/video.php?v=resig-testing">video</a>:</p>
+    <title type="html"><![CDATA[Festival Parade Hadrah 2016 (Muslim parade in Solo, Indonesia)]]></title>
+    <link href="http://davidbcalhoun.com/2016/festival-parade-hadrah-2016-muslim-parade-in-solo-indonesia/"/>
+    <updated>2016-05-26T08:52:04+09:00</updated>
+    <id>http://davidbcalhoun.com/2016/festival-parade-hadrah-2016-muslim-parade-in-solo-indonesia</id>
+    <content type="html"><![CDATA[<iframe width="640" height="360" src="https://www.youtube.com/embed/2fXPFjFRjLo" frameborder="0" allowfullscreen=""></iframe>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Indonesia trip: the good, the bad, the ugly]]></title>
+    <link href="http://davidbcalhoun.com/2016/indonesia-trip-the-good-the-bad-the-ugly/"/>
+    <updated>2016-05-25T10:26:07+09:00</updated>
+    <id>http://davidbcalhoun.com/2016/indonesia-trip-the-good-the-bad-the-ugly</id>
+    <content type="html"><![CDATA[<iframe width="640" height="480" src="https://www.youtube.com/embed/_V4cE4XgU3o" frameborder="0" allowfullscreen=""></iframe>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The roads of Indonesia]]></title>
+    <link href="http://davidbcalhoun.com/2016/the-roads-of-indonesia/"/>
+    <updated>2016-05-18T16:50:56+09:00</updated>
+    <id>http://davidbcalhoun.com/2016/the-roads-of-indonesia</id>
+    <content type="html"><![CDATA[<iframe width="640" height="360" src="https://www.youtube.com/embed/BQsSk53ACZA" frameborder="0" allowfullscreen=""></iframe>
 
-<div class="video" style="width:576px; height: 324px;">
-</div>
+<p>The biggest culture shock of Indonesia had to be the bathroom facilities, but that’s best saved for another post.  The second biggest culture shock had to be the roads, and the drivers on them.</p>
 
-<p>Usually developers are more interested in just getting the dang code to work, and as a result actual the testing and maintenance of JavaScript isn’t talked about too much, so I’m sure this will be new territory for many developers. And since it’s John Resig speaking, there was of course a bit about using <a href="http://testswarm.com/">TestSwarm</a>, a testing distributed framework-agnostic automated testing tool (that’s a mouthful!).</p>
+<p>I’ve never been to any third world Asian country before, so the idea of seeing roads dominated by scooters and motorcycles was really a foreign concept to me.  This also meant that the style of driving is way different.  There is plenty of honking, mostly as a way to say “I’m here” and nothing more.  I didn’t really see anyone get upset because they were being honked at here - nothing like things might be in New York, for instance.</p>
 
-<p>Included in the talk are good things to note while testing, such as the fact unless you’re running Firefox or Chrome on Windows, all test times have a margin of error of up to 15ms (not to be confused with <a href="http://www.quirksmode.org/blog/archives/2009/08/when_to_read_ou.html">PPK’s observation of the delay between JavaScript computation and browser rendering</a>).</p>
+<p>Another scary thing is they way drivers are not afraid to overtake each other.  Wherever we went we took taxis or larger vans.  Our drivers would often pass slower motorcycles even when it wasn’t 100% clear on the other side, since they could effectively used the middle of the road, with motorcycles in each direction on the sides.</p>
 
-<p>(via <a href="http://www.yuiblog.com/blog/2009/12/16/video-resig-testing-and-jquery/">YUIBlog</a>)</p>
+<p>It was often scary, especially when it was rainy and late at night, when our tour driver needed to get back in a hurry.</p>
 
+<p>In any case, we survived.  So enjoy this video of one of the calmer moments in Lombok.  Keep an eye out for the horse and buggy.  No idea what that’s all about - maybe they keep it around for the tourists?</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Monju-e Ceremony in Nara (文殊会 興福寺)]]></title>
+    <link href="http://davidbcalhoun.com/2016/monju-e-ceremony-in-nara/"/>
+    <updated>2016-04-28T22:34:10+09:00</updated>
+    <id>http://davidbcalhoun.com/2016/monju-e-ceremony-in-nara</id>
+    <content type="html"><![CDATA[<iframe width="640" height="360" src="https://www.youtube.com/embed/jouWE9AYtzs" frameborder="0" allowfullscreen=""></iframe>
+
+<p>From April 25, 2016.</p>
+
+<p>Monju or Manjusri is a bodhisattva of wisdom.  In this ceremony children’s healthy growth and academic success are prayed for.</p>
+
+<p>14:30~ A procession of children in traditional costumes. Starts from Jyokyoji Temple on Sanjyo St. towards Kofukuji Temple.</p>
+
+<p>15:00~ Ritual ceremony at Tokondo Hall in Kofukuji Temple</p>
+
+<p>文殊会 (興福寺)
+毎月25日は文殊菩薩の縁日。東金堂の文殊菩薩は古くから学問僧の信仰を集めてきた。­文殊会では文殊菩薩の智恵を授かろうと稚児の行列が、浄教寺より一字書の奉額車を引い­て三条通りを練り歩きます。 なお、当日堂内の拝観は14時までですが、外からの拝観は可能。（受付終了は13時4­5分）</p>
+
+<p><figure class='center'><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-01.jpg" width="1000" height="666"><figcaption></figcaption></figure></p>
+
+<p><figure class='center'><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-02.jpg" width="1000" height="666"><figcaption></figcaption></figure></p>
+
+<p><figure class='center'><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-03.jpg" width="1000" height="666"><figcaption></figcaption></figure></p>
+
+<p><figure class='center'><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-04.jpg" width="1000" height="666"><figcaption></figcaption></figure></p>
+
+<p><figure class='center'><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-05.jpg" width="1000" height="666"><figcaption></figcaption></figure></p>
+
+<p><figure class='center'><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-06.jpg" width="1000" height="666"><figcaption></figcaption></figure></p>
+
+<p><figure class='center'><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-07.jpg" width="666" height="1000"><figcaption></figcaption></figure></p>
+
+<p><figure class='center'><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-08.jpg" width="666" height="1000"><figcaption></figcaption></figure></p>
+
+<p><figure class='center'><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-09.jpg" width="1000" height="666"><figcaption></figcaption></figure></p>
+
+<p><figure class='center'><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-10.jpg" width="1000" height="666"><figcaption></figcaption></figure></p>
+
+<p><figure class='center'><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-11.jpg" width="1000" height="666"><figcaption></figcaption></figure></p>
+
+<p><figure class='center'><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-12.jpg" width="1000" height="666"><figcaption></figcaption></figure></p>
+
+<p><figure class='center'><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-13.jpg" width="666" height="1000"><figcaption></figcaption></figure></p>
+
+<p><figure class='center'><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-14.jpg" width="1000" height="666"><figcaption></figcaption></figure></p>
+
+<p><figure class='center'><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-15.jpg" width="666" height="1000"><figcaption></figcaption></figure></p>
+
+<p><figure class='center'><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-16.jpg" width="666" height="1000"><figcaption></figcaption></figure></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Japan once again: update from the Banana House in Osaka]]></title>
+    <link href="http://davidbcalhoun.com/2016/japan-once-again/"/>
+    <updated>2016-04-19T19:44:03+09:00</updated>
+    <id>http://davidbcalhoun.com/2016/japan-once-again</id>
+    <content type="html"><![CDATA[<p>I’ve been in Japan for the past few weeks, and have been lazy about updating my blog, which I promised to do!  I’ve been busy sorting through pictures!</p>
+
+<p>Here’s a video update from where I’ll be staying long term at a place called the Banana House:</p>
+
+<iframe width="640" height="360" src="https://www.youtube.com/embed/QlKieqxPFPQ" frameborder="0" allowfullscreen=""></iframe>
 ]]></content>
   </entry>
   

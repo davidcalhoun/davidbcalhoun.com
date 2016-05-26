@@ -4,7 +4,7 @@
   <title><![CDATA[Category: async | David Calhoun's blog]]></title>
   <link href="http://davidbcalhoun.com/blog/categories/async/atom.xml" rel="self"/>
   <link href="http://davidbcalhoun.com/"/>
-  <updated>2016-01-26T10:21:31-08:00</updated>
+  <updated>2016-05-26T09:01:40+09:00</updated>
   <id>http://davidbcalhoun.com/</id>
   <author>
     <name><![CDATA[David Calhoun]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[async.parallel with a simple timeout (node.js)]]></title>
     <link href="http://davidbcalhoun.com/2014/async.parallel-with-a-simple-timeout-node-js/"/>
-    <updated>2014-09-08T00:36:52-07:00</updated>
+    <updated>2014-09-08T16:36:52+09:00</updated>
     <id>http://davidbcalhoun.com/2014/async.parallel-with-a-simple-timeout-node-js</id>
     <content type="html"><![CDATA[<p>A while back I had a need for a general timeout option for async.parallel and was surprised I couldn’t find much information about how to do it.  I was using async.parallel to make a lot of REST calls in parallel, but one of them was getting blocked by a firewall, resulting in an eventual timeout minutes later.</p>
 

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: css | David Calhoun's blog]]></title>
   <link href="http://davidbcalhoun.com/blog/categories/css/atom.xml" rel="self"/>
   <link href="http://davidbcalhoun.com/"/>
-  <updated>2016-01-26T10:21:31-08:00</updated>
+  <updated>2016-05-26T09:01:40+09:00</updated>
   <id>http://davidbcalhoun.com/</id>
   <author>
     <name><![CDATA[David Calhoun]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Introducing Negative Scroll Blur (for browsers that support CSS filters)]]></title>
     <link href="http://davidbcalhoun.com/2013/introducing-negative-scroll-blur-for-browsers-that-support-css-filters"/>
-    <updated>2013-11-23T00:00:00-08:00</updated>
+    <updated>2013-11-23T00:00:00+09:00</updated>
     <id>http://davidbcalhoun.com/2013/introducing-negative-scroll-blur-for-browsers-that-support-css-filters</id>
     <content type="html"><![CDATA[<p><a href="http://davidbcalhoun.com/a/negative-scroll-blur.html">Demo</a></p>
 
@@ -43,7 +43,7 @@
   <entry>
     <title type="html"><![CDATA[More fun with WebKit pseudoelements: -webkit-search-cancel-button (or: Pseudoclass Inception)]]></title>
     <link href="http://davidbcalhoun.com/2012/more-fun-with-webkit-pseudoelements-webkit-search-cancel-button-or-pseudoclass-inception"/>
-    <updated>2012-08-10T00:00:00-07:00</updated>
+    <updated>2012-08-10T00:00:00+09:00</updated>
     <id>http://davidbcalhoun.com/2012/more-fun-with-webkit-pseudoelements-webkit-search-cancel-button-or-pseudoclass-inception</id>
     <content type="html"><![CDATA[<h3 id="introduction">Introduction</h3>
 
@@ -120,7 +120,7 @@
   <entry>
     <title type="html"><![CDATA[Implementing iPhone&#8217;s slider unlock with input type=&#8221;range&#8221;]]></title>
     <link href="http://davidbcalhoun.com/2011/implementing-iphone-slider-unlock-with-input-type-range"/>
-    <updated>2011-01-16T00:00:00-08:00</updated>
+    <updated>2011-01-16T00:00:00+09:00</updated>
     <id>http://davidbcalhoun.com/2011/implementing-iphone-slider-unlock-with-input-type-range</id>
     <content type="html"><![CDATA[<p>(check out the live <a href="http://davidbcalhoun.com/a/iphone-slider.html">demo</a>)</p>
 
@@ -452,7 +452,7 @@ input[type='range']::-webkit-slider-thumb {
   <entry>
     <title type="html"><![CDATA[Does it still make sense to use em rather than px?]]></title>
     <link href="http://davidbcalhoun.com/2010/does-it-still-make-sense-to-use-em-rather-than-px"/>
-    <updated>2010-10-05T00:00:00-07:00</updated>
+    <updated>2010-10-05T00:00:00+09:00</updated>
     <id>http://davidbcalhoun.com/2010/does-it-still-make-sense-to-use-em-rather-than-px</id>
     <content type="html"><![CDATA[<p>Alex Kessinger <a href="http://twitter.com/voidfiles/status/26470129747">tweeted</a> asking if there was a reason to still use EMs instead of PX measurements in mobile. This is an interesting question, but 140 characters isn’t quite enough to explain my thoughts. So here’s an old-fashioned blog post!</p>
 
@@ -492,7 +492,7 @@ input[type='range']::-webkit-slider-thumb {
   <entry>
     <title type="html"><![CDATA[Targeting Internet Explorer (IE): the age-old struggle]]></title>
     <link href="http://davidbcalhoun.com/2010/targeting-ie-the-age-old-struggle"/>
-    <updated>2010-07-07T00:00:00-07:00</updated>
+    <updated>2010-07-07T00:00:00+09:00</updated>
     <id>http://davidbcalhoun.com/2010/targeting-ie-the-age-old-struggle</id>
     <content type="html"><![CDATA[<p>As long as I can remember, developers have always been trying to target IE one way or another. Thanks to the wonders of modern technology, there have been multiple ways to pull this off.</p>
 

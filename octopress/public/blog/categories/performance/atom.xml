@@ -4,7 +4,7 @@
   <title><![CDATA[Category: performance | David Calhoun's blog]]></title>
   <link href="http://davidbcalhoun.com/blog/categories/performance/atom.xml" rel="self"/>
   <link href="http://davidbcalhoun.com/"/>
-  <updated>2016-01-26T10:21:31-08:00</updated>
+  <updated>2016-05-26T09:01:40+09:00</updated>
   <id>http://davidbcalhoun.com/</id>
   <author>
     <name><![CDATA[David Calhoun]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[iOS5 SunSpider: iPhone 4S vs iPhone 4 vs iPhone 3GS]]></title>
     <link href="http://davidbcalhoun.com/2011/ios5-sunspider-iphone-4s-vs-iphone-4-vs-iphone-3gs"/>
-    <updated>2011-10-14T00:00:00-07:00</updated>
+    <updated>2011-10-14T00:00:00+09:00</updated>
     <id>http://davidbcalhoun.com/2011/ios5-sunspider-iphone-4s-vs-iphone-4-vs-iphone-3gs</id>
     <content type="html"><![CDATA[<h3 id="result-table-sunspider-091-all-devices-running-ios-5">Result table (SunSpider 0.9.1, all devices running iOS 5)</h3>
 
@@ -284,7 +284,7 @@
   <entry>
     <title type="html"><![CDATA[Mobile Performance Manifesto]]></title>
     <link href="http://davidbcalhoun.com/2011/mobile-performance-manifesto"/>
-    <updated>2011-10-11T00:00:00-07:00</updated>
+    <updated>2011-10-11T00:00:00+09:00</updated>
     <id>http://davidbcalhoun.com/2011/mobile-performance-manifesto</id>
     <content type="html"><![CDATA[<p><img src="http://davidbcalhoun.com/wp-content/uploads/2011/10/odometer.jpg" alt="" title="Dashboard with odometer" width="800" height="299" class="aligncenter size-full wp-image-806" /></p>
 
@@ -826,7 +826,7 @@ AAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO
   <entry>
     <title type="html"><![CDATA[When to base64 encode images (and when not to)]]></title>
     <link href="http://davidbcalhoun.com/2011/when-to-base64-encode-images-and-when-not-to"/>
-    <updated>2011-08-28T00:00:00-07:00</updated>
+    <updated>2011-08-28T00:00:00+09:00</updated>
     <id>http://davidbcalhoun.com/2011/when-to-base64-encode-images-and-when-not-to</id>
     <content type="html"><![CDATA[<h3 id="introduction">Introduction</h3>
 
@@ -1483,7 +1483,7 @@ AAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO
   <entry>
     <title type="html"><![CDATA[JavaScript SunSpider benchmark: iOS 4.3 vs iOS 4.0]]></title>
     <link href="http://davidbcalhoun.com/2011/javascript-sunspider-benchmark-ios-4-3-vs-ios-4-0"/>
-    <updated>2011-01-22T00:00:00-08:00</updated>
+    <updated>2011-01-22T00:00:00+09:00</updated>
     <id>http://davidbcalhoun.com/2011/javascript-sunspider-benchmark-ios-4-3-vs-ios-4-0</id>
     <content type="html"><![CDATA[<h3 id="result-table-sunspider-091">Result table (SunSpider 0.9.1)</h3>
 
@@ -1755,7 +1755,7 @@ Total:                  5357.3ms +/- 2.3%
   <entry>
     <title type="html"><![CDATA[BlackBerry Torch SunSpider results (JavaScript benchmark)]]></title>
     <link href="http://davidbcalhoun.com/2010/blackberry-torch-sunspider-results-javascript-benchmark"/>
-    <updated>2010-08-18T00:00:00-07:00</updated>
+    <updated>2010-08-18T00:00:00+09:00</updated>
     <id>http://davidbcalhoun.com/2010/blackberry-torch-sunspider-results-javascript-benchmark</id>
     <content type="html"><![CDATA[<h3 id="results">Results</h3>
 

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: php | David Calhoun's blog]]></title>
   <link href="http://davidbcalhoun.com/blog/categories/php/atom.xml" rel="self"/>
   <link href="http://davidbcalhoun.com/"/>
-  <updated>2016-01-26T10:21:31-08:00</updated>
+  <updated>2016-05-26T09:01:40+09:00</updated>
   <id>http://davidbcalhoun.com/</id>
   <author>
     <name><![CDATA[David Calhoun]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[PHP: dealing with stuff that doesn&#8217;t exist]]></title>
     <link href="http://davidbcalhoun.com/2009/php-dealing-with-stuff-that-doesnt-exist"/>
-    <updated>2009-12-01T00:00:00-08:00</updated>
+    <updated>2009-12-01T00:00:00+09:00</updated>
     <id>http://davidbcalhoun.com/2009/php-dealing-with-stuff-that-doesnt-exist</id>
     <content type="html"><![CDATA[<h3 id="introduction">Introduction</h3>
 
