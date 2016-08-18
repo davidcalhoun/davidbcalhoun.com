@@ -5,12 +5,11 @@ comments: true
 author: David
 layout: post
 permalink: /2012/post-a-status-update-to-the-native-facebook-app-from-a-web-link
-categories:
-  - Uncategorized
+categories: ["webdev"]
 ---
 ### **UPDATE 2/25/2013**
 
-**As of Facebook&#8217;s update last year, it appears that many of the old [Facebook URL schemes][1] are no longer working&#8230;**. So this post looks to be outdated and useless already. <img src='http://davidbcalhoun.com/wp-includes/images/smilies/icon_razz.gif' alt=':P' class='wp-smiley' /> 
+**As of Facebook&#8217;s update last year, it appears that many of the old [Facebook URL schemes][1] are no longer working&#8230;**. So this post looks to be outdated and useless already... :)
 
 ### The skinny
 

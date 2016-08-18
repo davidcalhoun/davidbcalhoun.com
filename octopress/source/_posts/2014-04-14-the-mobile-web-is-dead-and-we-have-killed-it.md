@@ -5,10 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2014/the-mobile-web-is-dead-and-we-have-killed-it
-categories:
-  - mobile web
-  - mobile
-  - apps
+categories: ["mobile", "webdev", "mobile web", "apps"]
 tags:
   - mobile
   - web

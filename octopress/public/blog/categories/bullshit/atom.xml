@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: bullshit | David Calhoun's blog]]></title>
+  <title><![CDATA[Category: bullshit | David Calhoun]]></title>
   <link href="http://davidbcalhoun.com/blog/categories/bullshit/atom.xml" rel="self"/>
   <link href="http://davidbcalhoun.com/"/>
-  <updated>2016-05-26T09:01:40+09:00</updated>
+  <updated>2016-08-18T14:00:33-07:00</updated>
   <id>http://davidbcalhoun.com/</id>
   <author>
     <name><![CDATA[David Calhoun]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Agile personals ad]]></title>
     <link href="http://davidbcalhoun.com/2015/agile-personals-ad/"/>
-    <updated>2015-10-09T12:12:42+09:00</updated>
+    <updated>2015-10-08T20:12:42-07:00</updated>
     <id>http://davidbcalhoun.com/2015/agile-personals-ad</id>
     <content type="html"><![CDATA[<p>(In case you didn’t guess, this is a parody.  Please dont send me emails!)</p>
 

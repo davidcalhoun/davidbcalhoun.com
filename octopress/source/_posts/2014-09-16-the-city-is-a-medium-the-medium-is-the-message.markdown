@@ -3,7 +3,7 @@ layout: post
 title: "The City Is A Medium, The Medium Is The Message"
 date: 2014-09-16 19:11:59 -0700
 comments: true
-categories: [philosophy]
+categories: [philosophy, rant]
 ---
 
 {% imgcap left half http://davidbcalhoun.com/wp-content/uploads/2014/kyoto-tanabata-%e4%b8%83%e5%a4%95-star-festival-kamogawa.jpg 1000 666 Vendors along Kamogawa River for the Tanabata (七夕) star festival in Kyoto (Photo by David Calhoun, 2011)  %}

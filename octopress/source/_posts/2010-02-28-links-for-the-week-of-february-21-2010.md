@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2010/links-for-the-week-of-february-21-2010
-categories:
-  - Uncategorized
+categories: ["webdev", "programming"]
 ---
 ### General links
 

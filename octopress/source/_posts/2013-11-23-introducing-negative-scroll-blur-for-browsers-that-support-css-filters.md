@@ -5,11 +5,11 @@ comments: true
 author: David
 layout: post
 permalink: /2013/introducing-negative-scroll-blur-for-browsers-that-support-css-filters
-categories:
-  - css
-  - japanese
-  - mobile
+categories: ["javascript", "demo", "webdev"]
 ---
+
+(2016: in retrospect, this is kind of gratuitous and doesn't appear to be fully working anymore...)
+
 [Demo][1]
 
 Just for fun, I wanted to reproduce a cool but completely superfluous UI I saw in the updated Foursquare app recently. Basically, when the user tries to scroll past the upper bound of the app/page, the header image becomes blurred.

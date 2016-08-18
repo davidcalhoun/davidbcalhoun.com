@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2010/basic-html5-template
-categories:
-  - html
+categories: ["html", "html5", "webdev"]
 ---
 ### Introduction
 

@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2010/how-to-install-obsolete-android-virtual-devices-avds
-categories:
-  - mobile
+categories: ["android", "programming"]
 tags:
   - android
   - avd

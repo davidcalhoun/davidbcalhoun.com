@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2009/pitfalls-of-declaring-variables-in-javascript
-categories:
-  - Uncategorized
+categories: ["webdev", "javascript", "programming"]
 tags:
   - javascript
 ---

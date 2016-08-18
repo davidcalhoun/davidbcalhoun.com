@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: japanese | David Calhoun's blog]]></title>
+  <title><![CDATA[Category: japanese | David Calhoun]]></title>
   <link href="http://davidbcalhoun.com/blog/categories/japanese/atom.xml" rel="self"/>
   <link href="http://davidbcalhoun.com/"/>
-  <updated>2016-05-26T09:01:40+09:00</updated>
+  <updated>2016-08-18T14:00:33-07:00</updated>
   <id>http://davidbcalhoun.com/</id>
   <author>
     <name><![CDATA[David Calhoun]]></name>
@@ -14,36 +14,9 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Introducing Negative Scroll Blur (for browsers that support CSS filters)]]></title>
-    <link href="http://davidbcalhoun.com/2013/introducing-negative-scroll-blur-for-browsers-that-support-css-filters"/>
-    <updated>2013-11-23T00:00:00+09:00</updated>
-    <id>http://davidbcalhoun.com/2013/introducing-negative-scroll-blur-for-browsers-that-support-css-filters</id>
-    <content type="html"><![CDATA[<p><a href="http://davidbcalhoun.com/a/negative-scroll-blur.html">Demo</a></p>
-
-<p>Just for fun, I wanted to reproduce a cool but completely superfluous UI I saw in the updated Foursquare app recently. Basically, when the user tries to scroll past the upper bound of the app/page, the header image becomes blurred.</p>
-
-<p>We can do the same thing on the web by listening for negative scroll and then using (abusing?) CSS filters.</p>
-
-<h3 id="video">Video</h3>
-
-<p><a href="http://www.youtube.com/watch?feature=player_embedded&amp;v=wfuVM1P_qgg " target="_blank"><img src="http://img.youtube.com/vi/wfuVM1P_qgg/0.jpg" alt="Negative Scroll Blur" width="480" height="360" /></a></p>
-
-<h3 id="extra-tweaks-for-mobile">Extra tweaks for mobile</h3>
-
-<p>Note that there’s an extra trick for iOS, which presents problems I had forgotten about (namely, no negative scroll, and a scroll listener which fires once at the end of scrolling). That’s why I had to throw in some extra logic for touchstart/touchmove/touchend.</p>
-
-<h3 id="links">Links</h3>
-
-<p><a href="http://davidbcalhoun.com/a/negative-scroll-blur.html">Demo</a><br />
-<a href="https://github.com/davidcalhoun/negative-scroll-blur">Github</a></p>
-
-]]></content>
-  </entry>
-  
-  <entry>
     <title type="html"><![CDATA[How to import imiwa? vocabulary lists directly into Anki (iOS/iPhone guide)]]></title>
     <link href="http://davidbcalhoun.com/2013/how-to-import-imiwa-vocabulary-lists-directly-into-anki-ios-iphone-guide"/>
-    <updated>2013-02-27T00:00:00+09:00</updated>
+    <updated>2013-02-27T00:00:00-08:00</updated>
     <id>http://davidbcalhoun.com/2013/how-to-import-imiwa-vocabulary-lists-directly-into-anki-ios-iphone-guide</id>
     <content type="html"><![CDATA[<p>EDIT: big thanks to my classmate Robin from Switzerland who showed me the key steps to getting this figured out!</p>
 
@@ -107,9 +80,11 @@
   <entry>
     <title type="html"><![CDATA[I think I&#8217;m learning Japanese: JLPT vocabulary words 1 to 50 (audio)]]></title>
     <link href="http://davidbcalhoun.com/2012/i-think-im-learning-japanese-jlpt-vocabulary-words-1-to-50-audio"/>
-    <updated>2012-05-28T00:00:00+09:00</updated>
+    <updated>2012-05-28T00:00:00-07:00</updated>
     <id>http://davidbcalhoun.com/2012/i-think-im-learning-japanese-jlpt-vocabulary-words-1-to-50-audio</id>
-    <content type="html"><![CDATA[<p>I have been learning bits and pieces of Japanese throughout the years, and picking up more and more on each of my trips to Japan. But now it’s time to buckle down and get disciplined about learning, and make some real progress.</p>
+    <content type="html"><![CDATA[<p>(2016 note: this was a terrible idea because I’m neither a native speaker nor a good speaker in general..  but I’m leaving this up for posterity…)</p>
+
+<p>I have been learning bits and pieces of Japanese throughout the years, and picking up more and more on each of my trips to Japan. But now it’s time to buckle down and get disciplined about learning, and make some real progress.</p>
 
 <p>As with learning any language, having a decent vocabulary is critical in order to form coherent sentences, so I’ve decided to focus on this for the time being, in addition to learning hiragana and katakana and getting it down pat, with no errors.</p>
 

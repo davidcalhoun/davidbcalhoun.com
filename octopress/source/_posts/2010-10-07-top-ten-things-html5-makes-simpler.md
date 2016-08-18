@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2010/top-ten-things-html5-makes-simpler
-categories:
-  - html
+categories: ["html", "html5", "webdev"]
 tags:
   - async
   - autofocus

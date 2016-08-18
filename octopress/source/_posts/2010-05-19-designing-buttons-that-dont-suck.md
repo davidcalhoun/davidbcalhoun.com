@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2010/designing-buttons-that-dont-suck
-categories:
-  - mobile
+categories: ["webdev", "mobile"]
 tags:
   - button
   - testing

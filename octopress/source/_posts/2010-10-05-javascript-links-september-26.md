@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2010/javascript-links-september-26
-categories:
-  - javascript
+categories: ["javascript", "webdev", "programming"]
 tags:
   - links
 ---

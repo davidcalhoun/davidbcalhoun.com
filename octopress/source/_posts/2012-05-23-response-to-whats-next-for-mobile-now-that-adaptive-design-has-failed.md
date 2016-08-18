@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2012/response-to-whats-next-for-mobile-now-that-adaptive-design-has-failed
-categories:
-  - mobile
+categories: ["mobile", "design", "webdev"]
 ---
 There&#8217;s been a flurry of response to [this article, entitled &#8220;What’s next for mobile now that adaptive design has failed?&#8221;][1].
 

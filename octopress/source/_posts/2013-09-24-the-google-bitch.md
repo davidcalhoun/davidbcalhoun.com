@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2013/the-google-bitch
-categories:
-  - Uncategorized
+categories: ["rant"]
 ---
 When I came back from Japan and accepted an offer to work at a startup in Silicon Valley, I knew one of the biggest challenges would be to find a decent and affordable apartment in Mountain View, close to where I&#8217;d be working. I had it all planned out, and how healthy and convenient it would be to walk to work and also Mountain View downtown!
 

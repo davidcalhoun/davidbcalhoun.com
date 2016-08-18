@@ -2,7 +2,7 @@
 <html lang="en-US">
 <head>
 	<meta charset="utf-8">
-	<title>Android 3.0 Honeycomb is first to implement the Device API  | David Calhoun's blog</title>
+	<title>Android 3.0 Honeycomb is first to implement the Device API  | David Calhoun</title>
 
 	<meta name="author" content="David Calhoun">
 
@@ -10,7 +10,7 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link href="/atom.xml" rel="alternate" title="David Calhoun's blog" type="application/atom+xml">
+	<link href="/atom.xml" rel="alternate" title="David Calhoun" type="application/atom+xml">
 	<link rel="canonical" href="">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
 	<!--[if lt IE 9]><script src="/javascripts/html5.js"></script><![endif]-->
@@ -21,7 +21,7 @@
 
 
 <body>
-	<header id="header" class="inner" role="banner" aria-labelledby="header_title"><h1><a href="/" id="header_title">David Calhoun's blog</a></h1>
+	<header id="header" class="inner" role="banner" aria-labelledby="header_title"><h1><a href="/" id="header_title">David Calhoun</a></h1>
 <span class="tagline"></span>
 
 </header>
@@ -40,7 +40,7 @@
   
 
 
-<time datetime="2011-02-24T00:00:00+09:00" pubdate data-updated="true"></time></div>
+<time datetime="2011-02-24T00:00:00-08:00" pubdate data-updated="true"></time></div>
 	</header>
 	<div class="entry-content"><p>I fired up the newly released Android 3.0 SDK to run some tests and found they’ve implemented part of the long-awaited <a href="http://www.w3.org/2009/dap/">Device API</a> (aka the Media Capture API). From your browser you can now upload pictures and videos from the camera as well as sounds from the microphone. The returned data should be available to manipulate via the <a href="http://www.w3.org/TR/FileAPI/">File API</a> (although I haven’t yet tested this).</p>
 
@@ -48,20 +48,33 @@
 
 <p>Here’s the code so you can play around with it for yourself!</p>
 
-<pre name="code" class="html">&lt;form enctype="multipart/form-data" method="post"&gt;
-  &lt;h2&gt;Regular file upload&lt;/h2&gt;
-  &lt;input type="file"&gt;&lt;/input&gt;
-  
-  &lt;h2&gt;capture=camera&lt;/h2&gt;
-  &lt;input type="file" accept="image/*;capture=camera"&gt;&lt;/input&gt;
-  
-  &lt;h2&gt;capture=camcorder&lt;/h2&gt;
-  &lt;input type="file" accept="video/*;capture=camcorder"&gt;&lt;/input&gt;
-  
-  &lt;h2&gt;capture=microphone&lt;/h2&gt;
-  &lt;input type="file" accept="audio/*;capture=microphone"&gt;&lt;/input&gt;
-&lt;/form&gt;
-</pre>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+</pre></td><td class="code"><pre><code class="html"><span class="line"><span class="nt">&lt;form</span> <span class="na">enctype=</span><span class="s">&quot;multipart/form-data&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span><span class="nt">&gt;</span>
+</span><span class="line">  <span class="nt">&lt;h2&gt;</span>Regular file upload<span class="nt">&lt;/h2&gt;</span>
+</span><span class="line">  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;&lt;/input&gt;</span>
+</span><span class="line">
+</span><span class="line">  <span class="nt">&lt;h2&gt;</span>capture=camera<span class="nt">&lt;/h2&gt;</span>
+</span><span class="line">  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span> <span class="na">accept=</span><span class="s">&quot;image/*;capture=camera&quot;</span><span class="nt">&gt;&lt;/input&gt;</span>
+</span><span class="line">
+</span><span class="line">  <span class="nt">&lt;h2&gt;</span>capture=camcorder<span class="nt">&lt;/h2&gt;</span>
+</span><span class="line">  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span> <span class="na">accept=</span><span class="s">&quot;video/*;capture=camcorder&quot;</span><span class="nt">&gt;&lt;/input&gt;</span>
+</span><span class="line">
+</span><span class="line">  <span class="nt">&lt;h2&gt;</span>capture=microphone<span class="nt">&lt;/h2&gt;</span>
+</span><span class="line">  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span> <span class="na">accept=</span><span class="s">&quot;audio/*;capture=microphone&quot;</span><span class="nt">&gt;&lt;/input&gt;</span>
+</span><span class="line"><span class="nt">&lt;/form&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 </div>
 

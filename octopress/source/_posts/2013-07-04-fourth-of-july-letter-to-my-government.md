@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2013/fourth-of-july-letter-to-my-government
-categories:
-  - Uncategorized
+categories: ["politics", "privacy", "rant"]
 ---
 (this is a copy of a letter which I&#8217;ve sent to various representatives in government)
 

@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2010/the-mobile-developers-toolkit-mobile-web-part-2
-categories:
-  - mobile
+categories: ["webdev", "mobile"]
 tags:
   - emulator
   - simulator

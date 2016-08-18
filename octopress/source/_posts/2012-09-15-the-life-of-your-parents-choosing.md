@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2012/the-life-of-your-parents-choosing
-categories:
-  - Uncategorized
+categories: ["rant", "life", "philosophy"]
 ---
 Several times I&#8217;ve heard the phrase &#8220;the religion of your parents&#8217; choosing&#8221;, used to scoff at adherents to various religions, as if they had no intelligent choice in the matter of their own beliefs. As the thought goes, religious standing (or lack thereof) should be a personal matter, one to be decided rationally (yes, there is such a thing as rational faith; to say otherwise is to label all religious people as fideists, which is a mistake) by individuals, apart from their social group if possible.
 

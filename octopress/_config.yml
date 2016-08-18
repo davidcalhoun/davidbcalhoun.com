@@ -3,7 +3,7 @@
 # ----------------------- #
 
 url: http://davidbcalhoun.com
-title: David Calhoun's blog
+title: David Calhoun
 subtitle: 
 author: David Calhoun
 simple_search: http://google.com/search
@@ -34,13 +34,12 @@ plugins: plugins
 code_dir: downloads/code
 category_dir: blog/categories
 markdown: kramdown
+highlighter: rouge
 kramdown:
-  use_coderay: true
-  coderay:
-    coderay_line_numbers: table
-    coderay_tab_width: 2
-    coderay_css: class
-highlighter: pygments # default python pygments have been replaced by pygments.rb
+  input: GFM
+  toc_levels: 2..3
+  use_coderay: false
+
 
 paginate: 10          # Posts per page on the blog index
 pagination_dir: blog  # Directory base for pagination URLs eg. /blog/page/2/

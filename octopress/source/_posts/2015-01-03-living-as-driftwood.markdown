@@ -3,7 +3,7 @@ layout: post
 title: "Living as driftwood"
 date: 2015-01-03 21:52:23 -0800
 comments: true
-categories: [philosophy, new year]
+categories: [philosophy, new year, rant]
 ---
 
 In the previous two photo posts I wanted to avoid this sort of heavy reflection New Year post.  But its time has finally come and it should be said, no matter how cheesy it may sound.

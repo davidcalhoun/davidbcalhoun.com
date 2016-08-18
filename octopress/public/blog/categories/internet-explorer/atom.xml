@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: internet explorer | David Calhoun]]></title>
+  <link href="http://davidbcalhoun.com/blog/categories/internet-explorer/atom.xml" rel="self"/>
+  <link href="http://davidbcalhoun.com/"/>
+  <updated>2016-08-18T14:00:33-07:00</updated>
+  <id>http://davidbcalhoun.com/</id>
+  <author>
+    <name><![CDATA[David Calhoun]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Targeting Internet Explorer (IE): the age-old struggle]]></title>
+    <link href="http://davidbcalhoun.com/2010/targeting-ie-the-age-old-struggle"/>
+    <updated>2010-07-07T00:00:00-07:00</updated>
+    <id>http://davidbcalhoun.com/2010/targeting-ie-the-age-old-struggle</id>
+    <content type="html"><![CDATA[<p>As long as I can remember, developers have always been trying to target IE one way or another. Thanks to the wonders of modern technology, there have been multiple ways to pull this off.</p>
+
+<p>I guess I really haven’t been keeping up with the latest frontend trends (doh!), as I’ve just recently discovered this very elegant solution circa 2008 offered by <a href="http://paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/">Paul Irish</a>, which sticks a class on the body tag using proprietary conditional IE tags (no JavaScript magic needed here!):</p>
+
+<pre name="code" class="html">&lt;!--[if lt IE 7 ]&gt; &lt;body class="ie6"&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 7 ]&gt;    &lt;body class="ie7"&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 8 ]&gt;    &lt;body class="ie8"&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 9 ]&gt;    &lt;body class="ie9"&gt; &lt;![endif]--&gt;
+&lt;!--[if gt IE 9]&gt;  &lt;body&gt;             &lt;![endif]--&gt;
+&lt;!--[if !IE]&gt;&lt;!--&gt; &lt;body&gt;         &lt;!--&lt;![endif]--&gt;
+</pre>
+
+<p>No need for creating multiple stylesheets for each version of IE (that makes extra network requests… boo)! Now you can add adjustments to your main stylesheet just as you would with CSS hacks, except now you’re doing it in a not-so-hacky way.</p>
+
+<p>For instance, if you have some peculiar CSS quirk in IE6, you simply apply a fix like this:</p>
+
+<pre name="code" class="css">.some-element { width: 200px; }         /* standards-based browsers */
+.ie6 .some-element { width: 160px; }  /* elegant ie6 fix! */
+</pre>
+
+<h3 id="the-old-way-css-hacks">The old way: CSS hacks</h3>
+
+<p>Previously I considered some CSS hacks the most elegant solution, but that was in the days when IE6/7 ruled. You can see that the following CSS hack gets really unruly for IE8 (that hack thanks to <a href="http://my.opera.com/dbloom/blog/2009/03/11/css-hack-for-ie8-standards-mode">David Bloom</a>):</p>
+
+<pre name="code" class="css">.some-element {
+    width: 200px;                /* standards-based browsers */
+    /* some yet-to-be-determined IE9 hack goes here */
+    width /*\**/: 180px\9        /* targets IE8 standards mode */
+    *width: 170px;               /* targets IE7/IE6 */
+    _width: 160px;               /* targets IE6 */
+}
+</pre>
+
+<p>This works, but becomes quite difficult to maintain and understand. And it just creates a need for someone to find yet another hack for each new version of IE that’s released. By using the IE conditional comments to add a class to the body tag, we can accomplish the same result in a way that is easier to read and maintain and is dead simple to update when a new version of IE is released:</p>
+
+<pre name="code" class="css">.some-element { width: 200px; }
+.ie9 .some-element { width: 190px; }
+.ie8 .some-element { width: 180px; }
+.ie7 .some-element { width: 170px; }
+.ie6 .some-element { width: 160px; }
+</pre>
+
+<p>Woohoo!</p>
+
+<h3 id="related-links">Related links</h3>
+
+<p><a href="http://www.phpied.com/conditional-comments-block-downloads/">Conditional comments block downloads</a>: Stoyan Stefanov’s concerns over using this pattern</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[IEMobile 6/7 bug: classes and id not supported on the HTML element]]></title>
+    <link href="http://davidbcalhoun.com/2009/another-iemobile-bug-classes-and-id-not-supported-on-the-html-element"/>
+    <updated>2009-12-01T00:00:00-08:00</updated>
+    <id>http://davidbcalhoun.com/2009/another-iemobile-bug-classes-and-id-not-supported-on-the-html-element</id>
+    <content type="html"><![CDATA[<p>As it turns out, IEMobile 6/7 (and presumably anything earlier) doesn’t support classes and ids that are attached to the HTML element. I confirmed this on both IEMobile 6 and 7. Fortunately it looks to be fixed in IEMobile 8 (which makes sense, since it works fine in desktop IE6, which it’s based on).</p>
+
+<p>The consequence of this is that adding an id/class to the html tag will result in the style not being applied to the document:</p>
+
+<pre name="code" class="html">&lt;!doctype html&gt;
+&lt;html id="a" class="b"&gt;
+&lt;head&gt;
+	&lt;title&gt;Cascade test&lt;/title&gt;
+	
+	&lt;style type="text/css" media="screen"&gt;
+		#a span { color: red; }     /* style isn't applied in IEMobile 6/7 */
+		.b span { color: yellow; }  /* style isn't applied in IEMobile 6/7 */
+	&lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;span&gt;Testing 123&lt;/span&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</pre>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[IE Mobile 6.12 problem: browser ignores the specificity of CSS display styles]]></title>
+    <link href="http://davidbcalhoun.com/2009/ie-mobile-6-12-problem-browser-ignores-the-specificity-of-css-display-styles"/>
+    <updated>2009-08-31T00:00:00-07:00</updated>
+    <id>http://davidbcalhoun.com/2009/ie-mobile-6-12-problem-browser-ignores-the-specificity-of-css-display-styles</id>
+    <content type="html"><![CDATA[<p><strong>UPDATE:</strong> I found that the problem is actually that inline-block is completely unsupported in this version of IE Mobile, and is likely also unsupported in IE Mobile 7, which is also based on IE4. This is in contrast to desktop IE6, where inline-block is supported on elements that are natively inline (span, em, etc.).</p>
+
+<p>Just found this today, for what it’s worth.  If you’re unlucky enough to be working with older Windows Mobile phones you have probably realized that the browser is based on IE6, which all the desktop web developers notoriously complain about constantly.</p>
+
+<p>Though the mobile version of IE6 has most of the same issues as its desktop counterpart, IEMobile introduces some new random problems.  And in most cases there’s no handy web resources to help you out, since almost everyone develops for the desktop.</p>
+
+<p>This particular IEMobile quirk is a specificity problem.  We have a parent element styled with display: block and the child element is styled with display: inline-block or display: inline.  We’ve made the child CSS selector more specific so it <em>should</em> override the parent:</p>
+
+<pre name="code" class="css">.parent { display: block; }
+.parent .child { display: inline-block; }</pre>
+
+<p>This works on the desktop version of IE6!  But not in IEMobile 6.12, where the child element is still displayed as a block.  The same thing happens when we change the “.parent .child” style to “display: inline;”, but interestingly not when we change it to “display: none;”, where the style is correctly recognized and applied.  Doh!</p>
+
+<p>And FYI: I checked and found that this bug is <em>not</em> occurring on IEMobile 8.12</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2010/a-visit-from-flickr
-categories:
-  - Uncategorized
+categories: ["photography"]
 tags:
   - flickr
 ---

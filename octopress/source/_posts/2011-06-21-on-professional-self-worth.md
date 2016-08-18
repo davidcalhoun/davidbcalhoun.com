@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2011/on-professional-self-worth
-categories:
-  - Uncategorized
+categories: ["philosophy", "rant"]
 ---
 Huge huge rant incoming, but all is not said and done, and much is open for debate of course. Counterpoints and criticisms are more than welcome in the comments. This is just my opinion based on my experience at this point in time.
 

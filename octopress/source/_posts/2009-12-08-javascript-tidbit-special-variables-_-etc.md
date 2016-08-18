@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2009/javascript-tidbit-special-variables-_-etc
-categories:
-  - javascript
+categories: ["webdev", "javascript", "programming"]
 tags:
   - $
   - $$
@@ -14,9 +13,11 @@ tags:
   - jQuery
   - _
 ---
-You&#8217;re probably used to typical variables names such as the following:
+You're probably used to typical variables names such as the following:
 
-<pre name="code" class="JScript">var personName = 'Joe';</pre>
+``` javascript
+var personName = 'Joe';
+```
 
 You may not realize it, but there are some non-alphanumeric variables at your disposal.
 
@@ -24,12 +25,14 @@ You may not realize it, but there are some non-alphanumeric variables at your di
 
 For instance, the $ variable has been made popular by several JavaScript libraries, most notably [jQuery][1]. You can use it to alias operations that are commonly performed, such as the following (1):
 
-<pre name="code" class="JScript">var $ = document.getElementById;
-var myElement = $('targetElement');</pre>
+``` javascript
+var $ = document.getElementById;
+var myElement = $('targetElement');
+```
 
-If you declare this variable outside of a function it will be a global variable and will compete with libraries that use the same global variable, so it&#8217;s probably best not to use it.
+If you declare this variable outside of a function it will be a global variable and will compete with libraries that use the same global variable, so it's probably best not to use it.
 
-Interestingly, originally the dollar sign $ was originally intended for &#8220;mechanically generated code&#8221; (2), but as the usage of the symbol has become popular for other purposes, it looks like [the latest version of JavaScript (ECMAScript 5th edition) now officially &#8220;oks&#8221; its use][2]:
+Interestingly, originally the dollar sign $ was originally intended for 'mechanically generated code' (2), but as the usage of the symbol has become popular for other purposes, it looks like [the latest version of JavaScript (ECMAScript 5th edition) now officially 'oks' its use][2]:
 
 > This standard specifies specific character additions: The dollar sign ($) and the underscore (_) are permitted anywhere in an IdentifierName.
 
@@ -37,24 +40,30 @@ Interestingly, originally the dollar sign $ was originally intended for &#8220;m
 
 Some have come up with the solution of simply using two or more $$ symbols in order to distinguish the variable from libraries that just use a single $:
 
-<pre name="code" class="JScript">var $$ = document.getElementById;
-var myElement = $$('targetElement');</pre>
+``` javascript
+var $$ = document.getElementById;
+var myElement = $$('targetElement');
+```
 
 ### Using _
 
 You will find that you can use the underscore _ in the same way to alias variables and functions:
 
-<pre name="code" class="JScript">var _ = document.getElementById;
-var myElement = _('targetElement');</pre>
+``` javascript
+var _ = document.getElementById;
+var myElement = _('targetElement');
+```
 
 ### Other symbols
 
-If you&#8217;re really getting adventurous, you can even try using other symbols such as square root √, which seems to work just fine, just as $ and _ above. The only problem: it&#8217;s quite inconvenient using it, since it&#8217;s not available on any keyboards (except through some crazy key combinations perhaps).
+If you're really getting adventurous, you can even try using other symbols such as square root √, which seems to work just fine, just as $ and _ above. The only problem: it's quite inconvenient using it, since it's not available on any keyboards (except through some crazy key combinations perhaps).
 
-Or you can put the symbol to use doing what you would naturally think it should do&#8230;
+Or you can put the symbol to use doing what you would naturally think it should do...
 
-<pre name="code" class="JScript">var √ = Math.sqrt;
-alert(√(4));   // 2</pre>
+``` javascript
+var √ = Math.sqrt;
+alert(√(4));   // 2
+```
 
 ### References
 

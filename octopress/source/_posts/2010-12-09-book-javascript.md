@@ -5,11 +5,11 @@ comments: true
 author: David
 layout: post
 permalink: /2010/book-javascript
-categories:
-  - Uncategorized
+categories: ["javascript", "programming", "webdev"]
 draft: true
 ---
-&#8230;
+
+(Note: This was going to be where I was keeping notes to eventually write a book.  Needless to say, there's not much here and the book never happened!)
 
 ### Functions
 

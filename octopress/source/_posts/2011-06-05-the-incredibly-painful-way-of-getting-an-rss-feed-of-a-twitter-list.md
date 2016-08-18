@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2011/the-incredibly-painful-way-of-getting-an-rss-feed-of-a-twitter-list
-categories:
-  - Uncategorized
+categories: ["webdev"]
 ---
 (why does Twitter make it so hard? What did RSS ever do to it?)
 

@@ -5,8 +5,7 @@ author: David
 comments: true
 layout: post
 permalink: /2013/you-cant-javascript-under-pressure-walkthrough
-categories:
-  - javascript
+categories: ["javascript", "programming", "webdev"]
 ---
 A friend posted a link to this fun little quiz - [You Can't JavaScript Under Pressure][1].
 

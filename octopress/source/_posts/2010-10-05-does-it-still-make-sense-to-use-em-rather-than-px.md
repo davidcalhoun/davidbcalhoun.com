@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2010/does-it-still-make-sense-to-use-em-rather-than-px
-categories:
-  - css
+categories: ["css", "webdev"]
 tags:
   - em
   - media queries

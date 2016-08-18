@@ -2,7 +2,7 @@
 <html lang="en-US">
 <head>
 	<meta charset="utf-8">
-	<title>Open Web Camp II at Stanford (July 17, 2010)  | David Calhoun's blog</title>
+	<title>Open Web Camp II at Stanford (July 17, 2010)  | David Calhoun</title>
 
 	<meta name="author" content="David Calhoun">
 
@@ -10,7 +10,7 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link href="/atom.xml" rel="alternate" title="David Calhoun's blog" type="application/atom+xml">
+	<link href="/atom.xml" rel="alternate" title="David Calhoun" type="application/atom+xml">
 	<link rel="canonical" href="">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
 	<!--[if lt IE 9]><script src="/javascripts/html5.js"></script><![endif]-->
@@ -21,7 +21,7 @@
 
 
 <body>
-	<header id="header" class="inner" role="banner" aria-labelledby="header_title"><h1><a href="/" id="header_title">David Calhoun's blog</a></h1>
+	<header id="header" class="inner" role="banner" aria-labelledby="header_title"><h1><a href="/" id="header_title">David Calhoun</a></h1>
 <span class="tagline"></span>
 
 </header>
@@ -40,7 +40,7 @@
   
 
 
-<time datetime="2010-07-17T00:00:00+09:00" pubdate data-updated="true"></time></div>
+<time datetime="2010-07-17T00:00:00-07:00" pubdate data-updated="true"></time></div>
 	</header>
 	<div class="entry-content"><p>Open Web Camp II at Stanford today was a blast! Lots of information. Plenty I’m already familiar with, but also lots I learned.</p>
 
@@ -112,11 +112,11 @@ border-radius: 20px / 10px;
 
 <p>This was a pretty high level overview of basic accessibility, including an introduction to screen readers and ARIA attributes.</p>
 
-<p>Here’s some of the stuff covered:<br />
--making forms accessible with fieldset and legend elements and linking captions to their inputs.<br />
--adding alt tags to images even if blank (so the screen reader doesn’t announce the entire URL)<br />
--the title tag doesn’t make things more accessible, whereas the alt tag does<br />
--screen readers obey display: none and visibility: hidden and that to hide something from normal users you have to position it offscreen (with negative left or text-indent).<br />
+<p>Here’s some of the stuff covered:  <br />
+-making forms accessible with fieldset and legend elements and linking captions to their inputs.  <br />
+-adding alt tags to images even if blank (so the screen reader doesn’t announce the entire URL)  <br />
+-the title tag doesn’t make things more accessible, whereas the alt tag does  <br />
+-screen readers obey display: none and visibility: hidden and that to hide something from normal users you have to position it offscreen (with negative left or text-indent).  <br />
 -how to make basic tables accessible by taking advantage of table summary and caption, as well as putting tables headings into the &lt;thead&gt; element.</p>
 
 <p>I’m still trying to absorb it, but Todd also mentioned that a simple anchor tag for a button didn’t semantically make sense, and that it was more semantic to have a span wrapped around a <button>. I guess I either don’t understand fully or I just disagree, since a <button> appears within a form and sometimes it just may be a cleaner solution to use a simple anchor tag. I guess I will need to look into this more.</button></button></p>
@@ -141,17 +141,17 @@ border-radius: 20px / 10px;
 
 <p>As web developers, we’re already familiar with three layers of the web:</p>
 
-<p>-HTML, responsible for content<br />
--CSS, responsible for presentation<br />
+<p>-HTML, responsible for content  <br />
+-CSS, responsible for presentation  <br />
 -JavaScript, responsible for interaction</p>
 
 <p>Dirk introduced another two levels:</p>
 
-<p>-CSS for JavaScript: special styling for when the full-featured JavaScript is available (this can be used by having JS add a “js” class to the document, and therefore writing CSS rules with “.js” in the front)<br />
+<p>-CSS for JavaScript: special styling for when the full-featured JavaScript is available (this can be used by having JS add a “js” class to the document, and therefore writing CSS rules with “.js” in the front)  <br />
 -WAI-ARIA: special HTML attributes to help define roles, landmarks, allow the developer to give instructions directly through the screen reader, etc.</p>
 
-<p>Also a few more points:<br />
--use the JavaScript focus() method for events (alerts that are injected at the top of the document and are otherwise ignored by the screen reader, windows that open and close, etc.)<br />
+<p>Also a few more points:  <br />
+-use the JavaScript focus() method for events (alerts that are injected at the top of the document and are otherwise ignored by the screen reader, windows that open and close, etc.)  <br />
 -:hover CSS pseudoclass is for the mouse only.. be sure to also use the :focus pseudoclass! (my note: this is also important on mobile, for touch devices!)</p>
 
 <h3 id="summary">Summary</h3>

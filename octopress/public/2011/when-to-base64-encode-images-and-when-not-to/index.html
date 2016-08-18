@@ -2,7 +2,7 @@
 <html lang="en-US">
 <head>
 	<meta charset="utf-8">
-	<title>When to base64 encode images (and when not to)  | David Calhoun's blog</title>
+	<title>When to base64 encode images (and when not to)  | David Calhoun</title>
 
 	<meta name="author" content="David Calhoun">
 
@@ -10,7 +10,7 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link href="/atom.xml" rel="alternate" title="David Calhoun's blog" type="application/atom+xml">
+	<link href="/atom.xml" rel="alternate" title="David Calhoun" type="application/atom+xml">
 	<link rel="canonical" href="">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
 	<!--[if lt IE 9]><script src="/javascripts/html5.js"></script><![endif]-->
@@ -21,7 +21,7 @@
 
 
 <body>
-	<header id="header" class="inner" role="banner" aria-labelledby="header_title"><h1><a href="/" id="header_title">David Calhoun's blog</a></h1>
+	<header id="header" class="inner" role="banner" aria-labelledby="header_title"><h1><a href="/" id="header_title">David Calhoun</a></h1>
 <span class="tagline"></span>
 
 </header>
@@ -40,7 +40,7 @@
   
 
 
-<time datetime="2011-08-28T00:00:00+09:00" pubdate data-updated="true"></time></div>
+<time datetime="2011-08-28T00:00:00-07:00" pubdate data-updated="true"></time></div>
 	</header>
 	<div class="entry-content"><h3 id="introduction">Introduction</h3>
 
@@ -91,13 +91,19 @@
 
 <p>Just a note about the tables: they are comparing the binary form (original png or jpeg) with the base64 form as it would appear in a CSS stylesheet, and comparing each of those with their gzipped form, which is most likely how they would be sent down the wire. The CSS representation has a few practical declarations and looks something like this:</p>
 
-<pre lang="css"><code>.address-book--arrow {
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAp1JREFUeNqEU21IU1EYfu7unW5Ty6aBszYs6MeUjGVYokHYyH5E1B9rZWFEFPQnAwmy6Hc/oqhfJsRKSSZGH1JIIX3MNCsqLTD9o1Oj6ebnnDfvvefezrnbdCHhCw/n433P8z7nPe/hBEEAtX0U7hc164uwuvVSXKwZLoOmaRDim+7m9vZa0WiEKSUFFpNpCWlmMyypqTDRuYn6t3k8vmQ2gRDCxs0t9fW45F52aBTROJLtZl7nEZad2m+KtoQCQ0FBARyOCGRZ/q92I1WgqqXlfdd95VsrK8/pChIEqqpCkiQsiCII0aBQZZoWl8lzFDwsFjMl0DBLY8Lj41hBwK4jSQrWOIphL6xYyhwJDWGo6wFSaH1Y3PTCAsITE1oyAa8flhWkbSiCLX8vun11eiGIpiJ/z2nYdx5HqLdVV7elrOzsuqysL3rmBIGiKPizKCHHWY4PLVeQbnXAdegqdhy+hu8dDTBnbqQJZJ1A7u+vz7RaiymWCZgCRSF6Edk8b9cx+B/W6WuVxPaZnyiqXoPpyUmVYvkKTIFClHigEieKjYuSvETUllaF4GAUM1NT6ooaJDKx+aDfC9fByxj90REb+9ppmIoAscH/6leg8MS9DJXPAM9xHCM443K57C6biMjcHDaVVCHw9RmCA2/RGC5C00AqXk/m4p20HZK4CM/J3Zk9n0ecMBhDQnJHcrTisyMfdQXOilrdMfxcwoHq/fg5R59TiQV3hYGKo6X2J/c7LyQIjOx9GXhOw/zoJ8wEevRGyp53o/lGMNYsBgPtEwLecwov7/jGDKa1twT6o3KpL4MdZgGsWZLtfPr7f1q58k1JNHy7YYaM+J+K3Y2PmAIbRavX66229hrGVvvL5uzsHDEUvUu+NT1my78CDAAMK1a8/QaZCgAAAABJRU5ErkJggg==);  
-  width: 16px;
-  height: 16px;
-  background-repeat: no-repeat;
-}
-</code></pre>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+</pre></td><td class="code"><pre><code class="css"><span class="line"><span class="nc">.address-book--arrow</span> <span class="p">{</span>
+</span><span class="line">  <span class="k">background-image</span><span class="o">:</span> <span class="sx">url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAp1JREFUeNqEU21IU1EYfu7unW5Ty6aBszYs6MeUjGVYokHYyH5E1B9rZWFEFPQnAwmy6Hc/oqhfJsRKSSZGH1JIIX3MNCsqLTD9o1Oj6ebnnDfvvefezrnbdCHhCw/n433P8z7nPe/hBEEAtX0U7hc164uwuvVSXKwZLoOmaRDim+7m9vZa0WiEKSUFFpNpCWlmMyypqTDRuYn6t3k8vmQ2gRDCxs0t9fW45F52aBTROJLtZl7nEZad2m+KtoQCQ0FBARyOCGRZ/q92I1WgqqXlfdd95VsrK8/pChIEqqpCkiQsiCII0aBQZZoWl8lzFDwsFjMl0DBLY8Lj41hBwK4jSQrWOIphL6xYyhwJDWGo6wFSaH1Y3PTCAsITE1oyAa8flhWkbSiCLX8vun11eiGIpiJ/z2nYdx5HqLdVV7elrOzsuqysL3rmBIGiKPizKCHHWY4PLVeQbnXAdegqdhy+hu8dDTBnbqQJZJ1A7u+vz7RaiymWCZgCRSF6Edk8b9cx+B/W6WuVxPaZnyiqXoPpyUmVYvkKTIFClHigEieKjYuSvETUllaF4GAUM1NT6ooaJDKx+aDfC9fByxj90REb+9ppmIoAscH/6leg8MS9DJXPAM9xHCM443K57C6biMjcHDaVVCHw9RmCA2/RGC5C00AqXk/m4p20HZK4CM/J3Zk9n0ecMBhDQnJHcrTisyMfdQXOilrdMfxcwoHq/fg5R59TiQV3hYGKo6X2J/c7LyQIjOx9GXhOw/zoJ8wEevRGyp53o/lGMNYsBgPtEwLecwov7/jGDKa1twT6o3KpL4MdZgGsWZLtfPr7f1q58k1JNHy7YYaM+J+K3Y2PmAIbRavX66229hrGVvvL5uzsHDEUvUu+NT1my78CDAAMK1a8/QaZCgAAAABJRU5ErkJggg==)</span><span class="p">;</span>
+</span><span class="line">  <span class="k">width</span><span class="o">:</span> <span class="m">16px</span><span class="p">;</span>
+</span><span class="line">  <span class="k">height</span><span class="o">:</span> <span class="m">16px</span><span class="p">;</span>
+</span><span class="line">  <span class="k">background-repeat</span><span class="o">:</span> <span class="k">no-repeat</span><span class="p">;</span>
+</span><span class="line"><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>Ok, onto the tests!</p>
 
@@ -282,7 +288,7 @@
 </table>
 
 <ul>
-  <li>All numbers are byte sizes<br />
+  <li>All numbers are byte sizes  <br />
 ** Numbers in parenthesis represent actual but impractical data. Unfortunately, images cannot be combined and delivered together in their binary form.</li>
 </ul>
 

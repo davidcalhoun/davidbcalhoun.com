@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2011/what-is-a-closure-in-javascript
-categories:
-  - javascript
+categories: ["javascript", "webdev"]
 ---
 ### Intro
 

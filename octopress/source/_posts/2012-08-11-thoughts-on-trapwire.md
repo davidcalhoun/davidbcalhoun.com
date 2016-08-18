@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2012/thoughts-on-trapwire
-categories:
-  - politics
+categories: ["politics", "privacy", "rant"]
 ---
 [<img src="http://davidbcalhoun.com/wp-content/uploads/2012/08/george-friedman-stratfor.jpg" alt="Stratfor CEO George Friedman" title="Stratfor CEO George Friedman" class="size-full wp-image-943" />][1]  
 *&#8220;&#8230;but the hackers will not find intelligence of corporations and governments, or signs of a vast conspiracy&#8230;&#8221; -Stratfor CEO George Friedman, January 2012*

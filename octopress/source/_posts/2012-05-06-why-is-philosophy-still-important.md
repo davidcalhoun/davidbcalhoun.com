@@ -12,8 +12,7 @@ enclosure:
         5131792
         audio/mpeg
         
-categories:
-  - philosophy
+categories: ["philosophy"]
 ---
 This was posted on [reddit][1] recently, so I thought I&#8217;d copy my response here.
 

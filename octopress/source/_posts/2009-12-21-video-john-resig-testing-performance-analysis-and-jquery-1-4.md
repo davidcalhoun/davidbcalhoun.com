@@ -3,11 +3,7 @@ title: 'Video: John Resig &#8211; Testing, Performance Analysis, and jQuery 1.4'
 author: David
 layout: post
 permalink: /2009/video-john-resig-testing-performance-analysis-and-jquery-1-4
-categories:
-  - javascript
-  - performance
-  - testing
-  - video
+categories:  ["webdev", "javascript", "programming", "performance", "testing", "video"]
 tags:
   - javascript
   - john resig

@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2011/ios5-sunspider-iphone-4s-vs-iphone-4-vs-iphone-3gs
-categories:
-  - performance
+categories: ["performance", "javascript", "mobile", "iphone", "webdev"]
 ---
 ### Result table (SunSpider 0.9.1, all devices running iOS 5)
 

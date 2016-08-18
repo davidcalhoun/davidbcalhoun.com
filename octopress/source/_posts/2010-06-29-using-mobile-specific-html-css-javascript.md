@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2010/using-mobile-specific-html-css-javascript
-categories:
-  - mobile
+categories: ["webdev", "mobile", "html", "css", "javascript", "programming"]
 tags:
   - basejs
   - blackberry.network
@@ -35,30 +34,35 @@ tags:
 
 Use the [viewport tag][1] to properly fit the content to the screen:
 
+``` html
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-{:lang="html"}
+```
 
 #### [Tel scheme][2] (to initiate phone calls)
 
+``` html
     <a href="tel:18005555555">Call us at 1-800-555-5555</a>
-{:lang="html"}
+```
 
 #### [Sms scheme][3] (to initiate text messages)
 
+``` html
     <a href="sms:18005555555">
     <a href="sms:18005555555,18005555556">                <!-- multiple recipients -->
     <a href="sms:18005555555?body=Text%20goes%20here">    <!-- predefined message body -->
-{:lang="html"}
+```
 
 #### Disable automatic telephone number linking
 
+``` html
     <meta name="format-detection" content="telephone=no">
-{:lang="html"}
+```
 
 #### iOS-specific HTML (some work on Android as well)
 
 You also have access to several [Apple-specific tags to use in your iOS applications (iPhone, iPad, and don't forget the iPod Touch!)][4].
 
+``` html
     <!-- iOS 1.1.3+: this is the icon that's used when the user adds your app to the home screen -->
 
     <!-- also works on Android! -->
@@ -79,14 +83,15 @@ You also have access to several [Apple-specific tags to use in your iOS applicat
 
     <!-- controls the appearance of the status bar in full-screen mode -->
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-{:lang="html"}
+```
 
 #### Turn off autocorrect, autocomplete, and autocapitalize
 
 And also some handy attributes to turn off annoying autocorrect features:
 
+``` html
     <input autocorrect="off" autocomplete="off" autocapitalize="off">
-{:lang="html"}
+```
 
 ### Mobile-specific CSS
 
@@ -96,10 +101,11 @@ Mobile browsers are now starting to support these basic CSS properties better. P
 
 Also, iOS 5 has additional CSS to give the native scrollbar and momentum/intertia to elements with overflow:scroll:
 
+``` css
     div {
       -webkit-overflow-scrolling: touch;
     }
-{:lang="css"}
+```
 
 #### Media queries
 
@@ -107,21 +113,24 @@ Also, iOS 5 has additional CSS to give the native scrollbar and momentum/interti
 
 You can use them two ways: 1) inline in a CSS stylesheet or 2) as the "media" attribute in the link tag, which loads an external stylesheet. The following is an example of inline CSS that's applied only when the device is in portrait mode:
 
+``` css
     @media all and (orientation: portrait) {
       body { }
       div { }
     }
-{:lang="css"}
+```
 
 Here's the same media query using the other method, which points to an external stylesheet (not recommended):
 
+``` html
     <link rel="stylesheet" media="all and (orientation: portrait)" href="portrait.css" />
-{:lang="css"}
+```
 
 This is not recommended because it creates an additional HTTP request (bad for performance). Also, in the case of screen orientation, the separate CSS stylesheet is NOT downloaded when the screen is rotated.
 
 Here's a few examples of using inline CSS:
 
+``` css
     // target small screens (mobile devices or small desktop windows)
     @media only screen and (max-width: 480px) {
       /* CSS goes here */
@@ -140,7 +149,7 @@ Here's a few examples of using inline CSS:
                  (max-resolution: 299dpi) {
       header { background-image: url(header-lowres.png); }
     }
-{:lang="css"}
+```
 
 Read more: [Media queries (Mozilla Developer Center)][6]
 
@@ -165,10 +174,12 @@ This hides the address bar and takes advantage of the entire device screen. You'
 #### ``navigator.connection``
 
 (Android 2.2+) Determine if the phone is running on WiFi, 3G, etc. Example:
+
+``` javascript
     if (navigator.connection.type==navigator.connection.WIFI) {
       // code for WiFi connections (high-bandwidth)
     }
-{:lang="js"}
+```
 
 #### ``window.devicePixelRatio``
 
@@ -205,6 +216,7 @@ The [deviceorientation event][12] will fire very frequently, and gives more fine
 
 While iOS is still lacking basic file inputs, Android is forging ahead, giving developers fine-grained control over content users can upload.
 
+``` html
     <!-- regular file upload (Android 2.2+, NO iOS) -->
     <input type="file"></input>
 
@@ -216,7 +228,7 @@ While iOS is still lacking basic file inputs, Android is forging ahead, giving d
 
     <!-- opens directly to the audio recorder (Android 3.0+) -->
     <input type="file" accept="audio/*;capture=microphone"></input>
-{:lang="html"}
+```
 
 #### BlackBerry specific
 

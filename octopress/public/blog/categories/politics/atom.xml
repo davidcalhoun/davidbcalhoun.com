@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: politics | David Calhoun's blog]]></title>
+  <title><![CDATA[Category: politics | David Calhoun]]></title>
   <link href="http://davidbcalhoun.com/blog/categories/politics/atom.xml" rel="self"/>
   <link href="http://davidbcalhoun.com/"/>
-  <updated>2016-05-26T09:01:40+09:00</updated>
+  <updated>2016-08-18T14:00:33-07:00</updated>
   <id>http://davidbcalhoun.com/</id>
   <author>
     <name><![CDATA[David Calhoun]]></name>
@@ -14,11 +14,48 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Fourth of July letter to my government]]></title>
+    <link href="http://davidbcalhoun.com/2013/fourth-of-july-letter-to-my-government"/>
+    <updated>2013-07-04T00:00:00-07:00</updated>
+    <id>http://davidbcalhoun.com/2013/fourth-of-july-letter-to-my-government</id>
+    <content type="html"><![CDATA[<p>(this is a copy of a letter which I’ve sent to various representatives in government)</p>
+
+<p>As a concerned citizen, I know you understand that I must occasionally voice my concern through letters such as this. My hope is that you will honestly consider my claims and take action on my part. I honestly appreciate you taking your time to seriously consider this letter.</p>
+
+<p>I’m writing to you today specifically in response to abuses by the NSA overstepping its bounds. Citizens of the United States and citizens of the world now know its private data is being indiscriminately collected, sifted through, and intruded upon by the NSA. These actions are clearly antithetical to our own Constitution and set a terrible precedent for the future of this country and the rest of the world.</p>
+
+<p>Today is the Fourth of July. However, this Fourth of July is a bit different for me. Instead of setting off fireworks and spending time with my family, I am alone in Japan. Yet I am not alone in my concerns that my constitutional rights are being forced away from me.</p>
+
+<p>As you well know, there are protests today in support of restoring the fourth amendment and against organizations such as the NSA which subvert our Constitution in the name of national security. I sincerely wish I could join these rallies, but I must show support by other means, such as through this letter. While I admit it would be interesting to protest the Japanese way, parked at a street intersection shouting my protests through a megaphone, it seems more effective for me to write directly to you. And to other people such as you who have the full time job of representing me and people like myself.</p>
+
+<p>While the US has never been a perfect country, I know it’s had better times. I’m not the only one who believes our nation is now in a bad way. Yet I hope to do my small part to help fix some of these problems in my lifetime, in order to make America a better place for us all. Since we are both Americans, I hope we share this common interest.</p>
+
+<p>My growing list of grievances is too much to list here, therefore I want to focus on recent revelations by whistleblowers such as Edward Snowden. This has been a tipping point for me and many fellow Americans, whom I hope have also been awoken from a dogmatic slumber.</p>
+
+<p>Somewhat counterintuitively, as a result I’ve started to become more of a believer in America. Or rather, what America is intended to be. I’ve recently found myself reading more about the history of my country. I’ve become interested in politics, and for the first time in my life I’ve seriously considered joining a protest. I have become a better citizen in the hope for a better America.</p>
+
+<p>President Obama and others in positions of power have defended these NSA spying programs, responding by explaining that they have come into effect through lawful means. Yet there has been massive public backlash, which I believe should at least warrant a reconsideration of these surveillance programs. I trust people like you to make sure this happens.</p>
+
+<p>It’s worth mentioning that this hasn’t been the first time in recent years the great disconnect between the governed and the government has been exposed. Perhaps our representatives are not really representing our interests after all? The situation isn’t dissimilar to what culminated in the breaking off and founding of our nation in the first place.</p>
+
+<p>It will be a great shame, but perhaps we are part of the generation which collectively allowed the great American experiment to fail?</p>
+
+<p>Update (July 12, 2013):</p>
+
+<p>I received a reply from one of my senators, Diane Fienstein. While it’s a generic reply sent to everyone sending letters similar to my own (http://www.feinstein.senate.gov/public/index.cfm/nsa-programs), I appreciate some sort of response.</p>
+
+<p>I’m still concerned however. Fienstein argued her case with the same defense as Obama: our repesentatives in the House and Senate voted these spying initiatives into law. Therefore it’s “legal” and was created and approved by people we voted into law.</p>
+
+<p>This is supposed to dissuade my fears in some way, but it actually makes me more apprehensive. Where are the people in government that represent me and my fears? Where are the people in Congress to re-examine the work they’ve made of the Constitution?</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Thoughts on TrapWire]]></title>
     <link href="http://davidbcalhoun.com/2012/thoughts-on-trapwire"/>
-    <updated>2012-08-11T00:00:00+09:00</updated>
+    <updated>2012-08-11T00:00:00-07:00</updated>
     <id>http://davidbcalhoun.com/2012/thoughts-on-trapwire</id>
-    <content type="html"><![CDATA[<p>[<img src="http://davidbcalhoun.com/wp-content/uploads/2012/08/george-friedman-stratfor.jpg" alt="Stratfor CEO George Friedman" title="Stratfor CEO George Friedman" class="size-full wp-image-943" />][1]<br />
+    <content type="html"><![CDATA[<p>[<img src="http://davidbcalhoun.com/wp-content/uploads/2012/08/george-friedman-stratfor.jpg" alt="Stratfor CEO George Friedman" title="Stratfor CEO George Friedman" class="size-full wp-image-943" />][1]  <br />
 <em>“…but the hackers will not find intelligence of corporations and governments, or signs of a vast conspiracy…” -Stratfor CEO George Friedman, January 2012</em></p>
 
 <p>…eight months later…</p>
@@ -29,11 +66,11 @@
 
 <p>The news has been surprisingly (or unsurprisingly?) absent from major news sources, so I’ve collected a few of the major articles here:</p>
 
-<p>[http://www.salon.com/2012/08/10/biggest_story_you_missed_7/][3]
-<a href="http://www.businessinsider.com/trapwire-everything-you-need-to-know-2012-8">http://www.businessinsider.com/trapwire-everything-you-need-to-know-2012-8</a>
-<a href="http://venturebeat.com/2012/08/10/wikileaks-trapwire-stratfor-cia/">http://venturebeat.com/2012/08/10/wikileaks-trapwire-stratfor-cia/</a><br />
-[http://english.ruvr.ru/2012_08_10/Big-Brother-watching-as-TrapWire-wraps-up-America/][4]
-<a href="https://publicintelligence.net/unravelling-trapwire">https://publicintelligence.net/unravelling-trapwire</a>
+<p>[http://www.salon.com/2012/08/10/biggest_story_you_missed_7/][3]<br />
+<a href="http://www.businessinsider.com/trapwire-everything-you-need-to-know-2012-8">http://www.businessinsider.com/trapwire-everything-you-need-to-know-2012-8</a><br />
+<a href="http://venturebeat.com/2012/08/10/wikileaks-trapwire-stratfor-cia/">http://venturebeat.com/2012/08/10/wikileaks-trapwire-stratfor-cia/</a>  <br />
+[http://english.ruvr.ru/2012_08_10/Big-Brother-watching-as-TrapWire-wraps-up-America/][4]<br />
+<a href="https://publicintelligence.net/unravelling-trapwire">https://publicintelligence.net/unravelling-trapwire</a><br />
 <a href="http://reason.com/blog/2012/08/10/creepy-spying-system-revealed-by-wikilea">http://reason.com/blog/2012/08/10/creepy-spying-system-revealed-by-wikilea</a></p>
 
 <p>And here’s a link to the mirror of the recent Wikileaks email release: <a href="http://mirror2.wikileaks-press.org/gifiles/releasedate/2012-08-09.html">http://mirror2.wikileaks-press.org/gifiles/releasedate/2012-08-09.html</a></p>

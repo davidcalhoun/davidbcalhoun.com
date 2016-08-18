@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2010/mobile-first-luke-wroblewski-on-mobile-design
-categories:
-  - mobile
+categories: ["webdev", "mobile", "video", "design", "webdev"]
 tags:
   - design
   - mobile

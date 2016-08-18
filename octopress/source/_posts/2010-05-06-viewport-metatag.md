@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2010/viewport-metatag
-categories:
-  - mobile
+categories: ["webdev", "html", "mobile"]
 tags:
   - handheldfriendly
   - metatag
@@ -18,8 +17,9 @@ tags:
 
 Use this:
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-{:lang="html"}
+``` html
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+```
 
 ### Introduction
 
@@ -43,7 +43,7 @@ Ok, so you've settled down to learn how to write a website for a mobile device u
 
 Ok! You can't get much simpler than that. You check it out and it looks good on all the desktop browsers, since there's really no opportunity yet for any cross-browser inconsistencies. And then you check it out on your mobile device:
 
-<a href="http://davidbcalhoun.com/wp-content/uploads/2010/05/hello-world-iphone.png"><img src="http://davidbcalhoun.com/wp-content/uploads/2010/05/hello-world-iphone.png" alt="" title="hello-world-iphone" width="320" height="480" class="size-full wp-image-199" /></a>Hello World on the iPhone
+{% imgcap center http://davidbcalhoun.com/wp-content/uploads/2010/05/hello-world-iphone.png 320 480 Hello World on the iPhone, WITHOUT the viewport metatag %}
 
 Doh! Where'd we go wrong? The text is obviously way too small to read without zooming in.
 
@@ -57,6 +57,7 @@ But this is no good! What we need to do is tell the browser that this webpage is
 
 Now we tweak our Hello World just a bit...
 
+``` html
     <!doctype html>
     <html>
     <head>
@@ -69,10 +70,11 @@ Now we tweak our Hello World just a bit...
     <p>Hello world!</p>
     </body>
     </html>
-{:lang="html"}
+```
 
-And we get this...  
-<a href="http://davidbcalhoun.com/wp-content/uploads/2010/05/hello-world-viewport-iphone.png"><img src="http://davidbcalhoun.com/wp-content/uploads/2010/05/hello-world-viewport-iphone.png" alt="" title="hello-world-viewport-iphone" class="aligncenter size-full wp-image-203" width="320" height="480" /></a>Hello World with the Viewport tag
+And we get this...
+
+{% imgcap center http://davidbcalhoun.com/wp-content/uploads/2010/05/hello-world-viewport-iphone.png 320 480 Hello World with the Viewport tag %}
 
 Much better! By setting the viewport width equal to "device-width", we're essentially telling it that the device width is 320px, not the default value of 980px that it guessed. If we set width=320 it would achieve the same result on the iPhone and a few other smartphones, but not all phones have this exact width, so it's best to simply set device-width and let the mobile browser figure it out.
 
@@ -80,13 +82,15 @@ This viewport metatag is supported on many smartphones, from iPhone to Android t
 
 At the end of the day here's what the standard viewport looks like, as grabbed from [m.yahoo.com][1]:
 
+``` html
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-{:lang="html"}
+```
 
 EDIT: It's been discussed a bit, and it seems that preventing the user from scaling the page (pinch zooming) isn't necessarily desirable. So here's a version of the tag that allows the user to pinch zoom:
 
+``` html
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-{:lang="html"}
+```
 
 ### More fun with the viewport tag
 
@@ -166,17 +170,21 @@ In addition to solving our biggest concern with the width of the content, the vi
 
 ### Feature phones: when viewport isn't available...
 
+Note: this info is now very outdated and is preserved here just for historical reference.  In general, you can ignore this stuff these days.
+
 Unfortunately the viewport tag is relatively new and as such isn't universally supported, especially if you're working on older feature phones. But there are some older methods at your disposal for identifying your website as optimized for mobile:
 
+``` html
     <meta name="HandheldFriendly" content="true"/>
-{:lang="html"}
+```
 
 This tag was originally used to identify mobile content in AvantGo browsers, but has now been made the general standard for identifying mobile websites. However, it's unknown what range of browsers support this meta tag.
 
 Another tag at your disposal is a Windows-proprietary meta tag that also took root and eventually became used as another means of identifying mobile content. The drawback with this tag is that a specific width must be given, which doesn't make it as flexible as the viewport tag (see above). Again, it's unknown what the support for this tag is:
 
+``` html
     <meta name="MobileOptimized" content="320"/>
-{:lang="html"}
+```
 
 Lastly, your website will be identified as a mobile optimized site if your doctype is either XHTML-MP or WML. However, this is becoming less and less the case these days, as browsers begin to support good old HTML4.01 and HTML5+.
 
@@ -188,8 +196,9 @@ Lastly, your website will be identified as a mobile optimized site if your docty
 
 Here's an example of the tag in action:
 
+``` html
     <meta name="viewport" content="target-densitydpi=device-dpi" />
-{:lang="html"}
+```
 
 ### References
 

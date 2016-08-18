@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2009/ie-mobile-6-12-problem-browser-ignores-the-specificity-of-css-display-styles
-categories:
-  - Uncategorized
+categories: ["webdev", "ie", "internet explorer", "mobile"]
 tags:
   - 6.12
   - css

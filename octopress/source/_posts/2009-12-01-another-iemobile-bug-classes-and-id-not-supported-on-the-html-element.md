@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2009/another-iemobile-bug-classes-and-id-not-supported-on-the-html-element
-categories:
-  - mobile
+categories: ["mobile", "webdev", "ie", "internet explorer", "webdev"]
 ---
 As it turns out, IEMobile 6/7 (and presumably anything earlier) doesn&#8217;t support classes and ids that are attached to the HTML element. I confirmed this on both IEMobile 6 and 7. Fortunately it looks to be fixed in IEMobile 8 (which makes sense, since it works fine in desktop IE6, which it&#8217;s based on).
 

@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2009/php-dealing-with-stuff-that-doesnt-exist
-categories:
-  - php
+categories: ["php", "programming", "webdev"]
 tags:
   - exists
   - function_exists

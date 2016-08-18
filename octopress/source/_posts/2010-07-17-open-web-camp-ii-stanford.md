@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2010/open-web-camp-ii-stanford
-categories:
-  - Uncategorized
+categories: ["webdev"]
 ---
 Open Web Camp II at Stanford today was a blast! Lots of information. Plenty I&#8217;m already familiar with, but also lots I learned.
 

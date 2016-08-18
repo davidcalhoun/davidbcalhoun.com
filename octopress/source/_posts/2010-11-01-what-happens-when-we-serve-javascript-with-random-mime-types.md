@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2010/what-happens-when-we-serve-javascript-with-random-mime-types
-categories:
-  - javascript
+categories: ["javascript", "webdev"]
 ---
 ### Introduction
 

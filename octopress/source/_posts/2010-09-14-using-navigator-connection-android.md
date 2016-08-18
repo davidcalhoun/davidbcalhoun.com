@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2010/using-navigator-connection-android
-categories:
-  - Uncategorized
+categories: ["javascript", "android", "webdev"]
 ---
 ### Introduction
 

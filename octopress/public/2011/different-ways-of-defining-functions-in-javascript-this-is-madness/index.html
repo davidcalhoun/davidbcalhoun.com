@@ -2,15 +2,15 @@
 <html lang="en-US">
 <head>
 	<meta charset="utf-8">
-	<title>Different ways of defining functions in JavaScript (this is madness!)  | David Calhoun's blog</title>
+	<title>Different ways of defining functions in JavaScript (this is madness!)  | David Calhoun</title>
 
 	<meta name="author" content="David Calhoun">
 
-<meta name="description" content="This is madness! This… is… JavaScript! In JavaScript, there’s many different ways of doing something. This is both a good thing and a bad thing. To &hellip;"> <meta name="keywords" content="">
+<meta name="description" content="Note: updated in July 2016 with ES6 arrow functions. Russian translation thanks to Yevgeniy Pyastolov This is madness! This… is… JavaScript! Overview &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link href="/atom.xml" rel="alternate" title="David Calhoun's blog" type="application/atom+xml">
+	<link href="/atom.xml" rel="alternate" title="David Calhoun" type="application/atom+xml">
 	<link rel="canonical" href="">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
 	<!--[if lt IE 9]><script src="/javascripts/html5.js"></script><![endif]-->
@@ -21,7 +21,7 @@
 
 
 <body>
-	<header id="header" class="inner" role="banner" aria-labelledby="header_title"><h1><a href="/" id="header_title">David Calhoun's blog</a></h1>
+	<header id="header" class="inner" role="banner" aria-labelledby="header_title"><h1><a href="/" id="header_title">David Calhoun</a></h1>
 <span class="tagline"></span>
 
 </header>
@@ -40,9 +40,27 @@
   
 
 
-<time datetime="2011-06-24T00:00:00+09:00" pubdate data-updated="true"></time></div>
+<time datetime="2011-06-24T00:00:00-07:00" pubdate data-updated="true"></time></div>
 	</header>
-	<div class="entry-content"><h3 id="this-is-madness-this8230-is8230-javascript">This is madness! This… is… JavaScript!</h3>
+	<div class="entry-content"><p>Note: updated in July 2016 with ES6 arrow functions.</p>
+
+<p><a href="http://langtoday.com/?p=303">Russian translation</a> thanks to Yevgeniy Pyastolov</p>
+
+<ul id="markdown-toc">
+  <li><a href="#this-is-madness-this8230-is8230-javascript" id="markdown-toc-this-is-madness-this8230-is8230-javascript">This is madness! This… is… JavaScript!</a></li>
+  <li><a href="#overview-different-ways-of-declaring-functions" id="markdown-toc-overview-different-ways-of-declaring-functions">Overview: different ways of declaring functions</a></li>
+  <li><a href="#a-function-declarations-function-a" id="markdown-toc-a-function-declarations-function-a">A: Function declarations: function A(){};</a></li>
+  <li><a href="#b-function-expressions-var-b--function" id="markdown-toc-b-function-expressions-var-b--function">B: Function expressions: var B = function(){};</a></li>
+  <li><a href="#c-function-expressions-with-grouping-operators-var-c--function" id="markdown-toc-c-function-expressions-with-grouping-operators-var-c--function">C: Function expressions with grouping operators: var C = (function(){});</a></li>
+  <li><a href="#d-named-function-expression-var-d--function-foo" id="markdown-toc-d-named-function-expression-var-d--function-foo">D: Named function expression: var D = function foo(){};</a></li>
+  <li><a href="#e-immediately-invoked-function-expressions-iife-var-e--functionreturn-function" id="markdown-toc-e-immediately-invoked-function-expressions-iife-var-e--functionreturn-function">E: Immediately-invoked function expressions (IIFE): var E = (function(){return function(){}})();</a></li>
+  <li><a href="#f-function-constructor-var-f--new-function" id="markdown-toc-f-function-constructor-var-f--new-function">F: Function constructor: var F = new Function();</a></li>
+  <li><a href="#g-special-case---object-constructor-var-g--new-function-foo" id="markdown-toc-g-special-case---object-constructor-var-g--new-function-foo">G: Special case - object constructor: var G = new function foo(){};</a></li>
+  <li><a href="#h-arrow-functions" id="markdown-toc-h-arrow-functions">H: Arrow functions</a></li>
+  <li><a href="#further-reading" id="markdown-toc-further-reading">Further reading</a></li>
+</ul>
+
+<h3 id="this-is-madness-this8230-is8230-javascript">This is madness! This… is… JavaScript!</h3>
 
 <p>In JavaScript, there’s many different ways of doing something. This is both a good thing and a bad thing. To the newcomer this is definitely a bad thing, as it means not only more things to learn, but more little caveats and more places to go wrong. And so it is with declaring functions!</p>
 
@@ -52,18 +70,29 @@
 
 <h3 id="overview-different-ways-of-declaring-functions">Overview: different ways of declaring functions</h3>
 
-<pre lang="javascript"><code>function A(){};             // function declaration
-var B = function(){};       // function expression
-var C = (function(){});     // function expression with grouping operators
-var D = function foo(){};   // named function expression
-var E = (function(){        // immediately-invoked function expression (IIFE) that returns a function
-  return function(){}
-})();
-var F = new Function();     // Function constructor
-var G = new function(){};   // special case: object constructor
-</code></pre>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="kd">function</span> <span class="nx">A</span><span class="p">(){};</span>             <span class="c1">// function declaration</span>
+</span><span class="line"><span class="kd">var</span> <span class="nx">B</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){};</span>       <span class="c1">// function expression</span>
+</span><span class="line"><span class="kd">var</span> <span class="nx">C</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span><span class="p">(){});</span>     <span class="c1">// function expression with grouping operators</span>
+</span><span class="line"><span class="kd">var</span> <span class="nx">D</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">foo</span><span class="p">(){};</span>   <span class="c1">// named function expression</span>
+</span><span class="line"><span class="kd">var</span> <span class="nx">E</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span><span class="p">(){</span>        <span class="c1">// IIFE that returns a function</span>
+</span><span class="line">  <span class="k">return</span> <span class="kd">function</span><span class="p">(){}</span>
+</span><span class="line"><span class="p">})();</span>
+</span><span class="line"><span class="kd">var</span> <span class="nx">F</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Function</span><span class="p">();</span>     <span class="c1">// Function constructor</span>
+</span><span class="line"><span class="kd">var</span> <span class="nx">G</span> <span class="o">=</span> <span class="k">new</span> <span class="kd">function</span><span class="p">(){};</span>   <span class="c1">// special case: object constructor</span>
+</span><span class="line"><span class="kd">var</span> <span class="nx">H</span> <span class="o">=</span> <span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">x</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>         <span class="c1">// ES6 arrow function</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<h3 id="function-declarations-function-a">Function declarations: function A(){};</h3>
+<h3 id="a-function-declarations-function-a">A: Function declarations: function A(){};</h3>
 
 <p>Function declarations are probably the most familiar and oldest way of doing things in JavaScript land. This creates a variable A which is accessible in the current scope. Scope is a separate topic, so well do everything in the global scope for all these examples (something you want to avoid usually).</p>
 
@@ -71,30 +100,38 @@ var G = new function(){};   // special case: object constructor
 
 <p>The interesting thing about these is that they are “hoisted” to the top of their scope, which means this code:</p>
 
-<pre lang="javascript"><code>A();
-function A(){
-  console.log('foo');
-};
-</code></pre>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="nx">A</span><span class="p">();</span>
+</span><span class="line"><span class="kd">function</span> <span class="nx">A</span><span class="p">(){</span>
+</span><span class="line">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">);</span>
+</span><span class="line"><span class="p">};</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>Gets executed as this code:</p>
 
-<pre lang="javascript"><code>function A(){
-  console.log('foo');
-};
-A();
-</code></pre>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="kd">function</span> <span class="nx">A</span><span class="p">(){</span>
+</span><span class="line">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">);</span>
+</span><span class="line"><span class="p">};</span>
+</span><span class="line"><span class="nx">A</span><span class="p">();</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>Which practically means that, yes, you can call the functions before they’re written in your code. It won’t matter, because the entire function gets hoisted to the top of its containing scope. (This is contrasted with variables, which only have their declaration hoisted, not their contents, as we’ll see in the next section).</p>
 
-<h4 id="no-function-declarations-in-if-statements-or-loops-etch4">2. No function declarations in <code>if</code> statements (or loops, etc)&lt;/h4&gt;</h4>
+<h4 id="no-function-declarations-in-if-statements-or-loops-etc">2. No function declarations in <code>if</code> statements (or loops, etc)</h4>
 <p>You can’t define functions this way in expressions, for example <code>if</code> statements, which is common if we want to define different versions of a function for different circumstances, usually to address browser inconsistencies. Well, you <em>can</em> in some implementations, but the way the code is processed is inconsistent (kangax has documented the inconsistencies <a href="http://kangax.github.com/nfe/">here</a>). If you want to use this pattern, use function expressions instead.</p>
 
 <h4 id="functions-declarations-must-have-names">3. Functions declarations must have names</h4>
 
 <p>This method doesn’t allow you to create anonymous functions, meaning that you always have to give it an identifier (in this case we’ve used “A”).</p>
 
-<h3 id="function-expressions-var-b--function">Function expressions: var B = function(){};</h3>
+<h3 id="b-function-expressions-var-b--function">B: Function expressions: var B = function(){};</h3>
 
 <p>A function expression looks similar to function declarations, except that the function is assigned to a variable name. Though functions are not primitive values in JavaScript, this is the way they can be utilized to their full effect in this functional language. Functions are “<a href="http://en.wikipedia.org/wiki/First-class_function">first class</a>”:</p>
 
@@ -104,10 +141,7 @@ A();
 
 <h4 id="anonymous-functions-they-dont-need-names">1. Anonymous functions (they don’t need names)</h4>
 
-<p>The function name is optional in function expressions, and we call these anonymous. Here we’re setting the variable B equal to an anonymous function:</p>
-
-<pre lang="javascript"><code>var B = function(){};
-</code></pre>
+<p>The function name is optional in function expressions, and we call these anonymous. Here we’re setting the variable B equal to an anonymous function: <code>var B = function(){};</code></p>
 
 <h4 id="variable-declaration-hoisting">2. Variable declaration hoisting</h4>
 
@@ -115,69 +149,91 @@ A();
 
 <p>This code:</p>
 
-<pre lang="javascript"><code>var A = function(){};
-var B = function(){};
-var C = function(){};
-</code></pre>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="kd">var</span> <span class="nx">A</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){};</span>
+</span><span class="line"><span class="kd">var</span> <span class="nx">B</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){};</span>
+</span><span class="line"><span class="kd">var</span> <span class="nx">C</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){};</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>Will be executed as this:</p>
 
-<pre lang="javascript"><code>var A, B, C;  // variable declarations are hoisted
-A = function(){};
-B = function(){};
-C = function(){};
-</code></pre>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="kd">var</span> <span class="nx">A</span><span class="p">,</span> <span class="nx">B</span><span class="p">,</span> <span class="nx">C</span><span class="p">;</span>  <span class="c1">// variable declarations are hoisted</span>
+</span><span class="line"><span class="nx">A</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){};</span>
+</span><span class="line"><span class="nx">B</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){};</span>
+</span><span class="line"><span class="nx">C</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){};</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>Therefore the order of setting and calling this type of function is important:</p>
 
-<pre lang="javascript"><code>// this works
-var B = function(){};
-B();
-
-// this doesn't work
-B2();  // TypeError (B2 is undefined)
-var B2 = function(){};
-</code></pre>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="c1">// this works</span>
+</span><span class="line"><span class="kd">var</span> <span class="nx">B</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){};</span>
+</span><span class="line"><span class="nx">B</span><span class="p">();</span>
+</span><span class="line">
+</span><span class="line"><span class="c1">// this doesn&#39;t work</span>
+</span><span class="line"><span class="nx">B2</span><span class="p">();</span>  <span class="c1">// TypeError (B2 is undefined)</span>
+</span><span class="line"><span class="kd">var</span> <span class="nx">B2</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){};</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>The second example gives us an error because only the variable B2’s declaration is hoisted, but not its definition, thus the “undefined” error.</p>
 
-<h3 id="function-expressions-with-grouping-operators-var-c--function">Function expressions with grouping operators: var C = (function(){});</h3>
+<h3 id="c-function-expressions-with-grouping-operators-var-c--function">C: Function expressions with grouping operators: var C = (function(){});</h3>
 
 <p>These really aren’t different from plain old function expressions and aren’t really seen in the wild (so maybe they’re just good for JavaScript quizzes?). Recently this way of declaring functions was brought up in <a href="http://ironjs.wordpress.com/2011/06/22/my-gripes-with-javascript/">this article</a> and confused some folks including myself.</p>
 
 <p>Here’s a good way to see what’s happening:</p>
 
-<pre lang="javascript"><code>function(){};  // SyntaxError
-(function(){});
-</code></pre>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="kd">function</span><span class="p">(){};</span>  <span class="c1">// SyntaxError</span>
+</span><span class="line"><span class="p">(</span><span class="kd">function</span><span class="p">(){});</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>Why does one work and the other doesn’t? The first example is a function declaration, and we learned above that we can’t declare them anonymously - that is, they must have a name. That’s why we’re getting the syntax error.</p>
 
 <p>The second example is using parenthesis - grouping operators - and is therefore evaluated differently, as a function expression. The grouping operators are the things we use to help show what should be evaluated first, as in mathematical problems. We’re saying “evaluate this first, then take the result and do something with it”:</p>
 
-<pre lang="javascript"><code>(1 + 2) * 3;  // 9
-1 + (2 * 3);  // 7
-</code></pre>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="mi">3</span><span class="p">;</span>  <span class="c1">// 9</span>
+</span><span class="line"><span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">3</span><span class="p">);</span>  <span class="c1">// 7</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>In the first example we’re saying “first add 1 and 2, then take the result and multiply by 3”, whereas in the second example we’re saying “first multiply 2 and 3, then take the result and add 1”.</p>
 
 <p>Because functions are first class, we can use similar grouping operators. Here’s a facetious example, but it shows how we can essentially drop in a function in the same way:</p>
 
-<pre lang="javascript"><code>(function(){} + 1);  // function(){}1
-</code></pre>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="p">(</span><span class="kd">function</span><span class="p">(){}</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>  <span class="c1">// function(){}1</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>The result is a string (because toString is being called on the function, then added/appended with 1), but you get the idea I hope.</p>
 
 <p>When the JavaScript engine encounters the opening parenthesis here, we’re essentially saying “ok, start grouping this together with something else”. Using our technical terms, we’re telling the engine that we’re not making a function declaration, but instead a function expression. And then we can assign the result to a variable:</p>
 
-<pre lang="javascript"><code>(function(){});           // resulting function not assigned
-var foo = (function(){}); // resulting function assigned to foo
-var bar = function(){};   // resulting function assigned to bar
-</code></pre>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="p">(</span><span class="kd">function</span><span class="p">(){});</span>           <span class="c1">// resulting function not assigned</span>
+</span><span class="line"><span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span><span class="p">(){});</span> <span class="c1">// resulting function assigned to foo</span>
+</span><span class="line"><span class="kd">var</span> <span class="nx">bar</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){};</span>   <span class="c1">// resulting function assigned to bar</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>Here we can see that foo and bar are really just the same, because in foo we’re not grouping the function together with anything but itself.</p>
 
-<h3 id="named-function-expression-var-d--function-foo">Named function expression: var D = function foo(){};</h3>
+<h3 id="d-named-function-expression-var-d--function-foo">D: Named function expression: var D = function foo(){};</h3>
 
 <p>Here we have our same old friend, the function expression. But instead of assigning the variable to an anonymous function, we’re assigning it to a named function (with the name foo).</p>
 
@@ -185,12 +241,17 @@ var bar = function(){};   // resulting function assigned to bar
 
 <p>We haven’t exposed the function name (foo) to the enclosing scope (in this case the global scope):</p>
 
-<pre lang="javascript"><code>var D = function foo(){
-  console.log(typeof foo);
-};
-D();                       // function
-console.log(typeof foo);   // undefined
-</code></pre>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="kd">var</span> <span class="nx">D</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">foo</span><span class="p">(){</span>
+</span><span class="line">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">foo</span><span class="p">);</span>
+</span><span class="line"><span class="p">};</span>
+</span><span class="line"><span class="nx">D</span><span class="p">();</span>                       <span class="c1">// function</span>
+</span><span class="line"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">foo</span><span class="p">);</span>   <span class="c1">// undefined</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <h4 id="useful-for-recursion">2. Useful for recursion</h4>
 
@@ -198,15 +259,23 @@ console.log(typeof foo);   // undefined
 
 <p>Here’s a trivial recursive function to illustrate calling itself from within the named function expression:</p>
 
-<pre lang="javascript"><code>var countdown = function a(count){
-  if(count &gt; 0) {
-    count--;
-    return a(count);  // we can also do this: a(--count), which is less clear
-  }
-  console.log('end of recursive function');
-}
-countdown(5);
-</code></pre>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="kd">var</span> <span class="nx">countdown</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">a</span><span class="p">(</span><span class="nx">count</span><span class="p">){</span>
+</span><span class="line">  <span class="k">if</span><span class="p">(</span><span class="nx">count</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="line">    <span class="nx">count</span><span class="o">--</span><span class="p">;</span>
+</span><span class="line">    <span class="k">return</span> <span class="nx">a</span><span class="p">(</span><span class="nx">count</span><span class="p">);</span>  <span class="c1">// we can also do this: a(--count), which is less clear</span>
+</span><span class="line">  <span class="p">}</span>
+</span><span class="line">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;end of recursive function&#39;</span><span class="p">);</span>
+</span><span class="line"><span class="p">}</span>
+</span><span class="line"><span class="nx">countdown</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <h4 id="useful-for-debugging">3. Useful for debugging</h4>
 
@@ -218,50 +287,67 @@ countdown(5);
 
 <p>The named function becomes a global variable, is hoisted like a function declaration, and actually ends up creating multiple instances of the same function.</p>
 
-<h3 id="immediately-invoked-function-expressions-iife-var-e--functionreturn-function">Immediately-invoked function expressions (IIFE): var E = (function(){return function(){}})();</h3>
+<h3 id="e-immediately-invoked-function-expressions-iife-var-e--functionreturn-function">E: Immediately-invoked function expressions (IIFE): var E = (function(){return function(){}})();</h3>
 
 <p>“Execute this function, whose return value is another function, and assign that to the variable E”. This may seem like magic, but it’s actually quite simple, and the pattern is powerful and has useful applications, the most famous of which is the <a href="http://www.klauskomenda.com/code/javascript-programming-patterns/#module">module pattern</a>.</p>
 
 <p>First we’ll use an example that doesn’t look like magic:</p>
 
-<pre lang="javascript"><code>var foo = function(){
-  return 'bar';
-};
-var output = foo();
-console.log(output);  // 'bar'
-</code></pre>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+</span><span class="line">  <span class="k">return</span> <span class="s1">&#39;bar&#39;</span><span class="p">;</span>
+</span><span class="line"><span class="p">};</span>
+</span><span class="line"><span class="kd">var</span> <span class="nx">output</span> <span class="o">=</span> <span class="nx">foo</span><span class="p">();</span>
+</span><span class="line"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output</span><span class="p">);</span>  <span class="c1">// &#39;bar&#39;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>We already learned about grouping operators above, so you should feel comfortable with saying this is equivalent:</p>
 
-<pre lang="javascript"><code>var foo = function(){
-  return 'bar';
-};
-var output = (foo)(); // note the extra grouping operators
-console.log(output);  // 'bar'
-</code></pre>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+</span><span class="line">  <span class="k">return</span> <span class="s1">&#39;bar&#39;</span><span class="p">;</span>
+</span><span class="line"><span class="p">};</span>
+</span><span class="line"><span class="kd">var</span> <span class="nx">output</span> <span class="o">=</span> <span class="p">(</span><span class="nx">foo</span><span class="p">)();</span> <span class="c1">// note the extra grouping operators</span>
+</span><span class="line"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output</span><span class="p">);</span>  <span class="c1">// &#39;bar&#39;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>Since foo is pointing to our function expression, we know that we can simply refrain from using the variable “foo” and drop in the entire function as an anonymous function (since functions are first class, after all!):</p>
 
-<pre lang="javascript"><code>var output = (function(){
-  return 'bar';
-})();
-console.log(output);  // 'bar'
-</code></pre>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="kd">var</span> <span class="nx">output</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+</span><span class="line">  <span class="k">return</span> <span class="s1">&#39;bar&#39;</span><span class="p">;</span>
+</span><span class="line"><span class="p">})();</span>
+</span><span class="line"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">output</span><span class="p">);</span>  <span class="c1">// &#39;bar&#39;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>Hey wait, we just arrived at the magical resulting function! It turns out to be not so magical after all, once we break it down and see it for what it is. It’s simply shorthand for the code we wrote originally, where we defined a function, executed it, and defined output to be its return value.</p>
 
 <p>I’ve included this method on the list of declaring functions because we can assign the return value to itself be a function:</p>
 
-<pre lang="javascript"><code>var E = (function(){
-  return function(){}
-})();
-</code></pre>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="kd">var</span> <span class="nx">E</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+</span><span class="line">  <span class="k">return</span> <span class="kd">function</span><span class="p">(){}</span>
+</span><span class="line"><span class="p">})();</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <h4 id="applications">Applications</h4>
 
 <p>There are good applications for this, including information hiding using in the module pattern, (<a href="http://ejohn.org/blog/partial-functions-in-javascript/">partial application</a>, for example), and other clever uses of it. It’s definitely not a trivial pattern.</p>
 
-<h3 id="function-constructor-var-f--new-function">Function constructor: var F = new Function();</h3>
+<h3 id="f-function-constructor-var-f--new-function">F: Function constructor: var F = new Function();</h3>
 
 <p>This method is extremely old and it’s not recommended to be used. You pass in an unlimited number of arguments in the front, then the actual function body appears as a string in the last argument (because it’s a string, it’s effectively the equivalent of eval(), and isn’t recommended).</p>
 
@@ -269,11 +355,13 @@ console.log(output);  // 'bar'
 
 <p>You can create a function like this:</p>
 
-<pre lang="javascript"><code>var F = new Function('arg1', 'arg2', 'console.log(arg1 + ", " + arg2)');
-F('foo', 'bar');  // 'foo, bar'
-</code></pre>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="kd">var</span> <span class="nx">F</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Function</span><span class="p">(</span><span class="s1">&#39;arg1&#39;</span><span class="p">,</span> <span class="s1">&#39;arg2&#39;</span><span class="p">,</span> <span class="s1">&#39;console.log(arg1 + &quot;, &quot; + arg2)&#39;</span><span class="p">);</span>
+</span><span class="line"><span class="nx">F</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">);</span>  <span class="c1">// &#39;foo, bar&#39;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<h4 id="you-dont-need-the-new-operatorh4">2. You don’t need the <code>new</code> operator&lt;/h4&gt;</h4>
+<h4 id="you-dont-need-the-new-operator">2. You don’t need the <code>new</code> operator</h4>
 <p>You can simply write <code>var F = Function();</code> to get the same result.</p>
 
 <h4 id="quirks">3. Quirks</h4>
@@ -282,25 +370,37 @@ F('foo', 'bar');  // 'foo, bar'
 
 <p>What this means is that they don’t have access to variables in their enclosing scope, which isn’t particularly useful:</p>
 
-<pre lang="javascript"><code>function foo(){
-  var bar = 'blah';
-  
-  var first = new Function('console.log(typeof bar)');
-  first();   // undefined
-  
-  var second = function(){
-    console.log(typeof bar);
-  }
-  second();  // string
-}
-foo();
-</code></pre>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="kd">function</span> <span class="nx">foo</span><span class="p">(){</span>
+</span><span class="line">  <span class="kd">var</span> <span class="nx">bar</span> <span class="o">=</span> <span class="s1">&#39;blah&#39;</span><span class="p">;</span>
+</span><span class="line">
+</span><span class="line">  <span class="kd">var</span> <span class="nx">first</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Function</span><span class="p">(</span><span class="s1">&#39;console.log(typeof bar)&#39;</span><span class="p">);</span>
+</span><span class="line">  <span class="nx">first</span><span class="p">();</span>   <span class="c1">// undefined</span>
+</span><span class="line">
+</span><span class="line">  <span class="kd">var</span> <span class="nx">second</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+</span><span class="line">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">bar</span><span class="p">);</span>
+</span><span class="line">  <span class="p">}</span>
+</span><span class="line">  <span class="nx">second</span><span class="p">();</span>  <span class="c1">// string</span>
+</span><span class="line"><span class="p">}</span>
+</span><span class="line"><span class="nx">foo</span><span class="p">();</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>In the function “first”, we’re using the Function constructor, so it doesn’t have access to the variable bar. However, if we use the function “second”, which is a function expression, it does in fact have access to variables defined in its enclosing scope (via closure).</p>
 
 <p>In other words, <em>don’t use the Function constructor</em>.</p>
 
-<h3 id="special-case---object-constructor-var-g--new-function-foo">Special case - object constructor: var G = new function foo(){};</h3>
+<h3 id="g-special-case---object-constructor-var-g--new-function-foo">G: Special case - object constructor: var G = new function foo(){};</h3>
 
 <p>I saved this for last because we’re not really defining a function, though we are using the function keyword, so it’s worth noting at least.</p>
 
@@ -308,13 +408,91 @@ foo();
 
 <p>It’s a bit unusual to see it in this form. Let’s do it the proper way:</p>
 
-<pre lang="javascript"><code>var Person = function(){
-  console.log(this);  // Person
-}
-var joe = new Person();
-</code></pre>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="kd">var</span> <span class="nx">Person</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+</span><span class="line">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>  <span class="c1">// Person</span>
+</span><span class="line"><span class="p">}</span>
+</span><span class="line"><span class="kd">var</span> <span class="nx">joe</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">();</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>So really with the new operator, we are giving it a new ‘this’ context and then executing the given function with that new context. Much different than the function definitions we’ve been dealing with above! This does into a whole new topic, and we’ll save that for later!</p>
+
+<h3 id="h-arrow-functions">H: Arrow functions</h3>
+
+<p>With the addition of ES6 came these so-called “fat arrow” functions, or if you prefer the slimmed-down version, simply “arrow functions”.</p>
+
+<p>Arrow functions bring no brand new functionality, instead offering some syntactic sugar, meaning that in the end we developers will have to type less to achieve the same result.</p>
+
+<p>Arrow functions are particularly handy in cases where we would’ve had one-line functions before, as in this case with ES5 JavaScript:</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">].</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span><span class="k">return</span> <span class="nx">x</span> <span class="o">*</span> <span class="mi">2</span><span class="p">});</span>
+</span><span class="line"><span class="c1">// [2, 4, 6]</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>We can now write this as follows:</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">].</span><span class="nx">map</span><span class="p">(</span><span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">x</span> <span class="o">*</span> <span class="mi">2</span><span class="p">);</span>
+</span><span class="line"><span class="c1">// [2, 4, 6]</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>The second benefit of arrow functions is that they preserve their <code>this</code> context, which is super convenient.  Often times it’s a tedious task trying to preserve scope in JavaScript, usually through the use of <code>bind()</code>.  But this allows us to bypass it and write less.</p>
+
+<p>Consider the following case:</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="kd">function</span> <span class="nx">multiply</span><span class="p">(</span><span class="nx">valuesArray</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="line">  <span class="k">this</span><span class="p">.</span><span class="nx">multiplier</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+</span><span class="line">  <span class="k">return</span> <span class="nx">valuesArray</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span><span class="k">return</span> <span class="nx">x</span> <span class="o">*</span> <span class="k">this</span><span class="p">.</span><span class="nx">multiplier</span><span class="p">});</span>
+</span><span class="line"><span class="p">};</span>
+</span><span class="line">
+</span><span class="line"><span class="kd">var</span> <span class="nx">fakeContext</span> <span class="o">=</span> <span class="p">{};</span>
+</span><span class="line">
+</span><span class="line"><span class="nx">multiply</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">fakeContext</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]);</span>
+</span><span class="line"><span class="c1">// -&gt; [NaN, NaN, NaN]</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>This didn’t work because the <code>this</code> context of the multiply function wasn’t preserved in the <code>map()</code> function, forcing us to rewrite things slightly to preserve function context through defining a variable in <code>multiple()</code> (such as <code>var self = this</code>) or by using <code>bind()</code>.</p>
+
+<p>Instead, using an arrow function we know our <code>this</code> context will be preserved, allowing us to write with a minor tweak:</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="kd">function</span> <span class="nx">multiply</span><span class="p">(</span><span class="nx">valuesArray</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="line">  <span class="k">this</span><span class="p">.</span><span class="nx">multiplier</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+</span><span class="line">  <span class="k">return</span> <span class="nx">valuesArray</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">x</span> <span class="o">=&gt;</span> <span class="nx">x</span> <span class="o">*</span> <span class="k">this</span><span class="p">.</span><span class="nx">multiplier</span><span class="p">);</span>
+</span><span class="line"><span class="p">};</span>
+</span><span class="line">
+</span><span class="line"><span class="kd">var</span> <span class="nx">fakeContext</span> <span class="o">=</span> <span class="p">{};</span>
+</span><span class="line">
+</span><span class="line"><span class="nx">multiply</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">fakeContext</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]);</span>
+</span><span class="line"><span class="c1">// -&gt; [2, 4, 6]</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>As with much of ES6, use caution, as it may not be completely supported yet (see <a href="http://caniuse.com/#feat=arrow-functions">caniuse.com</a>).  As most folks are using some sort of transpiler these days, they probably don’t have to worry about this.  It’s good to keep in mind however.</p>
+
+<p>Read more about arrow functions <a href="http://exploringjs.com/es6/ch_arrow-functions.html">here</a>.</p>
 
 <h3 id="further-reading">Further reading</h3>
 

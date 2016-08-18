@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2011/what-happens-when-you-have-no-javascript-fallback
-categories:
-  - javascript
+categories: ["javascript", "programming", "webdev"]
 ---
 [<img src="http://davidbcalhoun.com/wp-content/uploads/2011/01/twitter-fallback.png" alt="" title="Twitter no-JavaScript fallback" width="1036" height="772" class="aligncenter size-full wp-image-556" />][1]
 

@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2009/javascript-tidbit-block-scope-with-let
-categories:
-  - Uncategorized
+categories: ["webdev", "javascript", "programming"]
 tags:
   - 1.7
   - block scope

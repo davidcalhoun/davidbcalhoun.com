@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2013/japan-from-miniature-train-to-bullet-train
-categories:
-  - japan
+categories: ["japan", "history"]
 ---
 [<img src="http://davidbcalhoun.com/wp-content/uploads/2013/01/perry-japan-miniature-train-model-train-closeup-1024x684.jpg" alt="Matthew C. Perry and the gift of the miniature train to Japan" width="1024" height="684" class="aligncenter size-large wp-image-1007" />][1]  
 (view the [full image][2], [image credit][1])

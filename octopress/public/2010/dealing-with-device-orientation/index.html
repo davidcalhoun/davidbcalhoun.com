@@ -2,7 +2,7 @@
 <html lang="en-US">
 <head>
 	<meta charset="utf-8">
-	<title>Dealing with device orientation (Mobile web part 6)  | David Calhoun's blog</title>
+	<title>Dealing with device orientation (Mobile web part 6)  | David Calhoun</title>
 
 	<meta name="author" content="David Calhoun">
 
@@ -10,7 +10,7 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link href="/atom.xml" rel="alternate" title="David Calhoun's blog" type="application/atom+xml">
+	<link href="/atom.xml" rel="alternate" title="David Calhoun" type="application/atom+xml">
 	<link rel="canonical" href="">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
 	<!--[if lt IE 9]><script src="/javascripts/html5.js"></script><![endif]-->
@@ -21,7 +21,7 @@
 
 
 <body>
-	<header id="header" class="inner" role="banner" aria-labelledby="header_title"><h1><a href="/" id="header_title">David Calhoun's blog</a></h1>
+	<header id="header" class="inner" role="banner" aria-labelledby="header_title"><h1><a href="/" id="header_title">David Calhoun</a></h1>
 <span class="tagline"></span>
 
 </header>
@@ -40,7 +40,7 @@
   
 
 
-<time datetime="2010-08-24T00:00:00+09:00" pubdate data-updated="true"></time></div>
+<time datetime="2010-08-24T00:00:00-07:00" pubdate data-updated="true"></time></div>
 	</header>
 	<div class="entry-content"><h3 id="introduction">Introduction</h3>
 
@@ -60,10 +60,10 @@
   <li>
     <p><code>orientationchange</code> event: this window event fires after every 90 degrees of rotation and, like other events, <a href="http://en.wikipedia.org/wiki/DOM_events">can be applied in various ways</a>:</p>
 
-    <p>// DOM Level 0 (avoid)
+    <p>// DOM Level 0 (avoid)<br />
   window.onorientationchange = function(){};</p>
 
-    <p>// DOM Level 2
+    <p>// DOM Level 2<br />
   window.addEventListener(‘orientationchange’, function(){}, false);</p>
   </li>
 </ul>
@@ -226,8 +226,8 @@ window.addEventListener('DOMContentLoaded', init, false);
 <p>Again, in my experience I’ve used this to fix bugs.  But I’m sure you can find more creative uses for it!</p>
 
 <h3 id="related">Related</h3>
-<p><a href="http://www.nczonline.net/blog/2010/04/06/ipad-web-development-tips/">iPad web development tips (Nicholas C. Zakas)</a><br />
-<a href="http://ajaxian.com/archives/iphone-windowonorientationchange-code">iPhone window.onorientationchange Code (Ajaxian)</a><br />
+<p><a href="http://www.nczonline.net/blog/2010/04/06/ipad-web-development-tips/">iPad web development tips (Nicholas C. Zakas)</a><br /><br />
+<a href="http://ajaxian.com/archives/iphone-windowonorientationchange-code">iPhone window.onorientationchange Code (Ajaxian)</a><br /><br />
 <a href="http://www.quirksmode.org/blog/archives/2010/04/the_orientation.html">The orientation media query (Quirksmode)</a></p>
 
 <h3 id="more-from-the-mobile-web-series">More from the Mobile Web series:</h3>

@@ -1,37 +1,37 @@
 ---
-title: 'Implementing iPhone&#8217;s slider unlock with input type=&#8221;range&#8221;'
+title: "Implementing iPhone's slider unlock with input type='range'"
 date: 2011-01-16
 comments: true
 author: David
 layout: post
 permalink: /2011/implementing-iphone-slider-unlock-with-input-type-range
-categories:
-  - css
+categories: ["css", "iphone", "demo", "webdev"]
 ---
 (check out the live [demo][1])
 
 ### Introduction
 
-After reading [&#8220;What the Heck is Shadow DOM?&#8221;][2] I was inspired to see how far I could style the <input type="range"> element. Pretty far, as it turns out!
+After reading ["What the Heck is Shadow DOM?"][2] I was inspired to see how far I could style the `<input type="range">` element. Pretty far, as it turns out!
 
-My goal was to change the input&#8217;s default appearance:
+My goal was to change the input's default appearance:
 
 <img src="http://davidbcalhoun.com/wp-content/uploads/2011/01/input-range.png" alt="The default appearance for input type=range" title="The default appearance for input type=range" width="144" height="25" class="aligncenter size-full wp-image-567" />
 
-To the visual appearance of the iPhone&#8217;s unlock slider:
+To the visual appearance of the iPhone's unlock slider:
 
 <img src="http://davidbcalhoun.com/wp-content/uploads/2011/01/iphone-slider-native.png" alt="The iPhone's unlock slider" title="The iPhone's unlock slider" width="300" height="69" class="aligncenter size-full wp-image-566" />
 
-As far as I can tell, only WebKit-based browsers and Opera have implemented input type=&#8221;range&#8221;. Mobile Safari hasn&#8217;t yet implemented it as of iOS 4.2 and Android also hasn&#8217;t fully implemented it as of Android 2.3 (although curiously the elements are styleable but not yet interactive). Surprisingly, the only mobile OS to implement this input type seems to be BlackBerry OS 6.
+As far as I can tell, only WebKit-based browsers and Opera have implemented `input type=range`. Mobile Safari hasn't yet implemented it as of iOS 4.2 and Android also hasn't fully implemented it as of Android 2.3 (although curiously the elements are styleable but not yet interactive). Surprisingly, the only mobile OS to implement this input type seems to be BlackBerry OS 6.
 
-However, the focus here will be to get this working on just Chrome and WebKit. This will make it a bit easier to do this proof of concept. So we&#8217;ll be using lots of &#8220;-webkit&#8221; vendor prefixed CSS.
+However, the focus here will be to get this working on just Chrome and WebKit. This will make it a bit easier to do this proof of concept. So we'll be using lots of `-webkit' vendor prefixed CSS.
 
 ### What we have to work with
 
 Of course we have our simple range input:
 
-<pre name="code" class="html">&lt;input type="range"&gt;
-</pre>
+``` html
+<input type="range">
+```
 
 Which looks like this:
 
@@ -39,35 +39,39 @@ Which looks like this:
 
 We can target the input itself with a CSS attribute selector:
 
-<pre name="code" class="CSS">input[type='range'] {}
-</pre>
+``` css
+input[type='range'] {}
+```
 
-And if we want, we can transform it into a vertical slider by changing the &#8220;-webkit-appearance&#8221; property:
+And if we want, we can transform it into a vertical slider by changing the `-webkit-appearance` property:
 
-<pre name="code" class="CSS">input[type='range'] {
+``` css
+input[type='range'] {
     -webkit-appearance: slider-vertical;
 }
-</pre>
+```
 
 Which looks like this:
 
 <img src="http://davidbcalhoun.com/wp-content/uploads/2011/01/input-range-vertical.png" alt="Input range in a vertical orientation" title="Input range in a vertical orientation" width="25" height="119" class="aligncenter size-full wp-image-579" />
 
-If we want to style it as if it was any other element, there&#8217;s a slight catch, as we first have to set &#8220;-webkit-appearance&#8221; to &#8220;none&#8221; and then add our customizations (this appears to mean that we can&#8217;t actually style vertical sliders&#8230;). Here we&#8217;ll set the background color as a simple demo:
+If we want to style it as if it was any other element, there's a slight catch, as we first have to set "-webkit-appearance" to "none" and then add our customizations (this appears to mean that we can't actually style vertical sliders...). Here we'll set the background color as a simple demo:
 
-<pre name="code" class="CSS">input[type='range'] {
+``` css
+input[type='range'] {
     -webkit-appearance: none;
     background-color: gray;
 }
-</pre>
+```
 
 This outputs the following:
 
 <img src="http://davidbcalhoun.com/wp-content/uploads/2011/01/input-range-gray-background.png" alt="Input range with a gray background" title="Input range with a gray background" width="129" height="15" class="aligncenter size-full wp-image-577" />
 
-Most interestingly, we can target and style the slider button itself with CSS, although we can&#8217;t get access to it with JavaScript (for the time being anyhow). Here we&#8217;ll style it a slightly darker shade of gray:
+Most interestingly, we can target and style the slider button itself with CSS, although we can't get access to it with JavaScript (for the time being anyhow). Here we'll style it a slightly darker shade of gray:
 
-<pre name="code" class="CSS">input[type='range'] {
+``` css
+input[type='range'] {
     -webkit-appearance: none;
     background-color: gray;
 }
@@ -78,7 +82,7 @@ input[type='range']::-webkit-slider-thumb {
     width: 15px;
     height: 20px;
 }
-</pre>
+```
 
 Which results in this:  
 <img src="http://davidbcalhoun.com/wp-content/uploads/2011/01/input-range-styled.png" alt="Input range with a gray background and a slightly darker slider control" title="Input range with a gray background and a slightly darker slider control" width="129" height="20" class="aligncenter size-full wp-image-583" />
@@ -87,9 +91,10 @@ Now all the pieces are in place to fully style the input!
 
 ### Styling the background
 
-This part&#8217;s no big deal. We just want to set up the width/height, slap on some handy rounded corners, and add a very slight background gradient:
+This part's no big deal. We just want to set up the width/height, slap on some handy rounded corners, and add a very slight background gradient:
 
-<pre name="code" class="CSS">input[type='range'] {
+``` css
+input[type='range'] {
     -webkit-appearance: none;
     width: 280px;
     height: 46px;
@@ -105,7 +110,7 @@ This part&#8217;s no big deal. We just want to set up the width/height, slap on 
         color-stop(1, #222222)
     );
 }
-</pre>
+```
 
 Now we have the backdrop in place:
 
@@ -113,13 +118,14 @@ Now we have the backdrop in place:
 
 ### Styling the button
 
-To get the button, we&#8217;ll add some width/height and rounded corners. Here we&#8217;ll also need a more complicated background gradient as well as an arrow icon. Your first instinct might be to add more markup to hook the arrow icon to, but remember that this is impossible. We&#8217;re working in the &#8220;shadow DOM&#8221; of elements created and maintained by the browser itself. We can style the existing elements but we can&#8217;t create any new ones.
+To get the button, we'll add some width/height and rounded corners. Here we'll also need a more complicated background gradient as well as an arrow icon. Your first instinct might be to add more markup to hook the arrow icon to, but remember that this is impossible. We're working in the "shadow DOM" of elements created and maintained by the browser itself. We can style the existing elements but we can't create any new ones.
 
-So what do we do? Take advantage of multiple backgrounds! We can specify the background as both the arrow image and the gradient we need. In this case we&#8217;ll also base64 encode the small image to avoid an extra HTTP request.
+So what do we do? Take advantage of multiple backgrounds! We can specify the background as both the arrow image and the gradient we need. In this case we'll also base64 encode the small image to avoid an extra HTTP request.
 
 The CSS for the button looks like this:
 
-<pre name="code" class="CSS">input[type='range']::-webkit-slider-thumb {
+``` css
+input[type='range']::-webkit-slider-thumb {
     -webkit-appearance: none;
     width: 68px;
     height: 44px;
@@ -138,37 +144,40 @@ The CSS for the button looks like this:
     background-repeat: no-repeat;
     background-position: 50%;
 }
-</pre>
+```
 
 Which outputs this:  
 <img src="http://davidbcalhoun.com/wp-content/uploads/2011/01/iphone-slider-button.png" alt="" title="iPhone slider button styled" width="288" height="54" class="aligncenter size-full wp-image-587" />
 
-### &#8220;Slide to unlock&#8221; text
+### "Slide to unlock" text
 
-Now we&#8217;re getting somewhere! And now we&#8217;re approaching the limits of what we can do without getting pretty creative. We need some &#8220;slide to unlock&#8221; text in the background.
+Now we're getting somewhere! And now we're approaching the limits of what we can do without getting pretty creative. We need some "slide to unlock" text in the background.
 
 The first thing to do is to move the slider all the way to the left, to the default position. We do this through HTML by setting the value to 0:
 
-<pre name="code" class="HTML">&lt;input type="range" value="0"&gt;
-</pre>
+``` html
+<input type="range" value="0">
+```
 
-Ok, that wasn&#8217;t too hard. But what about the text? We can&#8217;t modify anything in the input itself, because it doesn&#8217;t contain any element to display text. And we can&#8217;t dynamically add text with JavaScript, because again, it&#8217;s the shadow DOM! What we can do is create a separate text element outside of the input and position it on top of the slider using absolute positioning.
+Ok, that wasn't too hard. But what about the text? We can't modify anything in the input itself, because it doesn't contain any element to display text. And we can't dynamically add text with JavaScript, because again, it's the shadow DOM! What we can do is create a separate text element outside of the input and position it on top of the slider using absolute positioning.
 
 But this would be no good, since the text would appear over the button itself. What we want is for the text to show up in-between the button and the background. Since we can style both of these with CSS, we can control the stacking order with good old z-index!
 
-And while we&#8217;re at it, we might as well animate the &#8220;spotlight&#8221; effect on the text. We can do this with a combination of a semitransparent -webkit-mask and animations (see below).
+And while we're at it, we might as well animate the "spotlight" effect on the text. We can do this with a combination of a semitransparent -webkit-mask and animations (see below).
 
 First we have the HTML, which has changed a bit. For positioning and grouping, we need a wrapped element for the input and the span of text:
 
-<pre name="code" class="HTML">&lt;div class="iphone-slider"&gt;
-    &lt;input type="range" value="0"&gt;&lt;/input&gt;
-    &lt;span&gt;slide to unlock&lt;/span&gt;
-&lt;/div&gt;
-</pre>
+``` html
+<div class="iphone-slider">
+    <input type="range" value="0"></input>
+    <span>slide to unlock</span>
+</div>
+```
 
 The final complete CSS is as follows:
 
-<pre name="code" class="CSS">.iphone-slider {
+``` css
+.iphone-slider {
     width: 280px;
     height: 46px;
     
@@ -260,7 +269,7 @@ The final complete CSS is as follows:
     -webkit-mask-position: 0px;
   }
 }
-</pre>
+```
 
 This renders as the following:
 
@@ -270,13 +279,14 @@ Which looks pretty dang close the the native iPhone slider if I do say so myself
 
 ### Just a bit of JavaScript
 
-Since we&#8217;ve come this far, we might as well make the experience as authentic as possible. Here I&#8217;ve thrown in some JavaScript to check if the slider has been fully moved to the right, giving the user notification that the phone is unlocked.
+Since we've come this far, we might as well make the experience as authentic as possible. Here I've thrown in some JavaScript to check if the slider has been fully moved to the right, giving the user notification that the phone is unlocked.
 
-Also, you&#8217;ll notice the opacity of the text slowly fade as the slider is moved farther to the right. This mimics the actual experience on the iPhone.
+Also, you'll notice the opacity of the text slowly fade as the slider is moved farther to the right. This mimics the actual experience on the iPhone.
 
-Here&#8217;s the JavaScript to make this work:
+Here's the JavaScript to make this work:
 
-<pre name="code" class="JScript">(function() {
+``` javascript
+(function() {
   // variable declarations
   var slider, sliderInput, sliderButton, sliderText, sliderTimeout, sliderOnchange, unlockCheck;
   
@@ -320,14 +330,14 @@ Here&#8217;s the JavaScript to make this work:
   
   slider.onchange = sliderOnchange;
 })();
-</pre>
+```
 
 ### Live example
 
-Here&#8217;s a [video][3] of the slider in action:  
+Here's a [video][3] of the slider in action:  
 
 
-If you&#8217;re running Safari or Chrome, you should be able to see and interact with the [standalone demo][1].
+If you're running Safari or Chrome, you should be able to see and interact with the [standalone demo][1].
 
 Sweet! Well, that was fun! This was some good practice of using a ton of good stuff: border radius, gradients, multiple backgrounds, data URI images, webkit-mask-image, webkit-animation, and of course styleable input ranges via webkit-slider-thumb.
 

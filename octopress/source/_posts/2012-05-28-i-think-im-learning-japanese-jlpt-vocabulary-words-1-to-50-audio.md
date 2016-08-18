@@ -12,9 +12,11 @@ enclosure:
         3309408
         audio/mpeg
         
-categories:
-  - japanese
+categories: ["japanese"]
 ---
+
+(2016 note: this was a terrible idea because I'm neither a native speaker nor a good speaker in general..  but I'm leaving this up for posterity...)
+
 I have been learning bits and pieces of Japanese throughout the years, and picking up more and more on each of my trips to Japan. But now it&#8217;s time to buckle down and get disciplined about learning, and make some real progress.
 
 As with learning any language, having a decent vocabulary is critical in order to form coherent sentences, so I&#8217;ve decided to focus on this for the time being, in addition to learning hiragana and katakana and getting it down pat, with no errors.

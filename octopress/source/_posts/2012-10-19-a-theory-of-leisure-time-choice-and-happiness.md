@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2012/a-theory-of-leisure-time-choice-and-happiness
-categories:
-  - philosophy
+categories: ["philosophy", "life"]
 ---
 This is finally the end of my first week in Japanese language school here in Kyoto. It&#8217;s been quite a long week, with the most studying I&#8217;ve ever done in my life. We&#8217;ve gone through nine chapters in a week, and just Friday received two more books for learning Kanji. We&#8217;ll learn our first 50 Kanji in a week, alongside the rest of our classes. I already know some words here and there, but for the most part, much of what we&#8217;ve just learned is a blur, which is forcing me to use almost all of my free time in running to catch up.
 

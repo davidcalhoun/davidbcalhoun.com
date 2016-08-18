@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2010/mobile-javascript-libraries-and-frameworks
-categories:
-  - mobile
+categories: ["javascript", "mobile", "webdev", "programming"]
 ---
 ### Intro
 

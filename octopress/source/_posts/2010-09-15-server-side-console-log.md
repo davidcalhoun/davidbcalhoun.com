@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2010/server-side-console-log
-categories:
-  - javascript
+categories: ["javascript", "webdev"]
 ---
 ### The problem
 

@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2011/improving-yourself-as-a-programmer-versus-as-a-human-being
-categories:
-  - Uncategorized
+categories: ["philosophy", "programming"]
 ---
 (OR &#8220;The Post In Which I Conflate Programming and Philosophy&#8221; OR &#8220;The Programmer&#8217;s Existentialist Crisis&#8221;)
 

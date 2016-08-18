@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: javascript | David Calhoun's blog]]></title>
+  <title><![CDATA[Category: javascript | David Calhoun]]></title>
   <link href="http://davidbcalhoun.com/blog/categories/javascript/atom.xml" rel="self"/>
   <link href="http://davidbcalhoun.com/"/>
-  <updated>2016-05-26T09:01:40+09:00</updated>
+  <updated>2016-08-18T14:00:33-07:00</updated>
   <id>http://davidbcalhoun.com/</id>
   <author>
     <name><![CDATA[David Calhoun]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[async.parallel with a simple timeout (node.js)]]></title>
     <link href="http://davidbcalhoun.com/2014/async.parallel-with-a-simple-timeout-node-js/"/>
-    <updated>2014-09-08T16:36:52+09:00</updated>
+    <updated>2014-09-08T00:36:52-07:00</updated>
     <id>http://davidbcalhoun.com/2014/async.parallel-with-a-simple-timeout-node-js</id>
     <content type="html"><![CDATA[<p>A while back I had a need for a general timeout option for async.parallel and was surprised I couldn’t find much information about how to do it.  I was using async.parallel to make a lot of REST calls in parallel, but one of them was getting blocked by a firewall, resulting in an eventual timeout minutes later.</p>
 
@@ -26,72 +26,72 @@
 
 <p>In any case, I wrote a pretty simple wrapper function that gets the job done (see example usage below):</p>
 
-<pre lang="javascript"><code>var async = require('async');
+<pre><code class="language-javascript">	var async = require('async');
 
-// async.parallel with optional timeout (options.timeoutMS)
-function parallel(options, tasks, cb) {
-	//  sanity checks
-	options = options || {};
+	// async.parallel with optional timeout (options.timeoutMS)
+	function parallel(options, tasks, cb) {
+		//  sanity checks
+		options = options || {};
 
-	// no timeout wrapper; passthrough to async.parallel
-	if(typeof options.timeoutMS != 'number') return async.parallel(tasks, cb);
+		// no timeout wrapper; passthrough to async.parallel
+		if(typeof options.timeoutMS != 'number') return async.parallel(tasks, cb);
 
-	var timeout = setTimeout(function(){
-		// remove timeout, so we'll know we already erred out
-		timeout = null;
+		var timeout = setTimeout(function(){
+			// remove timeout, so we'll know we already erred out
+			timeout = null;
 
-		// error out
-		cb('async.parallel timed out out after ' + options.timeoutMS + 'ms.', null);
-	}, options.timeoutMS);
+			// error out
+			cb('async.parallel timed out out after ' + options.timeoutMS + 'ms.', null);
+		}, options.timeoutMS);
 
-	async.parallel(tasks, function(err, result){
-		// after all tasks are complete
+		async.parallel(tasks, function(err, result){
+			// after all tasks are complete
 
-		// noop if timeout was called and annulled
-		if(!timeout) return;
+			// noop if timeout was called and annulled
+			if(!timeout) return;
 
-		// cancel timeout (if timeout was set longer, and all parallel tasks finished sooner)
-		clearTimeout(timeout);
+			// cancel timeout (if timeout was set longer, and all parallel tasks finished sooner)
+			clearTimeout(timeout);
 
-		// passthrough the data to the cb
-		cb(err, result);
+			// passthrough the data to the cb
+			cb(err, result);
+		});
+	}
+
+
+	// example usage
+	parallel({timeoutMS: 10000}, [  // 10 second timeout
+		function(){ ... },
+		function(){ ... }
+	],
+	function(err, results) {
+		if(err) {
+			// timeouts can now be handled here
+		}
 	});
-}
 
 
-// example usage
-parallel({timeoutMS: 10000}, [  // 10 second timeout
-	function(){ ... },
-	function(){ ... }
-],
-function(err, results) {
-	if(err) {
-		// timeouts can now be handled here
-	}
-});
-
-
-// an example forcing a timeout to occur
-parallel({
-	timeoutMS: 1000   // 1 second timeout
-},
-[
-	function(done){
-		// task 1 completes in 100ms
-		setTimeout(function(){
-			done(null, 'foo');
-		}, 100);
+	// an example forcing a timeout to occur
+	parallel({
+		timeoutMS: 1000   // 1 second timeout
 	},
-	function(done){
-		// task 2 completes in 2000ms, forcing a timeout error
-		setTimeout(function(){
-			done(null, 'bar');
-		}, 2000);
-	}
-],
-function(err, results) {
-	// err = 'async.parallel timed out out after 1000ms.'
-});
+	[
+		function(done){
+			// task 1 completes in 100ms
+			setTimeout(function(){
+				done(null, 'foo');
+			}, 100);
+		},
+		function(done){
+			// task 2 completes in 2000ms, forcing a timeout error
+			setTimeout(function(){
+				done(null, 'bar');
+			}, 2000);
+		}
+	],
+	function(err, results) {
+		// err = 'async.parallel timed out out after 1000ms.'
+	});
 </code></pre>
 ]]></content>
   </entry>
@@ -99,7 +99,7 @@ function(err, results) {
   <entry>
     <title type="html"><![CDATA[What is AMD, CommonJS, and UMD?]]></title>
     <link href="http://davidbcalhoun.com/2014/what-is-amd-commonjs-and-umd/"/>
-    <updated>2014-05-01T03:59:21+09:00</updated>
+    <updated>2014-04-30T11:59:21-07:00</updated>
     <id>http://davidbcalhoun.com/2014/what-is-amd-commonjs-and-umd</id>
     <content type="html"><![CDATA[<h2 id="intro">Intro</h2>
 <p>Over the years there’s been a steadily increasing ecosystem of JavaScript components to choose from.  The sheer amount of choices is fantastic, but this also infamously presents a difficulty when components are mixed-and-matched.  And it doesn’t take too long for budding developers to find out that not all components are built to play nicely together.</p>
@@ -111,31 +111,31 @@ function(err, results) {
 
 <p>Here’s module <code>foo</code> with a single dependency on <code>jquery</code>:</p>
 
-<pre lang="javascript"><code>//    filename: foo.js
-define(['jquery'], function ($) {
-    //    methods
-    function myFunc(){};
+<pre><code class="language-javascript">    //    filename: foo.js
+    define(['jquery'], function ($) {
+        //    methods
+        function myFunc(){};
 
-    //    exposed public methods
-    return myFunc;
-});
+        //    exposed public methods
+        return myFunc;
+    });
 </code></pre>
 
 <p>And a little more complicated example with multiple dependencies and multiple exposed methods:</p>
 
-<pre lang="javascript"><code>//    filename: foo.js
-define(['jquery', 'underscore'], function ($, _) {
-    //    methods
-    function a(){};    //    private because it's not returned (see below)
-    function b(){};    //    public because it's returned
-    function c(){};    //    public because it's returned
+<pre><code class="language-javascript">    //    filename: foo.js
+    define(['jquery', 'underscore'], function ($, _) {
+        //    methods
+        function a(){};    //    private because it's not returned (see below)
+        function b(){};    //    public because it's returned
+        function c(){};    //    public because it's returned
 
-    //    exposed public methods
-    return {
-        b: b,
-        c: c
-    }
-});
+        //    exposed public methods
+        return {
+            b: b,
+            c: c
+        }
+    });
 </code></pre>
 
 <p>The first part of the define is an array of dependencies, while the second part is essentially the callback function which is only executed when the dependencies are available (script loaders like RequireJS take care of that part, including figuring out where the files are located).</p>
@@ -152,34 +152,34 @@ define(['jquery', 'underscore'], function ($, _) {
 
 <p>Using the same format as before, here’s what our <code>foo</code> module looks like in CommonJS:</p>
 
-<pre lang="javascript"><code>//    filename: foo.js
+<pre><code class="language-javascript">    //    filename: foo.js
 
-//    dependencies
-var $ = require('jquery');
+    //    dependencies
+    var $ = require('jquery');
 
-//    methods
-function myFunc(){};
+    //    methods
+    function myFunc(){};
 
-//    exposed public method (single)
-module.exports = myFunc;
+    //    exposed public method (single)
+    module.exports = myFunc;
 </code></pre>
 
 <p>And our more complicate example, with multiple dependencies and multiple exposed methods:</p>
 
-<pre lang="javascript"><code>//    filename: foo.js
-var $ = require('jquery');
-var _ = require('underscore');
+<pre><code class="language-javascript">    //    filename: foo.js
+    var $ = require('jquery');
+    var _ = require('underscore');
 
-//    methods
-function a(){};    //    private because it's omitted from module.exports (see below)
-function b(){};    //    public because it's defined in module.exports
-function c(){};    //    public because it's defined in module.exports
+    //    methods
+    function a(){};    //    private because it's omitted from module.exports (see below)
+    function b(){};    //    public because it's defined in module.exports
+    function c(){};    //    public because it's defined in module.exports
 
-//    exposed public methods
-module.exports = {
-    b: b,
-    c: c
-};
+    //    exposed public methods
+    module.exports = {
+        b: b,
+        c: c
+    };
 </code></pre>
 
 <h2 id="umd-universal-module-definition">UMD: Universal Module Definition</h2>
@@ -188,51 +188,51 @@ module.exports = {
 
 <p>The pattern is admittedly ugly, but is both AMD and CommonJS compatible, as well as supporting the old-style “global” variable definition:</p>
 
-<pre lang="javascript"><code>(function (root, factory) {
-    if (typeof define === 'function' &amp;&amp; define.amd) {
-        // AMD
-        define(['jquery'], factory);
-    } else if (typeof exports === 'object') {
-        // Node, CommonJS-like
-        module.exports = factory(require('jquery'));
-    } else {
-        // Browser globals (root is window)
-        root.returnExports = factory(root.jQuery);
-    }
-}(this, function ($) {
-    //    methods
-    function myFunc(){};
+<pre><code class="language-javascript">    (function (root, factory) {
+        if (typeof define === 'function' &amp;&amp; define.amd) {
+            // AMD
+            define(['jquery'], factory);
+        } else if (typeof exports === 'object') {
+            // Node, CommonJS-like
+            module.exports = factory(require('jquery'));
+        } else {
+            // Browser globals (root is window)
+            root.returnExports = factory(root.jQuery);
+        }
+    }(this, function ($) {
+        //    methods
+        function myFunc(){};
 
-    //    exposed public method
-    return myFunc;
-}));
+        //    exposed public method
+        return myFunc;
+    }));
 </code></pre>
 
 <p>And keeping in the same pattern as the above examples, the more complicated case with multiple dependencies and multiple exposed methods:</p>
 
-<pre lang="javascript"><code>(function (root, factory) {
-    if (typeof define === 'function' &amp;&amp; define.amd) {
-        // AMD
-        define(['jquery', 'underscore'], factory);
-    } else if (typeof exports === 'object') {
-        // Node, CommonJS-like
-        module.exports = factory(require('jquery'), require('underscore'));
-    } else {
-        // Browser globals (root is window)
-        root.returnExports = factory(root.jQuery, root._);
-    }
-}(this, function ($, _) {
-    //    methods
-    function a(){};    //    private because it's not returned (see below)
-    function b(){};    //    public because it's returned
-    function c(){};    //    public because it's returned
+<pre><code class="language-javascript">    (function (root, factory) {
+        if (typeof define === 'function' &amp;&amp; define.amd) {
+            // AMD
+            define(['jquery', 'underscore'], factory);
+        } else if (typeof exports === 'object') {
+            // Node, CommonJS-like
+            module.exports = factory(require('jquery'), require('underscore'));
+        } else {
+            // Browser globals (root is window)
+            root.returnExports = factory(root.jQuery, root._);
+        }
+    }(this, function ($, _) {
+        //    methods
+        function a(){};    //    private because it's not returned (see below)
+        function b(){};    //    public because it's returned
+        function c(){};    //    public because it's returned
 
-    //    exposed public methods
-    return {
-        b: b,
-        c: c
-    }
-}));
+        //    exposed public methods
+        return {
+            b: b,
+            c: c
+        }
+    }));
 </code></pre>
 
 <p>(Sep 2014 edit: fixed syntax for CommonJS in the last example)</p>
@@ -240,9 +240,38 @@ module.exports = {
   </entry>
   
   <entry>
+    <title type="html"><![CDATA[Introducing Negative Scroll Blur (for browsers that support CSS filters)]]></title>
+    <link href="http://davidbcalhoun.com/2013/introducing-negative-scroll-blur-for-browsers-that-support-css-filters"/>
+    <updated>2013-11-23T00:00:00-08:00</updated>
+    <id>http://davidbcalhoun.com/2013/introducing-negative-scroll-blur-for-browsers-that-support-css-filters</id>
+    <content type="html"><![CDATA[<p>(2016: in retrospect, this is kind of gratuitous and doesn’t appear to be fully working anymore…)</p>
+
+<p><a href="http://davidbcalhoun.com/a/negative-scroll-blur.html">Demo</a></p>
+
+<p>Just for fun, I wanted to reproduce a cool but completely superfluous UI I saw in the updated Foursquare app recently. Basically, when the user tries to scroll past the upper bound of the app/page, the header image becomes blurred.</p>
+
+<p>We can do the same thing on the web by listening for negative scroll and then using (abusing?) CSS filters.</p>
+
+<h3 id="video">Video</h3>
+
+<p><a href="http://www.youtube.com/watch?feature=player_embedded&amp;v=wfuVM1P_qgg " target="_blank"><img src="http://img.youtube.com/vi/wfuVM1P_qgg/0.jpg" alt="Negative Scroll Blur" width="480" height="360" /></a></p>
+
+<h3 id="extra-tweaks-for-mobile">Extra tweaks for mobile</h3>
+
+<p>Note that there’s an extra trick for iOS, which presents problems I had forgotten about (namely, no negative scroll, and a scroll listener which fires once at the end of scrolling). That’s why I had to throw in some extra logic for touchstart/touchmove/touchend.</p>
+
+<h3 id="links">Links</h3>
+
+<p><a href="http://davidbcalhoun.com/a/negative-scroll-blur.html">Demo</a>  <br />
+<a href="https://github.com/davidcalhoun/negative-scroll-blur">Github</a></p>
+
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[You Can't JavaScript Under Pressure walkthrough]]></title>
     <link href="http://davidbcalhoun.com/2013/you-cant-javascript-under-pressure-walkthrough"/>
-    <updated>2013-10-04T00:00:00+09:00</updated>
+    <updated>2013-10-04T00:00:00-07:00</updated>
     <id>http://davidbcalhoun.com/2013/you-cant-javascript-under-pressure-walkthrough</id>
     <content type="html"><![CDATA[<p>A friend posted a link to this fun little quiz - <a href="http://toys.usvsth3m.com/javascript-under-pressure/">You Can’t JavaScript Under Pressure</a>.</p>
 
@@ -444,531 +473,270 @@ module.exports = {
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Different ways of defining functions in JavaScript (this is madness!)]]></title>
-    <link href="http://davidbcalhoun.com/2011/different-ways-of-defining-functions-in-javascript-this-is-madness"/>
-    <updated>2011-06-24T00:00:00+09:00</updated>
-    <id>http://davidbcalhoun.com/2011/different-ways-of-defining-functions-in-javascript-this-is-madness</id>
-    <content type="html"><![CDATA[<h3 id="this-is-madness-this8230-is8230-javascript">This is madness! This… is… JavaScript!</h3>
-
-<p>In JavaScript, there’s many different ways of doing something. This is both a good thing and a bad thing. To the newcomer this is definitely a bad thing, as it means not only more things to learn, but more little caveats and more places to go wrong. And so it is with declaring functions!</p>
-
-<p>The aim of this is just an accessible tour of the landscape, just so you know what’s out there and what the basic differences are. Do be sure to check out the “further reading” section as well! Much of this is based on <a href="http://kangax.github.com/nfe/">Juriy “kangax” Zaytsev’s article</a>, which goes into more depth. But I found that there wasn’t just one reference to show all the different variable declarations.</p>
-
-<p>How about ways to execute functions? That opens up another can of worms, and incidentally opens up the possibility for a future post on that topic. :)</p>
-
-<h3 id="overview-different-ways-of-declaring-functions">Overview: different ways of declaring functions</h3>
-
-<pre lang="javascript"><code>function A(){};             // function declaration
-var B = function(){};       // function expression
-var C = (function(){});     // function expression with grouping operators
-var D = function foo(){};   // named function expression
-var E = (function(){        // immediately-invoked function expression (IIFE) that returns a function
-  return function(){}
-})();
-var F = new Function();     // Function constructor
-var G = new function(){};   // special case: object constructor
-</code></pre>
-
-<h3 id="function-declarations-function-a">Function declarations: function A(){};</h3>
-
-<p>Function declarations are probably the most familiar and oldest way of doing things in JavaScript land. This creates a variable A which is accessible in the current scope. Scope is a separate topic, so well do everything in the global scope for all these examples (something you want to avoid usually).</p>
-
-<h4 id="hoisting">1. Hoisting</h4>
-
-<p>The interesting thing about these is that they are “hoisted” to the top of their scope, which means this code:</p>
-
-<pre lang="javascript"><code>A();
-function A(){
-  console.log('foo');
-};
-</code></pre>
-
-<p>Gets executed as this code:</p>
-
-<pre lang="javascript"><code>function A(){
-  console.log('foo');
-};
-A();
-</code></pre>
-
-<p>Which practically means that, yes, you can call the functions before they’re written in your code. It won’t matter, because the entire function gets hoisted to the top of its containing scope. (This is contrasted with variables, which only have their declaration hoisted, not their contents, as we’ll see in the next section).</p>
-
-<h4 id="no-function-declarations-in-if-statements-or-loops-etch4">2. No function declarations in <code>if</code> statements (or loops, etc)&lt;/h4&gt;</h4>
-<p>You can’t define functions this way in expressions, for example <code>if</code> statements, which is common if we want to define different versions of a function for different circumstances, usually to address browser inconsistencies. Well, you <em>can</em> in some implementations, but the way the code is processed is inconsistent (kangax has documented the inconsistencies <a href="http://kangax.github.com/nfe/">here</a>). If you want to use this pattern, use function expressions instead.</p>
-
-<h4 id="functions-declarations-must-have-names">3. Functions declarations must have names</h4>
-
-<p>This method doesn’t allow you to create anonymous functions, meaning that you always have to give it an identifier (in this case we’ve used “A”).</p>
-
-<h3 id="function-expressions-var-b--function">Function expressions: var B = function(){};</h3>
-
-<p>A function expression looks similar to function declarations, except that the function is assigned to a variable name. Though functions are not primitive values in JavaScript, this is the way they can be utilized to their full effect in this functional language. Functions are “<a href="http://en.wikipedia.org/wiki/First-class_function">first class</a>”:</p>
-
-<blockquote>
-  <p>“[JavaScript] supports passing functions as arguments to other functions, returning them as the values from other functions, and assigning them to variables or storing them in data structures”</p>
-</blockquote>
-
-<h4 id="anonymous-functions-they-dont-need-names">1. Anonymous functions (they don’t need names)</h4>
-
-<p>The function name is optional in function expressions, and we call these anonymous. Here we’re setting the variable B equal to an anonymous function:</p>
-
-<pre lang="javascript"><code>var B = function(){};
-</code></pre>
-
-<h4 id="variable-declaration-hoisting">2. Variable declaration hoisting</h4>
-
-<p>Variable declarations are hoisted to the top of their scope, somewhat similarly to function hoisting <em>except</em> the contents of the variable are not hoisted as well. This happens with all variables, and it means it’s now happening with our functions, now that we’re assigning them to variables.</p>
-
-<p>This code:</p>
-
-<pre lang="javascript"><code>var A = function(){};
-var B = function(){};
-var C = function(){};
-</code></pre>
-
-<p>Will be executed as this:</p>
-
-<pre lang="javascript"><code>var A, B, C;  // variable declarations are hoisted
-A = function(){};
-B = function(){};
-C = function(){};
-</code></pre>
-
-<p>Therefore the order of setting and calling this type of function is important:</p>
-
-<pre lang="javascript"><code>// this works
-var B = function(){};
-B();
-
-// this doesn't work
-B2();  // TypeError (B2 is undefined)
-var B2 = function(){};
-</code></pre>
-
-<p>The second example gives us an error because only the variable B2’s declaration is hoisted, but not its definition, thus the “undefined” error.</p>
-
-<h3 id="function-expressions-with-grouping-operators-var-c--function">Function expressions with grouping operators: var C = (function(){});</h3>
-
-<p>These really aren’t different from plain old function expressions and aren’t really seen in the wild (so maybe they’re just good for JavaScript quizzes?). Recently this way of declaring functions was brought up in <a href="http://ironjs.wordpress.com/2011/06/22/my-gripes-with-javascript/">this article</a> and confused some folks including myself.</p>
-
-<p>Here’s a good way to see what’s happening:</p>
-
-<pre lang="javascript"><code>function(){};  // SyntaxError
-(function(){});
-</code></pre>
-
-<p>Why does one work and the other doesn’t? The first example is a function declaration, and we learned above that we can’t declare them anonymously - that is, they must have a name. That’s why we’re getting the syntax error.</p>
-
-<p>The second example is using parenthesis - grouping operators - and is therefore evaluated differently, as a function expression. The grouping operators are the things we use to help show what should be evaluated first, as in mathematical problems. We’re saying “evaluate this first, then take the result and do something with it”:</p>
-
-<pre lang="javascript"><code>(1 + 2) * 3;  // 9
-1 + (2 * 3);  // 7
-</code></pre>
-
-<p>In the first example we’re saying “first add 1 and 2, then take the result and multiply by 3”, whereas in the second example we’re saying “first multiply 2 and 3, then take the result and add 1”.</p>
-
-<p>Because functions are first class, we can use similar grouping operators. Here’s a facetious example, but it shows how we can essentially drop in a function in the same way:</p>
-
-<pre lang="javascript"><code>(function(){} + 1);  // function(){}1
-</code></pre>
-
-<p>The result is a string (because toString is being called on the function, then added/appended with 1), but you get the idea I hope.</p>
-
-<p>When the JavaScript engine encounters the opening parenthesis here, we’re essentially saying “ok, start grouping this together with something else”. Using our technical terms, we’re telling the engine that we’re not making a function declaration, but instead a function expression. And then we can assign the result to a variable:</p>
-
-<pre lang="javascript"><code>(function(){});           // resulting function not assigned
-var foo = (function(){}); // resulting function assigned to foo
-var bar = function(){};   // resulting function assigned to bar
-</code></pre>
-
-<p>Here we can see that foo and bar are really just the same, because in foo we’re not grouping the function together with anything but itself.</p>
-
-<h3 id="named-function-expression-var-d--function-foo">Named function expression: var D = function foo(){};</h3>
-
-<p>Here we have our same old friend, the function expression. But instead of assigning the variable to an anonymous function, we’re assigning it to a named function (with the name foo).</p>
-
-<h4 id="the-function-name-is-only-accessible-within-the-function">1. The function name is only accessible within the function</h4>
-
-<p>We haven’t exposed the function name (foo) to the enclosing scope (in this case the global scope):</p>
-
-<pre lang="javascript"><code>var D = function foo(){
-  console.log(typeof foo);
-};
-D();                       // function
-console.log(typeof foo);   // undefined
-</code></pre>
-
-<h4 id="useful-for-recursion">2. Useful for recursion</h4>
-
-<p>Because the function’s name is accessible in the function itself, this turns out to be useful for recursive functions, much more useful than the plain old anonymous function.</p>
-
-<p>Here’s a trivial recursive function to illustrate calling itself from within the named function expression:</p>
-
-<pre lang="javascript"><code>var countdown = function a(count){
-  if(count &gt; 0) {
-    count--;
-    return a(count);  // we can also do this: a(--count), which is less clear
-  }
-  console.log('end of recursive function');
-}
-countdown(5);
-</code></pre>
-
-<h4 id="useful-for-debugging">3. Useful for debugging</h4>
-
-<p>As a <a href="http://kangax.github.com/nfe/">few</a> <a href="http://javascriptweblog.wordpress.com/2010/07/06/function-declarations-vs-function-expressions/">have</a> pointed out, giving previously anonymous functions names helps in debugging, since the function name shows up on the call stack.</p>
-
-<h4 id="quirks-jscripts-bad-implementation">4. Quirks: JScript’s bad implementation</h4>
-
-<p><a href="http://kangax.github.com/nfe/">kangax</a> points out that named function expressions are basically poison to JScript, Internet Explorer’s implementation of JavaScript.</p>
-
-<p>The named function becomes a global variable, is hoisted like a function declaration, and actually ends up creating multiple instances of the same function.</p>
-
-<h3 id="immediately-invoked-function-expressions-iife-var-e--functionreturn-function">Immediately-invoked function expressions (IIFE): var E = (function(){return function(){}})();</h3>
-
-<p>“Execute this function, whose return value is another function, and assign that to the variable E”. This may seem like magic, but it’s actually quite simple, and the pattern is powerful and has useful applications, the most famous of which is the <a href="http://www.klauskomenda.com/code/javascript-programming-patterns/#module">module pattern</a>.</p>
-
-<p>First we’ll use an example that doesn’t look like magic:</p>
-
-<pre lang="javascript"><code>var foo = function(){
-  return 'bar';
-};
-var output = foo();
-console.log(output);  // 'bar'
-</code></pre>
-
-<p>We already learned about grouping operators above, so you should feel comfortable with saying this is equivalent:</p>
-
-<pre lang="javascript"><code>var foo = function(){
-  return 'bar';
-};
-var output = (foo)(); // note the extra grouping operators
-console.log(output);  // 'bar'
-</code></pre>
-
-<p>Since foo is pointing to our function expression, we know that we can simply refrain from using the variable “foo” and drop in the entire function as an anonymous function (since functions are first class, after all!):</p>
-
-<pre lang="javascript"><code>var output = (function(){
-  return 'bar';
-})();
-console.log(output);  // 'bar'
-</code></pre>
-
-<p>Hey wait, we just arrived at the magical resulting function! It turns out to be not so magical after all, once we break it down and see it for what it is. It’s simply shorthand for the code we wrote originally, where we defined a function, executed it, and defined output to be its return value.</p>
-
-<p>I’ve included this method on the list of declaring functions because we can assign the return value to itself be a function:</p>
-
-<pre lang="javascript"><code>var E = (function(){
-  return function(){}
-})();
-</code></pre>
-
-<h4 id="applications">Applications</h4>
-
-<p>There are good applications for this, including information hiding using in the module pattern, (<a href="http://ejohn.org/blog/partial-functions-in-javascript/">partial application</a>, for example), and other clever uses of it. It’s definitely not a trivial pattern.</p>
-
-<h3 id="function-constructor-var-f--new-function">Function constructor: var F = new Function();</h3>
-
-<p>This method is extremely old and it’s not recommended to be used. You pass in an unlimited number of arguments in the front, then the actual function body appears as a string in the last argument (because it’s a string, it’s effectively the equivalent of eval(), and isn’t recommended).</p>
-
-<h4 id="defining-the-function">1. Defining the function</h4>
-
-<p>You can create a function like this:</p>
-
-<pre lang="javascript"><code>var F = new Function('arg1', 'arg2', 'console.log(arg1 + ", " + arg2)');
-F('foo', 'bar');  // 'foo, bar'
-</code></pre>
-
-<h4 id="you-dont-need-the-new-operatorh4">2. You don’t need the <code>new</code> operator&lt;/h4&gt;</h4>
-<p>You can simply write <code>var F = Function();</code> to get the same result.</p>
-
-<h4 id="quirks">3. Quirks</h4>
-
-<p>The <a href="https://developer.mozilla.org/en/JavaScript/Reference/Functions_and_function_scope#Function_constructor_vs._function_declaration_vs._function_expression">MDN docs</a> have some good examples of the quirks, including the fact that functions declared with the Function constructor don’t inherit their current scope properly (i.e. a closure isn’t formed).</p>
-
-<p>What this means is that they don’t have access to variables in their enclosing scope, which isn’t particularly useful:</p>
-
-<pre lang="javascript"><code>function foo(){
-  var bar = 'blah';
+    <title type="html"><![CDATA[iOS5 SunSpider: iPhone 4S vs iPhone 4 vs iPhone 3GS]]></title>
+    <link href="http://davidbcalhoun.com/2011/ios5-sunspider-iphone-4s-vs-iphone-4-vs-iphone-3gs"/>
+    <updated>2011-10-14T00:00:00-07:00</updated>
+    <id>http://davidbcalhoun.com/2011/ios5-sunspider-iphone-4s-vs-iphone-4-vs-iphone-3gs</id>
+    <content type="html"><![CDATA[<h3 id="result-table-sunspider-091-all-devices-running-ios-5">Result table (SunSpider 0.9.1, all devices running iOS 5)</h3>
+
+<table style="width: 100%;">
+  <tr>
+    <td>
+      Test
+    </td>
+    
+    <td>
+      iPhone 4S
+    </td>
+    
+    <td>
+      iPhone 4
+    </td>
+    
+    <td>
+      iPhone 3GS
+    </td>
+  </tr>
   
-  var first = new Function('console.log(typeof bar)');
-  first();   // undefined
+  <tr>
+    <td>
+      Total
+    </td>
+    
+    <td class="positive">
+      2270ms
+    </td>
+    
+    <td>
+      3483ms
+    </td>
+    
+    <td>
+      4903ms
+    </td>
+  </tr>
   
-  var second = function(){
-    console.log(typeof bar);
-  }
-  second();  // string
-}
-foo();
-</code></pre>
-
-<p>In the function “first”, we’re using the Function constructor, so it doesn’t have access to the variable bar. However, if we use the function “second”, which is a function expression, it does in fact have access to variables defined in its enclosing scope (via closure).</p>
-
-<p>In other words, <em>don’t use the Function constructor</em>.</p>
-
-<h3 id="special-case---object-constructor-var-g--new-function-foo">Special case - object constructor: var G = new function foo(){};</h3>
-
-<p>I saved this for last because we’re not really defining a function, though we are using the function keyword, so it’s worth noting at least.</p>
-
-<p><code>new function(){};</code> creates a new object and invokes the anonymous function as its constructor. If an object is returned from the function, that becomes the resulting object, otherwise a new object is created from scratch and function is executed in the context of that new function (let’s save the details for another post!).</p>
-
-<p>It’s a bit unusual to see it in this form. Let’s do it the proper way:</p>
-
-<pre lang="javascript"><code>var Person = function(){
-  console.log(this);  // Person
-}
-var joe = new Person();
-</code></pre>
-
-<p>So really with the new operator, we are giving it a new ‘this’ context and then executing the given function with that new context. Much different than the function definitions we’ve been dealing with above! This does into a whole new topic, and we’ll save that for later!</p>
-
-<h3 id="further-reading">Further reading</h3>
-
-<p><a href="http://kangax.github.com/nfe/">Named function expressions demystified</a> (kangax)</p>
-
-<p><a href="http://benalman.com/news/2010/11/immediately-invoked-function-expression/">Immediately-Invoked Function Expression (IIFE) (Ben Alman)</a></p>
-
-<p><a href="https://developer.mozilla.org/en/JavaScript/Reference/Functions_and_function_scope">Functions and function scope</a> (Mozilla Developer Network - MDN)</p>
-
-<p><a href="http://stackoverflow.com/questions/1140089/how-does-an-anonymous-function-in-javascript-work">How does an anonymous function in JavaScript work? (StackOverflow)</a></p>
-
-<p><a href="http://javascriptweblog.wordpress.com/2010/07/06/function-declarations-vs-function-expressions/">Function Declarations vs. Function Expressions (JavaScript, JavaScript by Angus Croll)</a></p>
-
-<p><a href="http://www.amazon.com/gp/product/0596805527/">JavaScript: The Definitive Guide</a> (classic book by David Flanagan)</p>
-
-]]></content>
-  </entry>
+  <tr>
+    <td>
+      3D
+    </td>
+    
+    <td class="positive">
+      281ms
+    </td>
+    
+    <td>
+      486ms
+    </td>
+    
+    <td>
+      672ms
+    </td>
+  </tr>
   
-  <entry>
-    <title type="html"><![CDATA[Checking for undefined, null, and empty variables in JavaScript]]></title>
-    <link href="http://davidbcalhoun.com/2011/checking-for-undefined-null-and-empty-variables-in-javascript"/>
-    <updated>2011-02-11T00:00:00+09:00</updated>
-    <id>http://davidbcalhoun.com/2011/checking-for-undefined-null-and-empty-variables-in-javascript</id>
-    <content type="html"><![CDATA[<p>In general it’s a good practice to check for the existence of something before blindly using it by faith and hoping it works. There are various times during the execution of scripts when a variable may not be defined, it may be null, or it might be an empty string. These are three things that are easily conflated. A good way to look at this is thinking of these as having increasing levels of existence (getting a bit philosophical here for a moment…):</p>
+  <tr>
+    <td>
+      Access
+    </td>
+    
+    <td class="positive">
+      279ms
+    </td> 
+    
+    <td>
+      410ms
+    </td>
+    
+    <td>
+      614ms
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Bitops
+    </td>
+    
+    <td class="positive">
+      177ms
+    </td>
+    
+    <td>
+      200ms
+    </td>
+    
+    <td>
+      270ms
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Controlflow
+    </td>
+    
+    <td class="positive">
+      20ms
+    </td>
+    
+    <td>
+      26ms
+    </td> 
+    
+    <td>
+      34ms
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Crypto
+    </td>
+    
+    <td class="positive">
+      164ms
+    </td>
+    
+    <td>
+      211ms
+    </td>
+    
+    <td>
+      315ms
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Date
+    </td>
+    
+    <td class="positive">
+      332ms
+    </td>
+    
+    <td>
+      528ms
+    </td>
+    
+    <td>
+      770ms
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Math
+    </td>
+    
+    <td class="positive">
+      219ms
+    </td>
+    
+    <td>
+      433ms
+    </td>
+    
+    <td>
+      553ms
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Regexp
+    </td>
+    
+    <td class="positive">
+      88ms
+    </td>
+    
+    <td>
+      117ms
+    </td>
+    
+    <td>
+      151ms
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      String
+    </td>
+    
+    <td class="positive">
+      711ms
+    </td>
+    
+    <td>
+      1072ms
+    </td>
+    
+    <td>
+      1525ms
+    </td>
+  </tr>
+</table>
+
+<h3 id="raw-results">Raw results</h3>
+
+<p><a href="http://www.webkit.org/perf/sunspider-0.9.1/sunspider-0.9.1/results.html?%7B%22v%22:%20%22sunspider-0.9.1%22,%20%223d-cube%22:%5B98,100,97,101,98,98,99,99,100,105%5D,%223d-morph%22:%5B72,75,72,74,72,74,72,72,72,73%5D,%223d-raytrace%22:%5B107,107,108,111,108,108,108,109,110,108%5D,%22access-binary-trees%22:%5B48,48,53,51,47,49,51,54,52,47%5D,%22access-fannkuch%22:%5B121,120,124,120,121,121,120,120,125,120%5D,%22access-nbody%22:%5B70,72,71,71,71,72,70,70,69,70%5D,%22access-nsieve%22:%5B35,40,38,38,37,35,35,36,38,37%5D,%22bitops-3bit-bits-in-byte%22:%5B29,29,29,28,29,29,29,29,29,29%5D,%22bitops-bits-in-byte%22:%5B39,36,37,39,37,36,36,37,38,37%5D,%22bitops-bitwise-and%22:%5B47,48,48,46,49,48,49,51,48,47%5D,%22bitops-nsieve-bits%22:%5B65,63,62,62,62,62,63,63,63,62%5D,%22controlflow-recursive%22:%5B19,20,20,20,19,20,20,19,20,20%5D,%22crypto-aes%22:%5B94,96,96,100,103,102,96,96,96,99%5D,%22crypto-md5%22:%5B36,37,37,38,37,36,39,36,38,39%5D,%22crypto-sha1%22:%5B29,28,30,28,30,29,29,28,29,29%5D,%22date-format-tofte%22:%5B171,182,167,168,170,172,167,170,181,172%5D,%22date-format-xparb%22:%5B160,159,161,158,160,168,162,156,159,158%5D,%22math-cordic%22:%5B81,79,76,77,77,77,78,77,76,77%5D,%22math-partial-sums%22:%5B92,92,92,92,94,92,92,91,92,94%5D,%22math-spectral-norm%22:%5B49,49,49,49,51,49,49,50,48,52%5D,%22regexp-dna%22:%5B91,87,88,87,88,88,88,87,88,87%5D,%22string-base64%22:%5B89,88,86,92,87,91,96,87,87,87%5D,%22string-fasta%22:%5B91,92,92,91,94,94,95,95,89,89%5D,%22string-tagcloud%22:%5B144,147,147,145,144,145,144,144,148,150%5D,%22string-unpack-code%22:%5B246,243,238,244,254,249,243,249,240,238%5D,%22string-validate-input%22:%5B145,134,136,137,140,137,137,137,141,149%5D%7D">iPhone 4S (iOS5)</a></p>
+
+<p><a href="http://www.webkit.org/perf/sunspider-0.9.1/sunspider-0.9.1/results.html?%7B%22v%22:%20%22sunspider-0.9.1%22,%20%223d-cube%22:%5B175,179,192,175,180,174,181,174,173,182%5D,%223d-morph%22:%5B138,137,136,135,136,135,136,137,144,135%5D,%223d-raytrace%22:%5B166,171,174,174,166,178,168,167,169,168%5D,%22access-binary-trees%22:%5B61,61,62,58,57,56,57,56,60,57%5D,%22access-fannkuch%22:%5B141,142,143,146,141,142,148,142,146,148%5D,%22access-nbody%22:%5B154,152,147,146,144,148,146,154,146,149%5D,%22access-nsieve%22:%5B59,59,57,67,58,60,57,58,59,59%5D,%22bitops-3bit-bits-in-byte%22:%5B29,29,29,28,34,29,28,28,29,28%5D,%22bitops-bits-in-byte%22:%5B40,40,41,40,41,40,42,41,41,41%5D,%22bitops-bitwise-and%22:%5B58,59,60,58,60,58,59,62,58,58%5D,%22bitops-nsieve-bits%22:%5B71,76,70,75,71,69,72,71,70,70%5D,%22controlflow-recursive%22:%5B26,25,25,26,25,26,25,25,26,27%5D,%22crypto-aes%22:%5B124,132,124,124,126,123,123,125,122,127%5D,%22crypto-md5%22:%5B48,48,48,50,50,50,50,50,50,50%5D,%22crypto-sha1%22:%5B36,37,36,35,36,37,36,37,36,36%5D,%22date-format-tofte%22:%5B265,267,265,314,259,260,257,266,263,260%5D,%22date-format-xparb%22:%5B258,265,258,259,265,259,259,264,259,260%5D,%22math-cordic%22:%5B291,141,141,141,147,140,140,141,178,140%5D,%22math-partial-sums%22:%5B174,173,179,180,171,174,171,179,177,171%5D,%22math-spectral-norm%22:%5B102,98,97,98,97,97,99,100,99,98%5D,%22regexp-dna%22:%5B115,114,114,116,115,119,122,112,120,122%5D,%22string-base64%22:%5B120,123,116,121,114,118,116,115,117,117%5D,%22string-fasta%22:%5B128,125,122,129,122,130,129,131,123,128%5D,%22string-tagcloud%22:%5B208,209,209,206,215,210,210,209,211,219%5D,%22string-unpack-code%22:%5B401,412,410,413,406,422,412,413,410,414%5D,%22string-validate-input%22:%5B205,208,199,200,205,207,206,212,206,211%5D%7D">iPhone 4 (iOS5)</a></p>
+
+<p><a href="http://www.webkit.org/perf/sunspider-0.9.1/sunspider-0.9.1/results.html?%7B%22v%22:%20%22sunspider-0.9.1%22,%20%223d-cube%22:%5B245,251,245,317,247,244,250,249,250,250%5D,%223d-morph%22:%5B191,184,186,189,186,190,202,190,194,188%5D,%223d-raytrace%22:%5B222,226,223,222,229,227,234,229,227,231%5D,%22access-binary-trees%22:%5B86,87,87,93,89,89,92,92,94,85%5D,%22access-fannkuch%22:%5B189,188,190,189,350,187,188,189,188,190%5D,%22access-nbody%22:%5B195,194,193,204,585,196,198,199,194,194%5D,%22access-nsieve%22:%5B83,94,86,82,84,83,83,83,82,84%5D,%22bitops-3bit-bits-in-byte%22:%5B38,40,37,38,38,43,40,38,38,40%5D,%22bitops-bits-in-byte%22:%5B70,54,53,58,62,55,59,55,54,54%5D,%22bitops-bitwise-and%22:%5B78,78,79,79,82,79,77,76,77,79%5D,%22bitops-nsieve-bits%22:%5B93,94,94,95,93,94,93,93,101,99%5D,%22controlflow-recursive%22:%5B34,34,32,34,33,34,33,33,36,35%5D,%22crypto-aes%22:%5B365,173,173,174,174,184,177,172,170,171%5D,%22crypto-md5%22:%5B101,65,64,68,67,69,65,66,65,67%5D,%22crypto-sha1%22:%5B75,49,48,50,51,48,49,54,49,49%5D,%22date-format-tofte%22:%5B618,358,357,361,373,365,367,482,379,372%5D,%22date-format-xparb%22:%5B408,360,349,354,371,365,371,369,359,363%5D,%22math-cordic%22:%5B199,191,192,188,188,188,190,188,190,191%5D,%22math-partial-sums%22:%5B228,227,228,225,229,232,227,232,229,227%5D,%22math-spectral-norm%22:%5B160,132,131,131,130,131,131,130,133,130%5D,%22regexp-dna%22:%5B158,149,148,151,150,149,152,148,153,148%5D,%22string-base64%22:%5B164,163,176,167,171,172,175,172,181,174%5D,%22string-fasta%22:%5B227,187,176,179,167,175,176,189,176,172%5D,%22string-tagcloud%22:%5B303,288,270,277,284,289,282,284,281,284%5D,%22string-unpack-code%22:%5B1029,531,527,523,543,545,553,545,538,541%5D,%22string-validate-input%22:%5B296,300,297,299,299,293,298,320,296,296%5D%7D">iPhone 3GS (iOS5)</a></p>
+
+<h3 id="bonus-fishietank4-10-fish-canvas-test">Bonus: <a href="http://ie.microsoft.com/testdrive/Performance/FishIETank/">FishIETank</a> (10 fish) (Canvas test)</h3>
+
+<table style="width: 100%;">
+  <tr>
+    <td>
+      Test
+    </td>
+    
+    <td>
+      iPhone 4S
+    </td>
+    
+    <td>
+      iPhone 4
+    </td>
+    
+    <td>
+      iPhone 3GS
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Total
+    </td>
+    
+    <td class="positive">
+      50fps
+    </td>
+    
+    <td>
+      35fps
+    </td>
+    
+    <td>
+      25fps
+    </td>
+  </tr>
+</table>
+
+<p>One thing to note here: the 3GS has a bit of an advantage because of a non-retina screen. However, it’s still outperformed easily by the iPhone 4 and 4S.</p>
+
+<h3 id="related">Related</h3>
+
+<p><a href="http://davidbcalhoun.com/2011/javascript-sunspider-benchmark-ios-4-3-vs-ios-4-0">JavaScript SunSpider benchmark: iOS 4.3 vs iOS 4.0</a>  <br />
+<a href="http://davidbcalhoun.com/2010/blackberry-torch-sunspider-results-javascript-benchmark">BlackBerry Torch SunSpider results (JavaScript benchmark)</a>  <br />
+<a href="http://davidbcalhoun.com/2010/iphone-4-sunspider-test-results">iPhone 4 SunSpider test results (22% faster than iPhone 3GS)</a>  <br />
+<a href="http://davidbcalhoun.com/2010/sunspider-ios-3-1-3-versus-ios-4-gm">JavaScript SunSpider test: iOS 3.1.3 versus iOS 4 GM</a>  <br />
+<a href="http://davidbcalhoun.com/2010/javascript-sunspider-htc-evo-versus-htc-incredible-versus-nexus-one">JavaScript SunSpider: HTC Evo versus HTC Incredible versus Nexus One</a></p>
 
-<pre lang="javascript"><code>foo0;             // existence level 0 (creates the error "not defined")
-var foo1;         // existence level 1 ("undefined" - variable declared but not defined/initialized)
-var foo2 = null;  // existence level 2 (variable initialized, but isn't an Object, Number, String, etc)
-var foo3 = "";    // existence level 3 (variable initialized to an empty String)
-var foo4 = "bar"; // existence level 4 (variable initialized to String "foo")
-</code></pre>
-
-<p>Generally it would be handy if we had some way to filter out everything but the very last line. We simply want to check for these cases without the script entirely blowing up, as it does with the first line:</p>
-
-<pre lang="javascript"><code>foo;  // ReferenceError: foo is not defined
-</code></pre>
-
-<p>We’re not particularly doing anything useful with foo here, but notice that the script fails out anyway. At this point any code that follows will not be executed. Your first instinct might be “Oh! I know how to contain these errors! We’ll use a try-catch!”:</p>
-
-<pre lang="javascript"><code>try {
-  foo;
-} catch(e) {
-  e.message;  // "foo is not defined"
-}
-</code></pre>
-
-<p>The script still fails, but not critically, so your script continues to execute. But this turns out to aversely affect performance. The basic lesson here is that try-catch can be useful in some situations, but shouldn’t be used where alternatives are available.</p>
-
-<h3 id="typeof-foo">typeof foo</h3>
-
-<p>JavaScript has quite a useful remedy for this:</p>
-
-<pre lang="javascript"><code>typeof foo; // "undefined"
-</code></pre>
-
-<p>Unlike everything else in JavaScript, typeof will deal with whatever you throw at it, including undefined variables. So you can use it as a simple check before using a variable that might not exist:</p>
-
-<pre lang="javascript"><code>if(typeof foo !== "undefined") {
-  // do something with foo
-}
-</code></pre>
-
-<p>Note that this is easy to confuse with the <code>undefined</code> keyword, which in this case doesn’t help us one bit, as it gives us a fatal error:</p>
-
-<pre lang="javascript"><code>if(foo !== undefined) {  // ReferenceError: foo is not defined
-
-}
-</code></pre>
-
-<p>This filters out our first two cases, since they both evaluate to “undefined”:</p>
-
-<pre lang="javascript"><code>typeof foo; // "undefined"
-
-var bar;
-typeof bar; // "undefined"
-</code></pre>
-
-<p>But this turns out not to work well for our other conditions, which evaluate differently:</p>
-
-<pre lang="javascript"><code>typeof null;  // "object" (what?!)
-typeof "";    // "string"
-</code></pre>
-
-<p>So we need to add other “if” conditions to check.. but there turns out to be a better way!</p>
-
-<h3 id="exploiting-loose-typing">Exploiting loose typing</h3>
-
-<p>JavaScript is a loosely typed language, which means that it will “automagically” cast variables into other types when necessary (i.e. when adding a Number to a String), sometimes resulting in the unexpected. For instance, whenever we use the “if” statement, the expected input is a Boolean true/false value. If JavaScript gets anything other than a Boolean, such as a String or a Number, instead of blowing up completely (as in strictly typed languages such as C), it’ll cast the variable into a Boolean for you.</p>
-
-<p>“How handy!” you might think. Except in the following unexpected cases:</p>
-
-<pre lang="javascript"><code>if("0") {
-  // this will run because "0" is true
-}
-
-if("false") {
-  // this will run because "false" is true
-}
-</code></pre>
-
-<p>To see what JavaScript will cast a value to without having to use an <code>if</code> statement, we could create a new Boolean value with the following:</p>
-
-<pre lang="javascript"><code>Boolean(0);    // false
-Boolean("0");  // true
-</code></pre>
-
-<p>Or we can use the less intuitive but quick way of using double exclamation marks (this will probably award you cleverness points in someone’s book.. hopefully those points actually matter):</p>
-
-<pre lang="javascript"><code>!!0;    // false
-!!"0";  // true
-</code></pre>
-
-<p>This works because !foo converts foo to a Boolean but negates its original value, turning it on its head. !!foo converts foo to a Boolean and flips it back to its expected value, which is the same value that’s evaluated by our <code>if</code> statement.</p>
-
-<p>Using this ALMOST gives us the answer we’re looking for:</p>
-
-<pre lang="javascript"><code>!!foo0; // ReferenceError: foo0 is not defined
-
-var foo1;
-!!foo1; // false
-
-var foo2 = null;
-!!foo2; // false (same as !!null)
-
-var foo3 = "";
-!!foo3; // false (same as !!"")
-
-var foo4 = "bar";
-!!foot4; // true (same as !!"bar")
-</code></pre>
-
-<p>Excluding the first example, now we can test for uninitialized variables (foo1), null variables (foo2), and empty strings (foo3) all with just an <code>if</code> statement:</p>
-
-<pre lang="javascript"><code>if(foo1) {
-  // do something with foo1
-}
-
-if(foo2) {
-  // do something with foo2
-}
-
-if(foo3) {
-  // do something with foo3
-}
-</code></pre>
-
-<p>Dang… so close! But we can’t yet test the first case without an error:</p>
-
-<pre lang="javascript"><code>if(foo0) {  // ReferenceError: foo0 is not defined
-
-}
-</code></pre>
-
-<h3 id="foo-versus-windowfoo-and-thisfoo">foo versus window.foo and this.foo</h3>
-
-<p>The secret to our solution lies in how JavaScript handles undefined variables versus undefined properties. Here’s a quick reminder on the difference between the two:</p>
-
-<pre lang="javascript"><code>// variable foo
-var foo;
-
-// property bar (and object variable foo)
-var foo = {};  // create an empty object to add bar too
-foo.bar = "";
-</code></pre>
-
-<p>The difference between these makes all the difference whether a fatal error occurs:</p>
-
-<pre lang="javascript"><code>foo;  // ReferenceError: foo is not defined
-
-var foo = {};
-foo.bar;  // undefined
-foo.blah; // undefined
-</code></pre>
-
-<p>We can randomly invent and check any property of <code>foo</code> we want, and the code will keep chugging along:</p>
-
-<pre lang="javascript"><code>var foo = {};
-foo.something = "hello";
-
-if(foo.bar) { // undefined, interpreted as false (same as !!foo.bar)
-  // never runs
-}
-
-if(foo.something) {
-  foo.something;  // "hello"
-}
-</code></pre>
-
-<p>Now comes the magic. If you know anything about JavaScript running in the browser, you know that all global variables are part of the <code>window</code> object. This means <code>foo</code> and <code>window.foo</code> are equivalent:</p>
-
-<pre lang="javascript"><code>var foo;
-
-foo === window.foo;  // true
-
-// "this" is another bag of worms, but note this anyway
-this.foo === window.foo;
-</code></pre>
-
-<p>So technically our variable foo is a <em>property</em> of the window object. So we should be able to check for any arbitrary variable in the window scope now!</p>
-
-<pre lang="javascript"><code>window.foo;  // undefined (not a fatal error!)
-
-// even though we're checking for the same thing, we get a fatal error…
-foo;  // ReferenceError: foo is not defined
-</code></pre>
-
-<h3 id="practical-uses">Practical uses</h3>
-
-<p>Now as long as we have a global entry point for our code, we can write our code in such a way that it won’t ever give us a fatal error if our variables aren’t yet defined:</p>
-
-<pre lang="javascript"><code>if(window.foo &amp;&amp; foo.bar) {
-  foo.bar();
-}
-</code></pre>
-
-<p>Of course nothing happens, because we haven’t defined foo. But why doesn’t foo.bar give us a fatal error? Because the first test, <code>window.foo</code> failed out. It would be useless processing for the JavaScript engine to also evaluate the second statement, because the end result will still be the same (false &#038;&#038; true results in false, false &#038;&#038; false results in false). So it doesn’t get so far as <code>foo.bar</code>.</p>
-
-<p>And now the code will work properly when we hook up our code to our <code>foo</code> global namespace:</p>
-
-<pre lang="javascript"><code>var foo = {
-  bar: function() {
-    alert("hello world");
-  }
-}
-
-if(window.foo &amp;&amp; foo.bar) {
-  foo.bar();  // "hello world"
-}
-</code></pre>
-
-<h3 id="shorthand">Shorthand</h3>
-
-<p>It’s becoming common to see an abbreviation for the above code. Check out the following two methods, which accomplish the same thing:</p>
-
-<pre lang="javascript"><code>// Method 1
-if(window.foo &amp;&amp; foo.bar) {
-  foo.bar();  // "hello world"
-}
-
-// Method 2
-window.foo &amp;&amp; foo.bar &amp;&amp; (foo.bar());
-</code></pre>
-
-<p>Don’t get too scared.. these blocks of code are equivalent. Method 2 is shorter, but it simply goes something like this: if window.foo isn’t set, stop evaluating this line (just as above in the <code>if</code> statement). Otherwise, if foo.bar exists then execute the code in parentheses, which gives us an alert (“hello world”);</p>
-
-<p>Just a word of caution about using Method 2: it’s obviously less clear what’s going on here. Your own cleverness might actually result in unnecessary confusion, especially of other people work in the same code base and they’re at different levels of understanding. In these cases we should first strive to be clear, and then only clever if it’s not at the expense of being clear.</p>
-
-<p>It’s also likely that a code minifier would take care of this cleverness for us at build time, giving us the best of both worlds.</p>
 ]]></content>
   </entry>
   

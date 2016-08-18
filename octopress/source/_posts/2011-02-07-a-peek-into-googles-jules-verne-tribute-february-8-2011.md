@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2011/a-peek-into-googles-jules-verne-tribute-february-8-2011
-categories:
-  - Uncategorized
+categories: ["video", "webdev"]
 ---
 [<img src="http://davidbcalhoun.com/wp-content/uploads/2011/02/google-doodle-jules-verne.png" alt="" title="Google Doodle: Jules Verne tribute" width="938" height="346" class="aligncenter size-full wp-image-626" />][1]
 

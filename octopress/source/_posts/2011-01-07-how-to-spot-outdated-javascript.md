@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2011/how-to-spot-outdated-javascript
-categories:
-  - javascript
+categories: ["javascript", "programming", "webdev"]
 ---
 ### Introduction
 

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: the bible | David Calhoun's blog]]></title>
+  <title><![CDATA[Category: the bible | David Calhoun]]></title>
   <link href="http://davidbcalhoun.com/blog/categories/the-bible/atom.xml" rel="self"/>
   <link href="http://davidbcalhoun.com/"/>
-  <updated>2016-05-26T09:01:40+09:00</updated>
+  <updated>2016-08-18T14:00:33-07:00</updated>
   <id>http://davidbcalhoun.com/</id>
   <author>
     <name><![CDATA[David Calhoun]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[The Beatitudes]]></title>
     <link href="http://davidbcalhoun.com/2015/the-beatitudes/"/>
-    <updated>2015-03-09T16:29:10+09:00</updated>
+    <updated>2015-03-09T00:29:10-07:00</updated>
     <id>http://davidbcalhoun.com/2015/the-beatitudes</id>
     <content type="html"><![CDATA[<p>Blessed are the poor in spirit, for theirs is the kingdom of heaven.</p>
 

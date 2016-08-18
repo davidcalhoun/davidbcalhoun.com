@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2012/descartes-on-building-software-frameworks
-categories:
-  - philosophy
+categories: ["philosophy", "programming"]
 ---
 [<img src="http://davidbcalhoun.com/wp-content/uploads/2012/10/Frans_Hals_-_Portret_van_René_Descartes.jpeg" alt="Rene Descartes" title="Rene Descartes" width="817" height="1000" class="aligncenter size-full wp-image-969" />][1]
 

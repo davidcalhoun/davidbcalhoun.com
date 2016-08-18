@@ -3,7 +3,7 @@ layout: post
 title: "My year in photos, part 1 (2014)"
 date: 2014-12-16 01:00:00 -0700
 comments: true
-categories: [photos, photography, travel, california, new orleans, florida, st augustine]
+categories: [photos, photography, travel, california, "new orleans", florida, "st augustine"]
 ---
 
 It's nearing the year's end, so of course this means a somewhat sentimental blog post from me.  I was thinking of a "resolutions/goals" type post, but I decided against it.  Instead here's something more entertaining: my favorite photos from the past year!  Note that these aren't necessarily my best, just my favorites.

@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2010/mobile-monday-best-practices-mobile-design-september-20-2010
-categories:
-  - mobile
+categories: ["mobile", "webdev"]
 ---
 [<img src="http://davidbcalhoun.com/wp-content/uploads/2010/09/momo-1024x768.jpg" alt="" title="momo" width="100%" class="size-large wp-image-464" />][1]*Mobile Monday panel left to right: Wesley Yun (RIM), Jared Benson (Punchcut), Anne Sullivan (Microsoft/Tellme Networks), Chris Nesladek (Google), Sue Booker (Nokia) (taken with my iPhone 3GS)*
 

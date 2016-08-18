@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2010/is-hash-faster-than-switch-in-javascript
-categories:
-  - performance
+categories: ["javascript", "performance", "webdev"]
 tags:
   - android
   - hash

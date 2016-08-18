@@ -2,7 +2,7 @@
 <html lang="en-US">
 <head>
 	<meta charset="utf-8">
-	<title>Ways of passing data to functions in JavaScript  | David Calhoun's blog</title>
+	<title>Ways of passing data to functions in JavaScript  | David Calhoun</title>
 
 	<meta name="author" content="David Calhoun">
 
@@ -10,7 +10,7 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link href="/atom.xml" rel="alternate" title="David Calhoun's blog" type="application/atom+xml">
+	<link href="/atom.xml" rel="alternate" title="David Calhoun" type="application/atom+xml">
 	<link rel="canonical" href="">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
 	<!--[if lt IE 9]><script src="/javascripts/html5.js"></script><![endif]-->
@@ -21,7 +21,7 @@
 
 
 <body>
-	<header id="header" class="inner" role="banner" aria-labelledby="header_title"><h1><a href="/" id="header_title">David Calhoun's blog</a></h1>
+	<header id="header" class="inner" role="banner" aria-labelledby="header_title"><h1><a href="/" id="header_title">David Calhoun</a></h1>
 <span class="tagline"></span>
 
 </header>
@@ -40,7 +40,7 @@
   
 
 
-<time datetime="2009-12-04T00:00:00+09:00" pubdate data-updated="true"></time></div>
+<time datetime="2009-12-04T00:00:00-08:00" pubdate data-updated="true"></time></div>
 	</header>
 	<div class="entry-content"><p>Passing data is quite important in functional programming languages like JavaScript. When there are multiple functions (which is most of the time), there needs to be a way to pass data between the functions. This is done by passing values in parenthesis: myFunction(myData). Even when there is no data to be passed, we still have to declare and execute functions by using parenthesis: myFunction().</p>
 
@@ -48,32 +48,53 @@
 
 <p>I’ve already referred to the common method of passing data. Here’s an example of the code in action:</p>
 
-<pre name="code" class="JScript">function greeting (name) {
-    alert('Hello ' + name);
-}
-var personsName = 'Joe';
-greeting(personsName);  // Hello Joe</pre>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="kd">function</span> <span class="nx">greeting</span> <span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="line">    <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Hello &#39;</span> <span class="o">+</span> <span class="nx">name</span><span class="p">);</span>
+</span><span class="line"><span class="p">}</span>
+</span><span class="line"><span class="kd">var</span> <span class="nx">personsName</span> <span class="o">=</span> <span class="s1">&#39;Joe&#39;</span><span class="p">;</span>
+</span><span class="line"><span class="nx">greeting</span><span class="p">(</span><span class="nx">personsName</span><span class="p">);</span>  <span class="c1">// Hello Joe</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>This example only passes one variable to the function. Note that we can get rid of the variable personsName and make the string on the fly. So the code above is equivalent to this:</p>
 
-<pre name="code" class="JScript">function greeting (name) {
-    alert('Hello ' + name);
-}
-greeting('Joe');  // Hello Joe</pre>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="kd">function</span> <span class="nx">greeting</span> <span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="line">    <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Hello &#39;</span> <span class="o">+</span> <span class="nx">name</span><span class="p">);</span>
+</span><span class="line"><span class="p">}</span>
+</span><span class="line"><span class="nx">greeting</span><span class="p">(</span><span class="s1">&#39;Joe&#39;</span><span class="p">);</span>  <span class="c1">// Hello Joe</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>Ok. Now let’s suppose we have a function that accepts two variables:</p>
 
-<pre name="code" class="JScript">function greeting (firstName, lastName) {
-    alert('Hello ' + firstName + ' ' + lastName);
-}
-greeting('Joe', 'Schmoe');  // Hello Joe Schmoe</pre>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="kd">function</span> <span class="nx">greeting</span> <span class="p">(</span><span class="nx">firstName</span><span class="p">,</span> <span class="nx">lastName</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="line">    <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Hello &#39;</span> <span class="o">+</span> <span class="nx">firstName</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="nx">lastName</span><span class="p">);</span>
+</span><span class="line"><span class="p">}</span>
+</span><span class="line"><span class="nx">greeting</span><span class="p">(</span><span class="s1">&#39;Joe&#39;</span><span class="p">,</span> <span class="s1">&#39;Schmoe&#39;</span><span class="p">);</span>  <span class="c1">// Hello Joe Schmoe</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p>This doesn’t look too hard. But there’s a catch – the person writing the code has to remember the order of variables to pass in. Suppose they call the function like this:</p>
+<p>This doesn’t look too hard. But there’s a catch - the person writing the code has to remember the order of variables to pass in. Suppose they call the function like this:</p>
 
-<pre name="code" class="JScript">function greeting (firstName, lastName) {
-    alert('Hello ' + firstName + ' ' + lastName);
-}
-greeting('Schmoe', 'Joe');  // Hello Schmoe Joe</pre>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="kd">function</span> <span class="nx">greeting</span> <span class="p">(</span><span class="nx">firstName</span><span class="p">,</span> <span class="nx">lastName</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="line">    <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Hello &#39;</span> <span class="o">+</span> <span class="nx">firstName</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="nx">lastName</span><span class="p">);</span>
+</span><span class="line"><span class="p">}</span>
+</span><span class="line"><span class="nx">greeting</span><span class="p">(</span><span class="s1">&#39;Schmoe&#39;</span><span class="p">,</span> <span class="s1">&#39;Joe&#39;</span><span class="p">);</span>  <span class="c1">// Hello Schmoe Joe</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>That’s no good! This isn’t the result we want. In the case of firstName and lastName the variable order isn’t too hard to remember, but in other cases the variables aren’t in any logical order, which can cause confusion.</p>
 
@@ -81,29 +102,47 @@ greeting('Schmoe', 'Joe');  // Hello Schmoe Joe</pre>
 
 <p>Unlike other languages such as C++ and Java, JavaScript has no <a href="http://en.wikipedia.org/wiki/Method_overloading">constructor overloading</a>. In fact, JavaScript is (for better or worse) not even strict about enforcing the number of variables passed in. For example, the following code works fine and throws no errors, even though we’re not passing in a variable in the function call:</p>
 
-<pre name="code" class="JScript">function test (someVar) {
-    // do stuff
-};
-test();  // no errors!</pre>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="kd">function</span> <span class="nx">test</span> <span class="p">(</span><span class="nx">someVar</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="line">    <span class="c1">// do stuff</span>
+</span><span class="line"><span class="p">};</span>
+</span><span class="line"><span class="nx">test</span><span class="p">();</span>  <span class="c1">// no errors!</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>It’s only when you try to use someVar within the function that causes the problems. Otherwise, everything’s working just fine and dandy.</p>
 
 <p>What happens if we try the other case scenario: pass in more variables than the function expects? No errors again:</p>
 
-<pre name="code" class="JScript">function test () {
-    // do stuff
-};
-test('testing 123');  // again, no errors</pre>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="kd">function</span> <span class="nx">test</span> <span class="p">()</span> <span class="p">{</span>
+</span><span class="line">    <span class="c1">// do stuff</span>
+</span><span class="line"><span class="p">};</span>
+</span><span class="line"><span class="nx">test</span><span class="p">(</span><span class="s1">&#39;testing 123&#39;</span><span class="p">);</span>  <span class="c1">// again, no errors</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>And what happens if we try to declare a function with the same name? No errors, but the previous function is overwritten (this is generally to be avoided of course):</p>
 
-<pre name="code" class="JScript">function test () {
-    alert('First function');
-};
-function test () {
-    alert('Second function');
-};
-test();  // Second function</pre>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="kd">function</span> <span class="nx">test</span> <span class="p">()</span> <span class="p">{</span>
+</span><span class="line">    <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;First function&#39;</span><span class="p">);</span>
+</span><span class="line"><span class="p">};</span>
+</span><span class="line"><span class="kd">function</span> <span class="nx">test</span> <span class="p">()</span> <span class="p">{</span>
+</span><span class="line">    <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Second function&#39;</span><span class="p">);</span>
+</span><span class="line"><span class="p">};</span>
+</span><span class="line"><span class="nx">test</span><span class="p">();</span>  <span class="c1">// Second function</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>Because JavaScript has no function overloading, all it takes to overwrite another function is to redeclare a function with the same name. It doesn’t matter what sort of arguments they accept.</p>
 
@@ -111,62 +150,103 @@ test();  // Second function</pre>
 
 <p>As it turns out, JavaScript has a handy arguments object to access the arguments passed into each function:</p>
 
-<pre name="code" class="JScript">function test () {
-    alert(arguments[0]);    // testing 123
-};
-test('testing 123');</pre>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="kd">function</span> <span class="nx">test</span> <span class="p">()</span> <span class="p">{</span>
+</span><span class="line">    <span class="nx">alert</span><span class="p">(</span><span class="nx">arguments</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>    <span class="c1">// testing 123</span>
+</span><span class="line"><span class="p">};</span>
+</span><span class="line"><span class="nx">test</span><span class="p">(</span><span class="s1">&#39;testing 123&#39;</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p>In the above case the arguments object acts just as an array – it’s 0-indexed and can be used to access any arbitrary number of arguments. But arguments also has an interesting and useful property: length. Using arguments.length, we can traverse the array of arguments. This is handy in cases where we might want to add an arbitrary number of elements together:</p>
+<p>In the above case the arguments object acts just as an array - it’s 0-indexed and can be used to access any arbitrary number of arguments. But arguments also has an interesting and useful property: length. Using arguments.length, we can traverse the array of arguments. This is handy in cases where we might want to add an arbitrary number of elements together:</p>
 
-<pre name="code" class="JScript">function add () {
-    var sumTotal = 0;                        // initialize total to 0
-
-    for(var i=0; i&lt;arguments.length; i++) {  // for each argument
-        sumTotal += arguments[i];            // add current argument to total
-    }
-    
-    alert(sumTotal);
-};
-add(2, 3, 4);  // 9
-add(1, 1, 1, 1, 1, 1, 1, 1, 1);  // 9
-</pre>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="kd">function</span> <span class="nx">add</span> <span class="p">()</span> <span class="p">{</span>
+</span><span class="line">    <span class="kd">var</span> <span class="nx">sumTotal</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>                        <span class="c1">// initialize total to 0</span>
+</span><span class="line">
+</span><span class="line">    <span class="k">for</span><span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// for each argument</span>
+</span><span class="line">        <span class="nx">sumTotal</span> <span class="o">+=</span> <span class="nx">arguments</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>            <span class="c1">// add current argument to total</span>
+</span><span class="line">    <span class="p">}</span>
+</span><span class="line">
+</span><span class="line">    <span class="nx">alert</span><span class="p">(</span><span class="nx">sumTotal</span><span class="p">);</span>
+</span><span class="line"><span class="p">};</span>
+</span><span class="line"><span class="nx">add</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>  <span class="c1">// 9</span>
+</span><span class="line"><span class="nx">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>  <span class="c1">// 9</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <h3 id="passing-an-object">Passing an object</h3>
 
 <p>JavaScript libraries such as <a href="http://developer.yahoo.com/yui/">YUI</a> have already learned that the variable order is a common nuisance and an opportunity to introduce errors, so they’ve come up with a solution: pass a single object to the function. It ends up looking something like this:</p>
 
-<pre name="code" class="JScript">function greeting (obj) {
-    alert('Hello ' + obj.first + ' ' + obj.last);
-}
-var nameObject = {};
-nameObject.first = 'Joe';
-nameObject.last = 'Schmoe';
-greeting(nameObject);  // Hello Joe Schmoe</pre>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="kd">function</span> <span class="nx">greeting</span> <span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="line">    <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Hello &#39;</span> <span class="o">+</span> <span class="nx">obj</span><span class="p">.</span><span class="nx">first</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="nx">obj</span><span class="p">.</span><span class="nx">last</span><span class="p">);</span>
+</span><span class="line"><span class="p">}</span>
+</span><span class="line"><span class="kd">var</span> <span class="nx">nameObject</span> <span class="o">=</span> <span class="p">{};</span>
+</span><span class="line"><span class="nx">nameObject</span><span class="p">.</span><span class="nx">first</span> <span class="o">=</span> <span class="s1">&#39;Joe&#39;</span><span class="p">;</span>
+</span><span class="line"><span class="nx">nameObject</span><span class="p">.</span><span class="nx">last</span> <span class="o">=</span> <span class="s1">&#39;Schmoe&#39;</span><span class="p">;</span>
+</span><span class="line"><span class="nx">greeting</span><span class="p">(</span><span class="nx">nameObject</span><span class="p">);</span>  <span class="c1">// Hello Joe Schmoe</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>Now the variables become properties of a single object which is passed into the function. And it doesn’t matter which order the properties are declared in, which is a great relief to the developer.</p>
 
 <p>Note that we can simplify the above code:</p>
 
-<pre name="code" class="JScript">function greeting (obj) {
-    alert('Hello ' + obj.first + ' ' + obj.last);
-}
-var nameObject = {
-    first: 'Joe',
-    last: 'Schmoe'
-};
-greeting(nameObject);  // Hello Joe Schmoe</pre>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="kd">function</span> <span class="nx">greeting</span> <span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="line">    <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Hello &#39;</span> <span class="o">+</span> <span class="nx">obj</span><span class="p">.</span><span class="nx">first</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="nx">obj</span><span class="p">.</span><span class="nx">last</span><span class="p">);</span>
+</span><span class="line"><span class="p">}</span>
+</span><span class="line"><span class="kd">var</span> <span class="nx">nameObject</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class="line">    <span class="nx">first</span><span class="o">:</span> <span class="s1">&#39;Joe&#39;</span><span class="p">,</span>
+</span><span class="line">    <span class="nx">last</span><span class="o">:</span> <span class="s1">&#39;Schmoe&#39;</span>
+</span><span class="line"><span class="p">};</span>
+</span><span class="line"><span class="nx">greeting</span><span class="p">(</span><span class="nx">nameObject</span><span class="p">);</span>  <span class="c1">// Hello Joe Schmoe</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>And we can simplify even further:</p>
 
-<pre name="code" class="JScript">function greeting (obj) {
-    alert('Hello ' + obj.first + ' ' + obj.last);
-}
-greeting({
-    first: 'Joe',
-    last: 'Schmoe'
-});  // Hello Joe Schmoe</pre>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="kd">function</span> <span class="nx">greeting</span> <span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="line">    <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Hello &#39;</span> <span class="o">+</span> <span class="nx">obj</span><span class="p">.</span><span class="nx">first</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="nx">obj</span><span class="p">.</span><span class="nx">last</span><span class="p">);</span>
+</span><span class="line"><span class="p">}</span>
+</span><span class="line"><span class="nx">greeting</span><span class="p">({</span>
+</span><span class="line">    <span class="nx">first</span><span class="o">:</span> <span class="s1">&#39;Joe&#39;</span><span class="p">,</span>
+</span><span class="line">    <span class="nx">last</span><span class="o">:</span> <span class="s1">&#39;Schmoe&#39;</span>
+</span><span class="line"><span class="p">});</span>  <span class="c1">// Hello Joe Schmoe</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p>This is the form commonly used in these JavaScript libraries. It’s easy to copy-and-paste example code, but it might not always be so obvious what’s going on behind the scenes. You can see that just as we bypassed declaring a named variable in the Simple Passing model (with greeting(”)), here we use the same shortcut and bypass declaring a named object (with greeting({})).</p>
+<p>This is the form commonly used in these JavaScript libraries. It’s easy to copy-and-paste example code, but it might not always be so obvious what’s going on behind the scenes. You can see that just as we bypassed declaring a named variable in the Simple Passing model (with <code>greeting('')</code>), here we use the same shortcut and bypass declaring a named object (with <code>greeting({})</code>).</p>
 
 <h3 id="call-and-apply">call() and apply()</h3>
 

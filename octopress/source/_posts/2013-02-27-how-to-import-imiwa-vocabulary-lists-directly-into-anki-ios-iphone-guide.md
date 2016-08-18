@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2013/how-to-import-imiwa-vocabulary-lists-directly-into-anki-ios-iphone-guide
-categories:
-  - japanese
+categories: ["japanese"]
 ---
 EDIT: big thanks to my classmate Robin from Switzerland who showed me the key steps to getting this figured out!
 

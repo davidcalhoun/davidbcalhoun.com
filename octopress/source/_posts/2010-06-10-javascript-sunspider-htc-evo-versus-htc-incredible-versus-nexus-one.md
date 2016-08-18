@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2010/javascript-sunspider-htc-evo-versus-htc-incredible-versus-nexus-one
-categories:
-  - performance
+categories: ["javascript", "performance", "mobile", "webdev"]
 tags:
   - htc evo
   - htc incredible

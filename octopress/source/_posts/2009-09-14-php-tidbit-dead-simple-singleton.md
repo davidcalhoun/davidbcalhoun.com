@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2009/php-tidbit-dead-simple-singleton
-categories:
-  - Uncategorized
+categories: ["webdev", "php", "programming"]
 tags:
   - php
   - singleton

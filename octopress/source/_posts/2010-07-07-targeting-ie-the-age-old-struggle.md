@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2010/targeting-ie-the-age-old-struggle
-categories:
-  - css
+categories: ["webdev", "internet explorer", "css"]
 tags:
   - conditional comments
   - hacks

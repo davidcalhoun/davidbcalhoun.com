@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2012/initial-thoughts-on-the-retina-macbook-pro-after-a-few-minutes-at-the-store
-categories:
-  - Uncategorized
+categories: ["apple"]
 ---
 After work today, I stopped by the old bustling Apple Store in Palo Alto. I was there for a bit of a peek at what my next blank check to Apple would bring me.
 

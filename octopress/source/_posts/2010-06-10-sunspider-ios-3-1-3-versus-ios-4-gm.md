@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2010/sunspider-ios-3-1-3-versus-ios-4-gm
-categories:
-  - performance
+categories: ["javascript", "performance", "mobile", "webdev"]
 tags:
   - ios
   - iphone

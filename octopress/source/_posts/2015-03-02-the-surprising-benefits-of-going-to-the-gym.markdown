@@ -3,7 +3,7 @@ layout: post
 title: "The surprising benefits of going to the gym"
 date: 2015-03-02 21:40:40 -0800
 comments: true
-categories: [exercise, gym]
+categories: [exercise, gym, rant]
 ---
 
 It's well into the new year, and I didn't exactly start the new year off like everyone else, who I imagine all rushed daily into the gym in the first week or two, then apparently gave the habit up soon after.

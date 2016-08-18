@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2009/pastrykit-digging-into-an-apple-pie
-categories:
-  - mobile
+categories: ["webdev", "javascript", "programming", "mobile", "apple"]
 tags:
   - iphone
   - iui

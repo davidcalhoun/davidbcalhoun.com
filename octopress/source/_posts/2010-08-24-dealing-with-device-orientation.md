@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2010/dealing-with-device-orientation
-categories:
-  - mobile
+categories: ["javascript", "webdev", "mobile"]
 tags:
   - media queries
   - orientation

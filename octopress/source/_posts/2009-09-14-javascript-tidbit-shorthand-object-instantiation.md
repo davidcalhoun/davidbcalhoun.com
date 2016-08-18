@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2009/javascript-tidbit-shorthand-object-instantiation
-categories:
-  - Uncategorized
+categories: ["webdev", "javascript", "programming"]
 tags:
   - javascript
   - john resig

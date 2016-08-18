@@ -7,7 +7,7 @@ categories: ["philosophy", "eastern philosophy", "western philosophy", "time"]
 draft: true
 ---
 
-(Note: Work in progress notes)
+(Note: partial notes)
 
 ## Introduction
 

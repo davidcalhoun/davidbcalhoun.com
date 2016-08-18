@@ -2,15 +2,16 @@
 <html lang="en-US">
 <head>
 	<meta charset="utf-8">
-	<title>JavaScript tidbit: special variables ($, $$, _, etc)  | David Calhoun's blog</title>
+	<title>JavaScript tidbit: special variables ($, $$, _, etc)  | David Calhoun</title>
 
 	<meta name="author" content="David Calhoun">
 
-<meta name="description" content="You’re probably used to typical variables names such as the following: var personName = 'Joe'; You may not realize it, but there are some non- &hellip;"> <meta name="keywords" content="">
+<meta name="description" content="You’re probably used to typical variables names such as the following: 1
+var personName = &#39;Joe&#39;; You may not realize it, but there are some &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link href="/atom.xml" rel="alternate" title="David Calhoun's blog" type="application/atom+xml">
+	<link href="/atom.xml" rel="alternate" title="David Calhoun" type="application/atom+xml">
 	<link rel="canonical" href="">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
 	<!--[if lt IE 9]><script src="/javascripts/html5.js"></script><![endif]-->
@@ -21,7 +22,7 @@
 
 
 <body>
-	<header id="header" class="inner" role="banner" aria-labelledby="header_title"><h1><a href="/" id="header_title">David Calhoun's blog</a></h1>
+	<header id="header" class="inner" role="banner" aria-labelledby="header_title"><h1><a href="/" id="header_title">David Calhoun</a></h1>
 <span class="tagline"></span>
 
 </header>
@@ -40,11 +41,13 @@
   
 
 
-<time datetime="2009-12-08T00:00:00+09:00" pubdate data-updated="true"></time></div>
+<time datetime="2009-12-08T00:00:00-08:00" pubdate data-updated="true"></time></div>
 	</header>
 	<div class="entry-content"><p>You’re probably used to typical variables names such as the following:</p>
 
-<pre name="code" class="JScript">var personName = 'Joe';</pre>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="kd">var</span> <span class="nx">personName</span> <span class="o">=</span> <span class="s1">&#39;Joe&#39;</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>You may not realize it, but there are some non-alphanumeric variables at your disposal.</p>
 
@@ -52,12 +55,15 @@
 
 <p>For instance, the $ variable has been made popular by several JavaScript libraries, most notably <a href="http://jquery.com/">jQuery</a>. You can use it to alias operations that are commonly performed, such as the following (1):</p>
 
-<pre name="code" class="JScript">var $ = document.getElementById;
-var myElement = $('targetElement');</pre>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="kd">var</span> <span class="nx">$</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">;</span>
+</span><span class="line"><span class="kd">var</span> <span class="nx">myElement</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;targetElement&#39;</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>If you declare this variable outside of a function it will be a global variable and will compete with libraries that use the same global variable, so it’s probably best not to use it.</p>
 
-<p>Interestingly, originally the dollar sign $ was originally intended for “mechanically generated code” (2), but as the usage of the symbol has become popular for other purposes, it looks like <a href="http://www.ecma-international.org/publications/standards/Ecma-262.htm">the latest version of JavaScript (ECMAScript 5th edition) now officially “oks” its use</a>:</p>
+<p>Interestingly, originally the dollar sign $ was originally intended for ‘mechanically generated code’ (2), but as the usage of the symbol has become popular for other purposes, it looks like <a href="http://www.ecma-international.org/publications/standards/Ecma-262.htm">the latest version of JavaScript (ECMAScript 5th edition) now officially ‘oks’ its use</a>:</p>
 
 <blockquote>
   <p>This standard specifies specific character additions: The dollar sign ($) and the underscore (_) are permitted anywhere in an IdentifierName.</p>
@@ -67,15 +73,21 @@ var myElement = $('targetElement');</pre>
 
 <p>Some have come up with the solution of simply using two or more $$ symbols in order to distinguish the variable from libraries that just use a single $:</p>
 
-<pre name="code" class="JScript">var $$ = document.getElementById;
-var myElement = $$('targetElement');</pre>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="kd">var</span> <span class="nx">$$</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">;</span>
+</span><span class="line"><span class="kd">var</span> <span class="nx">myElement</span> <span class="o">=</span> <span class="nx">$$</span><span class="p">(</span><span class="s1">&#39;targetElement&#39;</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <h3 id="using--2">Using _</h3>
 
 <p>You will find that you can use the underscore _ in the same way to alias variables and functions:</p>
 
-<pre name="code" class="JScript">var _ = document.getElementById;
-var myElement = _('targetElement');</pre>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="kd">var</span> <span class="nx">_</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">;</span>
+</span><span class="line"><span class="kd">var</span> <span class="nx">myElement</span> <span class="o">=</span> <span class="nx">_</span><span class="p">(</span><span class="s1">&#39;targetElement&#39;</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <h3 id="other-symbols">Other symbols</h3>
 
@@ -83,12 +95,15 @@ var myElement = _('targetElement');</pre>
 
 <p>Or you can put the symbol to use doing what you would naturally think it should do…</p>
 
-<pre name="code" class="JScript">var √ = Math.sqrt;
-alert(√(4));   // 2</pre>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class="javascript"><span class="line"><span class="kd">var</span> <span class="err">√</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">sqrt</span><span class="p">;</span>
+</span><span class="line"><span class="nx">alert</span><span class="p">(</span><span class="err">√</span><span class="p">(</span><span class="mi">4</span><span class="p">));</span>   <span class="c1">// 2</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <h3 id="references">References</h3>
 
-<p>(1) <a href="http://www.amazon.com/Even-Faster-Web-Sites-Performance/dp/0596522304">Even Faster Web Sites</a>, p. 128<br />
+<p>(1) <a href="http://www.amazon.com/Even-Faster-Web-Sites-Performance/dp/0596522304">Even Faster Web Sites</a>, p. 128  <br />
 (2) <a href="http://stackoverflow.com/questions/205853/why-would-a-javascript-variable-start-with-a-dollar-sign">Stackoverflow: Why would a javascript variable start with a dollar sign?</a></p>
 
 </div>

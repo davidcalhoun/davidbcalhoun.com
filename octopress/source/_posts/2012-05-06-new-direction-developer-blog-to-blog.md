@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2012/new-direction-developer-blog-to-blog
-categories:
-  - life
+categories: ["life", "philosophy", "rant"]
 ---
 Lately I&#8217;ve come to terms with the fact I need to try something new in my life &#8211; a true change in direction. I anticipate that this blog will take the same direction, so there will likely be less and less &#8220;developer&#8221; posts and more and more posts of me living this new path. (TLDR: unsubscribe now, probably!)
 

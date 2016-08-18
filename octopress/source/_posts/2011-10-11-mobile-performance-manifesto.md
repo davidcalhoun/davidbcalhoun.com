@@ -5,9 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2011/mobile-performance-manifesto
-categories:
-  - mobile
-  - performance
+categories: ["webdev", "mobile", "performance"]
 ---
 <img src="http://davidbcalhoun.com/wp-content/uploads/2011/10/odometer.jpg" alt="" title="Dashboard with odometer" width="800" height="299" class="aligncenter size-full wp-image-806" />
 

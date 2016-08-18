@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2013/comparison-of-mobile-image-search-sites
-categories:
-  - mobile
+categories: ["mobile", "design", "webdev"]
 ---
 The other day I glanced at a classmate using [Baidu][1] to perform an image search and was impressed with their presentation:
 

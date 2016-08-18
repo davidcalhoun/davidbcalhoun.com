@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2011/iphone-4s-iphone-4-and-iphone-3gs-photo-comparison
-categories:
-  - mobile
+categories: ["mobile", "iphone", "webdev"]
 ---
 More photos likely to come.. this is just after I unboxed my new 4S. Time to play with it a bit!
 

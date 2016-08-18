@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2011/web-development-silicon-valley-rant
-categories:
-  - Uncategorized
+categories: ["philosophy", "silicon valley", "rant"]
 ---
 (if you didn&#8217;t read the title &#8211; warning: rant&#8230;)
 

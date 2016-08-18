@@ -1,0 +1,718 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: programming | David Calhoun]]></title>
+  <link href="http://davidbcalhoun.com/blog/categories/programming/atom.xml" rel="self"/>
+  <link href="http://davidbcalhoun.com/"/>
+  <updated>2016-08-18T14:00:33-07:00</updated>
+  <id>http://davidbcalhoun.com/</id>
+  <author>
+    <name><![CDATA[David Calhoun]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[You Can't JavaScript Under Pressure walkthrough]]></title>
+    <link href="http://davidbcalhoun.com/2013/you-cant-javascript-under-pressure-walkthrough"/>
+    <updated>2013-10-04T00:00:00-07:00</updated>
+    <id>http://davidbcalhoun.com/2013/you-cant-javascript-under-pressure-walkthrough</id>
+    <content type="html"><![CDATA[<p>A friend posted a link to this fun little quiz - <a href="http://toys.usvsth3m.com/javascript-under-pressure/">You Can’t JavaScript Under Pressure</a>.</p>
+
+<p>The quizzes get more and more difficult, and they present a nice challenge if you fear your skills are getting rusty. Give it an honest try first, then come back here if you get seriously, honestly stuck. Try to do it yourself!</p>
+
+<h3 id="quiz-1-doubleinteger">Quiz 1: doubleInteger</h3>
+
+<h4 id="problem">Problem</h4>
+<pre lang="javascript"><code>function doubleInteger(i) {
+    // i will be an integer. Double it and return it.
+
+    return i;
+}
+</code></pre>
+
+<h4 id="solution">Solution</h4>
+<pre lang="javascript"><code>function doubleInteger(i) {
+    // i will be an integer. Double it and return it.
+    
+    return i * 2;
+}
+</code></pre>
+
+<h4 id="explanation">Explanation</h4>
+
+<p>Nothing tricky going on here. The prompt implies this should be done in two steps, but a one-liner works. We know i will always be an integer, so we don’t need any sanitization checks, just a straight up return.</p>
+
+<h3 id="quiz-2-isnumbereven">Quiz 2: isNumberEven</h3>
+
+<h4 id="problem-1">Problem</h4>
+<pre lang="javascript"><code>function isNumberEven(i) {
+    // i will be an integer. Return true if it’s even, and false if it isn’t.
+}
+</code></pre>
+
+<h4 id="solution-1">Solution</h4>
+<pre lang="javascript"><code>function isNumberEven(i) {
+    // i will be an integer. Return true if it’s even, and false if it isn’t.
+    
+    if(i % 2 === ) {
+        //  no remainder, so it must be an even number
+        return true;
+    } else {
+        //  remainder, so it must be odd.
+        return false;
+    }
+}
+</code></pre>
+
+<h4 id="explanation-1">Explanation</h4>
+
+<p>Again, no sanitization needed here because i is guaranteed to be an integer. The solution relies on an understanding of the modulus function - this is something usually learned in school, but something I haven’t had to use since, except in interviews or quizzes. Or quizzes during interviews.</p>
+
+<p>Basically, think of modulus as “remainder” function for division problems. For instance, <code>4 % 2</code> will give a modulus of <code>1</code> because 4 goes into 2 twice, evenly, with zero remainder. On the other hand, <code>5 % 2</code> will give a modulus of <code>1</code> because 5 goes into 2 twice, with a remainder of 1. This turns out to be a handy way to differentiate even (4) and odd (5) numbers.</p>
+
+<p>(note that the <code>else</code> isn’t needed here, but it gives greater clarity to what’s going on)</p>
+
+<h3 id="quiz-3-getfileextension">Quiz 3: getFileExtension</h3>
+
+<h4 id="problem-2">Problem</h4>
+<pre lang="javascript"><code>function getFileExtension(i) {
+    // i will be a string, but it may not have a file extension.
+    // return the file extension (with no period) if it has one, otherwise false
+}
+</code></pre>
+
+<h4 id="solution-2">Solution</h4>
+<pre lang="javascript"><code>function getFileExtension(i) {
+    // i will be a string, but it may not have a file extension.
+    // return the file extension (with no period) if it has one, otherwise false
+
+    var filenameArray = i.split(”.”);
+
+    if(filenameArray.length &lt;= 1) {
+        //  i.e. “foo” becomes [“foo”] (array with 1 member)
+        return false;
+    } else {
+        //  must be an array with more than 1 member.  The extension must be at the end.
+        return filenameArray[filenameArray.length - 1];
+    }
+}
+</code></pre>
+
+<h4 id="explanation-2">Explanation</h4>
+
+<p>Now we’re getting a bit tougher!</p>
+
+<p>Strings have a handy function that splits them into an array: <code>split()</code>. For instance,</p>
+
+<pre lang="javascript"><code>"foo.bar.baz".split(".")
+</code></pre>
+
+<p>will output</p>
+
+<pre lang="javascript"><code>["foo", "bar", "baz"]
+</code></pre>
+
+<p>Notice that the periods have been removed, just as the prompt asked for!</p>
+
+<p>In this case we need to first check if there was no file extension. This means that there were no periods to split on, resulting in a one-member array (<code>"foo".split(".")</code> becomes <code>["foo"]</code>). In this case we return <code>false</code>, as the prompt asks for.</p>
+
+<p>Now, in the else case, we know that the array must be larger than 1, meaning that it has a file extension. Since the file extension is always at the end, we know that it must be the last member in the array.</p>
+
+<p>We can find the index of the last member by taking into account array length (<code>filenameArray.length</code>) and the fact that the array is zero-indexed, meaning that we need to subtract 1 from this length. Now we know the extension exists and is at the end of the array, so all we need to do is return it:</p>
+
+<pre lang="javascript"><code>return filenameArray[filenameArray.length - 1];
+</code></pre>
+
+<h3 id="quiz-4-longeststring">Quiz 4: longestString</h3>
+
+<h4 id="problem-3">Problem</h4>
+<pre lang="javascript"><code>function longestString(i) {
+    // i will be an array.
+    // return the longest string in the array
+    
+}
+</code></pre>
+
+<h4 id="solution-3">Solution</h4>
+<pre lang="javascript"><code>function longestString(i) {
+    // i will be an array.
+    // return the longest string in the array
+ 
+    var longest = ””,
+        n, len;
+
+    for(n=, len=i.length; n&lt;len; n++) {
+        if(typeof n[i] !== “string”) {
+            //  not a string, go to next iteration of the loop
+            continue;
+        }
+
+        if(n[i].length &gt; longest.length) {
+            //  Current string is longer, so set it as the new longest string
+            longest = n[i];
+        }
+    }   
+}
+</code></pre>
+
+<h4 id="explanation-3">Explanation</h4>
+
+<p>This is a pretty classic interview question. It’s fairly easy and straightforward: just keep track of the longest string in a variable, then loop through all the members of the array. If the current member is longer, set it as the new longest string. At the end, return whatever that variable contains.</p>
+
+<p>Note the extra sanitization check here to make sure the type is a string. If it’s not a string, we <code>continue</code> to continue to the next iteration of the <code>for</code> loop. (Note that this is similar to returning early in functions)</p>
+
+<h3 id="quiz-5-arraysum">Quiz 5: arraySum</h3>
+
+<h4 id="problem-4">Problem</h4>
+<pre lang="javascript"><code>function arraySum(i) {
+    // i will be an array, containing integers, strings and/or arrays like itself.
+    // Sum all the integers you find, anywhere in the nest of arrays.   
+}
+</code></pre>
+
+<h4 id="solution-4">Solution</h4>
+<pre lang="javascript"><code>function arraySum(i) {
+    var sum = ,
+        n, len;
+
+    if(typeof i === “number”) {
+        //  i has been defined as a simple number through a recursive call
+        sum += i;
+    } else if(Array.isArray(i)) {
+        //  i is an array, so iterate through it
+        for(n=, len=i.length; n&lt;len; n++) {
+            //  recursive call
+            sum += arraySum(i[n]);
+        }
+    }
+
+    return sum;
+}
+</code></pre>
+
+<h4 id="explanation-4">Explanation</h4>
+
+<p>The best way to handle this one is through recursion, which is tricky but powerful. I admit that on my first attempts writing it in the console, my browser froze up and I had to restart it.</p>
+
+<p>Recursive functions are very elegant but tricky. It helps to step through with examples.</p>
+
+<p>First, let’s start with <code>arraySum(1)</code>. The output is of course 1, but note that we didn’t actually input an array. The code took the first codepath in the <code>if</code> statement (because <code>typeof 1 === "number"</code> is true)</p>
+
+<p>Let’s see what happens when we input a basic array:</p>
+
+<pre lang="javascript"><code>arraySum([1]);  // 1
+</code></pre>
+
+<p>Again the answer is 1, but this time the codepath was different. This time <code>Array.isArray([1])</code> was true, and the function was called recursively for each of the members in the array. That is to say, each member of the array (in this case the single member) was sent to arraySum as a simple integer. So the recursive call was the same as the original example: <code>arraySum(1)</code>, and the output was the same.</p>
+
+<p>In the case of more numbers, the outputs are all added to the <code>sum</code> and then returned back at the end of the function.</p>
+
+<p>Note that this works quite well for even deeply nested arrays, since arraySum() has logic for arrays that will always return the sum of all of its deeply nested integers:</p>
+
+<pre lang="javascript"><code>arraySum([1, [2,[3,[4,[5]]]]]);   // 15
+</code></pre>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Descartes on building software frameworks]]></title>
+    <link href="http://davidbcalhoun.com/2012/descartes-on-building-software-frameworks"/>
+    <updated>2012-10-02T00:00:00-07:00</updated>
+    <id>http://davidbcalhoun.com/2012/descartes-on-building-software-frameworks</id>
+    <content type="html"><![CDATA[<p><a href="http://commons.wikimedia.org/wiki/File:Frans_Hals_-_Portret_van_Ren%C3%A9_Descartes.jpg"><img src="http://davidbcalhoun.com/wp-content/uploads/2012/10/Frans_Hals_-_Portret_van_René_Descartes.jpeg" alt="Rene Descartes" title="Rene Descartes" width="817" height="1000" class="aligncenter size-full wp-image-969" /></a></p>
+
+<p>Years ago I read Descartes’s <a href="http://en.wikipedia.org/wiki/Discourse_on_the_Method">Discourse on Method</a> for what I found to be some of the more interesting philosophy courses of my college career: those of the history of modern philosophy. Modern philosophy technically starts with Descartes, so it’s a good place to start, or to get re-acquainted with philosophy in general.</p>
+
+<p>I’ve been reading through the Discourse again, and have found it to be more interesting and relatable this time around (particularly about lessons learned while traveling, but that’s a topic for another post).</p>
+
+<p>What’s particularly interesting here is that a lot of what Descartes talks about seems very relevant for software engineers who wish to create their own software framework from scratch.</p>
+
+<p>I’m sorry, I know that sounds pretty pretentious and crazy.</p>
+
+<p>This isn’t as far-fetched as it may seem at first. Be patient!</p>
+
+<p>But first, some background…</p>
+
+<h3 id="what-was-descartes-up-to-does-french-count-as-a-programming-language">What was Descartes up to? Does French count as a programming language?</h3>
+
+<p><a href="http://commons.wikimedia.org/wiki/File:Ren%C3%A9_Descartes_i_samtal_med_Sveriges_drottning,_Kristina.jpg"><img src="http://davidbcalhoun.com/wp-content/uploads/2012/10/René_Descartes_i_samtal_med_Sveriges_drottning_Kristina.jpeg" alt="Rene Descartes" title="Rene Descartes" width="581" height="539" class="aligncenter size-full wp-image-975" /></a>  <br />
+<em>“Oh my! I find your foundations to be awfully shaky.”</em> (note: not an actual Descartes quote)</p>
+
+<blockquote>
+  <p>Philosophy has been pursued for many centuries by the best minds, and yet everything in it is still disputed and hence doubtful; and I wasn’t so arrogant as to hope to achieve more in philosophy than others had done. Considering how many different opinions learned men may maintain on a single question—where at most one can be true—I regarded everything that was merely probable as being near enough to false. -<a href="http://en.wikipedia.org/wiki/Discourse_on_the_Method">Descartes, Discourse on Method</a></p>
+</blockquote>
+
+<p>Descartes’s task, if you’ll remember, is intense self-examination where he throws out any questionable belief in order to build a strong foundation of clear and unquestionable beliefs. He doubts literally everything, until he comes to the one thing that can’t be doubted: that there is obviously <em>something</em> doing the doubting. Namely himself. This is where the concept “I think, therefore I am” comes from (“Je pense, donc je suis”, and in Latin as “Cogito ergo sum” in a later work).</p>
+
+<h3 id="the-software-engineer-tie-in">The software engineer tie-in</h3>
+
+<p>Software engineers, I’ve found, when given the chance, are likewise just as skeptical of the “status quo”. They take a look at the landscape around them, but find themselves dissatisfied and unable to find a perfectly suitable software framework. Of course many people do find close approximations and are perfectly happy using an existing framework. On the other hand, there are definitely purists who believe the proper thing to do is to create their own tailor-made framework from the ground up. Descartes would definitely fit into this latter category.</p>
+
+<p>What I’ve found over my short career in software is that engineers like to build custom frameworks. Lots of custom frameworks. And they often times like to build them in a purist way, from the ground up.</p>
+
+<p>Building your own framework turns out not only to be more interesting and fun (rather than maintaining some existing framework), but it’s also supposedly a better way to ensure a lack of cruft, and to ensure a firm foundation. A foundation which has no component that is unneeded or of which can be doubted.</p>
+
+<p>The danger of doing otherwise, it’s thought, is that after investing the effort to learn an existing framework, one might find it wasn’t that great after all. Or worse, that it had questionable foundations which would need to be patched up. This is not unlike the task of learning an existing philosophical system, only to see holes poked in its very foundations (as the quote above states, this is essentially what philosophers have been doing for centuries – poking holes in each other’s foundations).</p>
+
+<h3 id="better-than-maintaining-the-old">Better than maintaining the old</h3>
+
+<blockquote>
+  <p>Regarding the opinions which I had previously held, I couldn’t do better than set out to get rid of them all at one go, so as then to replace them afterwards with better opinions or even with the same ones after I had straightened them out using reason’s plumb-line. I ﬁrmly believed that this would let me conduct my life much better than if I were to build only on old foundations and rely only on principles that I had accepted in my youth without ever examining whether they were true. Even if I were to see various difﬁculties in this project, they weren’t insurmountable, and weren’t comparable with the difﬁculties involved in reforming even minor matters affecting public institutions. -<a href="http://en.wikipedia.org/wiki/Discourse_on_the_Method">Descartes, Discourse on Method</a></p>
+</blockquote>
+
+<p>The huge drawback of “going at it on our own” is of course the fact that <em>we</em> are now responsible for creating the entire foundation and each component of our custom framework. Descartes would be perfectly fine with this.</p>
+
+<p>And this is exactly what he did with himself: he tore down everything he thought he knew to be true, then started to slowly build up his philosophy bit by bit. Better to do this than to patch old shaky foundations in existing philosophies.</p>
+
+<h3 id="reusing-old-bits">Reusing old bits</h3>
+
+<p><a href="http://commons.wikimedia.org/wiki/File:Descartesmaison.jpg"><img src="http://davidbcalhoun.com/wp-content/uploads/2012/10/Descartesmaison.jpeg" alt="Descartes&#039;s house" title="Descartes&#039;s house" width="395" height="597" class="aligncenter size-full wp-image-979" /></a>  <br />
+<em>Descartes’s house. Hmm, not sure the foundations are secure here…</em></p>
+
+<p>Interestingly enough, parts of old beliefs (old frameworks) may still find their way in, but only after intense scrutiny:</p>
+
+<blockquote>
+  <p>Just as in demolishing an old house we usually keep the materials for use in building a new one, so in destroying all those opinions of mine that I judged to be ill-founded I made various observations and acquired many experiences that I have since used in establishing more certain opinions. -<a href="http://en.wikipedia.org/wiki/Discourse_on_the_Method">Descartes, Discourse on Method</a></p>
+</blockquote>
+
+<p>In other words, there’s some good bits out there that have already been created. Might as well reuse them if they’re good enough.</p>
+
+<h3 id="philosophy-as-a-preview-of-the-future-of-software-development">Philosophy as a preview of the future of software development</h3>
+
+<p>Obviously philosophy didn’t stop with Descartes. He did become the foundation for others in the modern tradition to build on (namely Spinoza and Leibniz, and most others who came after him), but of course that wasn’t the end of it. The famous “cogito ergo sum”, the foundation of Descartes’s philosophy and seemingly common sense, <a href="http://en.wikipedia.org/wiki/Cogito_ergo_sum#Criticisms">hasn’t even been immune from criticism</a>.</p>
+
+<p>Folks have continued to build philosophies and have continued to be unsatisfied with what’s out there, or unconvinced that it’s even useful in this age.</p>
+
+<p>I believe we approach software frameworks, software itself, and even programming languages the same way. Unsatisfied with what’s out there, people will continue to build new things and new tools which work for the time being for certain groups of people.</p>
+
+<p>Inevitably, a new generation of developers, not unlike a new generation of philosophers, will eventually tear it all down and start over again.</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Different ways of defining functions in JavaScript (this is madness!)]]></title>
+    <link href="http://davidbcalhoun.com/2011/different-ways-of-defining-functions-in-javascript-this-is-madness"/>
+    <updated>2011-06-24T00:00:00-07:00</updated>
+    <id>http://davidbcalhoun.com/2011/different-ways-of-defining-functions-in-javascript-this-is-madness</id>
+    <content type="html"><![CDATA[<p>Note: updated in July 2016 with ES6 arrow functions.</p>
+
+<p><a href="http://langtoday.com/?p=303">Russian translation</a> thanks to Yevgeniy Pyastolov</p>
+
+<ul id="markdown-toc">
+  <li><a href="#this-is-madness-this8230-is8230-javascript" id="markdown-toc-this-is-madness-this8230-is8230-javascript">This is madness! This… is… JavaScript!</a></li>
+  <li><a href="#overview-different-ways-of-declaring-functions" id="markdown-toc-overview-different-ways-of-declaring-functions">Overview: different ways of declaring functions</a></li>
+  <li><a href="#a-function-declarations-function-a" id="markdown-toc-a-function-declarations-function-a">A: Function declarations: function A(){};</a></li>
+  <li><a href="#b-function-expressions-var-b--function" id="markdown-toc-b-function-expressions-var-b--function">B: Function expressions: var B = function(){};</a></li>
+  <li><a href="#c-function-expressions-with-grouping-operators-var-c--function" id="markdown-toc-c-function-expressions-with-grouping-operators-var-c--function">C: Function expressions with grouping operators: var C = (function(){});</a></li>
+  <li><a href="#d-named-function-expression-var-d--function-foo" id="markdown-toc-d-named-function-expression-var-d--function-foo">D: Named function expression: var D = function foo(){};</a></li>
+  <li><a href="#e-immediately-invoked-function-expressions-iife-var-e--functionreturn-function" id="markdown-toc-e-immediately-invoked-function-expressions-iife-var-e--functionreturn-function">E: Immediately-invoked function expressions (IIFE): var E = (function(){return function(){}})();</a></li>
+  <li><a href="#f-function-constructor-var-f--new-function" id="markdown-toc-f-function-constructor-var-f--new-function">F: Function constructor: var F = new Function();</a></li>
+  <li><a href="#g-special-case---object-constructor-var-g--new-function-foo" id="markdown-toc-g-special-case---object-constructor-var-g--new-function-foo">G: Special case - object constructor: var G = new function foo(){};</a></li>
+  <li><a href="#h-arrow-functions" id="markdown-toc-h-arrow-functions">H: Arrow functions</a></li>
+  <li><a href="#further-reading" id="markdown-toc-further-reading">Further reading</a></li>
+</ul>
+
+<h3 id="this-is-madness-this8230-is8230-javascript">This is madness! This… is… JavaScript!</h3>
+
+<p>In JavaScript, there’s many different ways of doing something. This is both a good thing and a bad thing. To the newcomer this is definitely a bad thing, as it means not only more things to learn, but more little caveats and more places to go wrong. And so it is with declaring functions!</p>
+
+<p>The aim of this is just an accessible tour of the landscape, just so you know what’s out there and what the basic differences are. Do be sure to check out the “further reading” section as well! Much of this is based on <a href="http://kangax.github.com/nfe/">Juriy “kangax” Zaytsev’s article</a>, which goes into more depth. But I found that there wasn’t just one reference to show all the different variable declarations.</p>
+
+<p>How about ways to execute functions? That opens up another can of worms, and incidentally opens up the possibility for a future post on that topic. :)</p>
+
+<h3 id="overview-different-ways-of-declaring-functions">Overview: different ways of declaring functions</h3>
+
+<pre><code class="language-javascript">    function A(){};             // function declaration
+    var B = function(){};       // function expression
+    var C = (function(){});     // function expression with grouping operators
+    var D = function foo(){};   // named function expression
+    var E = (function(){        // IIFE that returns a function
+      return function(){}
+    })();
+    var F = new Function();     // Function constructor
+    var G = new function(){};   // special case: object constructor
+    var H = x =&gt; x * 2;         // ES6 arrow function
+</code></pre>
+
+<h3 id="a-function-declarations-function-a">A: Function declarations: function A(){};</h3>
+
+<p>Function declarations are probably the most familiar and oldest way of doing things in JavaScript land. This creates a variable A which is accessible in the current scope. Scope is a separate topic, so well do everything in the global scope for all these examples (something you want to avoid usually).</p>
+
+<h4 id="hoisting">1. Hoisting</h4>
+
+<p>The interesting thing about these is that they are “hoisted” to the top of their scope, which means this code:</p>
+
+<pre><code class="language-javascript">    A();
+    function A(){
+      console.log('foo');
+    };
+</code></pre>
+
+<p>Gets executed as this code:</p>
+
+<pre><code class="language-javascript">    function A(){
+      console.log('foo');
+    };
+    A();
+</code></pre>
+
+<p>Which practically means that, yes, you can call the functions before they’re written in your code. It won’t matter, because the entire function gets hoisted to the top of its containing scope. (This is contrasted with variables, which only have their declaration hoisted, not their contents, as we’ll see in the next section).</p>
+
+<h4 id="no-function-declarations-in-if-statements-or-loops-etc">2. No function declarations in <code>if</code> statements (or loops, etc)</h4>
+<p>You can’t define functions this way in expressions, for example <code>if</code> statements, which is common if we want to define different versions of a function for different circumstances, usually to address browser inconsistencies. Well, you <em>can</em> in some implementations, but the way the code is processed is inconsistent (kangax has documented the inconsistencies <a href="http://kangax.github.com/nfe/">here</a>). If you want to use this pattern, use function expressions instead.</p>
+
+<h4 id="functions-declarations-must-have-names">3. Functions declarations must have names</h4>
+
+<p>This method doesn’t allow you to create anonymous functions, meaning that you always have to give it an identifier (in this case we’ve used “A”).</p>
+
+<h3 id="b-function-expressions-var-b--function">B: Function expressions: var B = function(){};</h3>
+
+<p>A function expression looks similar to function declarations, except that the function is assigned to a variable name. Though functions are not primitive values in JavaScript, this is the way they can be utilized to their full effect in this functional language. Functions are “<a href="http://en.wikipedia.org/wiki/First-class_function">first class</a>”:</p>
+
+<blockquote>
+  <p>“[JavaScript] supports passing functions as arguments to other functions, returning them as the values from other functions, and assigning them to variables or storing them in data structures”</p>
+</blockquote>
+
+<h4 id="anonymous-functions-they-dont-need-names">1. Anonymous functions (they don’t need names)</h4>
+
+<p>The function name is optional in function expressions, and we call these anonymous. Here we’re setting the variable B equal to an anonymous function: <code>var B = function(){};</code></p>
+
+<h4 id="variable-declaration-hoisting">2. Variable declaration hoisting</h4>
+
+<p>Variable declarations are hoisted to the top of their scope, somewhat similarly to function hoisting <em>except</em> the contents of the variable are not hoisted as well. This happens with all variables, and it means it’s now happening with our functions, now that we’re assigning them to variables.</p>
+
+<p>This code:</p>
+
+<pre><code class="language-javascript">    var A = function(){};
+    var B = function(){};
+    var C = function(){};
+</code></pre>
+
+<p>Will be executed as this:</p>
+
+<pre><code class="language-javascript">    var A, B, C;  // variable declarations are hoisted
+    A = function(){};
+    B = function(){};
+    C = function(){};
+</code></pre>
+
+<p>Therefore the order of setting and calling this type of function is important:</p>
+
+<pre><code class="language-javascript">    // this works
+    var B = function(){};
+    B();
+
+    // this doesn't work
+    B2();  // TypeError (B2 is undefined)
+    var B2 = function(){};
+</code></pre>
+
+<p>The second example gives us an error because only the variable B2’s declaration is hoisted, but not its definition, thus the “undefined” error.</p>
+
+<h3 id="c-function-expressions-with-grouping-operators-var-c--function">C: Function expressions with grouping operators: var C = (function(){});</h3>
+
+<p>These really aren’t different from plain old function expressions and aren’t really seen in the wild (so maybe they’re just good for JavaScript quizzes?). Recently this way of declaring functions was brought up in <a href="http://ironjs.wordpress.com/2011/06/22/my-gripes-with-javascript/">this article</a> and confused some folks including myself.</p>
+
+<p>Here’s a good way to see what’s happening:</p>
+
+<pre><code class="language-javascript">    function(){};  // SyntaxError
+    (function(){});
+</code></pre>
+
+<p>Why does one work and the other doesn’t? The first example is a function declaration, and we learned above that we can’t declare them anonymously - that is, they must have a name. That’s why we’re getting the syntax error.</p>
+
+<p>The second example is using parenthesis - grouping operators - and is therefore evaluated differently, as a function expression. The grouping operators are the things we use to help show what should be evaluated first, as in mathematical problems. We’re saying “evaluate this first, then take the result and do something with it”:</p>
+
+<pre><code class="language-javascript">    (1 + 2) * 3;  // 9
+    1 + (2 * 3);  // 7
+</code></pre>
+
+<p>In the first example we’re saying “first add 1 and 2, then take the result and multiply by 3”, whereas in the second example we’re saying “first multiply 2 and 3, then take the result and add 1”.</p>
+
+<p>Because functions are first class, we can use similar grouping operators. Here’s a facetious example, but it shows how we can essentially drop in a function in the same way:</p>
+
+<pre><code class="language-javascript">    (function(){} + 1);  // function(){}1
+</code></pre>
+
+<p>The result is a string (because toString is being called on the function, then added/appended with 1), but you get the idea I hope.</p>
+
+<p>When the JavaScript engine encounters the opening parenthesis here, we’re essentially saying “ok, start grouping this together with something else”. Using our technical terms, we’re telling the engine that we’re not making a function declaration, but instead a function expression. And then we can assign the result to a variable:</p>
+
+<pre><code class="language-javascript">    (function(){});           // resulting function not assigned
+    var foo = (function(){}); // resulting function assigned to foo
+    var bar = function(){};   // resulting function assigned to bar
+</code></pre>
+
+<p>Here we can see that foo and bar are really just the same, because in foo we’re not grouping the function together with anything but itself.</p>
+
+<h3 id="d-named-function-expression-var-d--function-foo">D: Named function expression: var D = function foo(){};</h3>
+
+<p>Here we have our same old friend, the function expression. But instead of assigning the variable to an anonymous function, we’re assigning it to a named function (with the name foo).</p>
+
+<h4 id="the-function-name-is-only-accessible-within-the-function">1. The function name is only accessible within the function</h4>
+
+<p>We haven’t exposed the function name (foo) to the enclosing scope (in this case the global scope):</p>
+
+<pre><code class="language-javascript">    var D = function foo(){
+      console.log(typeof foo);
+    };
+    D();                       // function
+    console.log(typeof foo);   // undefined
+</code></pre>
+
+<h4 id="useful-for-recursion">2. Useful for recursion</h4>
+
+<p>Because the function’s name is accessible in the function itself, this turns out to be useful for recursive functions, much more useful than the plain old anonymous function.</p>
+
+<p>Here’s a trivial recursive function to illustrate calling itself from within the named function expression:</p>
+
+<pre><code class="language-javascript">    var countdown = function a(count){
+      if(count &gt; 0) {
+        count--;
+        return a(count);  // we can also do this: a(--count), which is less clear
+      }
+      console.log('end of recursive function');
+    }
+    countdown(5);
+</code></pre>
+
+<h4 id="useful-for-debugging">3. Useful for debugging</h4>
+
+<p>As a <a href="http://kangax.github.com/nfe/">few</a> <a href="http://javascriptweblog.wordpress.com/2010/07/06/function-declarations-vs-function-expressions/">have</a> pointed out, giving previously anonymous functions names helps in debugging, since the function name shows up on the call stack.</p>
+
+<h4 id="quirks-jscripts-bad-implementation">4. Quirks: JScript’s bad implementation</h4>
+
+<p><a href="http://kangax.github.com/nfe/">kangax</a> points out that named function expressions are basically poison to JScript, Internet Explorer’s implementation of JavaScript.</p>
+
+<p>The named function becomes a global variable, is hoisted like a function declaration, and actually ends up creating multiple instances of the same function.</p>
+
+<h3 id="e-immediately-invoked-function-expressions-iife-var-e--functionreturn-function">E: Immediately-invoked function expressions (IIFE): var E = (function(){return function(){}})();</h3>
+
+<p>“Execute this function, whose return value is another function, and assign that to the variable E”. This may seem like magic, but it’s actually quite simple, and the pattern is powerful and has useful applications, the most famous of which is the <a href="http://www.klauskomenda.com/code/javascript-programming-patterns/#module">module pattern</a>.</p>
+
+<p>First we’ll use an example that doesn’t look like magic:</p>
+
+<pre><code class="language-javascript">    var foo = function(){
+      return 'bar';
+    };
+    var output = foo();
+    console.log(output);  // 'bar'
+</code></pre>
+
+<p>We already learned about grouping operators above, so you should feel comfortable with saying this is equivalent:</p>
+
+<pre><code class="language-javascript">    var foo = function(){
+      return 'bar';
+    };
+    var output = (foo)(); // note the extra grouping operators
+    console.log(output);  // 'bar'
+</code></pre>
+
+<p>Since foo is pointing to our function expression, we know that we can simply refrain from using the variable “foo” and drop in the entire function as an anonymous function (since functions are first class, after all!):</p>
+
+<pre><code class="language-javascript">    var output = (function(){
+      return 'bar';
+    })();
+    console.log(output);  // 'bar'
+</code></pre>
+
+<p>Hey wait, we just arrived at the magical resulting function! It turns out to be not so magical after all, once we break it down and see it for what it is. It’s simply shorthand for the code we wrote originally, where we defined a function, executed it, and defined output to be its return value.</p>
+
+<p>I’ve included this method on the list of declaring functions because we can assign the return value to itself be a function:</p>
+
+<pre><code class="language-javascript">    var E = (function(){
+      return function(){}
+    })();
+</code></pre>
+
+<h4 id="applications">Applications</h4>
+
+<p>There are good applications for this, including information hiding using in the module pattern, (<a href="http://ejohn.org/blog/partial-functions-in-javascript/">partial application</a>, for example), and other clever uses of it. It’s definitely not a trivial pattern.</p>
+
+<h3 id="f-function-constructor-var-f--new-function">F: Function constructor: var F = new Function();</h3>
+
+<p>This method is extremely old and it’s not recommended to be used. You pass in an unlimited number of arguments in the front, then the actual function body appears as a string in the last argument (because it’s a string, it’s effectively the equivalent of eval(), and isn’t recommended).</p>
+
+<h4 id="defining-the-function">1. Defining the function</h4>
+
+<p>You can create a function like this:</p>
+
+<pre><code class="language-javascript">    var F = new Function('arg1', 'arg2', 'console.log(arg1 + ", " + arg2)');
+    F('foo', 'bar');  // 'foo, bar'
+</code></pre>
+
+<h4 id="you-dont-need-the-new-operator">2. You don’t need the <code>new</code> operator</h4>
+<p>You can simply write <code>var F = Function();</code> to get the same result.</p>
+
+<h4 id="quirks">3. Quirks</h4>
+
+<p>The <a href="https://developer.mozilla.org/en/JavaScript/Reference/Functions_and_function_scope#Function_constructor_vs._function_declaration_vs._function_expression">MDN docs</a> have some good examples of the quirks, including the fact that functions declared with the Function constructor don’t inherit their current scope properly (i.e. a closure isn’t formed).</p>
+
+<p>What this means is that they don’t have access to variables in their enclosing scope, which isn’t particularly useful:</p>
+
+<pre><code class="language-javascript">    function foo(){
+      var bar = 'blah';
+      
+      var first = new Function('console.log(typeof bar)');
+      first();   // undefined
+      
+      var second = function(){
+        console.log(typeof bar);
+      }
+      second();  // string
+    }
+    foo();
+</code></pre>
+
+<p>In the function “first”, we’re using the Function constructor, so it doesn’t have access to the variable bar. However, if we use the function “second”, which is a function expression, it does in fact have access to variables defined in its enclosing scope (via closure).</p>
+
+<p>In other words, <em>don’t use the Function constructor</em>.</p>
+
+<h3 id="g-special-case---object-constructor-var-g--new-function-foo">G: Special case - object constructor: var G = new function foo(){};</h3>
+
+<p>I saved this for last because we’re not really defining a function, though we are using the function keyword, so it’s worth noting at least.</p>
+
+<p><code>new function(){};</code> creates a new object and invokes the anonymous function as its constructor. If an object is returned from the function, that becomes the resulting object, otherwise a new object is created from scratch and function is executed in the context of that new function (let’s save the details for another post!).</p>
+
+<p>It’s a bit unusual to see it in this form. Let’s do it the proper way:</p>
+
+<pre><code class="language-javascript">    var Person = function(){
+      console.log(this);  // Person
+    }
+    var joe = new Person();
+</code></pre>
+
+<p>So really with the new operator, we are giving it a new ‘this’ context and then executing the given function with that new context. Much different than the function definitions we’ve been dealing with above! This does into a whole new topic, and we’ll save that for later!</p>
+
+<h3 id="h-arrow-functions">H: Arrow functions</h3>
+
+<p>With the addition of ES6 came these so-called “fat arrow” functions, or if you prefer the slimmed-down version, simply “arrow functions”.</p>
+
+<p>Arrow functions bring no brand new functionality, instead offering some syntactic sugar, meaning that in the end we developers will have to type less to achieve the same result.</p>
+
+<p>Arrow functions are particularly handy in cases where we would’ve had one-line functions before, as in this case with ES5 JavaScript:</p>
+
+<pre><code class="language-javascript">    [1, 2, 3].map(function(x) {return x * 2});
+    // [2, 4, 6]
+</code></pre>
+
+<p>We can now write this as follows:</p>
+
+<pre><code class="language-javascript">    [1, 2, 3].map(x =&gt; x * 2);
+    // [2, 4, 6]
+</code></pre>
+
+<p>The second benefit of arrow functions is that they preserve their <code>this</code> context, which is super convenient.  Often times it’s a tedious task trying to preserve scope in JavaScript, usually through the use of <code>bind()</code>.  But this allows us to bypass it and write less.</p>
+
+<p>Consider the following case:</p>
+
+<pre><code class="language-javascript">    function multiply(valuesArray) {
+      this.multiplier = 2;
+      return valuesArray.map(function(x) {return x * this.multiplier});
+    };
+
+    var fakeContext = {};
+
+    multiply.call(fakeContext, [1, 2, 3]);
+    // -&gt; [NaN, NaN, NaN]
+</code></pre>
+
+<p>This didn’t work because the <code>this</code> context of the multiply function wasn’t preserved in the <code>map()</code> function, forcing us to rewrite things slightly to preserve function context through defining a variable in <code>multiple()</code> (such as <code>var self = this</code>) or by using <code>bind()</code>.</p>
+
+<p>Instead, using an arrow function we know our <code>this</code> context will be preserved, allowing us to write with a minor tweak:</p>
+
+<pre><code class="language-javascript">    function multiply(valuesArray) {
+      this.multiplier = 2;
+      return valuesArray.map(x =&gt; x * this.multiplier);
+    };
+
+    var fakeContext = {};
+
+    multiply.call(fakeContext, [1, 2, 3]);
+    // -&gt; [2, 4, 6]
+</code></pre>
+
+<p>As with much of ES6, use caution, as it may not be completely supported yet (see <a href="http://caniuse.com/#feat=arrow-functions">caniuse.com</a>).  As most folks are using some sort of transpiler these days, they probably don’t have to worry about this.  It’s good to keep in mind however.</p>
+
+<p>Read more about arrow functions <a href="http://exploringjs.com/es6/ch_arrow-functions.html">here</a>.</p>
+
+<h3 id="further-reading">Further reading</h3>
+
+<p><a href="http://kangax.github.com/nfe/">Named function expressions demystified</a> (kangax)</p>
+
+<p><a href="http://benalman.com/news/2010/11/immediately-invoked-function-expression/">Immediately-Invoked Function Expression (IIFE) (Ben Alman)</a></p>
+
+<p><a href="https://developer.mozilla.org/en/JavaScript/Reference/Functions_and_function_scope">Functions and function scope</a> (Mozilla Developer Network - MDN)</p>
+
+<p><a href="http://stackoverflow.com/questions/1140089/how-does-an-anonymous-function-in-javascript-work">How does an anonymous function in JavaScript work? (StackOverflow)</a></p>
+
+<p><a href="http://javascriptweblog.wordpress.com/2010/07/06/function-declarations-vs-function-expressions/">Function Declarations vs. Function Expressions (JavaScript, JavaScript by Angus Croll)</a></p>
+
+<p><a href="http://www.amazon.com/gp/product/0596805527/">JavaScript: The Definitive Guide</a> (classic book by David Flanagan)</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Android 3.0 Honeycomb is first to implement the Device API]]></title>
+    <link href="http://davidbcalhoun.com/2011/android-3-0-honeycomb-is-first-to-implement-the-device-api"/>
+    <updated>2011-02-24T00:00:00-08:00</updated>
+    <id>http://davidbcalhoun.com/2011/android-3-0-honeycomb-is-first-to-implement-the-device-api</id>
+    <content type="html"><![CDATA[<p>I fired up the newly released Android 3.0 SDK to run some tests and found they’ve implemented part of the long-awaited <a href="http://www.w3.org/2009/dap/">Device API</a> (aka the Media Capture API). From your browser you can now upload pictures and videos from the camera as well as sounds from the microphone. The returned data should be available to manipulate via the <a href="http://www.w3.org/TR/FileAPI/">File API</a> (although I haven’t yet tested this).</p>
+
+<p>I made a <a href="http://www.youtube.com/watch?v=L1XqvLOi-3I">short video demo</a> with some explanation:</p>
+
+<p>Here’s the code so you can play around with it for yourself!</p>
+
+<pre><code class="language-html">&lt;form enctype="multipart/form-data" method="post"&gt;
+  &lt;h2&gt;Regular file upload&lt;/h2&gt;
+  &lt;input type="file"&gt;&lt;/input&gt;
+  
+  &lt;h2&gt;capture=camera&lt;/h2&gt;
+  &lt;input type="file" accept="image/*;capture=camera"&gt;&lt;/input&gt;
+  
+  &lt;h2&gt;capture=camcorder&lt;/h2&gt;
+  &lt;input type="file" accept="video/*;capture=camcorder"&gt;&lt;/input&gt;
+  
+  &lt;h2&gt;capture=microphone&lt;/h2&gt;
+  &lt;input type="file" accept="audio/*;capture=microphone"&gt;&lt;/input&gt;
+&lt;/form&gt;
+</code></pre>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[My O&#8217;Reilly Books Wishlist]]></title>
+    <link href="http://davidbcalhoun.com/2011/my-oreilly-books-wishlist"/>
+    <updated>2011-02-22T00:00:00-08:00</updated>
+    <id>http://davidbcalhoun.com/2011/my-oreilly-books-wishlist</id>
+    <content type="html"><![CDATA[<h3 id="introduction">Introduction</h3>
+
+<p>Ok, so this post is only here in the hopes I’ll actually win something. <img src="http://davidbcalhoun.com/wp-includes/images/smilies/icon_razz.gif" alt=":P" class="wp-smiley" /></p>
+
+<p><a href="http://oreilly.com/new-year-2011.html">O’Reilly Books has a promotion</a> where a random winner will receive up to $500 of books on their wishlist, provided they post the list somewhere online. You can probably see why this is here then!</p>
+
+<h3 id="the-list">The List</h3>
+
+<p><a href="http://oreilly.com/catalog/9780596807788/">Programming the Mobile Web</a> ($50)  <br />
+<a href="http://oreilly.com/catalog/9780596155254/">Palm webOS</a> ($45)  <br />
+<a href="http://oreilly.com/catalog/9781449381561/">MongoDB: The Definitive Guide</a> ($40)  <br />
+<a href="http://oreilly.com/catalog/9781449393847/">JavaScript: The Definitive Guide: Rough Cuts Version, Sixth Edition</a> ($50)  <br />
+<a href="http://oreilly.com/catalog/9780596806026/">HTML5: Up and Running</a> ($30)  <br />
+<a href="http://oreilly.com/catalog/9781449383268/">Building Android Apps with HTML, CSS, and JavaScript</a> ($30)  <br />
+<a href="http://oreilly.com/catalog/9780596805784/">Building iPhone Apps with HTML, CSS, and JavaScript</a> ($30)  <br />
+<a href="http://oreilly.com/catalog/9780596157609/">HTML &#038; CSS: The Good Parts</a> ($35)  <br />
+<a href="http://oreilly.com/catalog/9781449393908/">HTML5 Canvas</a> ($40)  <br />
+<a href="http://oreilly.com/catalog/9780596159771/">jQuery Cookbook</a> ($35)  <br />
+<a href="http://oreilly.com/catalog/9781449390501/">Learning Android</a> ($35)  <br />
+<a href="http://oreilly.com/catalog/9780596155933/">CSS Cookbook, Third Edition</a> ($50)</p>
+
+]]></content>
+  </entry>
+  
+</feed>

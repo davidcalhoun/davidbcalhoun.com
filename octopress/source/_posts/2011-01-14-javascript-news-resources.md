@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2011/javascript-news-resources
-categories:
-  - javascript
+categories: ["javascript", "programming", "webdev"]
 ---
 There&#8217;s an overwhelming amount of information being pumped out of the JavaScript community each week, but how do you keep up with it? Here&#8217;s some sources to keep you busy.
 

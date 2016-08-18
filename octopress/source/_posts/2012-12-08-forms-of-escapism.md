@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2012/forms-of-escapism
-categories:
-  - Uncategorized
+categories: ["philosophy", "rant"]
 ---
 I&#8217;ve been thinking lately that the fates of so many are motivated by, in a word, escapism. Including my own fate. These are folks whose lives seem quite different on first glance, but turn out to be similar. We can&#8217;t escape some of our basic human nature after all.
 

@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2011/javascript-sunspider-benchmark-ios-4-3-vs-ios-4-0
-categories:
-  - performance
+categories: ["javascript", "performance", "mobile", "ios", "webdev"]
 ---
 ### Result table (SunSpider 0.9.1)
 

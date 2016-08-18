@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2011/new-mobile-safari-stuff-in-ios5-position-fixed-overflow-scroll-new-input-type-support-web-workers-ecmascript-5
-categories:
-  - mobile
+categories: ["ios", "mobile safari", "mobile", "webdev"]
 ---
 (note: this is based on the first iOS5 beta [9A5220p] and is subject to change on final release)
 

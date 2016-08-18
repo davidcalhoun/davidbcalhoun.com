@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2010/thursday-links-july-8
-categories:
-  - links
+categories: ["webdev", "programming"]
 tags:
   - css
   - javascript

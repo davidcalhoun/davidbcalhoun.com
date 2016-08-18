@@ -2,15 +2,15 @@
 <html lang="en-US">
 <head>
 	<meta charset="utf-8">
-	<title>More fun with WebKit pseudoelements: -webkit-search-cancel-button (or: Pseudoclass Inception)  | David Calhoun's blog</title>
+	<title>More fun with WebKit pseudoelements: -webkit-search-cancel-button (or: Pseudoclass Inception)  | David Calhoun</title>
 
 	<meta name="author" content="David Calhoun">
 
-<meta name="description" content="Introduction (check out the Demo) A while back I had a bit of a field day messing around with input type=”range”, trying to replicate the “unlock &hellip;"> <meta name="keywords" content="">
+<meta name="description" content="Introduction UPDATE 2016: this appears to have even less support than before, and it's not recommended to be used on a production site. Use a helper &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link href="/atom.xml" rel="alternate" title="David Calhoun's blog" type="application/atom+xml">
+	<link href="/atom.xml" rel="alternate" title="David Calhoun" type="application/atom+xml">
 	<link rel="canonical" href="">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
 	<!--[if lt IE 9]><script src="/javascripts/html5.js"></script><![endif]-->
@@ -21,7 +21,7 @@
 
 
 <body>
-	<header id="header" class="inner" role="banner" aria-labelledby="header_title"><h1><a href="/" id="header_title">David Calhoun's blog</a></h1>
+	<header id="header" class="inner" role="banner" aria-labelledby="header_title"><h1><a href="/" id="header_title">David Calhoun</a></h1>
 <span class="tagline"></span>
 
 </header>
@@ -40,9 +40,11 @@
   
 
 
-<time datetime="2012-08-10T00:00:00+09:00" pubdate data-updated="true"></time></div>
+<time datetime="2012-08-10T00:00:00-07:00" pubdate data-updated="true"></time></div>
 	</header>
 	<div class="entry-content"><h3 id="introduction">Introduction</h3>
+
+<p><em>UPDATE</em> 2016: this appears to have even less support than before, and it's not recommended to be used on a production site.  Use a helper JS library instead.</p>
 
 <p>(check out the <strong><a href="http://davidbcalhoun.com/a/webkit-search-cancel-button.html">Demo</a></strong>)</p>
 
@@ -58,48 +60,81 @@
 
 <p>So how do we do it? First, we need the special WebKit CSS pseudoselector (<code>-webkit-search-cancel-button</code>), and secondly, we need to use that to wipe out the default WebKit styling (with -webkit-appearance: none;):</p>
 
-<pre lang="css"><code>::-webkit-search-cancel-button {   // select all "X" buttons in search inputs
-    -webkit-appearance: none;      // hide the default "X" button
-}
-</code></pre>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class="css"><span class="line"><span class="o">:</span><span class="nd">:-webkit-search-cancel-button</span> <span class="p">{</span>   <span class="o">//</span> <span class="n">select</span> <span class="n">all</span> <span class="s2">&quot;X&quot;</span> <span class="n">buttons</span> <span class="n">in</span> <span class="n">search</span> <span class="n">inputs</span>
+</span><span class="line">    <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">appearance</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>      <span class="o">//</span> <span class="k">hide</span> <span class="n">the</span> <span class="k">default</span> <span class="s2">&quot;X&quot;</span> <span class="n">button</span>
+</span><span class="line"><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>You would think that the next step might be adding our own custom background-image to this element, but unfortunately it won’t work that easily (of course).</p>
 
 <p>What we need now is a little bit of trickery, using an <code>:after</code> pseudoclass on the pseduoclass (!?). The result is a bit of “pseudoclass Inception”:</p>
 
-<pre lang="css"><code>::-webkit-search-cancel-button {   /* select all "X" buttons in search inputs */
-    -webkit-appearance: none;      /* hide the default "X" button */
-}
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+<span class="line-number">18</span>
+<span class="line-number">19</span>
+<span class="line-number">20</span>
+<span class="line-number">21</span>
+<span class="line-number">22</span>
+<span class="line-number">23</span>
+<span class="line-number">24</span>
+<span class="line-number">25</span>
+<span class="line-number">26</span>
+<span class="line-number">27</span>
+<span class="line-number">28</span>
+<span class="line-number">29</span>
+<span class="line-number">30</span>
+</pre></td><td class="code"><pre><code class="css"><span class="line"><span class="o">:</span><span class="nd">:-webkit-search-cancel-button</span> <span class="p">{</span>   <span class="c">/* select all &quot;X&quot; buttons in search inputs */</span>
+</span><span class="line">    <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="n">appearance</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>      <span class="c">/* hide the default &quot;X&quot; button */</span>
+</span><span class="line"><span class="p">}</span>
+</span><span class="line">
+</span><span class="line"><span class="o">:</span><span class="nd">:-webkit-search-cancel-button:after</span> <span class="p">{</span>  <span class="c">/* generate content after all &quot;X&quot; buttons */</span>
+</span><span class="line">    <span class="k">content</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>    <span class="c">/* required for :after content to show */</span>
+</span><span class="line">    <span class="k">display</span><span class="o">:</span> <span class="k">block</span><span class="p">;</span>
+</span><span class="line">
+</span><span class="line">    <span class="c">/*</span>
+</span><span class="line"><span class="c">     * Setup dimensions for the custom icon.  Note that these dimensions seem to</span>
+</span><span class="line"><span class="c">     * affect positioning.</span>
+</span><span class="line"><span class="c">     */</span>
+</span><span class="line">    <span class="k">width</span><span class="o">:</span> <span class="m">14px</span><span class="p">;</span>
+</span><span class="line">    <span class="k">height</span><span class="o">:</span> <span class="m">10px</span><span class="p">;</span>
+</span><span class="line">
+</span><span class="line">    <span class="c">/*</span>
+</span><span class="line"><span class="c">     * Base64 encoded custom &quot;X&quot; icon</span>
+</span><span class="line"><span class="c">     * Natively 30x30, but downscaled for highres screens</span>
+</span><span class="line"><span class="c">     */</span>
+</span><span class="line">    <span class="k">background-image</span><span class="o">:</span> <span class="sx">url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAn0lEQVR42u3UMQrDMBBEUZ9WfQqDmm22EaTyjRMHAlM5K+Y7lb0wnUZPIKHlnutOa+25Z4D++MRBX98MD1V/trSppLKHqj9TTBWKcoUqffbUcbBBEhTjBOV4ja4l4OIAZThEOV6jHO8ARXD+gPPvKMABinGOrnu6gTNUawrcQKNCAQ7QeTxORzle3+sDfjJpPCqhJh7GixZq4rHcc9l5A9qZ+WeBhgEuAAAAAElFTkSuQmCC)</span><span class="p">;</span>
+</span><span class="line">
+</span><span class="line">    <span class="c">/* setup all the background tweaks for our custom icon */</span>
+</span><span class="line">    <span class="k">background-repeat</span><span class="o">:</span> <span class="k">no-repeat</span><span class="p">;</span>
+</span><span class="line">
+</span><span class="line">    <span class="c">/* icon size */</span>
+</span><span class="line">    <span class="k">background</span><span class="o">-</span><span class="k">size</span><span class="o">:</span> <span class="m">10px</span><span class="p">;</span>
+</span><span class="line">
+</span><span class="line">    <span class="c">/* note: this positioning will need to be tweaked for iOS */</span>
+</span><span class="line">    <span class="k">background-position</span><span class="o">:</span> <span class="k">top</span> <span class="k">left</span><span class="p">;</span>
+</span><span class="line"><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-::-webkit-search-cancel-button:after {  /* generate content after all "X" buttons */
-    content: '';    /* required for :after content to show */
-    display: block;
-
-    /*
-     * Setup dimensions for the custom icon.  Note that these dimensions seem to
-     * affect positioning.
-     */
-    width: 14px;
-    height: 10px;
-    
-    /*
-     * Base64 encoded custom "X" icon
-     * Natively 30x30, but downscaled for highres screens
-     */
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAn0lEQVR42u3UMQrDMBBEUZ9WfQqDmm22EaTyjRMHAlM5K+Y7lb0wnUZPIKHlnutOa+25Z4D++MRBX98MD1V/trSppLKHqj9TTBWKcoUqffbUcbBBEhTjBOV4ja4l4OIAZThEOV6jHO8ARXD+gPPvKMABinGOrnu6gTNUawrcQKNCAQ7QeTxORzle3+sDfjJpPCqhJh7GixZq4rHcc9l5A9qZ+WeBhgEuAAAAAElFTkSuQmCC);
-
-    /* setup all the background tweaks for our custom icon */
-    background-repeat: no-repeat;
-
-    /* icon size */
-    background-size: 10px;
-
-    /* note: this positioning will need to be tweaked for iOS */
-    background-position: top left;
-}
-</code></pre>
-
-<p>So it turns out you can still whatever you like in there really, even text content (see the last text input in the <a href="http://davidbcalhoun.com/a/webkit-search-cancel-button.html">demo</a>). You may even need to tweak the positioning a bit, in which case you can learn from the same example (you will need to set position:relative on the cancel button itself to anchor the position:absolute <code>:after</code> content – check out the code).</p>
+<p>So it turns out you can still whatever you like in there really, even text content (see the last text input in the <a href="http://davidbcalhoun.com/a/webkit-search-cancel-button.html">demo</a>). You may even need to tweak the positioning a bit, in which case you can learn from the same example (you will need to set position:relative on the cancel button itself to anchor the position:absolute <code>:after</code> content - check out the code).</p>
 
 <h3 id="final-notes">Final notes</h3>
 
@@ -110,6 +145,8 @@
 <h3 id="video">Video</h3>
 
 <p>Here’s a video if you’re not in the mood to read (view in HD so you can read the text!):</p>
+
+<iframe width="480" height="360" src="https://www.youtube.com/embed/3wyWJKJuo4o" frameborder="0" allowfullscreen=""></iframe>
 
 </div>
 

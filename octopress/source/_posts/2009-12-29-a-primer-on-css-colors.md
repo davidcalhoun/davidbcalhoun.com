@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2009/a-primer-on-css-colors
-categories:
-  - css
+categories: ["webdev", "css"]
 tags:
   - color
   - css

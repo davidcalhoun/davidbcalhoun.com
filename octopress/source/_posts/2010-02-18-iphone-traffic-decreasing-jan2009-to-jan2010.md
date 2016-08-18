@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2010/iphone-traffic-decreasing-jan2009-to-jan2010
-categories:
-  - Uncategorized
+categories: ["mobile", "webdev"]
 ---
 According to the statistics available on [statcounter.com][1], from January 2009 to January 2010, iPhone browser traffic share actually *decreased*, not increased, as one might expect.
 

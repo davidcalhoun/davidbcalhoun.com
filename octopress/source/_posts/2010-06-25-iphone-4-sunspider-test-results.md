@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2010/iphone-4-sunspider-test-results
-categories:
-  - mobile
+categories: ["javascript", "performance", "mobile", "iphone", "webdev"]
 tags:
   - iphone
   - iphone 4

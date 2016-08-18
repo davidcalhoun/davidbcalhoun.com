@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2011/notes-mobile-web-design-cameron-moll-200
-categories:
-  - mobile
+categories: ["mobile", "design", "webdev"]
 ---
 ### What&#8217;s this?
 

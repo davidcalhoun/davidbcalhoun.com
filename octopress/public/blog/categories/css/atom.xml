@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: css | David Calhoun's blog]]></title>
+  <title><![CDATA[Category: css | David Calhoun]]></title>
   <link href="http://davidbcalhoun.com/blog/categories/css/atom.xml" rel="self"/>
   <link href="http://davidbcalhoun.com/"/>
-  <updated>2016-05-26T09:01:40+09:00</updated>
+  <updated>2016-08-18T14:00:33-07:00</updated>
   <id>http://davidbcalhoun.com/</id>
   <author>
     <name><![CDATA[David Calhoun]]></name>
@@ -14,38 +14,13 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Introducing Negative Scroll Blur (for browsers that support CSS filters)]]></title>
-    <link href="http://davidbcalhoun.com/2013/introducing-negative-scroll-blur-for-browsers-that-support-css-filters"/>
-    <updated>2013-11-23T00:00:00+09:00</updated>
-    <id>http://davidbcalhoun.com/2013/introducing-negative-scroll-blur-for-browsers-that-support-css-filters</id>
-    <content type="html"><![CDATA[<p><a href="http://davidbcalhoun.com/a/negative-scroll-blur.html">Demo</a></p>
-
-<p>Just for fun, I wanted to reproduce a cool but completely superfluous UI I saw in the updated Foursquare app recently. Basically, when the user tries to scroll past the upper bound of the app/page, the header image becomes blurred.</p>
-
-<p>We can do the same thing on the web by listening for negative scroll and then using (abusing?) CSS filters.</p>
-
-<h3 id="video">Video</h3>
-
-<p><a href="http://www.youtube.com/watch?feature=player_embedded&amp;v=wfuVM1P_qgg " target="_blank"><img src="http://img.youtube.com/vi/wfuVM1P_qgg/0.jpg" alt="Negative Scroll Blur" width="480" height="360" /></a></p>
-
-<h3 id="extra-tweaks-for-mobile">Extra tweaks for mobile</h3>
-
-<p>Note that there’s an extra trick for iOS, which presents problems I had forgotten about (namely, no negative scroll, and a scroll listener which fires once at the end of scrolling). That’s why I had to throw in some extra logic for touchstart/touchmove/touchend.</p>
-
-<h3 id="links">Links</h3>
-
-<p><a href="http://davidbcalhoun.com/a/negative-scroll-blur.html">Demo</a><br />
-<a href="https://github.com/davidcalhoun/negative-scroll-blur">Github</a></p>
-
-]]></content>
-  </entry>
-  
-  <entry>
     <title type="html"><![CDATA[More fun with WebKit pseudoelements: -webkit-search-cancel-button (or: Pseudoclass Inception)]]></title>
     <link href="http://davidbcalhoun.com/2012/more-fun-with-webkit-pseudoelements-webkit-search-cancel-button-or-pseudoclass-inception"/>
-    <updated>2012-08-10T00:00:00+09:00</updated>
+    <updated>2012-08-10T00:00:00-07:00</updated>
     <id>http://davidbcalhoun.com/2012/more-fun-with-webkit-pseudoelements-webkit-search-cancel-button-or-pseudoclass-inception</id>
     <content type="html"><![CDATA[<h3 id="introduction">Introduction</h3>
+
+<p><em>UPDATE</em> 2016: this appears to have even less support than before, and it's not recommended to be used on a production site.  Use a helper JS library instead.</p>
 
 <p>(check out the <strong><a href="http://davidbcalhoun.com/a/webkit-search-cancel-button.html">Demo</a></strong>)</p>
 
@@ -61,48 +36,48 @@
 
 <p>So how do we do it? First, we need the special WebKit CSS pseudoselector (<code>-webkit-search-cancel-button</code>), and secondly, we need to use that to wipe out the default WebKit styling (with -webkit-appearance: none;):</p>
 
-<pre lang="css"><code>::-webkit-search-cancel-button {   // select all "X" buttons in search inputs
-    -webkit-appearance: none;      // hide the default "X" button
-}
+<pre><code class="language-css">    ::-webkit-search-cancel-button {   // select all "X" buttons in search inputs
+        -webkit-appearance: none;      // hide the default "X" button
+    }
 </code></pre>
 
 <p>You would think that the next step might be adding our own custom background-image to this element, but unfortunately it won’t work that easily (of course).</p>
 
 <p>What we need now is a little bit of trickery, using an <code>:after</code> pseudoclass on the pseduoclass (!?). The result is a bit of “pseudoclass Inception”:</p>
 
-<pre lang="css"><code>::-webkit-search-cancel-button {   /* select all "X" buttons in search inputs */
-    -webkit-appearance: none;      /* hide the default "X" button */
-}
+<pre><code class="language-css">    ::-webkit-search-cancel-button {   /* select all "X" buttons in search inputs */
+        -webkit-appearance: none;      /* hide the default "X" button */
+    }
 
-::-webkit-search-cancel-button:after {  /* generate content after all "X" buttons */
-    content: '';    /* required for :after content to show */
-    display: block;
+    ::-webkit-search-cancel-button:after {  /* generate content after all "X" buttons */
+        content: '';    /* required for :after content to show */
+        display: block;
 
-    /*
-     * Setup dimensions for the custom icon.  Note that these dimensions seem to
-     * affect positioning.
-     */
-    width: 14px;
-    height: 10px;
-    
-    /*
-     * Base64 encoded custom "X" icon
-     * Natively 30x30, but downscaled for highres screens
-     */
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAn0lEQVR42u3UMQrDMBBEUZ9WfQqDmm22EaTyjRMHAlM5K+Y7lb0wnUZPIKHlnutOa+25Z4D++MRBX98MD1V/trSppLKHqj9TTBWKcoUqffbUcbBBEhTjBOV4ja4l4OIAZThEOV6jHO8ARXD+gPPvKMABinGOrnu6gTNUawrcQKNCAQ7QeTxORzle3+sDfjJpPCqhJh7GixZq4rHcc9l5A9qZ+WeBhgEuAAAAAElFTkSuQmCC);
+        /*
+         * Setup dimensions for the custom icon.  Note that these dimensions seem to
+         * affect positioning.
+         */
+        width: 14px;
+        height: 10px;
+        
+        /*
+         * Base64 encoded custom "X" icon
+         * Natively 30x30, but downscaled for highres screens
+         */
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAn0lEQVR42u3UMQrDMBBEUZ9WfQqDmm22EaTyjRMHAlM5K+Y7lb0wnUZPIKHlnutOa+25Z4D++MRBX98MD1V/trSppLKHqj9TTBWKcoUqffbUcbBBEhTjBOV4ja4l4OIAZThEOV6jHO8ARXD+gPPvKMABinGOrnu6gTNUawrcQKNCAQ7QeTxORzle3+sDfjJpPCqhJh7GixZq4rHcc9l5A9qZ+WeBhgEuAAAAAElFTkSuQmCC);
 
-    /* setup all the background tweaks for our custom icon */
-    background-repeat: no-repeat;
+        /* setup all the background tweaks for our custom icon */
+        background-repeat: no-repeat;
 
-    /* icon size */
-    background-size: 10px;
+        /* icon size */
+        background-size: 10px;
 
-    /* note: this positioning will need to be tweaked for iOS */
-    background-position: top left;
-}
+        /* note: this positioning will need to be tweaked for iOS */
+        background-position: top left;
+    }
 </code></pre>
 
-<p>So it turns out you can still whatever you like in there really, even text content (see the last text input in the <a href="http://davidbcalhoun.com/a/webkit-search-cancel-button.html">demo</a>). You may even need to tweak the positioning a bit, in which case you can learn from the same example (you will need to set position:relative on the cancel button itself to anchor the position:absolute <code>:after</code> content – check out the code).</p>
+<p>So it turns out you can still whatever you like in there really, even text content (see the last text input in the <a href="http://davidbcalhoun.com/a/webkit-search-cancel-button.html">demo</a>). You may even need to tweak the positioning a bit, in which case you can learn from the same example (you will need to set position:relative on the cancel button itself to anchor the position:absolute <code>:after</code> content - check out the code).</p>
 
 <h3 id="final-notes">Final notes</h3>
 
@@ -114,19 +89,21 @@
 
 <p>Here’s a video if you’re not in the mood to read (view in HD so you can read the text!):</p>
 
+<iframe width="480" height="360" src="https://www.youtube.com/embed/3wyWJKJuo4o" frameborder="0" allowfullscreen=""></iframe>
+
 ]]></content>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Implementing iPhone&#8217;s slider unlock with input type=&#8221;range&#8221;]]></title>
+    <title type="html"><![CDATA[Implementing iPhone's slider unlock with input type='range']]></title>
     <link href="http://davidbcalhoun.com/2011/implementing-iphone-slider-unlock-with-input-type-range"/>
-    <updated>2011-01-16T00:00:00+09:00</updated>
+    <updated>2011-01-16T00:00:00-08:00</updated>
     <id>http://davidbcalhoun.com/2011/implementing-iphone-slider-unlock-with-input-type-range</id>
     <content type="html"><![CDATA[<p>(check out the live <a href="http://davidbcalhoun.com/a/iphone-slider.html">demo</a>)</p>
 
 <h3 id="introduction">Introduction</h3>
 
-<p>After reading <a href="http://glazkov.com/2011/01/14/what-the-heck-is-shadow-dom/">“What the Heck is Shadow DOM?”</a> I was inspired to see how far I could style the <input type="range" /> element. Pretty far, as it turns out!</p>
+<p>After reading <a href="http://glazkov.com/2011/01/14/what-the-heck-is-shadow-dom/">“What the Heck is Shadow DOM?”</a> I was inspired to see how far I could style the <code>&lt;input type="range"&gt;</code> element. Pretty far, as it turns out!</p>
 
 <p>My goal was to change the input’s default appearance:</p>
 
@@ -136,16 +113,16 @@
 
 <p><img src="http://davidbcalhoun.com/wp-content/uploads/2011/01/iphone-slider-native.png" alt="The iPhone's unlock slider" title="The iPhone's unlock slider" width="300" height="69" class="aligncenter size-full wp-image-566" /></p>
 
-<p>As far as I can tell, only WebKit-based browsers and Opera have implemented input type=”range”. Mobile Safari hasn’t yet implemented it as of iOS 4.2 and Android also hasn’t fully implemented it as of Android 2.3 (although curiously the elements are styleable but not yet interactive). Surprisingly, the only mobile OS to implement this input type seems to be BlackBerry OS 6.</p>
+<p>As far as I can tell, only WebKit-based browsers and Opera have implemented <code>input type=range</code>. Mobile Safari hasn’t yet implemented it as of iOS 4.2 and Android also hasn’t fully implemented it as of Android 2.3 (although curiously the elements are styleable but not yet interactive). Surprisingly, the only mobile OS to implement this input type seems to be BlackBerry OS 6.</p>
 
-<p>However, the focus here will be to get this working on just Chrome and WebKit. This will make it a bit easier to do this proof of concept. So we’ll be using lots of “-webkit” vendor prefixed CSS.</p>
+<p>However, the focus here will be to get this working on just Chrome and WebKit. This will make it a bit easier to do this proof of concept. So we’ll be using lots of `-webkit’ vendor prefixed CSS.</p>
 
 <h3 id="what-we-have-to-work-with">What we have to work with</h3>
 
 <p>Of course we have our simple range input:</p>
 
-<pre name="code" class="html">&lt;input type="range"&gt;
-</pre>
+<pre><code class="language-html">&lt;input type="range"&gt;
+</code></pre>
 
 <p>Which looks like this:</p>
 
@@ -153,15 +130,15 @@
 
 <p>We can target the input itself with a CSS attribute selector:</p>
 
-<pre name="code" class="CSS">input[type='range'] {}
-</pre>
+<pre><code class="language-css">input[type='range'] {}
+</code></pre>
 
-<p>And if we want, we can transform it into a vertical slider by changing the “-webkit-appearance” property:</p>
+<p>And if we want, we can transform it into a vertical slider by changing the <code>-webkit-appearance</code> property:</p>
 
-<pre name="code" class="CSS">input[type='range'] {
+<pre><code class="language-css">input[type='range'] {
     -webkit-appearance: slider-vertical;
 }
-</pre>
+</code></pre>
 
 <p>Which looks like this:</p>
 
@@ -169,11 +146,11 @@
 
 <p>If we want to style it as if it was any other element, there’s a slight catch, as we first have to set “-webkit-appearance” to “none” and then add our customizations (this appears to mean that we can’t actually style vertical sliders…). Here we’ll set the background color as a simple demo:</p>
 
-<pre name="code" class="CSS">input[type='range'] {
+<pre><code class="language-css">input[type='range'] {
     -webkit-appearance: none;
     background-color: gray;
 }
-</pre>
+</code></pre>
 
 <p>This outputs the following:</p>
 
@@ -181,7 +158,7 @@
 
 <p>Most interestingly, we can target and style the slider button itself with CSS, although we can’t get access to it with JavaScript (for the time being anyhow). Here we’ll style it a slightly darker shade of gray:</p>
 
-<pre name="code" class="CSS">input[type='range'] {
+<pre><code class="language-css">input[type='range'] {
     -webkit-appearance: none;
     background-color: gray;
 }
@@ -192,9 +169,9 @@ input[type='range']::-webkit-slider-thumb {
     width: 15px;
     height: 20px;
 }
-</pre>
+</code></pre>
 
-<p>Which results in this:<br />
+<p>Which results in this:  <br />
 <img src="http://davidbcalhoun.com/wp-content/uploads/2011/01/input-range-styled.png" alt="Input range with a gray background and a slightly darker slider control" title="Input range with a gray background and a slightly darker slider control" width="129" height="20" class="aligncenter size-full wp-image-583" /></p>
 
 <p>Now all the pieces are in place to fully style the input!</p>
@@ -203,7 +180,7 @@ input[type='range']::-webkit-slider-thumb {
 
 <p>This part’s no big deal. We just want to set up the width/height, slap on some handy rounded corners, and add a very slight background gradient:</p>
 
-<pre name="code" class="CSS">input[type='range'] {
+<pre><code class="language-css">input[type='range'] {
     -webkit-appearance: none;
     width: 280px;
     height: 46px;
@@ -219,7 +196,7 @@ input[type='range']::-webkit-slider-thumb {
         color-stop(1, #222222)
     );
 }
-</pre>
+</code></pre>
 
 <p>Now we have the backdrop in place:</p>
 
@@ -233,7 +210,7 @@ input[type='range']::-webkit-slider-thumb {
 
 <p>The CSS for the button looks like this:</p>
 
-<pre name="code" class="CSS">input[type='range']::-webkit-slider-thumb {
+<pre><code class="language-css">input[type='range']::-webkit-slider-thumb {
     -webkit-appearance: none;
     width: 68px;
     height: 44px;
@@ -252,19 +229,19 @@ input[type='range']::-webkit-slider-thumb {
     background-repeat: no-repeat;
     background-position: 50%;
 }
-</pre>
+</code></pre>
 
-<p>Which outputs this:<br />
+<p>Which outputs this:  <br />
 <img src="http://davidbcalhoun.com/wp-content/uploads/2011/01/iphone-slider-button.png" alt="" title="iPhone slider button styled" width="288" height="54" class="aligncenter size-full wp-image-587" /></p>
 
-<h3 id="slide-to-unlock8221-text">“Slide to unlock” text</h3>
+<h3 id="slide-to-unlock-text">“Slide to unlock” text</h3>
 
 <p>Now we’re getting somewhere! And now we’re approaching the limits of what we can do without getting pretty creative. We need some “slide to unlock” text in the background.</p>
 
 <p>The first thing to do is to move the slider all the way to the left, to the default position. We do this through HTML by setting the value to 0:</p>
 
-<pre name="code" class="HTML">&lt;input type="range" value="0"&gt;
-</pre>
+<pre><code class="language-html">&lt;input type="range" value="0"&gt;
+</code></pre>
 
 <p>Ok, that wasn’t too hard. But what about the text? We can’t modify anything in the input itself, because it doesn’t contain any element to display text. And we can’t dynamically add text with JavaScript, because again, it’s the shadow DOM! What we can do is create a separate text element outside of the input and position it on top of the slider using absolute positioning.</p>
 
@@ -274,15 +251,15 @@ input[type='range']::-webkit-slider-thumb {
 
 <p>First we have the HTML, which has changed a bit. For positioning and grouping, we need a wrapped element for the input and the span of text:</p>
 
-<pre name="code" class="HTML">&lt;div class="iphone-slider"&gt;
+<pre><code class="language-html">&lt;div class="iphone-slider"&gt;
     &lt;input type="range" value="0"&gt;&lt;/input&gt;
     &lt;span&gt;slide to unlock&lt;/span&gt;
 &lt;/div&gt;
-</pre>
+</code></pre>
 
 <p>The final complete CSS is as follows:</p>
 
-<pre name="code" class="CSS">.iphone-slider {
+<pre><code class="language-css">.iphone-slider {
     width: 280px;
     height: 46px;
     
@@ -374,7 +351,7 @@ input[type='range']::-webkit-slider-thumb {
     -webkit-mask-position: 0px;
   }
 }
-</pre>
+</code></pre>
 
 <p>This renders as the following:</p>
 
@@ -390,7 +367,7 @@ input[type='range']::-webkit-slider-thumb {
 
 <p>Here’s the JavaScript to make this work:</p>
 
-<pre name="code" class="JScript">(function() {
+<pre><code class="language-javascript">(function() {
   // variable declarations
   var slider, sliderInput, sliderButton, sliderText, sliderTimeout, sliderOnchange, unlockCheck;
   
@@ -434,7 +411,7 @@ input[type='range']::-webkit-slider-thumb {
   
   slider.onchange = sliderOnchange;
 })();
-</pre>
+</code></pre>
 
 <h3 id="live-example">Live example</h3>
 
@@ -452,7 +429,7 @@ input[type='range']::-webkit-slider-thumb {
   <entry>
     <title type="html"><![CDATA[Does it still make sense to use em rather than px?]]></title>
     <link href="http://davidbcalhoun.com/2010/does-it-still-make-sense-to-use-em-rather-than-px"/>
-    <updated>2010-10-05T00:00:00+09:00</updated>
+    <updated>2010-10-05T00:00:00-07:00</updated>
     <id>http://davidbcalhoun.com/2010/does-it-still-make-sense-to-use-em-rather-than-px</id>
     <content type="html"><![CDATA[<p>Alex Kessinger <a href="http://twitter.com/voidfiles/status/26470129747">tweeted</a> asking if there was a reason to still use EMs instead of PX measurements in mobile. This is an interesting question, but 140 characters isn’t quite enough to explain my thoughts. So here’s an old-fashioned blog post!</p>
 
@@ -492,7 +469,7 @@ input[type='range']::-webkit-slider-thumb {
   <entry>
     <title type="html"><![CDATA[Targeting Internet Explorer (IE): the age-old struggle]]></title>
     <link href="http://davidbcalhoun.com/2010/targeting-ie-the-age-old-struggle"/>
-    <updated>2010-07-07T00:00:00+09:00</updated>
+    <updated>2010-07-07T00:00:00-07:00</updated>
     <id>http://davidbcalhoun.com/2010/targeting-ie-the-age-old-struggle</id>
     <content type="html"><![CDATA[<p>As long as I can remember, developers have always been trying to target IE one way or another. Thanks to the wonders of modern technology, there have been multiple ways to pull this off.</p>
 
@@ -541,6 +518,263 @@ input[type='range']::-webkit-slider-thumb {
 <h3 id="related-links">Related links</h3>
 
 <p><a href="http://www.phpied.com/conditional-comments-block-downloads/">Conditional comments block downloads</a>: Stoyan Stefanov’s concerns over using this pattern</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Using mobile-specific HTML, CSS, and JavaScript (Mobile web part 5)]]></title>
+    <link href="http://davidbcalhoun.com/2010/using-mobile-specific-html-css-javascript"/>
+    <updated>2010-06-29T00:00:00-07:00</updated>
+    <id>http://davidbcalhoun.com/2010/using-mobile-specific-html-css-javascript</id>
+    <content type="html"><![CDATA[<p><em>(updated June 27, 2011)</em></p>
+
+<h3 id="mobile-specific-html">Mobile-specific HTML</h3>
+
+<h4 id="viewport-tag">Viewport tag</h4>
+
+<p>Use the <a href="http://davidbcalhoun.com/2010/viewport-metatag">viewport tag</a> to properly fit the content to the screen:</p>
+
+<pre><code class="language-html">    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"/&gt;
+</code></pre>
+
+<h4 id="tel-scheme2-to-initiate-phone-calls"><a href="http://www.rfc-editor.org/rfc/rfc3966.txt">Tel scheme</a> (to initiate phone calls)</h4>
+
+<pre><code class="language-html">    &lt;a href="tel:18005555555"&gt;Call us at 1-800-555-5555&lt;/a&gt;
+</code></pre>
+
+<h4 id="sms-scheme3-to-initiate-text-messages"><a href="http://www.rfc-editor.org/rfc/rfc5724.txt">Sms scheme</a> (to initiate text messages)</h4>
+
+<pre><code class="language-html">    &lt;a href="sms:18005555555"&gt;
+    &lt;a href="sms:18005555555,18005555556"&gt;                &lt;!-- multiple recipients --&gt;
+    &lt;a href="sms:18005555555?body=Text%20goes%20here"&gt;    &lt;!-- predefined message body --&gt;
+</code></pre>
+
+<h4 id="disable-automatic-telephone-number-linking">Disable automatic telephone number linking</h4>
+
+<pre><code class="language-html">    &lt;meta name="format-detection" content="telephone=no"&gt;
+</code></pre>
+
+<h4 id="ios-specific-html-some-work-on-android-as-well">iOS-specific HTML (some work on Android as well)</h4>
+
+<p>You also have access to several <a href="http://developer.apple.com/library/safari/#documentation/appleapplications/reference/safariwebcontent/configuringwebapplications/configuringwebapplications.html">Apple-specific tags to use in your iOS applications (iPhone, iPad, and don’t forget the iPod Touch!)</a>.</p>
+
+<pre><code class="language-html">    &lt;!-- iOS 1.1.3+: this is the icon that's used when the user adds your app to the home screen --&gt;
+
+    &lt;!-- also works on Android! --&gt;
+    &lt;link rel="apple-touch-icon" href="icon.png" /&gt;
+
+    &lt;!-- iOS 2.0+: tell iOS not to apply any glare effects to the icon --&gt;
+    &lt;link rel="apple-touch-icon-precomposed" href="icon.png" /&gt;
+
+    &lt;!-- iOS 4.2+ icons for different resolutions --&gt;
+    &lt;link rel="apple-touch-icon" sizes="72x72" href="touch-icon-ipad.png" /&gt;
+    &lt;link rel="apple-touch-icon" sizes="114x114" href="touch-icon-iphone4.png" /&gt;
+
+    &lt;!-- iOS 3+: full-screen startup splash screen image (must be 320x460) --&gt;
+    &lt;link rel="apple-touch-startup-image" href="startup.png" /&gt;
+
+    &lt;!-- enable full-screen mode (only when launched from home screen) --&gt;
+    &lt;meta name="apple-mobile-web-app-capable" content="yes" /&gt;
+
+    &lt;!-- controls the appearance of the status bar in full-screen mode --&gt;
+    &lt;meta name="apple-mobile-web-app-status-bar-style" content="black" /&gt;
+</code></pre>
+
+<h4 id="turn-off-autocorrect-autocomplete-and-autocapitalize">Turn off autocorrect, autocomplete, and autocapitalize</h4>
+
+<p>And also some handy attributes to turn off annoying autocorrect features:</p>
+
+<pre><code class="language-html">    &lt;input autocorrect="off" autocomplete="off" autocapitalize="off"&gt;
+</code></pre>
+
+<h3 id="mobile-specific-css">Mobile-specific CSS</h3>
+
+<h4 id="positionfixed-and-overflowscroll">position:fixed and overflow:scroll</h4>
+
+<p>Mobile browsers are now starting to support these basic CSS properties better. Position:fixed will work on Android 2.2+ and iOS 5+. Overflow:scroll works with one finger on iOS 5+.</p>
+
+<p>Also, iOS 5 has additional CSS to give the native scrollbar and momentum/intertia to elements with overflow:scroll:</p>
+
+<pre><code class="language-css">    div {
+      -webkit-overflow-scrolling: touch;
+    }
+</code></pre>
+
+<h4 id="media-queries">Media queries</h4>
+
+<p><a href="http://www.w3.org/TR/css3-mediaqueries/">Media queries</a> enable you to target specific features (screen width, orientation, resolution) within CSS itself. Media queries themselves are actually quite old and are not mobile specific (they used to be popular for making a print-friendly version of webpages).</p>
+
+<p>You can use them two ways: 1) inline in a CSS stylesheet or 2) as the “media” attribute in the link tag, which loads an external stylesheet. The following is an example of inline CSS that’s applied only when the device is in portrait mode:</p>
+
+<pre><code class="language-css">    @media all and (orientation: portrait) {
+      body { }
+      div { }
+    }
+</code></pre>
+
+<p>Here’s the same media query using the other method, which points to an external stylesheet (not recommended):</p>
+
+<pre><code class="language-html">    &lt;link rel="stylesheet" media="all and (orientation: portrait)" href="portrait.css" /&gt;
+</code></pre>
+
+<p>This is not recommended because it creates an additional HTTP request (bad for performance). Also, in the case of screen orientation, the separate CSS stylesheet is NOT downloaded when the screen is rotated.</p>
+
+<p>Here’s a few examples of using inline CSS:</p>
+
+<pre><code class="language-css">    // target small screens (mobile devices or small desktop windows)
+    @media only screen and (max-width: 480px) {
+      /* CSS goes here */
+    }
+
+    /* high resolution screens */
+    @media (-webkit-min-device-pixel-ratio: 2),
+                 (min--moz-device-pixel-ratio: 2),
+                 (min-resolution: 300dpi) {
+      header { background-image: url(header-highres.png); }
+    }
+
+    /* low resolution screens */
+    @media (-webkit-max-device-pixel-ratio: 1.5),
+                 (max--moz-device-pixel-ratio: 1.5),
+                 (max-resolution: 299dpi) {
+      header { background-image: url(header-lowres.png); }
+    }
+</code></pre>
+
+<p>Read more: <a href="https://developer.mozilla.org/en/css/media_queries">Media queries (Mozilla Developer Center)</a></p>
+
+<h4 id="miscellaneous-css">Miscellaneous CSS</h4>
+
+<ul>
+  <li>
+    <p><code>-webkit-tap-highlight-color</code> (iOS): override the semitransparent color overlay when a user clicks a link or clickable element. To completely disable it, set the value to ‘transparent’ or ‘rgba(0,0,0,0)’</p>
+  </li>
+  <li>
+    <p><code>-webkit-user-select: none;</code> - prevent the user from selecting text (also works on desktop WebKit)</p>
+  </li>
+  <li>
+    <p><code>-webkit-touch-callout: none;</code> - prevent the callout toolbar from appearing when a user touches and holds an element such as an anchor tag.</p>
+  </li>
+</ul>
+
+<h3 id="mobile-specific-javascript">Mobile-specific JavaScript</h3>
+
+<h4 id="windowscrollto00"><code>window.scrollTo(0,0);</code></h4>
+
+<p>This hides the address bar and takes advantage of the entire device screen. You’ll have to set this in a timeout and make sure to get the timing right. See <a href="http://remysharp.com/2010/08/05/doing-it-right-skipping-the-iphone-url-bar/">Remy Sharp’s post</a> for more details.</p>
+
+<h4 id="windowmatchmedia"><code>window.matchMedia()</code></h4>
+
+<p>(iOS 5+) Again, just as CSS media queries aren’t specific to mobile, they do come in especially useful for mobile, so it’s worth mentioning their JavaScript counterpart. window.matchMedia() is a JavaScript-based version of media queries. You can use <a href="https://github.com/scottjehl/Respond">respond.js</a> as a polyfill for devices that don’t support this functionality natively.</p>
+
+<h4 id="navigatorconnection"><code>navigator.connection</code></h4>
+
+<p>(Android 2.2+) Determine if the phone is running on WiFi, 3G, etc. Example:</p>
+
+<pre><code class="language-javascript">    if (navigator.connection.type==navigator.connection.WIFI) {
+      // code for WiFi connections (high-bandwidth)
+    }
+</code></pre>
+
+<h4 id="windowdevicepixelratio"><code>window.devicePixelRatio</code></h4>
+
+<p>Determine screen resolution (analogue to the CSS media query). (iPhone 4 has the value 2, while Nexus One has the value 1.5).</p>
+
+<h4 id="windownavigatoronline"><code>window.navigator.onLine</code></h4>
+
+<p>Not strictly mobile, but helpful for apps to determine if they’re being run offline.</p>
+
+<h4 id="windownavigatorstandalone"><code>window.navigator.standalone</code></h4>
+
+<p>(iOS 2.1+): determine if it’s running in full-screen mode</p>
+
+<h4 id="touch-and-gesture-events">Touch and gesture events</h4>
+
+<ul>
+  <li>
+    <p><a href="http://developer.apple.com/safari/library/documentation/appleapplications/reference/safariwebcontent/handlingevents/handlingevents.html">touch events (iOS, Android 2.2+)</a>: touchstart, touchmove, touchend, touchcancel</p>
+  </li>
+  <li>
+    <p><a href="http://developer.apple.com/safari/library/documentation/internetweb/conceptual/safarivisualeffectsprogguide/InteractiveVisualEffects/InteractiveVisualEffects.html">gesture events (Apple only, iOS 2+)</a>: gesturestart, gesturechange, gesturend give access to predefined gestures (rotation, scale, position)</p>
+  </li>
+</ul>
+
+<h4 id="screen-orientation-every-90-degrees">Screen orientation (every 90 degrees)</h4>
+
+<ul>
+  <li><a href="http://ajaxian.com/archives/iphone-windowonorientationchange-code">orientationchange event</a>: triggered every 90 degrees of rotation (portrait and landscape modes). The current orientation is available through window.orientation</li>
+</ul>
+
+<h4 id="device-orientation-more-fine-grained">Device orientation (more fine-grained)</h4>
+
+<p>The <a href="http://frontendstuff.com/javascript/examples/deviceorientation.html">deviceorientation event</a> will fire very frequently, and gives more fine-grained information about the device’s orientation in three dimensions.  <br />
+<a href="https://developer.mozilla.org/en/Detecting_device_orientation">MozOrientation</a> (or onmozorientation?) (Fennec/Firefox Mobile, Firefox 3.5+): also not strictly mobile. Gives access to the device’s accelerometer (x-y-z orientation data), updated periodically. Works on Android phones running Mobile Firefox. On the desktop this works with laptops such as Thinkpads and MacBooks.</p>
+
+<h4 id="devicemotion-shake-gestures-etc">devicemotion (shake gestures, etc.)</h4>
+
+<ul>
+  <li><a href="http://frontendstuff.com/javascript/examples/devicemotion.html">devicemotion</a> fires when the user shakes or moves their device. Devicemotion taps into the accelerometer, which is fires off when the device accelerates. Contrast this with the deviceorientation event, which taps into the device’s gyroscope (if it has one), which only measures the 3D angle orientation, even when the device is at rest.</li>
+</ul>
+
+<h4 id="media-capture-api">Media capture API</h4>
+
+<p>While iOS is still lacking basic file inputs, Android is forging ahead, giving developers fine-grained control over content users can upload.</p>
+
+<pre><code class="language-html">    &lt;!-- regular file upload (Android 2.2+, NO iOS) --&gt;
+    &lt;input type="file"&gt;&lt;/input&gt;
+
+    &lt;!-- opens directly to the camera (Android 3.0+) --&gt;
+    &lt;input type="file" accept="image/*;capture=camera"&gt;&lt;/input&gt;
+
+    &lt;!-- opens directly to the camera in video mode (Android 3.0+) --&gt;
+    &lt;input type="file" accept="video/*;capture=camcorder"&gt;&lt;/input&gt;
+
+    &lt;!-- opens directly to the audio recorder (Android 3.0+) --&gt;
+    &lt;input type="file" accept="audio/*;capture=microphone"&gt;&lt;/input&gt;
+</code></pre>
+
+<h4 id="blackberry-specific">BlackBerry specific</h4>
+
+<p>If you’re developing for a BlackBerry Widget, you have access to proprietary information through the <a href="http://www.blackberry.com/developers/docs/widgetapi/Summary_system.html">blackberry object</a> (which gives access to useful information such as blackberry.network [returns values such as CDMA and Wi-Fi] and blackberry.system).</p>
+
+<p>You also have the option to use <a href="http://phonegap.com/">PhoneGap</a>, which augments JavaScript and gives you access to more phone features that native apps would have access to.</p>
+
+<h3 id="use-a-mobile-optimized-javascript-library">Use a mobile-optimized JavaScript library</h3>
+
+<p>I’ve created <a href="http://davidbcalhoun.com/2010/mobile-javascript-libraries-and-frameworks">a separate entry for the available mobile libraries and frameworks</a>.</p>
+
+<p>Because smartphone browsers are standards-based, the aim of a JavaScript library on mobile is less towards API normalization and more towards providing an actual UI framework, usually to emulate the feel of native apps (and to provide easier workarounds to <a href="http://doctyper.com/archives/200808/fixed-positioning-on-mobile-safari/">lack of access to position:fixed</a>). We’ve seen a few libraries released that emulate the iPhone UI, and in the future we might see libraries emulating the Android UI, as well as entirely new UIs.</p>
+
+<p>There’s also a bit to be said about simply loading full desktop JavaScript libraries into mobile clients. In my opinion this doesn’t particularly make sense, especially in a world where latency and bandwidth are so much more of a concern. It doesn’t make sense to force the user wait longer and download code that’s ultimately useless to them (hacks for desktop browsers such as IE 6, etc).</p>
+
+<h3 id="take-advantage-of-new-stuff">Take advantage of new stuff!</h3>
+
+<p>While not specific to mobile, there’s a lot of new stuff in general that you can use. If you limit yourself to the top smartphones (iPhone, Android, and maybe webOS), compared to the desktop you immediately have access to an even wider array of new stuff, especially many Webkit proprietary features, since most of these top smartphones have browsers based on Webkit.</p>
+
+<p>-HTML: new tags (<a href="http://diveintohtml5.org/">HTML5</a> (I’m sure you’ve heard of it by now…))  <br />
+-CSS: <a href="http://webkit.org/blog/130/css-transforms/">2d transforms</a>, <a href="http://webkit.org/blog/386/3d-transforms/">3d transforms</a>, animation, <a href="http://border-radius.com/">border radius</a>, <a href="https://developer.mozilla.org/en/css/@font-face">custom fonts with @font-face</a>, etc.  <br />
+-JavaScript: <a href="http://ejohn.org/blog/ecmascript-5-strict-mode-json-and-more/">strict mode</a>, <a href="https://developer.mozilla.org/en/Core_JavaScript_1.5_Guide/Core_Language_Features#Constants">constants</a>, <a href="http://davidbcalhoun.com/2009/javascript-tidbit-block-scope-with-let">block scope</a>, <a href="https://developer.mozilla.org/en/Core_JavaScript_1.5_Reference/Objects/Date">Date.now()</a>, etc.</p>
+
+<h3 id="slides">Slides</h3>
+
+<iframe src="http://www.slideshare.net/franksvalli/slideshelf" width="615px" height="470px" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:none;" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen=""></iframe>
+
+<div style="width:425px" id="__ss_7424222">
+    <strong style="display:block;margin:12px 0 4px"><a href="http://www.slideshare.net/franksvalli/mobile-html-css-and-javascript" title="Mobile HTML, CSS, and JavaScript">Mobile HTML, CSS, and JavaScript</a></strong> <div style="padding:5px 0 12px">
+    View more <a href="http://www.slideshare.net/">presentations</a> from <a href="http://www.slideshare.net/franksvalli">franksvalli</a>
+    </div>
+</div>
+
+<h3 id="more-from-the-mobile-web-series">More from the Mobile Web series:</h3>
+
+<p><a href="http://davidbcalhoun.com/2010/viewport-metatag">Part 1: The viewport metatag</a>  <br />
+<a href="http://davidbcalhoun.com/2010/the-mobile-developers-toolkit-mobile-web-part-2">Part 2: The mobile developer’s toolkit</a>  <br />
+<a href="http://davidbcalhoun.com/2010/designing-buttons-that-dont-suck">Part 3: Designing buttons that don’t suck</a>  <br />
+<a href="http://davidbcalhoun.com/2010/on-designing-a-mobile-webpage">Part 4: On designing a mobile webpage</a>  <br />
+<a href="http://davidbcalhoun.com/2010/using-mobile-specific-html-css-javascript">Part 5: Using mobile-specific HTML, CSS, and JavaScript</a>  <br />
+<a href="http://davidbcalhoun.com/2010/dealing-with-device-orientation">Part 6: Dealing with device orientation</a>  <br />
+<a href="http://davidbcalhoun.com/2010/mobile-javascript-libraries-and-frameworks">Part 7: Mobile JavaScript libraries and frameworks</a></p>
 
 ]]></content>
   </entry>

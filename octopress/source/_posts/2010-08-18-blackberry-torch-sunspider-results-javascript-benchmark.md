@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2010/blackberry-torch-sunspider-results-javascript-benchmark
-categories:
-  - performance
+categories: ["javascript", "performance", "mobile", "webdev"]
 tags:
   - blackberry
   - sunspider

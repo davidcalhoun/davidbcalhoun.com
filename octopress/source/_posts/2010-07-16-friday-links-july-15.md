@@ -5,8 +5,7 @@ comments: true
 author: David
 layout: post
 permalink: /2010/friday-links-july-15
-categories:
-  - links
+categories: ["webdev", "programming"]
 ---
 ### Mobile
 
