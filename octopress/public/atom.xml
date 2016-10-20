@@ -4,13 +4,269 @@
   <title><![CDATA[David Calhoun]]></title>
   <link href="http://davidbcalhoun.com/atom.xml" rel="self"/>
   <link href="http://davidbcalhoun.com/"/>
-  <updated>2016-08-18T14:00:33-07:00</updated>
+  <updated>2016-10-20T00:58:03-07:00</updated>
   <id>http://davidbcalhoun.com/</id>
   <author>
     <name><![CDATA[David Calhoun]]></name>
     
   </author>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Quine and Heidegger: Against Reductionism]]></title>
+    <link href="http://davidbcalhoun.com/2016/quine-and-heidegger-against-reductionism/"/>
+    <updated>2016-10-19T22:15:05-07:00</updated>
+    <id>http://davidbcalhoun.com/2016/quine-and-heidegger-against-reductionism</id>
+    <content type="html"><![CDATA[<meta itemprop="mainEntityOfPage" content="https://en.wikipedia.org/wiki/Reductionism" />
+
+<p>Earlier this year I had the opportunity to attend my first philosophy class in about a decade.  The class was on the infamous philosopher Martin Heidegger, and the course was taught at Stanford University by Forrest Hartman (PHI 98: An Introduction to Martin Heidegger (Spring 2016)).</p>
+
+<p>Heidegger is famous for being obscure and notoriously difficult to read, but I believe I made some headway in what turned out to be a very interesting philosophy.  Most interestingly, though Heidegger is considered to be a “continental” philosophy, I found some common ground with Quine, who is considered to be an “analytical” philosophy, supposedly in a diametrically opposed camp.</p>
+
+<p>I’ve been meaning to post this for a while - this is the paper I wrote for the class.  Would be interested in any feedback!</p>
+
+<p>For convenience, <a href="http://davidbcalhoun.com/writing/David%20Calhoun%20-%20Quine%20and%20Heidegger.pdf">here it is in PDF form</a>!</p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Comparing two thinkers from opposite philosophical traditions may initially seem like an impossible and fruitless task, a sort of culture clash two cultures cognitively thousands of miles apart.  It should be easy to find the points of departure between Quine and Heidegger<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>, but what I’m more looking forward to here is what seems to be an eerie agreement on a few key topics, in particular reactions against science: a move back towards accepting metaphysics, against the dominant trend of their time.  And a move away from a reductionist approach and towards a more holist view of knowledge.</p>
+
+<p>Their seeming agreement here is almost as if two wanderers have hiked up a mountain from opposite sides, eventually arriving at the same peak.  And when two very different thinkers end up at similar positions, at the very least I think we should have a look.</p>
+
+<h2 id="a-quick-look-at-quine">A quick look at Quine</h2>
+
+<p>It makes sense to take a look at Quine first, because he represents a tradition which Heidegger is reacting against.  Being from the analytic philosophical tradition, Quine sees his work as a continuation of the philosophical tradition initiated by Descartes (modernism).  A tradition that strives for exactness in methods and in its own writings, seeking clarity and concision<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>.  This all seems well and good coming from the point of view of science, however this tradition has been criticized for being too focused on language and science, too sterile and academic, and consequently for ordinary people, not only inaccessible but sadly irrelevant for them.</p>
+
+<p>Quine himself wouldn’t argue that science should be so closely tied to philosophy: in Quine’s view, philosophy somewhat cohabitates with science<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>.  And sometimes philosophy is even secondary, as something that comes along afterwards in order to clarify and clean up little messes and points of ambiguity that science has left behind.<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup></p>
+
+<p>How can we even begin to understand the world with this approach?  For science, phenomena is king: it is from phenomena that we get observation sentences, which are foundational for scientific understanding:</p>
+
+<blockquote>
+  <p>“Typical observation sentences are about bodies: ‘This is a table,’ ‘This table is square,’ ‘The cat is on the mat.’. Always the situation that makes an observation sentence true will be a situation that is intersubjectively observable; that is, it will be the sort of situation to which multiple witnesses could, if present, attest.”<sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup></p>
+</blockquote>
+
+<p>It’s important to note here that this methodology distinguishes between witnesses and bodies; between subjects and objects.  Unfortunately this disconnect has lead to many problems for this philosophy and its descendants: subjects can never have direct access to objects<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup>.  Consequently there is always an untraversable distance between us and our world; the extreme of this being external world skepticism, that we can never be sure we have knowledge of the world as it <em>really</em> is in itself.  This troublesome view seems to be confirmed by the “progress” of philosophy through the centuries: philosophical frameworks are confidently built up only to be later gleefully destroyed in a seemingly endless churn.</p>
+
+<p>What is the nature of reality?  Who knows, but the next generation of philosophers will surely have a different answer.  This long and seemingly unsuccessful churning of philosophy was one of the reasons for Descartes’ radical questioning, and wanting to rebuild philosophy on firm foundations.<sup id="fnref:7"><a href="#fn:7" class="footnote">7</a></sup></p>
+
+<p>Yet science cannot afford to endlessly doubt, sit still and not make progress, and so it must start somewhere.  The best science can hope for is a sort of pragmatic approach: to aggregate multiple observation sentences from multiple subjects (the “multiple witnesses” in the statement above), and hope that the observations agree.  For a philosophy based on science, these observations end up being foundational for all meaning and knowledge.  This leads to a logical extreme, the verification theory of meaning, the theory that “…the meaning of a statement is the method of empirically confirming or infirming it.”<sup id="fnref:8"><a href="#fn:8" class="footnote">8</a></sup>.  In other words, an extreme approach which <em>reduces all meaning down to merely scientific observation sentences</em>.</p>
+
+<p>Quine reacts against this view in his most famous paper, Two Dogmas of Empiricism, and it’s here that we find strange similarities to Heidegger’s views in Being and Time.</p>
+
+<p>But more on this later, since first we need to consider Heidegger’s own approach.</p>
+
+<h2 id="a-quick-look-at-heidegger">A quick look at Heidegger</h2>
+
+<p>Heidegger himself comes from the continental philosophical tradition and sees his work in opposition to Descartes in many ways.  We would say he represents a sense of anti or post-modernism.  Some would also accuse him of being obscure and difficult to understand, in many cases purposely unclear and imprecise<sup id="fnref:9"><a href="#fn:9" class="footnote">9</a></sup>.  Also, some might see Heidegger’s stance as anti-science<sup id="fnref:10"><a href="#fn:10" class="footnote">10</a></sup>, though this is a mischaracterization, at least of the Heidegger of Being and Time, which is my focus here.</p>
+
+<p>For Heidegger, philosophy is clearly the starting point for knowledge, that which must be made clear before examining other domains such as the sciences<sup id="fnref:11"><a href="#fn:11" class="footnote">11</a></sup><sup id="fnref:12"><a href="#fn:12" class="footnote">12</a></sup>.  Heidegger’s project is actually similar to Descartes’ in the sense that both are looking for a foundation, a starting point from which to begin philosophy.  Descartes looks to build from a firm <em>epistemic foundation</em>, obsessed with certainty: starting from the only thing which he can’t reasonably doubt: that he exists.  The famous cogito ergo sum: “I think, therefore I am”.</p>
+
+<p>But Heidegger takes him to task for not digging deep enough: “he leaves the ‘sum’ completely undiscussed, even though it is regarded as no less primordial than the cogito.”<sup id="fnref:13"><a href="#fn:13" class="footnote">13</a></sup>  This “sum”, the “I am”, is what Heidegger calls Dasein, the study of which he thinks should be prior to all other study.  Dasein isn’t a what but a who.  Dasein is <em>us</em>, something that is mysteriously close and yet far: “that which is ontically closest and well known, is ontologically the farthest and not known at all”<sup id="fnref:14"><a href="#fn:14" class="footnote">14</a></sup>.  Heidegger thinks we should not start with epistemology as Descartes did, but with metaphysics, specifically with the <em>fundamental ontology</em> of Dasein.</p>
+
+<p>Here the method of examining Dasein might strike us as very unusual, because the very nature of Dasein refuses to be categorized as any other object that has properties to be examined, like Descartes’ “thinking substance”.  No, Dasein is something strange and is not like other beings: it cannot be talked about as a what but as a <em>who</em><sup id="fnref:15"><a href="#fn:15" class="footnote">15</a></sup>, as a living-through experiences<sup id="fnref:16"><a href="#fn:16" class="footnote">16</a></sup>, of intentional actions<sup id="fnref:17"><a href="#fn:17" class="footnote">17</a></sup>.  It’s not something which we can study with our scientific toolbox, the world of subject and object.  (Note that we need not throw out the idea of subject/object entirely, only when discussing Dasein<sup id="fnref:18"><a href="#fn:18" class="footnote">18</a></sup>).</p>
+
+<p>Also, there is no problem of not being able to see <em>things in themselves</em> for Heidegger.  There is no untraversable distance between subject and object with Dasein, because there is no subject/object distinction.  Dasein <em>experiences things as they are in themselves</em>, albeit in a different way than the Kantian sense.</p>
+
+<p>Note that we cannot also apply science’s familiar reductionist strategy here: Dasein is not some object to be broken into parts which can then be classified and understood individually<sup id="fnref:19"><a href="#fn:19" class="footnote">19</a></sup>, then added up again to understand Dasein as a whole.<sup id="fnref:20"><a href="#fn:20" class="footnote">20</a></sup>  One of the reasons being that it’s problematic that we would even know how to “put the world together again”<sup id="fnref:21"><a href="#fn:21" class="footnote">21</a></sup> - that already-knowing-how is exactly what Heidegger is trying to uncover: trying to “get behind” or get “prior” to this already-knowing-how to put the pieces back together.</p>
+
+<p>Yet we can still talk about Dasein’s structure<sup id="fnref:22"><a href="#fn:22" class="footnote">22</a></sup> in what Heidegger calls “existentialia”: various ways of describing states of Dasein’s Being<sup id="fnref:23"><a href="#fn:23" class="footnote">23</a></sup>, perhaps most importantly for our discussion: Dasein being-in-the-world (in a sense the world is “embedded”, but in a different way than things are usually “being-in” each other – it’s difficult here to avoid the subject-object language we’re usually accustomed to<sup id="fnref:24"><a href="#fn:24" class="footnote">24</a></sup>).  Being-in-the-world and other structures of Dasein turn out to be equiprimordial: they are prior and impossible to “get behind”, so much so that they must be presupposed and cannot be questioned<sup id="fnref:25"><a href="#fn:25" class="footnote">25</a></sup>.</p>
+
+<p>What’s vital to understand here is that it’s impossible to take any of these “existentialia” out of the world and look at them in isolation, then look at them individually as if in a petri dish; the scientific approach of reducing our world down into smaller, more understandable parts.  These structures of Dasein can only be examined in relation to each other as part of a whole, as a part of a holistic understanding.  To examine in isolation is to examine away from its natural habitat, and thus what Heidegger would call an “inappropriate” study that yields no understanding.  Instead of examining parts in isolation, Heidegger’s “hermeneutical circle” approach is both an attempt at expressing this difficult holism and also an explanation of Dasein’s ontological understanding of itself<sup id="fnref:26"><a href="#fn:26" class="footnote">26</a></sup>.</p>
+
+<h2 id="the-two-thinkers-compared">The two thinkers compared</h2>
+
+<p>Coming back to our comparison with Quine, it may be very difficult at this point to see where Heidegger might have any points of agreement at all.  Heidegger in a sense seems to have jumped into the deep end of metaphysics, starting philosophy at the farthest point away from empiricism (science).  And from everything I’ve outlined above, we may think that Quine would here be on the front lines defending science against these strange speculative metaphysics of Dasein.  But the reality turns out to be quite different.</p>
+
+<p>In his well-known Two Dogmas of Empiricism, Quine goes on the attack against the logical positivists, an extreme group of empiricists who fundamentally believed that all truths can be <em>broken down into pieces</em> that end up being either analytic (such as mathematical proofs) or synthetic (such as scientific statements)<sup id="fnref:27"><a href="#fn:27" class="footnote">27</a></sup>.  Both points of Quine’s attack end up forcing us out of this extreme reductionist view and into a position that forces us to embrace a sort of holism, in a very different sort of way than the traditional scientific reductionist view.</p>
+
+<p>Quine’s first point of attack is against a distinction that goes back to Kant: that truths are either analytic or synthetic:</p>
+
+<ol>
+  <li>Analytic sentences: propositions “grounded in meanings independently of matters of fact”<sup id="fnref:28"><a href="#fn:28" class="footnote">28</a></sup> - such as “all bachelors are unmarried”, which are supposedly able to speak for themselves in complete isolation, like mathematical truths.</li>
+  <li>Synthetic truths: propositions that we must go out into the world to find out about – sentences such as “bachelors are lonely people”.  These are the sorts of truths uncovered by empiricism (science).</li>
+</ol>
+
+<p>Quine attacks this distinction by explaining that it’s impossible to even explain how analytic sentences have meaning in isolation.  For instance, how do we know that “bachelor” is equivalent to “unmarried man” - don’t we have to consult a dictionary or have some prior knowledge to make such a statement?  We also must have some of idea of synonymy <em>beforehand</em>, to understand the very meaning behind something like “A is the same as - is synonymous with - B” in order to understand a sentence such as “all bachelors are unmarried”.</p>
+
+<p>It turns out that “pure” analytic sentences are not so pure after all: in every case it’s impossible to understand the sentence in isolation, without appealing to some wider body of knowledge.  In each case, as Heidegger might say, there is <em>always-already an idea of synonymy</em>, and for that language speaker, always-already an understanding of the meaning of “bachelor” and “unmarried”.</p>
+
+<p>The result of Quine’s discussion is that it seems there is no distinction between analytic and synthetic propositions at all: there actually appear to be no true analytic sentences that can “stand on their own”.</p>
+
+<p>The second prong of Quine’s attack is more explicitly against reductionism in general, which is somewhat a continuation of his first attack.  Where Quine was previously attacking isolated analytic sentences as incomprehensible, he also says it makes no sense to talk about synthetic statements being meaningful by themselves.  No, observation sentences, of science and otherwise, only have meaning in relation to a larger body of observation sentences, an entire <em>web of belief</em>.  And it turns out that one observation sentence might challenge the whole web of belief and force some beliefs to be rejected, while in other cases supporting other beliefs.</p>
+
+<p>Each observation sentence affects the whole web of belief.   Each observation sentence <em>has meaning only in relation to the whole web of belief</em>.</p>
+
+<p>This should seem very similar to what we discussed previously in regards to Heidegger’s hermeneutic circle approach, and his resistance to talking about any of the existialia by themselves, in isolation from the others.  Just as Quine argued that one observation sentence by itself has no meaning, but only meaning in relation to the whole web of belief, so too does Heidegger argue that it’s inappropriate to speak of the existialia of Dasien without understanding its activity, its be-ing, in the whole of Dasein.  That is to say, the whole hermeneutic circle approach.</p>
+
+<h2 id="leaving-the-door-open-for-metaphysics">Leaving the door open for metaphysics</h2>
+
+<p>Also, as it turns out, in the wake of Quine’s attack on logical positivism, it once again becomes useful to look towards metaphysics, something science in general seems to try to shy away from.  Where logical positivists were trying to shut the door on all metaphysics, Quine now puts his foot in the door, leaving open the possibility to talk about metaphysics:</p>
+
+<blockquote>
+  <p>“The same normativity which leads Quine to attack logical positivism … encourages a more modest metaphysical attitude … it would seem sensible to be liberal about the possibilities of speculative metaphysics. Quine blurs the boundary between speculative metaphysics and natural science…”<sup id="fnref:29"><a href="#fn:29" class="footnote">29</a></sup></p>
+</blockquote>
+
+<p>Leaving open the possibility for metaphysics is of course crucial, as all of Heidegger’s philosophy starts with metaphysics: the fundamental ontology of Dasein.  Yet of course Quine is still coming from perspective of the vastly different scientific different world, and would definitely not agree that philosophy should start with metaphysics like Heidegger does.</p>
+
+<p>In a way, Heidegger has his own view about how we must approach philosophy, but he accommodates science and allows it to be useful and to exist in its own world as a regional ontology.  And Quine, though coming from a scientific background, has his own view about how we must approach philosophy, his own argument moderates the extreme scientific view of the logical positivists and actually ends up accommodating metaphysics, keeping the door open for speculative metaphysics such as Heidegger’s.</p>
+
+<h2 id="footnotes">Footnotes</h2>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>In particular I want to compare the Quine of Two Dogmas of Empiricism and the Heidegger of Being and Time. <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>“In more general terms, I strive for clarity and brevity. It happens so often that by going over something and making it shorter I improve it.” (W.V. Quine: Perspectives on Logic, Science and Philosophy, The Harvard Review of Philosophy, Spring 1994 p. 56) <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>“I think of philosophy as continuous with science, but philosophy differs by degree in various respects. Philosophy undertakes to analyze the general, basic concepts of science - the sort of concepts the practicing scientist will typically take for granted. These are such basic notions as truth, existence, and necessity. Also, philosophy investigates questions of evidence for science - that’s epistemology.” (W.V. Quine: Perspectives on Logic, Science and Philosophy, The Harvard Review of Philosophy, Spring 1994 p. 47) <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p>“…I think “tying up loose ends” [of science] is a good way of condensing philosophy’s purpose.” (W.V. Quine: Perspectives on Logic, Science and Philosophy, The Harvard Review of Philosophy, Spring 1994 p. 48) <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:5">
+      <p>Quine, Web of Belief pg 25 <a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:6">
+      <p>For instance, this object-in-the-world is basically the Kantian thing-in-itself, which we can only have indirect knowledge of. <a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:7">
+      <p>“Philosophy has been pursued for many centuries by the best minds, and yet everything in it is still disputed and hence doubtful; and I wasn’t so arrogant as to hope to achieve more in philosophy than others had done. Considering how many different opinions learned men may maintain on a single question - where at most one can be true - I regarded everything that was merely probable as being near enough to false.” (Descartes, Discourse on Method) <a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:8">
+      <p>Two Dogmas of Empiricism, The Philosophical Review, Vol. 60, No. 1, Jan, 1951, pg. 35 <a href="#fnref:8" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:9">
+      <p>“At its best, it seems that American analytic philosophy tends toward a radically clear, taut style that one sees particularly in both your work and Nelson Goodman’s.  It reflects a very different spirit from the German philo- sophical prose of someonelike Heidegger.” (W.V. Quine: Perspectives on Logic, Science and Philosophy, The Harvard Review of Philosophy, Spring 1994 p. 56) <a href="#fnref:9" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:10">
+      <p>“[Richard Rorty’s position in Philosophy and the Mirror of Nature] shows a bit of the anti-scientific bias that is more extreme in people like Derrida and Heidegger”.  The Harvard Review of Philosophy, Spring 1994 p. 57 <a href="#fnref:10" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:11">
+      <p>“The existential analytic of Dasein comes before any psychology or anthropology, and certainly before any biology”. (Heidegger, H. 45 Being and Time). <a href="#fnref:11" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:12">
+      <p>These other disciplines, such as the various sciences, are in Heidegger’s terms called regional ontologies, and are all fine and good, but these regional ontologies must be preceded by a proper understanding first laid down in a fundamental ontology of Dasein, which is Heidegger’s task in Being and Time. <a href="#fnref:12" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:13">
+      <p>Heidegger  H. 46, Being and Time <a href="#fnref:13" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:14">
+      <p>Heidegger  H. 44, Being and Time <a href="#fnref:14" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:15">
+      <p>“Here we are seeking that which one inquires into when one asks the question ‘Who?’ By a phenomenological demonstration(1) we shall determine who is in the mode of Dasein’s average everydayness.” (Heidegger H. 53 Being and Time) <a href="#fnref:15" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:16">
+      <p>“For Scheler, the person is never to be thought of as a Thing or a substance; the person ‘is rather the unity of living-through [Er-lebens] which is immediately experienced in and with our Experiences—not a Thing merely thought of behind and outside what is immediately Experienced’.” (Heidegger H. 47 Being and Time)  Also see H. 48 <a href="#fnref:16" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:17">
+      <p>H. 48 <a href="#fnref:17" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:18">
+      <p>For Heidegger, it’s perfectly fine to retain the subject-object distinction in regional ontologies such as science, where such terminology is useful in terms of that particular regional ontology. <a href="#fnref:18" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:19">
+      <p>“We shall not get a genuine knowledge of essences simply by the syncretistic activity of universal comparison and classification.” (Heidegger H. 52 Being and Time) <a href="#fnref:19" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:20">
+      <p>“…[man’s Being] is not something we can simply compute by adding together those kinds of Being which body, soul, and spirit respectively possess - kinds of Being whose nature has not as yet been determined.” (Heidegger H. 49 Being and Time) <a href="#fnref:20" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:21">
+      <p>“So if one is to put various pictures of the world in order, one must have an explicit idea of the world as such. And if the ‘world’ itself is something constitutive for Dasein, one must have an insight into Dasein’s basic structures in order to treat the world-phenomenon conceptually.” (Heidegger H. 52 Being and Time).  Also “In interpreting these entities within-the-world, however, we have always ‘presupposed’ the world. Even if we join them together, we still do not get anything like the ‘world’ as their sum.” (H. 72) <a href="#fnref:21" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:22">
+      <p>“But while Being-in-the-world cannot be broken up into contents which may be pieced together, this does not prevent it from having several constitutive items in its structure.” (Heidegger H. 53 Being and Time) <a href="#fnref:22" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:23">
+      <p>(Heidegger H. 54 Being and Time) <a href="#fnref:23" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:24">
+      <p>“But subject and Object do not coincide with Dasein and the world.” (Heidegger H. 60 Being and Time) <a href="#fnref:24" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:25">
+      <p>As in the case of another existential, being-with: “Being-with is such that the disclosedness of the Dasein-with of Others belongs to it; this means that because Dasein’s Being is Being-with, its understanding of Being already implies the understanding of Others. This understanding, like any understanding, is not an acquaintance derived from knowledge about them, but a primordially existential kind of Being, which, more than anything else, makes such knowledge and aquaintance possible.” (Heidegger H. 124 Being and Time) <a href="#fnref:25" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:26">
+      <p>“From Heidegger’s point of view, the hermeneutical circle is not a method, rather, it is the existential character of human understanding, so, he describes the circle in terms of an existential grounding. The hermeneutical circle is the existential condition of human understanding and is an essential attribute of Dasein’s knowledge. Thus the circle of understanding is not a methodological circle, making it unnecessary for us at the end of the process of interpretation, but it describes an element of the ontological structure of understanding. An understanding is fundamentally circular. Heidegger appeals to the hermeneutical circle in order to express the existential fore‐structure of Dasein - according to his view, understanding ontologically occurs in a circular manner. The world of Dasein is the mental horizon of Dasein that consists of its presuppositions, expectations, attitudes and beliefs.” (The Hermeneutical Reflections of Heidegger, Ahmad Vaezi, Transcendent Philosophy, Volume 3, Number 3, September 2002) <a href="#fnref:26" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:27">
+      <p>For synthetic truths, the empiricists believes in the verification theory of meaning, roughly the belief that “…every meaningful statement is held to be translatable into a statement (true or false) about immediate experience.” (Two Dogmas of Empiricism, The Philosophical Review, Vol. 60, No. 1, Jan, 1951, pg. 36) <a href="#fnref:27" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:28">
+      <p>Two Dogmas of Empiricism, The Philosophical Review, Vol. 60, No. 1, Jan, 1951, pg. 20 <a href="#fnref:28" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:29">
+      <p>Heidegger and Quine on the (Ir)relevance of Logic For Philosophy, A House Divided, pg. 179 <a href="#fnref:29" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Junk Food, Junk Politics, Junk TV, Junk Body, Junk Mind, Junk Truth]]></title>
+    <link href="http://davidbcalhoun.com/2016/junk-food-politics-tv-body-mind-truth/"/>
+    <updated>2016-10-13T17:06:26-07:00</updated>
+    <id>http://davidbcalhoun.com/2016/junk-food-politics-tv-body-mind-truth</id>
+    <content type="html"><![CDATA[<p>We Americans believe we have a right to be the way we want to be, which includes being lazy physically and intellectually. Junk is more shiny and more entertaining than non-junk, after all, and we can’t be bothered to be bored with non-junk.  We now have many forms of poison that we unwittingly ingest in various ways.  We have created in many ways our own version of the gladiator games that the masses celebrated through the downfall of Rome.</p>
+
+<p>We are attracted to politicians for their image over all else. Never mind the arguments, or the truth which all politicians unabashedly lay claim to.  Did they speak in a confident way at the last debate? That’s what I really care about.  Because confidence is what we really need in a leader, over all else. Did they provide nice entertaining zingers in rebuttal to their opponent?  Because those witty one-liners are what we need to lead the free world.</p>
+
+<p>Did someone sniffle during the last debate? Did someone stumble over their words? Did someone physically stumble and need help getting into their van?  Did Mr. Funny Man With A Funny Name ask a question at the debate?  I forgot what question he asked, or what the answers were.  What brand was his sweater?  I’d like to wear it this Halloween so I can poke fun at people who don’t appear super polished on TV.  These are the things that really matter.</p>
+
+<p>This is no doubt the era of image politics, not issue politics (arguably this has been happening since the Kennedy-Nixon debates…).</p>
+
+<p>Just like junk image politics, junk TV is more entertaining than non-junk TV, and we are attracted to it like flies to garbage. Cable TV has become a cesspool, and not coincidentally. Networks have found what people are attracted to, and maximized its airing time in order to maximize viewers.  Create masses of junk, and people will flock to it.</p>
+
+<p>And food!  We are attracted to junk food, and not just snacks - even junk added to our main meals. I would argue that the staple food of the US is now sugar. It’s in everything. We eat it with abandon and oftentimes unknowingly. Without regard for long-term effects and without regard for how it affects our bodies and minds.</p>
+
+<p>Because we have a God-given American right to eat what we want, just like our forefathers intended.  George Washington would be proud that I ate a fruit rollup for breakfast, followed by two burgers for lunch.</p>
+
+<p>And we defend our body images in all shapes and sizes, because we have a right to it, dammit.  And we are beautiful and healthy regardless of what anyone says. I have a right to live my life the way I want to, without regard for what anyone else says. That’s the American Way©, after all (copyrighted by North American Coca-Cola).</p>
+
+<p>We defend our version of the truth, because we have a God-given right to it. I have a right to believe what I want to. It’s the American Way to live my life and believe what I want to.  If you question or challenge me, you are attacking my very way of life.  And that’s super unamerican.</p>
+
+<p>We defend the position of our in-group, and anything said against that position is an attack on the in-group itself. We have a right to our position, and it’s more important to show confidence and unwavering commitment to that position than to show hesitancy and a wavering opinion.  And we like to blast our politicians for waffling on positions, never thinking that maybe it’s healthy to reassess beliefs over time.  I’m gonna stick to my guns on this one.</p>
+
+<p>America is undoubtedly in a decline.</p>
+
+<p>And we have a God-given right to be in decline, dammit!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Time for autumn adventures]]></title>
+    <link href="http://davidbcalhoun.com/2016/time-for-autumn-adventures/"/>
+    <updated>2016-09-29T16:06:18-07:00</updated>
+    <id>http://davidbcalhoun.com/2016/time-for-autumn-adventures</id>
+    <content type="html"><![CDATA[<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="666" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/kyoto-autumn-maple-leaves-tofukuji.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/kyoto-autumn-maple-leaves-tofukuji.jpg" width="1000" height="666" title="Maple leaves at Tofukuji Temple, Kyoto" /><figcaption itemprop="caption">Maple leaves at Tofukuji Temple, Kyoto</figcaption></figure>
+
+<p>It’s autumn again.  The temperatures are dropping up here in the mountains of Big Bear, especially at night, when it’s now approaching freezing or below.  A surprising number of trees are changing colors.  I say surprising because this is California, after all, and we don’t usually see fall colors unless we know where to look.</p>
+
+<p>The aspens are of course doing their thing and changing from green to yellow, and there are other surprising splashes of red and orange as I drive through the neighborhood.  So it’s getting cold and the colors are changing - sounds like a pretty typical autumn, right?</p>
+
+<p>But down the mountain it’s a different story.</p>
+
+<p>It will be October in a few days, and for much of the 300 square miles of Southern California suburbia, that means one of the hottest times of the year.  It usually cools down briefly, but September and October have always been known to be hot.</p>
+
+<p>And the winds!  My dad complains that his birthday falls during one of the most uncomfortable times of the year, when the warm Santa Ana winds come to fan the flames of the inevitable wildfires.  This time last year a wildfire got too close for comfort at our place in Big Bear.  Vast tracts of land were destroyed, including a beloved trail that my parents used to hike when they were younger.</p>
+
+<p>Because of that fire the county regulations are a bit stricter now.  We’ve had to cut back some the plants to leave space between them.  The shrubs are no longer wild and overgrown - they’ve been chopped back to thin and small regulated sizes, with precisely measure space between them.  They now look like they belong more in a zen garden than in a mountain town.  And all the shrubs in the neighborhood have fallen in line and have the same regulated dimensions.  I might not have much in common with my neighbors here, but we all received that same letter from the county.  We are unified in a common bond by the regulated size of our shrubs.</p>
+
+<p>I’m learning what autumn means here.  It means that some days are very windy, and that wind helps shake things to the ground.  First it’s the pine needles, and later the aspen leaves.  Mountains of yellow aspen leaves.  I spent some much needed time sweeping them up from the driveway and street today, but for a while now I know this will seem like a real sisyphean task.  By next week, these trees will have shaken off more leaves and dispersed them all over the place for us to sweep up again.</p>
+
+<p>The house under construction nearby looks finished, but I guess it’s not quite ready.  I can still hear construction crews working there during the day.  Sometimes they briefly blast music out over the neighborhood while they work.  But if it was me, I’d be embarassed - the age of the music gives away the age of the construction workers.  They seem to be too old to still be in that line of work.  Or maybe they just like older music.</p>
+
+<p>I’m looking forward to taking a few drives to see autumn in the eastern sierras.  I hope to get some good shots!</p>
+
+<p>And I’m looking forward to the eventual winter.  Instead of taking care of the leaves and pine needles on the driveway, I’ll trade in my broom for a snow shovel.  My task will still seem sisyphean for a brief period of time, then the seasons will change again.</p>
+
+<p>It all goes by too fast really.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Monty Python and the Holy Grail (1975) (Top 100 Films)]]></title>
@@ -25,61 +281,61 @@
 
 <p>The movie follows the adventures of King Arthur (Graham Chapman) in his quest for the Holy Grail.</p>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-01.jpg" width="1000" height="563" title="Monty Python and the Holy Grail title card, with gratuitous Swedish subtitles" /><figcaption>Monty Python and the Holy Grail title card, with gratuitous Swedish subtitles</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="563" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-01.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-01.jpg" width="1000" height="563" title="Monty Python and the Holy Grail title card, with gratuitous Swedish subtitles" /><figcaption itemprop="caption">Monty Python and the Holy Grail title card, with gratuitous Swedish subtitles</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-02.jpg" width="1000" height="563" title="Special Møøse credits" /><figcaption>Special Møøse credits</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="563" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-02.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-02.jpg" width="1000" height="563" title="Special Møøse credits" /><figcaption itemprop="caption">Special Møøse credits</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-03.jpg" width="1000" height="563" title="King Arthur (Graham Chapman, right) and his companion Patsy (Terry Gilliam, left)" /><figcaption>King Arthur (Graham Chapman, right) and his companion Patsy (Terry Gilliam, left)</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="563" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-03.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-03.jpg" width="1000" height="563" title="King Arthur (Graham Chapman, right) and his companion Patsy (Terry Gilliam, left)" /><figcaption itemprop="caption">King Arthur (Graham Chapman, right) and his companion Patsy (Terry Gilliam, left)</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-04.jpg" width="1000" height="563" title="Dennis and his mother - mud farmers having a serious discussion about political philosophy, and whether King Arthur has a right to rule" /><figcaption>Dennis and his mother - mud farmers having a serious discussion about political philosophy, and whether King Arthur has a right to rule</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="563" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-04.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-04.jpg" width="1000" height="563" title="Dennis and his mother - mud farmers having a serious discussion about political philosophy, and whether King Arthur has a right to rule" /><figcaption itemprop="caption">Dennis and his mother - mud farmers having a serious discussion about political philosophy, and whether King Arthur has a right to rule</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-05.jpg" width="1000" height="563" title="&#34;None shall pass&#34; - The famous Black Knight" alt="&#34;None shall pass&#34; - The famous Black Knight" /><figcaption>&#34;None shall pass&#34; - The famous Black Knight</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="563" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-05.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-05.jpg" width="1000" height="563" title="&#34;None shall pass&#34; - The famous Black Knight" alt="&#34;None shall pass&#34; - The famous Black Knight" /><figcaption itemprop="caption">&#34;None shall pass&#34; - The famous Black Knight</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-06.jpg" width="1000" height="563" title="&#34;Running away, eh? You yellow bastards! Come back here and take what's coming to ya! I'll bite your legs off!&#34;" alt="&#34;Running away, eh? You yellow bastards! Come back here and take what's coming to ya! I'll bite your legs off!&#34;" /><figcaption>&#34;Running away, eh? You yellow bastards! Come back here and take what's coming to ya! I'll bite your legs off!&#34;</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="563" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-06.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-06.jpg" width="1000" height="563" title="&#34;Running away, eh? You yellow bastards! Come back here and take what's coming to ya! I'll bite your legs off!&#34;" alt="&#34;Running away, eh? You yellow bastards! Come back here and take what's coming to ya! I'll bite your legs off!&#34;" /><figcaption itemprop="caption">&#34;Running away, eh? You yellow bastards! Come back here and take what's coming to ya! I'll bite your legs off!&#34;</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-07.jpg" width="1000" height="563" title="Strange monastic head-banging tradition" /><figcaption>Strange monastic head-banging tradition</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="563" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-07.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-07.jpg" width="1000" height="563" title="Strange monastic head-banging tradition" /><figcaption itemprop="caption">Strange monastic head-banging tradition</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-08.jpg" width="1000" height="563" title="The French taunter" /><figcaption>The French taunter</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="563" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-08.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-08.jpg" width="1000" height="563" title="The French taunter" /><figcaption itemprop="caption">The French taunter</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-09.jpg" width="1000" height="563" title="Birds-eye view of King Arthur's group" /><figcaption>Birds-eye view of King Arthur's group</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="563" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-09.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-09.jpg" width="1000" height="563" title="Birds-eye view of King Arthur's group" /><figcaption itemprop="caption">Birds-eye view of King Arthur's group</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-10.jpg" width="1000" height="563" title="A Famous Historian - a modern-day historian killed by a knight seconds later, which prompts a police investigation.  The police follow Arthur's trail through the progression of the movie." /><figcaption>A Famous Historian - a modern-day historian killed by a knight seconds later, which prompts a police investigation.  The police follow Arthur's trail through the progression of the movie.</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="563" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-10.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-10.jpg" width="1000" height="563" title="A Famous Historian - a modern-day historian killed by a knight seconds later, which prompts a police investigation.  The police follow Arthur's trail through the progression of the movie." /><figcaption itemprop="caption">A Famous Historian - a modern-day historian killed by a knight seconds later, which prompts a police investigation.  The police follow Arthur's trail through the progression of the movie.</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-11.jpg" width="1000" height="563" title="Three-Headed Knight" /><figcaption>Three-Headed Knight</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="563" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-11.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-11.jpg" width="1000" height="563" title="Three-Headed Knight" /><figcaption itemprop="caption">Three-Headed Knight</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-12.jpg" width="1000" height="563" title="Sir Robin the Not-Quite-So-Brave-as-Sir-Lancelot (Eric Idle, right) and his minstrels (lead by Neil Innes of Rutles fame, left)" /><figcaption>Sir Robin the Not-Quite-So-Brave-as-Sir-Lancelot (Eric Idle, right) and his minstrels (lead by Neil Innes of Rutles fame, left)</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="563" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-12.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-12.jpg" width="1000" height="563" title="Sir Robin the Not-Quite-So-Brave-as-Sir-Lancelot (Eric Idle, right) and his minstrels (lead by Neil Innes of Rutles fame, left)" /><figcaption itemprop="caption">Sir Robin the Not-Quite-So-Brave-as-Sir-Lancelot (Eric Idle, right) and his minstrels (lead by Neil Innes of Rutles fame, left)</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-13.jpg" width="1000" height="563" title="Surrounded by sexy women at Castle Anthrax" /><figcaption>Surrounded by sexy women at Castle Anthrax</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="563" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-13.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-13.jpg" width="1000" height="563" title="Surrounded by sexy women at Castle Anthrax" /><figcaption itemprop="caption">Surrounded by sexy women at Castle Anthrax</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-14.jpg" width="1000" height="563" title="&#34;Do you think this scene should have been cut?&#34;" alt="&#34;Do you think this scene should have been cut?&#34;" /><figcaption>&#34;Do you think this scene should have been cut?&#34;</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="563" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-14.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-14.jpg" width="1000" height="563" title="&#34;Do you think this scene should have been cut?&#34;" alt="&#34;Do you think this scene should have been cut?&#34;" /><figcaption itemprop="caption">&#34;Do you think this scene should have been cut?&#34;</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-15.jpg" width="1000" height="563" title="&#34;Get on with it!&#34; (Three-Headed Knight)" alt="&#34;Get on with it!&#34; (Three-Headed Knight)" /><figcaption>&#34;Get on with it!&#34; (Three-Headed Knight)</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="563" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-15.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-15.jpg" width="1000" height="563" title="&#34;Get on with it!&#34; (Three-Headed Knight)" alt="&#34;Get on with it!&#34; (Three-Headed Knight)" /><figcaption itemprop="caption">&#34;Get on with it!&#34; (Three-Headed Knight)</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-16.jpg" width="1000" height="563" title="&#34;Get on with it!&#34; (Dennis and his mother)" alt="&#34;Get on with it!&#34; (Dennis and his mother)" /><figcaption>&#34;Get on with it!&#34; (Dennis and his mother)</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="563" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-16.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-16.jpg" width="1000" height="563" title="&#34;Get on with it!&#34; (Dennis and his mother)" alt="&#34;Get on with it!&#34; (Dennis and his mother)" /><figcaption itemprop="caption">&#34;Get on with it!&#34; (Dennis and his mother)</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-17.jpg" width="1000" height="563" title="&#34;Get on with it!&#34; (Old Man in Scene 24)" alt="&#34;Get on with it!&#34; (Old Man in Scene 24)" /><figcaption>&#34;Get on with it!&#34; (Old Man in Scene 24)</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="563" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-17.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-17.jpg" width="1000" height="563" title="&#34;Get on with it!&#34; (Old Man in Scene 24)" alt="&#34;Get on with it!&#34; (Old Man in Scene 24)" /><figcaption itemprop="caption">&#34;Get on with it!&#34; (Old Man in Scene 24)</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-18.jpg" width="1000" height="563" title="&#34;Get on with it!&#34; (Tim the Enchanter)" alt="&#34;Get on with it!&#34; (Tim the Enchanter)" /><figcaption>&#34;Get on with it!&#34; (Tim the Enchanter)</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="563" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-18.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-18.jpg" width="1000" height="563" title="&#34;Get on with it!&#34; (Tim the Enchanter)" alt="&#34;Get on with it!&#34; (Tim the Enchanter)" /><figcaption itemprop="caption">&#34;Get on with it!&#34; (Tim the Enchanter)</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-19.jpg" width="1000" height="563" title="&#34;Get on with it!&#34; (Crowd)" alt="&#34;Get on with it!&#34; (Crowd)" /><figcaption>&#34;Get on with it!&#34; (Crowd)</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="563" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-19.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-19.jpg" width="1000" height="563" title="&#34;Get on with it!&#34; (Crowd)" alt="&#34;Get on with it!&#34; (Crowd)" /><figcaption itemprop="caption">&#34;Get on with it!&#34; (Crowd)</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-20.jpg" width="1000" height="563" title="&#34;Get on with it!&#34; (God)" alt="&#34;Get on with it!&#34; (God)" /><figcaption>&#34;Get on with it!&#34; (God)</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="563" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-20.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-20.jpg" width="1000" height="563" title="&#34;Get on with it!&#34; (God)" alt="&#34;Get on with it!&#34; (God)" /><figcaption itemprop="caption">&#34;Get on with it!&#34; (God)</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-21.jpg" width="1000" height="563" title="Knight Who Says Ni" /><figcaption>Knight Who Says Ni</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="563" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-21.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-21.jpg" width="1000" height="563" title="Knight Who Says Ni" /><figcaption itemprop="caption">Knight Who Says Ni</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-22.jpg" width="1000" height="563" title="It wouldn't be Monty Python without a few animations" /><figcaption>It wouldn't be Monty Python without a few animations</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="563" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-22.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-22.jpg" width="1000" height="563" title="It wouldn't be Monty Python without a few animations" /><figcaption itemprop="caption">It wouldn't be Monty Python without a few animations</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-23.jpg" width="1000" height="563" title="Tim the Enchanter's introduction in a nice cinematic shot" /><figcaption>Tim the Enchanter's introduction in a nice cinematic shot</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="563" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-23.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-23.jpg" width="1000" height="563" title="Tim the Enchanter's introduction in a nice cinematic shot" /><figcaption itemprop="caption">Tim the Enchanter's introduction in a nice cinematic shot</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-24.jpg" width="1000" height="563" title="Rabbit of Caerbannog, the Killer Rabbit" /><figcaption>Rabbit of Caerbannog, the Killer Rabbit</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="563" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-24.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-24.jpg" width="1000" height="563" title="Rabbit of Caerbannog, the Killer Rabbit" /><figcaption itemprop="caption">Rabbit of Caerbannog, the Killer Rabbit</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-25.jpg" width="1000" height="563" title="Rabbit of Caerbannog, the Killer Rabbit" /><figcaption>Rabbit of Caerbannog, the Killer Rabbit</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="563" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-25.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-25.jpg" width="1000" height="563" title="Rabbit of Caerbannog, the Killer Rabbit" /><figcaption itemprop="caption">Rabbit of Caerbannog, the Killer Rabbit</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-26.jpg" width="1000" height="563" title="The British police finally track down suspects of the killing of the Famous Historian" /><figcaption>The British police finally track down suspects of the killing of the Famous Historian</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="563" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-26.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-26.jpg" width="1000" height="563" title="The British police finally track down suspects of the killing of the Famous Historian" /><figcaption itemprop="caption">The British police finally track down suspects of the killing of the Famous Historian</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-27.jpg" width="1000" height="563" title="The British police arresting King Arthur" /><figcaption>The British police arresting King Arthur</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="563" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-27.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-27.jpg" width="1000" height="563" title="The British police arresting King Arthur" /><figcaption itemprop="caption">The British police arresting King Arthur</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-28.jpg" width="1000" height="563" title="The British police arresting King Arthur, putting a sack over his head" /><figcaption>The British police arresting King Arthur, putting a sack over his head</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="563" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-28.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/monty-python-holy-grail-28.jpg" width="1000" height="563" title="The British police arresting King Arthur, putting a sack over his head" /><figcaption itemprop="caption">The British police arresting King Arthur, putting a sack over his head</figcaption></figure>
 
 ]]></content>
   </entry>
@@ -99,35 +355,35 @@
 
 <p>Ok go, let’s have a look at what I ended up with!</p>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-06-15-photo-assignment-kyoto-alleyways-at-night-1.jpg" width="666" height="1000" title="Walking up the path towards Hokan-ji Temple (Yasaka-no-to, Yasaka Pagoda) (法観寺五重塔)" /><figcaption>Walking up the path towards Hokan-ji Temple (Yasaka-no-to, Yasaka Pagoda) (法観寺五重塔)</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="666" /><meta itemprop="height" content="1000" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/2016-06-15-photo-assignment-kyoto-alleyways-at-night-1.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-06-15-photo-assignment-kyoto-alleyways-at-night-1.jpg" width="666" height="1000" title="Walking up the path towards Hokan-ji Temple (Yasaka-no-to, Yasaka Pagoda) (法観寺五重塔)" /><figcaption itemprop="caption">Walking up the path towards Hokan-ji Temple (Yasaka-no-to, Yasaka Pagoda) (法観寺五重塔)</figcaption></figure>
 
 <p>Walking uphill through the shops that are just closing, approaching the pagoda.  Not quite magic hour yet.</p>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-06-15-photo-assignment-kyoto-alleyways-at-night-2.jpg" width="1000" height="666" title="Vending machines lighting up the path" /><figcaption>Vending machines lighting up the path</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="666" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/2016-06-15-photo-assignment-kyoto-alleyways-at-night-2.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-06-15-photo-assignment-kyoto-alleyways-at-night-2.jpg" width="1000" height="666" title="Vending machines lighting up the path" /><figcaption itemprop="caption">Vending machines lighting up the path</figcaption></figure>
 
 <p>The light the the vending machines is completely blown out.  I took some bracketed shots of this, but I don’t want to deal with the HDR right now… maybe later.</p>
 
 <p>Just a funny note: instead of the RAW file, I actually ended up postprocessing the HDR JPG for this one accidentally.  Took me a while, but I finally corrected my mistake when I was seeing weird artifacts appearing.</p>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-06-15-photo-assignment-kyoto-alleyways-at-night-3.jpg" width="666" height="981" title="Looking down on Ninenzaka Street (二年坂)" /><figcaption>Looking down on Ninenzaka Street (二年坂)</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="666" /><meta itemprop="height" content="981" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/2016-06-15-photo-assignment-kyoto-alleyways-at-night-3.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-06-15-photo-assignment-kyoto-alleyways-at-night-3.jpg" width="666" height="981" title="Looking down on Ninenzaka Street (二年坂)" /><figcaption itemprop="caption">Looking down on Ninenzaka Street (二年坂)</figcaption></figure>
 
 <p>I had a tough time trying to crop this one.  The posters on the right side are interesting and I wanted to zoom in more on them, but couldn’t find a way to make it work.</p>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-06-15-photo-assignment-kyoto-alleyways-at-night-4.jpg" width="1000" height="666" title="Hydrangeas on Ninenzaka Street (二年坂)" /><figcaption>Hydrangeas on Ninenzaka Street (二年坂)</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="666" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/2016-06-15-photo-assignment-kyoto-alleyways-at-night-4.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-06-15-photo-assignment-kyoto-alleyways-at-night-4.jpg" width="1000" height="666" title="Hydrangeas on Ninenzaka Street (二年坂)" /><figcaption itemprop="caption">Hydrangeas on Ninenzaka Street (二年坂)</figcaption></figure>
 
 <p>Some hydrangeas on a wet street.  This is more like it, this is the kinda shot I came here to take!  There really was no one around at this time.  Most of the folks in the area were camped out with tripods to <a href="https://www.reddit.com/r/pics/comments/4mq25f/i_took_a_picture_of_a_quiet_street_at_night_in/">duplicate a shot they had seen on reddit</a> (which I ended up doing later…).</p>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-06-15-photo-assignment-kyoto-alleyways-at-night-5.jpg" width="666" height="1000" title="Street near Hokan-ji Temple (Yasaka-no-to, Yasaka Pagoda) (法観寺五重塔)" /><figcaption>Street near Hokan-ji Temple (Yasaka-no-to, Yasaka Pagoda) (法観寺五重塔)</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="666" /><meta itemprop="height" content="1000" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/2016-06-15-photo-assignment-kyoto-alleyways-at-night-5.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-06-15-photo-assignment-kyoto-alleyways-at-night-5.jpg" width="666" height="1000" title="Street near Hokan-ji Temple (Yasaka-no-to, Yasaka Pagoda) (法観寺五重塔)" /><figcaption itemprop="caption">Street near Hokan-ji Temple (Yasaka-no-to, Yasaka Pagoda) (法観寺五重塔)</figcaption></figure>
 
 <p>Not sure about the composition here, in terms of the balance.  But I liked the design of the window on the left.  Reminded me of something elven, like it came out of the Lord of the Rings.</p>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-06-15-photo-assignment-kyoto-alleyways-at-night-6.jpg" width="1000" height="666" title="Bar Main Higashiyama Kyoto" /><figcaption>Bar Main Higashiyama Kyoto</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="666" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/2016-06-15-photo-assignment-kyoto-alleyways-at-night-6.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-06-15-photo-assignment-kyoto-alleyways-at-night-6.jpg" width="1000" height="666" title="Bar Main Higashiyama Kyoto" /><figcaption itemprop="caption">Bar Main Higashiyama Kyoto</figcaption></figure>
 
 <p>Before I took the following shot, a bartender dressed in fancy clothes skurried past to return after his break.  Actually wasn’t so sure about this photo was worth taking when I was here, but it ended up turning out pretty well!</p>
 
 <p>The bluish light cast a nice reflection on the still-wet ground.  Quick, keep snapping pictures before it dries up!</p>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-06-15-photo-assignment-kyoto-alleyways-at-night-7.jpg" width="1000" height="666" title="Shōren-in gate （青蓮院門跡）" /><figcaption>Shōren-in gate （青蓮院門跡）</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="666" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/2016-06-15-photo-assignment-kyoto-alleyways-at-night-7.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-06-15-photo-assignment-kyoto-alleyways-at-night-7.jpg" width="1000" height="666" title="Shōren-in gate （青蓮院門跡）" /><figcaption itemprop="caption">Shōren-in gate （青蓮院門跡）</figcaption></figure>
 
 <p>The ground dried up by the time I made it here…</p>
 
@@ -191,7 +447,7 @@
     <link href="http://davidbcalhoun.com/2016/shinkansen-trip-from-kyoto-to-sapporo/"/>
     <updated>2016-05-17T19:25:16-07:00</updated>
     <id>http://davidbcalhoun.com/2016/shinkansen-trip-from-kyoto-to-sapporo</id>
-    <content type="html"><![CDATA[<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-26-rinku-town-kansai-airport-kix-at-night.jpg" width="1000" height="666" title="Rinku town and Kansai Airport at night" /><figcaption>Rinku town and Kansai Airport at night</figcaption></figure>
+    <content type="html"><![CDATA[<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="666" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-26-rinku-town-kansai-airport-kix-at-night.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-26-rinku-town-kansai-airport-kix-at-night.jpg" width="1000" height="666" title="Rinku town and Kansai Airport at night" /><figcaption itemprop="caption">Rinku town and Kansai Airport at night</figcaption></figure>
 
 <p>(I wrote this one a few weeks back but didn’t post the pics until now, so here it is in its complete form!).</p>
 
@@ -199,17 +455,17 @@
 
 <p>Here’s a catch-up post, with plenty of pictures and videos to keep things interesting.</p>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-26-cherry-blossom-1.jpg" width="1000" height="666" title="Closeup of cherry blossoms along the Path of Philosophy" /><figcaption>Closeup of cherry blossoms along the Path of Philosophy</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="666" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-26-cherry-blossom-1.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-26-cherry-blossom-1.jpg" width="1000" height="666" title="Closeup of cherry blossoms along the Path of Philosophy" /><figcaption itemprop="caption">Closeup of cherry blossoms along the Path of Philosophy</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-26-cherry-blossom-2.jpg" width="1000" height="666" title="Closeup of cherry blossoms along the Path of Philosophy" /><figcaption>Closeup of cherry blossoms along the Path of Philosophy</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="666" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-26-cherry-blossom-2.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-26-cherry-blossom-2.jpg" width="1000" height="666" title="Closeup of cherry blossoms along the Path of Philosophy" /><figcaption itemprop="caption">Closeup of cherry blossoms along the Path of Philosophy</figcaption></figure>
 
 <p>Spring in Japan again!  I was really happy to use jetlag to my advantage and wake up super early while staying in Kyoto, where I was able to walk over to a few areas that turned out to be almost empty, but were sure to get crowded later.  I’ve found that this trick always works if you’re willing to wake up early enough - this also worked for Yosemite, a place as crowded as Disneyland.  Except the trick there was to wake up before dawn…</p>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-26-kyoto-path-of-philosophy-cherry-blossoms-1.jpg" width="666" height="1000" title="Cherry blossoms along the Path of Philosophy" /><figcaption>Cherry blossoms along the Path of Philosophy</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="666" /><meta itemprop="height" content="1000" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-26-kyoto-path-of-philosophy-cherry-blossoms-1.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-26-kyoto-path-of-philosophy-cherry-blossoms-1.jpg" width="666" height="1000" title="Cherry blossoms along the Path of Philosophy" /><figcaption itemprop="caption">Cherry blossoms along the Path of Philosophy</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-26-kyoto-path-of-philosophy-cherry-blossoms-2.jpg" width="666" height="1000" title="Cherry blossoms along the Path of Philosophy" /><figcaption>Cherry blossoms along the Path of Philosophy</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="666" /><meta itemprop="height" content="1000" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-26-kyoto-path-of-philosophy-cherry-blossoms-2.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-26-kyoto-path-of-philosophy-cherry-blossoms-2.jpg" width="666" height="1000" title="Cherry blossoms along the Path of Philosophy" /><figcaption itemprop="caption">Cherry blossoms along the Path of Philosophy</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-26-kyoto-path-of-philosophy-cherry-blossoms-and-sparrow.jpg" width="666" height="1000" title="Sparrow eating cherry blossoms at the Path of Philosophy" /><figcaption>Sparrow eating cherry blossoms at the Path of Philosophy</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="666" /><meta itemprop="height" content="1000" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-26-kyoto-path-of-philosophy-cherry-blossoms-and-sparrow.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-26-kyoto-path-of-philosophy-cherry-blossoms-and-sparrow.jpg" width="666" height="1000" title="Sparrow eating cherry blossoms at the Path of Philosophy" /><figcaption itemprop="caption">Sparrow eating cherry blossoms at the Path of Philosophy</figcaption></figure>
 
 <p>Anyhow, I really felt that one stroll through the fairly empty Path of Philosophy early in the morning was enough to satisfy me for the entire trip.  I felt super happy, and was lucky to get some video of a fairly empty Path of Philosophy, around 7am or so.</p>
 
@@ -217,15 +473,15 @@
 
 <p>With every passing hour it was noticeably getting more crowded, so my plan from there was to escape and head down for a walk along the Kamo river (Kamogawa), which is big enough that it never feels super crowded.  It was also a good chance to revisit old favorite cafes like efish.  Can’t beat Kyoto coffee culture!</p>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-26-kyoto-kamogawa-cherry-blossoms-1.jpg" width="666" height="1000" title="Cherry blossom along the Kamogawa" /><figcaption>Cherry blossom along the Kamogawa</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="666" /><meta itemprop="height" content="1000" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-26-kyoto-kamogawa-cherry-blossoms-1.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-26-kyoto-kamogawa-cherry-blossoms-1.jpg" width="666" height="1000" title="Cherry blossom along the Kamogawa" /><figcaption itemprop="caption">Cherry blossom along the Kamogawa</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-26-kyoto-kamogawa-cherry-blossoms-2.jpg" width="1000" height="666" title="Cherry blossom along the Kamogawa, with Kyoto Tower in the background" /><figcaption>Cherry blossom along the Kamogawa, with Kyoto Tower in the background</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="666" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-26-kyoto-kamogawa-cherry-blossoms-2.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-26-kyoto-kamogawa-cherry-blossoms-2.jpg" width="1000" height="666" title="Cherry blossom along the Kamogawa, with Kyoto Tower in the background" /><figcaption itemprop="caption">Cherry blossom along the Kamogawa, with Kyoto Tower in the background</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-26-kyoto-bridge-bus.jpg" width="1000" height="666" title="Kamogawa river near Kyoto station, with a bus in the middle of a bridge" /><figcaption>Kamogawa river near Kyoto station, with a bus in the middle of a bridge</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="666" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-26-kyoto-bridge-bus.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-26-kyoto-bridge-bus.jpg" width="1000" height="666" title="Kamogawa river near Kyoto station, with a bus in the middle of a bridge" /><figcaption itemprop="caption">Kamogawa river near Kyoto station, with a bus in the middle of a bridge</figcaption></figure>
 
 <p>After this I realized that I was pretty satisfied, and maybe even burnt out on crowds.  I really felt like getting out if Kyoto, so I cancelled some hotels (with 100% refund, really easy to do when you book through Expedia).  I realized that I got really burned out on tourists a lot sooner than I hoped.  Knowing full well that I myself am a tourist of course, and that I’m contributing to the problem…</p>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-26-shinkansen-route.png" width="455" height="303" title="The planned crazy Shinkansen route, to fully take advantage of my JR Pass like never before" /><figcaption>The planned crazy Shinkansen route, to fully take advantage of my JR Pass like never before</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="455" /><meta itemprop="height" content="303" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-26-shinkansen-route.png" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-26-shinkansen-route.png" width="455" height="303" title="The planned crazy Shinkansen route, to fully take advantage of my JR Pass like never before" /><figcaption itemprop="caption">The planned crazy Shinkansen route, to fully take advantage of my JR Pass like never before</figcaption></figure>
 
 <p>But this burnout happened to have good timing.  I found out that Yuka was briefly headed to China for work, so it was a good time to activate my weeklong JR Pass and do something I’ve always wanted to do: abuse it as much as possible, traveling as far in one direction as I could.  I always thought it would be fun to travel north to Hokkaido by shinkansen, and by good coincidence it turns out this wasn’t possible until the end of this March this year, when a stretch of track was just opened that went all the way to Hakodate.  My eventual goal was to arrive at Sapporo by shinkansen, but that final stretch is still being constructed.  But no worries, there was an express train there instead.</p>
 
@@ -237,19 +493,19 @@
 
 <p>The next leg of the trip was from Furukawa to Hakodate, a small town in Hokkaido.  Being in Hokkaido, this means the shinkansen ran out of land and would either have to go over or under the water to get to the island of Hokkaido.  Disappointingly, it turned out to be under water: vast stretches of the trip that were in boring tunnels.  I suppose the option to build a bridge would’ve provided a beautiful sight for passengers, at the expense of a maintenance nightmare, as this would mean repair crews would have to battle the harsh winters, exposed out on a bridge over the ocean.  I wouldn’t be surprised if most of the eventual Hakodate to Sapporo track will be underground for the same reason.</p>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-26-hakodate-manhole-cover.jpg" width="1000" height="666" title="Hakodate manhole cover in black and white.  There are more colorful versions through the city, but I didn't see them on this trip." /><figcaption>Hakodate manhole cover in black and white.  There are more colorful versions through the city, but I didn't see them on this trip.</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="666" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-26-hakodate-manhole-cover.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-26-hakodate-manhole-cover.jpg" width="1000" height="666" title="Hakodate manhole cover in black and white.  There are more colorful versions through the city, but I didn't see them on this trip." /><figcaption itemprop="caption">Hakodate manhole cover in black and white.  There are more colorful versions through the city, but I didn't see them on this trip.</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-26-hakodate-street-at-dusk.jpg" width="1000" height="660" title="Hakodate streetcars at dusk" /><figcaption>Hakodate streetcars at dusk</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="660" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-26-hakodate-street-at-dusk.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-26-hakodate-street-at-dusk.jpg" width="1000" height="660" title="Hakodate streetcars at dusk" /><figcaption itemprop="caption">Hakodate streetcars at dusk</figcaption></figure>
 
 <p>Hakodate was nice, although the touted night view from Mt. Hakodate was overcrowded with tourists.  Especially Chinese tourists for some reason.  I think the night view of city by the sea, with mountains in the background, is hard to beat.  It’s worth seeing once though.</p>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/BnVWKKG6H78" frameborder="0" allowfullscreen=""></iframe>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-26-hakodate-sunset.jpg" width="1000" height="666" title="Hakodate beautiful sunset behind mountains, almost looks like a Hawaiian sunset" /><figcaption>Hakodate beautiful sunset behind mountains, almost looks like a Hawaiian sunset</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="666" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-26-hakodate-sunset.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-26-hakodate-sunset.jpg" width="1000" height="666" title="Hakodate beautiful sunset behind mountains, almost looks like a Hawaiian sunset" /><figcaption itemprop="caption">Hakodate beautiful sunset behind mountains, almost looks like a Hawaiian sunset</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-26-hakodate-night-view-1.jpg" width="1000" height="666" title="The famed Hakodate night view" /><figcaption>The famed Hakodate night view</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="666" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-26-hakodate-night-view-1.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-26-hakodate-night-view-1.jpg" width="1000" height="666" title="The famed Hakodate night view" /><figcaption itemprop="caption">The famed Hakodate night view</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-26-hakodate-night-view-2.jpg" width="1000" height="666" title="What it's really like trying to get a picture of the Hakodate night view.  Way too many people for comfort." /><figcaption>What it's really like trying to get a picture of the Hakodate night view.  Way too many people for comfort.</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="666" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-26-hakodate-night-view-2.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-26-hakodate-night-view-2.jpg" width="1000" height="666" title="What it's really like trying to get a picture of the Hakodate night view.  Way too many people for comfort." /><figcaption itemprop="caption">What it's really like trying to get a picture of the Hakodate night view.  Way too many people for comfort.</figcaption></figure>
 
 <p>The last leg of the journey was from Hakodate to Sapporo on an express train.  Not quite a shinkansen, so the trip covered comparatively little ground, but the train was nice and was setup nicely inside with assigned seats, tray tables for food, nice storage areas.  It was an express train trying its hardest to be a shinkansen.</p>
 
@@ -267,7 +523,7 @@
 
 <p>Ok, exit and walk another block through the sleet.  7-11?  Hmm sure, I’m sure I could buy some random junkfood or something there.  And it’s warm there.</p>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-26-sapporo-711-snow.jpg" width="666" height="892" title="A Sapporo 7-11 while it started snowing.  I definitely stepped into this 7-11 for some warm comfort." /><figcaption>A Sapporo 7-11 while it started snowing.  I definitely stepped into this 7-11 for some warm comfort.</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="666" /><meta itemprop="height" content="892" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-26-sapporo-711-snow.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-26-sapporo-711-snow.jpg" width="666" height="892" title="A Sapporo 7-11 while it started snowing.  I definitely stepped into this 7-11 for some warm comfort." /><figcaption itemprop="caption">A Sapporo 7-11 while it started snowing.  I definitely stepped into this 7-11 for some warm comfort.</figcaption></figure>
 
 <p>Walk a little further and see a Tully’s Coffee. Ok why not, I like coffee.  And it’s warm.</p>
 
@@ -277,7 +533,7 @@
 
 <p>But unfortunately I kind of squandered my opportunity to take interesting snowy city pictures of Sapporo.  I was walking around all day with my 24mm lens, which is a difficult focal length to work with.  Should’ve probably stuck with my trusty 50mm.</p>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-26-sapporo-ramen.jpg" width="666" height="1000" title="Delicious Sapporo ramen" /><figcaption>Delicious Sapporo ramen</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="666" /><meta itemprop="height" content="1000" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-26-sapporo-ramen.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-26-sapporo-ramen.jpg" width="666" height="1000" title="Delicious Sapporo ramen" /><figcaption itemprop="caption">Delicious Sapporo ramen</figcaption></figure>
 
 <p>On this trip I also learned to pack a bit smarter.  On previous trips I’d brought a massive suitcase and packed way too much stuff.  I remember one longterm trip where I’d packed a flatbed photo scanner, just because I could really.  And I thought I needed it, to scan forms that I needed to sign or something.  I’m still not entirely sure what I was thinking.</p>
 
@@ -307,37 +563,37 @@
 <p>文殊会 (興福寺)<br />
 毎月25日は文殊菩薩の縁日。東金堂の文殊菩薩は古くから学問僧の信仰を集めてきた。­文殊会では文殊菩薩の智恵を授かろうと稚児の行列が、浄教寺より一字書の奉額車を引い­て三条通りを練り歩きます。 なお、当日堂内の拝観は14時までですが、外からの拝観は可能。（受付終了は13時4­5分）</p>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-01.jpg" width="1000" height="666" /><figcaption></figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="666" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-01.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-01.jpg" width="1000" height="666" /><figcaption itemprop="caption"></figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-02.jpg" width="1000" height="666" /><figcaption></figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="666" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-02.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-02.jpg" width="1000" height="666" /><figcaption itemprop="caption"></figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-03.jpg" width="1000" height="666" /><figcaption></figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="666" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-03.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-03.jpg" width="1000" height="666" /><figcaption itemprop="caption"></figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-04.jpg" width="1000" height="666" /><figcaption></figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="666" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-04.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-04.jpg" width="1000" height="666" /><figcaption itemprop="caption"></figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-05.jpg" width="1000" height="666" /><figcaption></figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="666" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-05.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-05.jpg" width="1000" height="666" /><figcaption itemprop="caption"></figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-06.jpg" width="1000" height="666" /><figcaption></figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="666" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-06.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-06.jpg" width="1000" height="666" /><figcaption itemprop="caption"></figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-07.jpg" width="666" height="1000" /><figcaption></figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="666" /><meta itemprop="height" content="1000" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-07.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-07.jpg" width="666" height="1000" /><figcaption itemprop="caption"></figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-08.jpg" width="666" height="1000" /><figcaption></figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="666" /><meta itemprop="height" content="1000" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-08.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-08.jpg" width="666" height="1000" /><figcaption itemprop="caption"></figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-09.jpg" width="1000" height="666" /><figcaption></figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="666" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-09.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-09.jpg" width="1000" height="666" /><figcaption itemprop="caption"></figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-10.jpg" width="1000" height="666" /><figcaption></figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="666" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-10.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-10.jpg" width="1000" height="666" /><figcaption itemprop="caption"></figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-11.jpg" width="1000" height="666" /><figcaption></figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="666" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-11.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-11.jpg" width="1000" height="666" /><figcaption itemprop="caption"></figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-12.jpg" width="1000" height="666" /><figcaption></figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="666" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-12.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-12.jpg" width="1000" height="666" /><figcaption itemprop="caption"></figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-13.jpg" width="666" height="1000" /><figcaption></figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="666" /><meta itemprop="height" content="1000" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-13.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-13.jpg" width="666" height="1000" /><figcaption itemprop="caption"></figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-14.jpg" width="1000" height="666" /><figcaption></figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="666" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-14.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-14.jpg" width="1000" height="666" /><figcaption itemprop="caption"></figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-15.jpg" width="666" height="1000" /><figcaption></figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="666" /><meta itemprop="height" content="1000" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-15.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-15.jpg" width="666" height="1000" /><figcaption itemprop="caption"></figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-16.jpg" width="666" height="1000" /><figcaption></figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="666" /><meta itemprop="height" content="1000" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-16.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-16.jpg" width="666" height="1000" /><figcaption itemprop="caption"></figcaption></figure>
 ]]></content>
   </entry>
   
@@ -359,7 +615,7 @@
     <link href="http://davidbcalhoun.com/2016/11-mile-big-basin-hike/"/>
     <updated>2016-02-02T08:47:58-08:00</updated>
     <id>http://davidbcalhoun.com/2016/11-mile-big-basin-hike</id>
-    <content type="html"><![CDATA[<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-01-31-big-basin-hike-gps.jpg" width="1000" height="723" title="GPS track log" /><figcaption>GPS track log</figcaption></figure>
+    <content type="html"><![CDATA[<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="723" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/2016-01-31-big-basin-hike-gps.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-01-31-big-basin-hike-gps.jpg" width="1000" height="723" title="GPS track log" /><figcaption itemprop="caption">GPS track log</figcaption></figure>
 
 <p>See the interactive <a href="http://davidbcalhoun.com/a/2016-01-31-big-basin-hike.html">GPS track log here</a>.</p>
 
@@ -371,25 +627,25 @@
 
 <p>What was maybe more alarming was the fact that on the way to Berry Creek falls there were multiple newly-fallen trees that were blocking the path.  In one case a tree had completely destroyed a bridge, and I had to find a way over or under the tree.  I unded up going over, walking along the slippery log and then working my way to the other side.  I tried making my way down slowly instead of jumping, which was a bad choice - I grabbed onto a piece of the decaying tree, but it broke off and I slid down a bit…</p>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-01-31-big-basin-berry-creek-falls-trail-blocked-by-tree.jpg" width="1000" height="666" title="Path blocked by a newly-fallen tree" /><figcaption>Path blocked by a newly-fallen tree</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="666" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/2016-01-31-big-basin-berry-creek-falls-trail-blocked-by-tree.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-01-31-big-basin-berry-creek-falls-trail-blocked-by-tree.jpg" width="1000" height="666" title="Path blocked by a newly-fallen tree" /><figcaption itemprop="caption">Path blocked by a newly-fallen tree</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-01-31-big-basin-berry-creek-falls-trail-blocked-by-tree-destroyed-bridge.jpg" width="666" height="1000" title="Bridge completely destroyed by a newly-falled tree" /><figcaption>Bridge completely destroyed by a newly-falled tree</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="666" /><meta itemprop="height" content="1000" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/2016-01-31-big-basin-berry-creek-falls-trail-blocked-by-tree-destroyed-bridge.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-01-31-big-basin-berry-creek-falls-trail-blocked-by-tree-destroyed-bridge.jpg" width="666" height="1000" title="Bridge completely destroyed by a newly-falled tree" /><figcaption itemprop="caption">Bridge completely destroyed by a newly-falled tree</figcaption></figure>
 
 <p>I made it to Berry Creek Falls, where I’d been before a few years back.  There was a lot more water gushing down the falls this time!</p>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-01-31-big-basin-berry-creek-falls.jpg" width="666" height="1000" title="Berry Creek Falls" /><figcaption>Berry Creek Falls</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="666" /><meta itemprop="height" content="1000" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/2016-01-31-big-basin-berry-creek-falls.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-01-31-big-basin-berry-creek-falls.jpg" width="666" height="1000" title="Berry Creek Falls" /><figcaption itemprop="caption">Berry Creek Falls</figcaption></figure>
 
 <p>I felt up for it, so I decided to continue the hike on the Berry Creek Falls trail, saw a few more waterfalls I’d never seen before, and then met up with the Sunset Trail, which I took back to the park headquarters, making it about a 11 mile loop.  Started at 8:20am, took some breaks and a lunch stop at Golden Cascade Falls, then finally made it back to my car around 2:20pm.</p>
 
 <p>I definitely brought back lots of mud with me!</p>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-01-31-big-basin-stairs-and-silver-falls.jpg" width="666" height="1000" title="Stairs next to Silver Falls" /><figcaption>Stairs next to Silver Falls</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="666" /><meta itemprop="height" content="1000" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/2016-01-31-big-basin-stairs-and-silver-falls.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-01-31-big-basin-stairs-and-silver-falls.jpg" width="666" height="1000" title="Stairs next to Silver Falls" /><figcaption itemprop="caption">Stairs next to Silver Falls</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-01-31-big-basin-silver-falls-next-to-trail.jpg" width="666" height="1000" title="Silver Falls right next to the trail!" /><figcaption>Silver Falls right next to the trail!</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="666" /><meta itemprop="height" content="1000" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/2016-01-31-big-basin-silver-falls-next-to-trail.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-01-31-big-basin-silver-falls-next-to-trail.jpg" width="666" height="1000" title="Silver Falls right next to the trail!" /><figcaption itemprop="caption">Silver Falls right next to the trail!</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-01-31-big-basin-golden-cascade.jpg" width="1000" height="666" title="Golden Cascade Falls" /><figcaption>Golden Cascade Falls</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="666" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/2016-01-31-big-basin-golden-cascade.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-01-31-big-basin-golden-cascade.jpg" width="1000" height="666" title="Golden Cascade Falls" /><figcaption itemprop="caption">Golden Cascade Falls</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-01-31-big-basin-banana-slug.jpg" width="666" height="1000" title="Banana slug" /><figcaption>Banana slug</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="666" /><meta itemprop="height" content="1000" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/2016-01-31-big-basin-banana-slug.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-01-31-big-basin-banana-slug.jpg" width="666" height="1000" title="Banana slug" /><figcaption itemprop="caption">Banana slug</figcaption></figure>
 
 ]]></content>
   </entry>
@@ -416,7 +672,7 @@
     <link href="http://davidbcalhoun.com/2016/schindlers-list-1993-top-100-films/"/>
     <updated>2016-01-26T02:27:34-08:00</updated>
     <id>http://davidbcalhoun.com/2016/schindlers-list-1993-top-100-films</id>
-    <content type="html"><![CDATA[<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-01-title-with-candles.jpg" width="1000" height="563" title="Schindler's List title card with candles" /><figcaption>Schindler's List title card with candles</figcaption></figure>
+    <content type="html"><![CDATA[<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="563" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-01-title-with-candles.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-01-title-with-candles.jpg" width="1000" height="563" title="Schindler's List title card with candles" /><figcaption itemprop="caption">Schindler's List title card with candles</figcaption></figure>
 
 <p>This is a film that is best experienced, not explained in a post like this.  However, that being said, I’ll give this a try anyhow.</p>
 
@@ -424,47 +680,47 @@
 
 <p>Everyone who has seen this said it’s a good movie but is very depressing and dark.  Not that we’d expect anything less from a movie about the grim realities about the Holocaust.</p>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-02-liquidation-of-the-ghetto-grandmother-and-nazis.jpg" width="1000" height="563" title="Liquidization of the ghetto.  The oblivious grandmother and the running Nazis." /><figcaption>Liquidization of the ghetto.  The oblivious grandmother and the running Nazis.</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="563" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-02-liquidation-of-the-ghetto-grandmother-and-nazis.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-02-liquidation-of-the-ghetto-grandmother-and-nazis.jpg" width="1000" height="563" title="Liquidization of the ghetto.  The oblivious grandmother and the running Nazis." /><figcaption itemprop="caption">Liquidization of the ghetto.  The oblivious grandmother and the running Nazis.</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-03-nazi-talking-to-a-kid.jpg" width="1000" height="563" title="Nazi trying to be friendly with a kid - right before hitting a man." /><figcaption>Nazi trying to be friendly with a kid - right before hitting a man.</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="563" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-03-nazi-talking-to-a-kid.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-03-nazi-talking-to-a-kid.jpg" width="1000" height="563" title="Nazi trying to be friendly with a kid - right before hitting a man." /><figcaption itemprop="caption">Nazi trying to be friendly with a kid - right before hitting a man.</figcaption></figure>
 
 <p>I came into the movie already knowing that I’d see many people die in gruesome ways, and that I’d see the Nazis misbehaving.  But maybe I’m a bit desensitized.  I’ve seen Nazis act in outrageous ways in movies and videogames all my life.  That familiar Nazi outrageousness, oozing evil, does appear in Schindler’s List.  But here it’s factually grounded, which makes it eerie.  In this movie there is little in the way of an exaggeration - all of these things did happen.</p>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-04-carpet-device-hiding-under-the-floorboards.jpg" width="1000" height="563" title="No more room under the floorboards.  Clever string-pulled rug to coverup the floorboards." /><figcaption>No more room under the floorboards.  Clever string-pulled rug to coverup the floorboards.</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="563" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-04-carpet-device-hiding-under-the-floorboards.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-04-carpet-device-hiding-under-the-floorboards.jpg" width="1000" height="563" title="No more room under the floorboards.  Clever string-pulled rug to coverup the floorboards." /><figcaption itemprop="caption">No more room under the floorboards.  Clever string-pulled rug to coverup the floorboards.</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-05-children-hiding-in-the-pit-toilet.jpg" width="1000" height="563" title="No more room in the pools of human waste under the pit toilet." /><figcaption>No more room in the pools of human waste under the pit toilet.</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="563" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-05-children-hiding-in-the-pit-toilet.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-05-children-hiding-in-the-pit-toilet.jpg" width="1000" height="563" title="No more room in the pools of human waste under the pit toilet." /><figcaption itemprop="caption">No more room in the pools of human waste under the pit toilet.</figcaption></figure>
 
 <p>Amon Goeth is the supernazi we are made to hate the most.</p>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-07-nazi-amon-goeth-with-gun.jpg" width="1000" height="563" title="Amon Goeth with his rifle.  Human target practice..." /><figcaption>Amon Goeth with his rifle.  Human target practice...</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="563" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-07-nazi-amon-goeth-with-gun.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-07-nazi-amon-goeth-with-gun.jpg" width="1000" height="563" title="Amon Goeth with his rifle.  Human target practice..." /><figcaption itemprop="caption">Amon Goeth with his rifle.  Human target practice...</figcaption></figure>
 
 <p>He appears completely out of control, as he indiscriminately shoots down prisoner Jews like he’s hunting deer.  Or more precisely, shooting fish in a barrel.  I want to somehow think this is a fiction, that this is the product of an overzealous writer looking for new ways to portray Nazis as outrageously evil.  But I look up Goeth and find that he exists, and that he did exact what he is portrayed doing.  That is somehow surprising to me.  I desperately wanted his random shooting to be a work of fiction.</p>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-08-conveyor-belt-with-bodies.jpg" width="1000" height="563" title="Bodies on a conveyor belt, and a pile of burning bodies." /><figcaption>Bodies on a conveyor belt, and a pile of burning bodies.</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="563" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-08-conveyor-belt-with-bodies.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-08-conveyor-belt-with-bodies.jpg" width="1000" height="563" title="Bodies on a conveyor belt, and a pile of burning bodies." /><figcaption itemprop="caption">Bodies on a conveyor belt, and a pile of burning bodies.</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-09-valhalla.jpg" width="1000" height="563" title="A Nazi goes insane and screams in front of a pile of burning bodies that have been exhumed from mass graves and set alight." /><figcaption>A Nazi goes insane and screams in front of a pile of burning bodies that have been exhumed from mass graves and set alight.</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="563" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-09-valhalla.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-09-valhalla.jpg" width="1000" height="563" title="A Nazi goes insane and screams in front of a pile of burning bodies that have been exhumed from mass graves and set alight." /><figcaption itemprop="caption">A Nazi goes insane and screams in front of a pile of burning bodies that have been exhumed from mass graves and set alight.</figcaption></figure>
 
 <p>This is a movie that knows how to use extreme contrast to bring focus on things.  It has a few scenes in color, but most of the movie takes place in black and white.  The black and white scenes sometimes include very selective color: the famous girl in a red jacket and the color in the flames of burning candles.</p>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-06-girl-in-red-coat.jpg" width="1000" height="563" title="The girl in the red coat." /><figcaption>The girl in the red coat.</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="563" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-06-girl-in-red-coat.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-06-girl-in-red-coat.jpg" width="1000" height="563" title="The girl in the red coat." /><figcaption itemprop="caption">The girl in the red coat.</figcaption></figure>
 
 <p>Schindler picks out a girl in a red coat in the chaos of the liquidation of the ghetto.  He later sees the corpse of the girl that’s been exhumed, to be put on the giant pile of bodies in a mass incineration.</p>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-10-death-of-the-girl-in-red.jpg" width="1000" height="563" title="Corpse of the girl in the red coat." /><figcaption>Corpse of the girl in the red coat.</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="563" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-10-death-of-the-girl-in-red.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-10-death-of-the-girl-in-red.jpg" width="1000" height="563" title="Corpse of the girl in the red coat." /><figcaption itemprop="caption">Corpse of the girl in the red coat.</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-11-schindler-shocked.jpg" width="1000" height="563" title="Schindler reacts to seeing the corpse of the girl in the red coat." /><figcaption>Schindler reacts to seeing the corpse of the girl in the red coat.</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="563" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-11-schindler-shocked.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-11-schindler-shocked.jpg" width="1000" height="563" title="Schindler reacts to seeing the corpse of the girl in the red coat." /><figcaption itemprop="caption">Schindler reacts to seeing the corpse of the girl in the red coat.</figcaption></figure>
 
 <p>It’s here that he really shows vulnerability as a character.  He loses his cool exterior and is shocked.  He realizes he needs to do something.  He needs to take action.</p>
 
 <p>It’s here that he creates a list that the movie takes its namesake from.  This is a list of Jews that he will bribe officials to keep at his factory, and keep them safe and away.</p>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-12-oskar-schindler-and-itzhak-stern.jpg" width="1000" height="563" title="Schindler and Stern drawing up a list." /><figcaption>Schindler and Stern drawing up a list.</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="563" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-12-oskar-schindler-and-itzhak-stern.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-12-oskar-schindler-and-itzhak-stern.jpg" width="1000" height="563" title="Schindler and Stern drawing up a list." /><figcaption itemprop="caption">Schindler and Stern drawing up a list.</figcaption></figure>
 
 <p>One part that really resonated with me was the misfortune of a group of women who were on Schindler’s List - the ones who I knew should be protected.  The killing in general is a horrible thing during the film, but it’s a fact and I prepared myself somewhat for it.  When Schindler drew up his list of those he would protect, I became invested in their well-being, because I know they had been chosen to be kept safe.  Somehow I found myself empathizing with them more.</p>
 
 <p>So all the more the shock when a traincar of women who were on his list somehow was diverted to the wrong place.  The train pulls into an eerily familiar-looking courtyard.  We don’t need to be told where this is, but the film lets us know anyway: Auschwitz.</p>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-13-auschwitz-train-arrival.jpg" width="1000" height="563" title="The train arrives at Auschwitz." /><figcaption>The train arrives at Auschwitz.</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="563" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-13-auschwitz-train-arrival.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-13-auschwitz-train-arrival.jpg" width="1000" height="563" title="The train arrives at Auschwitz." /><figcaption itemprop="caption">The train arrives at Auschwitz.</figcaption></figure>
 
 <p>Auschwitz.  Some of the protected Schindler Jews ended up at Auschwitz?!</p>
 
@@ -472,21 +728,21 @@
 
 <p>But it’s just water, not gas.  A huge relief for the entire group, as naked and helpless as they still are.</p>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-14-women-in-showers.jpg" width="1000" height="563" title="Women in the showers at Auschwitz." /><figcaption>Women in the showers at Auschwitz.</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="563" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-14-women-in-showers.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-14-women-in-showers.jpg" width="1000" height="563" title="Women in the showers at Auschwitz." /><figcaption itemprop="caption">Women in the showers at Auschwitz.</figcaption></figure>
 
 <p>There is also extreme contrast in Schindler himself.  Throughout the movie he is nothing but a smooth character who maintains control and appears to exert control, even when briefly tossed into prison for kissing a Jew.  But this smooth exterior vanishes at the end when he accepts the gift of a ring and starts trembling so much that he drops the ring.  His reaction is almost out of character, because his facade breaks down.  He realizes he could have sold even more of his possessions to save a few more lives, on top of the 1100 lives he has already saved.</p>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-15-schindler-breaking-down-crying.jpg" width="1000" height="563" title="Schindler breaks down crying." /><figcaption>Schindler breaks down crying.</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="563" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-15-schindler-breaking-down-crying.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-15-schindler-breaking-down-crying.jpg" width="1000" height="563" title="Schindler breaks down crying." /><figcaption itemprop="caption">Schindler breaks down crying.</figcaption></figure>
 
 <p>The end of the film has an artful transition into the current day, with the real remaining Schindler Jews at the time paying their respects to Schinder’s grave.</p>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-16-schindler-jews-before.jpg" width="1000" height="563" title="The Schindler Jews before." /><figcaption>The Schindler Jews before.</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="563" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-16-schindler-jews-before.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-16-schindler-jews-before.jpg" width="1000" height="563" title="The Schindler Jews before." /><figcaption itemprop="caption">The Schindler Jews before.</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-17-schindler-jews-after.jpg" width="1000" height="563" title="The Schindler Jews after." /><figcaption>The Schindler Jews after.</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="563" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-17-schindler-jews-after.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-17-schindler-jews-after.jpg" width="1000" height="563" title="The Schindler Jews after." /><figcaption itemprop="caption">The Schindler Jews after.</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-18-oskar-schindlers-grave-with-rocks.jpg" width="1000" height="563" title="Schindler's grave with stones." /><figcaption>Schindler's grave with stones.</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="563" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-18-oskar-schindlers-grave-with-rocks.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-18-oskar-schindlers-grave-with-rocks.jpg" width="1000" height="563" title="Schindler's grave with stones." /><figcaption itemprop="caption">Schindler's grave with stones.</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-19-cemetery-scene-with-liam-neeson.jpg" width="1000" height="563" title="Liam Neeson paying respects at Schindler's grave at the end of the movie." /><figcaption>Liam Neeson paying respects at Schindler's grave at the end of the movie.</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="563" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-19-cemetery-scene-with-liam-neeson.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/schindlers-list-19-cemetery-scene-with-liam-neeson.jpg" width="1000" height="563" title="Liam Neeson paying respects at Schindler's grave at the end of the movie." /><figcaption itemprop="caption">Liam Neeson paying respects at Schindler's grave at the end of the movie.</figcaption></figure>
 
 <p>Of course this is a film that needs to be seen by all for historical reasons and also for future reasons.  We don’t want a repeat of anything like these events, and this film alone convinces viewers of that.</p>
 ]]></content>
@@ -497,13 +753,13 @@
     <link href="http://davidbcalhoun.com/2016/ikiru-1952-top-100-films/"/>
     <updated>2016-01-05T21:43:35-08:00</updated>
     <id>http://davidbcalhoun.com/2016/ikiru-1952-top-100-films</id>
-    <content type="html"><![CDATA[<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/ikiru-title-card.jpg" width="1000" height="729" title="IKIRU, 生きる, TO LIVE" /><figcaption>IKIRU, 生きる, TO LIVE</figcaption></figure>
+    <content type="html"><![CDATA[<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="729" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/ikiru-title-card.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/ikiru-title-card.jpg" width="1000" height="729" title="IKIRU, 生きる, TO LIVE" /><figcaption itemprop="caption">IKIRU, 生きる, TO LIVE</figcaption></figure>
 
 <p>This is an existentialist story about a man who learns he has stomach cancer, leading to his reconsidering of life, which he realizes has been utterly wasted up until this point.</p>
 
 <p>As it turns out, he realizes he hasn’t really been living at all.  What’s inadvertently happened is that his job has turned into his life - the job of being section chief at one of the endless wasteful government bureaucracies.  From the point of his diagnosis, his challenge is trying, in the brief life he has left, to figure out what it means to actually live.  Thus the name of the film in English: TO LIVE.</p>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/ikiru-dark-lighting.jpg" width="1000" height="732" /><figcaption></figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="732" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/ikiru-dark-lighting.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/ikiru-dark-lighting.jpg" width="1000" height="732" /><figcaption itemprop="caption"></figcaption></figure>
 
 <p>This is a sad and deeply disturbing film, not disturbing in the explicit sense of a horror or a war movie, but disturbing because these are the horrors of everyday life.  It is too real: the horror of mundane office life, of government bureaucracy, of the disconnect between life and work, of a cancer slowly eating away at remaining life, of life’s clock itself ticking down, chiming each hour closer to death.  The horror of growing old and losing vitality and life’s energy.</p>
 
@@ -517,21 +773,21 @@
 
 <p>There’s no one close enough for Watanabe to break the news to.  The first person he tells is a complete stranger at a bar, an apparently alcoholic struggling writer.  Watanabe eventually confesses that he wants to learn how to live life, and asks the writer to help him spend his money all at once, while he still has time.  The writer refuses his money and instead offers to pay with his own money, which immediately makes him the first character Watanabe can trust.  They go out and visit all the vices of nightlife in the city: booze, clubs, loud bars, crowded dance halls, stripteases.</p>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/ikiru-bar.jpg" width="1000" height="732" title="Experiencing life at the bar" /><figcaption>Experiencing life at the bar</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="732" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/ikiru-bar.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/ikiru-bar.jpg" width="1000" height="732" title="Experiencing life at the bar" /><figcaption itemprop="caption">Experiencing life at the bar</figcaption></figure>
 
 <p>They find themselves at a club with a piano player playing a boogie-woogie tune which people are energetically dancing to.  People dancing, full of life.</p>
 
 <p>Watanabe requests an old song which gives away his age: the hit of 1915, Gondola no Uta (ゴンドラの唄, “The Gondola Song”).  People try to dance to it, but he sings in such a depressing way that is a downer for everyone there.  The camera pulls back from the face of the writer, whose thin and pale face is baring his lower teeth, and his whole appearing perhaps not coincidentally resembling a skeleton, utterly in shock.</p>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/ikiru-singing-1.jpg" width="1000" height="733" title="" /><figcaption></figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="733" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/ikiru-singing-1.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/ikiru-singing-1.jpg" width="1000" height="733" title="" /><figcaption itemprop="caption"></figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/ikiru-singing-2.jpg" width="1000" height="729" title="" /><figcaption></figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="729" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/ikiru-singing-2.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/ikiru-singing-2.jpg" width="1000" height="729" title="" /><figcaption itemprop="caption"></figcaption></figure>
 
 <p>The night ends with a taxiride home with some revolting and annoying prostitutes.  Watanabe has to get the taxi to stop so he can vomit on the sidewalk.  It’s the reminder of his stomach ulcer, a problem that cannot be drunk away.</p>
 
 <p>But it turns out these places aren’t what Watanabe is looking for.  The day after, he roams the streets continuing to look, and by chance runs into a young girl from work.  A girl that is still very full of life, as revealed by her innocent full smile.  A girl that doesn’t belong at Watanabe’s workplace, and is consequently quitting.</p>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/ikiru-smiling-girl.jpg" width="1000" height="732" title="" /><figcaption></figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="732" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/ikiru-smiling-girl.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/ikiru-smiling-girl.jpg" width="1000" height="732" title="" /><figcaption itemprop="caption"></figcaption></figure>
 
 <p>Back home, the son has blocked him out with his newspaper, and the son’s girlfriend with her knitting and furtive glances.  They are so resistant and are unable to listen.  They think he’s having a relationship with the young girl from the office, and accuse without even listening to Watanabe.</p>
 
@@ -539,7 +795,7 @@
 
 <p>The girl is now working at a factory making toy bunnies, and she explains how she feels as if by making the toys she’s reaching out to all the children across the Japan.  She has found a workplace where she belongs.  She has found meaning in her work.</p>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/ikiru-rabbit.jpg" width="1000" height="785" title="" /><figcaption></figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="785" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/ikiru-rabbit.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/ikiru-rabbit.jpg" width="1000" height="785" title="" /><figcaption itemprop="caption"></figcaption></figure>
 
 <p>“Why don’t you try making something too?” she says.</p>
 
@@ -561,15 +817,15 @@
 
 <p>However, all this waiting and slow pacing leads to a worthwhile payoff: the policeman stopping by the funeral to return Watanabe’s hat and pay his respects.  He’s the one that recounts the very beautiful scene with Watanabe singing his Gondola Song on a swing in his new park, amidst falling fresh snow.  That’s the last we see of Watanabe alive, and how truly alive and happy he was.</p>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/ikiru-swing-playground-in-the-snow-1.jpg" width="1000" height="785" /><figcaption></figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="785" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/ikiru-swing-playground-in-the-snow-1.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/ikiru-swing-playground-in-the-snow-1.jpg" width="1000" height="785" /><figcaption itemprop="caption"></figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/ikiru-swing-playground-in-the-snow-2.jpg" width="1000" height="730" /><figcaption></figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="730" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/ikiru-swing-playground-in-the-snow-2.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/ikiru-swing-playground-in-the-snow-2.jpg" width="1000" height="730" /><figcaption itemprop="caption"></figcaption></figure>
 
 <p>The film ends with a strong hint that some coworkers’ attitudes and behaviors have now been changed by Watanabe, and that his efforts have affected more change than just the children’s playground.  His actions have really lead to a greater good in the world.</p>
 
 <p>This has become one of my favorite films, for the very reason that it’s a challenge to how we should live.  This is how art and how films can improve our lives and make us better people - they involve us in a world and let us learn from the characters in that world.  And from this film is the challenge calling out clearly: live your life, create, don’t waste your life, do good through your work.</p>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/ikiru-end-scene-sky.jpg" width="1000" height="733" title="End scene, the beautiful sky overlooking Watanabe's playground" /><figcaption>End scene, the beautiful sky overlooking Watanabe's playground</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="733" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/ikiru-end-scene-sky.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/ikiru-end-scene-sky.jpg" width="1000" height="733" title="End scene, the beautiful sky overlooking Watanabe's playground" /><figcaption itemprop="caption">End scene, the beautiful sky overlooking Watanabe's playground</figcaption></figure>
 ]]></content>
   </entry>
   
@@ -643,7 +899,7 @@
   </tbody>
 </table>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2016/movies-by-decade.png" width="1000" height="751" /><figcaption></figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="751" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2016/movies-by-decade.png" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2016/movies-by-decade.png" width="1000" height="751" /><figcaption itemprop="caption"></figcaption></figure>
 
 <h2 id="the-list">The List</h2>
 <p>So let’s get started! Here’s the current list of the top IMDB movies, with newer movies filtered out as explained above.</p>
@@ -1371,7 +1627,7 @@
     <link href="http://davidbcalhoun.com/2015/big-basin-october-hike/"/>
     <updated>2015-10-27T01:34:56-07:00</updated>
     <id>http://davidbcalhoun.com/2015/big-basin-october-hike</id>
-    <content type="html"><![CDATA[<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-hike-map.jpg" width="790" height="594" title="GPS track log" /><figcaption>GPS track log</figcaption></figure>
+    <content type="html"><![CDATA[<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="790" /><meta itemprop="height" content="594" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-hike-map.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-hike-map.jpg" width="790" height="594" title="GPS track log" /><figcaption itemprop="caption">GPS track log</figcaption></figure>
 
 <p>See the interactive <a href="http://davidbcalhoun.com/a/2015-10-25-big-basin-hike.html">GPS track log here</a>.</p>
 
@@ -1383,25 +1639,25 @@
 
 <p>Along the way I saw a TON of ladybugs um.. how should I say this.. in the process of making a TON more ladybugs.  I didn’t have my macro lens with me, but I’m tempted to go back just for more of these pictures.  I’ve never seen anything like this before!</p>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-ladybugs-1.jpg" width="1000" height="666" title="Ladybugs - there's at least 7 distinct clusters here!  I have never seen this before!" /><figcaption>Ladybugs - there's at least 7 distinct clusters here!  I have never seen this before!</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="666" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-ladybugs-1.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-ladybugs-1.jpg" width="1000" height="666" title="Ladybugs - there's at least 7 distinct clusters here!  I have never seen this before!" /><figcaption itemprop="caption">Ladybugs - there's at least 7 distinct clusters here!  I have never seen this before!</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-ladybugs-2.jpg" width="1000" height="666" title="Ladybug cluster" /><figcaption>Ladybug cluster</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="666" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-ladybugs-2.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-ladybugs-2.jpg" width="1000" height="666" title="Ladybug cluster" /><figcaption itemprop="caption">Ladybug cluster</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-ladybugs-3.jpg" width="1000" height="666" title="Ladybug cluster" /><figcaption>Ladybug cluster</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="666" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-ladybugs-3.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-ladybugs-3.jpg" width="1000" height="666" title="Ladybug cluster" /><figcaption itemprop="caption">Ladybug cluster</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-ladybugs-4.jpg" width="1000" height="666" title="Ladybug cluster" /><figcaption>Ladybug cluster</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="666" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-ladybugs-4.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-ladybugs-4.jpg" width="1000" height="666" title="Ladybug cluster" /><figcaption itemprop="caption">Ladybug cluster</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-rock-face-1.jpg" width="1000" height="666" title="Rock face along the Skyline to the Sea trail" /><figcaption>Rock face along the Skyline to the Sea trail</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="666" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-rock-face-1.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-rock-face-1.jpg" width="1000" height="666" title="Rock face along the Skyline to the Sea trail" /><figcaption itemprop="caption">Rock face along the Skyline to the Sea trail</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-rock-face-2.jpg" width="1000" height="666" title="Rock face along the Skyline to the Sea trail" /><figcaption>Rock face along the Skyline to the Sea trail</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="666" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-rock-face-2.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-rock-face-2.jpg" width="1000" height="666" title="Rock face along the Skyline to the Sea trail" /><figcaption itemprop="caption">Rock face along the Skyline to the Sea trail</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-shadowy-trail.jpg" width="1000" height="666" title="Shadowy trail" /><figcaption>Shadowy trail</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="666" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-shadowy-trail.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-shadowy-trail.jpg" width="1000" height="666" title="Shadowy trail" /><figcaption itemprop="caption">Shadowy trail</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-small-stream.jpg" width="666" height="1000" title="Tiny stream, almost all dried up" /><figcaption>Tiny stream, almost all dried up</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="666" /><meta itemprop="height" content="1000" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-small-stream.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-small-stream.jpg" width="666" height="1000" title="Tiny stream, almost all dried up" /><figcaption itemprop="caption">Tiny stream, almost all dried up</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-tall-trees-in-shadow.jpg" width="666" height="1000" title="Huge trees in the shadows" /><figcaption>Huge trees in the shadows</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="666" /><meta itemprop="height" content="1000" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-tall-trees-in-shadow.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-tall-trees-in-shadow.jpg" width="666" height="1000" title="Huge trees in the shadows" /><figcaption itemprop="caption">Huge trees in the shadows</figcaption></figure>
 
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-trees-path-shadows.jpg" width="666" height="1000" title="Shadows over the trail" /><figcaption>Shadows over the trail</figcaption></figure>
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="666" /><meta itemprop="height" content="1000" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-trees-path-shadows.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-trees-path-shadows.jpg" width="666" height="1000" title="Shadows over the trail" /><figcaption itemprop="caption">Shadows over the trail</figcaption></figure>
 ]]></content>
   </entry>
   
@@ -1427,7 +1683,7 @@
     <link href="http://davidbcalhoun.com/2015/quarter-life-crisis-third-life-crisis-mid-life-crisis/"/>
     <updated>2015-10-04T00:32:48-07:00</updated>
     <id>http://davidbcalhoun.com/2015/quarter-life-crisis-third-life-crisis-mid-life-crisis</id>
-    <content type="html"><![CDATA[<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2015/haleakala-sunset-david-calhoun.jpg" width="1000" height="666" title="Haleakala sunset" /><figcaption>Haleakala sunset</figcaption></figure>
+    <content type="html"><![CDATA[<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center"><meta itemprop="width" content="1000" /><meta itemprop="height" content="666" /><meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2015/haleakala-sunset-david-calhoun.jpg" /><img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2015/haleakala-sunset-david-calhoun.jpg" width="1000" height="666" title="Haleakala sunset" /><figcaption itemprop="caption">Haleakala sunset</figcaption></figure>
 
 <blockquote>
   <p>Andre: OK. Yes, we are bored. We’re all bored now. But has it ever occurred to you, Wally, that the process that creates this boredom that we see in the world now may very well be a self-perpetuating, unconscious form of brainwashing, created by a world totalitarian government based on money, and that all of this is much more dangerous than one thinks?  And it’s not just a question of individual survival Wally, but that somebody who’s bored is asleep, and somebody who’s asleep will not say no?<br />From <a href="https://www.youtube.com/watch?v=MRBZDmf1jSw">My Dinner With Andre</a>.</p>
@@ -1483,186 +1739,6 @@
 <p>Or the time I drove up Whitney Portal Road to get a shot of <a href="https://www.flickr.com/photos/franksvalli/13234418335">the snow-covered mountains that you could see visibly glowing under the moonlight</a>.</p>
 
 <p>Until next time!</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[The Coffee That Made the UFO Dance]]></title>
-    <link href="http://davidbcalhoun.com/2015/the-coffee-that-made-the-ufo-dance/"/>
-    <updated>2015-07-19T19:05:32-07:00</updated>
-    <id>http://davidbcalhoun.com/2015/the-coffee-that-made-the-ufo-dance</id>
-    <content type="html"><![CDATA[<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2015/2015-07-18-milky-way-over-trees-yosemite-valley-david-calhoun-5D__3685.jpg" width="666" height="1000" title="Milky Way over the trees, seem from Yosemite Valley around 3am" /><figcaption>Milky Way over the trees, seem from Yosemite Valley around 3am</figcaption></figure>
-
-<p>Last night I attended an impromptu star party in Yosemite attended by only one person total.  The sky was really clear, and the Milky Way was very easy to see with camera and the eye.</p>
-
-<p>While taking some photos around 3:30am or so, I saw a bright satellite trawl across the sky.  It was quite bright - maybe an Iridium flare?</p>
-
-<p>My eyes started to track it across the sky, but it almost looked like it was dancing instead of advancing steadily.  It was going stop-go but very smoothly.</p>
-
-<p>At this point I should mention that I’d drank much more coffee than I really should have, in preparation for the long drive.  Despite all the coffee I was getting very tired, which made for a bad combination with driving.</p>
-
-<p>I think the dancing of the satellite was due to the effects of the coffee, that or it was just a natural optical illusion.</p>
-
-<p>The satellite went behind some trees, and soon after that I saw a very bright star emerge over the mountains on the other side of the trees.</p>
-
-<p>Must be a UFO!</p>
-
-<p>I looked at the star intently, and could swear I could see it dancing as well, though a bit more stationary.  It was also changing colors - red, blue, white.  Obviously a very patriotic UFO.</p>
-
-<p>My delirium-fueled excitement was pushing me to get out my super telephoto, which is exactly what I did.  Here I with the perfect equipment, tripod, and RAW video capabilities!  A really good UFO video to post to YouTube!</p>
-
-<p>But nope.  Zoomed in on a tripod, it was clear it was a fairly stationary star, only moving progressively with the backdrop of the other stars in Yosemite’s real-life planetarium.</p>
-
-<p>It was clear it was time to head to bed.  Who knows what else I’d start seeing after a while…</p>
-
-<p>Parked somewhere in a gravel parking lot near Camp Curry and slept in my car (whoohoo for being single and getting to save money).</p>
-
-<p>It was around 4am when I was finally getting to sleep.</p>
-
-<p>Written at the top of Nevada Falls, Yosemite</p>
-
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2015/2015-07-18-international-space-station-and-capella.png" width="375" height="667" title="The &#34;UFO&#34; turned out to be the International Space Station, and when it appeared to come out of the trees over the mountain on the right, it was actually Capella" alt="The &#34;UFO&#34; turned out to be the International Space Station, and when it appeared to come out of the trees over the mountain on the right, it was actually Capella" /><figcaption>The &#34;UFO&#34; turned out to be the International Space Station, and when it appeared to come out of the trees over the mountain on the right, it was actually Capella</figcaption></figure>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Summary of Aurelius Augustinus and Seng Zhao on 'Time': An Interpretation of the Confessions and the Zhao Lun]]></title>
-    <link href="http://davidbcalhoun.com/2015/summary-of-aurelius-augustinus-and-seng-zhao-on-time-an-interpretation-of-the-confessions-and-the-zhao-lun/"/>
-    <updated>2015-06-07T11:15:53-07:00</updated>
-    <id>http://davidbcalhoun.com/2015/summary-of-aurelius-augustinus-and-seng-zhao-on-time-an-interpretation-of-the-confessions-and-the-zhao-lun</id>
-    <content type="html"><![CDATA[<p>(Note: partial notes)</p>
-
-<h2 id="introduction">Introduction</h2>
-
-<p>I’ve been trying to get more into Eastern/Western Philosophy comparisons lately, and I’ve subscribed to an interesting journal out of the University of Hawaii called <a href="https://en.wikipedia.org/wiki/Philosophy_East_and_West/">Philosophy East and West</a>.</p>
-
-<p>This is however somewhat of a challenge.</p>
-
-<p>This spirit of comparative philosophy seems to be more popular for so-called “Continental Philosophy” rather than “Analytic Philosophy”, which makes the style and occassional references to German words somewhat unfamiliar to me.  I’m more familiar with the Western Analytic tradition, so this is a challenge trying to access something that falls into a different tradition, in more ways than one.  Western and Eastern, Analytic and Continental, and yet I’m convinced we all can learn something about everything.  (apparently Rorty tried to bridge some of these differences, but anyhow I guess I’ll have to look into that later)</p>
-
-<p>This comparative piece from Man Li and Bart Dessein (both from Belgium’s Ghent University) is an interesting look at Eastern and Western conceptions of time as viewed by two contemporaries:</p>
-
-<p>-<a href="https://en.wikipedia.org/wiki/Augustine_of_Hippo">Aurelius Augustinus</a> (354-430), better known as Saint Augustine.<br />
--<a href="https://en.wikipedia.org/wiki/Sengzhao">Sengzhao (僧肇)</a> (384–414), referred to in the text as Seng Zhao</p>
-
-<h2 id="overview">Overview</h2>
-<p>The scope of this article is to examine the conception of time in Augustine’s <a href="https://en.wikipedia.org/wiki/Confessions_(Augustine)">Confessions</a> and contemporary Buddhist Sengzhao’s conception in Zhao Lun (The Treatises of [Seng]zhao).</p>
-
-<p>The question “what is time?” is a part of every philosophical tradition, and it is a question that concerns all people, from the layman to the scholar.  The question brings our mortality into question, as we ask ourselves “do our lives pass through some objective time, or is time some subjective thing that is somehow part of our bodies?”</p>
-
-<p>For the authors of this article, the answer to this objective/subjective question also leads to bigger questions about whether humans are creators and controllers of their own lives, or rather if they are constrained by time, some outside objective thing which they cannot themselves control.</p>
-
-<h2 id="augustines-conception-of-time">Augustine’s Conception of Time</h2>
-<p>The backdrop of Augustine’s philosophy is Greek philosophy, which had viewed the mythological cosmos as an eternal cycle, and consequently a view of time as a cyclical process.  Herodotos, Thukydides (Thucydides), and even Plato were responsible for shifting focus from this cyclical mythological view of time to a more human view.</p>
-
-<p>Human life, and human history, is inevitably interlaced with time.  And since the (cyclical) divine withdrew from (temporal) human life, humans now have the  creative freedom to create meaning for themselves and society, in a sort of existentialist way.  For these thinkers, to understand it’s crucial to understand temporal human life constrasted with the permanent cosmos, and that human life (and “human time”) is somewhat unique in the way it breaks free of the eternal cycle.</p>
-
-<p>With Augustine, Christianity’s introduction into this sort of world necessarily has an effect and changes the way these things are perceived, including our conception of time.</p>
-
-<p>For Augustine, there are two senses time: an objective and subjective time.</p>
-
-<h3 id="augustines-objective-time">Augustine’s Objective Time</h3>
-<p>An old Manichean question helps us understand here: “What was God doing before He created heaven and earth?”.  The answer is that this question is essentially nonsensical, because time is also a created thing, like heaven and earth.  Time was created simulatanously with all other created things.  Essentially, there was no “before” or “after” without the existence of other created things.</p>
-
-<p>There are a few key relationships here in this objective sense of time.  In regards to God and time, God is independent of time.  In regards to Heaven/Earth and their relationship to time, they are all created things, and in a sense are all equally infinite.  Regarding created things and time, this is a question of time and all finite things - that is, all that is non-God, non-Heaven, and non-Earth.  All these things are subject to time, including Heaven and Earth.</p>
-
-<h3 id="augustines-subjective-time">Augustine’s Subjective Time</h3>
-<p>In Augustine’s subjective definition, time is an extension of the mind - that is to say, when we measure time we are measuring our <em>impression</em> of time.  There is no way for us to get ahold of the objective essence of time.  That is to say, time in itself.  “Either this impression is time, otherwise I do not measure time”.</p>
-
-<p>(my note: there’s a much larger related discussion behind this, of phenomenology)</p>
-
-<p>We have an idea of past, present, and future, but really we are speaking of our “present impression” of all three.  When we speak of the past, we do not have direct access to it, only to a present impression of the past.  Likewise when we speak of the future: what we’re really grasping at is our present impression of the future.  Past, present, and future, all three concepts are present impressions in the mind.</p>
-
-<h2 id="sengzhaos-conception-of-time">Sengzhao’s Conception of Time</h2>
-<p>Sengzhao’s philosophy of time is influenced by Buddhist philosophy of his day, which viewed time as a mechanical process, not influenced by the divine as in Augustine’s conception.</p>
-
-<p>In this karmic mechanical time model, time is the infinite cycle of rebirths (samsara), a process of exchanging one life for another.</p>
-
-<p>According to the Vaibhāṣika school, all three time periods must exist, for if they didn’t then there would be no karmic chain, or chain of causality of past influencing present, and present influencing the future.</p>
-
-<p>In this view there is also somewhat of a subjective notion of time, in the sense that an individual has their own alottment of time.  This time can be controlled if the individual can stop the karmic process, and in a sense “stop time”.</p>
-
-<h3 id="voidness-and-time">Voidness and “Time”</h3>
-<p>The Madhyamaka school’s (Mahayana Buddhism) criticism of the Vaibhāṣika school is that the following premises cannot be held simulateneously:</p>
-
-<ol>
-  <li>A human being is composed of five constituents</li>
-  <li>A human being has no self-nature</li>
-</ol>
-
-<p>The flow of reasoning here becomes tricky.</p>
-
-<p>For Madhyamikas, the nature of the contituents (dharma) must be the same as the nature of things formed by them (since like comes from like).  If there is a self-nature, the constituents must also have the same self-nature, but they cannot.  Therefore they are as void (sunya) as the things formed by them are.  But time cannot be “in” things that are void, so time must not be “in” things.</p>
-
-<p>If time is not a part of things, then we have two possibilities left:</p>
-
-<ol>
-  <li>Either time exists independently of things</li>
-  <li>Things pass through an independently-existing time</li>
-</ol>
-
-<p>This is where Seng Zhao comes into play.</p>
-
-<p>In Zhao’s texts, there is no direct discussion of the word that translates as “time”, but he does present dual concepts:</p>
-
-<p>-past and present<br />
--going and coming<br />
--shifting and abiding<br />
--motion and quietude (the key pair, as they are the most used in the texts)</p>
-
-<p>According to Zhao, there are two ways of perceiving time (or the moving of things):</p>
-
-<ol>
-  <li>The ordinary way, a sort of conventional truth</li>
-  <li>The superior way, in the domain of absolute truth</li>
-</ol>
-
-<p>According to the ordinary way of thinking about things, if there is no motion then there is quietude (these are the pairs of concepts mentioned above).  But according to Zhao, motion and quietude have never been different - one is not the absence of another, for it’s possible to have quietude even despite motion.</p>
-
-<p>There’s a key thought behind this into the nature of things.  Zhao’s thought is that quietude cannot be the result of abandoning motion, because this would mean the fundamental nature of the thing changed.  Things must fundamentally remain the same, or else they would be different.  That is to say, something in motion should also have a nature of quietude, even while in motion.</p>
-
-<p>There is therefore a co-existence of motion (dong) and quietude (jing).</p>
-
-<p>These concepts of dong and jing turn out to be roughly analogous to past (xi) and present (jin).</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[A ride on Yosemite's Sugar Pine Railroad]]></title>
-    <link href="http://davidbcalhoun.com/2015/a-ride-on-yosemites-sugar-pine-railroad/"/>
-    <updated>2015-05-16T21:41:32-07:00</updated>
-    <id>http://davidbcalhoun.com/2015/a-ride-on-yosemites-sugar-pine-railroad</id>
-    <content type="html"><![CDATA[<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2015/2015-04-27-sugar-pine-railroad-5D__1787.jpg" width="1000" height="666" title="Front view of the Sugar Pine Railroad" /><figcaption>Front view of the Sugar Pine Railroad</figcaption></figure>
-
-<p>On my last trip to Yosemite, I tagged along with my friends Kevin and Mari.  The first day we hiked in rain to the base of Upper Yosemite Falls.  By the second day, we were tired and looking for something quick and relaxing to do before driving back.</p>
-
-<p>We decided to check out the Sugar Pine Railroad, which was right next to their hotel.</p>
-
-<p>I remember passing by the railroad when I went to Yosemite with Yuka, and she seemed really excited to check it out.  Regrettably we didn’t have any time on that trip, and I sort of dismissed it as a tourist trap.</p>
-
-<p>Yep, it’s a tourist trap.  But it’s historical and interesting, and it was fun to relax and take a ride on the old steam engine.</p>
-
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2015/2015-04-27-sugar-pine-railroad-5D__1772.jpg" width="1000" height="666" title="Side view" /><figcaption>Side view</figcaption></figure>
-
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2015/2015-04-27-sugar-pine-railroad-5D__1761.jpg" width="1000" height="666" title="Front side view.  &#34;Lima Locomotive Works Incorporated March 1928&#34;" alt="Front side view.  &#34;Lima Locomotive Works Incorporated March 1928&#34;" /><figcaption>Front side view.  &#34;Lima Locomotive Works Incorporated March 1928&#34;</figcaption></figure>
-
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2015/2015-04-27-sugar-pine-railroad-5D__1765.jpg" width="1000" height="666" title="Front side view" /><figcaption>Front side view</figcaption></figure>
-
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2015/2015-04-27-sugar-pine-railroad-5D__1773.jpg" width="1000" height="666" title="Lots o' grease!  Come and get it." /><figcaption>Lots o' grease!  Come and get it.</figcaption></figure>
-
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2015/2015-04-27-sugar-pine-railroad-5D__1777.jpg" width="1000" height="666" title="&#34;Patented February 18, 1908&#34;" alt="&#34;Patented February 18, 1908&#34;" /><figcaption>&#34;Patented February 18, 1908&#34;</figcaption></figure>
-
-<p>On the last stretch of the journey, there was a bunch of steam that came out of the side of the railroad.  I don’t really understand the reason for this - to let out pressure maybe?</p>
-
-<p>Or maybe a good spectable for the tourists?  :)</p>
-
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2015/2015-04-27-sugar-pine-railroad-5D__1796.jpg" width="1000" height="666" title="Releasing the steam.  Something for the tourists?" /><figcaption>Releasing the steam.  Something for the tourists?</figcaption></figure>
-
-<p>We sat right next to the loudspeaker.  I’d advise against that.</p>
-
-<figure class="center"><img src="http://davidbcalhoun.com/wp-content/uploads/2015/2015-04-27-sugar-pine-railroad-5D__1802.jpg" width="1000" height="666" title="Don't sit by the loudspeaker!  It's quite loud." /><figcaption>Don't sit by the loudspeaker!  It's quite loud.</figcaption></figure>
-
-<p>Note: all photos copyright David Calhoun.</p>
 ]]></content>
   </entry>
   

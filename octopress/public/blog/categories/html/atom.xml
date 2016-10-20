@@ -4,7 +4,7 @@
   <title><![CDATA[Category: html | David Calhoun]]></title>
   <link href="http://davidbcalhoun.com/blog/categories/html/atom.xml" rel="self"/>
   <link href="http://davidbcalhoun.com/"/>
-  <updated>2016-08-18T14:00:33-07:00</updated>
+  <updated>2016-10-20T00:58:03-07:00</updated>
   <id>http://davidbcalhoun.com/</id>
   <author>
     <name><![CDATA[David Calhoun]]></name>
@@ -575,7 +575,7 @@ Edit2: removed type=”text/css” from the link tag</p>
 
 <p>Ok! You can’t get much simpler than that. You check it out and it looks good on all the desktop browsers, since there’s really no opportunity yet for any cross-browser inconsistencies. And then you check it out on your mobile device:</p>
 
-<p><figure class='center'><img src="http://davidbcalhoun.com/wp-content/uploads/2010/05/hello-world-iphone.png" width="320" height="480" title="Hello World on the iPhone, WITHOUT the viewport metatag" ><figcaption>Hello World on the iPhone, WITHOUT the viewport metatag</figcaption></figure></p>
+<p><figure itemprop='image' itemscope itemtype='http://schema.org/ImageObject' class='center'><meta itemprop='width' content='320'><meta itemprop='height' content='480'><meta itemprop='url' content='http://davidbcalhoun.com/wp-content/uploads/2010/05/hello-world-iphone.png'><img itemprop='contentUrl' src="http://davidbcalhoun.com/wp-content/uploads/2010/05/hello-world-iphone.png" width="320" height="480" title="Hello World on the iPhone, WITHOUT the viewport metatag" ><figcaption itemprop='caption'>Hello World on the iPhone, WITHOUT the viewport metatag</figcaption></figure></p>
 
 <p>Doh! Where’d we go wrong? The text is obviously way too small to read without zooming in.</p>
 
@@ -605,7 +605,7 @@ Edit2: removed type=”text/css” from the link tag</p>
 
 <p>And we get this…</p>
 
-<p><figure class='center'><img src="http://davidbcalhoun.com/wp-content/uploads/2010/05/hello-world-viewport-iphone.png" width="320" height="480" title="Hello World with the Viewport tag" ><figcaption>Hello World with the Viewport tag</figcaption></figure></p>
+<p><figure itemprop='image' itemscope itemtype='http://schema.org/ImageObject' class='center'><meta itemprop='width' content='320'><meta itemprop='height' content='480'><meta itemprop='url' content='http://davidbcalhoun.com/wp-content/uploads/2010/05/hello-world-viewport-iphone.png'><img itemprop='contentUrl' src="http://davidbcalhoun.com/wp-content/uploads/2010/05/hello-world-viewport-iphone.png" width="320" height="480" title="Hello World with the Viewport tag" ><figcaption itemprop='caption'>Hello World with the Viewport tag</figcaption></figure></p>
 
 <p>Much better! By setting the viewport width equal to “device-width”, we’re essentially telling it that the device width is 320px, not the default value of 980px that it guessed. If we set width=320 it would achieve the same result on the iPhone and a few other smartphones, but not all phones have this exact width, so it’s best to simply set device-width and let the mobile browser figure it out.</p>
 

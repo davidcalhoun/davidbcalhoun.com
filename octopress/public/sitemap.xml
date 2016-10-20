@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://davidbcalhoun.com/2016/quine-and-heidegger-against-reductionism/</loc>
+    <lastmod>2016-10-19T22:15:05-07:00</lastmod>
+  </url>
+  <url>
+    <loc>http://davidbcalhoun.com/2016/junk-food-politics-tv-body-mind-truth/</loc>
+    <lastmod>2016-10-13T17:06:26-07:00</lastmod>
+  </url>
+  <url>
+    <loc>http://davidbcalhoun.com/2016/time-for-autumn-adventures/</loc>
+    <lastmod>2016-09-29T16:06:18-07:00</lastmod>
+  </url>
+  <url>
     <loc>http://davidbcalhoun.com/2016/monty-python-and-the-holy-grail-1975-top-100-films/</loc>
     <lastmod>2016-07-06T19:36:46-07:00</lastmod>
   </url>
@@ -773,5 +785,11 @@
   </url>
   <url>
     <loc>http://davidbcalhoun.com/blog/categories/comedy/</loc>
+  </url>
+  <url>
+    <loc>http://davidbcalhoun.com/blog/categories/fall/</loc>
+  </url>
+  <url>
+    <loc>http://davidbcalhoun.com/blog/categories/autumn/</loc>
   </url>
 </urlset>

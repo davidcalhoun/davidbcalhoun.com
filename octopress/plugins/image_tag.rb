@@ -70,7 +70,16 @@ module Jekyll
           @class = @img['class']
           @img.delete('class')
         end
-        "<figure class='#{@class}'><img #{@img.collect {|k,v| "#{k}=\"#{v}\"" if v}.join(" ")}><figcaption>#{@img['title']}</figcaption></figure>"
+        if @img['width']
+          @width = @img['width']
+        end
+        if @img['height']
+          @height = @img['height']
+        end
+        if @img['src']
+          @src = @img['src']
+        end
+        "<figure itemprop='image' itemscope itemtype='http://schema.org/ImageObject' class='#{@class}'><meta itemprop='width' content='#{@width}'><meta itemprop='height' content='#{@height}'><meta itemprop='url' content='#{@src}'><img itemprop='contentUrl' #{@img.collect {|k,v| "#{k}=\"#{v}\"" if v}.join(" ")}><figcaption itemprop='caption'>#{@img['title']}</figcaption></figure>"
       else
         "Error processing input, expected syntax: {% img [class name(s)] [http[s]:/]/path/to/image [width [height]] [title text | \"title text\" [\"alt text\"]] %}"
       end

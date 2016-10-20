@@ -140,16 +140,24 @@ body .entry-content video {
 	text-align: left;
 	color: #8A8B96;
 	font-size: 0.85em;
+	display: block;
 }
 
 body .post .has-image {
 	text-align: center;
 }
 
-.title {
+#content .title {
 	font-family: "Helvetica Neue", "Helvetica", "Tahoma", "Geneva", "Arial Narrow", "Arial", sans-serif; font-weight:600; font-stretch:condensed;
 	letter-spacing: 0.02em;
 }
+
+#content .title a {
+    font-weight: 200;
+	color: #555;
+	font-family: inherit;
+}
+
 
 .post {
 	padding-top: 5px;
@@ -189,7 +197,7 @@ table .negative {
 
 @media screen and (max-width: 1000px) {
 	body {
-		margin: 0 0.5em;
+		margin: 0 1em;
 	}
 	#header {
 		h1 {
@@ -252,6 +260,12 @@ table .negative {
 	}
 }
 
+@media screen and (max-width: 620px) {
+	.post .meta .date {
+		margin: 0;
+	}
+}
+
 
 
 /* YouTube video embeds */
@@ -259,4 +273,8 @@ iframe {
 	max-width: 100%;
 	margin: 0 auto;
     display: block;
+}
+
+#content article header {
+	margin: 0.5em 0 1em;
 }
