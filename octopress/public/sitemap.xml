@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://davidbcalhoun.com/2016/my-year-in-photos-2016/</loc>
+    <lastmod>2016-12-31T23:17:16-08:00</lastmod>
+  </url>
+  <url>
     <loc>http://davidbcalhoun.com/2016/new-orleans-trip-november-2016/</loc>
     <lastmod>2016-11-21T11:51:00-08:00</lastmod>
   </url>
@@ -799,5 +803,38 @@
   </url>
   <url>
     <loc>http://davidbcalhoun.com/blog/categories/autumn/</loc>
+  </url>
+  <url>
+    <loc>http://davidbcalhoun.com/blog/categories/osaka/</loc>
+  </url>
+  <url>
+    <loc>http://davidbcalhoun.com/blog/categories/korea/</loc>
+  </url>
+  <url>
+    <loc>http://davidbcalhoun.com/blog/categories/kiyomizudera/</loc>
+  </url>
+  <url>
+    <loc>http://davidbcalhoun.com/blog/categories/hakodate/</loc>
+  </url>
+  <url>
+    <loc>http://davidbcalhoun.com/blog/categories/sapporo/</loc>
+  </url>
+  <url>
+    <loc>http://davidbcalhoun.com/blog/categories/shirakawago/</loc>
+  </url>
+  <url>
+    <loc>http://davidbcalhoun.com/blog/categories/june-lake/</loc>
+  </url>
+  <url>
+    <loc>http://davidbcalhoun.com/blog/categories/mono-lake/</loc>
+  </url>
+  <url>
+    <loc>http://davidbcalhoun.com/blog/categories/lundy-lake/</loc>
+  </url>
+  <url>
+    <loc>http://davidbcalhoun.com/blog/categories/lobdell-lake/</loc>
+  </url>
+  <url>
+    <loc>http://davidbcalhoun.com/blog/categories/zion-national-park/</loc>
   </url>
 </urlset>
