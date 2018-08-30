@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://davidbcalhoun.com/2018/a-simple-introduction-to-javascript-map-and-reduce-array-helper-functions/</loc>
+    <lastmod>2018-07-04T16:39:53-07:00</lastmod>
+  </url>
+  <url>
+    <loc>http://davidbcalhoun.com/2017/behold-the-birds-of-the-air-soren-kierkegaard/</loc>
+    <lastmod>2017-07-11T13:29:40-07:00</lastmod>
+  </url>
+  <url>
+    <loc>http://davidbcalhoun.com/2017/stifling-laughter-in-distant-places/</loc>
+    <lastmod>2017-07-09T20:10:02-07:00</lastmod>
+  </url>
+  <url>
     <loc>http://davidbcalhoun.com/2017/my-new-photography-youtube-channel/</loc>
     <lastmod>2017-03-11T11:23:40-08:00</lastmod>
   </url>
@@ -513,13 +525,13 @@
     <lastmod>2009-08-31T00:00:00-07:00</lastmod>
   </url>
   <url>
-    <loc>http://davidbcalhoun.com/blog/archives/</loc>
+    <loc>http://davidbcalhoun.com/</loc>
   </url>
   <url>
     <loc>http://davidbcalhoun.com/blog/</loc>
   </url>
   <url>
-    <loc>http://davidbcalhoun.com/</loc>
+    <loc>http://davidbcalhoun.com/blog/archives/</loc>
   </url>
   <url>
     <loc>http://davidbcalhoun.com/blog/categories/webdev/</loc>
@@ -847,5 +859,47 @@
   </url>
   <url>
     <loc>http://davidbcalhoun.com/blog/categories/youtube/</loc>
+  </url>
+  <url>
+    <loc>http://davidbcalhoun.com/blog/categories/kierkegaard/</loc>
+  </url>
+  <url>
+    <loc>http://davidbcalhoun.com/page2/</loc>
+  </url>
+  <url>
+    <loc>http://davidbcalhoun.com/page3/</loc>
+  </url>
+  <url>
+    <loc>http://davidbcalhoun.com/page4/</loc>
+  </url>
+  <url>
+    <loc>http://davidbcalhoun.com/page5/</loc>
+  </url>
+  <url>
+    <loc>http://davidbcalhoun.com/page6/</loc>
+  </url>
+  <url>
+    <loc>http://davidbcalhoun.com/page7/</loc>
+  </url>
+  <url>
+    <loc>http://davidbcalhoun.com/page8/</loc>
+  </url>
+  <url>
+    <loc>http://davidbcalhoun.com/page9/</loc>
+  </url>
+  <url>
+    <loc>http://davidbcalhoun.com/page10/</loc>
+  </url>
+  <url>
+    <loc>http://davidbcalhoun.com/page11/</loc>
+  </url>
+  <url>
+    <loc>http://davidbcalhoun.com/page12/</loc>
+  </url>
+  <url>
+    <loc>http://davidbcalhoun.com/page13/</loc>
+  </url>
+  <url>
+    <loc>http://davidbcalhoun.com/page14/</loc>
   </url>
 </urlset>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>A theory of leisure time, choice, and happiness</title>
+        
+        <style>
+
+    html body {
+        font-family: 'Roboto', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: #0D47A1;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://davidbcalhoun.com/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/foundation.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.42.2" />
+        
+
+        
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-5530615-3"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)};
+          gtag('js', new Date());
+
+          gtag('config', 'UA-5530615-3');
+        </script>
+        
+
+        <meta name="author" content="David Calhoun">
+        <link href="/index.xml" rel="alternate" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+        <link href="/index.xml" rel="feed" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+
+    </head>
+
+    
+    
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">A theory of leisure time, choice, and happiness</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="https://www.themaingate.net/">Home</a></li>
+                            
+                                <li><a href="/">Posts</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:david.b.calhoun@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/davidcalhoun/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/franksvalli/"><i class="fa fa-twitter"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/davidcalhoun/"><i class="fa fa-linkedin"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://stackoverflow.com/users/214017/david-calhoun/"><i class="fa fa-stack-overflow"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main role="main" itemscope itemType="http://schema.org/BlogPosting">
+    <meta itemprop="inLanguage" content="en-US" />
+    <span itemscope itemprop="author" itemType="https://schema.org/Person">
+        <meta itemprop="name" content="David Calhoun" />
+    </span>
+    <span itemscope itemprop="publisher" itemType="https://schema.org/Organization">
+        <meta itemprop="name" content="David Calhoun" />
+        <meta itemprop="url" content="https://themaingate.net" />
+        <meta itemprop="logo" content="https://themaingate.net/david-calhoun-logo.png">
+    </span>
+    <meta itemprop="image" content="https://themaingate.net/david-calhoun-logo.png">
+
+    <article class="item">
+
+    
+    
+    
+
+    
+    
+
+    <meta property="article:section" content="Article" />
+    <meta property="article:publisher" content="https://www.davidbcalhoun.com" />
+    <meta property="article:published_time" content="October 19, 2012" />
+    <meta property="article:modified_time" content="October 19, 2012" />
+    <meta property="article:tag" content="philosophy" />
+    <meta property="article:tag" content="life" />
+    
+    <meta property="og:site_name" content="CSS-Tricks" />
+    <meta property="og:updated_time" content="October 19, 2012" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="/2012/a-theory-of-leisure-time-choice-and-happiness/" />
+    <meta property="og:title" content="A theory of leisure time, choice, and happiness" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="A theory of leisure time, choice, and happiness" />
+    <meta name="twitter:site" content="@franksvalli" />
+    <meta name="twitter:creator" content="@franksvalli" />
+    <meta name="twitter:domain" content="davidbcalhoun.com" />
+
+
+    <h4 itemprop="headline">
+        <a href="/2012/a-theory-of-leisure-time-choice-and-happiness/" itemprop="url">A theory of leisure time, choice, and happiness</a>
+    </h4>
+    <h5 class="meta date" itemprop="datePublished dateModified" content="October 19, 2012" datetime="October 19, 2012">
+        <time>October 19, 2012</time>
+    </h5>
+    
+    <a href="https://davidbcalhoun.com/tags/philosophy"><kbd class="item-tag">philosophy</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/life"><kbd class="item-tag">life</kbd></a>
+    
+
+</article>
+
+
+    <br> <div class="text-justify"><p>This is finally the end of my first week in Japanese language school here in Kyoto. It&rsquo;s been quite a long week, with the most studying I&rsquo;ve ever done in my life. We&rsquo;ve gone through nine chapters in a week, and just Friday received two more books for learning Kanji. We&rsquo;ll learn our first 50 Kanji in a week, alongside the rest of our classes. I already know some words here and there, but for the most part, much of what we&rsquo;ve just learned is a blur, which is forcing me to use almost all of my free time in running to catch up.</p>
+
+<p>Having very little leisure time has been good in some ways. It&rsquo;s been a marked change in the cozy, comfortable lifestyle of sitting in front of a computer screen all day, doing tasks which were somewhat challenging but ultimately not rewarding. Those days in Silicon Valley were ended with a gratuitous amount of free time (which is unusual, working for a startup). Which seems nice for a while, but becomes a bit maddening after long, at least for me.</p>
+
+<p>I remember moving to Silicon Valley and buying my TV and PS3 and everything to set me up with all the comforts of my new lifestyle. After coming home from work, I would waste away my time on my computer, my TV, or my video games. After long it was pretty easy to see the same mundane cycle develop: wake up, work, waste time, sleep. Rinse, repeat. Ad nauseum. Ad absurdum.</p>
+
+<p>It became apparent that this lifestyle wasn&rsquo;t really healthy, mentally or physically. It would be better, I thought, to live in a city where I needed to walk around from place to place, or take public transport. San Francisco is perfect for that, but I gave the city (or should I say &ldquo;The City&rdquo; as folks there do) a shot and it never really grew on me. In my short time here on Earth, I&rsquo;ve found there are other cities that are better suited to me. I wanted to find a city I liked, which ended up being far away Kyoto, where I&rsquo;m at now.</p>
+
+<p>My unhealthy physical lifestyle, combined with too much free time, had resulted in an unhealthy mental state. I believe lack of exercise leads to deteriorated mental performance as well as depression, and this is what I believe I experienced. This combined with too much free time, solitude, and a brooding time resulted in days where I&rsquo;d come home from work and attempt to distract myself by browsing the internet the rest of the day. I ended up absorbing the highly-prized gift of free time which I wasted with abandon, before going asleep and starting the cycle over again.</p>
+
+<p>Now, after becoming a student, I have relearned what it&rsquo;s like to have every little free time. I&rsquo;m stressed out and overwhelmed already (as a beginner Japanese language student), but it feels good in a lot of ways. I feel alive, but I also feel like I&rsquo;m not squandering my free time, or worrying about what I do with the free time I have. In a lot of ways I think I became maddened with the choice, and maddened with brooding in my free time over my life path and the usefulness (to society) of my career choice. Maybe I had chosen the wrong one? I wonder what it would be like if I had chosen to live in Japan after all?</p>
+
+<blockquote>
+<p>If you marry, you will regret it; if you do not marry, you will also regret it; if you marry or do not marry, you will regret both;</p>
+
+<p>Laugh at the world’s follies, you will regret it, weep over them, you will also regret that; laugh at the world’s follies or weep over them, you will regret both; whether you laugh at the world’s follies or weep over them, you will regret both.</p>
+
+<p>Believe a woman, you will regret it, believe her not, you will also regret that; believe a woman or believe her not, you will regret both; whether you believe a woman or believe her not, you will regret both.</p>
+
+<p>Hang yourself, you will regret it; do not hang yourself, and you will also regret that; hang yourself or do not hang yourself, you will regret both; whether you hang yourself or do not hang yourself, you will regret both.</p>
+
+<p>This, gentlemen, is the sum and substance of all philosophy. (Kierkegaard)</p>
+</blockquote>
+
+<p>This passage by Kierkegaard gives a lot of insight into the brooding mind of an existentialist, but arguably offers us a glimpse at the modern human predicament. We make choices daily, and we also make great life-changing choices. It&rsquo;s natural to think &ldquo;Would I have been better off if I did it differently? If I choose differently?&rdquo;.</p>
+
+<p>Kierkegaard himself, if I remember right, lived off of his family&rsquo;s money and didn&rsquo;t have to worry about work. He had an excessive amount of leisure time, and perhaps that influenced the amount of time he had to brood over his life&rsquo;s choices. He certainly had enough time to write down these thoughts, so I would think that his thoughts themselves were more numerous than his writings.</p>
+
+<p>Since I no longer have too much free time, but rather too little of it, I have that much less time to brood over matters. I have made my choices for now (moving to Japan, studying Japanese full time), and I will only know if I&rsquo;ve made the right decision after spending more time giving this path a try.</p>
+
+<p>This is good in a lot of ways. In a lot of ways, the choice of what to do in my leisure time has been made for me. I must use it to study.</p>
+
+<p>The choice is made! The existentialist dilemma has been, at the very least, temporarily pushed aside.</p>
+
+<p>And at the very best, the existentialist dilemma has been conquered. &ldquo;Live in Japan or do not live in Japan, you will regret it either way&rdquo;. Now I have done both. I&rsquo;ve now lived on both sides of the coin, on both sides of the world.</p>
+</div>
+
+    
+    
+
+    
+
+    
+
+        <h4 class="page-header">Comments</h4>
+
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "davidbcalhoun" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+
+</main>
+
+        <footer role="contentinfo">
+
+            <p class="copyright text-muted">© <span itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="David Calhoun"><a href="mailto:david.b.calhoun@gmail.com" itemprop="email">David Calhoun</a> (<a href="https://twitter.com/franksvalli" itemprop="url">@franksvalli</a>) - <a href="https://www.linkedin.com/in/davidcalhoun" itemprop="url">LinkedIn</a> - <a href="http://themaingate.net/resume/" itemprop="url">Resume</a></span></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+

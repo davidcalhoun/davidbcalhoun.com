@@ -4,7 +4,7 @@
   <title><![CDATA[Category: programming | David Calhoun]]></title>
   <link href="http://davidbcalhoun.com/blog/categories/programming/atom.xml" rel="self"/>
   <link href="http://davidbcalhoun.com/"/>
-  <updated>2017-03-11T11:38:47-08:00</updated>
+  <updated>2018-07-04T17:23:39-07:00</updated>
   <id>http://davidbcalhoun.com/</id>
   <author>
     <name><![CDATA[David Calhoun]]></name>
@@ -12,6 +12,58 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[A simple introduction to JavaScript map() and reduce() (Array helper functions)]]></title>
+    <link href="http://davidbcalhoun.com/2018/a-simple-introduction-to-javascript-map-and-reduce-array-helper-functions/"/>
+    <updated>2018-07-04T16:39:53-07:00</updated>
+    <id>http://davidbcalhoun.com/2018/a-simple-introduction-to-javascript-map-and-reduce-array-helper-functions</id>
+    <content type="html"><![CDATA[<h2 id="first-steps-with-for-loops">First steps with <code>for</code> loops</h2>
+<p>Most folks find <code>for</code> loops powerful enough to achieve all they need when they need to process items in an <code>Array</code>.  For example, say we have a simple list of items:</p>
+
+<pre><code class="language-javascript">const beatles = [
+	'John Lennon',
+	'Paul McCartney',
+	'George Harrison',
+	'Ringo Starr'
+];
+</code></pre>
+
+<p>Let’s say that we want to display all these names in a Markdown list, which means we simply need to prefix each item with an asterisk and a space, e.g. <code>* John Lennon</code>.</p>
+
+<p>Ok!  Seems easy enough.  Let’s see how we’d do this with a loop:</p>
+
+<pre><code class="language-javascript">const beatles = [
+	'John Lennon',
+	'Paul McCartney',
+	'George Harrison',
+	'Ringo Starr'
+];
+
+let beatlesMarkdown = [];
+for (let index = 0; index &lt; beatles.length; index++) {
+	beatlesMarkdown.push(`* ${ beatles[index] }`);
+}
+</code></pre>
+
+<p>Here’s the resulting array, which we’ve put into <code>beatlesMarkdown</code>:</p>
+
+<pre><code class="language-javascript">[
+	'* John Lennon',
+	'* Paul McCartney',
+	'* George Harrison',
+	'* Ringo Starr'
+]
+</code></pre>
+
+<p>(note the extra line break at the end, which isn’t too big of a deal in this case, but could be annoying for other use cases)</p>
+
+<h2 id="map">map()</h2>
+
+<h2 id="reduce">reduce()</h2>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[You Can't JavaScript Under Pressure walkthrough]]></title>
@@ -682,35 +734,6 @@
   &lt;input type="file" accept="audio/*;capture=microphone"&gt;&lt;/input&gt;
 &lt;/form&gt;
 </code></pre>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[My O&#8217;Reilly Books Wishlist]]></title>
-    <link href="http://davidbcalhoun.com/2011/my-oreilly-books-wishlist"/>
-    <updated>2011-02-22T00:00:00-08:00</updated>
-    <id>http://davidbcalhoun.com/2011/my-oreilly-books-wishlist</id>
-    <content type="html"><![CDATA[<h3 id="introduction">Introduction</h3>
-
-<p>Ok, so this post is only here in the hopes I’ll actually win something. <img src="http://davidbcalhoun.com/wp-includes/images/smilies/icon_razz.gif" alt=":P" class="wp-smiley" /></p>
-
-<p><a href="http://oreilly.com/new-year-2011.html">O’Reilly Books has a promotion</a> where a random winner will receive up to $500 of books on their wishlist, provided they post the list somewhere online. You can probably see why this is here then!</p>
-
-<h3 id="the-list">The List</h3>
-
-<p><a href="http://oreilly.com/catalog/9780596807788/">Programming the Mobile Web</a> ($50)  <br />
-<a href="http://oreilly.com/catalog/9780596155254/">Palm webOS</a> ($45)  <br />
-<a href="http://oreilly.com/catalog/9781449381561/">MongoDB: The Definitive Guide</a> ($40)  <br />
-<a href="http://oreilly.com/catalog/9781449393847/">JavaScript: The Definitive Guide: Rough Cuts Version, Sixth Edition</a> ($50)  <br />
-<a href="http://oreilly.com/catalog/9780596806026/">HTML5: Up and Running</a> ($30)  <br />
-<a href="http://oreilly.com/catalog/9781449383268/">Building Android Apps with HTML, CSS, and JavaScript</a> ($30)  <br />
-<a href="http://oreilly.com/catalog/9780596805784/">Building iPhone Apps with HTML, CSS, and JavaScript</a> ($30)  <br />
-<a href="http://oreilly.com/catalog/9780596157609/">HTML &#038; CSS: The Good Parts</a> ($35)  <br />
-<a href="http://oreilly.com/catalog/9781449393908/">HTML5 Canvas</a> ($40)  <br />
-<a href="http://oreilly.com/catalog/9780596159771/">jQuery Cookbook</a> ($35)  <br />
-<a href="http://oreilly.com/catalog/9781449390501/">Learning Android</a> ($35)  <br />
-<a href="http://oreilly.com/catalog/9780596155933/">CSS Cookbook, Third Edition</a> ($50)</p>
 
 ]]></content>
   </entry>

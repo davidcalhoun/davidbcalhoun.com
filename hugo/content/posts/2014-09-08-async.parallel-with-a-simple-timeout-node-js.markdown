@@ -1,0 +1,91 @@
+---
+layout: post
+title: "async.parallel with a simple timeout (node.js)"
+date: 2014-09-08 00:36:52 -0700
+comments: true
+aliases:
+- /2014/async.parallel-with-a-simple-timeout-node-js/
+tags:
+- node.js
+- node
+- javascript
+- async
+- webdev
+---
+
+A while back I had a need for a general timeout option for async.parallel and was surprised I couldn't find much information about how to do it.  I was using async.parallel to make a lot of REST calls in parallel, but one of them was getting blocked by a firewall, resulting in an eventual timeout minutes later.
+
+One option was to specify a shorter timeout for each individual REST call, including the one causing the problem.  But I wanted a simpler solution: a general timeout for that specific async.parallel instance that made it clear all tasks should finish within a certain period of time. Otherwise return a timeout as an error, allowing the program to continue (and retry if necessary).
+
+It was somewhat surprising there wasn't an option built into async.parallel, as I could imagine other folks must have had the same problem at some point in time.
+
+In any case, I wrote a pretty simple wrapper function that gets the job done (see example usage below):
+
+``` javascript
+var async = require('async');
+
+// async.parallel with optional timeout (options.timeoutMS)
+function parallel(options, tasks, cb) {
+    //  sanity checks
+    options = options || {};
+
+    // no timeout wrapper; passthrough to async.parallel
+    if(typeof options.timeoutMS != 'number') return async.parallel(tasks, cb);
+
+    var timeout = setTimeout(function(){
+        // remove timeout, so we'll know we already erred out
+        timeout = null;
+
+        // error out
+        cb('async.parallel timed out out after ' + options.timeoutMS + 'ms.', null);
+    }, options.timeoutMS);
+
+    async.parallel(tasks, function(err, result){
+        // after all tasks are complete
+
+        // noop if timeout was called and annulled
+        if(!timeout) return;
+
+        // cancel timeout (if timeout was set longer, and all parallel tasks finished sooner)
+        clearTimeout(timeout);
+
+        // passthrough the data to the cb
+        cb(err, result);
+    });
+}
+
+
+// example usage
+parallel({timeoutMS: 10000}, [  // 10 second timeout
+    function(){ ... },
+    function(){ ... }
+],
+function(err, results) {
+    if(err) {
+        // timeouts can now be handled here
+    }
+});
+
+
+// an example forcing a timeout to occur
+parallel({
+    timeoutMS: 1000   // 1 second timeout
+},
+[
+    function(done){
+        // task 1 completes in 100ms
+        setTimeout(function(){
+            done(null, 'foo');
+        }, 100);
+    },
+    function(done){
+        // task 2 completes in 2000ms, forcing a timeout error
+        setTimeout(function(){
+            done(null, 'bar');
+        }, 2000);
+    }
+],
+function(err, results) {
+    // err = 'async.parallel timed out out after 1000ms.'
+});
+```

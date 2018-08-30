@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Javascript on David Calhoun&#39;s blog</title>
+    <link>https://davidbcalhoun.com/categories/javascript/</link>
+    <description>Recent content in Javascript on David Calhoun&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 29 Jun 2010 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://davidbcalhoun.com/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Using mobile-specific HTML, CSS, and JavaScript (Mobile web part 5)</title>
+      <link>https://davidbcalhoun.com/2010/using-mobile-specific-html-css-and-javascript-mobile-web-part-5/</link>
+      <pubDate>Tue, 29 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2010/using-mobile-specific-html-css-and-javascript-mobile-web-part-5/</guid>
+      <description>(updated June 27, 2011)
+Mobile-specific HTML Viewport tag Use the viewport tag to properly fit the content to the screen:
+&amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1.0&amp;quot;/&amp;gt;  Tel scheme (to initiate phone calls) &amp;lt;a href=&amp;quot;tel:18005555555&amp;quot;&amp;gt;Call us at 1-800-555-5555&amp;lt;/a&amp;gt;  Sms scheme (to initiate text messages) &amp;lt;a href=&amp;quot;sms:18005555555&amp;quot;&amp;gt; &amp;lt;a href=&amp;quot;sms:18005555555,18005555556&amp;quot;&amp;gt; &amp;lt;!-- multiple recipients --&amp;gt; &amp;lt;a href=&amp;quot;sms:18005555555?body=Text%20goes%20here&amp;quot;&amp;gt; &amp;lt;!-- predefined message body --&amp;gt;  Disable automatic telephone number linking &amp;lt;meta name=&amp;quot;format-detection&amp;quot; content=&amp;quot;telephone=no&amp;quot;&amp;gt;  iOS-specific HTML (some work on Android as well) You also have access to several Apple-specific tags to use in your iOS applications (iPhone, iPad, and don&amp;rsquo;t forget the iPod Touch!</description>
+    </item>
+    
+    <item>
+      <title>JavaScript SunSpider: HTC Evo versus HTC Incredible versus Nexus One</title>
+      <link>https://davidbcalhoun.com/2010/javascript-sunspider-htc-evo-versus-htc-incredible-versus-nexus-one/</link>
+      <pubDate>Thu, 10 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2010/javascript-sunspider-htc-evo-versus-htc-incredible-versus-nexus-one/</guid>
+      <description>Result table    Test   Evo (2.1)   Incredible (2.1)   Nexus One (2.2)     Total   16167ms   15237ms  5452ms     3D   2014ms   1835ms  946ms     Access   2126ms   1892ms  463ms     Bitops   1519ms   1591ms  360ms     Controlflow   243ms   206ms  20ms     Crypto   1033ms   1003ms  344ms     Date   1849ms   1896ms  639ms     Math   1684ms   1419ms  602ms     Regexp   1779ms   1673ms  155ms     String   3920ms   3722ms  1923ms    Thoughts The Incredible is just slightly faster than the Evo, to the point where it&amp;#8217;s probably negligible or within a margin of error.</description>
+    </item>
+    
+    <item>
+      <title>PastryKit: digging into an Apple Pie</title>
+      <link>https://davidbcalhoun.com/2009/pastrykit-digging-into-an-apple-pie/</link>
+      <pubDate>Wed, 16 Dec 2009 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2009/pastrykit-digging-into-an-apple-pie/</guid>
+      <description>Yesterday John Gruber wrote about Apple&amp;#8217;s PastryKit, iPhone&amp;#8217;s JavaScript framework that&amp;#8217;s been discovered &amp;#8220;in the wild&amp;#8221; on the iPhone user guide at http://help.apple.com/iphone/3/mobile/. There&amp;#8217;s a few ways to access the page:
+ with an actual iPhone or iTouch by browsing with an iPhone/iTouch user agent. If you&amp;#8217;re using Safari, enable the Developer menu in Safari&amp;gt;Preferences&amp;gt;Advanced and switching user agents by clicking on Develope&amp;gt;User Agent  What&amp;#8217;s all the big fuss?</description>
+    </item>
+    
+    <item>
+      <title>JavaScript tidbit: special variables ($, $$, _, etc)</title>
+      <link>https://davidbcalhoun.com/2009/javascript-tidbit-special-variables---_-etc/</link>
+      <pubDate>Tue, 08 Dec 2009 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2009/javascript-tidbit-special-variables---_-etc/</guid>
+      <description>You&amp;rsquo;re probably used to typical variables names such as the following:
+var personName = &#39;Joe&#39;;  You may not realize it, but there are some non-alphanumeric variables at your disposal.
+Using $ For instance, the $ variable has been made popular by several JavaScript libraries, most notably jQuery. You can use it to alias operations that are commonly performed, such as the following (1):
+var $ = document.getElementById; var myElement = $(&#39;targetElement&#39;);  If you declare this variable outside of a function it will be a global variable and will compete with libraries that use the same global variable, so it&amp;rsquo;s probably best not to use it.</description>
+    </item>
+    
+    <item>
+      <title>Pitfalls of declaring variables in JavaScript</title>
+      <link>https://davidbcalhoun.com/2009/pitfalls-of-declaring-variables-in-javascript/</link>
+      <pubDate>Wed, 18 Nov 2009 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2009/pitfalls-of-declaring-variables-in-javascript/</guid>
+      <description>Introduction One of the things that&amp;#8217;s always been confusing to me is that there are multiple ways to declare variables in JavaScript, and some ways are better than others. For the beginner programmer, just getting to code to work means complete success, but for the intermediate or advanced programmer, this is just the first step. The next step is to clean up the code and make sure everything is written in the best way it could have been written.</description>
+    </item>
+    
+    <item>
+      <title>JavaScript Tidbit: Block scope with let</title>
+      <link>https://davidbcalhoun.com/2009/javascript-tidbit-block-scope-with-let/</link>
+      <pubDate>Tue, 15 Sep 2009 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2009/javascript-tidbit-block-scope-with-let/</guid>
+      <description>JavaScript has functional scope. Meaning that if you (properly) define variables within functions, those variables remain accessible only inside the function.
+Block scope, on the other hand, defines scope within a block of code, usually defined by braces. JavaScript now has block scope as of version 1.7, which means it&amp;#8217;s available in these browsers:
+ Firefox 2+  Block scope is enabled in JavaScript with the use of &amp;#8220;let&amp;#8221;:
+let(x=100) { alert(x); }; It also works perfectly well on one line, without the use of braces:</description>
+    </item>
+    
+    <item>
+      <title>JavaScript Tidbit: Shorthand Object Instantiation</title>
+      <link>https://davidbcalhoun.com/2009/javascript-tidbit-shorthand-object-instantiation/</link>
+      <pubDate>Mon, 14 Sep 2009 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2009/javascript-tidbit-shorthand-object-instantiation/</guid>
+      <description>The skinny: here&amp;#8217;s a neat little trick to reduce the amount of code users have to type to instantiate objects:
+function jQuery(str, con){ if ( window == this ) return new jQuery(str, con); // ... } new jQuery(&amp;quot;#foo&amp;quot;); // this is now equivalent... jQuery(&amp;quot;#foo&amp;quot;); // ...to this!  {:lang=&amp;ldquo;js&amp;rdquo;}
+Explanation: when jQuery(&amp;#8220;#foo&amp;#8221;) is typed, the function first determines if the context in which it&amp;#8217;s being called is the global object (window).</description>
+    </item>
+    
+  </channel>
+</rss>

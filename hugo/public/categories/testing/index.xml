@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Testing on David Calhoun&#39;s blog</title>
+    <link>https://davidbcalhoun.com/categories/testing/</link>
+    <description>Recent content in Testing on David Calhoun&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    
+	<atom:link href="https://davidbcalhoun.com/categories/testing/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Video: John Resig &amp;#8211; Testing, Performance Analysis, and jQuery 1.4</title>
+      <link>https://davidbcalhoun.com/1/video-john-resig-#8211-testing-performance-analysis-and-jquery-1.4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/1/video-john-resig-#8211-testing-performance-analysis-and-jquery-1.4/</guid>
+      <description>In case you hadn&amp;#8217;t seen it yet, John Resig was kind enough to stop by Yahoo! for the December Bayjax meetup. Here&amp;#8217;s the video:
+ Usually developers are more interested in just getting the dang code to work, and as a result actual the testing and maintenance of JavaScript isn&amp;#8217;t talked about too much, so I&amp;#8217;m sure this will be new territory for many developers. And since it&amp;#8217;s John Resig speaking, there was of course a bit about using TestSwarm, a testing distributed framework-agnostic automated testing tool (that&amp;#8217;s a mouthful!</description>
+    </item>
+    
+  </channel>
+</rss>

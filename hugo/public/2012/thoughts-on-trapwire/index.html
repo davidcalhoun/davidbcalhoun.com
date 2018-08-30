@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Thoughts on TrapWire</title>
+        
+        <style>
+
+    html body {
+        font-family: 'Roboto', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: #0D47A1;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://davidbcalhoun.com/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/foundation.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.42.2" />
+        
+
+        
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-5530615-3"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)};
+          gtag('js', new Date());
+
+          gtag('config', 'UA-5530615-3');
+        </script>
+        
+
+        <meta name="author" content="David Calhoun">
+        <link href="/index.xml" rel="alternate" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+        <link href="/index.xml" rel="feed" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+
+    </head>
+
+    
+    
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">Thoughts on TrapWire</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="https://www.themaingate.net/">Home</a></li>
+                            
+                                <li><a href="/">Posts</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:david.b.calhoun@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/davidcalhoun/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/franksvalli/"><i class="fa fa-twitter"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/davidcalhoun/"><i class="fa fa-linkedin"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://stackoverflow.com/users/214017/david-calhoun/"><i class="fa fa-stack-overflow"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main role="main" itemscope itemType="http://schema.org/BlogPosting">
+    <meta itemprop="inLanguage" content="en-US" />
+    <span itemscope itemprop="author" itemType="https://schema.org/Person">
+        <meta itemprop="name" content="David Calhoun" />
+    </span>
+    <span itemscope itemprop="publisher" itemType="https://schema.org/Organization">
+        <meta itemprop="name" content="David Calhoun" />
+        <meta itemprop="url" content="https://themaingate.net" />
+        <meta itemprop="logo" content="https://themaingate.net/david-calhoun-logo.png">
+    </span>
+    <meta itemprop="image" content="https://themaingate.net/david-calhoun-logo.png">
+
+    <article class="item">
+
+    
+    
+    
+
+    
+    
+
+    <meta property="article:section" content="Article" />
+    <meta property="article:publisher" content="https://www.davidbcalhoun.com" />
+    <meta property="article:published_time" content="August 11, 2012" />
+    <meta property="article:modified_time" content="August 11, 2012" />
+    <meta property="article:tag" content="politics" />
+    <meta property="article:tag" content="privacy" />
+    <meta property="article:tag" content="rant" />
+    
+    <meta property="og:site_name" content="CSS-Tricks" />
+    <meta property="og:updated_time" content="August 11, 2012" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="/2012/thoughts-on-trapwire/" />
+    <meta property="og:title" content="Thoughts on TrapWire" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Thoughts on TrapWire" />
+    <meta name="twitter:site" content="@franksvalli" />
+    <meta name="twitter:creator" content="@franksvalli" />
+    <meta name="twitter:domain" content="davidbcalhoun.com" />
+
+
+    <h4 itemprop="headline">
+        <a href="/2012/thoughts-on-trapwire/" itemprop="url">Thoughts on TrapWire</a>
+    </h4>
+    <h5 class="meta date" itemprop="datePublished dateModified" content="August 11, 2012" datetime="August 11, 2012">
+        <time>August 11, 2012</time>
+    </h5>
+    
+    <a href="https://davidbcalhoun.com/tags/politics"><kbd class="item-tag">politics</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/privacy"><kbd class="item-tag">privacy</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/rant"><kbd class="item-tag">rant</kbd></a>
+    
+
+</article>
+
+
+    <br> <div class="text-justify"><figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="817" />
+    <meta itemprop="height" content="1000" />
+    <meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2012/08/george-friedman-stratfor.jpg" />
+    <a href="http://davidbcalhoun.com/wp-content/uploads/2012/08/george-friedman-stratfor.jpg">
+        <img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2012/08/george-friedman-stratfor.jpg" alt="Stratfor CEO George Friedman" />
+    </a>
+    <figcaption itemprop="caption">Stratfor CEO George Friedman</figcaption>
+</figure>
+
+<p><em>&rdquo;&hellip;but the hackers will not find intelligence of corporations and governments, or signs of a vast conspiracy&hellip;&rdquo; -Stratfor CEO George Friedman, January 2012</em></p>
+
+<p>&hellip;eight months later&hellip;</p>
+
+<p><em>&ldquo;WIKILEAKS: Surveillance Cameras Around The Country Are Being Used In A Huge Spy Network&rdquo; -Business Insider, August 2012</em></p>
+
+<p>In case you haven&rsquo;t noticed, there been some big news released recently as a result of another release of documents by Wikileaks on August 9, 2012. The documents are <a href="http://mirror2.wikileaks-press.org/gifiles/releasedate/2012-08-09.html">emails from the global intelligence company Stratfor</a>. The most recent release has confirmed what many conspiracy theorists have feared for years: that the government is operating a vast secret surveillance network that is collecting data on citizens and their movements.</p>
+
+<p>The news has been surprisingly (or unsurprisingly?) absent from major news sources, so I&rsquo;ve collected a few of the major articles here:</p>
+
+<p><a href="http://www.salon.com/2012/08/10/biggest_story_you_missed_7/">http://www.salon.com/2012/08/10/biggest_story_you_missed_7/</a><br />
+<a href="http://www.businessinsider.com/trapwire-everything-you-need-to-know-2012-8">http://www.businessinsider.com/trapwire-everything-you-need-to-know-2012-8</a><br />
+<a href="http://venturebeat.com/2012/08/10/wikileaks-trapwire-stratfor-cia/">http://venturebeat.com/2012/08/10/wikileaks-trapwire-stratfor-cia/</a><br />
+<a href="http://english.ruvr.ru/2012_08_10/Big-Brother-watching-as-TrapWire-wraps-up-America/">http://english.ruvr.ru/2012_08_10/Big-Brother-watching-as-TrapWire-wraps-up-America/</a><br />
+<a href="https://publicintelligence.net/unravelling-trapwire">https://publicintelligence.net/unravelling-trapwire</a><br />
+<a href="http://reason.com/blog/2012/08/10/creepy-spying-system-revealed-by-wikilea">http://reason.com/blog/2012/08/10/creepy-spying-system-revealed-by-wikilea</a></p>
+
+<p>And here&rsquo;s a link to the mirror of the recent Wikileaks email release: <a href="http://mirror2.wikileaks-press.org/gifiles/releasedate/2012-08-09.html">http://mirror2.wikileaks-press.org/gifiles/releasedate/2012-08-09.html</a></p>
+
+<p>Though this has been suspected for a while now, I read the news with a huge sinking feeling. Conspiracy theories always have the virtue of the remote possibility of being wrong. But now with the theory confirmed, it appears that global surveillance has been implemented on a scale and degree much worse than CCTV ever was or could&rsquo;ve been, with a technology purportedly much more sophisticated than just facial recognition. I fear the genie has escaped the bottle, and it will be impossible to put it back in again.</p>
+
+<p>The technology itself has been created by TrapWire, a company which, according to the leaked emails, supplies both the US government and various companies with surveillance equipment. (Side note: interestingly enough, the technology bears a striking resemblance to a controversial new technology <a href="http://stream.aljazeera.com/story/predicting-crime-online-and-offline-0022307">INDECT</a>, apparently in use in the EU since 2009).</p>
+
+<p>TrapWire actually has a <a href="http://www.trapwire.com/">website</a> on which it outlines, on first glance, its <a href="http://www.trapwire.com/attack.html">well-intentioned philosophy</a>:</p>
+
+<blockquote>
+<p>Most modern critical infrastructure and asset protection programs are focused on improving perimeter security, access control, and incident response. While prudent, these physical security measures are reactive &#8212; designed to mitigate the effects of an attack, rather than prevent the incident from occurring in the first place. At TrapWire, we have shown that we can achieve better results, and do so much more cost effectively, by shifting the focus from mitigation to prevention.</p>
+</blockquote>
+
+<p>In short, preventative measures are both more cost-effective and more effective in general. Actually, I think most folks would agree with this. Considered alone, of course we would like to be able to prevent crimes before they occur.</p>
+
+<p>However, if the tradeoff is living in a state of constant surveillance, I believe the cost to be too great.</p>
+
+<p>Furthermore, I believe any actions to create a state of constant, unwarranted surveillance is directly contradictory to the spirit in which our nation was founded, for what it&rsquo;s worth:</p>
+
+<blockquote>
+<p>The right of the people to be secure in their persons, houses, papers, and effects, against unreasonable searches and seizures, shall not be violated, and no Warrants shall issue, but upon probable cause, supported by Oath or affirmation, and particularly describing the place to be searched, and the persons or things to be seized.</p>
+</blockquote>
+
+<p>But I&rsquo;m not sure that is worth much in general these days.</p>
+
+<p>I hope that quote <a href="http://en.wikipedia.org/wiki/Fourth_Amendment_to_the_United_States_Constitution">rings familiar</a>, because I fear as time marches on, those words will ring less and less familiar, until they are stamped out completely and disappear into the vague memory of the past.</p>
+
+<p>Already I fear that the powers that be are trying to distract us and prevent us from hearing the TrapWire news and making an informed judgement for ourselves.</p>
+
+<p>Coincidentally, Wikileaks has been under massive DDoS attacks since the beginning of the month, resulting in their site being inaccessible. In all fairness, these attacks started occurring before the latest email leak on August 9, but there is something undeniably fishy about the timing of the attacks.</p>
+
+<p>There is also something very fishy about the group that&rsquo;s taken responsibility for the attacks on Wikileaks: a purported new group called AntiLeaks, whose leader released <a href="http://www.twitlonger.com/show/intmnv">this statement on August 8</a>:</p>
+
+<blockquote>
+<p>You can call me DietPepsi. I am the leader of AntiLeaks. We are not doing this to call attention to ourselves. We are young adults, citizens of the United States of America and are deeply concerned about the recent developments with Julian Assange and his attempt at aslyum in Ecuador.</p>
+
+<p>Assange is the head of a new breed of terrorist. We are doing this as a protest against his attempt to escape justice into Ecuador. This would be a catalyst for many more like him to rise up in his place. We will not stop and they will not stop us.</p>
+</blockquote>
+
+<p>I have the keen ability to spot bad actors while watching movies or TV shows. I also detect some bad acting here, and so do most other folks.</p>
+
+<p>In all, it seems quite Orwellian, and it seems clear that someone doesn&rsquo;t want us to find out about their Orwellian plots. Perhaps they would&rsquo;ve attracted less attention if they were more forthcoming and transparent? But now people are rightfully curious as ever.</p>
+
+<p>It&rsquo;ll be interesting what will become of this, but at this point I&rsquo;ve become a bit pessimistic. I think this will pass and be forgotten, along with the Occupy Movement and any other glimpse of true hope and true change that could come to this country.</p>
+
+<p>Perhaps all this is leading me back to the stark realization that it is time to follow in the steps of my ancestors and leave my country in search of a new and better one? In search of a better life?</p>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="500" />
+    <meta itemprop="height" content="717" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2012/08/orson.png" />
+    <a href="https://twitter.com/PhillyRoach/status/234423706389184512">
+        <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2012/08/orson.png" alt="Top: Tweet: This is a scary time we're living in.  You called it, Orson Welles.  Bottom: Orson Welles in movie The Third Man" />
+    </a>
+    <figcaption itemprop="caption">Orson Welles in The Third Man</figcaption>
+</figure>
+
+<blockquote>
+<p>&ldquo;Nobody thinks in terms of human beings. Governments don&rsquo;t. Why should we? They talk about the people and the proletariat, I talk about the suckers and the mugs - it&rsquo;s the same thing. They have their five-year plans, so have I.&rdquo;</p>
+
+<p>Harry Lime, played by Orson Welles (from <a href="http://www.imdb.com/title/tt0041959/">THE THIRD MAN</a>)</p>
+</blockquote>
+
+<p>(I&rsquo;m fairly certain this tweet was supposed to be referencing George Orwell, the author of 1984. However, I found this quote from THE THIRD MAN appropriate.)</p>
+</div>
+
+    
+    
+
+    
+
+    
+
+        <h4 class="page-header">Comments</h4>
+
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "davidbcalhoun" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+
+</main>
+
+        <footer role="contentinfo">
+
+            <p class="copyright text-muted">© <span itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="David Calhoun"><a href="mailto:david.b.calhoun@gmail.com" itemprop="email">David Calhoun</a> (<a href="https://twitter.com/franksvalli" itemprop="url">@franksvalli</a>) - <a href="https://www.linkedin.com/in/davidcalhoun" itemprop="url">LinkedIn</a> - <a href="http://themaingate.net/resume/" itemprop="url">Resume</a></span></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+

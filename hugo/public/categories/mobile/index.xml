@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mobile on David Calhoun&#39;s blog</title>
+    <link>https://davidbcalhoun.com/categories/mobile/</link>
+    <description>Recent content in Mobile on David Calhoun&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 29 Jun 2010 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://davidbcalhoun.com/categories/mobile/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Using mobile-specific HTML, CSS, and JavaScript (Mobile web part 5)</title>
+      <link>https://davidbcalhoun.com/2010/using-mobile-specific-html-css-and-javascript-mobile-web-part-5/</link>
+      <pubDate>Tue, 29 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2010/using-mobile-specific-html-css-and-javascript-mobile-web-part-5/</guid>
+      <description>(updated June 27, 2011)
+Mobile-specific HTML Viewport tag Use the viewport tag to properly fit the content to the screen:
+&amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1.0&amp;quot;/&amp;gt;  Tel scheme (to initiate phone calls) &amp;lt;a href=&amp;quot;tel:18005555555&amp;quot;&amp;gt;Call us at 1-800-555-5555&amp;lt;/a&amp;gt;  Sms scheme (to initiate text messages) &amp;lt;a href=&amp;quot;sms:18005555555&amp;quot;&amp;gt; &amp;lt;a href=&amp;quot;sms:18005555555,18005555556&amp;quot;&amp;gt; &amp;lt;!-- multiple recipients --&amp;gt; &amp;lt;a href=&amp;quot;sms:18005555555?body=Text%20goes%20here&amp;quot;&amp;gt; &amp;lt;!-- predefined message body --&amp;gt;  Disable automatic telephone number linking &amp;lt;meta name=&amp;quot;format-detection&amp;quot; content=&amp;quot;telephone=no&amp;quot;&amp;gt;  iOS-specific HTML (some work on Android as well) You also have access to several Apple-specific tags to use in your iOS applications (iPhone, iPad, and don&amp;rsquo;t forget the iPod Touch!</description>
+    </item>
+    
+    <item>
+      <title>JavaScript SunSpider: HTC Evo versus HTC Incredible versus Nexus One</title>
+      <link>https://davidbcalhoun.com/2010/javascript-sunspider-htc-evo-versus-htc-incredible-versus-nexus-one/</link>
+      <pubDate>Thu, 10 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2010/javascript-sunspider-htc-evo-versus-htc-incredible-versus-nexus-one/</guid>
+      <description>Result table    Test   Evo (2.1)   Incredible (2.1)   Nexus One (2.2)     Total   16167ms   15237ms  5452ms     3D   2014ms   1835ms  946ms     Access   2126ms   1892ms  463ms     Bitops   1519ms   1591ms  360ms     Controlflow   243ms   206ms  20ms     Crypto   1033ms   1003ms  344ms     Date   1849ms   1896ms  639ms     Math   1684ms   1419ms  602ms     Regexp   1779ms   1673ms  155ms     String   3920ms   3722ms  1923ms    Thoughts The Incredible is just slightly faster than the Evo, to the point where it&amp;#8217;s probably negligible or within a margin of error.</description>
+    </item>
+    
+    <item>
+      <title>Mobile First: Luke Wroblewski on mobile design</title>
+      <link>https://davidbcalhoun.com/2010/mobile-first-luke-wroblewski-on-mobile-design/</link>
+      <pubDate>Sat, 05 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2010/mobile-first-luke-wroblewski-on-mobile-design/</guid>
+      <description>In episode 6 of The Big Web Show, Luke Wroblewski gives his &amp;#8220;Mobile First&amp;#8221; talk, explaining his philosophy for designing for mobile, the challenges, and a look at the road ahead. Luke explains that because of the limitations on mobile, developers are forced to really optimize the user experience for mobile. Often times this mobile experience turns out much better than on the desktop, where the &amp;#8220;gluttony of resources&amp;#8221; results in distracting and excessive webpages.</description>
+    </item>
+    
+    <item>
+      <title>The viewport metatag (Mobile web part 1)</title>
+      <link>https://davidbcalhoun.com/2010/the-viewport-metatag-mobile-web-part-1/</link>
+      <pubDate>Thu, 06 May 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2010/the-viewport-metatag-mobile-web-part-1/</guid>
+      <description>The skinny Use this:
+&amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1&amp;quot;/&amp;gt;  Introduction This series of posts is intended to introduce web developers to basic techniques for designing for the mobile web. It assumes at least a basic knowledge of creating desktop websites.
+The problem Ok, so you&amp;rsquo;ve settled down to learn how to write a website for a mobile device using your current knowledge of building desktop websites. So you start off with some pretty basic HTML:</description>
+    </item>
+    
+    <item>
+      <title>Links for the week of February 7, 2010</title>
+      <link>https://davidbcalhoun.com/2010/links-for-the-week-of-february-7-2010/</link>
+      <pubDate>Mon, 15 Feb 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2010/links-for-the-week-of-february-7-2010/</guid>
+      <description>General links  Video for Everybody!: cross-browser support of HTML5 video and methods of fallback   Oracle Cuts Affect GNOME Accessibility Work: &amp;#8220;&amp;#8230;as a result of the layoffs &amp;#8230; &amp;#8216;the accessibility of the GNOME desktop will become the open source equivalent of an unfunded mandate, doomed ultimately to fail&amp;#8217; &amp;#8230;&amp;#8221;   Google Acquires Aardvark For $50 million   &amp;#8220;the latest publication of HTML5 is now blocked by Adobe, via an objection that has still not been made public (despite yesterday&amp;#8217;s promise to make it so)&amp;#8221;   The iPhone obsession (QuirksMode)   Performance  DOMTiming interface being implemented in Chromium and Firefox   A Hidden Cost of Javascript: file size is a factor in performance, but so is parse and load time   Announcing High Performance JavaScript: Nicholas Zakas announces his latest book, due in March 2010.</description>
+    </item>
+    
+    <item>
+      <title>PastryKit: digging into an Apple Pie</title>
+      <link>https://davidbcalhoun.com/2009/pastrykit-digging-into-an-apple-pie/</link>
+      <pubDate>Wed, 16 Dec 2009 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2009/pastrykit-digging-into-an-apple-pie/</guid>
+      <description>Yesterday John Gruber wrote about Apple&amp;#8217;s PastryKit, iPhone&amp;#8217;s JavaScript framework that&amp;#8217;s been discovered &amp;#8220;in the wild&amp;#8221; on the iPhone user guide at http://help.apple.com/iphone/3/mobile/. There&amp;#8217;s a few ways to access the page:
+ with an actual iPhone or iTouch by browsing with an iPhone/iTouch user agent. If you&amp;#8217;re using Safari, enable the Developer menu in Safari&amp;gt;Preferences&amp;gt;Advanced and switching user agents by clicking on Develope&amp;gt;User Agent  What&amp;#8217;s all the big fuss?</description>
+    </item>
+    
+    <item>
+      <title>IEMobile 6/7 bug: classes and id not supported on the HTML element</title>
+      <link>https://davidbcalhoun.com/2009/iemobile-6/7-bug-classes-and-id-not-supported-on-the-html-element/</link>
+      <pubDate>Tue, 01 Dec 2009 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2009/iemobile-6/7-bug-classes-and-id-not-supported-on-the-html-element/</guid>
+      <description>As it turns out, IEMobile 6&amp;frasl;7 (and presumably anything earlier) doesn&amp;#8217;t support classes and ids that are attached to the HTML element. I confirmed this on both IEMobile 6 and 7. Fortunately it looks to be fixed in IEMobile 8 (which makes sense, since it works fine in desktop IE6, which it&amp;#8217;s based on).
+The consequence of this is that adding an id/class to the html tag will result in the style not being applied to the document:</description>
+    </item>
+    
+  </channel>
+</rss>

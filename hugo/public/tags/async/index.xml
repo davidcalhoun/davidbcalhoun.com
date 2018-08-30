@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Async on David Calhoun&#39;s blog</title>
+    <link>https://davidbcalhoun.com/tags/async/</link>
+    <description>Recent content in Async on David Calhoun&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Mon, 08 Sep 2014 00:36:52 -0700</lastBuildDate>
+    
+	<atom:link href="https://davidbcalhoun.com/tags/async/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>async.parallel with a simple timeout (node.js)</title>
+      <link>https://davidbcalhoun.com/2014/async.parallel-with-a-simple-timeout-node.js/</link>
+      <pubDate>Mon, 08 Sep 2014 00:36:52 -0700</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2014/async.parallel-with-a-simple-timeout-node.js/</guid>
+      <description>A while back I had a need for a general timeout option for async.parallel and was surprised I couldn&amp;rsquo;t find much information about how to do it. I was using async.parallel to make a lot of REST calls in parallel, but one of them was getting blocked by a firewall, resulting in an eventual timeout minutes later.
+One option was to specify a shorter timeout for each individual REST call, including the one causing the problem.</description>
+    </item>
+    
+    <item>
+      <title>Top ten things HTML5 makes simpler</title>
+      <link>https://davidbcalhoun.com/2010/top-ten-things-html5-makes-simpler/</link>
+      <pubDate>Thu, 07 Oct 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2010/top-ten-things-html5-makes-simpler/</guid>
+      <description>General word of caution: not all of these HTML5 simplifications are compatible with older browsers. Test it for yourself before implementing!
+1. The doctype Old &amp;lt;!DOCTYPE HTML PUBLIC &amp;quot;-//W3C//DTD HTML 4.01//EN&amp;quot; &amp;quot;http://www.w3.org/TR/html4/strict.dtd&amp;quot;&amp;gt;  New &amp;lt;!DOCTYPE html&amp;gt;  2. charset Old &amp;lt;meta http-equiv=&amp;quot;Content-Type&amp;quot; content=&amp;quot;text/html; charset=utf-8&amp;quot;&amp;gt;  New &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt;  3. The link tag’s type attribute Old &amp;lt;link href=&amp;quot;style.css&amp;quot; type=&amp;quot;text/css&amp;quot; rel=&amp;quot;stylesheet&amp;quot; /&amp;gt;  New &amp;lt;link href=&amp;quot;style.css&amp;quot; rel=&amp;quot;stylesheet&amp;quot; /&amp;gt;  This one may be a bit controversial, but the HTML5 spec actually tells browser vendors not to treat the type attribute as the final word, which makes it seem pretty redundant:</description>
+    </item>
+    
+  </channel>
+</rss>

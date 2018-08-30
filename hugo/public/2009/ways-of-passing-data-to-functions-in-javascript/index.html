@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Ways of passing data to functions in JavaScript</title>
+        
+        <style>
+
+    html body {
+        font-family: 'Roboto', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: #0D47A1;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://davidbcalhoun.com/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/foundation.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.42.2" />
+        
+
+        
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-5530615-3"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)};
+          gtag('js', new Date());
+
+          gtag('config', 'UA-5530615-3');
+        </script>
+        
+
+        <meta name="author" content="David Calhoun">
+        <link href="/index.xml" rel="alternate" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+        <link href="/index.xml" rel="feed" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+
+    </head>
+
+    
+    
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">Ways of passing data to functions in JavaScript</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="https://www.themaingate.net/">Home</a></li>
+                            
+                                <li><a href="/">Posts</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:david.b.calhoun@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/davidcalhoun/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/franksvalli/"><i class="fa fa-twitter"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/davidcalhoun/"><i class="fa fa-linkedin"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://stackoverflow.com/users/214017/david-calhoun/"><i class="fa fa-stack-overflow"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main role="main" itemscope itemType="http://schema.org/BlogPosting">
+    <meta itemprop="inLanguage" content="en-US" />
+    <span itemscope itemprop="author" itemType="https://schema.org/Person">
+        <meta itemprop="name" content="David Calhoun" />
+    </span>
+    <span itemscope itemprop="publisher" itemType="https://schema.org/Organization">
+        <meta itemprop="name" content="David Calhoun" />
+        <meta itemprop="url" content="https://themaingate.net" />
+        <meta itemprop="logo" content="https://themaingate.net/david-calhoun-logo.png">
+    </span>
+    <meta itemprop="image" content="https://themaingate.net/david-calhoun-logo.png">
+
+    <article class="item">
+
+    
+    
+    
+
+    
+    
+
+    <meta property="article:section" content="Article" />
+    <meta property="article:publisher" content="https://www.davidbcalhoun.com" />
+    <meta property="article:published_time" content="December 4, 2009" />
+    <meta property="article:modified_time" content="December 4, 2009" />
+    <meta property="article:tag" content="beginner" />
+    <meta property="article:tag" content="functions" />
+    <meta property="article:tag" content="javascript" />
+    <meta property="article:tag" content="webdev" />
+    <meta property="article:tag" content="programming" />
+    
+    <meta property="og:site_name" content="CSS-Tricks" />
+    <meta property="og:updated_time" content="December 4, 2009" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="/2009/ways-of-passing-data-to-functions-in-javascript/" />
+    <meta property="og:title" content="Ways of passing data to functions in JavaScript" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Ways of passing data to functions in JavaScript" />
+    <meta name="twitter:site" content="@franksvalli" />
+    <meta name="twitter:creator" content="@franksvalli" />
+    <meta name="twitter:domain" content="davidbcalhoun.com" />
+
+
+    <h4 itemprop="headline">
+        <a href="/2009/ways-of-passing-data-to-functions-in-javascript/" itemprop="url">Ways of passing data to functions in JavaScript</a>
+    </h4>
+    <h5 class="meta date" itemprop="datePublished dateModified" content="December 4, 2009" datetime="December 4, 2009">
+        <time>December 4, 2009</time>
+    </h5>
+    
+    <a href="https://davidbcalhoun.com/tags/beginner"><kbd class="item-tag">beginner</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/functions"><kbd class="item-tag">functions</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/javascript"><kbd class="item-tag">javascript</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/programming"><kbd class="item-tag">programming</kbd></a>
+    
+
+</article>
+
+
+    <br> <div class="text-justify">
+
+<p>Passing data is quite important in functional programming languages like JavaScript. When there are multiple functions (which is most of the time), there needs to be a way to pass data between the functions. This is done by passing values in parenthesis: myFunction(myData). Even when there is no data to be passed, we still have to declare and execute functions by using parenthesis: myFunction().</p>
+
+<h3 id="simple-passing">Simple Passing</h3>
+
+<p>I&rsquo;ve already referred to the common method of passing data. Here&rsquo;s an example of the code in action:</p>
+
+<pre><code class="language-javascript">function greeting (name) {
+    alert('Hello ' + name);
+}
+var personsName = 'Joe';
+greeting(personsName);  // Hello Joe
+</code></pre>
+
+<p>This example only passes one variable to the function. Note that we can get rid of the variable personsName and make the string on the fly. So the code above is equivalent to this:</p>
+
+<pre><code class="language-javascript">function greeting (name) {
+    alert('Hello ' + name);
+}
+greeting('Joe');  // Hello Joe
+</code></pre>
+
+<p>Ok. Now let&rsquo;s suppose we have a function that accepts two variables:</p>
+
+<pre><code class="language-javascript">function greeting (firstName, lastName) {
+    alert('Hello ' + firstName + ' ' + lastName);
+}
+greeting('Joe', 'Schmoe');  // Hello Joe Schmoe
+</code></pre>
+
+<p>This doesn&rsquo;t look too hard. But there&rsquo;s a catch - the person writing the code has to remember the order of variables to pass in. Suppose they call the function like this:</p>
+
+<pre><code class="language-javascript">function greeting (firstName, lastName) {
+    alert('Hello ' + firstName + ' ' + lastName);
+}
+greeting('Schmoe', 'Joe');  // Hello Schmoe Joe
+</code></pre>
+
+<p>That&rsquo;s no good! This isn&rsquo;t the result we want. In the case of firstName and lastName the variable order isn&rsquo;t too hard to remember, but in other cases the variables aren&rsquo;t in any logical order, which can cause confusion.</p>
+
+<h3 id="no-constructor-overloading">No constructor overloading</h3>
+
+<p>Unlike other languages such as C++ and Java, JavaScript has no <a href="http://en.wikipedia.org/wiki/Method_overloading">constructor overloading</a>. In fact, JavaScript is (for better or worse) not even strict about enforcing the number of variables passed in. For example, the following code works fine and throws no errors, even though we&rsquo;re not passing in a variable in the function call:</p>
+
+<pre><code class="language-javascript">function test (someVar) {
+    // do stuff
+};
+test();  // no errors!
+</code></pre>
+
+<p>It&rsquo;s only when you try to use someVar within the function that causes the problems. Otherwise, everything&rsquo;s working just fine and dandy.</p>
+
+<p>What happens if we try the other case scenario: pass in more variables than the function expects? No errors again:</p>
+
+<pre><code class="language-javascript">function test () {
+    // do stuff
+};
+test('testing 123');  // again, no errors
+</code></pre>
+
+<p>And what happens if we try to declare a function with the same name? No errors, but the previous function is overwritten (this is generally to be avoided of course):</p>
+
+<pre><code class="language-javascript">function test () {
+    alert('First function');
+};
+function test () {
+    alert('Second function');
+};
+test();  // Second function
+</code></pre>
+
+<p>Because JavaScript has no function overloading, all it takes to overwrite another function is to redeclare a function with the same name. It doesn&rsquo;t matter what sort of arguments they accept.</p>
+
+<h3 id="passing-with-the-help-of-the-arguments-object">Passing with the help of the arguments object</h3>
+
+<p>As it turns out, JavaScript has a handy arguments object to access the arguments passed into each function:</p>
+
+<pre><code class="language-javascript">function test () {
+    alert(arguments[0]);    // testing 123
+};
+test('testing 123');
+</code></pre>
+
+<p>In the above case the arguments object acts just as an array - it&rsquo;s 0-indexed and can be used to access any arbitrary number of arguments. But arguments also has an interesting and useful property: length. Using arguments.length, we can traverse the array of arguments. This is handy in cases where we might want to add an arbitrary number of elements together:</p>
+
+<pre><code class="language-javascript">function add () {
+    var sumTotal = 0;                        // initialize total to 0
+
+    for(var i=0; i&lt;arguments.length; i++) {  // for each argument
+        sumTotal += arguments[i];            // add current argument to total
+    }
+    
+    alert(sumTotal);
+};
+add(2, 3, 4);  // 9
+add(1, 1, 1, 1, 1, 1, 1, 1, 1);  // 9
+</code></pre>
+
+<h3 id="passing-an-object">Passing an object</h3>
+
+<p>JavaScript libraries such as <a href="http://developer.yahoo.com/yui/">YUI</a> have already learned that the variable order is a common nuisance and an opportunity to introduce errors, so they&rsquo;ve come up with a solution: pass a single object to the function. It ends up looking something like this:</p>
+
+<pre><code class="language-javascript">function greeting (obj) {
+    alert('Hello ' + obj.first + ' ' + obj.last);
+}
+var nameObject = {};
+nameObject.first = 'Joe';
+nameObject.last = 'Schmoe';
+greeting(nameObject);  // Hello Joe Schmoe
+</code></pre>
+
+<p>Now the variables become properties of a single object which is passed into the function. And it doesn&rsquo;t matter which order the properties are declared in, which is a great relief to the developer.</p>
+
+<p>Note that we can simplify the above code:</p>
+
+<pre><code class="language-javascript">function greeting (obj) {
+    alert('Hello ' + obj.first + ' ' + obj.last);
+}
+var nameObject = {
+    first: 'Joe',
+    last: 'Schmoe'
+};
+greeting(nameObject);  // Hello Joe Schmoe
+</code></pre>
+
+<p>And we can simplify even further:</p>
+
+<pre><code class="language-javascript">function greeting (obj) {
+    alert('Hello ' + obj.first + ' ' + obj.last);
+}
+greeting({
+    first: 'Joe',
+    last: 'Schmoe'
+});  // Hello Joe Schmoe
+</code></pre>
+
+<p>This is the form commonly used in these JavaScript libraries. It&rsquo;s easy to copy-and-paste example code, but it might not always be so obvious what&rsquo;s going on behind the scenes. You can see that just as we bypassed declaring a named variable in the Simple Passing model (with <code>greeting('')</code>), here we use the same shortcut and bypass declaring a named object (with <code>greeting({})</code>).</p>
+
+<h3 id="call-and-apply">call() and apply()</h3>
+
+<p>These two methods have different techniques for passing data to functions, but I&rsquo;m going to have to hold off on them for now. It&rsquo;s a bit complicated, since they&rsquo;re only used to execute methods (functions) in other object contexts. But seeing as I need to explain object context to get into that, I&rsquo;ll save that for a future entry!</p>
+</div>
+
+    
+    
+
+    
+
+    
+
+        <h4 class="page-header">Comments</h4>
+
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "davidbcalhoun" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+
+</main>
+
+        <footer role="contentinfo">
+
+            <p class="copyright text-muted">© <span itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="David Calhoun"><a href="mailto:david.b.calhoun@gmail.com" itemprop="email">David Calhoun</a> (<a href="https://twitter.com/franksvalli" itemprop="url">@franksvalli</a>) - <a href="https://www.linkedin.com/in/davidcalhoun" itemprop="url">LinkedIn</a> - <a href="http://themaingate.net/resume/" itemprop="url">Resume</a></span></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+

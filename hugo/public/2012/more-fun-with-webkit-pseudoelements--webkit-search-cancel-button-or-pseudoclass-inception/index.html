@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>More fun with WebKit pseudoelements: -webkit-search-cancel-button (or: Pseudoclass Inception)</title>
+        
+        <style>
+
+    html body {
+        font-family: 'Roboto', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: #0D47A1;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://davidbcalhoun.com/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/foundation.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.42.2" />
+        
+
+        
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-5530615-3"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)};
+          gtag('js', new Date());
+
+          gtag('config', 'UA-5530615-3');
+        </script>
+        
+
+        <meta name="author" content="David Calhoun">
+        <link href="/index.xml" rel="alternate" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+        <link href="/index.xml" rel="feed" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+
+    </head>
+
+    
+    
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">More fun with WebKit pseudoelements: -webkit-search-cancel-button (or: Pseudoclass Inception)</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="https://www.themaingate.net/">Home</a></li>
+                            
+                                <li><a href="/">Posts</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:david.b.calhoun@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/davidcalhoun/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/franksvalli/"><i class="fa fa-twitter"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/davidcalhoun/"><i class="fa fa-linkedin"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://stackoverflow.com/users/214017/david-calhoun/"><i class="fa fa-stack-overflow"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main role="main" itemscope itemType="http://schema.org/BlogPosting">
+    <meta itemprop="inLanguage" content="en-US" />
+    <span itemscope itemprop="author" itemType="https://schema.org/Person">
+        <meta itemprop="name" content="David Calhoun" />
+    </span>
+    <span itemscope itemprop="publisher" itemType="https://schema.org/Organization">
+        <meta itemprop="name" content="David Calhoun" />
+        <meta itemprop="url" content="https://themaingate.net" />
+        <meta itemprop="logo" content="https://themaingate.net/david-calhoun-logo.png">
+    </span>
+    <meta itemprop="image" content="https://themaingate.net/david-calhoun-logo.png">
+
+    <article class="item">
+
+    
+    
+    
+
+    
+    
+
+    <meta property="article:section" content="Article" />
+    <meta property="article:publisher" content="https://www.davidbcalhoun.com" />
+    <meta property="article:published_time" content="August 10, 2012" />
+    <meta property="article:modified_time" content="August 10, 2012" />
+    <meta property="article:tag" content="css" />
+    <meta property="article:tag" content="webkit" />
+    <meta property="article:tag" content="pseudoelements" />
+    <meta property="article:tag" content="webdev" />
+    
+    <meta property="og:site_name" content="CSS-Tricks" />
+    <meta property="og:updated_time" content="August 10, 2012" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="/2012/more-fun-with-webkit-pseudoelements--webkit-search-cancel-button-or-pseudoclass-inception/" />
+    <meta property="og:title" content="More fun with WebKit pseudoelements: -webkit-search-cancel-button (or: Pseudoclass Inception)" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="More fun with WebKit pseudoelements: -webkit-search-cancel-button (or: Pseudoclass Inception)" />
+    <meta name="twitter:site" content="@franksvalli" />
+    <meta name="twitter:creator" content="@franksvalli" />
+    <meta name="twitter:domain" content="davidbcalhoun.com" />
+
+
+    <h4 itemprop="headline">
+        <a href="/2012/more-fun-with-webkit-pseudoelements--webkit-search-cancel-button-or-pseudoclass-inception/" itemprop="url">More fun with WebKit pseudoelements: -webkit-search-cancel-button (or: Pseudoclass Inception)</a>
+    </h4>
+    <h5 class="meta date" itemprop="datePublished dateModified" content="August 10, 2012" datetime="August 10, 2012">
+        <time>August 10, 2012</time>
+    </h5>
+    
+    <a href="https://davidbcalhoun.com/tags/css"><kbd class="item-tag">css</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/webkit"><kbd class="item-tag">webkit</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/pseudoelements"><kbd class="item-tag">pseudoelements</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
+    
+
+</article>
+
+
+    <br> <div class="text-justify">
+
+<h3 id="introduction">Introduction</h3>
+
+<p><strong><em>UPDATE</em></strong> 2016: this appears to have even less support than before, and it&rsquo;s not recommended to be used on a production site.  Use a helper JS library instead.</p></p>
+
+<p>(check out the <strong><a href="https://www.davidbcalhoun.com/a/_old%20mobile%20tests/webkit-search-cancel-button.html">Demo</a></strong>)</p>
+
+<p>A while back I had a bit of a field day <a href="https://www.davidbcalhoun.com/2011/implementing-iphone-slider-unlock-with-input-type-range">messing around with input type=&ldquo;range&rdquo;</a>, trying to replicate the &ldquo;unlock slider&rdquo; on iOS using CSS, targeting special WebKit-only CSS pseudoelements such as webkit-slider-thumb.</p>
+
+<p>Well, now I&rsquo;m at it again, this time with a much simpler use case, trying to implement a custom &ldquo;clear&rdquo; button on search field inputs (note that this only works on input type=&ldquo;search&rdquo;):</p>
+
+<p><a href="https://www.davidbcalhoun.com/a/_old%20mobile%20tests/webkit-search-cancel-button.html"><img src="http://davidbcalhoun.com/wp-content/uploads/2012/08/custom-webkit-search-cancel-button.png" alt="Custom webkit-search-cancel-button" title="Custom webkit-search-cancel-button" width="239" height="145" class="aligncenter size-full wp-image-914" /></a></p>
+
+<h3 id="details-about-the-implementation">Details about the implementation</h3>
+
+<p>It turns out this is relatively easy to do, and is somewhat supported, at least in the latest Chrome and Safari 6. Note that it does work on iOS6, but not on iOS5, but the positioning is slightly different from the other implementations. No idea about Android, so I&rsquo;ll leave that for someone else to find out.</p>
+
+<p>So how do we do it? First, we need the special WebKit CSS pseudoselector (<code>-webkit-search-cancel-button</code>), and secondly, we need to use that to wipe out the default WebKit styling (with -webkit-appearance: none;):</p>
+
+<pre><code class="language-css">::-webkit-search-cancel-button {   // select all &quot;X&quot; buttons in search inputs
+    -webkit-appearance: none;      // hide the default &quot;X&quot; button
+}
+</code></pre>
+
+<p>You would think that the next step might be adding our own custom background-image to this element, but unfortunately it won&rsquo;t work that easily (of course).</p>
+
+<p>What we need now is a little bit of trickery, using an <code>:after</code> pseudoclass on the pseduoclass (!?). The result is a bit of &ldquo;pseudoclass Inception&rdquo;:</p>
+
+<pre><code class="language-css">::-webkit-search-cancel-button {   /* select all &quot;X&quot; buttons in search inputs */
+    -webkit-appearance: none;      /* hide the default &quot;X&quot; button */
+}
+
+::-webkit-search-cancel-button:after {  /* generate content after all &quot;X&quot; buttons */
+    content: '';    /* required for :after content to show */
+    display: block;
+
+    /*
+     * Setup dimensions for the custom icon.  Note that these dimensions seem to
+     * affect positioning.
+     */
+    width: 14px;
+    height: 10px;
+    
+    /*
+     * Base64 encoded custom &quot;X&quot; icon
+     * Natively 30x30, but downscaled for highres screens
+     */
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAn0lEQVR42u3UMQrDMBBEUZ9WfQqDmm22EaTyjRMHAlM5K+Y7lb0wnUZPIKHlnutOa+25Z4D++MRBX98MD1V/trSppLKHqj9TTBWKcoUqffbUcbBBEhTjBOV4ja4l4OIAZThEOV6jHO8ARXD+gPPvKMABinGOrnu6gTNUawrcQKNCAQ7QeTxORzle3+sDfjJpPCqhJh7GixZq4rHcc9l5A9qZ+WeBhgEuAAAAAElFTkSuQmCC);
+
+    /* setup all the background tweaks for our custom icon */
+    background-repeat: no-repeat;
+
+    /* icon size */
+    background-size: 10px;
+
+    /* note: this positioning will need to be tweaked for iOS */
+    background-position: top left;
+}
+</code></pre>
+
+<p>So it turns out you can still whatever you like in there really, even text content (see the last text input in the <a href="https://www.davidbcalhoun.com/a/_old%20mobile%20tests/webkit-search-cancel-button.html">demo</a>). You may even need to tweak the positioning a bit, in which case you can learn from the same example (you will need to set position:relative on the cancel button itself to anchor the position:absolute <code>:after</code> content - check out the code).</p>
+
+<h3 id="final-notes">Final notes</h3>
+
+<p>Note that this is just an experiment, not a robust use case that I&rsquo;m recommending as a cross-browser solution (obviously, since it&rsquo;s WebKit-only).</p>
+
+<p>In the case of wanting to implement something similar cross-browser, I recommend absolutely-positioning a button element over an input element, then adding the appropriate right-padding to the input as necessary, then hooking up the &ldquo;clear all text&rdquo; behavior with the help of JavaScript.</p>
+
+<h3 id="video">Video</h3>
+
+<p>Here&rsquo;s a video if you&rsquo;re not in the mood to read (view in HD so you can read the text!):</p>
+
+<iframe width="480" height="360" src="https://www.youtube.com/embed/3wyWJKJuo4o" frameborder="0" allowfullscreen></iframe>
+</div>
+
+    
+    
+
+    
+
+    
+
+        <h4 class="page-header">Comments</h4>
+
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "davidbcalhoun" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+
+</main>
+
+        <footer role="contentinfo">
+
+            <p class="copyright text-muted">© <span itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="David Calhoun"><a href="mailto:david.b.calhoun@gmail.com" itemprop="email">David Calhoun</a> (<a href="https://twitter.com/franksvalli" itemprop="url">@franksvalli</a>) - <a href="https://www.linkedin.com/in/davidcalhoun" itemprop="url">LinkedIn</a> - <a href="http://themaingate.net/resume/" itemprop="url">Resume</a></span></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+

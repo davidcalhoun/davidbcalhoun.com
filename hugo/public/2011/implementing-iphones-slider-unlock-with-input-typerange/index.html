@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Implementing iPhone&#39;s slider unlock with input type=&#39;range&#39;</title>
+        
+        <style>
+
+    html body {
+        font-family: 'Roboto', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: #0D47A1;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://davidbcalhoun.com/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/foundation.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.42.2" />
+        
+
+        
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-5530615-3"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)};
+          gtag('js', new Date());
+
+          gtag('config', 'UA-5530615-3');
+        </script>
+        
+
+        <meta name="author" content="David Calhoun">
+        <link href="/index.xml" rel="alternate" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+        <link href="/index.xml" rel="feed" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+
+    </head>
+
+    
+    
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">Implementing iPhone&#39;s slider unlock with input type=&#39;range&#39;</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="https://www.themaingate.net/">Home</a></li>
+                            
+                                <li><a href="/">Posts</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:david.b.calhoun@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/davidcalhoun/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/franksvalli/"><i class="fa fa-twitter"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/davidcalhoun/"><i class="fa fa-linkedin"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://stackoverflow.com/users/214017/david-calhoun/"><i class="fa fa-stack-overflow"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main role="main" itemscope itemType="http://schema.org/BlogPosting">
+    <meta itemprop="inLanguage" content="en-US" />
+    <span itemscope itemprop="author" itemType="https://schema.org/Person">
+        <meta itemprop="name" content="David Calhoun" />
+    </span>
+    <span itemscope itemprop="publisher" itemType="https://schema.org/Organization">
+        <meta itemprop="name" content="David Calhoun" />
+        <meta itemprop="url" content="https://themaingate.net" />
+        <meta itemprop="logo" content="https://themaingate.net/david-calhoun-logo.png">
+    </span>
+    <meta itemprop="image" content="https://themaingate.net/david-calhoun-logo.png">
+
+    <article class="item">
+
+    
+    
+    
+
+    
+    
+
+    <meta property="article:section" content="Article" />
+    <meta property="article:publisher" content="https://www.davidbcalhoun.com" />
+    <meta property="article:published_time" content="January 16, 2011" />
+    <meta property="article:modified_time" content="January 16, 2011" />
+    <meta property="article:tag" content="css" />
+    <meta property="article:tag" content="iphone" />
+    <meta property="article:tag" content="demo" />
+    <meta property="article:tag" content="webdev" />
+    
+    <meta property="og:site_name" content="CSS-Tricks" />
+    <meta property="og:updated_time" content="January 16, 2011" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="/2011/implementing-iphones-slider-unlock-with-input-typerange/" />
+    <meta property="og:title" content="Implementing iPhone&#39;s slider unlock with input type=&#39;range&#39;" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Implementing iPhone&#39;s slider unlock with input type=&#39;range&#39;" />
+    <meta name="twitter:site" content="@franksvalli" />
+    <meta name="twitter:creator" content="@franksvalli" />
+    <meta name="twitter:domain" content="davidbcalhoun.com" />
+
+
+    <h4 itemprop="headline">
+        <a href="/2011/implementing-iphones-slider-unlock-with-input-typerange/" itemprop="url">Implementing iPhone&#39;s slider unlock with input type=&#39;range&#39;</a>
+    </h4>
+    <h5 class="meta date" itemprop="datePublished dateModified" content="January 16, 2011" datetime="January 16, 2011">
+        <time>January 16, 2011</time>
+    </h5>
+    
+    <a href="https://davidbcalhoun.com/tags/css"><kbd class="item-tag">css</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/iphone"><kbd class="item-tag">iphone</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/demo"><kbd class="item-tag">demo</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
+    
+
+</article>
+
+
+    <br> <div class="text-justify">
+
+<p>(check out the live <a href="https://www.davidbcalhoun.com/a/_old%20mobile%20tests/iphone-slider.html">demo</a>)</p>
+
+<h3 id="introduction">Introduction</h3>
+
+<p>After reading <a href="http://glazkov.com/2011/01/14/what-the-heck-is-shadow-dom/">&ldquo;What the Heck is Shadow DOM?&rdquo;</a> I was inspired to see how far I could style the <code>&lt;input type=&quot;range&quot;&gt;</code> element. Pretty far, as it turns out!</p>
+
+<p>My goal was to change the input&rsquo;s default appearance:</p>
+
+<p><img src="http://davidbcalhoun.com/wp-content/uploads/2011/01/input-range.png" alt="The default appearance for input type=range" title="The default appearance for input type=range" width="144" height="25" class="aligncenter size-full wp-image-567" /></p>
+
+<p>To the visual appearance of the iPhone&rsquo;s unlock slider:</p>
+
+<p><img src="http://davidbcalhoun.com/wp-content/uploads/2011/01/iphone-slider-native.png" alt="The iPhone's unlock slider" title="The iPhone's unlock slider" width="300" height="69" class="aligncenter size-full wp-image-566" /></p>
+
+<p>As far as I can tell, only WebKit-based browsers and Opera have implemented <code>input type=range</code>. Mobile Safari hasn&rsquo;t yet implemented it as of iOS 4.2 and Android also hasn&rsquo;t fully implemented it as of Android 2.3 (although curiously the elements are styleable but not yet interactive). Surprisingly, the only mobile OS to implement this input type seems to be BlackBerry OS 6.</p>
+
+<p>However, the focus here will be to get this working on just Chrome and WebKit. This will make it a bit easier to do this proof of concept. So we&rsquo;ll be using lots of <code>-webkit</code> vendor prefixed CSS.</p>
+
+<h3 id="what-we-have-to-work-with">What we have to work with</h3>
+
+<p>Of course we have our simple range input:</p>
+
+<pre><code class="language-html">&lt;input type=&quot;range&quot;&gt;
+</code></pre>
+
+<p>Which looks like this:</p>
+
+<p><img src="http://davidbcalhoun.com/wp-content/uploads/2011/01/input-range.png" alt="The default appearance for input type=range" title="The default appearance for input type=range" width="144" height="25" class="aligncenter size-full wp-image-567" /></p>
+
+<p>We can target the input itself with a CSS attribute selector:</p>
+
+<pre><code class="language-css">input[type='range'] {}
+</code></pre>
+
+<p>And if we want, we can transform it into a vertical slider by changing the <code>-webkit-appearance</code> property:</p>
+
+<pre><code class="language-css">input[type='range'] {
+    -webkit-appearance: slider-vertical;
+}
+</code></pre>
+
+<p>Which looks like this:</p>
+
+<p><img src="http://davidbcalhoun.com/wp-content/uploads/2011/01/input-range-vertical.png" alt="Input range in a vertical orientation" title="Input range in a vertical orientation" width="25" height="119" class="aligncenter size-full wp-image-579" /></p>
+
+<p>If we want to style it as if it was any other element, there&rsquo;s a slight catch, as we first have to set &ldquo;-webkit-appearance&rdquo; to &ldquo;none&rdquo; and then add our customizations (this appears to mean that we can&rsquo;t actually style vertical sliders&hellip;). Here we&rsquo;ll set the background color as a simple demo:</p>
+
+<pre><code class="language-css">input[type='range'] {
+    -webkit-appearance: none;
+    background-color: gray;
+}
+</code></pre>
+
+<p>This outputs the following:</p>
+
+<p><img src="http://davidbcalhoun.com/wp-content/uploads/2011/01/input-range-gray-background.png" alt="Input range with a gray background" title="Input range with a gray background" width="129" height="15" class="aligncenter size-full wp-image-577" /></p>
+
+<p>Most interestingly, we can target and style the slider button itself with CSS, although we can&rsquo;t get access to it with JavaScript (for the time being anyhow). Here we&rsquo;ll style it a slightly darker shade of gray:</p>
+
+<pre><code class="language-css">input[type='range'] {
+    -webkit-appearance: none;
+    background-color: gray;
+}
+
+input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background-color: #444;
+    width: 15px;
+    height: 20px;
+}
+</code></pre>
+
+<p>Which results in this:<br />
+<img src="http://davidbcalhoun.com/wp-content/uploads/2011/01/input-range-styled.png" alt="Input range with a gray background and a slightly darker slider control" title="Input range with a gray background and a slightly darker slider control" width="129" height="20" class="aligncenter size-full wp-image-583" /></p>
+
+<p>Now all the pieces are in place to fully style the input!</p>
+
+<h3 id="styling-the-background">Styling the background</h3>
+
+<p>This part&rsquo;s no big deal. We just want to set up the width/height, slap on some handy rounded corners, and add a very slight background gradient:</p>
+
+<pre><code class="language-css">input[type='range'] {
+    -webkit-appearance: none;
+    width: 280px;
+    height: 46px;
+    padding: 3px;
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
+    border: 1px solid #525252;
+    background-image: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0, #000000),
+        color-stop(1, #222222)
+    );
+}
+</code></pre>
+
+<p>Now we have the backdrop in place:</p>
+
+<p><img src="http://davidbcalhoun.com/wp-content/uploads/2011/01/iphone-slider-background.png" alt="iPhone slider background" title="iPhone slider background" width="288" height="54" class="aligncenter size-full wp-image-585" /></p>
+
+<h3 id="styling-the-button">Styling the button</h3>
+
+<p>To get the button, we&rsquo;ll add some width/height and rounded corners. Here we&rsquo;ll also need a more complicated background gradient as well as an arrow icon. Your first instinct might be to add more markup to hook the arrow icon to, but remember that this is impossible. We&rsquo;re working in the &ldquo;shadow DOM&rdquo; of elements created and maintained by the browser itself. We can style the existing elements but we can&rsquo;t create any new ones.</p>
+
+<p>So what do we do? Take advantage of multiple backgrounds! We can specify the background as both the arrow image and the gradient we need. In this case we&rsquo;ll also base64 encode the small image to avoid an extra HTTP request.</p>
+
+<p>The CSS for the button looks like this:</p>
+
+<pre><code class="language-css">input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 68px;
+    height: 44px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAYCAYAAAB0kZQKAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAASJJREFUeNpi7OnpYaAC0AXiF0D8mhzNTAzUASBHnAdim4F0BAhIA/EBIC4aSEeAADMQ9wLxRiDmHyhHwIAfNHqMiXZEcXExGJMCiNCjCMTHgDiTkFmM////p4rXe3t78Rm0DIjTgfgLNkkWoGZQij7MQFsQBY2aICC+Rq80gQ2oA/EZIE4YSEeAACcQzwfimVD2gDgCBtKgiVZlIB0BAgbQbBwykI5A5I4BtPsaNLfcHKiQWADEJiAHDERIfAfiLKgjBiQ67kCD/zK2NAFqjMyi0AJQVnPCI78GiBNxFttQF6ZToVjG5ohfoLoOiKcMVO54BA3+swPVntgKxIbEOIAWjvgLxJVA7APE7waisHoKxBFAfGSgSszL0MLnBTmaAQIMAKg/OsrT7JG8AAAAAElFTkSuQmCC'),
+    -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0, #fefefe),
+        color-stop(0.49, #dddddd),
+        color-stop(0.51, #d1d1d1),
+        color-stop(1, #a1a1a1)
+    );
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+</code></pre>
+
+<p>Which outputs this:<br />
+<img src="http://davidbcalhoun.com/wp-content/uploads/2011/01/iphone-slider-button.png" alt="" title="iPhone slider button styled" width="288" height="54" class="aligncenter size-full wp-image-587" /></p>
+
+<h3 id="slide-to-unlock-text">&ldquo;Slide to unlock&rdquo; text</h3>
+
+<p>Now we&rsquo;re getting somewhere! And now we&rsquo;re approaching the limits of what we can do without getting pretty creative. We need some &ldquo;slide to unlock&rdquo; text in the background.</p>
+
+<p>The first thing to do is to move the slider all the way to the left, to the default position. We do this through HTML by setting the value to 0:</p>
+
+<pre><code class="language-html">&lt;input type=&quot;range&quot; value=&quot;0&quot;&gt;
+</code></pre>
+
+<p>Ok, that wasn&rsquo;t too hard. But what about the text? We can&rsquo;t modify anything in the input itself, because it doesn&rsquo;t contain any element to display text. And we can&rsquo;t dynamically add text with JavaScript, because again, it&rsquo;s the shadow DOM! What we can do is create a separate text element outside of the input and position it on top of the slider using absolute positioning.</p>
+
+<p>But this would be no good, since the text would appear over the button itself. What we want is for the text to show up in-between the button and the background. Since we can style both of these with CSS, we can control the stacking order with good old z-index!</p>
+
+<p>And while we&rsquo;re at it, we might as well animate the &ldquo;spotlight&rdquo; effect on the text. We can do this with a combination of a semitransparent -webkit-mask and animations (see below).</p>
+
+<p>First we have the HTML, which has changed a bit. For positioning and grouping, we need a wrapped element for the input and the span of text:</p>
+
+<pre><code class="language-html">&lt;div class=&quot;iphone-slider&quot;&gt;
+    &lt;input type=&quot;range&quot; value=&quot;0&quot;&gt;&lt;/input&gt;
+    &lt;span&gt;slide to unlock&lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>The final complete CSS is as follows:</p>
+
+<pre><code class="language-css">.iphone-slider {
+    width: 280px;
+    height: 46px;
+    
+    /* set the wrapper as the anchor element for positioning */
+    position: relative;
+}
+
+.iphone-slider input {
+    -webkit-appearance: none;
+    width: 100%;
+    background: #ddd;
+    padding: 3px;
+    border: 1px solid #525252;
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
+    background-image: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0, #000000),
+        color-stop(1, #222222)
+    );
+}
+
+.iphone-slider input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    
+    /* position the button on top of everything */
+    z-index: 100;
+    position: relative;
+    
+    width: 68px;
+    height: 44px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    
+    /* arrow and button gradient */
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAYCAYAAAB0kZQKAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAASJJREFUeNpi7OnpYaAC0AXiF0D8mhzNTAzUASBHnAdim4F0BAhIA/EBIC4aSEeAADMQ9wLxRiDmHyhHwIAfNHqMiXZEcXExGJMCiNCjCMTHgDiTkFmM////p4rXe3t78Rm0DIjTgfgLNkkWoGZQij7MQFsQBY2aICC+Rq80gQ2oA/EZIE4YSEeAACcQzwfimVD2gDgCBtKgiVZlIB0BAgbQbBwykI5A5I4BtPsaNLfcHKiQWADEJiAHDERIfAfiLKgjBiQ67kCD/zK2NAFqjMyi0AJQVnPCI78GiBNxFttQF6ZToVjG5ohfoLoOiKcMVO54BA3+swPVntgKxIbEOIAWjvgLxJVA7APE7waisHoKxBFAfGSgSszL0MLnBTmaAQIMAKg/OsrT7JG8AAAAAElFTkSuQmCC'),
+    -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0, #fefefe),
+        color-stop(0.49, #dddddd),
+        color-stop(0.51, #d1d1d1),
+        color-stop(1, #a1a1a1)
+    );
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+.iphone-slider span {
+    /* position the text just under the button in the stacking order */
+    position: absolute;
+    z-index: 99;
+    top: 30%;
+    left: 37%;
+    
+    font-family: &quot;Helvetica Neue&quot;, Helvetica, sans;
+    font-size: 24px;
+    color: white;
+    cursor: default;
+    -webkit-user-select: none;
+    
+    /* semitransparent gradient mask to animate over the text */
+    -webkit-mask-image: -webkit-gradient(
+        linear,
+        left top,
+        right top,
+        color-stop(0, rgba(0,0,0,0.3)),
+        color-stop(0.45, rgba(0,0,0,0.3)),
+        color-stop(0.5, rgba(0,0,0,1)),
+        color-stop(0.55, rgba(0,0,0,0.3)),
+        color-stop(1, rgba(0,0,0,0.3))
+    );
+    -webkit-mask-size: 1000px;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation: text-spotlight 4s infinite;
+}
+
+/* animate the webkit-mark over the text */
+@-webkit-keyframes text-spotlight {
+  0% {
+    -webkit-mask-position: -800px;
+  }
+  
+  100% {
+    -webkit-mask-position: 0px;
+  }
+}
+</code></pre>
+
+<p>This renders as the following:</p>
+
+<p><img src="http://davidbcalhoun.com/wp-content/uploads/2011/01/iphone-slider-mask.png" alt="" title="The final result" width="288" height="52" class="aligncenter size-full wp-image-589" /></p>
+
+<p>Which looks pretty dang close the the native iPhone slider if I do say so myself! (perhaps the arrow could use some box-shadow to make it pop a bit more however).</p>
+
+<h3 id="just-a-bit-of-javascript">Just a bit of JavaScript</h3>
+
+<p>Since we&rsquo;ve come this far, we might as well make the experience as authentic as possible. Here I&rsquo;ve thrown in some JavaScript to check if the slider has been fully moved to the right, giving the user notification that the phone is unlocked.</p>
+
+<p>Also, you&rsquo;ll notice the opacity of the text slowly fade as the slider is moved farther to the right. This mimics the actual experience on the iPhone.</p>
+
+<p>Here&rsquo;s the JavaScript to make this work:</p>
+
+<pre><code class="language-javascript">(function() {
+  // variable declarations
+  var slider, sliderInput, sliderButton, sliderText, sliderTimeout, sliderOnchange, unlockCheck;
+  
+  // cache our DOM elements in variables
+  slider = document.querySelector('.iphone-slider');
+  sliderInput = slider.querySelector('input');
+  sliderButton = sliderInput.querySelector('::-webkit-slider-thumb');
+  sliderText = slider.querySelector('span');
+  
+  /*
+      Check if it's been unlocked, else return the
+      button back to the left side (default position).
+  */
+  unlockCheck = function() {
+    if(sliderInput.value == 100) {
+      sliderText.innerHTML = 'Unlocked!';
+      sliderInput.value = 0;
+      sliderText.style.opacity = 1;
+    } else {
+      setTimeout(function(){
+        sliderInput.value = 0;
+        sliderText.style.opacity = 1;
+      }, 1000);
+    }
+  };
+  
+  sliderOnchange = function() {
+    /*
+        Set the opacity of the text relative to the value
+        on the input range.
+    */
+    sliderText.style.opacity = ((100 - sliderInput.value) / 200);
+    
+    /*
+        Add a timeout to prevent the function from being called
+        on EVERY onchange event.
+    */
+    clearTimeout(sliderTimeout);
+    sliderTimeout = setTimeout(unlockCheck, 300);
+  }
+  
+  slider.onchange = sliderOnchange;
+})();
+</code></pre>
+
+<h3 id="live-example">Live example</h3>
+
+<p>Here&rsquo;s a <a href="http://www.youtube.com/watch?v=lC_pcRZgNm0">video</a> of the slider in action:</p>
+
+<p>If you&rsquo;re running Safari or Chrome, you should be able to see and interact with the <a href="https://www.davidbcalhoun.com/a/_old%20mobile%20tests/iphone-slider.html">standalone demo</a>.</p>
+
+<p>Sweet! Well, that was fun! This was some good practice of using a ton of good stuff: border radius, gradients, multiple backgrounds, data URI images, webkit-mask-image, webkit-animation, and of course styleable input ranges via webkit-slider-thumb.</p>
+
+<p>UPDATE: <a href="http://peter.sh/2011/05/inspectable-shadow-dom-the-file-browser-and-new-default-avatars/">Chrome has now made the shadow DOM inspectable</a>.</p>
+</div>
+
+    
+    
+
+    
+
+    
+
+        <h4 class="page-header">Comments</h4>
+
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "davidbcalhoun" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+
+</main>
+
+        <footer role="contentinfo">
+
+            <p class="copyright text-muted">© <span itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="David Calhoun"><a href="mailto:david.b.calhoun@gmail.com" itemprop="email">David Calhoun</a> (<a href="https://twitter.com/franksvalli" itemprop="url">@franksvalli</a>) - <a href="https://www.linkedin.com/in/davidcalhoun" itemprop="url">LinkedIn</a> - <a href="http://themaingate.net/resume/" itemprop="url">Resume</a></span></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+

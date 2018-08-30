@@ -4,7 +4,7 @@
   <title><![CDATA[Category: video | David Calhoun]]></title>
   <link href="http://davidbcalhoun.com/blog/categories/video/atom.xml" rel="self"/>
   <link href="http://davidbcalhoun.com/"/>
-  <updated>2017-03-11T11:38:47-08:00</updated>
+  <updated>2018-07-04T17:23:39-07:00</updated>
   <id>http://davidbcalhoun.com/</id>
   <author>
     <name><![CDATA[David Calhoun]]></name>
@@ -105,37 +105,37 @@
 <p>文殊会 (興福寺)<br />
 毎月25日は文殊菩薩の縁日。東金堂の文殊菩薩は古くから学問僧の信仰を集めてきた。­文殊会では文殊菩薩の智恵を授かろうと稚児の行列が、浄教寺より一字書の奉額車を引い­て三条通りを練り歩きます。 なお、当日堂内の拝観は14時までですが、外からの拝観は可能。（受付終了は13時4­5分）</p>
 
-<p><figure itemprop='image' itemscope itemtype='http://schema.org/ImageObject' class='center'><meta itemprop='width' content='1000'><meta itemprop='height' content='666'><meta itemprop='url' content='http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-01.jpg'><img itemprop='contentUrl' src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-01.jpg" width="1000" height="666"><figcaption itemprop='caption'></figcaption></figure></p>
+<p>{% imgcap center http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-01.jpg 1000 666 %}</p>
 
-<p><figure itemprop='image' itemscope itemtype='http://schema.org/ImageObject' class='center'><meta itemprop='width' content='1000'><meta itemprop='height' content='666'><meta itemprop='url' content='http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-02.jpg'><img itemprop='contentUrl' src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-02.jpg" width="1000" height="666"><figcaption itemprop='caption'></figcaption></figure></p>
+<p>{% imgcap center http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-02.jpg 1000 666 %}</p>
 
-<p><figure itemprop='image' itemscope itemtype='http://schema.org/ImageObject' class='center'><meta itemprop='width' content='1000'><meta itemprop='height' content='666'><meta itemprop='url' content='http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-03.jpg'><img itemprop='contentUrl' src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-03.jpg" width="1000" height="666"><figcaption itemprop='caption'></figcaption></figure></p>
+<p>{% imgcap center http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-03.jpg 1000 666 %}</p>
 
-<p><figure itemprop='image' itemscope itemtype='http://schema.org/ImageObject' class='center'><meta itemprop='width' content='1000'><meta itemprop='height' content='666'><meta itemprop='url' content='http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-04.jpg'><img itemprop='contentUrl' src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-04.jpg" width="1000" height="666"><figcaption itemprop='caption'></figcaption></figure></p>
+<p>{% imgcap center http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-04.jpg 1000 666 %}</p>
 
-<p><figure itemprop='image' itemscope itemtype='http://schema.org/ImageObject' class='center'><meta itemprop='width' content='1000'><meta itemprop='height' content='666'><meta itemprop='url' content='http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-05.jpg'><img itemprop='contentUrl' src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-05.jpg" width="1000" height="666"><figcaption itemprop='caption'></figcaption></figure></p>
+<p>{% imgcap center http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-05.jpg 1000 666 %}</p>
 
-<p><figure itemprop='image' itemscope itemtype='http://schema.org/ImageObject' class='center'><meta itemprop='width' content='1000'><meta itemprop='height' content='666'><meta itemprop='url' content='http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-06.jpg'><img itemprop='contentUrl' src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-06.jpg" width="1000" height="666"><figcaption itemprop='caption'></figcaption></figure></p>
+<p>{% imgcap center http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-06.jpg 1000 666 %}</p>
 
-<p><figure itemprop='image' itemscope itemtype='http://schema.org/ImageObject' class='center'><meta itemprop='width' content='666'><meta itemprop='height' content='1000'><meta itemprop='url' content='http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-07.jpg'><img itemprop='contentUrl' src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-07.jpg" width="666" height="1000"><figcaption itemprop='caption'></figcaption></figure></p>
+<p>{% imgcap center http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-07.jpg 666 1000 %}</p>
 
-<p><figure itemprop='image' itemscope itemtype='http://schema.org/ImageObject' class='center'><meta itemprop='width' content='666'><meta itemprop='height' content='1000'><meta itemprop='url' content='http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-08.jpg'><img itemprop='contentUrl' src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-08.jpg" width="666" height="1000"><figcaption itemprop='caption'></figcaption></figure></p>
+<p>{% imgcap center http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-08.jpg 666 1000 %}</p>
 
-<p><figure itemprop='image' itemscope itemtype='http://schema.org/ImageObject' class='center'><meta itemprop='width' content='1000'><meta itemprop='height' content='666'><meta itemprop='url' content='http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-09.jpg'><img itemprop='contentUrl' src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-09.jpg" width="1000" height="666"><figcaption itemprop='caption'></figcaption></figure></p>
+<p>{% imgcap center http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-09.jpg 1000 666 %}</p>
 
-<p><figure itemprop='image' itemscope itemtype='http://schema.org/ImageObject' class='center'><meta itemprop='width' content='1000'><meta itemprop='height' content='666'><meta itemprop='url' content='http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-10.jpg'><img itemprop='contentUrl' src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-10.jpg" width="1000" height="666"><figcaption itemprop='caption'></figcaption></figure></p>
+<p>{% imgcap center http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-10.jpg 1000 666 %}</p>
 
-<p><figure itemprop='image' itemscope itemtype='http://schema.org/ImageObject' class='center'><meta itemprop='width' content='1000'><meta itemprop='height' content='666'><meta itemprop='url' content='http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-11.jpg'><img itemprop='contentUrl' src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-11.jpg" width="1000" height="666"><figcaption itemprop='caption'></figcaption></figure></p>
+<p>{% imgcap center http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-11.jpg 1000 666 %}</p>
 
-<p><figure itemprop='image' itemscope itemtype='http://schema.org/ImageObject' class='center'><meta itemprop='width' content='1000'><meta itemprop='height' content='666'><meta itemprop='url' content='http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-12.jpg'><img itemprop='contentUrl' src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-12.jpg" width="1000" height="666"><figcaption itemprop='caption'></figcaption></figure></p>
+<p>{% imgcap center http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-12.jpg 1000 666 %}</p>
 
-<p><figure itemprop='image' itemscope itemtype='http://schema.org/ImageObject' class='center'><meta itemprop='width' content='666'><meta itemprop='height' content='1000'><meta itemprop='url' content='http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-13.jpg'><img itemprop='contentUrl' src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-13.jpg" width="666" height="1000"><figcaption itemprop='caption'></figcaption></figure></p>
+<p>{% imgcap center http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-13.jpg 666 1000 %}</p>
 
-<p><figure itemprop='image' itemscope itemtype='http://schema.org/ImageObject' class='center'><meta itemprop='width' content='1000'><meta itemprop='height' content='666'><meta itemprop='url' content='http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-14.jpg'><img itemprop='contentUrl' src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-14.jpg" width="1000" height="666"><figcaption itemprop='caption'></figcaption></figure></p>
+<p>{% imgcap center http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-14.jpg 1000 666 %}</p>
 
-<p><figure itemprop='image' itemscope itemtype='http://schema.org/ImageObject' class='center'><meta itemprop='width' content='666'><meta itemprop='height' content='1000'><meta itemprop='url' content='http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-15.jpg'><img itemprop='contentUrl' src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-15.jpg" width="666" height="1000"><figcaption itemprop='caption'></figcaption></figure></p>
+<p>{% imgcap center http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-15.jpg 666 1000 %}</p>
 
-<p><figure itemprop='image' itemscope itemtype='http://schema.org/ImageObject' class='center'><meta itemprop='width' content='666'><meta itemprop='height' content='1000'><meta itemprop='url' content='http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-16.jpg'><img itemprop='contentUrl' src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-16.jpg" width="666" height="1000"><figcaption itemprop='caption'></figcaption></figure></p>
+<p>{% imgcap center http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-16.jpg 666 1000 %}</p>
 ]]></content>
   </entry>
   

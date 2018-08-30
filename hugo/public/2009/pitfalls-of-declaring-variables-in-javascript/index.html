@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Pitfalls of declaring variables in JavaScript</title>
+        
+        <style>
+
+    html body {
+        font-family: 'Roboto', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: #0D47A1;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://davidbcalhoun.com/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/foundation.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.42.2" />
+        
+
+        
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-5530615-3"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)};
+          gtag('js', new Date());
+
+          gtag('config', 'UA-5530615-3');
+        </script>
+        
+
+        <meta name="author" content="David Calhoun">
+        <link href="/index.xml" rel="alternate" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+        <link href="/index.xml" rel="feed" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+
+    </head>
+
+    
+    
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">Pitfalls of declaring variables in JavaScript</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="https://www.themaingate.net/">Home</a></li>
+                            
+                                <li><a href="/">Posts</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:david.b.calhoun@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/davidcalhoun/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/franksvalli/"><i class="fa fa-twitter"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/davidcalhoun/"><i class="fa fa-linkedin"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://stackoverflow.com/users/214017/david-calhoun/"><i class="fa fa-stack-overflow"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main role="main" itemscope itemType="http://schema.org/BlogPosting">
+    <meta itemprop="inLanguage" content="en-US" />
+    <span itemscope itemprop="author" itemType="https://schema.org/Person">
+        <meta itemprop="name" content="David Calhoun" />
+    </span>
+    <span itemscope itemprop="publisher" itemType="https://schema.org/Organization">
+        <meta itemprop="name" content="David Calhoun" />
+        <meta itemprop="url" content="https://themaingate.net" />
+        <meta itemprop="logo" content="https://themaingate.net/david-calhoun-logo.png">
+    </span>
+    <meta itemprop="image" content="https://themaingate.net/david-calhoun-logo.png">
+
+    <article class="item">
+
+    
+    
+    
+
+    
+    
+
+    <meta property="article:section" content="Article" />
+    <meta property="article:publisher" content="https://www.davidbcalhoun.com" />
+    <meta property="article:published_time" content="November 18, 2009" />
+    <meta property="article:modified_time" content="November 18, 2009" />
+    <meta property="article:tag" content="javascript" />
+    
+    <meta property="og:site_name" content="CSS-Tricks" />
+    <meta property="og:updated_time" content="November 18, 2009" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="/2009/pitfalls-of-declaring-variables-in-javascript/" />
+    <meta property="og:title" content="Pitfalls of declaring variables in JavaScript" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Pitfalls of declaring variables in JavaScript" />
+    <meta name="twitter:site" content="@franksvalli" />
+    <meta name="twitter:creator" content="@franksvalli" />
+    <meta name="twitter:domain" content="davidbcalhoun.com" />
+
+
+    <h4 itemprop="headline">
+        <a href="/2009/pitfalls-of-declaring-variables-in-javascript/" itemprop="url">Pitfalls of declaring variables in JavaScript</a>
+    </h4>
+    <h5 class="meta date" itemprop="datePublished dateModified" content="November 18, 2009" datetime="November 18, 2009">
+        <time>November 18, 2009</time>
+    </h5>
+    
+    <a href="https://davidbcalhoun.com/tags/javascript"><kbd class="item-tag">javascript</kbd></a>
+    
+
+</article>
+
+
+    <br> <div class="text-justify">
+
+<h3 id="introduction">Introduction</h3>
+
+<p>One of the things that&#8217;s always been confusing to me is that there are multiple ways to declare variables in JavaScript, and some ways are better than others. For the beginner programmer, just getting to code to work means complete success, but for the intermediate or advanced programmer, this is just the first step. The next step is to clean up the code and make sure everything is written in the best way it could have been written.</p>
+
+<p>Declaring variables seems like such a basic thing that one almost feels insulted reading about it. Yes, this whole post is about declaring variables. But not just this &#8211; it&#8217;s about declaring variables <em>the right way</em>. This means declaring variables in the scope they were intended to be declared in.  For the most part this means writing variables in the scope of a function, as opposed to the global namespace (in which everything becomes a property of the window object).</p>
+
+<h3 id="global-variables-can-be-declared-in-functions">Global variables can be declared in functions</h3>
+
+<p>When I was starting to learn JavaScript, I read about global and functional scope and <em>wrongly</em> assumed that functions <em>completely</em> protected the variables declared inside.  As it turns out, there&#8217;s many ways to create global variables in JavaScript, and none of them throw up red flags or sound off bells and whistles (unfortunately).</p>
+
+<p>Here&#8217;s a few ways to create global variables in JavaScript:</p>
+
+<pre name="code" class="JScript">// Creating global variables outside of a function
+window.global1 = 1;
+global2 = 2;
+var global3 = 3;
+
+// Created global variables within a function
+function test() {
+    global4 = 4;
+    window.global5 = 5;
+};
+test();</pre>
+
+<p>You can confirm this for yourself by checking the values of the variables with alert().</p>
+
+<h3 id="good-practice-always-precede-variables-with-var">Good practice: always precede variables with var</h3>
+
+<p>What I learned was that it was essentially good practice to always write variables preceded by the var keyword.  For variables declared outside of functions this has no effect &#8211; they are still global, but for variables within functions this ensures that they&#8217;re kept within their functional scope:</p>
+
+<pre name="code" class="JScript">var global = null;
+function test() {
+    var local = null;
+}
+test();</pre>
+
+<h3 id="same-name-but-different-variables">Same name, but different variables</h3>
+
+<p>And check this out &#8211; confusingly, you can create a global variable, then create a variable with the <em>same name</em> that&#8217;s functionally-scoped, yet a completely different variable!</p>
+
+<pre name="code" class="JScript">var number = 0;
+
+function test() {
+    var number = 1;
+}
+test();
+
+alert(number);  // 0</pre>
+
+<p>When you precede a variable with the var keyword, you&#8217;re essentially saying you&#8217;re creating the variable for the first time.  So when you create &#8220;number&#8221; inside the function, no error is thrown because the variable is created in the function&#8217;s scope.  If you try to create another variable with the name &#8220;number&#8221; inside the function, you will get an error because it&#8217;s already been defined within the scope.</p>
+
+<h3 id="there-8217-s-no-such-thing-as-magical-protective-parenthesis">There&#8217;s no such thing as magical protective parenthesis</h3>
+
+<p>For some reason I was further mistaken into believing that extra parenthesis around an anonymous function magically protected <em>all</em> the variables within:</p>
+
+<pre name="code" class="JScript">(function() {
+    global = null;
+    var local = null;
+})();</pre>
+
+<p>Nope &#8211; as you can see, the global variable is still global since it&#8217;s not preceded by the var keyword.  However, the local variable is local because it&#8217;s within its functional scope and preceded by the var keyword.</p>
+
+<h3 id="shorthand-for-declaring-multiple-functionally-scoped-variables">Shorthand for declaring multiple functionally-scoped variables</h3>
+
+<p>The following code ensures each variable is functionally (locally) scoped, even though only the first variable is preceded by the var keyword:</p>
+
+<pre name="code" class="JScript">// shorthand #1
+function test() {
+    var local1 = null,
+        local2 = null;
+}
+test();
+
+// shorthand #2
+function test2() {
+    var local1, local2;  // these are of type 'undefined' but they have functional scope!
+}
+test2();
+</pre>
+
+<h3 id="multiple-variable-declaration-equivalence-gives-different-scope-to-each-variable">Multiple variable declaration equivalence gives different scope to each variable</h3>
+
+<p>Today I learned another way to mistakenly create a global variable.  Trying to be fancy and declare multiple variables to be the same value, I mistakenly created a global variable (again, no bells and whistles went off to warn me, unfortunately):</p>
+
+<pre name="code" class="JScript">function test() {
+    var local = global = null;
+}
+test();</pre>
+
+<p>This sets both variables to &#8220;null&#8221; using the shortest code possible, but unfortunately only the variable &#8220;local&#8221; is preceded by the var keyword, so only that variable will be in its proper functional scope. Variable &#8220;global&#8221;, on the other hand, is&#8230; well&#8230; global. (thanks to <a href="http://stackoverflow.com/questions/1758576/multiple-left-hand-assignment-with-javascript/1758912#1758912">Crescent Fish</a>)</p>
+
+<p>You learn something new every day&#8230;</p>
+
+<h3 id="update-1">Update 1</h3>
+
+<p>If you want to check your code for &#8220;accidental global variables&#8221; you can use <a href="http://www.jslint.com/">JSLint</a> or you can even use Firebug (click on the Script tab, then click on &#8220;New watch expression&#8230;&#8221;, then type &#8220;window&#8221;, which will display all the properties of the window object &#8211; these are all global variables!). Thanks to Nick for the Firebug tip.</p>
+
+<h3 id="update-2">Update 2</h3>
+
+<p>Just another quick note to remind you that after a variable has been initially declared, the scope will not change. Which is why you can redefine variables, but have them keep their scope:</p>
+
+<pre name="code" class="JScript">function test() {
+    var local = null;
+    local = 5;    // still keeps its local/functional scope
+}
+test();</pre>
+
+<p>As you can see above, the variable &#8220;local&#8221; keeps its local scope, even though it&#8217;s redefined to be 5. This is one of the reasons it&#8217;s recommended to declare all variables at the start of a function &#8211; to make sure the scope gets set correctly.</p>
+
+<p>One final note: var should only be used when declaring a variable for the first time. If you try to use var for the same variable name in the same scope, it will result in an error:</p>
+
+<pre name="code" class="JScript">function test() {
+    var local = null;
+    var local = 5;    // throws an error!
+}
+test();</pre>
+
+<h3 id="update-3-graphical-representation">Update 3: Graphical representation</h3>
+
+<div id="attachment_115" style="width: 710px" class="wp-caption alignleft">
+  <a href="http://davidbcalhoun.com/wp-content/uploads/2009/11/js-scope.png"><img src="http://davidbcalhoun.com/wp-content/uploads/2009/11/js-scope.png" alt="Scope in JavaScript" title="Scope in JavaScript" width="700" class="size-full wp-image-115" /></a><p class="wp-caption-text">
+    Scope in JavaScript
+  </p>
+</div>
+</div>
+
+    
+    
+
+    
+
+    
+
+        <h4 class="page-header">Comments</h4>
+
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "davidbcalhoun" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+
+</main>
+
+        <footer role="contentinfo">
+
+            <p class="copyright text-muted">© <span itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="David Calhoun"><a href="mailto:david.b.calhoun@gmail.com" itemprop="email">David Calhoun</a> (<a href="https://twitter.com/franksvalli" itemprop="url">@franksvalli</a>) - <a href="https://www.linkedin.com/in/davidcalhoun" itemprop="url">LinkedIn</a> - <a href="http://themaingate.net/resume/" itemprop="url">Resume</a></span></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+

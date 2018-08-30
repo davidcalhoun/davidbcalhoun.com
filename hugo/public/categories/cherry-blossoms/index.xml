@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cherry Blossoms on David Calhoun&#39;s blog</title>
+    <link>https://davidbcalhoun.com/categories/cherry-blossoms/</link>
+    <description>Recent content in Cherry Blossoms on David Calhoun&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Wed, 29 Apr 2015 23:20:01 -0700</lastBuildDate>
+    
+	<atom:link href="https://davidbcalhoun.com/categories/cherry-blossoms/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Tourist season in Japan, and a brief escape to Cafe Rhinebeck in Kyoto</title>
+      <link>https://davidbcalhoun.com/2015/tourist-season-in-japan-and-a-brief-escape-to-cafe-rhinebeck-in-kyoto/</link>
+      <pubDate>Wed, 29 Apr 2015 23:20:01 -0700</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2015/tourist-season-in-japan-and-a-brief-escape-to-cafe-rhinebeck-in-kyoto/</guid>
+      <description>{% imgcap center http://davidbcalhoun.com/wp-content/uploads/2015/2015-04-rhinebeck-cafe-kyoto-japan-5D__0292-david-calhoun.jpg 1000 666 Inside Cafe Rhinebeck in Kyoto, Japan (Photo copyright David Calhoun) %}
+(I originally wrote this while sitting in Cafe Rhinebeck in Kyoto, Japan)
+I&amp;rsquo;m visiting Japan again, when part of me is constantly thinking I should instead be spending the time and money exploring other parts of the world.
+I guess I just find myself coming back to the familiar and (somewhat) comfortable. I find that I have the same habit when returning to a restaurant, and ordering the same item from the menu each and every time.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Reduce on David Calhoun&#39;s blog</title>
+    <link>https://davidbcalhoun.com/tags/reduce/</link>
+    <description>Recent content in Reduce on David Calhoun&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 26 Aug 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://davidbcalhoun.com/tags/reduce/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A Simple Introduction to Javascript Map and Reduce Array Helper Functions</title>
+      <link>https://davidbcalhoun.com/2018/a-simple-introduction-to-javascript-map-and-reduce-array-helper-functions/</link>
+      <pubDate>Sun, 26 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2018/a-simple-introduction-to-javascript-map-and-reduce-array-helper-functions/</guid>
+      <description>Perhaps you&amp;rsquo;ve been programming for a while, and you&amp;rsquo;re pretty comfortable using for loops to traverse Arrays. However, you know how untidy and complicated for loops can get, and you are interested in better approaches to keep the code clean. Enter map and reduce!
+First steps with for loops Most folks find for loops powerful enough to achieve all they need when they need to process items in an Array.</description>
+    </item>
+    
+  </channel>
+</rss>

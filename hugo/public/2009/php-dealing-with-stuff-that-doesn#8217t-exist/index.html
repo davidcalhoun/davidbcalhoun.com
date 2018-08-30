@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>PHP: dealing with stuff that doesn&amp;#8217;t exist</title>
+        
+        <style>
+
+    html body {
+        font-family: 'Raleway', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: red;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://davidbcalhoun.com/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-dark.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.42.2" />
+        
+
+        
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-5530615-3"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)};
+          gtag('js', new Date());
+
+          gtag('config', 'UA-5530615-3');
+        </script>
+        
+    </head>
+
+    
+    
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">PHP: dealing with stuff that doesn&amp;#8217;t exist</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/">Home</a></li>
+                            
+                                <li><a href="/posts/">Posts</a></li>
+                            
+                                <li><a href="/project/">Projects</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:david.b.calhoun@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/davidcalhoun/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/franksvalli/"><i class="fa fa-twitter"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/davidcalhoun/"><i class="fa fa-linkedin"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://stackoverflow.com/users/214017/david-calhoun/"><i class="fa fa-stack-overflow"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main>
+
+    <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/2009/php-dealing-with-stuff-that-doesn#8217t-exist/">PHP: dealing with stuff that doesn&amp;#8217;t exist</a></h4>
+    <h5>December 1, 2009</h5>
+    
+    <a href="https://davidbcalhoun.com/tags/exists"><kbd class="item-tag">exists</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/function_exists"><kbd class="item-tag">function_exists</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/isset"><kbd class="item-tag">isset</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/method_exists"><kbd class="item-tag">method_exists</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/php"><kbd class="item-tag">php</kbd></a>
+    
+
+</div>
+
+
+    <br> <div class="text-justify">
+
+<h3 id="introduction">Introduction</h3>
+
+<p>As the application you&#8217;re coding becomes more and more complex, there&#8217;s more of an opportunity for things to go wrong in all sorts of unforseen ways.  One of these problems is variables or functions that don&#8217;t exist.  The problem is when you code in such a way that you presuppose their existence. But their existence isn&#8217;t guaranteed!</p>
+
+<p>A simple case of this happening is when you&#8217;re dealing with user input.  As it turns out, the user didn&#8217;t fill out a text field, but the variable for that text field still gets passed around as if it did exist.  More specifically, the variable gets set, but it gets set to an empty string (&#8221;).</p>
+
+<h3 id="check-that-the-variable-isn-8217-t-empty">Check that the variable isn&#8217;t empty</h3>
+
+<p>A common way of dealing with this is to check that the variable isn&#8217;t empty before using it:</p>
+
+<pre name="code" class="PHP">$name = 'Joe';
+if($name != '') {
+    echo 'Hello ' . $name;
+}</pre>
+
+<p>This turns out to be ALMOST equivalent to the following, which uses <a href="http://www.php.net/manual/en/function.empty.php">empty()</a>:</p>
+
+<pre name="code" class="PHP">$name = 'Joe';
+if(!empty($name)) {  // make sure $name isn't empty
+    echo 'Hello ' . $name;
+}
+</pre>
+
+<p>However, as <a href="http://www.zachstronaut.com/posts/2009/02/09/careful-with-php-empty.html">Zachary Johnson</a> points out, empty($variable) evaluates to true when $variable=&#8217;0&#8242;, so you may want to avoid using this.</p>
+
+<h3 id="check-that-the-variable-is-defined">Check that the variable is defined</h3>
+
+<p>There&#8217;s another case we haven&#8217;t tried yet: what happens if we haven&#8217;t defined the variable?</p>
+
+<pre name="code" class="PHP">error_reporting(E_ALL);
+if($name != '') {
+    echo 'Hello' . $name;
+}</pre>
+
+<p>Nothing catastrophic happens, but if we turn on error reporting, we can see that PHP is a bit upset. We get a notice that the variable $name is undefined, yet we&#8217;re trying to evaluate it. The value hasn&#8217;t been set yet. And there&#8217;s a function to check for that:</p>
+
+<pre name="code" class="PHP">$name = 'Joe';
+if(isset($name)) {
+    echo 'Variable is set';
+}</pre>
+
+<p>We can combine what we&#8217;ve learned into the following:</p>
+
+<pre name="code" class="PHP">$name = 'Joe';
+if(isset($name) &#038;&#038; $name != '') {
+    echo 'Hello ' . $name;
+}</pre>
+
+<p>There&#8217;s one neat thing here &#8211; if $name isn&#8217;t set, it evaluates the first part of the If condition as false (isset($name)) and doesn&#8217;t even look at the second part of the If condition ($name != &#8221;). This is because it doesn&#8217;t matter what comes after, it will still evaluate to false (false &#038;&#038; true evaluates to false, and false &#038;&#038; false evaluates to false). Looking at the rest of the If condition is a waste of CPU cycles, so PHP doesn&#8217;t do it!</p>
+
+<p>We can confirm this with the following code, which evaluates to false on the first If condition, then doesn&#8217;t even try to evaluate the call to a nonexisting function, and thus gives no errors:</p>
+
+<pre name="code" class="PHP">if(false &#038;&#038; function_that_doesnt_exist()) {
+    // do stuff here
+}</pre>
+
+<h3 id="check-if-a-function-exists">Check if a function exists</h3>
+
+<p>For functions there&#8217;s a similar helper called <a href="http://us3.php.net/manual/en/function.function-exists.php">function_exists()</a>:</p>
+
+<pre name="code" class="PHP">function my_function() { }
+if(function_exists('my_function')) {
+    my_function();
+}</pre>
+
+<p>And it doesn&#8217;t matter if your function is declared before or after you call it! Check it out &#8211; this works fine:</p>
+
+<pre name="code" class="PHP">if(function_exists('my_function')) {
+    my_function();
+}
+function my_function() { }</pre>
+
+<h3 id="check-if-an-object-8217-s-method-exists">Check if an object&#8217;s method exists</h3>
+
+<p>Similarly to checking if functions exist, we can check for the existence of functions belonging to an object (we call these the object&#8217;s methods) with <a href="http://php.net/manual/en/function.method-exists.php">method_exists()</a>:</p>
+
+<pre name="code" class="PHP">// Create a test class
+class myClass {
+    // Create a test function
+    public function my_function() {}
+}
+
+// Instantiate the class
+$myObject = new myClass();
+
+// Check to see if the test function exists
+if(method_exists($myObject, 'my_function')) {
+    // Do stuff here
+}</pre>
+</div>
+
+    
+    
+
+    
+
+    
+
+        <h4 class="page-header">Comments</h4>
+
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "davidbcalhoun" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+
+</main>
+
+        <footer>
+
+            <p class="copyright text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+

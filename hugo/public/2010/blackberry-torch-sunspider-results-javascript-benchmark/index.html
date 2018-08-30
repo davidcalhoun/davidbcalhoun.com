@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>BlackBerry Torch SunSpider results (JavaScript benchmark)</title>
+        
+        <style>
+
+    html body {
+        font-family: 'Roboto', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: #0D47A1;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://davidbcalhoun.com/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/foundation.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.42.2" />
+        
+
+        
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-5530615-3"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)};
+          gtag('js', new Date());
+
+          gtag('config', 'UA-5530615-3');
+        </script>
+        
+
+        <meta name="author" content="David Calhoun">
+        <link href="/index.xml" rel="alternate" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+        <link href="/index.xml" rel="feed" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+
+    </head>
+
+    
+    
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">BlackBerry Torch SunSpider results (JavaScript benchmark)</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="https://www.themaingate.net/">Home</a></li>
+                            
+                                <li><a href="/">Posts</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:david.b.calhoun@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/davidcalhoun/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/franksvalli/"><i class="fa fa-twitter"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/davidcalhoun/"><i class="fa fa-linkedin"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://stackoverflow.com/users/214017/david-calhoun/"><i class="fa fa-stack-overflow"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main role="main" itemscope itemType="http://schema.org/BlogPosting">
+    <meta itemprop="inLanguage" content="en-US" />
+    <span itemscope itemprop="author" itemType="https://schema.org/Person">
+        <meta itemprop="name" content="David Calhoun" />
+    </span>
+    <span itemscope itemprop="publisher" itemType="https://schema.org/Organization">
+        <meta itemprop="name" content="David Calhoun" />
+        <meta itemprop="url" content="https://themaingate.net" />
+        <meta itemprop="logo" content="https://themaingate.net/david-calhoun-logo.png">
+    </span>
+    <meta itemprop="image" content="https://themaingate.net/david-calhoun-logo.png">
+
+    <article class="item">
+
+    
+    
+    
+
+    
+    
+
+    <meta property="article:section" content="Article" />
+    <meta property="article:publisher" content="https://www.davidbcalhoun.com" />
+    <meta property="article:published_time" content="August 18, 2010" />
+    <meta property="article:modified_time" content="August 18, 2010" />
+    <meta property="article:tag" content="javascript" />
+    <meta property="article:tag" content="performance" />
+    <meta property="article:tag" content="mobile" />
+    <meta property="article:tag" content="webdev" />
+    <meta property="article:tag" content="blackberry" />
+    <meta property="article:tag" content="sunspider" />
+    <meta property="article:tag" content="webkit" />
+    
+    <meta property="og:site_name" content="CSS-Tricks" />
+    <meta property="og:updated_time" content="August 18, 2010" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="/2010/blackberry-torch-sunspider-results-javascript-benchmark/" />
+    <meta property="og:title" content="BlackBerry Torch SunSpider results (JavaScript benchmark)" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="BlackBerry Torch SunSpider results (JavaScript benchmark)" />
+    <meta name="twitter:site" content="@franksvalli" />
+    <meta name="twitter:creator" content="@franksvalli" />
+    <meta name="twitter:domain" content="davidbcalhoun.com" />
+
+
+    <h4 itemprop="headline">
+        <a href="/2010/blackberry-torch-sunspider-results-javascript-benchmark/" itemprop="url">BlackBerry Torch SunSpider results (JavaScript benchmark)</a>
+    </h4>
+    <h5 class="meta date" itemprop="datePublished dateModified" content="August 18, 2010" datetime="August 18, 2010">
+        <time>August 18, 2010</time>
+    </h5>
+    
+    <a href="https://davidbcalhoun.com/tags/javascript"><kbd class="item-tag">javascript</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/performance"><kbd class="item-tag">performance</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/mobile"><kbd class="item-tag">mobile</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/blackberry"><kbd class="item-tag">blackberry</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/sunspider"><kbd class="item-tag">sunspider</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/webkit"><kbd class="item-tag">webkit</kbd></a>
+    
+
+</article>
+
+
+    <br> <div class="text-justify">
+
+<h3 id="results">Results</h3>
+
+<pre><code>============================================
+RESULTS (means and 95% confidence intervals)
+--------------------------------------------
+Total:                 322.2ms +/- 4.9%
+--------------------------------------------
+
+  3d:                   55.0ms +/- 15.3%
+    cube:               19.8ms +/- 12.1%
+    morph:              16.6ms +/- 35.8%
+    raytrace:           18.6ms +/- 22.5%
+
+  access:               32.8ms +/- 12.4%
+    binary-trees:        1.8ms +/- 30.9%
+    fannkuch:           14.2ms +/- 7.3%
+    nbody:              12.6ms +/- 26.7%
+    nsieve:              4.2ms +/- 24.8%
+
+  bitops:               29.4ms +/- 10.2%
+    3bit-bits-in-byte:   2.4ms +/- 28.4%
+    bits-in-byte:        8.0ms +/- 15.5%
+    bitwise-and:         8.6ms +/- 21.9%
+    nsieve-bits:        10.4ms +/- 21.7%
+
+  controlflow:           2.4ms +/- 28.4%
+    recursive:           2.4ms +/- 28.4%
+
+  crypto:               22.0ms +/- 10.6%
+    aes:                 9.8ms +/- 27.5%
+    md5:                 6.2ms +/- 22.0%
+    sha1:                6.0ms +/- 20.7%
+
+  date:                 33.2ms +/- 11.7%
+    format-tofte:       16.6ms +/- 20.2%
+    format-xparb:       16.6ms +/- 13.6%
+
+  math:                 32.6ms +/- 15.2%
+    cordic:             12.0ms +/- 29.3%
+    partial-sums:       15.2ms +/- 20.4%
+    spectral-norm:       5.4ms +/- 20.6%
+
+  regexp:               15.6ms +/- 7.1%
+    dna:                15.6ms +/- 7.1%
+
+  string:               99.2ms +/- 14.0%
+    base64:              9.2ms +/- 14.8%
+    fasta:              14.4ms +/- 27.7%
+    tagcloud:           27.2ms +/- 23.2%
+    unpack-code:        31.8ms +/- 14.5%
+    validate-input:     16.6ms +/- 18.0%
+</code></pre>
+
+<h3 id="related-articles">Related articles</h3>
+
+<p><a href="http://davidbcalhoun.com/2010/iphone-4-sunspider-test-results">iPhone 4 SunSpider test results (22% faster than iPhone 3GS)</a><br />
+<a href="http://davidbcalhoun.com/2010/sunspider-ios-3-1-3-versus-ios-4-gm">JavaScript SunSpider test: iOS 3.1.3 versus iOS 4 GM</a><br />
+<a href="http://davidbcalhoun.com/2010/javascript-sunspider-htc-evo-versus-htc-incredible-versus-nexus-one">JavaScript SunSpider: HTC Evo versus HTC Incredible versus Nexus One</a><br />
+<a href="http://www.sencha.com/blog/2010/08/18/blackberry-torch-the-html5-developer-scorecard/">Sencha: BlackBerry Torch: The HTML5 Developer Scorecard</a></p>
+</div>
+
+    
+    
+
+    
+
+    
+
+        <h4 class="page-header">Comments</h4>
+
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "davidbcalhoun" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+
+</main>
+
+        <footer role="contentinfo">
+
+            <p class="copyright text-muted">© <span itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="David Calhoun"><a href="mailto:david.b.calhoun@gmail.com" itemprop="email">David Calhoun</a> (<a href="https://twitter.com/franksvalli" itemprop="url">@franksvalli</a>) - <a href="https://www.linkedin.com/in/davidcalhoun" itemprop="url">LinkedIn</a> - <a href="http://themaingate.net/resume/" itemprop="url">Resume</a></span></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+

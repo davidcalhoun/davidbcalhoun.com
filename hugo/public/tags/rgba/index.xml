@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rgba on David Calhoun&#39;s blog</title>
+    <link>https://davidbcalhoun.com/tags/rgba/</link>
+    <description>Recent content in Rgba on David Calhoun&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 29 Dec 2009 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://davidbcalhoun.com/tags/rgba/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A primer on CSS colors</title>
+      <link>https://davidbcalhoun.com/2009/a-primer-on-css-colors/</link>
+      <pubDate>Tue, 29 Dec 2009 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2009/a-primer-on-css-colors/</guid>
+      <description>Color keywords Example usage:
+// Example body { color: red; } // Generalization (not actual code) body { color: color_name; } Because color names are easy to remember, they&amp;#8217;re handy for getting quick results, especially while doing rapid prototyping.
+W3C&amp;#8217;s CSS1 recommendation first mentioned 16 color keywords that you can use: aqua, black, blue, fuchsia, gray, green, lime, maroon, navy, olive, purple, red, silver, teal, white, and yellow:
+   Color   Hexadecimal   Color   Hexadecimal   Color   Hexadecimal   Color   Hexadecimal     aqua / cyan  #00FFFF   gray  #808080   navy  #000080   silver  #C0C0C0     black  #000000   green  #008000   olive  #808000   teal  #008080     blue  #0000FF   lime  #00FF00   purple  #800080   white  #FFFFFF     fuchsia / magenta  #FF00FF   maroon  #800000   red  #FF0000   yellow  #FFFF00    (color table from Wikipedia)</description>
+    </item>
+    
+  </channel>
+</rss>

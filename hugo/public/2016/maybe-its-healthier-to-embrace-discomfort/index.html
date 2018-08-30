@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Maybe it&#39;s healthier to embrace discomfort</title>
+        
+        <style>
+
+    html body {
+        font-family: 'Roboto', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: #0D47A1;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://davidbcalhoun.com/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/foundation.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.42.2" />
+        
+
+        
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-5530615-3"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)};
+          gtag('js', new Date());
+
+          gtag('config', 'UA-5530615-3');
+        </script>
+        
+
+        <meta name="author" content="David Calhoun">
+        <link href="/index.xml" rel="alternate" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+        <link href="/index.xml" rel="feed" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+
+    </head>
+
+    
+    
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">Maybe it&#39;s healthier to embrace discomfort</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="https://www.themaingate.net/">Home</a></li>
+                            
+                                <li><a href="/">Posts</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:david.b.calhoun@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/davidcalhoun/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/franksvalli/"><i class="fa fa-twitter"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/davidcalhoun/"><i class="fa fa-linkedin"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://stackoverflow.com/users/214017/david-calhoun/"><i class="fa fa-stack-overflow"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main role="main" itemscope itemType="http://schema.org/BlogPosting">
+    <meta itemprop="inLanguage" content="en-US" />
+    <span itemscope itemprop="author" itemType="https://schema.org/Person">
+        <meta itemprop="name" content="David Calhoun" />
+    </span>
+    <span itemscope itemprop="publisher" itemType="https://schema.org/Organization">
+        <meta itemprop="name" content="David Calhoun" />
+        <meta itemprop="url" content="https://themaingate.net" />
+        <meta itemprop="logo" content="https://themaingate.net/david-calhoun-logo.png">
+    </span>
+    <meta itemprop="image" content="https://themaingate.net/david-calhoun-logo.png">
+
+    <article class="item">
+
+    
+    
+    
+
+    
+    
+
+    <meta property="article:section" content="Article" />
+    <meta property="article:publisher" content="https://www.davidbcalhoun.com" />
+    <meta property="article:published_time" content="November 9, 2016" />
+    <meta property="article:modified_time" content="November 9, 2016" />
+    <meta property="article:tag" content="politics" />
+    <meta property="article:tag" content="philosophy" />
+    
+    <meta property="og:site_name" content="CSS-Tricks" />
+    <meta property="og:updated_time" content="November 9, 2016" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="/2016/maybe-its-healthier-to-embrace-discomfort/" />
+    <meta property="og:title" content="Maybe it&#39;s healthier to embrace discomfort" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Maybe it&#39;s healthier to embrace discomfort" />
+    <meta name="twitter:site" content="@franksvalli" />
+    <meta name="twitter:creator" content="@franksvalli" />
+    <meta name="twitter:domain" content="davidbcalhoun.com" />
+
+
+    <h4 itemprop="headline">
+        <a href="/2016/maybe-its-healthier-to-embrace-discomfort/" itemprop="url">Maybe it&#39;s healthier to embrace discomfort</a>
+    </h4>
+    <h5 class="meta date" itemprop="datePublished dateModified" content="November 9, 2016" datetime="November 9, 2016">
+        <time>November 9, 2016</time>
+    </h5>
+    
+    <a href="https://davidbcalhoun.com/tags/politics"><kbd class="item-tag">politics</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/philosophy"><kbd class="item-tag">philosophy</kbd></a>
+    
+
+</article>
+
+
+    <br> <div class="text-justify"><p>Many folks, including yours truly, have had an unpleasant night, and this morning a bitter awakening at the announcement that our new President will be Trump.  For most folks this comes as a shock, as we have all thought the chances of this happening were slim.  Comedians chided him on and dared him to run.  Even President Obama who continually roasted him <a href="https://www.youtube.com/watch?v=n9mzJhvC-8E">at the White House Correspondents&rsquo; Dinner in 2011</a>, arguably the defining moment when Trump became driven to run for President (&ldquo;He certainly would bring some change to the White House&rdquo;).</p>
+
+<p>The whole experience has been surreal, and I suppose many folks took it for granted that last night we would finally would wake from such a crazy nightmare.  But we haven&rsquo;t waken up.  This is America for the next four years.  And now, as rational people, we need to come to terms with this and figure out how to deal with this.  Rationally.</p>
+
+<p>Just as Michael Moore did before the election, when he articulated a very personal understanding of Trump&rsquo;s base of support:</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/YKeYbEOSqYc" frameborder="0" allowfullscreen></iframe>
+
+<p>Trump the person of course has always been shocking, and that he&rsquo;s progressed this far is more shocking.  It will be so hard to think of him ever being &ldquo;presidential&rdquo;.  The thing is, he can only have made it so far by being backed by MANY supporters, the viewpoints of which clearly so many of us have failed to understand.  Perhaps out of our own lack of empathy.</p>
+
+<p>It&rsquo;s clear that so many of us have still failed to understand, with some explanations that Hillary lost largely because America is misogynist.  Or that Trump&rsquo;s supporters are all old, racist, uneducated, white hillbillies out in flyover country.</p>
+
+<p>These arguments are simply intellectually lazy, and they should be identified as such.</p>
+
+<p>To be sure, there are plenty of racist Trump supporters who have created enough spectacles on their own, apart from Trump creating his own spectacles which we all gobbled up.  Heck, the KKK endorsing Trump was a spectacle on its own (the KKK also endorsed Reagan, but unlike Trump he was <a href="http://www.nytimes.com/1984/05/02/us/reagan-spurns-klan-support.html">quite vocal against them</a>).</p>
+
+<p>The point here is that it&rsquo;s a logical leap to say that the majority of Trump supporters are this way.  This is simply a lazy stereotype that uncritically pushes these supporters to the sidelines.</p>
+
+<p>Ironically and sadly, we continue to have a very surface-level understand of Trump supporters.  But why should we be so supportive of folks with alternative ways of life, such as LGBT folks, but immediately dismissive of Trump supporters?  The truth is that it&rsquo;s much easier to write off these folks as 100% racist, block them on social media, laugh at them, and shut then down, than to understand them.  The same motivation that encourages folks to flee communities that don&rsquo;t share their political opinions.</p>
+
+<p>What do folks expect from people whose voices are silenced?  They turn more extremist than you could possibly imagine.  Sadly, I think some of them do turn resentful and become racist and sexist, when they would have had no incentive to do so otherwise.</p>
+
+<p>If you find yourself growing up in a middle America town, but find yourself not fitting in politically, surely you are silenced and shut down in a similar way.  If you are not &ldquo;one of them&rdquo;, how are you supposed to even engage in debate, except by fleeing flyover country and joining the rest of your like-minded folks on either coast?  Further dividing these united states, segregating ideologies into geographic echo chambers.</p>
+
+<p>It must be something driven by human nature, something that drives folks apart and into like-minded groups.  Something that is comfortable, no doubt.  It&rsquo;s definitely more comfortable to flee different viewpoints than to struggle to understand them.</p>
+
+<p>But maybe it&rsquo;s more healthy for us to embrace discomfort?  I don&rsquo;t know.  I just know that whatever we&rsquo;re doing now isn&rsquo;t working.</p>
+</div>
+
+    
+    
+
+    
+
+    
+
+        <h4 class="page-header">Comments</h4>
+
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "davidbcalhoun" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+
+</main>
+
+        <footer role="contentinfo">
+
+            <p class="copyright text-muted">© <span itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="David Calhoun"><a href="mailto:david.b.calhoun@gmail.com" itemprop="email">David Calhoun</a> (<a href="https://twitter.com/franksvalli" itemprop="url">@franksvalli</a>) - <a href="https://www.linkedin.com/in/davidcalhoun" itemprop="url">LinkedIn</a> - <a href="http://themaingate.net/resume/" itemprop="url">Resume</a></span></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+

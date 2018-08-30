@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Css</title>
+        
+        <style>
+
+    html body {
+        font-family: 'Roboto', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: #0D47A1;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://davidbcalhoun.com/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/foundation.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.42.2" />
+        
+        <link href="https://davidbcalhoun.com/tags/css/index.xml" rel="alternate" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+        <link href="https://davidbcalhoun.com/tags/css/index.xml" rel="feed" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+        
+
+        
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-5530615-3"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)};
+          gtag('js', new Date());
+
+          gtag('config', 'UA-5530615-3');
+        </script>
+        
+
+        <meta name="author" content="David Calhoun">
+        <link href="/index.xml" rel="alternate" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+        <link href="/index.xml" rel="feed" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+
+    </head>
+
+    
+    
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">Css</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="https://www.themaingate.net/">Home</a></li>
+                            
+                                <li><a href="/">Posts</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:david.b.calhoun@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/davidcalhoun/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/franksvalli/"><i class="fa fa-twitter"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/davidcalhoun/"><i class="fa fa-linkedin"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://stackoverflow.com/users/214017/david-calhoun/"><i class="fa fa-stack-overflow"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main>
+
+    <h2>Css</h2>
+
+     <article class="item">
+
+    
+    
+    
+
+    
+    
+
+    <meta property="article:section" content="Article" />
+    <meta property="article:publisher" content="https://www.davidbcalhoun.com" />
+    <meta property="article:published_time" content="August 10, 2012" />
+    <meta property="article:modified_time" content="August 10, 2012" />
+    <meta property="article:tag" content="css" />
+    <meta property="article:tag" content="webkit" />
+    <meta property="article:tag" content="pseudoelements" />
+    <meta property="article:tag" content="webdev" />
+    
+    <meta property="og:site_name" content="CSS-Tricks" />
+    <meta property="og:updated_time" content="August 10, 2012" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="/2012/more-fun-with-webkit-pseudoelements--webkit-search-cancel-button-or-pseudoclass-inception/" />
+    <meta property="og:title" content="More fun with WebKit pseudoelements: -webkit-search-cancel-button (or: Pseudoclass Inception)" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="More fun with WebKit pseudoelements: -webkit-search-cancel-button (or: Pseudoclass Inception)" />
+    <meta name="twitter:site" content="@franksvalli" />
+    <meta name="twitter:creator" content="@franksvalli" />
+    <meta name="twitter:domain" content="davidbcalhoun.com" />
+
+
+    <h4 itemprop="headline">
+        <a href="/2012/more-fun-with-webkit-pseudoelements--webkit-search-cancel-button-or-pseudoclass-inception/" itemprop="url">More fun with WebKit pseudoelements: -webkit-search-cancel-button (or: Pseudoclass Inception)</a>
+    </h4>
+    <h5 class="meta date" itemprop="datePublished dateModified" content="August 10, 2012" datetime="August 10, 2012">
+        <time>August 10, 2012</time>
+    </h5>
+    
+    <a href="https://davidbcalhoun.com/tags/css"><kbd class="item-tag">css</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/webkit"><kbd class="item-tag">webkit</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/pseudoelements"><kbd class="item-tag">pseudoelements</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
+    
+
+</article>
+  <article class="item">
+
+    
+    
+    
+
+    
+    
+
+    <meta property="article:section" content="Article" />
+    <meta property="article:publisher" content="https://www.davidbcalhoun.com" />
+    <meta property="article:published_time" content="January 16, 2011" />
+    <meta property="article:modified_time" content="January 16, 2011" />
+    <meta property="article:tag" content="css" />
+    <meta property="article:tag" content="iphone" />
+    <meta property="article:tag" content="demo" />
+    <meta property="article:tag" content="webdev" />
+    
+    <meta property="og:site_name" content="CSS-Tricks" />
+    <meta property="og:updated_time" content="January 16, 2011" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="/2011/implementing-iphones-slider-unlock-with-input-typerange/" />
+    <meta property="og:title" content="Implementing iPhone&#39;s slider unlock with input type=&#39;range&#39;" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Implementing iPhone&#39;s slider unlock with input type=&#39;range&#39;" />
+    <meta name="twitter:site" content="@franksvalli" />
+    <meta name="twitter:creator" content="@franksvalli" />
+    <meta name="twitter:domain" content="davidbcalhoun.com" />
+
+
+    <h4 itemprop="headline">
+        <a href="/2011/implementing-iphones-slider-unlock-with-input-typerange/" itemprop="url">Implementing iPhone&#39;s slider unlock with input type=&#39;range&#39;</a>
+    </h4>
+    <h5 class="meta date" itemprop="datePublished dateModified" content="January 16, 2011" datetime="January 16, 2011">
+        <time>January 16, 2011</time>
+    </h5>
+    
+    <a href="https://davidbcalhoun.com/tags/css"><kbd class="item-tag">css</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/iphone"><kbd class="item-tag">iphone</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/demo"><kbd class="item-tag">demo</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
+    
+
+</article>
+  <article class="item">
+
+    
+    
+    
+
+    
+    
+
+    <meta property="article:section" content="Article" />
+    <meta property="article:publisher" content="https://www.davidbcalhoun.com" />
+    <meta property="article:published_time" content="July 8, 2010" />
+    <meta property="article:modified_time" content="July 8, 2010" />
+    <meta property="article:tag" content="css" />
+    <meta property="article:tag" content="javascript" />
+    <meta property="article:tag" content="mobile" />
+    
+    <meta property="og:site_name" content="CSS-Tricks" />
+    <meta property="og:updated_time" content="July 8, 2010" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="/2010/thursday-links-july-8/" />
+    <meta property="og:title" content="Thursday links (July 8)" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Thursday links (July 8)" />
+    <meta name="twitter:site" content="@franksvalli" />
+    <meta name="twitter:creator" content="@franksvalli" />
+    <meta name="twitter:domain" content="davidbcalhoun.com" />
+
+
+    <h4 itemprop="headline">
+        <a href="/2010/thursday-links-july-8/" itemprop="url">Thursday links (July 8)</a>
+    </h4>
+    <h5 class="meta date" itemprop="datePublished dateModified" content="July 8, 2010" datetime="July 8, 2010">
+        <time>July 8, 2010</time>
+    </h5>
+    
+    <a href="https://davidbcalhoun.com/tags/css"><kbd class="item-tag">css</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/javascript"><kbd class="item-tag">javascript</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/mobile"><kbd class="item-tag">mobile</kbd></a>
+    
+
+</article>
+  <article class="item">
+
+    
+    
+    
+
+    
+    
+
+    <meta property="article:section" content="Article" />
+    <meta property="article:publisher" content="https://www.davidbcalhoun.com" />
+    <meta property="article:published_time" content="June 29, 2010" />
+    <meta property="article:modified_time" content="June 29, 2010" />
+    <meta property="article:tag" content="basejs" />
+    <meta property="article:tag" content="blackberry.network" />
+    <meta property="article:tag" content="blackberry.system" />
+    <meta property="article:tag" content="capture api" />
+    <meta property="article:tag" content="css" />
+    <meta property="article:tag" content="gesture events" />
+    <meta property="article:tag" content="html" />
+    <meta property="article:tag" content="iui" />
+    <meta property="article:tag" content="javascript" />
+    <meta property="article:tag" content="jqtouch" />
+    <meta property="article:tag" content="media queries" />
+    <meta property="article:tag" content="mobile" />
+    <meta property="article:tag" content="mozorientation" />
+    <meta property="article:tag" content="orientationchange" />
+    <meta property="article:tag" content="pastrykit" />
+    <meta property="article:tag" content="touch events" />
+    <meta property="article:tag" content="webkit" />
+    <meta property="article:tag" content="xui" />
+    
+    <meta property="og:site_name" content="CSS-Tricks" />
+    <meta property="og:updated_time" content="June 29, 2010" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="/2010/using-mobile-specific-html-css-and-javascript-mobile-web-part-5/" />
+    <meta property="og:title" content="Using mobile-specific HTML, CSS, and JavaScript (Mobile web part 5)" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Using mobile-specific HTML, CSS, and JavaScript (Mobile web part 5)" />
+    <meta name="twitter:site" content="@franksvalli" />
+    <meta name="twitter:creator" content="@franksvalli" />
+    <meta name="twitter:domain" content="davidbcalhoun.com" />
+
+
+    <h4 itemprop="headline">
+        <a href="/2010/using-mobile-specific-html-css-and-javascript-mobile-web-part-5/" itemprop="url">Using mobile-specific HTML, CSS, and JavaScript (Mobile web part 5)</a>
+    </h4>
+    <h5 class="meta date" itemprop="datePublished dateModified" content="June 29, 2010" datetime="June 29, 2010">
+        <time>June 29, 2010</time>
+    </h5>
+    
+    <a href="https://davidbcalhoun.com/tags/basejs"><kbd class="item-tag">basejs</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/blackberry.network"><kbd class="item-tag">blackberry.network</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/blackberry.system"><kbd class="item-tag">blackberry.system</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/capture-api"><kbd class="item-tag">capture api</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/css"><kbd class="item-tag">css</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/gesture-events"><kbd class="item-tag">gesture events</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/html"><kbd class="item-tag">html</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/iui"><kbd class="item-tag">iui</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/javascript"><kbd class="item-tag">javascript</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/jqtouch"><kbd class="item-tag">jqtouch</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/media-queries"><kbd class="item-tag">media queries</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/mobile"><kbd class="item-tag">mobile</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/mozorientation"><kbd class="item-tag">mozorientation</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/orientationchange"><kbd class="item-tag">orientationchange</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/pastrykit"><kbd class="item-tag">pastrykit</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/touch-events"><kbd class="item-tag">touch events</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/webkit"><kbd class="item-tag">webkit</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/xui"><kbd class="item-tag">xui</kbd></a>
+    
+
+</article>
+  <article class="item">
+
+    
+    
+    
+
+    
+    
+
+    <meta property="article:section" content="Article" />
+    <meta property="article:publisher" content="https://www.davidbcalhoun.com" />
+    <meta property="article:published_time" content="March 2, 2010" />
+    <meta property="article:modified_time" content="March 2, 2010" />
+    <meta property="article:tag" content="box model" />
+    <meta property="article:tag" content="css" />
+    <meta property="article:tag" content="webdev" />
+    
+    <meta property="og:site_name" content="CSS-Tricks" />
+    <meta property="og:updated_time" content="March 2, 2010" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="/2010/a-clockwork-box/" />
+    <meta property="og:title" content="A Clockwork Box" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="A Clockwork Box" />
+    <meta name="twitter:site" content="@franksvalli" />
+    <meta name="twitter:creator" content="@franksvalli" />
+    <meta name="twitter:domain" content="davidbcalhoun.com" />
+
+
+    <h4 itemprop="headline">
+        <a href="/2010/a-clockwork-box/" itemprop="url">A Clockwork Box</a>
+    </h4>
+    <h5 class="meta date" itemprop="datePublished dateModified" content="March 2, 2010" datetime="March 2, 2010">
+        <time>March 2, 2010</time>
+    </h5>
+    
+    <a href="https://davidbcalhoun.com/tags/box-model"><kbd class="item-tag">box model</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/css"><kbd class="item-tag">css</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
+    
+
+</article>
+  <article class="item">
+
+    
+    
+    
+
+    
+    
+
+    <meta property="article:section" content="Article" />
+    <meta property="article:publisher" content="https://www.davidbcalhoun.com" />
+    <meta property="article:published_time" content="December 29, 2009" />
+    <meta property="article:modified_time" content="December 29, 2009" />
+    <meta property="article:tag" content="color" />
+    <meta property="article:tag" content="css" />
+    <meta property="article:tag" content="hex" />
+    <meta property="article:tag" content="rgb" />
+    <meta property="article:tag" content="rgba" />
+    <meta property="article:tag" content="web safe" />
+    
+    <meta property="og:site_name" content="CSS-Tricks" />
+    <meta property="og:updated_time" content="December 29, 2009" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="/2009/a-primer-on-css-colors/" />
+    <meta property="og:title" content="A primer on CSS colors" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="A primer on CSS colors" />
+    <meta name="twitter:site" content="@franksvalli" />
+    <meta name="twitter:creator" content="@franksvalli" />
+    <meta name="twitter:domain" content="davidbcalhoun.com" />
+
+
+    <h4 itemprop="headline">
+        <a href="/2009/a-primer-on-css-colors/" itemprop="url">A primer on CSS colors</a>
+    </h4>
+    <h5 class="meta date" itemprop="datePublished dateModified" content="December 29, 2009" datetime="December 29, 2009">
+        <time>December 29, 2009</time>
+    </h5>
+    
+    <a href="https://davidbcalhoun.com/tags/color"><kbd class="item-tag">color</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/css"><kbd class="item-tag">css</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/hex"><kbd class="item-tag">hex</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/rgb"><kbd class="item-tag">rgb</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/rgba"><kbd class="item-tag">rgba</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/web-safe"><kbd class="item-tag">web safe</kbd></a>
+    
+
+</article>
+  <article class="item">
+
+    
+    
+    
+
+    
+    
+
+    <meta property="article:section" content="Article" />
+    <meta property="article:publisher" content="https://www.davidbcalhoun.com" />
+    <meta property="article:published_time" content="August 31, 2009" />
+    <meta property="article:modified_time" content="August 31, 2009" />
+    <meta property="article:tag" content="6.12" />
+    <meta property="article:tag" content="css" />
+    <meta property="article:tag" content="display" />
+    <meta property="article:tag" content="ie6" />
+    <meta property="article:tag" content="iemobile" />
+    <meta property="article:tag" content="inline" />
+    <meta property="article:tag" content="inline-block" />
+    <meta property="article:tag" content="webdev" />
+    <meta property="article:tag" content="ie" />
+    <meta property="article:tag" content="internet explorer" />
+    <meta property="article:tag" content="mobile" />
+    
+    <meta property="og:site_name" content="CSS-Tricks" />
+    <meta property="og:updated_time" content="August 31, 2009" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="/2009/ie-mobile-6.12-problem-browser-ignores-the-specificity-of-css-display-styles/" />
+    <meta property="og:title" content="IE Mobile 6.12 problem: browser ignores the specificity of CSS display styles" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="IE Mobile 6.12 problem: browser ignores the specificity of CSS display styles" />
+    <meta name="twitter:site" content="@franksvalli" />
+    <meta name="twitter:creator" content="@franksvalli" />
+    <meta name="twitter:domain" content="davidbcalhoun.com" />
+
+
+    <h4 itemprop="headline">
+        <a href="/2009/ie-mobile-6.12-problem-browser-ignores-the-specificity-of-css-display-styles/" itemprop="url">IE Mobile 6.12 problem: browser ignores the specificity of CSS display styles</a>
+    </h4>
+    <h5 class="meta date" itemprop="datePublished dateModified" content="August 31, 2009" datetime="August 31, 2009">
+        <time>August 31, 2009</time>
+    </h5>
+    
+    <a href="https://davidbcalhoun.com/tags/6.12"><kbd class="item-tag">6.12</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/css"><kbd class="item-tag">css</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/display"><kbd class="item-tag">display</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/ie6"><kbd class="item-tag">ie6</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/iemobile"><kbd class="item-tag">iemobile</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/inline"><kbd class="item-tag">inline</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/inline-block"><kbd class="item-tag">inline-block</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/ie"><kbd class="item-tag">ie</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/internet-explorer"><kbd class="item-tag">internet explorer</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/mobile"><kbd class="item-tag">mobile</kbd></a>
+    
+
+</article>
+ 
+
+</main>
+
+
+
+        <footer role="contentinfo">
+
+            <p class="copyright text-muted">© <span itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="David Calhoun"><a href="mailto:david.b.calhoun@gmail.com" itemprop="email">David Calhoun</a> (<a href="https://twitter.com/franksvalli" itemprop="url">@franksvalli</a>) - <a href="https://www.linkedin.com/in/davidcalhoun" itemprop="url">LinkedIn</a> - <a href="http://themaingate.net/resume/" itemprop="url">Resume</a></span></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+

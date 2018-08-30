@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Performance</title>
+        
+        <style>
+
+    html body {
+        font-family: 'Roboto', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: #0D47A1;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://davidbcalhoun.com/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/foundation.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.42.2" />
+        
+        <link href="https://davidbcalhoun.com/tags/performance/index.xml" rel="alternate" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+        <link href="https://davidbcalhoun.com/tags/performance/index.xml" rel="feed" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+        
+
+        
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-5530615-3"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)};
+          gtag('js', new Date());
+
+          gtag('config', 'UA-5530615-3');
+        </script>
+        
+
+        <meta name="author" content="David Calhoun">
+        <link href="/index.xml" rel="alternate" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+        <link href="/index.xml" rel="feed" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+
+    </head>
+
+    
+    
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">Performance</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="https://www.themaingate.net/">Home</a></li>
+                            
+                                <li><a href="/">Posts</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:david.b.calhoun@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/davidcalhoun/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/franksvalli/"><i class="fa fa-twitter"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/davidcalhoun/"><i class="fa fa-linkedin"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://stackoverflow.com/users/214017/david-calhoun/"><i class="fa fa-stack-overflow"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main>
+
+    <h2>Performance</h2>
+
+     <article class="item">
+
+    
+    
+    
+
+    
+    
+
+    <meta property="article:section" content="Article" />
+    <meta property="article:publisher" content="https://www.davidbcalhoun.com" />
+    <meta property="article:published_time" content="October 14, 2011" />
+    <meta property="article:modified_time" content="October 14, 2011" />
+    <meta property="article:tag" content="performance" />
+    <meta property="article:tag" content="javascript" />
+    <meta property="article:tag" content="mobile" />
+    <meta property="article:tag" content="iphone" />
+    <meta property="article:tag" content="webdev" />
+    
+    <meta property="og:site_name" content="CSS-Tricks" />
+    <meta property="og:updated_time" content="October 14, 2011" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="/2011/ios5-sunspider-iphone-4s-vs-iphone-4-vs-iphone-3gs/" />
+    <meta property="og:title" content="iOS5 SunSpider: iPhone 4S vs iPhone 4 vs iPhone 3GS" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="iOS5 SunSpider: iPhone 4S vs iPhone 4 vs iPhone 3GS" />
+    <meta name="twitter:site" content="@franksvalli" />
+    <meta name="twitter:creator" content="@franksvalli" />
+    <meta name="twitter:domain" content="davidbcalhoun.com" />
+
+
+    <h4 itemprop="headline">
+        <a href="/2011/ios5-sunspider-iphone-4s-vs-iphone-4-vs-iphone-3gs/" itemprop="url">iOS5 SunSpider: iPhone 4S vs iPhone 4 vs iPhone 3GS</a>
+    </h4>
+    <h5 class="meta date" itemprop="datePublished dateModified" content="October 14, 2011" datetime="October 14, 2011">
+        <time>October 14, 2011</time>
+    </h5>
+    
+    <a href="https://davidbcalhoun.com/tags/performance"><kbd class="item-tag">performance</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/javascript"><kbd class="item-tag">javascript</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/mobile"><kbd class="item-tag">mobile</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/iphone"><kbd class="item-tag">iphone</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
+    
+
+</article>
+  <article class="item">
+
+    
+    
+    
+
+    
+    
+
+    <meta property="article:section" content="Article" />
+    <meta property="article:publisher" content="https://www.davidbcalhoun.com" />
+    <meta property="article:published_time" content="October 11, 2011" />
+    <meta property="article:modified_time" content="October 11, 2011" />
+    <meta property="article:tag" content="webdev" />
+    <meta property="article:tag" content="mobile" />
+    <meta property="article:tag" content="performance" />
+    
+    <meta property="og:site_name" content="CSS-Tricks" />
+    <meta property="og:updated_time" content="October 11, 2011" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="/2011/mobile-performance-manifesto/" />
+    <meta property="og:title" content="Mobile Performance Manifesto" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Mobile Performance Manifesto" />
+    <meta name="twitter:site" content="@franksvalli" />
+    <meta name="twitter:creator" content="@franksvalli" />
+    <meta name="twitter:domain" content="davidbcalhoun.com" />
+
+
+    <h4 itemprop="headline">
+        <a href="/2011/mobile-performance-manifesto/" itemprop="url">Mobile Performance Manifesto</a>
+    </h4>
+    <h5 class="meta date" itemprop="datePublished dateModified" content="October 11, 2011" datetime="October 11, 2011">
+        <time>October 11, 2011</time>
+    </h5>
+    
+    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/mobile"><kbd class="item-tag">mobile</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/performance"><kbd class="item-tag">performance</kbd></a>
+    
+
+</article>
+  <article class="item">
+
+    
+    
+    
+
+    
+    
+
+    <meta property="article:section" content="Article" />
+    <meta property="article:publisher" content="https://www.davidbcalhoun.com" />
+    <meta property="article:published_time" content="August 28, 2011" />
+    <meta property="article:modified_time" content="August 28, 2011" />
+    <meta property="article:tag" content="webdev" />
+    <meta property="article:tag" content="performance" />
+    
+    <meta property="og:site_name" content="CSS-Tricks" />
+    <meta property="og:updated_time" content="August 28, 2011" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="/2011/when-to-base64-encode-images-and-when-not-to/" />
+    <meta property="og:title" content="When to base64 encode images (and when not to)" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="When to base64 encode images (and when not to)" />
+    <meta name="twitter:site" content="@franksvalli" />
+    <meta name="twitter:creator" content="@franksvalli" />
+    <meta name="twitter:domain" content="davidbcalhoun.com" />
+
+
+    <h4 itemprop="headline">
+        <a href="/2011/when-to-base64-encode-images-and-when-not-to/" itemprop="url">When to base64 encode images (and when not to)</a>
+    </h4>
+    <h5 class="meta date" itemprop="datePublished dateModified" content="August 28, 2011" datetime="August 28, 2011">
+        <time>August 28, 2011</time>
+    </h5>
+    
+    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/performance"><kbd class="item-tag">performance</kbd></a>
+    
+
+</article>
+  <article class="item">
+
+    
+    
+    
+
+    
+    
+
+    <meta property="article:section" content="Article" />
+    <meta property="article:publisher" content="https://www.davidbcalhoun.com" />
+    <meta property="article:published_time" content="January 22, 2011" />
+    <meta property="article:modified_time" content="January 22, 2011" />
+    <meta property="article:tag" content="javascript" />
+    <meta property="article:tag" content="performance" />
+    <meta property="article:tag" content="mobile" />
+    <meta property="article:tag" content="ios" />
+    <meta property="article:tag" content="webdev" />
+    
+    <meta property="og:site_name" content="CSS-Tricks" />
+    <meta property="og:updated_time" content="January 22, 2011" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="/2011/javascript-sunspider-benchmark-ios-4.3-vs-ios-4.0/" />
+    <meta property="og:title" content="JavaScript SunSpider benchmark: iOS 4.3 vs iOS 4.0" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="JavaScript SunSpider benchmark: iOS 4.3 vs iOS 4.0" />
+    <meta name="twitter:site" content="@franksvalli" />
+    <meta name="twitter:creator" content="@franksvalli" />
+    <meta name="twitter:domain" content="davidbcalhoun.com" />
+
+
+    <h4 itemprop="headline">
+        <a href="/2011/javascript-sunspider-benchmark-ios-4.3-vs-ios-4.0/" itemprop="url">JavaScript SunSpider benchmark: iOS 4.3 vs iOS 4.0</a>
+    </h4>
+    <h5 class="meta date" itemprop="datePublished dateModified" content="January 22, 2011" datetime="January 22, 2011">
+        <time>January 22, 2011</time>
+    </h5>
+    
+    <a href="https://davidbcalhoun.com/tags/javascript"><kbd class="item-tag">javascript</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/performance"><kbd class="item-tag">performance</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/mobile"><kbd class="item-tag">mobile</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/ios"><kbd class="item-tag">ios</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
+    
+
+</article>
+  <article class="item">
+
+    
+    
+    
+
+    
+    
+
+    <meta property="article:section" content="Article" />
+    <meta property="article:publisher" content="https://www.davidbcalhoun.com" />
+    <meta property="article:published_time" content="August 18, 2010" />
+    <meta property="article:modified_time" content="August 18, 2010" />
+    <meta property="article:tag" content="javascript" />
+    <meta property="article:tag" content="performance" />
+    <meta property="article:tag" content="mobile" />
+    <meta property="article:tag" content="webdev" />
+    <meta property="article:tag" content="blackberry" />
+    <meta property="article:tag" content="sunspider" />
+    <meta property="article:tag" content="webkit" />
+    
+    <meta property="og:site_name" content="CSS-Tricks" />
+    <meta property="og:updated_time" content="August 18, 2010" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="/2010/blackberry-torch-sunspider-results-javascript-benchmark/" />
+    <meta property="og:title" content="BlackBerry Torch SunSpider results (JavaScript benchmark)" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="BlackBerry Torch SunSpider results (JavaScript benchmark)" />
+    <meta name="twitter:site" content="@franksvalli" />
+    <meta name="twitter:creator" content="@franksvalli" />
+    <meta name="twitter:domain" content="davidbcalhoun.com" />
+
+
+    <h4 itemprop="headline">
+        <a href="/2010/blackberry-torch-sunspider-results-javascript-benchmark/" itemprop="url">BlackBerry Torch SunSpider results (JavaScript benchmark)</a>
+    </h4>
+    <h5 class="meta date" itemprop="datePublished dateModified" content="August 18, 2010" datetime="August 18, 2010">
+        <time>August 18, 2010</time>
+    </h5>
+    
+    <a href="https://davidbcalhoun.com/tags/javascript"><kbd class="item-tag">javascript</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/performance"><kbd class="item-tag">performance</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/mobile"><kbd class="item-tag">mobile</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/blackberry"><kbd class="item-tag">blackberry</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/sunspider"><kbd class="item-tag">sunspider</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/webkit"><kbd class="item-tag">webkit</kbd></a>
+    
+
+</article>
+  <article class="item">
+
+    
+    
+    
+
+    
+    
+
+    <meta property="article:section" content="Article" />
+    <meta property="article:publisher" content="https://www.davidbcalhoun.com" />
+    <meta property="article:published_time" content="August 17, 2010" />
+    <meta property="article:modified_time" content="August 17, 2010" />
+    <meta property="article:tag" content="javascript" />
+    <meta property="article:tag" content="performance" />
+    <meta property="article:tag" content="webdev" />
+    <meta property="article:tag" content="android" />
+    <meta property="article:tag" content="hash" />
+    <meta property="article:tag" content="jsperf" />
+    <meta property="article:tag" content="mobile safari" />
+    <meta property="article:tag" content="switch" />
+    
+    <meta property="og:site_name" content="CSS-Tricks" />
+    <meta property="og:updated_time" content="August 17, 2010" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="/2010/is-a-hash-faster-than-a-switch-in-javascript/" />
+    <meta property="og:title" content="Is a hash faster than a Switch in JavaScript?" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Is a hash faster than a Switch in JavaScript?" />
+    <meta name="twitter:site" content="@franksvalli" />
+    <meta name="twitter:creator" content="@franksvalli" />
+    <meta name="twitter:domain" content="davidbcalhoun.com" />
+
+
+    <h4 itemprop="headline">
+        <a href="/2010/is-a-hash-faster-than-a-switch-in-javascript/" itemprop="url">Is a hash faster than a Switch in JavaScript?</a>
+    </h4>
+    <h5 class="meta date" itemprop="datePublished dateModified" content="August 17, 2010" datetime="August 17, 2010">
+        <time>August 17, 2010</time>
+    </h5>
+    
+    <a href="https://davidbcalhoun.com/tags/javascript"><kbd class="item-tag">javascript</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/performance"><kbd class="item-tag">performance</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/android"><kbd class="item-tag">android</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/hash"><kbd class="item-tag">hash</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/jsperf"><kbd class="item-tag">jsperf</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/mobile-safari"><kbd class="item-tag">mobile safari</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/switch"><kbd class="item-tag">switch</kbd></a>
+    
+
+</article>
+  <article class="item">
+
+    
+    
+    
+
+    
+    
+
+    <meta property="article:section" content="Article" />
+    <meta property="article:publisher" content="https://www.davidbcalhoun.com" />
+    <meta property="article:published_time" content="June 25, 2010" />
+    <meta property="article:modified_time" content="June 25, 2010" />
+    <meta property="article:tag" content="iphone" />
+    <meta property="article:tag" content="iphone 4" />
+    <meta property="article:tag" content="performance" />
+    <meta property="article:tag" content="sunspider" />
+    <meta property="article:tag" content="javascript" />
+    <meta property="article:tag" content="mobile" />
+    <meta property="article:tag" content="webdev" />
+    
+    <meta property="og:site_name" content="CSS-Tricks" />
+    <meta property="og:updated_time" content="June 25, 2010" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="/2010/iphone-4-sunspider-test-results-22-faster-than-iphone-3gs/" />
+    <meta property="og:title" content="iPhone 4 SunSpider test results (22% faster than iPhone 3GS)" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="iPhone 4 SunSpider test results (22% faster than iPhone 3GS)" />
+    <meta name="twitter:site" content="@franksvalli" />
+    <meta name="twitter:creator" content="@franksvalli" />
+    <meta name="twitter:domain" content="davidbcalhoun.com" />
+
+
+    <h4 itemprop="headline">
+        <a href="/2010/iphone-4-sunspider-test-results-22-faster-than-iphone-3gs/" itemprop="url">iPhone 4 SunSpider test results (22% faster than iPhone 3GS)</a>
+    </h4>
+    <h5 class="meta date" itemprop="datePublished dateModified" content="June 25, 2010" datetime="June 25, 2010">
+        <time>June 25, 2010</time>
+    </h5>
+    
+    <a href="https://davidbcalhoun.com/tags/iphone"><kbd class="item-tag">iphone</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/iphone-4"><kbd class="item-tag">iphone 4</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/performance"><kbd class="item-tag">performance</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/sunspider"><kbd class="item-tag">sunspider</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/javascript"><kbd class="item-tag">javascript</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/mobile"><kbd class="item-tag">mobile</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
+    
+
+</article>
+  <article class="item">
+
+    
+    
+    
+
+    
+    
+
+    <meta property="article:section" content="Article" />
+    <meta property="article:publisher" content="https://www.davidbcalhoun.com" />
+    <meta property="article:published_time" content="June 10, 2010" />
+    <meta property="article:modified_time" content="June 10, 2010" />
+    <meta property="article:tag" content="ios" />
+    <meta property="article:tag" content="iphone" />
+    <meta property="article:tag" content="sunspider" />
+    <meta property="article:tag" content="javascript" />
+    <meta property="article:tag" content="performance" />
+    <meta property="article:tag" content="mobile" />
+    <meta property="article:tag" content="webdev" />
+    
+    <meta property="og:site_name" content="CSS-Tricks" />
+    <meta property="og:updated_time" content="June 10, 2010" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="/2010/javascript-sunspider-test-ios-3.1.3-versus-ios-4-gm/" />
+    <meta property="og:title" content="JavaScript SunSpider test: iOS 3.1.3 versus iOS 4 GM" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="JavaScript SunSpider test: iOS 3.1.3 versus iOS 4 GM" />
+    <meta name="twitter:site" content="@franksvalli" />
+    <meta name="twitter:creator" content="@franksvalli" />
+    <meta name="twitter:domain" content="davidbcalhoun.com" />
+
+
+    <h4 itemprop="headline">
+        <a href="/2010/javascript-sunspider-test-ios-3.1.3-versus-ios-4-gm/" itemprop="url">JavaScript SunSpider test: iOS 3.1.3 versus iOS 4 GM</a>
+    </h4>
+    <h5 class="meta date" itemprop="datePublished dateModified" content="June 10, 2010" datetime="June 10, 2010">
+        <time>June 10, 2010</time>
+    </h5>
+    
+    <a href="https://davidbcalhoun.com/tags/ios"><kbd class="item-tag">ios</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/iphone"><kbd class="item-tag">iphone</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/sunspider"><kbd class="item-tag">sunspider</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/javascript"><kbd class="item-tag">javascript</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/performance"><kbd class="item-tag">performance</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/mobile"><kbd class="item-tag">mobile</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
+    
+
+</article>
+  <article class="item">
+
+    
+    
+    
+
+    
+    
+
+    <meta property="article:section" content="Article" />
+    <meta property="article:publisher" content="https://www.davidbcalhoun.com" />
+    <meta property="article:published_time" content="December 21, 2009" />
+    <meta property="article:modified_time" content="December 21, 2009" />
+    <meta property="article:tag" content="javascript" />
+    <meta property="article:tag" content="john resig" />
+    <meta property="article:tag" content="performance" />
+    <meta property="article:tag" content="testing" />
+    <meta property="article:tag" content="video" />
+    <meta property="article:tag" content="yahoo" />
+    <meta property="article:tag" content="webdev" />
+    <meta property="article:tag" content="programming" />
+    
+    <meta property="og:site_name" content="CSS-Tricks" />
+    <meta property="og:updated_time" content="December 21, 2009" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="/2009/video-john-resig---testing-performance-analysis-and-jquery-1.4/" />
+    <meta property="og:title" content="Video: John Resig - Testing, Performance Analysis, and jQuery 1.4" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Video: John Resig - Testing, Performance Analysis, and jQuery 1.4" />
+    <meta name="twitter:site" content="@franksvalli" />
+    <meta name="twitter:creator" content="@franksvalli" />
+    <meta name="twitter:domain" content="davidbcalhoun.com" />
+
+
+    <h4 itemprop="headline">
+        <a href="/2009/video-john-resig---testing-performance-analysis-and-jquery-1.4/" itemprop="url">Video: John Resig - Testing, Performance Analysis, and jQuery 1.4</a>
+    </h4>
+    <h5 class="meta date" itemprop="datePublished dateModified" content="December 21, 2009" datetime="December 21, 2009">
+        <time>December 21, 2009</time>
+    </h5>
+    
+    <a href="https://davidbcalhoun.com/tags/javascript"><kbd class="item-tag">javascript</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/john-resig"><kbd class="item-tag">john resig</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/performance"><kbd class="item-tag">performance</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/testing"><kbd class="item-tag">testing</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/video"><kbd class="item-tag">video</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/yahoo"><kbd class="item-tag">yahoo</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/programming"><kbd class="item-tag">programming</kbd></a>
+    
+
+</article>
+ 
+
+</main>
+
+
+
+        <footer role="contentinfo">
+
+            <p class="copyright text-muted">© <span itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="David Calhoun"><a href="mailto:david.b.calhoun@gmail.com" itemprop="email">David Calhoun</a> (<a href="https://twitter.com/franksvalli" itemprop="url">@franksvalli</a>) - <a href="https://www.linkedin.com/in/davidcalhoun" itemprop="url">LinkedIn</a> - <a href="http://themaingate.net/resume/" itemprop="url">Resume</a></span></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+

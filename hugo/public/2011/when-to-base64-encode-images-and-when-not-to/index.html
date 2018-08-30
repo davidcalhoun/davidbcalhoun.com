@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>When to base64 encode images (and when not to)</title>
+        
+        <style>
+
+    html body {
+        font-family: 'Roboto', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: #0D47A1;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://davidbcalhoun.com/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/foundation.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.42.2" />
+        
+
+        
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-5530615-3"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)};
+          gtag('js', new Date());
+
+          gtag('config', 'UA-5530615-3');
+        </script>
+        
+
+        <meta name="author" content="David Calhoun">
+        <link href="/index.xml" rel="alternate" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+        <link href="/index.xml" rel="feed" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+
+    </head>
+
+    
+    
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">When to base64 encode images (and when not to)</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="https://www.themaingate.net/">Home</a></li>
+                            
+                                <li><a href="/">Posts</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:david.b.calhoun@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/davidcalhoun/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/franksvalli/"><i class="fa fa-twitter"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/davidcalhoun/"><i class="fa fa-linkedin"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://stackoverflow.com/users/214017/david-calhoun/"><i class="fa fa-stack-overflow"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main role="main" itemscope itemType="http://schema.org/BlogPosting">
+    <meta itemprop="inLanguage" content="en-US" />
+    <span itemscope itemprop="author" itemType="https://schema.org/Person">
+        <meta itemprop="name" content="David Calhoun" />
+    </span>
+    <span itemscope itemprop="publisher" itemType="https://schema.org/Organization">
+        <meta itemprop="name" content="David Calhoun" />
+        <meta itemprop="url" content="https://themaingate.net" />
+        <meta itemprop="logo" content="https://themaingate.net/david-calhoun-logo.png">
+    </span>
+    <meta itemprop="image" content="https://themaingate.net/david-calhoun-logo.png">
+
+    <article class="item">
+
+    
+    
+    
+
+    
+    
+
+    <meta property="article:section" content="Article" />
+    <meta property="article:publisher" content="https://www.davidbcalhoun.com" />
+    <meta property="article:published_time" content="August 28, 2011" />
+    <meta property="article:modified_time" content="August 28, 2011" />
+    <meta property="article:tag" content="webdev" />
+    <meta property="article:tag" content="performance" />
+    
+    <meta property="og:site_name" content="CSS-Tricks" />
+    <meta property="og:updated_time" content="August 28, 2011" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="/2011/when-to-base64-encode-images-and-when-not-to/" />
+    <meta property="og:title" content="When to base64 encode images (and when not to)" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="When to base64 encode images (and when not to)" />
+    <meta name="twitter:site" content="@franksvalli" />
+    <meta name="twitter:creator" content="@franksvalli" />
+    <meta name="twitter:domain" content="davidbcalhoun.com" />
+
+
+    <h4 itemprop="headline">
+        <a href="/2011/when-to-base64-encode-images-and-when-not-to/" itemprop="url">When to base64 encode images (and when not to)</a>
+    </h4>
+    <h5 class="meta date" itemprop="datePublished dateModified" content="August 28, 2011" datetime="August 28, 2011">
+        <time>August 28, 2011</time>
+    </h5>
+    
+    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/performance"><kbd class="item-tag">performance</kbd></a>
+    
+
+</article>
+
+
+    <br> <div class="text-justify">
+
+<h3 id="introduction">Introduction</h3>
+
+<p>Ever since Steve Souders started evangelizing web performance, it&rsquo;s been pounded into our heads that extra HTTP requests add a lot of additional overhead, and that we should combine them if possible to dramatically decrease the load time of our web pages.</p>
+
+<p>The practical implication of this has been to combine our JavaScript and CSS files, which is relatively easy and straightforward, but the harder question has been what to do with images.</p>
+
+<h4 id="sprites">Sprites</h4>
+
+<p>Image sprites are a concept taken from video games: the idea is to cram a ton of image assets into one file, and rearrange a &ldquo;viewport&rdquo; of sorts to view only specific pieces of that file at a time. For instance, a simple sprite that holds two images might have one viewport that only looks at the top half of the sprite (image #1), and another viewport that only looks at the bottom half (image #2).</p>
+
+<p>On the web side of things, this means that those multiple requests have now been combined into one request. This is nice because it saves both the overhead of additional HTTP requests as well as the overhead of setting up an image&rsquo;s <a href="http://en.wikipedia.org/wiki/Portable_Network_Graphics#File_header">file header</a> each time.</p>
+
+<p>But there&rsquo;s a few drawbacks with using image sprites:</p>
+
+<ul>
+<li>hard to maintain and update: without some tool to help, manually editing and putting together image sprites is quite a chore</li>
+<li><a href="http://blog.vlad1.com/2009/06/22/to-sprite-or-not-to-sprite/">increased memory consumption</a> (possibly very dramatic): this is often overlooked. The time to deliver the images is decreased at the expense of a bigger memory and CPU footprint, especially for large sprites and sprites with a lot of whitespace.</li>
+<li>bleedthrough: for sprites that don&rsquo;t have much whitespace to separate images, there&rsquo;s an increased chance of nearby images visibly bleeding through other elements, as in this case where bleedthrough was only seen on iOS (but looked fine on Chrome and Safari on the desktop). Note the bleedthrough under the CNN logo:<a href="http://davidbcalhoun.com/wp-content/uploads/2011/08/image-sprite-bleedthrough-example.png"><img src="http://davidbcalhoun.com/wp-content/uploads/2011/08/image-sprite-bleedthrough-example.png" alt="Example of image sprite bleedthrough on Reddit" width="360" height="75" class="aligncenter size-full wp-image-1157" /></a></li>
+</ul>
+
+<h4 id="data-uris-and-base64-encoding">Data URIs and Base64 encoding</h4>
+
+<p>Data URIs (see <a href="http://www.phpied.com/data-urls-what-are-they-and-how-to-use/">this</a>, <a href="http://css-tricks.com/5970-data-uris/">this</a>, and <a href="http://www.nczonline.net/blog/2010/07/06/data-uris-make-css-sprites-obsolete/">this</a>) and Base64 encoding goes hand-in-hand. This method allows you to embed images right in your HTML, CSS, or JavaScript.</p>
+
+<p>Just like sprites, you save HTTP requests, but there&rsquo;s also some drawbacks:</p>
+
+<ul>
+<li>base64 encoding makes file sizes <a href="http://en.wikipedia.org/wiki/Base64">roughly 33% larger</a> than their original binary representations, which means more data down the wire (this might be exceptionally painful on mobile networks)</li>
+<li>data URIs aren&rsquo;t supported on IE6 or IE7</li>
+<li>base64 encoded data may possibly take longer to process than binary data (anyone want to do a study on this?) (again, this might be exceptionally painful for mobile devices, which have more limited CPU and memory) (side note: <a href="http://twitter.com/#!/stoyanstefanov/status/106605257265655809">CSS background-images seem to actually be faster than img tags</a>)</li>
+</ul>
+
+<p>The &ldquo;33% larger&rdquo; claim is generally accepted truth now, despite the fact that the figure varies wildly depending on the type of content. This is exactly what I wanted to test, albeit in a pretty limited and nonscientific way.</p>
+
+<p>Before I tested, I wanted to keep in mind a few <em>unverified intuitions</em> (which aren&rsquo;t entirely my own, but seem to be ideas that are floating around out there). Here&rsquo;s a few questions I had before going to test:</p>
+
+<ul>
+<li>Is base64 encoding with gzipping roughly equal to the original filesize of the binary file?</li>
+<li>Is base64 encoding best for small images?</li>
+<li>Is base64 encoding best for small and simple icons and not good for pictures and photos?</li>
+<li>Is base64 encoding best when multiple files are merged together?</li>
+</ul>
+
+<p>There&rsquo;s something else I wanted to test: whether Gzipping binary image data made much difference. I know text compresses well, but is it even worth compressing JPEG files with Gzip, for instance?</p>
+
+<p>I ran three tests: one with a set of small UI icons, one with a set of small photographs, and one with a set of the same photographs in a larger size. Though my tests were by no means extensive, they do show that care should be taken in making assumptions about base64.</p>
+
+<p>Just a note about the tables: they are comparing the binary form (original png or jpeg) with the base64 form as it would appear in a CSS stylesheet, and comparing each of those with their gzipped form, which is most likely how they would be sent down the wire. The CSS representation has a few practical declarations and looks something like this:</p>
+
+<pre><code class="language-css">.address-book--arrow {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAp1JREFUeNqEU21IU1EYfu7unW5Ty6aBszYs6MeUjGVYokHYyH5E1B9rZWFEFPQnAwmy6Hc/oqhfJsRKSSZGH1JIIX3MNCsqLTD9o1Oj6ebnnDfvvefezrnbdCHhCw/n433P8z7nPe/hBEEAtX0U7hc164uwuvVSXKwZLoOmaRDim+7m9vZa0WiEKSUFFpNpCWlmMyypqTDRuYn6t3k8vmQ2gRDCxs0t9fW45F52aBTROJLtZl7nEZad2m+KtoQCQ0FBARyOCGRZ/q92I1WgqqXlfdd95VsrK8/pChIEqqpCkiQsiCII0aBQZZoWl8lzFDwsFjMl0DBLY8Lj41hBwK4jSQrWOIphL6xYyhwJDWGo6wFSaH1Y3PTCAsITE1oyAa8flhWkbSiCLX8vun11eiGIpiJ/z2nYdx5HqLdVV7elrOzsuqysL3rmBIGiKPizKCHHWY4PLVeQbnXAdegqdhy+hu8dDTBnbqQJZJ1A7u+vz7RaiymWCZgCRSF6Edk8b9cx+B/W6WuVxPaZnyiqXoPpyUmVYvkKTIFClHigEieKjYuSvETUllaF4GAUM1NT6ooaJDKx+aDfC9fByxj90REb+9ppmIoAscH/6leg8MS9DJXPAM9xHCM443K57C6biMjcHDaVVCHw9RmCA2/RGC5C00AqXk/m4p20HZK4CM/J3Zk9n0ecMBhDQnJHcrTisyMfdQXOilrdMfxcwoHq/fg5R59TiQV3hYGKo6X2J/c7LyQIjOx9GXhOw/zoJ8wEevRGyp53o/lGMNYsBgPtEwLecwov7/jGDKa1twT6o3KpL4MdZgGsWZLtfPr7f1q58k1JNHy7YYaM+J+K3Y2PmAIbRavX66229hrGVvvL5uzsHDEUvUu+NT1my78CDAAMK1a8/QaZCgAAAABJRU5ErkJggg==);  
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+}
+</code></pre>
+
+<p>Ok, onto the tests!</p>
+
+<h3 id="test-1-five-16-215-16-icons-from-the-fugue-icon-set-9-png">Test #1: Five 16&#215;16 icons from the <a href="http://p.yusukekamiyamane.com/">Fugue Icon set</a> (PNG)</h3>
+
+<table style="width: 100%;">
+  <tr>
+    <td>
+      File
+    </td>
+    
+    <td>
+      Binary
+    </td>
+    
+    <td>
+      Binary Gzipped
+    </td>
+    
+    <td>
+      CSS + Base64
+    </td>
+    
+    <td>
+      CSS + Base64 Gzipped
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      abacus
+    </td>
+    
+    <td>
+      1443
+    </td>
+    
+    <td class="positive">
+      1179
+    </td>
+    
+    <td>
+      2043
+    </td>
+    
+    <td>
+      1395
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      acorn
+    </td>
+    
+    <td>
+      1770
+    </td>
+    
+    <td class="positive">
+      1522
+    </td>
+    
+    <td>
+      2478
+    </td>
+    
+    <td>
+      1728
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      address-book-arrow
+    </td>
+    
+    <td class="positive">
+      763
+    </td>
+    
+    <td>
+      810
+    </td>
+    
+    <td>
+      1153
+    </td>
+    
+    <td>
+      948
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      address-book-exclamation
+    </td>
+    
+    <td class="positive">
+      795
+    </td>
+    
+    <td>
+      848
+    </td>
+    
+    <td>
+      1199
+    </td>
+    
+    <td>
+      988
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      address-book-minus
+    </td>
+    
+    <td class="positive">
+      734
+    </td>
+    
+    <td>
+      781
+    </td>
+    
+    <td>
+      1113
+    </td>
+    
+    <td>
+      919
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Total
+    </td>
+    
+    <td>
+      5,505
+    </td>
+    
+    <td class="positive">
+      5,140
+    </td>
+    
+    <td>
+      7,986
+    </td>
+    
+    <td>
+      5,978
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Combined file
+    </td>
+    
+    <td>
+      (5,505)
+    </td>
+    
+    <td class="positive">
+      (4,128)
+    </td>
+    
+    <td>
+      7,986
+    </td>
+    
+    <td>
+      4,423
+    </td>
+  </tr>
+</table>
+
+<ul>
+<li>All numbers are byte sizes<br />
+** Numbers in parenthesis represent actual but impractical data. Unfortunately, images cannot be combined and delivered together in their binary form.</li>
+</ul>
+
+<p>Takeaways:</p>
+
+<ul>
+<li>The binaries are always smaller.</li>
+<li>Sometimes Gzipping makes the files larger.</li>
+<li>Gzipping the base64 version brings the filesize close to the size of the original binary, but this ignores the fact that the binaries get Gzipped as well. The Gzipped binaries (how they would be delivered to the client) are always smaller than the Gzipped base64 images</li>
+<li>Combining files together dramatically reduces filesizes.</li>
+</ul>
+
+<p>Practically, the developer has two options: deliver 5,140 bytes to the user in 5 separate HTTP requests, or 4,423 bytes in one HTTP request (CSS with base64 encoded image data). Base64 is the clear winner here, and seems to confirm that small icons compress extremely well.</p>
+
+<h3 id="test-2-five-flickr-75-215-75-pictures-jpeg">Test #2: Five Flickr 75&#215;75 Pictures (JPEG)</h3>
+
+<table style="width: 100%;">
+  <tr>
+    <td>
+      File
+    </td>
+    
+    <td>
+      Binary
+    </td>
+    
+    <td>
+      Binary Gzipped
+    </td>
+    
+    <td>
+      CSS + Base64
+    </td>
+    
+    <td>
+      CSS + Base64 Gzipped
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      <a href="http://www.flickr.com/photos/franksvalli/6064665766/sizes/sq/in/photostream/">1</a>
+    </td>
+    
+    <td>
+      6734
+    </td>
+    
+    <td class="positive">
+      5557
+    </td>
+    
+    <td>
+      9095
+    </td>
+    
+    <td>
+      6010
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      <a href="http://www.flickr.com/photos/franksvalli/6064638202/sizes/sq/in/photostream/">2</a>
+    </td>
+    
+    <td>
+      5379
+    </td>
+    
+    <td class="positive">
+      4417
+    </td>
+    
+    <td>
+      7287
+    </td>
+    
+    <td>
+      4781
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      <a href="http://www.flickr.com/photos/franksvalli/6063380824/sizes/sq/in/photostream/">3</a>
+    </td>
+    
+    <td>
+      25626
+    </td>
+    
+    <td class="positive">
+      18387
+    </td>
+    
+    <td>
+      34283
+    </td>
+    
+    <td>
+      20103
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      <a href="http://www.flickr.com/photos/franksvalli/6062803159/sizes/sq/in/photostream/">4</a>
+    </td>
+    
+    <td>
+      7031
+    </td>
+    
+    <td class="positive">
+      6399
+    </td>
+    
+    <td>
+      9491
+    </td>
+    
+    <td>
+      6702
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      <a href="http://www.flickr.com/photos/franksvalli/6017796233/sizes/sq/in/photostream/">5</a>
+    </td>
+    
+    <td>
+      5847
+    </td>
+    
+    <td class="positive">
+      4655
+    </td>
+    
+    <td>
+      7911
+    </td>
+    
+    <td>
+      5077
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Total
+    </td>
+    
+    <td>
+      50,617
+    </td>
+    
+    <td class="positive">
+      39,415
+    </td>
+    
+    <td>
+      68,067
+    </td>
+    
+    <td>
+      42,673
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Combined file
+    </td>
+    
+    <td>
+      (50,617)
+    </td>
+    
+    <td class="positive">
+      (36,838)
+    </td>
+    
+    <td>
+      68,067
+    </td>
+    
+    <td>
+      40,312
+    </td>
+  </tr>
+</table>
+
+<p>Takeaways:</p>
+
+<ul>
+<li>(some of the same takeaways as Test #1)</li>
+<li>Separately, photos aren&rsquo;t too much bigger when base64 encoded and Gzipped. It&rsquo;s very much within reason.</li>
+</ul>
+
+<p>Practically, the developer can deliver 39,415 bytes in 5 separate requests, or 40,312 in 1 request. Not much filesize difference here, but 1 request seems preferable when we&rsquo;re talking about 40kb.</p>
+
+<h3 id="test-3-five-flickr-240-215-160-pictures-jpeg">Test #3: Five Flickr 240&#215;160 Pictures (JPEG)</h3>
+
+<table style="width: 100%;">
+  <tr>
+    <td>
+      File
+    </td>
+    
+    <td>
+      Binary
+    </td>
+    
+    <td>
+      Binary Gzipped
+    </td>
+    
+    <td>
+      CSS + Base64
+    </td>
+    
+    <td>
+      CSS + Base64 Gzipped
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      1
+    </td>
+    
+    <td>
+      24502
+    </td>
+    
+    <td class="positive">
+      23403
+    </td>
+    
+    <td>
+      32789
+    </td>
+    
+    <td>
+      23982
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      2
+    </td>
+    
+    <td>
+      20410
+    </td>
+    
+    <td class="positive">
+      19466
+    </td>
+    
+    <td>
+      27333
+    </td>
+    
+    <td>
+      19954
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      3
+    </td>
+    
+    <td>
+      43833
+    </td>
+    
+    <td class="positive">
+      36729
+    </td>
+    
+    <td>
+      58561
+    </td>
+    
+    <td>
+      38539
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      4
+    </td>
+    
+    <td>
+      31776
+    </td>
+    
+    <td class="positive">
+      31180
+    </td>
+    
+    <td>
+      42485
+    </td>
+    
+    <td>
+      31686
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      5
+    </td>
+    
+    <td>
+      21348
+    </td>
+    
+    <td class="positive">
+      20208
+    </td>
+    
+    <td>
+      28581
+    </td>
+    
+    <td>
+      20761
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Total
+    </td>
+    
+    <td>
+      141,869
+    </td>
+    
+    <td class="positive">
+      130,986
+    </td>
+    
+    <td>
+      189,749
+    </td>
+    
+    <td>
+      134,922
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Combined file
+    </td>
+    
+    <td>
+      (141,869)
+    </td>
+    
+    <td class="positive">
+      (129,307)
+    </td>
+    
+    <td>
+      189,749
+    </td>
+    
+    <td>
+      133,615
+    </td>
+  </tr>
+</table>
+
+<p>Takeaways:</p>
+
+<ul>
+<li>(some of the same takeaways as Test #1)</li>
+<li>Larger photos seem to bring the Gzipped binary and Gzipped base64 filesizes MUCH closer together, making the difference very minimal</li>
+</ul>
+
+<p>The developer must choose between delivering 130,986 bytes in 5 HTTP requests, or 133,615 bytes in one HTTP request. Any good Souders follower would opt for the one request, BUT I would be careful here&hellip;</p>
+
+<h4 id="caution-things-aren-t-always-as-they-seem">Caution: things aren&rsquo;t always as they seem</h4>
+
+<p>There&rsquo;s a huge caveat here: it may actually be more beneficial for perceived performance to deliver the images in 5 separate requests.</p>
+
+<p>Why? Because 133,615 bytes is a lot to deliver all in one package to an end user who will be staring at blank placeholders for the duration. If the 5 base64 images all come in one request, that request will have to complete before ANYTHING is shown on the screen. All 5 images go from blank placeholders to almost immediately decoded from base64 and displayed in place.</p>
+
+<p>Compare this with 5 requests that are most likely made in parallel and actually give a visual indicator to the user that actual image content is being downloaded, by showing parts of the images as they&rsquo;re downloaded (you can also try a throwback to progressive JPEGs - really anything will be better than just a blank screen). That&rsquo;s why it might actually be beneficial for <em>perceived</em> performance to just load images in the good old fashioned way. They will most likely load in parallel anyway, so the extra HTTP requests may actually not really make a difference. Not to mention it will be easier to let the browser manage the cache for each file instead of having to make your JavaScript manage your cache and prevent you from downloading an image that&rsquo;s already stored away in localStorage or sessionStorage.</p>
+
+<p>This being said, it&rsquo;s generally advisable to put your common UI icons in base64 in your CSS, then let that whole chunk get cached by the browser. Those are usually clean vector icons as well, which seem to get compressed quite well (see Test #1).</p>
+
+<p>But for image content, where there is nothing to be saved but HTTP requests, you should definitely think twice about base64 encoding to save requests. Yes, you will save a few HTTP requests, you won&rsquo;t really be saving bytes, and the user might actually think the experience is slower because they can&rsquo;t see the image content as it&rsquo;s being downloaded. Even if you shave off a few milliseconds of wait time, the <em>perceived</em> performance is what matters most.</p>
+
+<p>(EDIT: changed the wording of the &ldquo;unverified intuitions&rdquo; section from &ldquo;not verified&rdquo; to actual questions, to make it clearer)</p>
+
+<p>EDIT May 2013: added an example of sprite bleedthrough</p>
+</div>
+
+    
+    
+
+    
+
+    
+
+        <h4 class="page-header">Comments</h4>
+
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "davidbcalhoun" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+
+</main>
+
+        <footer role="contentinfo">
+
+            <p class="copyright text-muted">© <span itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="David Calhoun"><a href="mailto:david.b.calhoun@gmail.com" itemprop="email">David Calhoun</a> (<a href="https://twitter.com/franksvalli" itemprop="url">@franksvalli</a>) - <a href="https://www.linkedin.com/in/davidcalhoun" itemprop="url">LinkedIn</a> - <a href="http://themaingate.net/resume/" itemprop="url">Resume</a></span></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+

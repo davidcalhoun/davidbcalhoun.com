@@ -4,7 +4,7 @@
   <title><![CDATA[Category: railroad | David Calhoun]]></title>
   <link href="http://davidbcalhoun.com/blog/categories/railroad/atom.xml" rel="self"/>
   <link href="http://davidbcalhoun.com/"/>
-  <updated>2017-03-11T11:38:47-08:00</updated>
+  <updated>2018-07-04T17:23:39-07:00</updated>
   <id>http://davidbcalhoun.com/</id>
   <author>
     <name><![CDATA[David Calhoun]]></name>
@@ -18,7 +18,7 @@
     <link href="http://davidbcalhoun.com/2015/a-ride-on-yosemites-sugar-pine-railroad/"/>
     <updated>2015-05-16T21:41:32-07:00</updated>
     <id>http://davidbcalhoun.com/2015/a-ride-on-yosemites-sugar-pine-railroad</id>
-    <content type="html"><![CDATA[<p><figure itemprop='image' itemscope itemtype='http://schema.org/ImageObject' class='center'><meta itemprop='width' content='1000'><meta itemprop='height' content='666'><meta itemprop='url' content='http://davidbcalhoun.com/wp-content/uploads/2015/2015-04-27-sugar-pine-railroad-5D__1787.jpg'><img itemprop='contentUrl' src="http://davidbcalhoun.com/wp-content/uploads/2015/2015-04-27-sugar-pine-railroad-5D__1787.jpg" width="1000" height="666" title="Front view of the Sugar Pine Railroad" ><figcaption itemprop='caption'>Front view of the Sugar Pine Railroad</figcaption></figure></p>
+    <content type="html"><![CDATA[<p>{% imgcap center http://davidbcalhoun.com/wp-content/uploads/2015/2015-04-27-sugar-pine-railroad-5D__1787.jpg 1000 666 Front view of the Sugar Pine Railroad  %}</p>
 
 <p>On my last trip to Yosemite, I tagged along with my friends Kevin and Mari.  The first day we hiked in rain to the base of Upper Yosemite Falls.  By the second day, we were tired and looking for something quick and relaxing to do before driving back.</p>
 
@@ -28,25 +28,25 @@
 
 <p>Yep, it’s a tourist trap.  But it’s historical and interesting, and it was fun to relax and take a ride on the old steam engine.</p>
 
-<p><figure itemprop='image' itemscope itemtype='http://schema.org/ImageObject' class='center'><meta itemprop='width' content='1000'><meta itemprop='height' content='666'><meta itemprop='url' content='http://davidbcalhoun.com/wp-content/uploads/2015/2015-04-27-sugar-pine-railroad-5D__1772.jpg'><img itemprop='contentUrl' src="http://davidbcalhoun.com/wp-content/uploads/2015/2015-04-27-sugar-pine-railroad-5D__1772.jpg" width="1000" height="666" title="Side view" ><figcaption itemprop='caption'>Side view</figcaption></figure></p>
+<p>{% imgcap center http://davidbcalhoun.com/wp-content/uploads/2015/2015-04-27-sugar-pine-railroad-5D__1772.jpg 1000 666 Side view  %}</p>
 
-<p><figure itemprop='image' itemscope itemtype='http://schema.org/ImageObject' class='center'><meta itemprop='width' content='1000'><meta itemprop='height' content='666'><meta itemprop='url' content='http://davidbcalhoun.com/wp-content/uploads/2015/2015-04-27-sugar-pine-railroad-5D__1761.jpg'><img itemprop='contentUrl' src="http://davidbcalhoun.com/wp-content/uploads/2015/2015-04-27-sugar-pine-railroad-5D__1761.jpg" width="1000" height="666" title="Front side view.  “Lima Locomotive Works Incorporated March 1928”" ><figcaption itemprop='caption'>Front side view.  “Lima Locomotive Works Incorporated March 1928”</figcaption></figure></p>
+<p>{% imgcap center http://davidbcalhoun.com/wp-content/uploads/2015/2015-04-27-sugar-pine-railroad-5D__1761.jpg 1000 666 Front side view.  “Lima Locomotive Works Incorporated March 1928”  %}</p>
 
-<p><figure itemprop='image' itemscope itemtype='http://schema.org/ImageObject' class='center'><meta itemprop='width' content='1000'><meta itemprop='height' content='666'><meta itemprop='url' content='http://davidbcalhoun.com/wp-content/uploads/2015/2015-04-27-sugar-pine-railroad-5D__1765.jpg'><img itemprop='contentUrl' src="http://davidbcalhoun.com/wp-content/uploads/2015/2015-04-27-sugar-pine-railroad-5D__1765.jpg" width="1000" height="666" title="Front side view" ><figcaption itemprop='caption'>Front side view</figcaption></figure></p>
+<p>{% imgcap center http://davidbcalhoun.com/wp-content/uploads/2015/2015-04-27-sugar-pine-railroad-5D__1765.jpg 1000 666 Front side view  %}</p>
 
-<p><figure itemprop='image' itemscope itemtype='http://schema.org/ImageObject' class='center'><meta itemprop='width' content='1000'><meta itemprop='height' content='666'><meta itemprop='url' content='http://davidbcalhoun.com/wp-content/uploads/2015/2015-04-27-sugar-pine-railroad-5D__1773.jpg'><img itemprop='contentUrl' src="http://davidbcalhoun.com/wp-content/uploads/2015/2015-04-27-sugar-pine-railroad-5D__1773.jpg" width="1000" height="666" title="Lots o’ grease!  Come and get it." ><figcaption itemprop='caption'>Lots o’ grease!  Come and get it.</figcaption></figure></p>
+<p>{% imgcap center http://davidbcalhoun.com/wp-content/uploads/2015/2015-04-27-sugar-pine-railroad-5D__1773.jpg 1000 666 Lots o’ grease!  Come and get it.  %}</p>
 
-<p><figure itemprop='image' itemscope itemtype='http://schema.org/ImageObject' class='center'><meta itemprop='width' content='1000'><meta itemprop='height' content='666'><meta itemprop='url' content='http://davidbcalhoun.com/wp-content/uploads/2015/2015-04-27-sugar-pine-railroad-5D__1777.jpg'><img itemprop='contentUrl' src="http://davidbcalhoun.com/wp-content/uploads/2015/2015-04-27-sugar-pine-railroad-5D__1777.jpg" width="1000" height="666" title="“Patented February 18, 1908”" ><figcaption itemprop='caption'>“Patented February 18, 1908”</figcaption></figure></p>
+<p>{% imgcap center http://davidbcalhoun.com/wp-content/uploads/2015/2015-04-27-sugar-pine-railroad-5D__1777.jpg 1000 666 “Patented February 18, 1908”  %}</p>
 
 <p>On the last stretch of the journey, there was a bunch of steam that came out of the side of the railroad.  I don’t really understand the reason for this - to let out pressure maybe?</p>
 
 <p>Or maybe a good spectable for the tourists?  :)</p>
 
-<p><figure itemprop='image' itemscope itemtype='http://schema.org/ImageObject' class='center'><meta itemprop='width' content='1000'><meta itemprop='height' content='666'><meta itemprop='url' content='http://davidbcalhoun.com/wp-content/uploads/2015/2015-04-27-sugar-pine-railroad-5D__1796.jpg'><img itemprop='contentUrl' src="http://davidbcalhoun.com/wp-content/uploads/2015/2015-04-27-sugar-pine-railroad-5D__1796.jpg" width="1000" height="666" title="Releasing the steam.  Something for the tourists?" ><figcaption itemprop='caption'>Releasing the steam.  Something for the tourists?</figcaption></figure></p>
+<p>{% imgcap center http://davidbcalhoun.com/wp-content/uploads/2015/2015-04-27-sugar-pine-railroad-5D__1796.jpg 1000 666 Releasing the steam.  Something for the tourists?  %}</p>
 
 <p>We sat right next to the loudspeaker.  I’d advise against that.</p>
 
-<p><figure itemprop='image' itemscope itemtype='http://schema.org/ImageObject' class='center'><meta itemprop='width' content='1000'><meta itemprop='height' content='666'><meta itemprop='url' content='http://davidbcalhoun.com/wp-content/uploads/2015/2015-04-27-sugar-pine-railroad-5D__1802.jpg'><img itemprop='contentUrl' src="http://davidbcalhoun.com/wp-content/uploads/2015/2015-04-27-sugar-pine-railroad-5D__1802.jpg" width="1000" height="666" title="Don’t sit by the loudspeaker!  It’s quite loud." ><figcaption itemprop='caption'>Don’t sit by the loudspeaker!  It’s quite loud.</figcaption></figure></p>
+<p>{% imgcap center http://davidbcalhoun.com/wp-content/uploads/2015/2015-04-27-sugar-pine-railroad-5D__1802.jpg 1000 666 Don’t sit by the loudspeaker!  It’s quite loud.  %}</p>
 
 <p>Note: all photos copyright David Calhoun.</p>
 ]]></content>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>The Google Bitch</title>
+        
+        <style>
+
+    html body {
+        font-family: 'Roboto', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: #0D47A1;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://davidbcalhoun.com/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/foundation.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.42.2" />
+        
+
+        
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-5530615-3"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)};
+          gtag('js', new Date());
+
+          gtag('config', 'UA-5530615-3');
+        </script>
+        
+
+        <meta name="author" content="David Calhoun">
+        <link href="/index.xml" rel="alternate" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+        <link href="/index.xml" rel="feed" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+
+    </head>
+
+    
+    
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">The Google Bitch</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="https://www.themaingate.net/">Home</a></li>
+                            
+                                <li><a href="/">Posts</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:david.b.calhoun@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/davidcalhoun/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/franksvalli/"><i class="fa fa-twitter"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/davidcalhoun/"><i class="fa fa-linkedin"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://stackoverflow.com/users/214017/david-calhoun/"><i class="fa fa-stack-overflow"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main role="main" itemscope itemType="http://schema.org/BlogPosting">
+    <meta itemprop="inLanguage" content="en-US" />
+    <span itemscope itemprop="author" itemType="https://schema.org/Person">
+        <meta itemprop="name" content="David Calhoun" />
+    </span>
+    <span itemscope itemprop="publisher" itemType="https://schema.org/Organization">
+        <meta itemprop="name" content="David Calhoun" />
+        <meta itemprop="url" content="https://themaingate.net" />
+        <meta itemprop="logo" content="https://themaingate.net/david-calhoun-logo.png">
+    </span>
+    <meta itemprop="image" content="https://themaingate.net/david-calhoun-logo.png">
+
+    <article class="item">
+
+    
+    
+    
+
+    
+    
+
+    <meta property="article:section" content="Article" />
+    <meta property="article:publisher" content="https://www.davidbcalhoun.com" />
+    <meta property="article:published_time" content="September 24, 2013" />
+    <meta property="article:modified_time" content="September 24, 2013" />
+    <meta property="article:tag" content="rant" />
+    
+    <meta property="og:site_name" content="CSS-Tricks" />
+    <meta property="og:updated_time" content="September 24, 2013" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="/2013/the-google-bitch/" />
+    <meta property="og:title" content="The Google Bitch" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="The Google Bitch" />
+    <meta name="twitter:site" content="@franksvalli" />
+    <meta name="twitter:creator" content="@franksvalli" />
+    <meta name="twitter:domain" content="davidbcalhoun.com" />
+
+
+    <h4 itemprop="headline">
+        <a href="/2013/the-google-bitch/" itemprop="url">The Google Bitch</a>
+    </h4>
+    <h5 class="meta date" itemprop="datePublished dateModified" content="September 24, 2013" datetime="September 24, 2013">
+        <time>September 24, 2013</time>
+    </h5>
+    
+    <a href="https://davidbcalhoun.com/tags/rant"><kbd class="item-tag">rant</kbd></a>
+    
+
+</article>
+
+
+    <br> <div class="text-justify"><p>When I came back from Japan and accepted an offer to work at a startup in Silicon Valley, I knew one of the biggest challenges would be to find a decent and affordable apartment in Mountain View, close to where I&rsquo;d be working. I had it all planned out, and how healthy and convenient it would be to walk to work and also Mountain View downtown!</p>
+
+<p>Unfortunately, this dream was shared by me and hundreds of thousands of other like-minded software engineers. Which isn&rsquo;t unexpected, really. If you spend enough time in Silicon Valley, everyone&rsquo;s ideas start to sound the same after a while.</p>
+
+<p>Mountain View, if you didn&rsquo;t already know, is home to the now omnipresent non-evil company known as Google. Google has been fast taking over Mountain View, building by building, campus extension by campus extension. They even have their name on the sidewalks near where I take walks at work. Because they own those, too. (Actually, they own the fiber connections running beneath them).</p>
+
+<p>One day I went out apartment hunting and was pretty happy the apartment listed earlier in the day hadn&rsquo;t already sold, as had happened several times earlier (yes, there is THAT much competition).</p>
+
+<p>As I drove up and approached the apartment, I noticed the unwelcoming stare of a single woman waiting outside the complex. She didn&rsquo;t say anything, so I mentioned that she must be waiting for the apartment walk-through the same as myself. She acknowledged and then mentioned that &ldquo;he was supposed to be here 15 minutes ago&rdquo;, referring to the current tenant who was supposed to show up earlier for an apartment viewing.</p>
+
+<p>I saw that she was pretty serious about maintaining that she was here first, and I cracked a joke about folks being cutthroat because of the competition or some such thing, to try to break the tension. I even said it with a smile, which is supposed to prompt at least a crack of a smile in any human capable of empathy. Sadly it had no effect on this poor emotionless woman. It was clear that she was all business.</p>
+
+<p>It&rsquo;s not dissimilar to the animal kingdom, really. She was just establishing her dominance by passively explaining that she was here before I was. Oh I see, so even if I wanted this place, I&rsquo;d have no shot at it, because you were here first? I guess that&rsquo;s what you have to do these days to ensure you get a place&hellip;</p>
+
+<p>I hear it&rsquo;s worse in &ldquo;The City&reg;&rdquo; (San Francisco), and I&rsquo;m not surprised really. The last time I was looking for apartments there, it was a crappy little studio apartment in a crappy part of town, with what looked like 20 people lined up ahead of me to put down a deposit. No thank you. Sometimes I think I&rsquo;d rather live someplace in the country.</p>
+
+<p>Alright, back to my apartment hunting story in Mountain View. I figured I might as well take a look at the place, since I&rsquo;d taken the time to come by. Some other folks showed up and started waiting in the same spot, until finally the current tenant came by, apologized for the wait, and took us through the apartment.</p>
+
+<p>To be honest, the apartment was nothing special. It was an older apartment that was part of a fourplex with families with kids on all sides. Not exactly a quiet place. Sure, there was nice lush greenery everywhere, and of course it was conveniently situated in Mountain View, but it was overall not exceptional. But in a bubble economy, the location is now sufficient to make anything special and worth the price.</p>
+
+<p>I asked the current tenant about cable internet availability, and the single woman decided to use her God-given right to interrupt and respond: &ldquo;The entire city of Mountain View has WiFi provided for free by Google&rdquo;. Without missing a beat, she added some other talking points as if they were coming out of a pre-prepared handbook. It actually kind of sounded like someone reciting a memorized passage from the Bible. And there was a certain pride behind it, to give me a hint that I need not ask if she worked for the blasted company.</p>
+
+<p>I didn&rsquo;t know what to say other than, &ldquo;Oh, that&rsquo;s cool&rdquo;. I really wasn&rsquo;t prepared to deal with corporate shills on what had become an epic search for an apartment.</p>
+
+<p>After looking around a bit more, I was the second to last person to talk to the owner and take an application. He was more than patient with me, but I noticed the very last person waiting in the shadows to talk to him was The Google Bitch. Dammit, so she had some scheme she was waiting to thrust on the poor guy.</p>
+
+<p>As I walked away and went back to my car, still within earshot The Google Bitch made an offer to the guy: &ldquo;So, I am prepared to put down money today to secure this apartment&rdquo; she said confidently. The current tenant just said &ldquo;Wow, ok&rdquo; and they talked from there.</p>
+
+<p>Needless to say, I never turned in the application, as it would&rsquo;ve just been a waste of everyone&rsquo;s time.</p>
+
+<p>I have since settled into an apartment community in Sunnyvale, where I have been adopted by a very extended, loving Indian family. They sometimes give me funny looks when I walk through the complex, but it&rsquo;s all good. Perhaps the farther from The Google Bitch and people like her, the better.</p>
+</div>
+
+    
+    
+
+    
+
+    
+
+        <h4 class="page-header">Comments</h4>
+
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "davidbcalhoun" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+
+</main>
+
+        <footer role="contentinfo">
+
+            <p class="copyright text-muted">© <span itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="David Calhoun"><a href="mailto:david.b.calhoun@gmail.com" itemprop="email">David Calhoun</a> (<a href="https://twitter.com/franksvalli" itemprop="url">@franksvalli</a>) - <a href="https://www.linkedin.com/in/davidcalhoun" itemprop="url">LinkedIn</a> - <a href="http://themaingate.net/resume/" itemprop="url">Resume</a></span></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+

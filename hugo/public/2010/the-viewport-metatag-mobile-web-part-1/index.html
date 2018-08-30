@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>The viewport metatag (Mobile web part 1)</title>
+        
+        <style>
+
+    html body {
+        font-family: 'Roboto', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: #0D47A1;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://davidbcalhoun.com/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/foundation.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.42.2" />
+        
+
+        
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-5530615-3"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)};
+          gtag('js', new Date());
+
+          gtag('config', 'UA-5530615-3');
+        </script>
+        
+
+        <meta name="author" content="David Calhoun">
+        <link href="/index.xml" rel="alternate" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+        <link href="/index.xml" rel="feed" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+
+    </head>
+
+    
+    
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">The viewport metatag (Mobile web part 1)</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="https://www.themaingate.net/">Home</a></li>
+                            
+                                <li><a href="/">Posts</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:david.b.calhoun@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/davidcalhoun/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/franksvalli/"><i class="fa fa-twitter"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/davidcalhoun/"><i class="fa fa-linkedin"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://stackoverflow.com/users/214017/david-calhoun/"><i class="fa fa-stack-overflow"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main role="main" itemscope itemType="http://schema.org/BlogPosting">
+    <meta itemprop="inLanguage" content="en-US" />
+    <span itemscope itemprop="author" itemType="https://schema.org/Person">
+        <meta itemprop="name" content="David Calhoun" />
+    </span>
+    <span itemscope itemprop="publisher" itemType="https://schema.org/Organization">
+        <meta itemprop="name" content="David Calhoun" />
+        <meta itemprop="url" content="https://themaingate.net" />
+        <meta itemprop="logo" content="https://themaingate.net/david-calhoun-logo.png">
+    </span>
+    <meta itemprop="image" content="https://themaingate.net/david-calhoun-logo.png">
+
+    <article class="item">
+
+    
+    
+    
+
+    
+    
+
+    <meta property="article:section" content="Article" />
+    <meta property="article:publisher" content="https://www.davidbcalhoun.com" />
+    <meta property="article:published_time" content="May 6, 2010" />
+    <meta property="article:modified_time" content="May 6, 2010" />
+    <meta property="article:tag" content="handheldfriendly" />
+    <meta property="article:tag" content="metatag" />
+    <meta property="article:tag" content="mobile" />
+    <meta property="article:tag" content="mobileoptimized" />
+    <meta property="article:tag" content="viewport" />
+    
+    <meta property="og:site_name" content="CSS-Tricks" />
+    <meta property="og:updated_time" content="May 6, 2010" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="/2010/the-viewport-metatag-mobile-web-part-1/" />
+    <meta property="og:title" content="The viewport metatag (Mobile web part 1)" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="The viewport metatag (Mobile web part 1)" />
+    <meta name="twitter:site" content="@franksvalli" />
+    <meta name="twitter:creator" content="@franksvalli" />
+    <meta name="twitter:domain" content="davidbcalhoun.com" />
+
+
+    <h4 itemprop="headline">
+        <a href="/2010/the-viewport-metatag-mobile-web-part-1/" itemprop="url">The viewport metatag (Mobile web part 1)</a>
+    </h4>
+    <h5 class="meta date" itemprop="datePublished dateModified" content="May 6, 2010" datetime="May 6, 2010">
+        <time>May 6, 2010</time>
+    </h5>
+    
+    <a href="https://davidbcalhoun.com/tags/handheldfriendly"><kbd class="item-tag">handheldfriendly</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/metatag"><kbd class="item-tag">metatag</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/mobile"><kbd class="item-tag">mobile</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/mobileoptimized"><kbd class="item-tag">mobileoptimized</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/viewport"><kbd class="item-tag">viewport</kbd></a>
+    
+
+</article>
+
+
+    <br> <div class="text-justify">
+
+<h3 id="the-skinny">The skinny</h3>
+
+<p>Use this:</p>
+
+<pre><code class="language-html">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;/&gt;
+</code></pre>
+
+<h3 id="introduction">Introduction</h3>
+
+<p>This series of posts is intended to introduce web developers to basic techniques for designing for the mobile web. It assumes at least a basic knowledge of creating desktop websites.</p>
+
+<h3 id="the-problem">The problem</h3>
+
+<p>Ok, so you&rsquo;ve settled down to learn how to write a website for a mobile device using your current knowledge of building desktop websites. So you start off with some pretty basic HTML:</p>
+
+<pre><code>&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Hello world!&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;p&gt;Hello world!&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>{:lang=&ldquo;html&rdquo;}</p>
+
+<p>Ok! You can&rsquo;t get much simpler than that. You check it out and it looks good on all the desktop browsers, since there&rsquo;s really no opportunity yet for any cross-browser inconsistencies. And then you check it out on your mobile device:</p>
+
+<p>{% imgcap center <a href="http://davidbcalhoun.com/wp-content/uploads/2010/05/hello-world-iphone.png">http://davidbcalhoun.com/wp-content/uploads/2010/05/hello-world-iphone.png</a> 320 480 Hello World on the iPhone, WITHOUT the viewport metatag %}</p>
+
+<p>Doh! Where&rsquo;d we go wrong? The text is obviously way too small to read without zooming in.</p>
+
+<p>This is the first lesson in making mobile websites: width is your enemy. This is the first of many countless problems with device width you will encounter. Fair warning.</p>
+
+<p>If you think about it logically, it seems to make sense: mobile Safari took a look at the page and assumed it was a document designed for the desktop, which is true of the vast majority of websites. So it gave the website a width of 980 pixels and presented it zoomed out. Which is why we can&rsquo;t read anything until we zoom into the page.</p>
+
+<h3 id="viewport">Viewport</h3>
+
+<p>But this is no good! What we need to do is tell the browser that this webpage is optimized for mobile. And this is where the viewport metatag comes into the picture.</p>
+
+<p>Now we tweak our Hello World just a bit&hellip;</p>
+
+<pre><code class="language-html">    &lt;!doctype html&gt;
+    &lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Hello world!&lt;/title&gt;
+
+        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;/&gt;
+    &lt;/head&gt;
+
+    &lt;body&gt;
+    &lt;p&gt;Hello world!&lt;/p&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+</code></pre>
+
+<p>And we get this&hellip;</p>
+
+<p>{% imgcap center <a href="http://davidbcalhoun.com/wp-content/uploads/2010/05/hello-world-viewport-iphone.png">http://davidbcalhoun.com/wp-content/uploads/2010/05/hello-world-viewport-iphone.png</a> 320 480 Hello World with the Viewport tag %}</p>
+
+<p>Much better! By setting the viewport width equal to &ldquo;device-width&rdquo;, we&rsquo;re essentially telling it that the device width is 320px, not the default value of 980px that it guessed. If we set width=320 it would achieve the same result on the iPhone and a few other smartphones, but not all phones have this exact width, so it&rsquo;s best to simply set device-width and let the mobile browser figure it out.</p>
+
+<p>This viewport metatag is supported on many smartphones, from iPhone to Android to webOS (Palm) to even Internet Explorer Mobile, Opera Mini and Opera Mobile.</p>
+
+<p>At the end of the day here&rsquo;s what the standard viewport looks like, as grabbed from <a href="http://m.yahoo.com">m.yahoo.com</a>:</p>
+
+<pre><code class="language-html">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot;/&gt;
+</code></pre>
+
+<p>EDIT: It&rsquo;s been discussed a bit, and it seems that preventing the user from scaling the page (pinch zooming) isn&rsquo;t necessarily desirable. So here&rsquo;s a version of the tag that allows the user to pinch zoom:</p>
+
+<pre><code class="language-html">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;/&gt;
+</code></pre>
+
+<h3 id="more-fun-with-the-viewport-tag">More fun with the viewport tag</h3>
+
+<p>In addition to solving our biggest concern with the width of the content, the viewport tag has more options to play with:</p>
+
+<table class="datatable-medium">
+  <tr>
+    <td>
+      Property
+    </td>
+    
+    <td>
+      Description
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      width
+    </td>
+    
+    <td>
+      Width of the viewport in pixels (or device-width). If width isn't set, it defaults to a desktop size (980px on mobile Safari).
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      height
+    </td>
+    
+    <td>
+      Height of the viewport in pixels (or device-height). Generally you don't need to worry about setting this property.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      initial-scale
+    </td>
+    
+    <td>
+      (0 to 10.0) Multiplier that sets the scale of the page after its initial display. Safe bet: if you need to set it, set it to 1.0. Larger values = zoomed in, smaller values = zoomed out
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      minimum-scale
+    </td>
+    
+    <td>
+      (0 to 10.0) The minimum multiplier the user can "zoom out" to. Defaults to 0.25 on mobile Safari.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      maximum-scale
+    </td>
+    
+    <td>
+      (0 to 10.0) The minimum multiplier the user can "zoom in" to. Defaults to 1.6 on mobile Safari.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      user-scalable
+    </td>
+    
+    <td>
+      (yes/no) Whether to allow a user from scaling in/out (zooming in/out). Default to "yes" on mobile Safari.
+    </td>
+  </tr>
+</table>
+
+<h3 id="feature-phones-when-viewport-isn-t-available">Feature phones: when viewport isn&rsquo;t available&hellip;</h3>
+
+<p>Note: this info is now very outdated and is preserved here just for historical reference.  In general, you can ignore this stuff these days.</p>
+
+<p>Unfortunately the viewport tag is relatively new and as such isn&rsquo;t universally supported, especially if you&rsquo;re working on older feature phones. But there are some older methods at your disposal for identifying your website as optimized for mobile:</p>
+
+<pre><code class="language-html">    &lt;meta name=&quot;HandheldFriendly&quot; content=&quot;true&quot;/&gt;
+</code></pre>
+
+<p>This tag was originally used to identify mobile content in AvantGo browsers, but has now been made the general standard for identifying mobile websites. However, it&rsquo;s unknown what range of browsers support this meta tag.</p>
+
+<p>Another tag at your disposal is a Windows-proprietary meta tag that also took root and eventually became used as another means of identifying mobile content. The drawback with this tag is that a specific width must be given, which doesn&rsquo;t make it as flexible as the viewport tag (see above). Again, it&rsquo;s unknown what the support for this tag is:</p>
+
+<pre><code class="language-html">    &lt;meta name=&quot;MobileOptimized&quot; content=&quot;320&quot;/&gt;
+</code></pre>
+
+<p>Lastly, your website will be identified as a mobile optimized site if your doctype is either XHTML-MP or WML. However, this is becoming less and less the case these days, as browsers begin to support good old HTML4.01 and HTML5+.</p>
+
+<p>(info for this section comes from <a href="http://www.amazon.com/gp/product/B003U890OQ/ref=pd_lpo_k2_dp_sr_1?pf_rd_p=486539851&amp;#038;pf_rd_s=lpo-top-stripe-1&amp;#038;pf_rd_t=201&amp;#038;pf_rd_i=143022620X&amp;#038;pf_rd_m=ATVPDKIKX0DER&amp;#038;pf_rd_r=017307F07YKBPJX46DXB">Beginning Smartphone Web Development</a>)</p>
+
+<h3 id="custom-android-properties">Custom Android properties</h3>
+
+<p><a href="http://developer.android.com/reference/android/webkit/WebView.html">The official Android documentation</a> lists a special property they&rsquo;ve added to the meta tag: target-densitydpi. This property essentially allows developers to specify which screen resolution the page has been developed for, or more specifically how to handle the scaling of media such as images.</p>
+
+<p>Here&rsquo;s an example of the tag in action:</p>
+
+<pre><code class="language-html">    &lt;meta name=&quot;viewport&quot; content=&quot;target-densitydpi=device-dpi&quot; /&gt;
+</code></pre>
+
+<h3 id="references">References</h3>
+
+<p><a href="http://developer.apple.com/safari/library/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html">Safari HTML Reference: Supported Meta Tags</a><br />
+<a href="http://learnthemobileweb.com/tag/mobile-web-development/page/3/">Mobile META Tags</a></p>
+
+<h3 id="more-from-the-mobile-web-series">More from the Mobile Web series:</h3>
+
+<ul>
+<li><a href="http://davidbcalhoun.com/2010/viewport-metatag">Part 1: The viewport metatag</a><br /></li>
+<li><a href="http://davidbcalhoun.com/2010/the-mobile-developers-toolkit-mobile-web-part-2">Part 2: The mobile developer’s toolkit</a><br /></li>
+<li><a href="http://davidbcalhoun.com/2010/designing-buttons-that-dont-suck">Part 3: Designing buttons that don’t suck</a><br /></li>
+<li><a href="http://davidbcalhoun.com/2010/on-designing-a-mobile-webpage">Part 4: On designing a mobile webpage</a><br /></li>
+<li><a href="http://davidbcalhoun.com/2010/using-mobile-specific-html-css-javascript">Part 5: Using mobile-specific HTML, CSS, and JavaScript</a><br /></li>
+<li><a href="http://davidbcalhoun.com/2010/dealing-with-device-orientation">Part 6: Dealing with device orientation</a><br /></li>
+<li><a href="http://davidbcalhoun.com/2010/mobile-javascript-libraries-and-frameworks">Part 7: Mobile JavaScript libraries and frameworks</a></li>
+</ul>
+</div>
+
+    
+    
+
+    
+
+    
+
+        <h4 class="page-header">Comments</h4>
+
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "davidbcalhoun" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+
+</main>
+
+        <footer role="contentinfo">
+
+            <p class="copyright text-muted">© <span itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="David Calhoun"><a href="mailto:david.b.calhoun@gmail.com" itemprop="email">David Calhoun</a> (<a href="https://twitter.com/franksvalli" itemprop="url">@franksvalli</a>) - <a href="https://www.linkedin.com/in/davidcalhoun" itemprop="url">LinkedIn</a> - <a href="http://themaingate.net/resume/" itemprop="url">Resume</a></span></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+

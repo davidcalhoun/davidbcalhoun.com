@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>The mobile web is dead (and we have killed it)</title>
+        
+        <style>
+
+    html body {
+        font-family: 'Roboto', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: #0D47A1;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://davidbcalhoun.com/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/foundation.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.42.2" />
+        
+
+        
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-5530615-3"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)};
+          gtag('js', new Date());
+
+          gtag('config', 'UA-5530615-3');
+        </script>
+        
+
+        <meta name="author" content="David Calhoun">
+        <link href="/index.xml" rel="alternate" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+        <link href="/index.xml" rel="feed" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+
+    </head>
+
+    
+    
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">The mobile web is dead (and we have killed it)</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="https://www.themaingate.net/">Home</a></li>
+                            
+                                <li><a href="/">Posts</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:david.b.calhoun@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/davidcalhoun/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/franksvalli/"><i class="fa fa-twitter"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/davidcalhoun/"><i class="fa fa-linkedin"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://stackoverflow.com/users/214017/david-calhoun/"><i class="fa fa-stack-overflow"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main role="main" itemscope itemType="http://schema.org/BlogPosting">
+    <meta itemprop="inLanguage" content="en-US" />
+    <span itemscope itemprop="author" itemType="https://schema.org/Person">
+        <meta itemprop="name" content="David Calhoun" />
+    </span>
+    <span itemscope itemprop="publisher" itemType="https://schema.org/Organization">
+        <meta itemprop="name" content="David Calhoun" />
+        <meta itemprop="url" content="https://themaingate.net" />
+        <meta itemprop="logo" content="https://themaingate.net/david-calhoun-logo.png">
+    </span>
+    <meta itemprop="image" content="https://themaingate.net/david-calhoun-logo.png">
+
+    <article class="item">
+
+    
+    
+    
+
+    
+    
+
+    <meta property="article:section" content="Article" />
+    <meta property="article:publisher" content="https://www.davidbcalhoun.com" />
+    <meta property="article:published_time" content="April 14, 2014" />
+    <meta property="article:modified_time" content="April 14, 2014" />
+    <meta property="article:tag" content="mobile" />
+    <meta property="article:tag" content="web" />
+    <meta property="article:tag" content="apps" />
+    <meta property="article:tag" content="mobile web" />
+    <meta property="article:tag" content="webdev" />
+    
+    <meta property="og:site_name" content="CSS-Tricks" />
+    <meta property="og:updated_time" content="April 14, 2014" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="/2014/the-mobile-web-is-dead-and-we-have-killed-it/" />
+    <meta property="og:title" content="The mobile web is dead (and we have killed it)" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="The mobile web is dead (and we have killed it)" />
+    <meta name="twitter:site" content="@franksvalli" />
+    <meta name="twitter:creator" content="@franksvalli" />
+    <meta name="twitter:domain" content="davidbcalhoun.com" />
+
+
+    <h4 itemprop="headline">
+        <a href="/2014/the-mobile-web-is-dead-and-we-have-killed-it/" itemprop="url">The mobile web is dead (and we have killed it)</a>
+    </h4>
+    <h5 class="meta date" itemprop="datePublished dateModified" content="April 14, 2014" datetime="April 14, 2014">
+        <time>April 14, 2014</time>
+    </h5>
+    
+    <a href="https://davidbcalhoun.com/tags/mobile"><kbd class="item-tag">mobile</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/web"><kbd class="item-tag">web</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/apps"><kbd class="item-tag">apps</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/mobile-web"><kbd class="item-tag">mobile web</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
+    
+
+</article>
+
+
+    <br> <div class="text-justify">
+
+<p>The mobile web is dead.</p>
+
+<p><em>(Banner: would you like to download the app?)</em></p>
+
+<p>The mobile web remains dead.</p>
+
+<p><em>(Splash screen: download the app!)</em></p>
+
+<p>And <strong>we</strong> have killed it.</p>
+
+<p><em>(JavaScript prompt: &ldquo;Yahoo! can serve you more accurate local weather and news if you enable location services&rdquo;)</em></p>
+
+<p>Yet its shadow still looms.</p>
+
+<p><em>(Prompt: Yahoo! would like to use your Current Location)</em></p>
+
+<p>How shall we comfort ourselves, the murderers of all murderers?</p>
+
+<p><em>(&ldquo;Do you want to change your search engine to Yahoo?&rdquo;)</em></p>
+
+<p><em>(&ldquo;This forum has an app for iPhone and iPod Touch!  Click OK to learn more about Tapatalk.&rdquo;)</em></p>
+
+<p>(adapted from <a href="http://en.wikipedia.org/wiki/God_is_dead">Nietzsche&rsquo;s &ldquo;God is dead&rdquo;</a>)</p>
+
+<h3 id="download-the-app-is-king-content-is-secondary">&ldquo;Download the app&rdquo; is king; content is secondary</h3>
+
+<p><a href="https://plus.google.com/u/0/+ChristianHeilmann/posts/Tkpqip4uZpB"><img src="http://davidbcalhoun.com/wp-content/uploads/2014/paul-irish-native-apps-eating-our-lunch.png"></a></p>
+
+<p>What you tried to read above was not entirely different from my once-a-year curiosity visit to Yahoo&rsquo;s mobile homepage (ok, minus the jab at the much-hated Tapatalk).  During the course of one visit and one search, those really are all the prompts which got in the way of what I was trying to accomplish on the site.</p>
+
+<p>While I&rsquo;d love to pick on Yahoo in particular, mobile users know this common experience all too well.</p>
+
+<p>The sad truth is that the primary content of many mobile sites is now a big giant &ldquo;Download the app here&rdquo; button.  How strange that we find ourseles in a world where the secondary content is that which the user is actually interested in.</p>
+
+<h3 id="native-vs-web">Native vs. Web</h3>
+
+<p>Like most things, we humans like to create dichotomies, and we did the same with native and web, persistently thinking them to be mutually exclusive.</p>
+
+<p>For a short time, it seemed, contrary to mobile platforms that came before, that the revolutionary smartphone of 2007 would have developers creating a flurry of web apps:</p>
+
+<blockquote>
+<p>The full Safari engine is inside of iPhone. And so, you can write amazing Web 2.0 and Ajax apps <em>that look exactly and behave exactly like apps on the iPhone</em>. And these apps can integrate perfectly with iPhone services. They can make a call, they can send an email, they can look up a location on Google Maps. And guess what? There’s no SDK that you need! You’ve got everything you need if you know how to write apps using the most modern web standards to write amazing apps for the iPhone today. So developers, we think we’ve got a very sweet story for you. You can begin building your iPhone apps today. (<a href="http://youtu.be/8Vq993Td6ys?t=37s">Steve Jobs at WWDC 2007</a>, emphasis mine)</p>
+</blockquote>
+
+<p>Interestingly, even in that keynote you can see shades of web apps being pitted against native apps.  And what would both developers and consumers rather have: an emulated native experience, or a true native experience?  Most folks have always wanted the latter, and the latter has consistently delivered a better user experience.</p>
+
+<p>Very talented developers have created &ldquo;native-like&rdquo; experiences on the web, including the old iPhone user guide (powered by <a href="https://www.davidbcalhoun.com/2009/pastrykit-digging-into-an-apple-pie/">PastryKit</a>), but all along it&rsquo;s been native apps which have required less effort and less clever tricks for smooth user interfaces.  However, this being said, it should also be noted that many native apps today actually have a web view component, and end users are often unaware of this fact.</p>
+
+<p>In 2007, after the release of the first iPhone, the web app vision was soon abandoned after a somewhat lackluster and uncoordinated response from us developers.  Apple also realized the monetary potential of native apps and a wildly successful centralized App Store, a path that&rsquo;s led us to our current situation:</p>
+
+<p><a href="http://blog.flurry.com/bid/109749/Apps-Solidify-Leadership-Six-Years-into-the-Mobile-Revolution"><img src="http://davidbcalhoun.com/wp-content/uploads/2014/apps-dominate.jpg" alt="Apps Continue to Dominate the Mobile Web: 2013 saw 80% of time spent in apps and 20% of time on the mobile web, whereas 2014 is currently seeing 86% app usage and 14% mobile web usage."></a></p>
+
+<h3 id="keep-calm-and-carry-on">Keep Calm and Carry On&hellip; ?</h3>
+
+<p>The web isn&rsquo;t going away anytime soon, and that means the mobile web is also here to stay, even if less people are using it.  But it unfortunately means less emphasis on mobile experiences, which means less demand for mobile web developers.</p>
+
+<p>It means that the mobile web, and probably the larger web as a whole, will only be considered as an afterthought, if considered at all.  We&rsquo;ve already witnessed this happening with the mobile web being considered a sort of sub/side topic of responsive web design.</p>
+
+<h3 id="extremely-depressing-related-links">Extremely depressing related links</h3>
+
+<ul>
+<li><a href="http://youtu.be/8Vq993Td6ys?t=37s">Video: Steve Jobs espousing web apps at the iPhone launch in 2007</a></li>
+<li><a href="http://www.youtube.com/watch?v=19g4n0ZxiYM">Video: Paul Irish - The Mobile Web Is In Deep Trouble</a></li>
+<li><a href="http://blog.flurry.com/bid/109749/Apps-Solidify-Leadership-Six-Years-into-the-Mobile-Revolution">Apps Continue to Dominate the Mobile Web</a></li>
+<li><a href="http://techcrunch.com/2012/09/11/mark-zuckerberg-our-biggest-mistake-with-mobile-was-betting-too-much-on-html5/">Mark Zuckerberg: Our Biggest Mistake Was Betting Too Much On HTML5</a></li>
+</ul>
+</div>
+
+    
+    
+
+    
+
+    
+
+        <h4 class="page-header">Comments</h4>
+
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "davidbcalhoun" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+
+</main>
+
+        <footer role="contentinfo">
+
+            <p class="copyright text-muted">© <span itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="David Calhoun"><a href="mailto:david.b.calhoun@gmail.com" itemprop="email">David Calhoun</a> (<a href="https://twitter.com/franksvalli" itemprop="url">@franksvalli</a>) - <a href="https://www.linkedin.com/in/davidcalhoun" itemprop="url">LinkedIn</a> - <a href="http://themaingate.net/resume/" itemprop="url">Resume</a></span></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+

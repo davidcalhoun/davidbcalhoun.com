@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ie6 on David Calhoun&#39;s blog</title>
+    <link>https://davidbcalhoun.com/tags/ie6/</link>
+    <description>Recent content in Ie6 on David Calhoun&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Wed, 07 Jul 2010 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://davidbcalhoun.com/tags/ie6/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Targeting Internet Explorer (IE): the age-old struggle</title>
+      <link>https://davidbcalhoun.com/2010/targeting-internet-explorer-ie-the-age-old-struggle/</link>
+      <pubDate>Wed, 07 Jul 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2010/targeting-internet-explorer-ie-the-age-old-struggle/</guid>
+      <description>As long as I can remember, developers have always been trying to target IE one way or another. Thanks to the wonders of modern technology, there have been multiple ways to pull this off.
+I guess I really haven&amp;#8217;t been keeping up with the latest frontend trends (doh!), as I&amp;#8217;ve just recently discovered this very elegant solution circa 2008 offered by Paul Irish, which sticks a class on the body tag using proprietary conditional IE tags (no JavaScript magic needed here!</description>
+    </item>
+    
+    <item>
+      <title>IE Mobile 6.12 problem: browser ignores the specificity of CSS display styles</title>
+      <link>https://davidbcalhoun.com/2009/ie-mobile-6.12-problem-browser-ignores-the-specificity-of-css-display-styles/</link>
+      <pubDate>Mon, 31 Aug 2009 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2009/ie-mobile-6.12-problem-browser-ignores-the-specificity-of-css-display-styles/</guid>
+      <description>UPDATE: I found that the problem is actually that inline-block is completely unsupported in this version of IE Mobile, and is likely also unsupported in IE Mobile 7, which is also based on IE4. This is in contrast to desktop IE6, where inline-block is supported on elements that are natively inline (span, em, etc.).
+Just found this today, for what it&amp;#8217;s worth. If you&amp;#8217;re unlucky enough to be working with older Windows Mobile phones you have probably realized that the browser is based on IE6, which all the desktop web developers notoriously complain about constantly.</description>
+    </item>
+    
+  </channel>
+</rss>

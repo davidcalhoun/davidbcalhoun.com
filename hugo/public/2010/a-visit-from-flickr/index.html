@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>A Visit From Flickr!</title>
+        
+        <style>
+
+    html body {
+        font-family: 'Roboto', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: #0D47A1;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://davidbcalhoun.com/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/foundation.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.42.2" />
+        
+
+        
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-5530615-3"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)};
+          gtag('js', new Date());
+
+          gtag('config', 'UA-5530615-3');
+        </script>
+        
+
+        <meta name="author" content="David Calhoun">
+        <link href="/index.xml" rel="alternate" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+        <link href="/index.xml" rel="feed" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+
+    </head>
+
+    
+    
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">A Visit From Flickr!</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="https://www.themaingate.net/">Home</a></li>
+                            
+                                <li><a href="/">Posts</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:david.b.calhoun@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/davidcalhoun/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/franksvalli/"><i class="fa fa-twitter"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/davidcalhoun/"><i class="fa fa-linkedin"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://stackoverflow.com/users/214017/david-calhoun/"><i class="fa fa-stack-overflow"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main role="main" itemscope itemType="http://schema.org/BlogPosting">
+    <meta itemprop="inLanguage" content="en-US" />
+    <span itemscope itemprop="author" itemType="https://schema.org/Person">
+        <meta itemprop="name" content="David Calhoun" />
+    </span>
+    <span itemscope itemprop="publisher" itemType="https://schema.org/Organization">
+        <meta itemprop="name" content="David Calhoun" />
+        <meta itemprop="url" content="https://themaingate.net" />
+        <meta itemprop="logo" content="https://themaingate.net/david-calhoun-logo.png">
+    </span>
+    <meta itemprop="image" content="https://themaingate.net/david-calhoun-logo.png">
+
+    <article class="item">
+
+    
+    
+    
+
+    
+    
+
+    <meta property="article:section" content="Article" />
+    <meta property="article:publisher" content="https://www.davidbcalhoun.com" />
+    <meta property="article:published_time" content="July 16, 2010" />
+    <meta property="article:modified_time" content="July 16, 2010" />
+    <meta property="article:tag" content="flickr" />
+    
+    <meta property="og:site_name" content="CSS-Tricks" />
+    <meta property="og:updated_time" content="July 16, 2010" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="/2010/a-visit-from-flickr/" />
+    <meta property="og:title" content="A Visit From Flickr!" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="A Visit From Flickr!" />
+    <meta name="twitter:site" content="@franksvalli" />
+    <meta name="twitter:creator" content="@franksvalli" />
+    <meta name="twitter:domain" content="davidbcalhoun.com" />
+
+
+    <h4 itemprop="headline">
+        <a href="/2010/a-visit-from-flickr/" itemprop="url">A Visit From Flickr!</a>
+    </h4>
+    <h5 class="meta date" itemprop="datePublished dateModified" content="July 16, 2010" datetime="July 16, 2010">
+        <time>July 16, 2010</time>
+    </h5>
+    
+    <a href="https://davidbcalhoun.com/tags/flickr"><kbd class="item-tag">flickr</kbd></a>
+    
+
+</article>
+
+
+    <br> <div class="text-justify"><p>One of the best perks of working at Yahoo! is getting to attend first-class talks, especially when the talk is by one of your favorite groups. In this case, Flickr!</p>
+
+<div class="image-block full">
+  <a href="http://www.flickr.com/photos/franksvalli/4798780374/"><img src="http://davidbcalhoun.com/wp-content/uploads/2010/07/flickr1.jpg" alt="Flickr schwag: lens cleaner, phone cleaner, or iPhone 4 reception-enabler?" title="Flickr schwag: lens cleaner, phone cleaner, or iPhone 4 reception-enabler?" class="aligncenter size-full wp-image-360" /></a><cite>Flickr schwag: lens cleaner, phone cleaner, or iPhone 4 reception-enabler?</cite>
+</div>
+
+<p>&#8230;and it helps if one of the speakers was once a member of your team (Markus was in Yahoo! Mobile until recently).</p>
+
+<div class="image-block full">
+  <a href="http://www.flickr.com/photos/franksvalli/4798280388/"><img src="http://davidbcalhoun.com/wp-content/uploads/2010/07/flickr3.jpg" alt="Markus Spiering of Flickr" title="Markus Spiering of Flickr" class="aligncenter size-full wp-image-362" /></a><cite><a href="http://www.flickr.com/photos/spierisf/">Markus Spiering</a> of Flickr</cite>
+</div>
+
+<p>I probably can&#8217;t chat too much about the future improvements they talked about, but I&#8217;ll just say there are some exciting plans for Flickr in the coming months! As you may already know, <a href="http://blog.flickr.net/en/2010/06/23/a-new-photo-experience-your-photos-happier/">Flickr recently launched its new photo page</a>. Markus went over some of the key new layout improvements, including the new prominence of geolocation and camera model information, which was previously buried deep in the exif info. He and Chris Martin also explained some of the improved photo navigation. Also, for anyone interested to know, the entire site was redone using <a href="http://developer.yahoo.com/yui/">YUI 3</a>.</p>
+
+<p>Chris briefly went over the <a href="http://www.flickr.com/services/api/">public Flickr API</a> they provide.</p>
+
+<p>What&#8217;s really exciting is the amount of phones Flickr is being integrated into. It really says something when <a href="http://www.flickr.com/cameras/">the top camera model for Flickr is the iPhone</a>. More generally, just think of all the possibilities with packaging Flickr into lots of other phones out there (not everyone has an iPhone, after all!).</p>
+
+<p>Markus was also proud to exclaim that not only was the native Flickr app featured in the recent <a href="http://developer.apple.com/wwdc/">WWDC</a> keynote, but it was also featured in iPhone commercials around the world (&#8220;There&#8217;s an app for that&#8230;&#8221;). Coincidentally, later that day Apple approved <a href="http://www.flickr.com/photos/spierisf/4776109875/">the latest version of the Flickr app</a>, which now supports uploading in the background!</p>
+
+<div class="image-block full">
+  <a href="http://www.flickr.com/photos/franksvalli/4797649397/"><img src="http://davidbcalhoun.com/wp-content/uploads/2010/07/flickr2.jpg" alt="Chris Martin of Flickr" title="Chris Martin of Flickr" class="aligncenter size-full wp-image-361" /></a><cite><a href="http://www.flickr.com/photos/cjmartin/">Chris Martin</a> of Flickr</cite>
+</div>
+
+<p>Keep your eyes peeled on Flickr! Cool improvements heading to a screen near you&#8230;</p>
+</div>
+
+    
+    
+
+    
+
+    
+
+        <h4 class="page-header">Comments</h4>
+
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "davidbcalhoun" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+
+</main>
+
+        <footer role="contentinfo">
+
+            <p class="copyright text-muted">© <span itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="David Calhoun"><a href="mailto:david.b.calhoun@gmail.com" itemprop="email">David Calhoun</a> (<a href="https://twitter.com/franksvalli" itemprop="url">@franksvalli</a>) - <a href="https://www.linkedin.com/in/davidcalhoun" itemprop="url">LinkedIn</a> - <a href="http://themaingate.net/resume/" itemprop="url">Resume</a></span></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+

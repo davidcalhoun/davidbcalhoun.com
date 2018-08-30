@@ -4,7 +4,7 @@
   <title><![CDATA[Category: nature | David Calhoun]]></title>
   <link href="http://davidbcalhoun.com/blog/categories/nature/atom.xml" rel="self"/>
   <link href="http://davidbcalhoun.com/"/>
-  <updated>2017-03-11T11:38:47-08:00</updated>
+  <updated>2018-07-04T17:23:39-07:00</updated>
   <id>http://davidbcalhoun.com/</id>
   <author>
     <name><![CDATA[David Calhoun]]></name>
@@ -18,7 +18,7 @@
     <link href="http://davidbcalhoun.com/2016/11-mile-big-basin-hike/"/>
     <updated>2016-02-02T08:47:58-08:00</updated>
     <id>http://davidbcalhoun.com/2016/11-mile-big-basin-hike</id>
-    <content type="html"><![CDATA[<p><figure itemprop='image' itemscope itemtype='http://schema.org/ImageObject' class='center'><meta itemprop='width' content='1000'><meta itemprop='height' content='723'><meta itemprop='url' content='http://davidbcalhoun.com/wp-content/uploads/2016/2016-01-31-big-basin-hike-gps.jpg'><img itemprop='contentUrl' src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-01-31-big-basin-hike-gps.jpg" width="1000" height="723" title="GPS track log" ><figcaption itemprop='caption'>GPS track log</figcaption></figure></p>
+    <content type="html"><![CDATA[<p>{% imgcap center http://davidbcalhoun.com/wp-content/uploads/2016/2016-01-31-big-basin-hike-gps.jpg 1000 723 GPS track log  %}</p>
 
 <p>See the interactive <a href="http://davidbcalhoun.com/a/2016-01-31-big-basin-hike.html">GPS track log here</a>.</p>
 
@@ -30,25 +30,25 @@
 
 <p>What was maybe more alarming was the fact that on the way to Berry Creek falls there were multiple newly-fallen trees that were blocking the path.  In one case a tree had completely destroyed a bridge, and I had to find a way over or under the tree.  I unded up going over, walking along the slippery log and then working my way to the other side.  I tried making my way down slowly instead of jumping, which was a bad choice - I grabbed onto a piece of the decaying tree, but it broke off and I slid down a bit…</p>
 
-<p><figure itemprop='image' itemscope itemtype='http://schema.org/ImageObject' class='center'><meta itemprop='width' content='1000'><meta itemprop='height' content='666'><meta itemprop='url' content='http://davidbcalhoun.com/wp-content/uploads/2016/2016-01-31-big-basin-berry-creek-falls-trail-blocked-by-tree.jpg'><img itemprop='contentUrl' src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-01-31-big-basin-berry-creek-falls-trail-blocked-by-tree.jpg" width="1000" height="666" title="Path blocked by a newly-fallen tree" ><figcaption itemprop='caption'>Path blocked by a newly-fallen tree</figcaption></figure></p>
+<p>{% imgcap center http://davidbcalhoun.com/wp-content/uploads/2016/2016-01-31-big-basin-berry-creek-falls-trail-blocked-by-tree.jpg 1000 666 Path blocked by a newly-fallen tree  %}</p>
 
-<p><figure itemprop='image' itemscope itemtype='http://schema.org/ImageObject' class='center'><meta itemprop='width' content='666'><meta itemprop='height' content='1000'><meta itemprop='url' content='http://davidbcalhoun.com/wp-content/uploads/2016/2016-01-31-big-basin-berry-creek-falls-trail-blocked-by-tree-destroyed-bridge.jpg'><img itemprop='contentUrl' src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-01-31-big-basin-berry-creek-falls-trail-blocked-by-tree-destroyed-bridge.jpg" width="666" height="1000" title="Bridge completely destroyed by a newly-falled tree" ><figcaption itemprop='caption'>Bridge completely destroyed by a newly-falled tree</figcaption></figure></p>
+<p>{% imgcap center http://davidbcalhoun.com/wp-content/uploads/2016/2016-01-31-big-basin-berry-creek-falls-trail-blocked-by-tree-destroyed-bridge.jpg 666 1000 Bridge completely destroyed by a newly-falled tree  %}</p>
 
 <p>I made it to Berry Creek Falls, where I’d been before a few years back.  There was a lot more water gushing down the falls this time!</p>
 
-<p><figure itemprop='image' itemscope itemtype='http://schema.org/ImageObject' class='center'><meta itemprop='width' content='666'><meta itemprop='height' content='1000'><meta itemprop='url' content='http://davidbcalhoun.com/wp-content/uploads/2016/2016-01-31-big-basin-berry-creek-falls.jpg'><img itemprop='contentUrl' src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-01-31-big-basin-berry-creek-falls.jpg" width="666" height="1000" title="Berry Creek Falls" ><figcaption itemprop='caption'>Berry Creek Falls</figcaption></figure></p>
+<p>{% imgcap center http://davidbcalhoun.com/wp-content/uploads/2016/2016-01-31-big-basin-berry-creek-falls.jpg 666 1000 Berry Creek Falls  %}</p>
 
 <p>I felt up for it, so I decided to continue the hike on the Berry Creek Falls trail, saw a few more waterfalls I’d never seen before, and then met up with the Sunset Trail, which I took back to the park headquarters, making it about a 11 mile loop.  Started at 8:20am, took some breaks and a lunch stop at Golden Cascade Falls, then finally made it back to my car around 2:20pm.</p>
 
 <p>I definitely brought back lots of mud with me!</p>
 
-<p><figure itemprop='image' itemscope itemtype='http://schema.org/ImageObject' class='center'><meta itemprop='width' content='666'><meta itemprop='height' content='1000'><meta itemprop='url' content='http://davidbcalhoun.com/wp-content/uploads/2016/2016-01-31-big-basin-stairs-and-silver-falls.jpg'><img itemprop='contentUrl' src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-01-31-big-basin-stairs-and-silver-falls.jpg" width="666" height="1000" title="Stairs next to Silver Falls" ><figcaption itemprop='caption'>Stairs next to Silver Falls</figcaption></figure></p>
+<p>{% imgcap center http://davidbcalhoun.com/wp-content/uploads/2016/2016-01-31-big-basin-stairs-and-silver-falls.jpg 666 1000 Stairs next to Silver Falls  %}</p>
 
-<p><figure itemprop='image' itemscope itemtype='http://schema.org/ImageObject' class='center'><meta itemprop='width' content='666'><meta itemprop='height' content='1000'><meta itemprop='url' content='http://davidbcalhoun.com/wp-content/uploads/2016/2016-01-31-big-basin-silver-falls-next-to-trail.jpg'><img itemprop='contentUrl' src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-01-31-big-basin-silver-falls-next-to-trail.jpg" width="666" height="1000" title="Silver Falls right next to the trail!" ><figcaption itemprop='caption'>Silver Falls right next to the trail!</figcaption></figure></p>
+<p>{% imgcap center http://davidbcalhoun.com/wp-content/uploads/2016/2016-01-31-big-basin-silver-falls-next-to-trail.jpg 666 1000 Silver Falls right next to the trail!  %}</p>
 
-<p><figure itemprop='image' itemscope itemtype='http://schema.org/ImageObject' class='center'><meta itemprop='width' content='1000'><meta itemprop='height' content='666'><meta itemprop='url' content='http://davidbcalhoun.com/wp-content/uploads/2016/2016-01-31-big-basin-golden-cascade.jpg'><img itemprop='contentUrl' src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-01-31-big-basin-golden-cascade.jpg" width="1000" height="666" title="Golden Cascade Falls" ><figcaption itemprop='caption'>Golden Cascade Falls</figcaption></figure></p>
+<p>{% imgcap center http://davidbcalhoun.com/wp-content/uploads/2016/2016-01-31-big-basin-golden-cascade.jpg 1000 666 Golden Cascade Falls  %}</p>
 
-<p><figure itemprop='image' itemscope itemtype='http://schema.org/ImageObject' class='center'><meta itemprop='width' content='666'><meta itemprop='height' content='1000'><meta itemprop='url' content='http://davidbcalhoun.com/wp-content/uploads/2016/2016-01-31-big-basin-banana-slug.jpg'><img itemprop='contentUrl' src="http://davidbcalhoun.com/wp-content/uploads/2016/2016-01-31-big-basin-banana-slug.jpg" width="666" height="1000" title="Banana slug" ><figcaption itemprop='caption'>Banana slug</figcaption></figure></p>
+<p>{% imgcap center http://davidbcalhoun.com/wp-content/uploads/2016/2016-01-31-big-basin-banana-slug.jpg 666 1000  Banana slug  %}</p>
 
 ]]></content>
   </entry>
@@ -58,7 +58,7 @@
     <link href="http://davidbcalhoun.com/2015/big-basin-october-hike/"/>
     <updated>2015-10-27T01:34:56-07:00</updated>
     <id>http://davidbcalhoun.com/2015/big-basin-october-hike</id>
-    <content type="html"><![CDATA[<p><figure itemprop='image' itemscope itemtype='http://schema.org/ImageObject' class='center'><meta itemprop='width' content='790'><meta itemprop='height' content='594'><meta itemprop='url' content='http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-hike-map.jpg'><img itemprop='contentUrl' src="http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-hike-map.jpg" width="790" height="594" title="GPS track log" ><figcaption itemprop='caption'>GPS track log</figcaption></figure></p>
+    <content type="html"><![CDATA[<p>{% imgcap center http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-hike-map.jpg 790 594 GPS track log  %}</p>
 
 <p>See the interactive <a href="http://davidbcalhoun.com/a/2015-10-25-big-basin-hike.html">GPS track log here</a>.</p>
 
@@ -70,25 +70,25 @@
 
 <p>Along the way I saw a TON of ladybugs um.. how should I say this.. in the process of making a TON more ladybugs.  I didn’t have my macro lens with me, but I’m tempted to go back just for more of these pictures.  I’ve never seen anything like this before!</p>
 
-<p><figure itemprop='image' itemscope itemtype='http://schema.org/ImageObject' class='center'><meta itemprop='width' content='1000'><meta itemprop='height' content='666'><meta itemprop='url' content='http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-ladybugs-1.jpg'><img itemprop='contentUrl' src="http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-ladybugs-1.jpg" width="1000" height="666" title="Ladybugs - there’s at least 7 distinct clusters here!  I have never seen this before!" ><figcaption itemprop='caption'>Ladybugs - there’s at least 7 distinct clusters here!  I have never seen this before!</figcaption></figure></p>
+<p>{% imgcap center http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-ladybugs-1.jpg 1000 666 Ladybugs - there’s at least 7 distinct clusters here!  I have never seen this before!  %}</p>
 
-<p><figure itemprop='image' itemscope itemtype='http://schema.org/ImageObject' class='center'><meta itemprop='width' content='1000'><meta itemprop='height' content='666'><meta itemprop='url' content='http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-ladybugs-2.jpg'><img itemprop='contentUrl' src="http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-ladybugs-2.jpg" width="1000" height="666" title="Ladybug cluster" ><figcaption itemprop='caption'>Ladybug cluster</figcaption></figure></p>
+<p>{% imgcap center http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-ladybugs-2.jpg 1000 666 Ladybug cluster %}</p>
 
-<p><figure itemprop='image' itemscope itemtype='http://schema.org/ImageObject' class='center'><meta itemprop='width' content='1000'><meta itemprop='height' content='666'><meta itemprop='url' content='http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-ladybugs-3.jpg'><img itemprop='contentUrl' src="http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-ladybugs-3.jpg" width="1000" height="666" title="Ladybug cluster" ><figcaption itemprop='caption'>Ladybug cluster</figcaption></figure></p>
+<p>{% imgcap center http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-ladybugs-3.jpg 1000 666 Ladybug cluster %}</p>
 
-<p><figure itemprop='image' itemscope itemtype='http://schema.org/ImageObject' class='center'><meta itemprop='width' content='1000'><meta itemprop='height' content='666'><meta itemprop='url' content='http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-ladybugs-4.jpg'><img itemprop='contentUrl' src="http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-ladybugs-4.jpg" width="1000" height="666" title="Ladybug cluster" ><figcaption itemprop='caption'>Ladybug cluster</figcaption></figure></p>
+<p>{% imgcap center http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-ladybugs-4.jpg 1000 666 Ladybug cluster %}</p>
 
-<p><figure itemprop='image' itemscope itemtype='http://schema.org/ImageObject' class='center'><meta itemprop='width' content='1000'><meta itemprop='height' content='666'><meta itemprop='url' content='http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-rock-face-1.jpg'><img itemprop='contentUrl' src="http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-rock-face-1.jpg" width="1000" height="666" title="Rock face along the Skyline to the Sea trail" ><figcaption itemprop='caption'>Rock face along the Skyline to the Sea trail</figcaption></figure></p>
+<p>{% imgcap center http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-rock-face-1.jpg 1000 666 Rock face along the Skyline to the Sea trail  %}</p>
 
-<p><figure itemprop='image' itemscope itemtype='http://schema.org/ImageObject' class='center'><meta itemprop='width' content='1000'><meta itemprop='height' content='666'><meta itemprop='url' content='http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-rock-face-2.jpg'><img itemprop='contentUrl' src="http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-rock-face-2.jpg" width="1000" height="666" title="Rock face along the Skyline to the Sea trail" ><figcaption itemprop='caption'>Rock face along the Skyline to the Sea trail</figcaption></figure></p>
+<p>{% imgcap center http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-rock-face-2.jpg 1000 666 Rock face along the Skyline to the Sea trail  %}</p>
 
-<p><figure itemprop='image' itemscope itemtype='http://schema.org/ImageObject' class='center'><meta itemprop='width' content='1000'><meta itemprop='height' content='666'><meta itemprop='url' content='http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-shadowy-trail.jpg'><img itemprop='contentUrl' src="http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-shadowy-trail.jpg" width="1000" height="666" title="Shadowy trail" ><figcaption itemprop='caption'>Shadowy trail</figcaption></figure></p>
+<p>{% imgcap center http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-shadowy-trail.jpg 1000 666 Shadowy trail  %}</p>
 
-<p><figure itemprop='image' itemscope itemtype='http://schema.org/ImageObject' class='center'><meta itemprop='width' content='666'><meta itemprop='height' content='1000'><meta itemprop='url' content='http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-small-stream.jpg'><img itemprop='contentUrl' src="http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-small-stream.jpg" width="666" height="1000" title="Tiny stream, almost all dried up" ><figcaption itemprop='caption'>Tiny stream, almost all dried up</figcaption></figure></p>
+<p>{% imgcap center http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-small-stream.jpg 666 1000 Tiny stream, almost all dried up %}</p>
 
-<p><figure itemprop='image' itemscope itemtype='http://schema.org/ImageObject' class='center'><meta itemprop='width' content='666'><meta itemprop='height' content='1000'><meta itemprop='url' content='http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-tall-trees-in-shadow.jpg'><img itemprop='contentUrl' src="http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-tall-trees-in-shadow.jpg" width="666" height="1000" title="Huge trees in the shadows" ><figcaption itemprop='caption'>Huge trees in the shadows</figcaption></figure></p>
+<p>{% imgcap center http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-tall-trees-in-shadow.jpg 666 1000 Huge trees in the shadows %}</p>
 
-<p><figure itemprop='image' itemscope itemtype='http://schema.org/ImageObject' class='center'><meta itemprop='width' content='666'><meta itemprop='height' content='1000'><meta itemprop='url' content='http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-trees-path-shadows.jpg'><img itemprop='contentUrl' src="http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-trees-path-shadows.jpg" width="666" height="1000" title="Shadows over the trail" ><figcaption itemprop='caption'>Shadows over the trail</figcaption></figure></p>
+<p>{% imgcap center http://davidbcalhoun.com/wp-content/uploads/2015/2015-10-25-big-basin-trees-path-shadows.jpg 666 1000 Shadows over the trail %}</p>
 ]]></content>
   </entry>
   

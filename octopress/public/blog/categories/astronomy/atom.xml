@@ -4,7 +4,7 @@
   <title><![CDATA[Category: astronomy | David Calhoun]]></title>
   <link href="http://davidbcalhoun.com/blog/categories/astronomy/atom.xml" rel="self"/>
   <link href="http://davidbcalhoun.com/"/>
-  <updated>2017-03-11T11:38:47-08:00</updated>
+  <updated>2018-07-04T17:23:39-07:00</updated>
   <id>http://davidbcalhoun.com/</id>
   <author>
     <name><![CDATA[David Calhoun]]></name>
@@ -41,7 +41,7 @@
     <link href="http://davidbcalhoun.com/2015/the-coffee-that-made-the-ufo-dance/"/>
     <updated>2015-07-19T19:05:32-07:00</updated>
     <id>http://davidbcalhoun.com/2015/the-coffee-that-made-the-ufo-dance</id>
-    <content type="html"><![CDATA[<p><figure itemprop='image' itemscope itemtype='http://schema.org/ImageObject' class='center'><meta itemprop='width' content='666'><meta itemprop='height' content='1000'><meta itemprop='url' content='http://davidbcalhoun.com/wp-content/uploads/2015/2015-07-18-milky-way-over-trees-yosemite-valley-david-calhoun-5D__3685.jpg'><img itemprop='contentUrl' src="http://davidbcalhoun.com/wp-content/uploads/2015/2015-07-18-milky-way-over-trees-yosemite-valley-david-calhoun-5D__3685.jpg" width="666" height="1000" title="Milky Way over the trees, seem from Yosemite Valley around 3am" ><figcaption itemprop='caption'>Milky Way over the trees, seem from Yosemite Valley around 3am</figcaption></figure></p>
+    <content type="html"><![CDATA[<p>{% imgcap center http://davidbcalhoun.com/wp-content/uploads/2015/2015-07-18-milky-way-over-trees-yosemite-valley-david-calhoun-5D__3685.jpg 666 1000 Milky Way over the trees, seem from Yosemite Valley around 3am  %}</p>
 
 <p>Last night I attended an impromptu star party in Yosemite attended by only one person total.  The sky was really clear, and the Milky Way was very easy to see with camera and the eye.</p>
 
@@ -71,7 +71,7 @@
 
 <p>Written at the top of Nevada Falls, Yosemite</p>
 
-<p><figure itemprop='image' itemscope itemtype='http://schema.org/ImageObject' class='center'><meta itemprop='width' content='375'><meta itemprop='height' content='667'><meta itemprop='url' content='http://davidbcalhoun.com/wp-content/uploads/2015/2015-07-18-international-space-station-and-capella.png'><img itemprop='contentUrl' src="http://davidbcalhoun.com/wp-content/uploads/2015/2015-07-18-international-space-station-and-capella.png" width="375" height="667" title="The “UFO” turned out to be the International Space Station, and when it appeared to come out of the trees over the mountain on the right, it was actually Capella" ><figcaption itemprop='caption'>The “UFO” turned out to be the International Space Station, and when it appeared to come out of the trees over the mountain on the right, it was actually Capella</figcaption></figure></p>
+<p>{% imgcap center http://davidbcalhoun.com/wp-content/uploads/2015/2015-07-18-international-space-station-and-capella.png 375 667 The “UFO” turned out to be the International Space Station, and when it appeared to come out of the trees over the mountain on the right, it was actually Capella  %}</p>
 ]]></content>
   </entry>
   

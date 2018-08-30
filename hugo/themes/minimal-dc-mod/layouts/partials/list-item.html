@@ -1,0 +1,47 @@
+<article class="item">
+
+    {{ $.Scratch.Set "link" .RelPermalink }}
+    {{ with .Params.repo }}
+        {{ $repoHost := default "github" $.Params.repoHost }}
+        {{ if eq "github" $repoHost }}
+            {{ printf "https://github.com/%s/%s/" $.Site.Params.githubUsername . | $.Scratch.Set "link" }}
+        {{ else if eq "gitlab" $repoHost }}
+            {{ printf "https://gitlab.com/%s/%s/" $.Site.Params.gitlabUsername . | $.Scratch.Set "link" }}
+        {{ else if eq "bitbucket" $repoHost }}
+            {{ printf "https://bitbucket.org/%s/%s/" $.Site.Params.bitbucketUsername . | $.Scratch.Set "link" }}
+        {{ end }}
+    {{ end }}
+    {{ with .Params.link }} {{ $.Scratch.Set "link" . }} {{ end }}
+
+    {{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006") | $.Scratch.Set "subtitle" }}
+    {{ with .Description }} {{ $.Scratch.Set "subtitle" . }} {{ end }}
+
+    <meta property="article:section" content="Article" />
+    <meta property="article:publisher" content="https://www.davidbcalhoun.com" />
+    <meta property="article:published_time" content="{{ $.Scratch.Get "subtitle" }}" />
+    <meta property="article:modified_time" content="{{ $.Scratch.Get "subtitle" }}" />
+    {{ range .Params.tags }}<meta property="article:tag" content="{{ . }}" />
+    {{ end }}
+    <meta property="og:site_name" content="CSS-Tricks" />
+    <meta property="og:updated_time" content="{{ $.Scratch.Get "subtitle" }}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{ .Scratch.Get "link" }}" />
+    <meta property="og:title" content="{{ .Title }}" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="{{ .Title }}" />
+    <meta name="twitter:site" content="@franksvalli" />
+    <meta name="twitter:creator" content="@franksvalli" />
+    <meta name="twitter:domain" content="davidbcalhoun.com" />
+
+
+    <h4 itemprop="headline">
+        <a href="{{ .Scratch.Get "link" }}" itemprop="url">{{ .Title }}</a>
+    </h4>
+    <h5 class="meta date" itemprop="datePublished dateModified" content="{{ $.Scratch.Get "subtitle" }}" datetime="{{ $.Scratch.Get "subtitle" }}">
+        <time>{{ $.Scratch.Get "subtitle" }}</time>
+    </h5>
+    {{ range .Params.tags }}
+    <a href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}"><kbd class="item-tag">{{ . }}</kbd></a>
+    {{ end }}
+
+</article>

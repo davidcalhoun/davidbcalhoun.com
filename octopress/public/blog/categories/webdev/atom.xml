@@ -4,7 +4,7 @@
   <title><![CDATA[Category: webdev | David Calhoun]]></title>
   <link href="http://davidbcalhoun.com/blog/categories/webdev/atom.xml" rel="self"/>
   <link href="http://davidbcalhoun.com/"/>
-  <updated>2017-03-11T11:38:47-08:00</updated>
+  <updated>2018-07-04T17:23:39-07:00</updated>
   <id>http://davidbcalhoun.com/</id>
   <author>
     <name><![CDATA[David Calhoun]]></name>
@@ -12,6 +12,58 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[A simple introduction to JavaScript map() and reduce() (Array helper functions)]]></title>
+    <link href="http://davidbcalhoun.com/2018/a-simple-introduction-to-javascript-map-and-reduce-array-helper-functions/"/>
+    <updated>2018-07-04T16:39:53-07:00</updated>
+    <id>http://davidbcalhoun.com/2018/a-simple-introduction-to-javascript-map-and-reduce-array-helper-functions</id>
+    <content type="html"><![CDATA[<h2 id="first-steps-with-for-loops">First steps with <code>for</code> loops</h2>
+<p>Most folks find <code>for</code> loops powerful enough to achieve all they need when they need to process items in an <code>Array</code>.  For example, say we have a simple list of items:</p>
+
+<pre><code class="language-javascript">const beatles = [
+	'John Lennon',
+	'Paul McCartney',
+	'George Harrison',
+	'Ringo Starr'
+];
+</code></pre>
+
+<p>Let’s say that we want to display all these names in a Markdown list, which means we simply need to prefix each item with an asterisk and a space, e.g. <code>* John Lennon</code>.</p>
+
+<p>Ok!  Seems easy enough.  Let’s see how we’d do this with a loop:</p>
+
+<pre><code class="language-javascript">const beatles = [
+	'John Lennon',
+	'Paul McCartney',
+	'George Harrison',
+	'Ringo Starr'
+];
+
+let beatlesMarkdown = [];
+for (let index = 0; index &lt; beatles.length; index++) {
+	beatlesMarkdown.push(`* ${ beatles[index] }`);
+}
+</code></pre>
+
+<p>Here’s the resulting array, which we’ve put into <code>beatlesMarkdown</code>:</p>
+
+<pre><code class="language-javascript">[
+	'* John Lennon',
+	'* Paul McCartney',
+	'* George Harrison',
+	'* Ringo Starr'
+]
+</code></pre>
+
+<p>(note the extra line break at the end, which isn’t too big of a deal in this case, but could be annoying for other use cases)</p>
+
+<h2 id="map">map()</h2>
+
+<h2 id="reduce">reduce()</h2>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[async.parallel with a simple timeout (node.js)]]></title>
@@ -334,210 +386,6 @@
 
 <p><a href="http://davidbcalhoun.com/a/negative-scroll-blur.html">Demo</a>  <br />
 <a href="https://github.com/davidcalhoun/negative-scroll-blur">Github</a></p>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[You Can't JavaScript Under Pressure walkthrough]]></title>
-    <link href="http://davidbcalhoun.com/2013/you-cant-javascript-under-pressure-walkthrough"/>
-    <updated>2013-10-04T00:00:00-07:00</updated>
-    <id>http://davidbcalhoun.com/2013/you-cant-javascript-under-pressure-walkthrough</id>
-    <content type="html"><![CDATA[<p>A friend posted a link to this fun little quiz - <a href="http://toys.usvsth3m.com/javascript-under-pressure/">You Can’t JavaScript Under Pressure</a>.</p>
-
-<p>The quizzes get more and more difficult, and they present a nice challenge if you fear your skills are getting rusty. Give it an honest try first, then come back here if you get seriously, honestly stuck. Try to do it yourself!</p>
-
-<h3 id="quiz-1-doubleinteger">Quiz 1: doubleInteger</h3>
-
-<h4 id="problem">Problem</h4>
-<pre lang="javascript"><code>function doubleInteger(i) {
-    // i will be an integer. Double it and return it.
-
-    return i;
-}
-</code></pre>
-
-<h4 id="solution">Solution</h4>
-<pre lang="javascript"><code>function doubleInteger(i) {
-    // i will be an integer. Double it and return it.
-    
-    return i * 2;
-}
-</code></pre>
-
-<h4 id="explanation">Explanation</h4>
-
-<p>Nothing tricky going on here. The prompt implies this should be done in two steps, but a one-liner works. We know i will always be an integer, so we don’t need any sanitization checks, just a straight up return.</p>
-
-<h3 id="quiz-2-isnumbereven">Quiz 2: isNumberEven</h3>
-
-<h4 id="problem-1">Problem</h4>
-<pre lang="javascript"><code>function isNumberEven(i) {
-    // i will be an integer. Return true if it’s even, and false if it isn’t.
-}
-</code></pre>
-
-<h4 id="solution-1">Solution</h4>
-<pre lang="javascript"><code>function isNumberEven(i) {
-    // i will be an integer. Return true if it’s even, and false if it isn’t.
-    
-    if(i % 2 === ) {
-        //  no remainder, so it must be an even number
-        return true;
-    } else {
-        //  remainder, so it must be odd.
-        return false;
-    }
-}
-</code></pre>
-
-<h4 id="explanation-1">Explanation</h4>
-
-<p>Again, no sanitization needed here because i is guaranteed to be an integer. The solution relies on an understanding of the modulus function - this is something usually learned in school, but something I haven’t had to use since, except in interviews or quizzes. Or quizzes during interviews.</p>
-
-<p>Basically, think of modulus as “remainder” function for division problems. For instance, <code>4 % 2</code> will give a modulus of <code>1</code> because 4 goes into 2 twice, evenly, with zero remainder. On the other hand, <code>5 % 2</code> will give a modulus of <code>1</code> because 5 goes into 2 twice, with a remainder of 1. This turns out to be a handy way to differentiate even (4) and odd (5) numbers.</p>
-
-<p>(note that the <code>else</code> isn’t needed here, but it gives greater clarity to what’s going on)</p>
-
-<h3 id="quiz-3-getfileextension">Quiz 3: getFileExtension</h3>
-
-<h4 id="problem-2">Problem</h4>
-<pre lang="javascript"><code>function getFileExtension(i) {
-    // i will be a string, but it may not have a file extension.
-    // return the file extension (with no period) if it has one, otherwise false
-}
-</code></pre>
-
-<h4 id="solution-2">Solution</h4>
-<pre lang="javascript"><code>function getFileExtension(i) {
-    // i will be a string, but it may not have a file extension.
-    // return the file extension (with no period) if it has one, otherwise false
-
-    var filenameArray = i.split(”.”);
-
-    if(filenameArray.length &lt;= 1) {
-        //  i.e. “foo” becomes [“foo”] (array with 1 member)
-        return false;
-    } else {
-        //  must be an array with more than 1 member.  The extension must be at the end.
-        return filenameArray[filenameArray.length - 1];
-    }
-}
-</code></pre>
-
-<h4 id="explanation-2">Explanation</h4>
-
-<p>Now we’re getting a bit tougher!</p>
-
-<p>Strings have a handy function that splits them into an array: <code>split()</code>. For instance,</p>
-
-<pre lang="javascript"><code>"foo.bar.baz".split(".")
-</code></pre>
-
-<p>will output</p>
-
-<pre lang="javascript"><code>["foo", "bar", "baz"]
-</code></pre>
-
-<p>Notice that the periods have been removed, just as the prompt asked for!</p>
-
-<p>In this case we need to first check if there was no file extension. This means that there were no periods to split on, resulting in a one-member array (<code>"foo".split(".")</code> becomes <code>["foo"]</code>). In this case we return <code>false</code>, as the prompt asks for.</p>
-
-<p>Now, in the else case, we know that the array must be larger than 1, meaning that it has a file extension. Since the file extension is always at the end, we know that it must be the last member in the array.</p>
-
-<p>We can find the index of the last member by taking into account array length (<code>filenameArray.length</code>) and the fact that the array is zero-indexed, meaning that we need to subtract 1 from this length. Now we know the extension exists and is at the end of the array, so all we need to do is return it:</p>
-
-<pre lang="javascript"><code>return filenameArray[filenameArray.length - 1];
-</code></pre>
-
-<h3 id="quiz-4-longeststring">Quiz 4: longestString</h3>
-
-<h4 id="problem-3">Problem</h4>
-<pre lang="javascript"><code>function longestString(i) {
-    // i will be an array.
-    // return the longest string in the array
-    
-}
-</code></pre>
-
-<h4 id="solution-3">Solution</h4>
-<pre lang="javascript"><code>function longestString(i) {
-    // i will be an array.
-    // return the longest string in the array
- 
-    var longest = ””,
-        n, len;
-
-    for(n=, len=i.length; n&lt;len; n++) {
-        if(typeof n[i] !== “string”) {
-            //  not a string, go to next iteration of the loop
-            continue;
-        }
-
-        if(n[i].length &gt; longest.length) {
-            //  Current string is longer, so set it as the new longest string
-            longest = n[i];
-        }
-    }   
-}
-</code></pre>
-
-<h4 id="explanation-3">Explanation</h4>
-
-<p>This is a pretty classic interview question. It’s fairly easy and straightforward: just keep track of the longest string in a variable, then loop through all the members of the array. If the current member is longer, set it as the new longest string. At the end, return whatever that variable contains.</p>
-
-<p>Note the extra sanitization check here to make sure the type is a string. If it’s not a string, we <code>continue</code> to continue to the next iteration of the <code>for</code> loop. (Note that this is similar to returning early in functions)</p>
-
-<h3 id="quiz-5-arraysum">Quiz 5: arraySum</h3>
-
-<h4 id="problem-4">Problem</h4>
-<pre lang="javascript"><code>function arraySum(i) {
-    // i will be an array, containing integers, strings and/or arrays like itself.
-    // Sum all the integers you find, anywhere in the nest of arrays.   
-}
-</code></pre>
-
-<h4 id="solution-4">Solution</h4>
-<pre lang="javascript"><code>function arraySum(i) {
-    var sum = ,
-        n, len;
-
-    if(typeof i === “number”) {
-        //  i has been defined as a simple number through a recursive call
-        sum += i;
-    } else if(Array.isArray(i)) {
-        //  i is an array, so iterate through it
-        for(n=, len=i.length; n&lt;len; n++) {
-            //  recursive call
-            sum += arraySum(i[n]);
-        }
-    }
-
-    return sum;
-}
-</code></pre>
-
-<h4 id="explanation-4">Explanation</h4>
-
-<p>The best way to handle this one is through recursion, which is tricky but powerful. I admit that on my first attempts writing it in the console, my browser froze up and I had to restart it.</p>
-
-<p>Recursive functions are very elegant but tricky. It helps to step through with examples.</p>
-
-<p>First, let’s start with <code>arraySum(1)</code>. The output is of course 1, but note that we didn’t actually input an array. The code took the first codepath in the <code>if</code> statement (because <code>typeof 1 === "number"</code> is true)</p>
-
-<p>Let’s see what happens when we input a basic array:</p>
-
-<pre lang="javascript"><code>arraySum([1]);  // 1
-</code></pre>
-
-<p>Again the answer is 1, but this time the codepath was different. This time <code>Array.isArray([1])</code> was true, and the function was called recursively for each of the members in the array. That is to say, each member of the array (in this case the single member) was sent to arraySum as a simple integer. So the recursive call was the same as the original example: <code>arraySum(1)</code>, and the output was the same.</p>
-
-<p>In the case of more numbers, the outputs are all added to the <code>sum</code> and then returned back at the end of the function.</p>
-
-<p>Note that this works quite well for even deeply nested arrays, since arraySum() has logic for arrays that will always return the sum of all of its deeply nested integers:</p>
-
-<pre lang="javascript"><code>arraySum([1, [2,[3,[4,[5]]]]]);   // 15
-</code></pre>
 
 ]]></content>
   </entry>

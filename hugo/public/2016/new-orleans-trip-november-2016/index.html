@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>New Orleans trip (November 2016)</title>
+        
+        <style>
+
+    html body {
+        font-family: 'Roboto', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: #0D47A1;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://davidbcalhoun.com/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/foundation.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.42.2" />
+        
+
+        
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-5530615-3"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)};
+          gtag('js', new Date());
+
+          gtag('config', 'UA-5530615-3');
+        </script>
+        
+
+        <meta name="author" content="David Calhoun">
+        <link href="/index.xml" rel="alternate" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+        <link href="/index.xml" rel="feed" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+
+    </head>
+
+    
+    
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">New Orleans trip (November 2016)</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="https://www.themaingate.net/">Home</a></li>
+                            
+                                <li><a href="/">Posts</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:david.b.calhoun@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/davidcalhoun/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/franksvalli/"><i class="fa fa-twitter"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/davidcalhoun/"><i class="fa fa-linkedin"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://stackoverflow.com/users/214017/david-calhoun/"><i class="fa fa-stack-overflow"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main role="main" itemscope itemType="http://schema.org/BlogPosting">
+    <meta itemprop="inLanguage" content="en-US" />
+    <span itemscope itemprop="author" itemType="https://schema.org/Person">
+        <meta itemprop="name" content="David Calhoun" />
+    </span>
+    <span itemscope itemprop="publisher" itemType="https://schema.org/Organization">
+        <meta itemprop="name" content="David Calhoun" />
+        <meta itemprop="url" content="https://themaingate.net" />
+        <meta itemprop="logo" content="https://themaingate.net/david-calhoun-logo.png">
+    </span>
+    <meta itemprop="image" content="https://themaingate.net/david-calhoun-logo.png">
+
+    <article class="item">
+
+    
+    
+    
+
+    
+    
+
+    <meta property="article:section" content="Article" />
+    <meta property="article:publisher" content="https://www.davidbcalhoun.com" />
+    <meta property="article:published_time" content="November 21, 2016" />
+    <meta property="article:modified_time" content="November 21, 2016" />
+    <meta property="article:tag" content="photography" />
+    <meta property="article:tag" content="new orleans" />
+    <meta property="article:tag" content="travel" />
+    <meta property="article:tag" content="photos" />
+    
+    <meta property="og:site_name" content="CSS-Tricks" />
+    <meta property="og:updated_time" content="November 21, 2016" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="/2016/new-orleans-trip-november-2016/" />
+    <meta property="og:title" content="New Orleans trip (November 2016)" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="New Orleans trip (November 2016)" />
+    <meta name="twitter:site" content="@franksvalli" />
+    <meta name="twitter:creator" content="@franksvalli" />
+    <meta name="twitter:domain" content="davidbcalhoun.com" />
+
+
+    <h4 itemprop="headline">
+        <a href="/2016/new-orleans-trip-november-2016/" itemprop="url">New Orleans trip (November 2016)</a>
+    </h4>
+    <h5 class="meta date" itemprop="datePublished dateModified" content="November 21, 2016" datetime="November 21, 2016">
+        <time>November 21, 2016</time>
+    </h5>
+    
+    <a href="https://davidbcalhoun.com/tags/photography"><kbd class="item-tag">photography</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/new-orleans"><kbd class="item-tag">new orleans</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/travel"><kbd class="item-tag">travel</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/photos"><kbd class="item-tag">photos</kbd></a>
+    
+
+</article>
+
+
+    <br> <div class="text-justify"><p>A few years back I had the opportunity to visit New Orleans in the spring with my friend.  Now I&rsquo;ve returned with my parents to visit in the fall!</p>
+
+<p>My mom had recently expressed a desire to do more travelling while still physically able, which kicked off creating a list of places to visit, and ultimately booking this first trip.  Hopefully the first of many to come.  She asked if I wanted to tag along, and I couldn&rsquo;t pass up another visit to the city.  I also thought I could help out a bit, since I&rsquo;d already visited the city before.</p>
+
+<p>On to the photos!</p>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="666" />
+    <meta itemprop="height" content="1000" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-01.jpg" />
+    <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-01.jpg" title="No visit is complete without trying out some beignets!  From Cafe Beignet on Bourbon Street." />
+    <figcaption itemprop="caption">No visit is complete without trying out some beignets!  From Cafe Beignet on Bourbon Street.</figcaption>
+</figure>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="1000" />
+    <meta itemprop="height" content="666" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-02.jpg" />
+    <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-02.jpg" title="Al "Jumbo" Hirt Jazz statue at Cafe Beignet." />
+    <figcaption itemprop="caption">Al "Jumbo" Hirt Jazz statue at Cafe Beignet.</figcaption>
+</figure>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="666" />
+    <meta itemprop="height" content="1000" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-03.jpg" />
+    <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-03.jpg" title="Grave of Marie Laveau, Queen of Voodoo.  Note the barely visible "XXX" marks." />
+    <figcaption itemprop="caption">Grave of Marie Laveau, Queen of Voodoo.  Note the barely visible "XXX" marks.</figcaption>
+</figure>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="666" />
+    <meta itemprop="height" content="1000" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-04.jpg" />
+    <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-04.jpg" title="Unique vertical tomb style, stacked five caskets high." />
+    <figcaption itemprop="caption">Unique vertical tomb style, stacked five caskets high.</figcaption>
+</figure>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="1000" />
+    <meta itemprop="height" content="666" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-05.jpg" />
+    <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-05.jpg" title="Nicholas Cage's future resting place.  Not joking." />
+    <figcaption itemprop="caption">Nicholas Cage's future resting place.  Not joking.</figcaption>
+</figure>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="1000" />
+    <meta itemprop="height" content="666" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-06.jpg" />
+    <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-06.jpg" title="Cemetery" />
+    <figcaption itemprop="caption">Cemetery</figcaption>
+</figure>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="1000" />
+    <meta itemprop="height" content="666" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-07.jpg" />
+    <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-07.jpg" title="Angel statue, melted by time (and acid rain)" />
+    <figcaption itemprop="caption">Angel statue, melted by time (and acid rain)</figcaption>
+</figure>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="1000" />
+    <meta itemprop="height" content="666" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-08.jpg" />
+    <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-08.jpg" title="Statue near the French Market: Michelle by sculptor Paul Perret" />
+    <figcaption itemprop="caption">Statue near the French Market: Michelle by sculptor Paul Perret</figcaption>
+</figure>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="666" />
+    <meta itemprop="height" content="1000" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-09.jpg" />
+    <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-09.jpg" title="Joan of Arc statue" />
+    <figcaption itemprop="caption">Joan of Arc statue</figcaption>
+</figure>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="666" />
+    <meta itemprop="height" content="1000" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-10.jpg" />
+    <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-10.jpg" title=""At Rest" from Cypress Grove Cemetery" />
+    <figcaption itemprop="caption">"At Rest" from Cypress Grove Cemetery</figcaption>
+</figure>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="1000" />
+    <meta itemprop="height" content="666" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-11.jpg" />
+    <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-11.jpg" title="Swamp tree" />
+    <figcaption itemprop="caption">Swamp tree</figcaption>
+</figure>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="1000" />
+    <meta itemprop="height" content="666" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-12.jpg" />
+    <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-12.jpg" title="Turtles sunbathing in a swamp" />
+    <figcaption itemprop="caption">Turtles sunbathing in a swamp</figcaption>
+</figure>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="1000" />
+    <meta itemprop="height" content="666" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-13.jpg" />
+    <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-13.jpg" title="Alligator in a swamp" />
+    <figcaption itemprop="caption">Alligator in a swamp</figcaption>
+</figure>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="1000" />
+    <meta itemprop="height" content="666" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-14.jpg" />
+    <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-14.jpg" title="Spider in a swamp.  The tour guide got close to this one and rubbed its belly with his bare hands.  "You know you're in Louisiana when they tickle the spiders" said one fellow tourist." />
+    <figcaption itemprop="caption">Spider in a swamp.  The tour guide got close to this one and rubbed its belly with his bare hands.  "You know you're in Louisiana when they tickle the spiders" said one fellow tourist.</figcaption>
+</figure>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="1000" />
+    <meta itemprop="height" content="666" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-15.jpg" />
+    <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-15.jpg" title="Great Blue Heron" />
+    <figcaption itemprop="caption">Great Blue Heron</figcaption>
+</figure>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="1000" />
+    <meta itemprop="height" content="666" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-16.jpg" />
+    <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-16.jpg" title="Swamp trees" />
+    <figcaption itemprop="caption">Swamp trees</figcaption>
+</figure>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="1000" />
+    <meta itemprop="height" content="666" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-17.jpg" />
+    <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-17.jpg" title="The bayou with another tourist riverboat in view." />
+    <figcaption itemprop="caption">The bayou with another tourist riverboat in view.</figcaption>
+</figure>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="1000" />
+    <meta itemprop="height" content="666" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-18.jpg" />
+    <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-18.jpg" title="Alligators" />
+    <figcaption itemprop="caption">Alligators</figcaption>
+</figure>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="1000" />
+    <meta itemprop="height" content="666" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-19.jpg" />
+    <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-19.jpg" title="Alligator hiding underwater" />
+    <figcaption itemprop="caption">Alligator hiding underwater</figcaption>
+</figure>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="1000" />
+    <meta itemprop="height" content="666" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-20.jpg" />
+    <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-20.jpg" title="New Orleans skyline at sunset." />
+    <figcaption itemprop="caption">New Orleans skyline at sunset.</figcaption>
+</figure>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="666" />
+    <meta itemprop="height" content="1000" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-21.jpg" />
+    <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-21.jpg" title="Benito Juarez statue" />
+    <figcaption itemprop="caption">Benito Juarez statue</figcaption>
+</figure>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="666" />
+    <meta itemprop="height" content="1000" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-22.jpg" />
+    <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-22.jpg" title="Mom and dad on Bourbon Street.  My mom was on the phone with my sister, who was trying to get a screen grab of us on a street webcam." />
+    <figcaption itemprop="caption">Mom and dad on Bourbon Street.  My mom was on the phone with my sister, who was trying to get a screen grab of us on a street webcam.</figcaption>
+</figure>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="1000" />
+    <meta itemprop="height" content="666" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-23.jpg" />
+    <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-23.jpg" title="Segway tours trailing a horse and carriage" />
+    <figcaption itemprop="caption">Segway tours trailing a horse and carriage</figcaption>
+</figure>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="666" />
+    <meta itemprop="height" content="1000" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-24.jpg" />
+    <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-24.jpg" title="Mom and dad" />
+    <figcaption itemprop="caption">Mom and dad</figcaption>
+</figure>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="1000" />
+    <meta itemprop="height" content="666" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-25.jpg" />
+    <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-25.jpg" title="Aboard the Natchez Steamboat" />
+    <figcaption itemprop="caption">Aboard the Natchez Steamboat</figcaption>
+</figure>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="1000" />
+    <meta itemprop="height" content="666" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-26.jpg" />
+    <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-26.jpg" title="Jackson Square seen from the steamboat" />
+    <figcaption itemprop="caption">Jackson Square seen from the steamboat</figcaption>
+</figure>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="1000" />
+    <meta itemprop="height" content="666" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-27.jpg" />
+    <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-27.jpg" title="Speed control on the steamboat" />
+    <figcaption itemprop="caption">Speed control on the steamboat</figcaption>
+</figure>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="1000" />
+    <meta itemprop="height" content="666" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-28.jpg" />
+    <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-28.jpg" title="Closeup from the engine room of the steamboat" />
+    <figcaption itemprop="caption">Closeup from the engine room of the steamboat</figcaption>
+</figure>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="1000" />
+    <meta itemprop="height" content="666" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-29.jpg" />
+    <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-29.jpg" title="Closeup from the engine room of the steamboat" />
+    <figcaption itemprop="caption">Closeup from the engine room of the steamboat</figcaption>
+</figure>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="1000" />
+    <meta itemprop="height" content="666" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-30.jpg" />
+    <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-30.jpg" title="View down the street" />
+    <figcaption itemprop="caption">View down the street</figcaption>
+</figure>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="666" />
+    <meta itemprop="height" content="1000" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-31.jpg" />
+    <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-31.jpg" title="Calle D Santa Ana" />
+    <figcaption itemprop="caption">Calle D Santa Ana</figcaption>
+</figure>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="1000" />
+    <meta itemprop="height" content="666" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-32.jpg" />
+    <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-32.jpg" title="Balcony in the French Quarter" />
+    <figcaption itemprop="caption">Balcony in the French Quarter</figcaption>
+</figure>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="666" />
+    <meta itemprop="height" content="1000" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-33.jpg" />
+    <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-33.jpg" title="Hot sauce paradise" />
+    <figcaption itemprop="caption">Hot sauce paradise</figcaption>
+</figure>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="666" />
+    <meta itemprop="height" content="1000" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-34.jpg" />
+    <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-34.jpg" title="Building in the French Quarter" />
+    <figcaption itemprop="caption">Building in the French Quarter</figcaption>
+</figure>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="1000" />
+    <meta itemprop="height" content="666" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-35.jpg" />
+    <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-35.jpg" title="Balcony in the French Quarter" />
+    <figcaption itemprop="caption">Balcony in the French Quarter</figcaption>
+</figure>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="1000" />
+    <meta itemprop="height" content="666" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-36.jpg" />
+    <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-36.jpg" title="Acme Oyster House" />
+    <figcaption itemprop="caption">Acme Oyster House</figcaption>
+</figure>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="1000" />
+    <meta itemprop="height" content="666" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-37.jpg" />
+    <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-37.jpg" title="Chargrileld Oysters from Acme Oyster House" />
+    <figcaption itemprop="caption">Chargrileld Oysters from Acme Oyster House</figcaption>
+</figure>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="1000" />
+    <meta itemprop="height" content="666" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-38.jpg" />
+    <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-38.jpg" title="Jazz band in the French Quarter" />
+    <figcaption itemprop="caption">Jazz band in the French Quarter</figcaption>
+</figure>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="666" />
+    <meta itemprop="height" content="1000" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-39.jpg" />
+    <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-39.jpg" title="Mom and dad in front of some shady establishments on Bourbon Street" />
+    <figcaption itemprop="caption">Mom and dad in front of some shady establishments on Bourbon Street</figcaption>
+</figure>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="1000" />
+    <meta itemprop="height" content="666" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-40.jpg" />
+    <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-40.jpg" title="Great colors in the driveway of our hotel (The W Hotel)" />
+    <figcaption itemprop="caption">Great colors in the driveway of our hotel (The W Hotel)</figcaption>
+</figure>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="666" />
+    <meta itemprop="height" content="1000" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-41.jpg" />
+    <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-41.jpg" title="W Hotel courtyard at night" />
+    <figcaption itemprop="caption">W Hotel courtyard at night</figcaption>
+</figure>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="1000" />
+    <meta itemprop="height" content="666" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-42.jpg" />
+    <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-42.jpg" title="Andrew Jackson statue at night" />
+    <figcaption itemprop="caption">Andrew Jackson statue at night</figcaption>
+</figure>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="1000" />
+    <meta itemprop="height" content="666" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-43.jpg" />
+    <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-43.jpg" title="Steamboat Natchez at sunrise" />
+    <figcaption itemprop="caption">Steamboat Natchez at sunrise</figcaption>
+</figure>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="1000" />
+    <meta itemprop="height" content="666" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-44.jpg" />
+    <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-44.jpg" title="Sunrise on the Mississipi River - taken standing on the levee" />
+    <figcaption itemprop="caption">Sunrise on the Mississipi River - taken standing on the levee</figcaption>
+</figure>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="666" />
+    <meta itemprop="height" content="1000" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-45.jpg" />
+    <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-45.jpg" title="Calle D Chartres.  This was the street our hotel was on, so we got to know its name well!" />
+    <figcaption itemprop="caption">Calle D Chartres.  This was the street our hotel was on, so we got to know its name well!</figcaption>
+</figure>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="666" />
+    <meta itemprop="height" content="1000" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-46.jpg" />
+    <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-46.jpg" title="Spanish moss" />
+    <figcaption itemprop="caption">Spanish moss</figcaption>
+</figure>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="1000" />
+    <meta itemprop="height" content="666" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-47.jpg" />
+    <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-47.jpg" title="Slave prison, from the LSU Rural Life Museum in Baton Rouge" />
+    <figcaption itemprop="caption">Slave prison, from the LSU Rural Life Museum in Baton Rouge</figcaption>
+</figure>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="1000" />
+    <meta itemprop="height" content="666" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-48.jpg" />
+    <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-48.jpg" title="Teche Mamou Genuine Mentholated Cough Syrup" />
+    <figcaption itemprop="caption">Teche Mamou Genuine Mentholated Cough Syrup</figcaption>
+</figure>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="1000" />
+    <meta itemprop="height" content="666" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-49.jpg" />
+    <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-49.jpg" title="S. Andral Kilmer, M.D. Swamp Root" />
+    <figcaption itemprop="caption">S. Andral Kilmer, M.D. Swamp Root</figcaption>
+</figure>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="1000" />
+    <meta itemprop="height" content="666" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-50.jpg" />
+    <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-50.jpg" title="Poor folks' church in the LSU Rural Life Museum in Baton Rouge" />
+    <figcaption itemprop="caption">Poor folks' church in the LSU Rural Life Museum in Baton Rouge</figcaption>
+</figure>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="1000" />
+    <meta itemprop="height" content="666" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-51.jpg" />
+    <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-51.jpg" title="Painted windows instead of stained windows at the poor folks' church in the LSU Rural Life Museum in Baton Rouge" />
+    <figcaption itemprop="caption">Painted windows instead of stained windows at the poor folks' church in the LSU Rural Life Museum in Baton Rouge</figcaption>
+</figure>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="1000" />
+    <meta itemprop="height" content="666" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-52.jpg" />
+    <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-52.jpg" title="Creepy statue in the cemetery at the LSU Rural Life Museum in Baton Rouge" />
+    <figcaption itemprop="caption">Creepy statue in the cemetery at the LSU Rural Life Museum in Baton Rouge</figcaption>
+</figure>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="1000" />
+    <meta itemprop="height" content="666" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-53.jpg" />
+    <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-53.jpg" title="Crab and Crawfish Au Gratin from Parrain's Seafood Restaurant in Baton Rouge" />
+    <figcaption itemprop="caption">Crab and Crawfish Au Gratin from Parrain's Seafood Restaurant in Baton Rouge</figcaption>
+</figure>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="1000" />
+    <meta itemprop="height" content="666" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-54.jpg" />
+    <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2016/2016-11-new-orleans-54.jpg" title="Andouille Encrusted Fresh Fish from Parrain's Seafood Restaurant in Baton Rouge" />
+    <figcaption itemprop="caption">Andouille Encrusted Fresh Fish from Parrain's Seafood Restaurant in Baton Rouge</figcaption>
+</figure>
+</div>
+
+    
+    
+
+    
+
+    
+
+        <h4 class="page-header">Comments</h4>
+
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "davidbcalhoun" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+
+</main>
+
+        <footer role="contentinfo">
+
+            <p class="copyright text-muted">© <span itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="David Calhoun"><a href="mailto:david.b.calhoun@gmail.com" itemprop="email">David Calhoun</a> (<a href="https://twitter.com/franksvalli" itemprop="url">@franksvalli</a>) - <a href="https://www.linkedin.com/in/davidcalhoun" itemprop="url">LinkedIn</a> - <a href="http://themaingate.net/resume/" itemprop="url">Resume</a></span></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+

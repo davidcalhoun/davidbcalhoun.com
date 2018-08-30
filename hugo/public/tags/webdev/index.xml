@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Webdev on David Calhoun&#39;s blog</title>
+    <link>https://davidbcalhoun.com/tags/webdev/</link>
+    <description>Recent content in Webdev on David Calhoun&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 26 Aug 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://davidbcalhoun.com/tags/webdev/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A Simple Introduction to Javascript Map and Reduce Array Helper Functions</title>
+      <link>https://davidbcalhoun.com/2018/a-simple-introduction-to-javascript-map-and-reduce-array-helper-functions/</link>
+      <pubDate>Sun, 26 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2018/a-simple-introduction-to-javascript-map-and-reduce-array-helper-functions/</guid>
+      <description>Perhaps you&amp;rsquo;ve been programming for a while, and you&amp;rsquo;re pretty comfortable using for loops to traverse Arrays. However, you know how untidy and complicated for loops can get, and you are interested in better approaches to keep the code clean. Enter map and reduce!
+First steps with for loops Most folks find for loops powerful enough to achieve all they need when they need to process items in an Array.</description>
+    </item>
+    
+    <item>
+      <title>async.parallel with a simple timeout (node.js)</title>
+      <link>https://davidbcalhoun.com/2014/async.parallel-with-a-simple-timeout-node.js/</link>
+      <pubDate>Mon, 08 Sep 2014 00:36:52 -0700</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2014/async.parallel-with-a-simple-timeout-node.js/</guid>
+      <description>A while back I had a need for a general timeout option for async.parallel and was surprised I couldn&amp;rsquo;t find much information about how to do it. I was using async.parallel to make a lot of REST calls in parallel, but one of them was getting blocked by a firewall, resulting in an eventual timeout minutes later.
+One option was to specify a shorter timeout for each individual REST call, including the one causing the problem.</description>
+    </item>
+    
+    <item>
+      <title>What is AMD, CommonJS, and UMD?</title>
+      <link>https://davidbcalhoun.com/2014/what-is-amd-commonjs-and-umd/</link>
+      <pubDate>Wed, 30 Apr 2014 11:59:21 -0700</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2014/what-is-amd-commonjs-and-umd/</guid>
+      <description>Intro Over the years there&amp;rsquo;s been a steadily increasing ecosystem of JavaScript components to choose from. The sheer amount of choices is fantastic, but this also infamously presents a difficulty when components are mixed-and-matched. And it doesn&amp;rsquo;t take too long for budding developers to find out that not all components are built to play nicely together.
+To address these issues, the competing module specs AMD and CommonJS have appeared on the scene, allowing developers to write their code in an agreed-upon sandboxed and modularized way, so as not to &amp;ldquo;pollute the ecosystem&amp;rdquo;.</description>
+    </item>
+    
+    <item>
+      <title>The mobile web is dead (and we have killed it)</title>
+      <link>https://davidbcalhoun.com/2014/the-mobile-web-is-dead-and-we-have-killed-it/</link>
+      <pubDate>Mon, 14 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2014/the-mobile-web-is-dead-and-we-have-killed-it/</guid>
+      <description>The mobile web is dead.
+(Banner: would you like to download the app?)
+The mobile web remains dead.
+(Splash screen: download the app!)
+And we have killed it.
+(JavaScript prompt: &amp;ldquo;Yahoo! can serve you more accurate local weather and news if you enable location services&amp;rdquo;)
+Yet its shadow still looms.
+(Prompt: Yahoo! would like to use your Current Location)
+How shall we comfort ourselves, the murderers of all murderers?</description>
+    </item>
+    
+    <item>
+      <title>Introducing Negative Scroll Blur (for browsers that support CSS filters)</title>
+      <link>https://davidbcalhoun.com/2013/introducing-negative-scroll-blur-for-browsers-that-support-css-filters/</link>
+      <pubDate>Sat, 23 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2013/introducing-negative-scroll-blur-for-browsers-that-support-css-filters/</guid>
+      <description>(2016: in retrospect, this is kind of gratuitous and doesn&amp;rsquo;t appear to be fully working anymore&amp;hellip;)
+Demo
+Just for fun, I wanted to reproduce a cool but completely superfluous UI I saw in the updated Foursquare app recently. Basically, when the user tries to scroll past the upper bound of the app/page, the header image becomes blurred.
+We can do the same thing on the web by listening for negative scroll and then using (abusing?</description>
+    </item>
+    
+    <item>
+      <title>You Can&#39;t JavaScript Under Pressure walkthrough</title>
+      <link>https://davidbcalhoun.com/2013/you-cant-javascript-under-pressure-walkthrough/</link>
+      <pubDate>Fri, 04 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2013/you-cant-javascript-under-pressure-walkthrough/</guid>
+      <description>A friend posted a link to this fun little quiz - You Can&amp;rsquo;t JavaScript Under Pressure.
+The quizzes get more and more difficult, and they present a nice challenge if you fear your skills are getting rusty. Give it an honest try first, then come back here if you get seriously, honestly stuck. Try to do it yourself!
+Quiz 1: doubleInteger Problem function doubleInteger(i) { // i will be an integer.</description>
+    </item>
+    
+    <item>
+      <title>Quick style comparison of mobile image search sites</title>
+      <link>https://davidbcalhoun.com/2013/quick-style-comparison-of-mobile-image-search-sites/</link>
+      <pubDate>Fri, 10 May 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2013/quick-style-comparison-of-mobile-image-search-sites/</guid>
+      <description>The other day I glanced at a classmate using Baidu to perform an image search and was impressed with their presentation:
+
+Note the nice big images and the lack of margins around images. After seeing this presentation, I realized that the common approach of adding margins around images is pretty unnecessary.
+I also noticed that the images are a variety of sizes, leading to a less sterile experience. There&amp;rsquo;s surely some clever math going on behind the scenes here to make sure the images appear &amp;ldquo;justified&amp;rdquo; (to use a word from the recent Flickr redesign).</description>
+    </item>
+    
+    <item>
+      <title>More fun with WebKit pseudoelements: -webkit-search-cancel-button (or: Pseudoclass Inception)</title>
+      <link>https://davidbcalhoun.com/2012/more-fun-with-webkit-pseudoelements--webkit-search-cancel-button-or-pseudoclass-inception/</link>
+      <pubDate>Fri, 10 Aug 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2012/more-fun-with-webkit-pseudoelements--webkit-search-cancel-button-or-pseudoclass-inception/</guid>
+      <description>Introduction UPDATE 2016: this appears to have even less support than before, and it&amp;rsquo;s not recommended to be used on a production site. Use a helper JS library instead.
+(check out the Demo)
+A while back I had a bit of a field day messing around with input type=&amp;ldquo;range&amp;rdquo;, trying to replicate the &amp;ldquo;unlock slider&amp;rdquo; on iOS using CSS, targeting special WebKit-only CSS pseudoelements such as webkit-slider-thumb.
+Well, now I&amp;rsquo;m at it again, this time with a much simpler use case, trying to implement a custom &amp;ldquo;clear&amp;rdquo; button on search field inputs (note that this only works on input type=&amp;ldquo;search&amp;rdquo;):</description>
+    </item>
+    
+    <item>
+      <title>Response to &#39;What’s next for mobile now that adaptive design has failed?&#39;</title>
+      <link>https://davidbcalhoun.com/2012/response-to-whats-next-for-mobile-now-that-adaptive-design-has-failed/</link>
+      <pubDate>Wed, 23 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2012/response-to-whats-next-for-mobile-now-that-adaptive-design-has-failed/</guid>
+      <description>There&amp;rsquo;s been a flurry of response to this article, entitled &amp;ldquo;What’s next for mobile now that adaptive design has failed?&amp;rdquo;.
+There&amp;rsquo;s many problems with this article, so it&amp;rsquo;s hard to know where to start.
+I will admit that defenders of responsive design have come out of the woodwork in trashing this article, but I suppose I count myself among them, being a proponent of responsive design. I still see the web heading that direction, and I definitely don&amp;rsquo;t see it heading in the direction the author of the article has described.</description>
+    </item>
+    
+    <item>
+      <title>Post a status update to the native Facebook app from a web link</title>
+      <link>https://davidbcalhoun.com/2012/post-a-status-update-to-the-native-facebook-app-from-a-web-link/</link>
+      <pubDate>Thu, 02 Feb 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2012/post-a-status-update-to-the-native-facebook-app-from-a-web-link/</guid>
+      <description>UPDATE 2/25/2013 As of Facebook&amp;rsquo;s update last year, it appears that many of the old Facebook URL schemes are no longer working&amp;hellip;. So this post looks to be outdated and useless already&amp;hellip; :)
+The skinny Copy this code:
+&amp;lt;a href=&amp;quot;fb://publish/profile/me?text=foo&amp;quot;&amp;gt;Post to Facebook&amp;lt;/a&amp;gt;  {:lang=&amp;ldquo;html&amp;rdquo;}
+Explanation As you may know, Facebook has a URL scheme
+fb://  which seems to be mainly used by native developers. What most folks don&amp;rsquo;t realize is that it&amp;rsquo;s just a URL scheme, like http://, and that we can use it within our mobile browsers!</description>
+    </item>
+    
+    <item>
+      <title>iOS5 SunSpider: iPhone 4S vs iPhone 4 vs iPhone 3GS</title>
+      <link>https://davidbcalhoun.com/2011/ios5-sunspider-iphone-4s-vs-iphone-4-vs-iphone-3gs/</link>
+      <pubDate>Fri, 14 Oct 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2011/ios5-sunspider-iphone-4s-vs-iphone-4-vs-iphone-3gs/</guid>
+      <description>Result table (SunSpider 0.9.1, all devices running iOS 5)   Test   iPhone 4S   iPhone 4   iPhone 3GS     Total  2270ms   3483ms   4903ms     3D  281ms   486ms   672ms     Access  279ms   410ms   614ms     Bitops  177ms   200ms   270ms     Controlflow  20ms   26ms   34ms     Crypto  164ms   211ms   315ms     Date  332ms   528ms   770ms     Math  219ms   433ms   553ms     Regexp  88ms   117ms   151ms     String  711ms   1072ms   1525ms    Raw results iPhone 4S (iOS5)</description>
+    </item>
+    
+    <item>
+      <title>iPhone 4S, iPhone 4, and iPhone 3GS photo comparison</title>
+      <link>https://davidbcalhoun.com/2011/iphone-4s-iphone-4-and-iphone-3gs-photo-comparison/</link>
+      <pubDate>Fri, 14 Oct 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2011/iphone-4s-iphone-4-and-iphone-3gs-photo-comparison/</guid>
+      <description>More photos likely to come.. this is just after I unboxed my new 4S. Time to play with it a bit!
+iPhone 4S 
+iPhone 4 
+iPhone 3GS 
+iPhone 3GS (alternate white balance point)</description>
+    </item>
+    
+    <item>
+      <title>Mobile Performance Manifesto</title>
+      <link>https://davidbcalhoun.com/2011/mobile-performance-manifesto/</link>
+      <pubDate>Tue, 11 Oct 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2011/mobile-performance-manifesto/</guid>
+      <description>Earlier this year I gave a talk (slides) outlining the latest and greatest in mobile performance, including a bit of my own unscientific research into carrier latency and bandwidth thanks to boomerang.js.
+I realized that interest in mobile performance has exploded recently, especially with Steve Souders announcing his focus on mobile, and I thought it was time for an update, this time in blog form. Also, my old slides have been somewhat embarrassing.</description>
+    </item>
+    
+    <item>
+      <title>When to base64 encode images (and when not to)</title>
+      <link>https://davidbcalhoun.com/2011/when-to-base64-encode-images-and-when-not-to/</link>
+      <pubDate>Sun, 28 Aug 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2011/when-to-base64-encode-images-and-when-not-to/</guid>
+      <description>Introduction Ever since Steve Souders started evangelizing web performance, it&amp;rsquo;s been pounded into our heads that extra HTTP requests add a lot of additional overhead, and that we should combine them if possible to dramatically decrease the load time of our web pages.
+The practical implication of this has been to combine our JavaScript and CSS files, which is relatively easy and straightforward, but the harder question has been what to do with images.</description>
+    </item>
+    
+    <item>
+      <title>Different ways of defining functions in JavaScript (this is madness!)</title>
+      <link>https://davidbcalhoun.com/2011/different-ways-of-defining-functions-in-javascript-this-is-madness/</link>
+      <pubDate>Fri, 24 Jun 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2011/different-ways-of-defining-functions-in-javascript-this-is-madness/</guid>
+      <description>Note: updated in July 2016 with ES6 arrow functions.
+Russian translation thanks to Yevgeniy Pyastolov
+This is madness! This&amp;hellip; is&amp;hellip; JavaScript! In JavaScript, there&amp;rsquo;s many different ways of doing something. This is both a good thing and a bad thing. To the newcomer this is definitely a bad thing, as it means not only more things to learn, but more little caveats and more places to go wrong. And so it is with declaring functions!</description>
+    </item>
+    
+    <item>
+      <title>New Mobile Safari stuff in iOS5: position:fixed, overflow:scroll, new input type support, web workers, ECMAScript 5</title>
+      <link>https://davidbcalhoun.com/2011/new-mobile-safari-stuff-in-ios5-positionfixed-overflowscroll-new-input-type-support-web-workers-ecmascript-5/</link>
+      <pubDate>Tue, 07 Jun 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2011/new-mobile-safari-stuff-in-ios5-positionfixed-overflowscroll-new-input-type-support-web-workers-ecmascript-5/</guid>
+      <description>(note: this is based on the first iOS5 beta [9A5220p] and is subject to change on final release)
+It looks like there&amp;rsquo;s finally some major improvements in mobile Safari, some of which I&amp;rsquo;ve found below on my &amp;ldquo;first glance&amp;rdquo; after downloading the SDK. Chime in if you find anything yourself!
+Bad news first Much to my disappointment, browser-based file uploads are still not supported (input type=&amp;ldquo;file&amp;rdquo;), even though they have been supported on Android since version 2.</description>
+    </item>
+    
+    <item>
+      <title>The incredibly painful way of getting an RSS feed of a Twitter list</title>
+      <link>https://davidbcalhoun.com/2011/the-incredibly-painful-way-of-getting-an-rss-feed-of-a-twitter-list/</link>
+      <pubDate>Sun, 05 Jun 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2011/the-incredibly-painful-way-of-getting-an-rss-feed-of-a-twitter-list/</guid>
+      <description>Update: the Twitter REST API v1 is no longer active. This post has been preserved as a reference.
+(why does Twitter make it so hard? What did RSS ever do to it?)
+The skinny The Twitter API appears to support two methods for getting RSS feeds of lists. Both of these methods are pretty buried and their API docs don&amp;rsquo;t help too much, but nonetheless both of these feeds work:</description>
+    </item>
+    
+    <item>
+      <title>Android 3.0 Honeycomb is first to implement the Device API</title>
+      <link>https://davidbcalhoun.com/2011/android-3.0-honeycomb-is-first-to-implement-the-device-api/</link>
+      <pubDate>Thu, 24 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2011/android-3.0-honeycomb-is-first-to-implement-the-device-api/</guid>
+      <description>I fired up the newly released Android 3.0 SDK to run some tests and found they&amp;rsquo;ve implemented part of the long-awaited Device API (aka the Media Capture API). From your browser you can now upload pictures and videos from the camera as well as sounds from the microphone. The returned data should be available to manipulate via the File API (although I haven&amp;rsquo;t yet tested this).
+Video I made a short video demo with some explanation:</description>
+    </item>
+    
+    <item>
+      <title>My O&#39;Reilly Books Wishlist</title>
+      <link>https://davidbcalhoun.com/2011/my-oreilly-books-wishlist/</link>
+      <pubDate>Tue, 22 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2011/my-oreilly-books-wishlist/</guid>
+      <description>Introduction Ok, so this post is only here in the hopes I&amp;rsquo;ll actually win something.
+O&amp;rsquo;Reilly Books has a promotion where a random winner will receive up to $500 of books on their wishlist, provided they post the list somewhere online. You can probably see why this is here then!
+The List Programming the Mobile Web ($50)
+Palm webOS ($45)
+MongoDB: The Definitive Guide ($40)
+JavaScript: The Definitive Guide: Rough Cuts Version, Sixth Edition ($50)</description>
+    </item>
+    
+    <item>
+      <title>Checking for undefined, null, and empty variables in JavaScript</title>
+      <link>https://davidbcalhoun.com/2011/checking-for-undefined-null-and-empty-variables-in-javascript/</link>
+      <pubDate>Fri, 11 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2011/checking-for-undefined-null-and-empty-variables-in-javascript/</guid>
+      <description>In general it&amp;rsquo;s a good practice to check for the existence of something before blindly using it by faith and hoping it works. There are various times during the execution of scripts when a variable may not be defined, it may be null, or it might be an empty string. These are three things that are easily conflated. A good way to look at this is thinking of these as having increasing levels of existence (getting a bit philosophical here for a moment&amp;hellip;):</description>
+    </item>
+    
+    <item>
+      <title>A peek into Google&#39;s Jules Verne tribute (February 8, 2011)</title>
+      <link>https://davidbcalhoun.com/2011/a-peek-into-googles-jules-verne-tribute-february-8-2011/</link>
+      <pubDate>Mon, 07 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2011/a-peek-into-googles-jules-verne-tribute-february-8-2011/</guid>
+      <description>This is just a fun little video demo into the inner workings of today&amp;rsquo;s Google Doodle. Nothing you can&amp;rsquo;t do yourself with Firebug or Web Inspector (built into WebKit browsers such as Safari and Chrome). But I liked this doodle so much, I wanted to talk about it!
+Disclaimer: I know the difference between HTML5 and CSS3, but I&amp;rsquo;m not much one for pedantic nomenclature (however, I am apparently supportive of pedantic words like nomenclature).</description>
+    </item>
+    
+    <item>
+      <title>JavaScript SunSpider benchmark: iOS 4.3 vs iOS 4.0</title>
+      <link>https://davidbcalhoun.com/2011/javascript-sunspider-benchmark-ios-4.3-vs-ios-4.0/</link>
+      <pubDate>Sat, 22 Jan 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2011/javascript-sunspider-benchmark-ios-4.3-vs-ios-4.0/</guid>
+      <description>Result table (SunSpider 0.9.1)    Test   iOS 4 (3GS)   iOS 4.3 beta 2 (3GS)   % change     Total   13787ms  5357ms  -61.1%     3D   1917ms  737ms  -61.6%     Access   1893ms  617ms  -67.4%     Bitops   1239ms  289ms  -76.</description>
+    </item>
+    
+    <item>
+      <title>Notes: Mobile Web Design (Cameron Moll, 2007)</title>
+      <link>https://davidbcalhoun.com/2011/notes-mobile-web-design-cameron-moll-2007/</link>
+      <pubDate>Fri, 21 Jan 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2011/notes-mobile-web-design-cameron-moll-2007/</guid>
+      <description>What&amp;rsquo;s this? These are some notes I collect as I read through Cameron Moll&amp;rsquo;s Mobile Web Design.
+Introduction  Further info:  Designing the Mobile User Experience (Barbara Ballard)
+dotMobi Web Developer&amp;rsquo;s Guide (dev.mobi)
+Global Authoring Practices for the Mobile Web (Luca Passani) (passani.it/gap)
+Constant Touch: A Global History of the Mobile Web (Jon Agar)
+Personal, Portable, Pedestrian: Mobile Phones in Japanese Life (Mizuko Ito)
+Mobile Interaction Design (Matt Jones)</description>
+    </item>
+    
+    <item>
+      <title>Implementing iPhone&#39;s slider unlock with input type=&#39;range&#39;</title>
+      <link>https://davidbcalhoun.com/2011/implementing-iphones-slider-unlock-with-input-typerange/</link>
+      <pubDate>Sun, 16 Jan 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2011/implementing-iphones-slider-unlock-with-input-typerange/</guid>
+      <description>(check out the live demo)
+Introduction After reading &amp;ldquo;What the Heck is Shadow DOM?&amp;rdquo; I was inspired to see how far I could style the &amp;lt;input type=&amp;quot;range&amp;quot;&amp;gt; element. Pretty far, as it turns out!
+My goal was to change the input&amp;rsquo;s default appearance:
+To the visual appearance of the iPhone&amp;rsquo;s unlock slider:
+As far as I can tell, only WebKit-based browsers and Opera have implemented input type=range. Mobile Safari hasn&amp;rsquo;t yet implemented it as of iOS 4.</description>
+    </item>
+    
+    <item>
+      <title>JavaScript news resources</title>
+      <link>https://davidbcalhoun.com/2011/javascript-news-resources/</link>
+      <pubDate>Fri, 14 Jan 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2011/javascript-news-resources/</guid>
+      <description>There&amp;rsquo;s an overwhelming amount of information being pumped out of the JavaScript community each week, but how do you keep up with it? Here&amp;rsquo;s some sources to keep you busy.
+Twitter This merits a category of its own. This has replaced the RSS reader for a lot of folks, or at the very least supplemented it.
+I&amp;rsquo;ve consistently recommended Nathan Smith&amp;rsquo;s list of JavaScript folks. When I&amp;rsquo;m diligent, I keep up with this several times a week and favorite items from the feed to be considered for inclusion in that week&amp;rsquo;s JSMag Blog update.</description>
+    </item>
+    
+    <item>
+      <title>What happens when you have no JavaScript fallback?</title>
+      <link>https://davidbcalhoun.com/2011/what-happens-when-you-have-no-javascript-fallback/</link>
+      <pubDate>Wed, 12 Jan 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2011/what-happens-when-you-have-no-javascript-fallback/</guid>
+      <description>Here&amp;rsquo;s an example of what happens when your interface completely relies on JavaScript. There&amp;rsquo;s code with translated mojibake of some sort which caused the JavaScript to break. The code wasn&amp;rsquo;t in a try-catch block, so it caused all of the code on the page to fail, thus presenting me with the only part of the screen that wasn&amp;rsquo;t generated by JavaScript: the completely useless header.
+Where&amp;rsquo;s the tweets!?</description>
+    </item>
+    
+    <item>
+      <title>How to spot outdated JavaScript</title>
+      <link>https://davidbcalhoun.com/2011/how-to-spot-outdated-javascript/</link>
+      <pubDate>Fri, 07 Jan 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2011/how-to-spot-outdated-javascript/</guid>
+      <description>Introduction Those that are just setting out to learn JavaScript are typically overwhelmed by the amount of online resources to be found about learning JavaScript. Not only this, but every webpage visited presents a potential learning opportunity just by inspecting the source.
+However, not all resources are guaranteed to be up-to-date. JavaScript has been around for over a decade, and coding standards have changed drastically over time. While a code snippet may still work in today&amp;rsquo;s browsers, you may unknowingly be using an outdated practice that might eventually lead to a bit of embarrassment.</description>
+    </item>
+    
+    <item>
+      <title>What is a closure in JavaScript?</title>
+      <link>https://davidbcalhoun.com/2011/what-is-a-closure-in-javascript/</link>
+      <pubDate>Mon, 03 Jan 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2011/what-is-a-closure-in-javascript/</guid>
+      <description>Intro There have been many attempts to answer this question in a succinct way, but I haven&amp;rsquo;t really been satisfied by them. Here&amp;rsquo;s my attempt at a (relatively) concise explanation.
+This is adapted from a reply I posted on reddit which people seemed to have found useful.
+Broad definition Normally when people talk about closures in JavaScript, they&amp;rsquo;re talking about methods and properties that outlive the scope of their original function (more on that in a second), but actually the definition is a bit broader.</description>
+    </item>
+    
+    <item>
+      <title>Mobile JavaScript libraries and frameworks (Mobile Web Part 7)</title>
+      <link>https://davidbcalhoun.com/2010/mobile-javascript-libraries-and-frameworks-mobile-web-part-7/</link>
+      <pubDate>Mon, 06 Dec 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2010/mobile-javascript-libraries-and-frameworks-mobile-web-part-7/</guid>
+      <description>Intro This is designed to be a &amp;ldquo;living&amp;rdquo; post of available materials which will hopefully be updated frequently.
+Right now there&amp;rsquo;s not much, just some links, but I hope to keep adding materials, so check back!
+The List Sencha Touch
+PhoneGap - native wrapper which provides access to native hardware through their own JavaScript APIs
+jQuery Mobile - a separate mobile UI which has jQuery as a dependency
+iAd - an update to Apple&amp;rsquo;s PastryKit, but probably intended only for ads</description>
+    </item>
+    
+    <item>
+      <title>What happens when we serve JavaScript with random MIME types?</title>
+      <link>https://davidbcalhoun.com/2010/what-happens-when-we-serve-javascript-with-random-mime-types/</link>
+      <pubDate>Mon, 01 Nov 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2010/what-happens-when-we-serve-javascript-with-random-mime-types/</guid>
+      <description>Introduction When people started to learn about the HTML5 doctype, they kind of freaked out a little, not knowing how older browsers would handle it. A post by Dustin Diaz prompted me to test out how pages rendered (in QuirksMode or Standards Mode) with a little help from document.compatMode, and I found that surprisingly every browser rendered in Standards Mode with the new doctype. In other words, no need to worry!</description>
+    </item>
+    
+    <item>
+      <title>Top ten things HTML5 makes simpler</title>
+      <link>https://davidbcalhoun.com/2010/top-ten-things-html5-makes-simpler/</link>
+      <pubDate>Thu, 07 Oct 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2010/top-ten-things-html5-makes-simpler/</guid>
+      <description>General word of caution: not all of these HTML5 simplifications are compatible with older browsers. Test it for yourself before implementing!
+1. The doctype Old &amp;lt;!DOCTYPE HTML PUBLIC &amp;quot;-//W3C//DTD HTML 4.01//EN&amp;quot; &amp;quot;http://www.w3.org/TR/html4/strict.dtd&amp;quot;&amp;gt;  New &amp;lt;!DOCTYPE html&amp;gt;  2. charset Old &amp;lt;meta http-equiv=&amp;quot;Content-Type&amp;quot; content=&amp;quot;text/html; charset=utf-8&amp;quot;&amp;gt;  New &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt;  3. The link tag’s type attribute Old &amp;lt;link href=&amp;quot;style.css&amp;quot; type=&amp;quot;text/css&amp;quot; rel=&amp;quot;stylesheet&amp;quot; /&amp;gt;  New &amp;lt;link href=&amp;quot;style.css&amp;quot; rel=&amp;quot;stylesheet&amp;quot; /&amp;gt;  This one may be a bit controversial, but the HTML5 spec actually tells browser vendors not to treat the type attribute as the final word, which makes it seem pretty redundant:</description>
+    </item>
+    
+    <item>
+      <title>JavaScript links from last week (September 26)</title>
+      <link>https://davidbcalhoun.com/2010/javascript-links-from-last-week-september-26/</link>
+      <pubDate>Tue, 05 Oct 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2010/javascript-links-from-last-week-september-26/</guid>
+      <description>JavaScript Asteroids - blow up any webpage with this bookmarklet!
+JS1k contest - and the winner
+PromoteJS - Google bombing with a good intent. Better links to JavaScript documentation!
+Async and defer attributes for Script tags added to WebKit
+Evercookie - uses devious ways to try to track users. Hmm, this one is questionable. Please use it for good, not evil&amp;hellip; :/
+JSPerf.com - not really new news, but a nice quick way to test algorithm performance in JavaScript</description>
+    </item>
+    
+    <item>
+      <title>Mobile Monday: Best Practices for Mobile Design (September 20, 2010)</title>
+      <link>https://davidbcalhoun.com/2010/mobile-monday-best-practices-for-mobile-design-september-20-2010/</link>
+      <pubDate>Tue, 21 Sep 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2010/mobile-monday-best-practices-for-mobile-design-september-20-2010/</guid>
+      <description>Mobile Monday panel left to right: Wesley Yun (RIM), Jared Benson (Punchcut), Anne Sullivan (Microsoft/Tellme Networks), Chris Nesladek (Google), Sue Booker (Nokia) (taken with my iPhone 3GS)
+I just came back from Mobile Monday Silicon Valley: Best Practices for Mobile Design at the Computer History Museum in Mountain View. This was a panel discussion with representatives from Google, Microsoft, Nokia, RIM, and Punchcut. There were quite a few little nuggets of wisdom which I tried to write down in bullet form:</description>
+    </item>
+    
+    <item>
+      <title>Server side console.log</title>
+      <link>https://davidbcalhoun.com/2010/server-side-console.log/</link>
+      <pubDate>Wed, 15 Sep 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2010/server-side-console.log/</guid>
+      <description>The problem On the desktop we&amp;rsquo;re quite privileged to have nice debugging tools such as Firebug and Web Inspector in Webkit-based browsers. But when it comes to mobile, debugging JavaScript with console.log.
+isn&amp;rsquo;t quite as easy.
+Probably the best available tool on mobile at the moment is mobile Safari&amp;rsquo;s console, which looks like the following when enabled (Settings -&amp;gt; Safari -&amp;gt; Developer -&amp;gt; Debug Console):
+Mobile Safari&amp;rsquo;s debug console</description>
+    </item>
+    
+    <item>
+      <title>Optimizing based on connection speed: using navigator.connection on Android 2.2&#43;</title>
+      <link>https://davidbcalhoun.com/2010/optimizing-based-on-connection-speed-using-navigator.connection-on-android-2.2-/</link>
+      <pubDate>Tue, 14 Sep 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2010/optimizing-based-on-connection-speed-using-navigator.connection-on-android-2.2-/</guid>
+      <description>Introduction A little while back this post made the rounds, which took us on a journey through some of the new features introduced in the browser in Android 2.2 Froyo. Among the most overlooked features are the file upload functionality (you can upload photos from your browser now! But we&amp;rsquo;re still waiting on iPhone to support this&amp;hellip;) and a little-known JavaScript addition to the Browser Object Model (BOM) in the form of navigator.</description>
+    </item>
+    
+    <item>
+      <title>Basic HTML5 template</title>
+      <link>https://davidbcalhoun.com/2010/basic-html5-template/</link>
+      <pubDate>Wed, 08 Sep 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2010/basic-html5-template/</guid>
+      <description>Introduction Often times I end up creating short pages for testing short pieces of code, and I only need a very basic HTML template to write in. Short of using HTML5 Boilerplate, I just use a quick piece of code like the following. (note: yes, this has issues in IE, so you may want to use HTML5 Shiv/Shim)
+The code &amp;lt;!doctype html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;/&amp;gt; &amp;lt;title&amp;gt;&amp;lt;/title&amp;gt; &amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1.</description>
+    </item>
+    
+    <item>
+      <title>Dealing with device orientation (Mobile web part 6)</title>
+      <link>https://davidbcalhoun.com/2010/dealing-with-device-orientation-mobile-web-part-6/</link>
+      <pubDate>Tue, 24 Aug 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2010/dealing-with-device-orientation-mobile-web-part-6/</guid>
+      <description>Introduction If you read part 4 of this series, you&amp;rsquo;ll know that because of the variety of screen sizes, the best way to develop for mobile is to develop fluid layouts that take 100% of the available space on the screen.
+What you probably didn&amp;rsquo;t think of is that there&amp;rsquo;s different screen widths even on the same device! This is due to screen orientation. And when the user changes the screen orientation, stuff may break (hey, it&amp;rsquo;s not a perfect world).</description>
+    </item>
+    
+    <item>
+      <title>BlackBerry Torch SunSpider results (JavaScript benchmark)</title>
+      <link>https://davidbcalhoun.com/2010/blackberry-torch-sunspider-results-javascript-benchmark/</link>
+      <pubDate>Wed, 18 Aug 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2010/blackberry-torch-sunspider-results-javascript-benchmark/</guid>
+      <description>Results ============================================ RESULTS (means and 95% confidence intervals) -------------------------------------------- Total: 322.2ms +/- 4.9% -------------------------------------------- 3d: 55.0ms +/- 15.3% cube: 19.8ms +/- 12.1% morph: 16.6ms +/- 35.8% raytrace: 18.6ms +/- 22.5% access: 32.8ms +/- 12.4% binary-trees: 1.8ms +/- 30.9% fannkuch: 14.2ms +/- 7.3% nbody: 12.6ms +/- 26.7% nsieve: 4.2ms +/- 24.8% bitops: 29.4ms +/- 10.2% 3bit-bits-in-byte: 2.4ms +/- 28.4% bits-in-byte: 8.0ms +/- 15.5% bitwise-and: 8.6ms +/- 21.9% nsieve-bits: 10.4ms +/- 21.</description>
+    </item>
+    
+    <item>
+      <title>Is a hash faster than a Switch in JavaScript?</title>
+      <link>https://davidbcalhoun.com/2010/is-a-hash-faster-than-a-switch-in-javascript/</link>
+      <pubDate>Tue, 17 Aug 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2010/is-a-hash-faster-than-a-switch-in-javascript/</guid>
+      <description>I stumbled across this concept recently and I thought I&amp;rsquo;d share it, because I don&amp;rsquo;t generally see this pattern being used. More importantly, I also share test results that show that maybe it&amp;rsquo;s not always a good idea to use this pattern&amp;hellip;
+The problem with Switch statements The basic switch statement in JavaScript looks something like this:
+var foo = &#39;c&#39;; switch(foo) { case &#39;a&#39;: break; case &#39;b&#39;: break; case &#39;c&#39;: break; default: }  So what&amp;rsquo;s wrong with this?</description>
+    </item>
+    
+    <item>
+      <title>Open Web Camp II at Stanford (July 17, 2010)</title>
+      <link>https://davidbcalhoun.com/2010/open-web-camp-ii-at-stanford-july-17-2010/</link>
+      <pubDate>Sat, 17 Jul 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2010/open-web-camp-ii-at-stanford-july-17-2010/</guid>
+      <description>Open Web Camp II at Stanford today was a blast! Lots of information. Plenty I&amp;rsquo;m already familiar with, but also lots I learned.
+I woke up late, only to see people tweeting about the conference (doh!), so I missed seeing Molly Holzschlag. But I arrived just in time to see&amp;hellip;
+Estelle Weyl: &amp;ldquo;CSS3 Implementable Features&amp;rdquo;  Estelle Weyl (@estellevw)  Estelle&amp;rsquo;s talk was about what features of CSS3 are available to use right now.</description>
+    </item>
+    
+    <item>
+      <title>Friday links: mobile performance studies, the upcoming device element, and more (July 15)</title>
+      <link>https://davidbcalhoun.com/2010/friday-links-mobile-performance-studies-the-upcoming-device-element-and-more-july-15/</link>
+      <pubDate>Fri, 16 Jul 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2010/friday-links-mobile-performance-studies-the-upcoming-device-element-and-more-july-15/</guid>
+      <description>Mobile Flickr for iPhone 1.2 released
+Firefox Home For iPhone Approved, Lets You Sync Bookmarks, Open Tabs And More
+Opera Mobile 10.1 for S60: W3C gelocation, border-radius &amp;amp; 2D transforms on S60 platform
+Mobile Browser Cache Limits, Revisited by Ryan Grove
+Mobile cache file sizes (and other performance tests on mobile devices) by Steve Souders
+Out Of Nowhere, The iPad Has A Real Competitor: the Android-based Pandigital Novel
+Ex-Apple Javascript Guru: HTML5 and Native Apps Can Live Together</description>
+    </item>
+    
+    <item>
+      <title>iPhone 4 SunSpider test results (22% faster than iPhone 3GS)</title>
+      <link>https://davidbcalhoun.com/2010/iphone-4-sunspider-test-results-22-faster-than-iphone-3gs/</link>
+      <pubDate>Fri, 25 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2010/iphone-4-sunspider-test-results-22-faster-than-iphone-3gs/</guid>
+      <description>============================================ RESULTS (means and 95% confidence intervals) -------------------------------------------- Total: 10669.4ms +/- 1.0% -------------------------------------------- 3d: 1471.5ms +/- 2.1% cube: 428.7ms +/- 2.6% morph: 584.3ms +/- 4.7% raytrace: 458.5ms +/- 0.6% access: 1476.7ms +/- 1.3% binary-trees: 151.6ms +/- 1.3% fannkuch: 664.0ms +/- 0.1% nbody: 397.9ms +/- 2.1% nsieve: 263.2ms +/- 6.3% bitops: 947.2ms +/- 2.1% 3bit-bits-in-byte: 195.7ms +/- 2.0% bits-in-byte: 206.1ms +/- 1.0% bitwise-and: 179.7ms +/- 1.1% nsieve-bits: 365.7ms +/- 3.9% controlflow: 169.</description>
+    </item>
+    
+    <item>
+      <title>JavaScript SunSpider test: iOS 3.1.3 versus iOS 4 GM</title>
+      <link>https://davidbcalhoun.com/2010/javascript-sunspider-test-ios-3.1.3-versus-ios-4-gm/</link>
+      <pubDate>Thu, 10 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2010/javascript-sunspider-test-ios-3.1.3-versus-ios-4-gm/</guid>
+      <description>Result table    Test   iOS 3.1.3 (3GS)   iOS 4 GM (3GS)   % change     Total   15396ms   13787ms  -10.5%     3D   2411ms   1917ms  -20.5%     Access   1884ms   1893ms  +0.5%     Bitops   1044ms   1239ms  +18.</description>
+    </item>
+    
+    <item>
+      <title>On designing a mobile webpage (Mobile web part 4)</title>
+      <link>https://davidbcalhoun.com/2010/on-designing-a-mobile-webpage-mobile-web-part-4/</link>
+      <pubDate>Wed, 26 May 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2010/on-designing-a-mobile-webpage-mobile-web-part-4/</guid>
+      <description>The frontend engineer lives at the intersection between design and engineering, and this is perhaps nowhere more true than in the world of mobile. In order to make a usable desktop website, an engineer must have at least some sense of design, and fortunately a lot of this has been standardized over the years. But the world of mobile is full of more unknowns, and the field is changing rapidly, especially lately from the shift away from older feature phones to the focus on smartphones.</description>
+    </item>
+    
+    <item>
+      <title>Designing buttons that don&#39;t suck (Mobile web part 3)</title>
+      <link>https://davidbcalhoun.com/2010/designing-buttons-that-dont-suck-mobile-web-part-3/</link>
+      <pubDate>Wed, 19 May 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2010/designing-buttons-that-dont-suck-mobile-web-part-3/</guid>
+      <description>A button is something that seems to be made just for mobile: it&amp;#8217;s designed to be big and easy to activate, as opposed to small and harder to activate, like normal text links. This seems ideal for a mobile devices, which have a small display area and whose form of input is a person&amp;#8217;s (relatively) fat finger interacting with the screen. Contrast this with the desktop, where the display area is much larger and the input device, the mouse, is a much more highly refined and sensitive pointing device.</description>
+    </item>
+    
+    <item>
+      <title>The mobile developer&#39;s toolkit (Mobile web part 2)</title>
+      <link>https://davidbcalhoun.com/2010/the-mobile-developers-toolkit-mobile-web-part-2/</link>
+      <pubDate>Tue, 11 May 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2010/the-mobile-developers-toolkit-mobile-web-part-2/</guid>
+      <description>Tools of the trade You&amp;#8217;re no mobile developer unless you have the tools to develop on mobile! And while it&amp;#8217;s good to own at least one of the smartphones you&amp;#8217;re developing on, it&amp;#8217;s probably unrealistic to think that you&amp;#8217;re going to go out of your way to buy several other unlocked smartphones just to test with. So you should have the next best thing: an SDK!
+But an SDK is just one of the tools of the trade.</description>
+    </item>
+    
+    <item>
+      <title>A Clockwork Box</title>
+      <link>https://davidbcalhoun.com/2010/a-clockwork-box/</link>
+      <pubDate>Tue, 02 Mar 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2010/a-clockwork-box/</guid>
+      <description>With CSS there are always various ways to accomplish something. After reading this short tidbit, you should be familiar with the various ways of controlling the size of an element&amp;#8217;s padding, border, and margin, and you should know what the handy &amp;#8220;clockwork&amp;#8221; tip is, and how it will be useful to remember when you&amp;#8217;re putting your CSS into practice.
+Equal values on all four sides If all four values (top, right, bottom, and left) are equal, then you simply write the following:</description>
+    </item>
+    
+    <item>
+      <title>Video: John Resig - Testing, Performance Analysis, and jQuery 1.4</title>
+      <link>https://davidbcalhoun.com/2009/video-john-resig---testing-performance-analysis-and-jquery-1.4/</link>
+      <pubDate>Mon, 21 Dec 2009 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2009/video-john-resig---testing-performance-analysis-and-jquery-1.4/</guid>
+      <description>In case you hadn&amp;#8217;t seen it yet, John Resig was kind enough to stop by Yahoo! for the December Bayjax meetup. Here&amp;#8217;s the video:
+ Usually developers are more interested in just getting the dang code to work, and as a result actual the testing and maintenance of JavaScript isn&amp;#8217;t talked about too much, so I&amp;#8217;m sure this will be new territory for many developers. And since it&amp;#8217;s John Resig speaking, there was of course a bit about using TestSwarm, a testing distributed framework-agnostic automated testing tool (that&amp;#8217;s a mouthful!</description>
+    </item>
+    
+    <item>
+      <title>Ways of passing data to functions in JavaScript</title>
+      <link>https://davidbcalhoun.com/2009/ways-of-passing-data-to-functions-in-javascript/</link>
+      <pubDate>Fri, 04 Dec 2009 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2009/ways-of-passing-data-to-functions-in-javascript/</guid>
+      <description>Passing data is quite important in functional programming languages like JavaScript. When there are multiple functions (which is most of the time), there needs to be a way to pass data between the functions. This is done by passing values in parenthesis: myFunction(myData). Even when there is no data to be passed, we still have to declare and execute functions by using parenthesis: myFunction().
+Simple Passing I&amp;rsquo;ve already referred to the common method of passing data.</description>
+    </item>
+    
+    <item>
+      <title>IE Mobile 6.12 problem: browser ignores the specificity of CSS display styles</title>
+      <link>https://davidbcalhoun.com/2009/ie-mobile-6.12-problem-browser-ignores-the-specificity-of-css-display-styles/</link>
+      <pubDate>Mon, 31 Aug 2009 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2009/ie-mobile-6.12-problem-browser-ignores-the-specificity-of-css-display-styles/</guid>
+      <description>UPDATE: I found that the problem is actually that inline-block is completely unsupported in this version of IE Mobile, and is likely also unsupported in IE Mobile 7, which is also based on IE4. This is in contrast to desktop IE6, where inline-block is supported on elements that are natively inline (span, em, etc.).
+Just found this today, for what it&amp;#8217;s worth. If you&amp;#8217;re unlucky enough to be working with older Windows Mobile phones you have probably realized that the browser is based on IE6, which all the desktop web developers notoriously complain about constantly.</description>
+    </item>
+    
+  </channel>
+</rss>

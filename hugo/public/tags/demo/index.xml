@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Demo on David Calhoun&#39;s blog</title>
+    <link>https://davidbcalhoun.com/tags/demo/</link>
+    <description>Recent content in Demo on David Calhoun&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sat, 23 Nov 2013 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://davidbcalhoun.com/tags/demo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Introducing Negative Scroll Blur (for browsers that support CSS filters)</title>
+      <link>https://davidbcalhoun.com/2013/introducing-negative-scroll-blur-for-browsers-that-support-css-filters/</link>
+      <pubDate>Sat, 23 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2013/introducing-negative-scroll-blur-for-browsers-that-support-css-filters/</guid>
+      <description>(2016: in retrospect, this is kind of gratuitous and doesn&amp;rsquo;t appear to be fully working anymore&amp;hellip;)
+Demo
+Just for fun, I wanted to reproduce a cool but completely superfluous UI I saw in the updated Foursquare app recently. Basically, when the user tries to scroll past the upper bound of the app/page, the header image becomes blurred.
+We can do the same thing on the web by listening for negative scroll and then using (abusing?</description>
+    </item>
+    
+    <item>
+      <title>Implementing iPhone&#39;s slider unlock with input type=&#39;range&#39;</title>
+      <link>https://davidbcalhoun.com/2011/implementing-iphones-slider-unlock-with-input-typerange/</link>
+      <pubDate>Sun, 16 Jan 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2011/implementing-iphones-slider-unlock-with-input-typerange/</guid>
+      <description>(check out the live demo)
+Introduction After reading &amp;ldquo;What the Heck is Shadow DOM?&amp;rdquo; I was inspired to see how far I could style the &amp;lt;input type=&amp;quot;range&amp;quot;&amp;gt; element. Pretty far, as it turns out!
+My goal was to change the input&amp;rsquo;s default appearance:
+To the visual appearance of the iPhone&amp;rsquo;s unlock slider:
+As far as I can tell, only WebKit-based browsers and Opera have implemented input type=range. Mobile Safari hasn&amp;rsquo;t yet implemented it as of iOS 4.</description>
+    </item>
+    
+  </channel>
+</rss>

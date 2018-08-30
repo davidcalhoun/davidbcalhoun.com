@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>The incredibly painful way of getting an RSS feed of a Twitter list</title>
+        
+        <style>
+
+    html body {
+        font-family: 'Roboto', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: #0D47A1;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://davidbcalhoun.com/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/foundation.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.42.2" />
+        
+
+        
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-5530615-3"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)};
+          gtag('js', new Date());
+
+          gtag('config', 'UA-5530615-3');
+        </script>
+        
+
+        <meta name="author" content="David Calhoun">
+        <link href="/index.xml" rel="alternate" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+        <link href="/index.xml" rel="feed" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+
+    </head>
+
+    
+    
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">The incredibly painful way of getting an RSS feed of a Twitter list</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="https://www.themaingate.net/">Home</a></li>
+                            
+                                <li><a href="/">Posts</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:david.b.calhoun@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/davidcalhoun/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/franksvalli/"><i class="fa fa-twitter"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/davidcalhoun/"><i class="fa fa-linkedin"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://stackoverflow.com/users/214017/david-calhoun/"><i class="fa fa-stack-overflow"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main role="main" itemscope itemType="http://schema.org/BlogPosting">
+    <meta itemprop="inLanguage" content="en-US" />
+    <span itemscope itemprop="author" itemType="https://schema.org/Person">
+        <meta itemprop="name" content="David Calhoun" />
+    </span>
+    <span itemscope itemprop="publisher" itemType="https://schema.org/Organization">
+        <meta itemprop="name" content="David Calhoun" />
+        <meta itemprop="url" content="https://themaingate.net" />
+        <meta itemprop="logo" content="https://themaingate.net/david-calhoun-logo.png">
+    </span>
+    <meta itemprop="image" content="https://themaingate.net/david-calhoun-logo.png">
+
+    <article class="item">
+
+    
+    
+    
+
+    
+    
+
+    <meta property="article:section" content="Article" />
+    <meta property="article:publisher" content="https://www.davidbcalhoun.com" />
+    <meta property="article:published_time" content="June 5, 2011" />
+    <meta property="article:modified_time" content="June 5, 2011" />
+    <meta property="article:tag" content="webdev" />
+    
+    <meta property="og:site_name" content="CSS-Tricks" />
+    <meta property="og:updated_time" content="June 5, 2011" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="/2011/the-incredibly-painful-way-of-getting-an-rss-feed-of-a-twitter-list/" />
+    <meta property="og:title" content="The incredibly painful way of getting an RSS feed of a Twitter list" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="The incredibly painful way of getting an RSS feed of a Twitter list" />
+    <meta name="twitter:site" content="@franksvalli" />
+    <meta name="twitter:creator" content="@franksvalli" />
+    <meta name="twitter:domain" content="davidbcalhoun.com" />
+
+
+    <h4 itemprop="headline">
+        <a href="/2011/the-incredibly-painful-way-of-getting-an-rss-feed-of-a-twitter-list/" itemprop="url">The incredibly painful way of getting an RSS feed of a Twitter list</a>
+    </h4>
+    <h5 class="meta date" itemprop="datePublished dateModified" content="June 5, 2011" datetime="June 5, 2011">
+        <time>June 5, 2011</time>
+    </h5>
+    
+    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
+    
+
+</article>
+
+
+    <br> <div class="text-justify">
+
+<p><strong><em>Update: the Twitter REST API v1 is no longer active.  This post has been preserved as a reference.</em></strong></p>
+
+<p>(why does Twitter make it so hard? What did RSS ever do to it?)</p>
+
+<h3 id="the-skinny">The skinny</h3>
+
+<p>The Twitter API appears to support two methods for getting RSS feeds of lists. Both of these methods are pretty buried and their API docs don&rsquo;t help too much, but nonetheless both of these feeds work:</p>
+
+<blockquote>
+<p><a href="http://api.twitter.com/1/nathansmith/lists/javascript/statuses.atom">http://api.twitter.com/1/nathansmith/lists/javascript/statuses.atom</a></p>
+</blockquote>
+
+<p>If you have the list ID (requires using some dev tools - see below), you can also use this format:</p>
+
+<blockquote>
+<p><a href="http://api.twitter.com/1/lists/statuses.atom?list_id=41981352">http://api.twitter.com/1/lists/statuses.atom?list_id=41981352</a></p>
+</blockquote>
+
+<h3 id="the-explanation">The explanation</h3>
+
+<p>As it turns out, getting an RSS feed of a Twitter list is no easy task, at least from what I&rsquo;ve found. Twitter has largely replaced RSS for me, in terms of getting the latest and greatest information, and maybe Twitter wants to keep it that way by having me rely on their service instead of an RSS feed. That&rsquo;s how it seems to me anyway (this is also evidenced by their <a href="https://support.twitter.com/groups/31-twitter-basics/topics/111-features/articles/15361-how-to-find-your-rss-feed">killing off of making RSS feeds easily discoverable</a> but still making the feed available as long as you can figure out your Twitter user id (which is a task in itself), for instance here&rsquo;s my RSS feed: <a href="https://twitter.com/statuses/user_timeline/16521889.rss">https://twitter.com/statuses/user_timeline/16521889.rss</a>). I&rsquo;d say this is simply a conspiracy against RSS feeds and developers in general, which is the direction Twitter is headed these days.</p>
+
+<p>In any case, I digress! I want to get an RSS feed of a Twitter list. Great! All I should have to do is go to the page of the list and subscribe to the RSS feed. But.. there&rsquo;s no RSS feed. Hmm.</p>
+
+<h3 id="google-is-your-friend-most-of-the-time">Google is your friend&hellip; most of the time</h3>
+
+<p>A search for &ldquo;twitter list rss&rdquo; comes up with links to implementing an RSS feed via Yahoo Pipes as well as pages referring to an appspot service that now 404s (<a href="http://twiterlist2rss.appspot.com/">twiterlist2rss</a>). In any case, they are both not what I&rsquo;m looking for. Which means I have to get creative. Which means&hellip; my options at this point are screen scraping (made harder by the fact that Twitter content is now served with JavaScript) or.. gasp.. using their API!</p>
+
+<h3 id="twitter-rest-api-to-the-rescue">Twitter REST API to the rescue</h3>
+
+<p>After digging through the API docs, I found just the page I was looking for, <a href="http://dev.twitter.com/doc/get/lists/statuses">detailing the REST service for Twitter lists</a>.</p>
+
+<p>As it turns out, the basic structure for requesting list data is as follows:</p>
+
+<blockquote>
+<p><a href="http://api.twitter.com/version/lists/statuses.format">http://api.twitter.com/version/lists/statuses.format</a></p>
+</blockquote>
+
+<p>As a newbie Twitter developer, there were a couple of things wrong here. First, what&rsquo;s the version of the API I&rsquo;m supposed to use? From other examples on the web (outside of the documentation&hellip;) I just assumed I&rsquo;d be using version 1, and that seemed to work. Ok, whatever, we&rsquo;ll go with 1:</p>
+
+<blockquote>
+<p><a href="http://api.twitter.com/1/lists/statuses.format">http://api.twitter.com/1/lists/statuses.format</a></p>
+</blockquote>
+
+<p>Second step: this API is actually quite nice, and will return data in three different formats: xml, json, or atom (RSS!). Ok, now we&rsquo;re making progress!</p>
+
+<blockquote>
+<p><a href="http://api.twitter.com/1/lists/statuses.atom">http://api.twitter.com/1/lists/statuses.atom</a></p>
+</blockquote>
+
+<h3 id="where-s-this-list-id-you-speak-of">Where&rsquo;s this list_id you speak of?</h3>
+
+<p>Now to pass in the info - I need to pass in the list ID in a key called &ldquo;list_id&rdquo;. The only problem is&hellip; where do I find the list ID? For the purposes of this example I&rsquo;ll use <a href="https://twitter.com/#!/nathansmith/javascript">Nathan Smith&rsquo;s excellent JavaScript developers list</a>. To normal human beings, this list might be called &ldquo;nathansmith/javascript&rdquo;, but a Twitter ID is numerical, so that&rsquo;s not what we&rsquo;re looking for.</p>
+
+<p>So.. I assume at this point I can use some of the Twitter developer tools and fiddle around with them until I find an API call that will translate the human-readable list name into a numerical ID. But no.. I don&rsquo;t want to download anything, I don&rsquo;t want to investigate more of the API or go down any more rabbit holes.</p>
+
+<p>It&rsquo;s time to cut this rabbit hole short and do a bit of investigating. So I pulled up the list, opened up Web Inspector in Chrome, and took a look at the Network tab in the hopes of seeing an API call with an ID I was looking for&hellip;</p>
+
+<p>&hellip;And I found it! Somewhere down the line, Twitter was calling statuses.json with this request:</p>
+
+<blockquote>
+<p><a href="https://api.twitter.com/1/lists/statuses.json?list_id=41981352&amp;#038;include_entities=1&amp;#038;include_available_features=1&amp;#038;contributor_details=true">https://api.twitter.com/1/lists/statuses.json?list_id=41981352&amp;#038;include_entities=1&amp;#038;include_available_features=1&amp;#038;contributor_details=true</a></p>
+</blockquote>
+
+<p>There&rsquo;s our list_id (and incidentally, the same API call [with json instead of atom].. which shows that Web Inspector is more useful than API docs sometimes)! After a short copy-paste, all the pieces of my Frankenstein API call have been put together:</p>
+
+<blockquote>
+<p><a href="http://api.twitter.com/1/lists/statuses.atom?list_id=41981352">http://api.twitter.com/1/lists/statuses.atom?list_id=41981352</a></p>
+</blockquote>
+
+<p>And it works, without having to mess around with OAuth or authentication, registering an app, or whatever. Of course now we can refer back to the API docs and mess around with some parameters to get just the data I&rsquo;m looking for. Maybe most useful to developers is the handy ability to get easily paginated results:</p>
+
+<blockquote>
+<p><a href="http://api.twitter.com/1/lists/statuses.atom?list_id=41981352&amp;#038;page=2">http://api.twitter.com/1/lists/statuses.atom?list_id=41981352&amp;#038;page=2</a></p>
+</blockquote>
+
+<p>There&rsquo;s also what would be a handy &ldquo;count&rdquo; variable, but it&rsquo;s altogether useless as it appears to be ignored. The API always returned 20 results for me.</p>
+
+<p>In any case, there you have it! The incredibly roundabout way to get an RSS feed of your favorite Twitter list.</p>
+
+<h3 id="update"><strong>UPDATE</strong></h3>
+
+<p>Thanks to <a href="http://sociable.co/2011/05/05/as-twitter-protects-its-ecosystem-heres-how-to-create-an-rss-feed-of-a-twitter-list/">this site</a>, it looks like there&rsquo;s a more straightforward way of getting the RSS feed. Using the same list we were trying to get above, it looks like this also works:</p>
+
+<blockquote>
+<p><a href="http://api.twitter.com/1/nathansmith/lists/javascript/statuses.atom">http://api.twitter.com/1/nathansmith/lists/javascript/statuses.atom</a></p>
+</blockquote>
+</div>
+
+    
+    
+
+    
+
+    
+
+        <h4 class="page-header">Comments</h4>
+
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "davidbcalhoun" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+
+</main>
+
+        <footer role="contentinfo">
+
+            <p class="copyright text-muted">© <span itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="David Calhoun"><a href="mailto:david.b.calhoun@gmail.com" itemprop="email">David Calhoun</a> (<a href="https://twitter.com/franksvalli" itemprop="url">@franksvalli</a>) - <a href="https://www.linkedin.com/in/davidcalhoun" itemprop="url">LinkedIn</a> - <a href="http://themaingate.net/resume/" itemprop="url">Resume</a></span></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+

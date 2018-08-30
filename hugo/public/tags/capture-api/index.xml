@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Capture Api on David Calhoun&#39;s blog</title>
+    <link>https://davidbcalhoun.com/tags/capture-api/</link>
+    <description>Recent content in Capture Api on David Calhoun&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 29 Jun 2010 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://davidbcalhoun.com/tags/capture-api/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Using mobile-specific HTML, CSS, and JavaScript (Mobile web part 5)</title>
+      <link>https://davidbcalhoun.com/2010/using-mobile-specific-html-css-and-javascript-mobile-web-part-5/</link>
+      <pubDate>Tue, 29 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2010/using-mobile-specific-html-css-and-javascript-mobile-web-part-5/</guid>
+      <description>(updated June 27, 2011)
+Mobile-specific HTML Viewport tag Use the viewport tag to properly fit the content to the screen:
+&amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1.0&amp;quot;/&amp;gt;  Tel scheme (to initiate phone calls) &amp;lt;a href=&amp;quot;tel:18005555555&amp;quot;&amp;gt;Call us at 1-800-555-5555&amp;lt;/a&amp;gt;  Sms scheme (to initiate text messages) &amp;lt;a href=&amp;quot;sms:18005555555&amp;quot;&amp;gt; &amp;lt;a href=&amp;quot;sms:18005555555,18005555556&amp;quot;&amp;gt; &amp;lt;!-- multiple recipients --&amp;gt; &amp;lt;a href=&amp;quot;sms:18005555555?body=Text%20goes%20here&amp;quot;&amp;gt; &amp;lt;!-- predefined message body --&amp;gt;  Disable automatic telephone number linking &amp;lt;meta name=&amp;quot;format-detection&amp;quot; content=&amp;quot;telephone=no&amp;quot;&amp;gt;  iOS-specific HTML (some work on Android as well) You also have access to several Apple-specific tags to use in your iOS applications (iPhone, iPad, and don&amp;rsquo;t forget the iPod Touch!</description>
+    </item>
+    
+  </channel>
+</rss>

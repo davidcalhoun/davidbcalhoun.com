@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>What happens when we serve JavaScript with random MIME types?</title>
+        
+        <style>
+
+    html body {
+        font-family: 'Roboto', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: #0D47A1;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://davidbcalhoun.com/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/foundation.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.42.2" />
+        
+
+        
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-5530615-3"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)};
+          gtag('js', new Date());
+
+          gtag('config', 'UA-5530615-3');
+        </script>
+        
+
+        <meta name="author" content="David Calhoun">
+        <link href="/index.xml" rel="alternate" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+        <link href="/index.xml" rel="feed" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+
+    </head>
+
+    
+    
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">What happens when we serve JavaScript with random MIME types?</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="https://www.themaingate.net/">Home</a></li>
+                            
+                                <li><a href="/">Posts</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:david.b.calhoun@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/davidcalhoun/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/franksvalli/"><i class="fa fa-twitter"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/davidcalhoun/"><i class="fa fa-linkedin"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://stackoverflow.com/users/214017/david-calhoun/"><i class="fa fa-stack-overflow"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main role="main" itemscope itemType="http://schema.org/BlogPosting">
+    <meta itemprop="inLanguage" content="en-US" />
+    <span itemscope itemprop="author" itemType="https://schema.org/Person">
+        <meta itemprop="name" content="David Calhoun" />
+    </span>
+    <span itemscope itemprop="publisher" itemType="https://schema.org/Organization">
+        <meta itemprop="name" content="David Calhoun" />
+        <meta itemprop="url" content="https://themaingate.net" />
+        <meta itemprop="logo" content="https://themaingate.net/david-calhoun-logo.png">
+    </span>
+    <meta itemprop="image" content="https://themaingate.net/david-calhoun-logo.png">
+
+    <article class="item">
+
+    
+    
+    
+
+    
+    
+
+    <meta property="article:section" content="Article" />
+    <meta property="article:publisher" content="https://www.davidbcalhoun.com" />
+    <meta property="article:published_time" content="November 1, 2010" />
+    <meta property="article:modified_time" content="November 1, 2010" />
+    <meta property="article:tag" content="javascript" />
+    <meta property="article:tag" content="webdev" />
+    
+    <meta property="og:site_name" content="CSS-Tricks" />
+    <meta property="og:updated_time" content="November 1, 2010" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="/2010/what-happens-when-we-serve-javascript-with-random-mime-types/" />
+    <meta property="og:title" content="What happens when we serve JavaScript with random MIME types?" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="What happens when we serve JavaScript with random MIME types?" />
+    <meta name="twitter:site" content="@franksvalli" />
+    <meta name="twitter:creator" content="@franksvalli" />
+    <meta name="twitter:domain" content="davidbcalhoun.com" />
+
+
+    <h4 itemprop="headline">
+        <a href="/2010/what-happens-when-we-serve-javascript-with-random-mime-types/" itemprop="url">What happens when we serve JavaScript with random MIME types?</a>
+    </h4>
+    <h5 class="meta date" itemprop="datePublished dateModified" content="November 1, 2010" datetime="November 1, 2010">
+        <time>November 1, 2010</time>
+    </h5>
+    
+    <a href="https://davidbcalhoun.com/tags/javascript"><kbd class="item-tag">javascript</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
+    
+
+</article>
+
+
+    <br> <div class="text-justify">
+
+<h3 id="introduction">Introduction</h3>
+
+<p>When people started to learn about the HTML5 doctype, they kind of freaked out a little, not knowing how older browsers would handle it. A <a href="http://www.dustindiaz.com/skinny-on-doctypes/">post by Dustin Diaz</a> prompted me to test out how pages rendered (in QuirksMode or Standards Mode) with a little help from <code>document.compatMode</code>, and <a href="http://themaingate.net/dev/html/all-you-need-is-doctype-html">I found that surprisingly every browser rendered in Standards Mode with the new doctype</a>. In other words, no need to worry!</p>
+
+<p>There&rsquo;s another welcome simplification (<a href="http://davidbcalhoun.com/2010/top-ten-things-html5-makes-simpler">along with others</a>): the &ldquo;type&rdquo; attribute is no longer necessary on script tags:</p>
+
+<blockquote>
+<p>The type attribute gives the language of the script or format of the data. If the attribute is present, its value must be a valid MIME type. The charset parameter must not be specified. <strong>The default, which is used if the attribute is absent, is &ldquo;text/javascript&rdquo;.</strong> <a href="http://dev.w3.org/html5/spec/Overview.html#script">-W3C HTML5 spec</a></p>
+</blockquote>
+
+<p>Which means that this is all that&rsquo;s required now:</p>
+
+<pre><code class="language-html">&lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+<p>But how do older browsers handle this? Also, what if we send some crazy Content-Type back in the response header? To make matters more confusing, I noticed that different CDNs send back different Content-Types: <a href="http://yui.yahooapis.com/3.2.0/build/yui/yui-min.js">YUI</a> and <a href="http://code.jquery.com/jquery-1.4.3.min.js">jQuery</a>&#8216;s CDNs send back &ldquo;application/x-javascript&rdquo; whereas <a href="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js">Google&rsquo;s CDN</a> serving jQuery sends back &ldquo;text/javascript; charset=UTF-8&#8243;.</p>
+
+<p>So does it really matter what the Content-Type is? Let&rsquo;s find out!</p>
+
+<h3 id="setting-up-the-tests">Setting up the tests</h3>
+
+<p>The test is fairly simple: I have six JavaScript files that all write to the DOM when they&rsquo;re executed successfully. Each of these files has a different file extension (js.one, js.two, js.three, etc) and each is served with an extension determined by the .htaccess file, which is in the same directory, and contains this bit of magic:</p>
+
+<pre><code>AddType text/javascript .one
+AddType application/x-javascript .two
+AddType application/javascript .three
+AddType text/ecmascript .four
+AddType text/jscript .five
+AddType text/foo .six
+</code></pre>
+
+<p>My index.html contains a little helper utility for each of these scripts to use:</p>
+
+<pre><code class="language-js">var TEST = {
+  node: document.body,
+  addMessage: function(message) {
+    var p = document.createElement('p');
+    p.innerHTML = message;
+    this.node.appendChild(p);
+  }
+}
+</code></pre>
+
+<p>TEST.addMessage() is simply a glorified document.write. As each of the six scripts is run, they&rsquo;ll write out a message to the page essentially saying &ldquo;I&rsquo;m here! It worked!&rdquo;.</p>
+
+<h3 id="results">Results</h3>
+
+<p>All the browsers I tested worked better than expected. It turns out that Content-Type doesn&rsquo;t even matter. I made up my own content type &ldquo;text/foo&rdquo;, served the file successfully, and it still executed as JavaScript!</p>
+
+<p>I tried all the major A-grade browsers (yes, including IE6-8), plus other random browsers through <a href="http://browsershots.org/">Browsershots.org</a>.</p>
+
+<p>One thing I still need to try is IE9, which <a href="http://twitter.com/#!/paul_irish/status/29416115232">Paul Irish said may not work</a>. I&rsquo;ll give it a test&hellip; soon.</p>
+
+<h3 id="additional-test-1-playing-with-the-type-attribute">Additional test #1: playing with the &ldquo;type&rdquo; attribute</h3>
+
+<p>Instead of messing around with the MIME type sent back in the response header, what happens when we mess around with the &ldquo;type&rdquo; attribute on the script tag? For instance:</p>
+
+<pre><code class="language-html">&lt;script type=&quot;text/foo&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+<p>Using the same testing technique as above, I found these results to be more pronounced. Browsers were more picky. For instance, Chrome and Safari ran all the content types successfully except my made-up &ldquo;text/foo&rdquo;. Firefox was even more picky, choosing not to recognize the type &ldquo;text/jscript&rdquo;. I&rsquo;d imagine there&rsquo;s similar results with other browsers such as IE.</p>
+
+<p>&hellip;But none of that really matters now! Simply omit the type attribute and everything seems to work fine (except possibly not in IE9?).</p>
+
+<h3 id="additional-test-2-content-type-and-caching">Additional test #2: content type and caching</h3>
+
+<p><a href="http://twitter.com/#!/bluesmoon/status/29418676869">Philip Tellis</a> wanted to know if Content-Type had any bearing on how the browser caches data. For instance, if something previously requested has the same filename but a different content type, is there a cache hit (304 code returned) or miss?</p>
+
+<p>In the first test I made a page that requested a file. Then in a not-too-fancy way I changed the content type through .htaccess on the fly and made another request. A 304 code was returned even with the new content type, so it was clear that this traditional caching method wasn&rsquo;t affected.</p>
+
+<p>In my second test I instead changed the &ldquo;type&rdquo; attribute on the script tag itself (in the HTML). The file was still cached normally, even after the type changed.</p>
+
+<p>I only tested in Chrome, Safari, and Firefox, so the story might be different in IE. Anyhow, this is an edge case anyway and more of a test out of curiosity! It seems the way browsers handle caching in these instances is truly RESTful, that is, the current state of the file is determined entirely by the filename.</p>
+</div>
+
+    
+    
+
+    
+
+    
+
+        <h4 class="page-header">Comments</h4>
+
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "davidbcalhoun" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+
+</main>
+
+        <footer role="contentinfo">
+
+            <p class="copyright text-muted">© <span itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="David Calhoun"><a href="mailto:david.b.calhoun@gmail.com" itemprop="email">David Calhoun</a> (<a href="https://twitter.com/franksvalli" itemprop="url">@franksvalli</a>) - <a href="https://www.linkedin.com/in/davidcalhoun" itemprop="url">LinkedIn</a> - <a href="http://themaingate.net/resume/" itemprop="url">Resume</a></span></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+

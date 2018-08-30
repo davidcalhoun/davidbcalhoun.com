@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Does it still make sense to use em rather than px?</title>
+        
+        <style>
+
+    html body {
+        font-family: 'Roboto', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: #0D47A1;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://davidbcalhoun.com/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/foundation.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.42.2" />
+        
+
+        
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-5530615-3"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)};
+          gtag('js', new Date());
+
+          gtag('config', 'UA-5530615-3');
+        </script>
+        
+
+        <meta name="author" content="David Calhoun">
+        <link href="/index.xml" rel="alternate" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+        <link href="/index.xml" rel="feed" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+
+    </head>
+
+    
+    
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">Does it still make sense to use em rather than px?</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="https://www.themaingate.net/">Home</a></li>
+                            
+                                <li><a href="/">Posts</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:david.b.calhoun@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/davidcalhoun/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/franksvalli/"><i class="fa fa-twitter"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/davidcalhoun/"><i class="fa fa-linkedin"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://stackoverflow.com/users/214017/david-calhoun/"><i class="fa fa-stack-overflow"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main role="main" itemscope itemType="http://schema.org/BlogPosting">
+    <meta itemprop="inLanguage" content="en-US" />
+    <span itemscope itemprop="author" itemType="https://schema.org/Person">
+        <meta itemprop="name" content="David Calhoun" />
+    </span>
+    <span itemscope itemprop="publisher" itemType="https://schema.org/Organization">
+        <meta itemprop="name" content="David Calhoun" />
+        <meta itemprop="url" content="https://themaingate.net" />
+        <meta itemprop="logo" content="https://themaingate.net/david-calhoun-logo.png">
+    </span>
+    <meta itemprop="image" content="https://themaingate.net/david-calhoun-logo.png">
+
+    <article class="item">
+
+    
+    
+    
+
+    
+    
+
+    <meta property="article:section" content="Article" />
+    <meta property="article:publisher" content="https://www.davidbcalhoun.com" />
+    <meta property="article:published_time" content="October 5, 2010" />
+    <meta property="article:modified_time" content="October 5, 2010" />
+    <meta property="article:tag" content="em" />
+    <meta property="article:tag" content="media queries" />
+    <meta property="article:tag" content="mobile" />
+    <meta property="article:tag" content="px" />
+    
+    <meta property="og:site_name" content="CSS-Tricks" />
+    <meta property="og:updated_time" content="October 5, 2010" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="/2010/does-it-still-make-sense-to-use-em-rather-than-px/" />
+    <meta property="og:title" content="Does it still make sense to use em rather than px?" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Does it still make sense to use em rather than px?" />
+    <meta name="twitter:site" content="@franksvalli" />
+    <meta name="twitter:creator" content="@franksvalli" />
+    <meta name="twitter:domain" content="davidbcalhoun.com" />
+
+
+    <h4 itemprop="headline">
+        <a href="/2010/does-it-still-make-sense-to-use-em-rather-than-px/" itemprop="url">Does it still make sense to use em rather than px?</a>
+    </h4>
+    <h5 class="meta date" itemprop="datePublished dateModified" content="October 5, 2010" datetime="October 5, 2010">
+        <time>October 5, 2010</time>
+    </h5>
+    
+    <a href="https://davidbcalhoun.com/tags/em"><kbd class="item-tag">em</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/media-queries"><kbd class="item-tag">media queries</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/mobile"><kbd class="item-tag">mobile</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/px"><kbd class="item-tag">px</kbd></a>
+    
+
+</article>
+
+
+    <br> <div class="text-justify">
+
+<p>Alex Kessinger <a href="http://twitter.com/voidfiles/status/26470129747">tweeted</a> asking if there was a reason to still use EMs instead of PX measurements in mobile. This is an interesting question, but 140 characters isn&rsquo;t quite enough to explain my thoughts. So here&rsquo;s an old-fashioned blog post!</p>
+
+<p>Just a quick review: em and percentage (%) units in CSS are relative measurements, whereas px and other measurements are not. What this means is that the resulting size of relative measurements depends on the size of the parent.</p>
+
+<h3 id="the-original-reason-to-use-ems-instead-of-px-measurements">The original reason to use EMs instead of PX measurements</h3>
+
+<p>As far as I can tell, the original reason why it became a good practice to use EMs was because of page scaling and accessibility reasons. When developers used PX measurements, they found that when the page was scaled (using Ctrl + Scroll Wheel), the parts of the page with fixed PX measurements didn&rsquo;t scale.</p>
+
+<p>Oh no! So when a user with poor eyesight tried to scale a page to read the text better, it turns out that the text they were interesting in making bigger actually didn&rsquo;t change size at all!</p>
+
+<p>So is this still the case today? By and large, no. All modern browsers except IE6 will now scale pages correctly, regardless of the type of CSS units used.</p>
+
+<p>From what I&rsquo;ve heard, there are still many users with disabilities using IE6, but the reason is because they don&rsquo;t want to upgrade their copy of the screen reader JAWS, which is quite expensive. However, these users obviously aren&rsquo;t affected by page scaling issues because they are blind.</p>
+
+<h3 id="maintainability-concerns">Maintainability concerns</h3>
+
+<p>Even if the original reason to use EMs (above) is no longer valid, I still believe there are good reasons to use them.</p>
+
+<p>One of the main reasons is maintainability. If a page is designed to have one base font size (applied to the Body) and all other font sizes on the page use relative units (EMs or percentages), changing the font sizes later becomes almost trivial. If someone wants to later increase the size of the fonts on their entire page, all they need to do is increase the one base font size.</p>
+
+<p>This might be a bit of an edge case, but the elegance of the solution is too enticing!</p>
+
+<h3 id="media-queries-and-mobile">Media queries and mobile</h3>
+
+<p>Very closely related to the above point is the subject of media queries. Recently media queries have been somewhat hailed as a <a href="http://www.quirksmode.org/blog/archives/2010/09/rethinking_the.html">panacea for all mobile development</a>. I slightly disagree, but that&rsquo;s a topic for another post!</p>
+
+<p>The main point here is that people are now using media queries to quickly make mobile-friendly versions of their desktop websites. That&rsquo;s awesome, there&rsquo;s no doubt about that.</p>
+
+<p>So what about EMs and PX measurements? Here&rsquo;s the problem: if a developer coded their webpage in such a way that they used fixed pixel measurements, the amount of CSS required in the mobile media query could be obscenely large. This is because each individual element with pixel measurement was <em>designed with the desktop in mind</em>! This makes the task of adapting to different content very painful.</p>
+
+<p>On the other hand, think about a page designed with relative units such as EMs or percentages. This page was designed so that each element was proportional to its parent element, so that ideally changing the size of the entire page occurs in only a few places, at the Body level of the document. Suddenly the CSS required for the mobile media query is much more manageable, since it&rsquo;s now (ideally) only changing a few values on the Body element, not on <em>every</em> element on the page.</p>
+</div>
+
+    
+    
+
+    
+
+    
+
+        <h4 class="page-header">Comments</h4>
+
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "davidbcalhoun" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+
+</main>
+
+        <footer role="contentinfo">
+
+            <p class="copyright text-muted">© <span itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="David Calhoun"><a href="mailto:david.b.calhoun@gmail.com" itemprop="email">David Calhoun</a> (<a href="https://twitter.com/franksvalli" itemprop="url">@franksvalli</a>) - <a href="https://www.linkedin.com/in/davidcalhoun" itemprop="url">LinkedIn</a> - <a href="http://themaingate.net/resume/" itemprop="url">Resume</a></span></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Culture on David Calhoun&#39;s blog</title>
+    <link>https://davidbcalhoun.com/categories/culture/</link>
+    <description>Recent content in Culture on David Calhoun&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 14 Jun 2016 22:15:52 +0900</lastBuildDate>
+    
+	<atom:link href="https://davidbcalhoun.com/categories/culture/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Photo assignment: Kyoto alleyways at night</title>
+      <link>https://davidbcalhoun.com/2016/photo-assignment-kyoto-alleyways-at-night/</link>
+      <pubDate>Tue, 14 Jun 2016 22:15:52 +0900</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2016/photo-assignment-kyoto-alleyways-at-night/</guid>
+      <description>Before setting off on my current trip, I wanted to give myself at least one &amp;ldquo;photo assignment&amp;rdquo;: some goal I could aim to accomplish by pretending like I&amp;rsquo;d been given an assignment by some employer.
+This is the first of what I hope will be many. The assignment here is to try to capture the atmosphere of eastern Kyoto&amp;rsquo;s traditional streets at night.
+A couple of things I had to plan for: Kyoto is a bit far from my hostel in Osaka, so I made sure to make a day trip out of it.</description>
+    </item>
+    
+    <item>
+      <title>Monju-e Ceremony in Nara (文殊会 興福寺)</title>
+      <link>https://davidbcalhoun.com/2016/monju-e-ceremony-in-nara-%E6%96%87%E6%AE%8A%E4%BC%9A-%E8%88%88%E7%A6%8F%E5%AF%BA/</link>
+      <pubDate>Thu, 28 Apr 2016 22:34:10 +0900</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2016/monju-e-ceremony-in-nara-%E6%96%87%E6%AE%8A%E4%BC%9A-%E8%88%88%E7%A6%8F%E5%AF%BA/</guid>
+      <description>From April 25, 2016.
+Monju or Manjusri is a bodhisattva of wisdom. In this ceremony children’s healthy growth and academic success are prayed for.
+14:30~ A procession of children in traditional costumes. Starts from Jyokyoji Temple on Sanjyo St. towards Kofukuji Temple.
+15:00~ Ritual ceremony at Tokondo Hall in Kofukuji Temple
+文殊会 (興福寺) 毎月25日は文殊菩薩の縁日。東金堂の文殊菩薩は古くから学問僧の信仰を集めてきた。­文殊会では文殊菩薩の智恵を授かろうと稚児の行列が、浄教寺より一字書の奉額車を引い­て三条通りを練り歩きます。 なお、当日堂内の拝観は14時までですが、外からの拝観は可能。（受付終了は13時4­5分）
+{% imgcap center http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-01.jpg 1000 666 %}
+{% imgcap center http://davidbcalhoun.com/wp-content/uploads/2016/2016-04-25-nara-monju-e-ceremony-02.jpg 1000 666 %}</description>
+    </item>
+    
+  </channel>
+</rss>

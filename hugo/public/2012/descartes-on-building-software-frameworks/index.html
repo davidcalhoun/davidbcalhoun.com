@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Descartes on building software frameworks</title>
+        
+        <style>
+
+    html body {
+        font-family: 'Roboto', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: #0D47A1;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://davidbcalhoun.com/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/foundation.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.42.2" />
+        
+
+        
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-5530615-3"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)};
+          gtag('js', new Date());
+
+          gtag('config', 'UA-5530615-3');
+        </script>
+        
+
+        <meta name="author" content="David Calhoun">
+        <link href="/index.xml" rel="alternate" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+        <link href="/index.xml" rel="feed" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+
+    </head>
+
+    
+    
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">Descartes on building software frameworks</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="https://www.themaingate.net/">Home</a></li>
+                            
+                                <li><a href="/">Posts</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:david.b.calhoun@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/davidcalhoun/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/franksvalli/"><i class="fa fa-twitter"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/davidcalhoun/"><i class="fa fa-linkedin"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://stackoverflow.com/users/214017/david-calhoun/"><i class="fa fa-stack-overflow"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main role="main" itemscope itemType="http://schema.org/BlogPosting">
+    <meta itemprop="inLanguage" content="en-US" />
+    <span itemscope itemprop="author" itemType="https://schema.org/Person">
+        <meta itemprop="name" content="David Calhoun" />
+    </span>
+    <span itemscope itemprop="publisher" itemType="https://schema.org/Organization">
+        <meta itemprop="name" content="David Calhoun" />
+        <meta itemprop="url" content="https://themaingate.net" />
+        <meta itemprop="logo" content="https://themaingate.net/david-calhoun-logo.png">
+    </span>
+    <meta itemprop="image" content="https://themaingate.net/david-calhoun-logo.png">
+
+    <article class="item">
+
+    
+    
+    
+
+    
+    
+
+    <meta property="article:section" content="Article" />
+    <meta property="article:publisher" content="https://www.davidbcalhoun.com" />
+    <meta property="article:published_time" content="October 2, 2012" />
+    <meta property="article:modified_time" content="October 2, 2012" />
+    <meta property="article:tag" content="philosophy" />
+    <meta property="article:tag" content="programming" />
+    
+    <meta property="og:site_name" content="CSS-Tricks" />
+    <meta property="og:updated_time" content="October 2, 2012" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="/2012/descartes-on-building-software-frameworks/" />
+    <meta property="og:title" content="Descartes on building software frameworks" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Descartes on building software frameworks" />
+    <meta name="twitter:site" content="@franksvalli" />
+    <meta name="twitter:creator" content="@franksvalli" />
+    <meta name="twitter:domain" content="davidbcalhoun.com" />
+
+
+    <h4 itemprop="headline">
+        <a href="/2012/descartes-on-building-software-frameworks/" itemprop="url">Descartes on building software frameworks</a>
+    </h4>
+    <h5 class="meta date" itemprop="datePublished dateModified" content="October 2, 2012" datetime="October 2, 2012">
+        <time>October 2, 2012</time>
+    </h5>
+    
+    <a href="https://davidbcalhoun.com/tags/philosophy"><kbd class="item-tag">philosophy</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/programming"><kbd class="item-tag">programming</kbd></a>
+    
+
+</article>
+
+
+    <br> <div class="text-justify">
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="817" />
+    <meta itemprop="height" content="1000" />
+    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2012/10/Frans_Hals_-_Portret_van_René_Descartes.jpeg" />
+    <a href="http://commons.wikimedia.org/wiki/File:Frans_Hals_-_Portret_van_Ren%C3%A9_Descartes.jpg">
+        <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2012/10/Frans_Hals_-_Portret_van_René_Descartes.jpeg" alt="Rene Descartes" />
+    </a>
+    <figcaption itemprop="caption">Rene Descartes</figcaption>
+</figure>
+
+<p>Years ago I read Descartes&rsquo;s <a href="http://en.wikipedia.org/wiki/Discourse_on_the_Method">Discourse on Method</a> for what I found to be some of the more interesting philosophy courses of my college career: those of the history of modern philosophy. Modern philosophy technically starts with Descartes, so it&rsquo;s a good place to start, or to get re-acquainted with philosophy in general.</p>
+
+<p>I&rsquo;ve been reading through the Discourse again, and have found it to be more interesting and relatable this time around (particularly about lessons learned while traveling, but that&rsquo;s a topic for another post).</p>
+
+<p>What&rsquo;s particularly interesting here is that a lot of what Descartes talks about seems very relevant for software engineers who wish to create their own software framework from scratch.</p>
+
+<p>I&rsquo;m sorry, I know that sounds pretty pretentious and crazy.</p>
+
+<p>This isn&rsquo;t as far-fetched as it may seem at first. Be patient!</p>
+
+<p>But first, some background&hellip;</p>
+
+<h3 id="what-was-descartes-up-to-does-french-count-as-a-programming-language">What was Descartes up to? Does French count as a programming language?</h3>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="581" />
+    <meta itemprop="height" content="539" />
+    <meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2012/10/René_Descartes_i_samtal_med_Sveriges_drottning_Kristina.jpeg" />
+    <a href="http://commons.wikimedia.org/wiki/File:Ren%C3%A9_Descartes_i_samtal_med_Sveriges_drottning,_Kristina.jpg">
+        <img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2012/10/René_Descartes_i_samtal_med_Sveriges_drottning_Kristina.jpeg" alt="Oh my! I find your foundations to be awfully shaky. (note: not an actual Descartes quote)" />
+    </a>
+    <figcaption itemprop="caption">"Oh my! I find your foundations to be awfully shaky." (note: not an actual Descartes quote)</figcaption>
+</figure>
+
+<blockquote>
+<p>Philosophy has been pursued for many centuries by the best minds, and yet everything in it is still disputed and hence doubtful; and I wasn’t so arrogant as to hope to achieve more in philosophy than others had done. Considering how many different opinions learned men may maintain on a single question—where at most one can be true—I regarded everything that was merely probable as being near enough to false. -<a href="http://en.wikipedia.org/wiki/Discourse_on_the_Method">Descartes, Discourse on Method</a></p>
+</blockquote>
+
+<p>Descartes&rsquo;s task, if you&rsquo;ll remember, is intense self-examination where he throws out any questionable belief in order to build a strong foundation of clear and unquestionable beliefs. He doubts literally everything, until he comes to the one thing that can&rsquo;t be doubted: that there is obviously <em>something</em> doing the doubting. Namely himself. This is where the concept &ldquo;I think, therefore I am&rdquo; comes from (&ldquo;Je pense, donc je suis&rdquo;, and in Latin as &ldquo;Cogito ergo sum&rdquo; in a later work).</p>
+
+<h3 id="the-software-engineer-tie-in">The software engineer tie-in</h3>
+
+<p>Software engineers, I&rsquo;ve found, when given the chance, are likewise just as skeptical of the &ldquo;status quo&rdquo;. They take a look at the landscape around them, but find themselves dissatisfied and unable to find a perfectly suitable software framework. Of course many people do find close approximations and are perfectly happy using an existing framework. On the other hand, there are definitely purists who believe the proper thing to do is to create their own tailor-made framework from the ground up. Descartes would definitely fit into this latter category.</p>
+
+<p>What I&rsquo;ve found over my short career in software is that engineers like to build custom frameworks. Lots of custom frameworks. And they often times like to build them in a purist way, from the ground up.</p>
+
+<p>Building your own framework turns out not only to be more interesting and fun (rather than maintaining some existing framework), but it&rsquo;s also supposedly a better way to ensure a lack of cruft, and to ensure a firm foundation. A foundation which has no component that is unneeded or of which can be doubted.</p>
+
+<p>The danger of doing otherwise, it&rsquo;s thought, is that after investing the effort to learn an existing framework, one might find it wasn&rsquo;t that great after all. Or worse, that it had questionable foundations which would need to be patched up. This is not unlike the task of learning an existing philosophical system, only to see holes poked in its very foundations (as the quote above states, this is essentially what philosophers have been doing for centuries - poking holes in each other&rsquo;s foundations).</p>
+
+<h3 id="better-than-maintaining-the-old">Better than maintaining the old</h3>
+
+<blockquote>
+<p>Regarding the opinions which I had previously held, I couldn’t do better than set out to get rid of them all at one go, so as then to replace them afterwards with better opinions or even with the same ones after I had straightened them out using reason’s plumb-line. I ﬁrmly believed that this would let me conduct my life much better than if I were to build only on old foundations and rely only on principles that I had accepted in my youth without ever examining whether they were true. Even if I were to see various difﬁculties in this project, they weren’t insurmountable, and weren’t comparable with the difﬁculties involved in reforming even minor matters affecting public institutions. -<a href="http://en.wikipedia.org/wiki/Discourse_on_the_Method">Descartes, Discourse on Method</a></p>
+</blockquote>
+
+<p>The huge drawback of &ldquo;going at it on our own&rdquo; is of course the fact that <em>we</em> are now responsible for creating the entire foundation and each component of our custom framework. Descartes would be perfectly fine with this.</p>
+
+<p>And this is exactly what he did with himself: he tore down everything he thought he knew to be true, then started to slowly build up his philosophy bit by bit. Better to do this than to patch old shaky foundations in existing philosophies.</p>
+
+<h3 id="reusing-old-bits">Reusing old bits</h3>
+
+<figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
+    <meta itemprop="width" content="395" />
+    <meta itemprop="height" content="597" />
+    <meta itemprop="url" content="http://davidbcalhoun.com/wp-content/uploads/2012/10/Descartesmaison.jpeg" />
+    <a href="http://commons.wikimedia.org/wiki/File:Descartesmaison.jpg">
+        <img itemprop="contentUrl" src="http://davidbcalhoun.com/wp-content/uploads/2012/10/Descartesmaison.jpeg" alt="Descartes's house. Hmm, not sure the foundations are secure here..." />
+    </a>
+    <figcaption itemprop="caption">Descartes's house. Hmm, not sure the foundations are secure here...</figcaption>
+</figure>
+
+<p>Interestingly enough, parts of old beliefs (old frameworks) may still find their way in, but only after intense scrutiny:</p>
+
+<blockquote>
+<p>Just as in demolishing an old house we usually keep the materials for use in building a new one, so in destroying all those opinions of mine that I judged to be ill-founded I made various observations and acquired many experiences that I have since used in establishing more certain opinions. -<a href="http://en.wikipedia.org/wiki/Discourse_on_the_Method">Descartes, Discourse on Method</a></p>
+</blockquote>
+
+<p>In other words, there&rsquo;s some good bits out there that have already been created. Might as well reuse them if they&rsquo;re good enough.</p>
+
+<h3 id="philosophy-as-a-preview-of-the-future-of-software-development">Philosophy as a preview of the future of software development</h3>
+
+<p>Obviously philosophy didn&rsquo;t stop with Descartes. He did become the foundation for others in the modern tradition to build on (namely Spinoza and Leibniz, and most others who came after him), but of course that wasn&rsquo;t the end of it. The famous &ldquo;cogito ergo sum&rdquo;, the foundation of Descartes&rsquo;s philosophy and seemingly common sense, <a href="http://en.wikipedia.org/wiki/Cogito_ergo_sum#Criticisms">hasn&rsquo;t even been immune from criticism</a>.</p>
+
+<p>Folks have continued to build philosophies and have continued to be unsatisfied with what&rsquo;s out there, or unconvinced that it&rsquo;s even useful in this age.</p>
+
+<p>I believe we approach software frameworks, software itself, and even programming languages the same way. Unsatisfied with what&rsquo;s out there, people will continue to build new things and new tools which work for the time being for certain groups of people.</p>
+
+<p>Inevitably, a new generation of developers, not unlike a new generation of philosophers, will eventually tear it all down and start over again.</p>
+</div>
+
+    
+    
+
+    
+
+    
+
+        <h4 class="page-header">Comments</h4>
+
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "davidbcalhoun" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+
+</main>
+
+        <footer role="contentinfo">
+
+            <p class="copyright text-muted">© <span itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="David Calhoun"><a href="mailto:david.b.calhoun@gmail.com" itemprop="email">David Calhoun</a> (<a href="https://twitter.com/franksvalli" itemprop="url">@franksvalli</a>) - <a href="https://www.linkedin.com/in/davidcalhoun" itemprop="url">LinkedIn</a> - <a href="http://themaingate.net/resume/" itemprop="url">Resume</a></span></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+

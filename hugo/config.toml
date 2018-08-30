@@ -1,0 +1,61 @@
+baseURL = "https://davidbcalhoun.com/"
+languageCode = "en-US"
+title = "David Calhoun's blog"
+theme = "minimal-dc-mod"
+disqusShortname = "davidbcalhoun" # delete this to disable disqus comments
+googleAnalytics = "UA-5530615-3"
+
+[params]
+    author = "David Calhoun"
+    description = "Personal blog"
+    githubUsername = "#"
+    accent = "#0D47A1"
+    showBorder = true
+    backgroundColor = "white"
+    font = "Roboto" # should match the name on Google Fonts!
+    highlight = true
+    highlightStyle = "foundation"
+    highlightLanguages = ["go", "haskell", "kotlin", "scala", "swift", "javascript"]
+    copyright = '© <span itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="David Calhoun"><a href="mailto:david.b.calhoun@gmail.com" itemprop="email">David Calhoun</a> (<a href="https://twitter.com/franksvalli" itemprop="url">@franksvalli</a>) - <a href="https://www.linkedin.com/in/davidcalhoun" itemprop="url">LinkedIn</a> - <a href="http://themaingate.net/resume/" itemprop="url">Resume</a></span>'
+
+[permalinks]
+  posts = "/:year/:slug/"
+
+[[menu.main]]
+    url = "https://www.themaingate.net/"
+    name = "Home"
+    weight = 1
+
+[[menu.main]]
+    url = "/"
+    name = "Posts"
+    weight = 2
+
+# Social icons to be shown on the right-hand side of the navigation bar
+# The "name" field should match the name of the icon to be used
+# The list of available icons can be found at http://fontawesome.io/icons/
+
+[[menu.icon]]
+    url = "mailto:david.b.calhoun@gmail.com"
+    name = "envelope-o"
+    weight = 1
+
+[[menu.icon]]
+    url = "https://github.com/davidcalhoun/"
+    name = "github"
+    weight = 2
+
+[[menu.icon]]
+    url = "https://twitter.com/franksvalli/"
+    name = "twitter"
+    weight = 3
+
+[[menu.icon]]
+    url = "https://www.linkedin.com/in/davidcalhoun/"
+    name = "linkedin"
+    weight = 4
+
+[[menu.icon]]
+    url = "https://stackoverflow.com/users/214017/david-calhoun/"
+    name = "stack-overflow"
+    weight = 5

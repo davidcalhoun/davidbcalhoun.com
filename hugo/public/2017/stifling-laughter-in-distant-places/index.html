@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Stifling Laughter in Distant Places</title>
+        
+        <style>
+
+    html body {
+        font-family: 'Roboto', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: #0D47A1;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://davidbcalhoun.com/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/foundation.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.42.2" />
+        
+
+        
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-5530615-3"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)};
+          gtag('js', new Date());
+
+          gtag('config', 'UA-5530615-3');
+        </script>
+        
+
+        <meta name="author" content="David Calhoun">
+        <link href="/index.xml" rel="alternate" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+        <link href="/index.xml" rel="feed" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+
+    </head>
+
+    
+    
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">Stifling Laughter in Distant Places</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="https://www.themaingate.net/">Home</a></li>
+                            
+                                <li><a href="/">Posts</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:david.b.calhoun@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/davidcalhoun/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/franksvalli/"><i class="fa fa-twitter"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/davidcalhoun/"><i class="fa fa-linkedin"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://stackoverflow.com/users/214017/david-calhoun/"><i class="fa fa-stack-overflow"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main role="main" itemscope itemType="http://schema.org/BlogPosting">
+    <meta itemprop="inLanguage" content="en-US" />
+    <span itemscope itemprop="author" itemType="https://schema.org/Person">
+        <meta itemprop="name" content="David Calhoun" />
+    </span>
+    <span itemscope itemprop="publisher" itemType="https://schema.org/Organization">
+        <meta itemprop="name" content="David Calhoun" />
+        <meta itemprop="url" content="https://themaingate.net" />
+        <meta itemprop="logo" content="https://themaingate.net/david-calhoun-logo.png">
+    </span>
+    <meta itemprop="image" content="https://themaingate.net/david-calhoun-logo.png">
+
+    <article class="item">
+
+    
+    
+    
+
+    
+    
+
+    <meta property="article:section" content="Article" />
+    <meta property="article:publisher" content="https://www.davidbcalhoun.com" />
+    <meta property="article:published_time" content="July 9, 2017" />
+    <meta property="article:modified_time" content="July 9, 2017" />
+    <meta property="article:tag" content="travel" />
+    <meta property="article:tag" content="rant" />
+    <meta property="article:tag" content="philosophy" />
+    
+    <meta property="og:site_name" content="CSS-Tricks" />
+    <meta property="og:updated_time" content="July 9, 2017" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="/2017/stifling-laughter-in-distant-places/" />
+    <meta property="og:title" content="Stifling Laughter in Distant Places" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Stifling Laughter in Distant Places" />
+    <meta name="twitter:site" content="@franksvalli" />
+    <meta name="twitter:creator" content="@franksvalli" />
+    <meta name="twitter:domain" content="davidbcalhoun.com" />
+
+
+    <h4 itemprop="headline">
+        <a href="/2017/stifling-laughter-in-distant-places/" itemprop="url">Stifling Laughter in Distant Places</a>
+    </h4>
+    <h5 class="meta date" itemprop="datePublished dateModified" content="July 9, 2017" datetime="July 9, 2017">
+        <time>July 9, 2017</time>
+    </h5>
+    
+    <a href="https://davidbcalhoun.com/tags/travel"><kbd class="item-tag">travel</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/rant"><kbd class="item-tag">rant</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/philosophy"><kbd class="item-tag">philosophy</kbd></a>
+    
+
+</article>
+
+
+    <br> <div class="text-justify">
+
+<h3 id="new-cultures">New Cultures</h3>
+
+<p>The first days of traveling usually involves laughing at the quaint and unusual customs of another culture.  That sounds close-minded, because in many cases it probably is.  But it&rsquo;s something we all do, of course including yours truly.  Maybe it&rsquo;s a coping mechanism - laughing at things in the face of difficulties and differences.</p>
+
+<p>To be fair, we&rsquo;re thinking creatures, and as such it&rsquo;s pretty hard for us not to draw comparisons with our own home city and culture.  Especially when we spot things that we consider outdated in our own culture.  Our reaction may be disgust (&ldquo;Fax machines?!  Didn&rsquo;t those go extinct in the 90s?!&rdquo;) or nostalgia (&ldquo;Ahh decent customer service - it&rsquo;s been way too long&rdquo;).</p>
+
+<p>After one or two weeks, and we may still be poking fun at the quirks of our temporarily home.  But this changes when we settle in for the long term.  Weeks turn to months, and the funny quirks become more visible, in just the same way as quirks of spouses are discovered, as we&rsquo;re forced to live with them each day.  Laughter at those quirks can turn to annoyance, and not far beyond that is outright hatred.</p>
+
+<h3 id="the-marriage-analogy">The Marriage Analogy</h3>
+
+<p>I don&rsquo;t think the marriage analogy is too much of a stretch - living in a city can almost be like being married (though I can only guess): each day venturing out from our beds we have to confront the city or the spouse daily, and encounter both the good and the bad just to get through with the day.  At least with cities we can escape into our own rooms and private spaces.  But with marriage there is often no room to escape to, except maybe the bathroom.  This may explain why men sometimes spend so long in these very private places&hellip;</p>
+
+<p>In a relationship, some of the personal quirks we discover are at first quaint, but our attitude can soon progress to annoyance, or worse.  If we&rsquo;re unable to tolerate the quirks, our hatred can soon multiply and be reason for divorce. Or on the other end of the analogy: emigration from the city.  Us leaving the city is sort of like a break up or divorce.</p>
+
+<p>I&rsquo;m not sure about what you think, but I think this progression from laughter to annoyance to hatred doesn&rsquo;t seem too productive.  What if we try to go down a quite different path, one which doesn&rsquo;t start with laughter and disdain?  Maybe this path will take us to a better place.</p>
+
+<p>At the very least, outright laughter at foreign customs does seem to be a sort of childlike reaction, because it&rsquo;s unskilled: it&rsquo;s basically a quick judgement and unrestrained laughter.</p>
+
+<h3 id="people-do-things-differently-and-that-s-usually-ok">People Do Things Differently.  And That&rsquo;s (usually) OK.</h3>
+
+<p>It reminds me of the scene in To Kill A Mockingbird where a poor boy is invited to the Finch household.  At breakfast, the poor kid steeps his entire breakfast in syrup, much to the disgust of the Finch girl.  She starts to react, but Atticus, the father, calmly quiets her.  His reaction at &ldquo;foreign&rdquo; customs is more mature - he doesn&rsquo;t laugh, but instead looks past the poor boy making all his food soggy with syrup.  The boy is a guest, and what&rsquo;s more, the moral of the whole story is tolerance of different folks and their ways.  Atticus is the hero of the story, and the one who sets an example for his daughter.  And for us.</p>
+
+<p>In our travels we&rsquo;ll often come across things that seem backwards in some way on first appearance.  And it may go deeper than appearance - many of these things may turn out to actually be very backwards.  But it helps me to try to have patience, to suspend judgement and give the benefit of a doubt.  For instance, Japan has an unusually rigid culture with a structured way of doing things, even small things such as opening small packages of food by pulling the correct tabs on the packaging.  In the correct order.  To do otherwise is simply incorrect.  After being corrected constantly on tiny little ways I was doing things wrong, I started to go mad.  My initial reaction was wanting to rebel, to do things my own way.  I think this approach still has merit, if we have the right attitude towards it.</p>
+
+<p>It helps to remind myself that there&rsquo;s a structure in the culture for a reason, because it&rsquo;s worked well for decades (or maybe centuries), and while there may be better ways, this way is the way this culture works best.  It&rsquo;s pragmatic.  It may change over time, but for the moment this is the smoothest way for everything to harmonize.</p>
+
+<p>But you aren&rsquo;t part of that culture, so you may very well find more efficient ways to do things.  Perhaps you&rsquo;ll bypass the tabs on the food packaging and take some scissors to the whole thing, ignoring the instructions.  I think that&rsquo;s fine - finding a way that works for you.  Just don&rsquo;t laugh at other folks for doing things differently.  Though conversely, the natives will probably laugh at you and try to constantly correct you.  I guess you&rsquo;ll have to get used to it.</p>
+
+<h3 id="your-options">Your Options</h3>
+
+<p>As a foreigner you have a few options:</p>
+
+<ul>
+<li>adopt the ways of the culture and love it</li>
+<li>adopt the ways of the culture, but secretly hate it and resent it</li>
+<li>do things your own way, and tolerate the other ways</li>
+<li>do things your own way, and secretly hate and resent the other ways</li>
+</ul>
+
+<p>Which of these works best?  I guess you can experiment for yourself and draw your own conclusions!  Judge for yourself!</p>
+</div>
+
+    
+    
+
+    
+
+    
+
+        <h4 class="page-header">Comments</h4>
+
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "davidbcalhoun" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+
+</main>
+
+        <footer role="contentinfo">
+
+            <p class="copyright text-muted">© <span itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="David Calhoun"><a href="mailto:david.b.calhoun@gmail.com" itemprop="email">David Calhoun</a> (<a href="https://twitter.com/franksvalli" itemprop="url">@franksvalli</a>) - <a href="https://www.linkedin.com/in/davidcalhoun" itemprop="url">LinkedIn</a> - <a href="http://themaingate.net/resume/" itemprop="url">Resume</a></span></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Let on David Calhoun&#39;s blog</title>
+    <link>https://davidbcalhoun.com/tags/let/</link>
+    <description>Recent content in Let on David Calhoun&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 15 Sep 2009 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://davidbcalhoun.com/tags/let/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>JavaScript Tidbit: Block scope with let</title>
+      <link>https://davidbcalhoun.com/2009/javascript-tidbit-block-scope-with-let/</link>
+      <pubDate>Tue, 15 Sep 2009 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidbcalhoun.com/2009/javascript-tidbit-block-scope-with-let/</guid>
+      <description>JavaScript has functional scope. Meaning that if you (properly) define variables within functions, those variables remain accessible only inside the function.
+Block scope, on the other hand, defines scope within a block of code, usually defined by braces. JavaScript now has block scope as of version 1.7, which means it&amp;#8217;s available in these browsers:
+ Firefox 2+  Block scope is enabled in JavaScript with the use of &amp;#8220;let&amp;#8221;:
+let(x=100) { alert(x); }; It also works perfectly well on one line, without the use of braces:</description>
+    </item>
+    
+  </channel>
+</rss>

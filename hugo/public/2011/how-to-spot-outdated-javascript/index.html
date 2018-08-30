@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>How to spot outdated JavaScript</title>
+        
+        <style>
+
+    html body {
+        font-family: 'Roboto', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: #0D47A1;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://davidbcalhoun.com/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/foundation.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.42.2" />
+        
+
+        
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-5530615-3"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)};
+          gtag('js', new Date());
+
+          gtag('config', 'UA-5530615-3');
+        </script>
+        
+
+        <meta name="author" content="David Calhoun">
+        <link href="/index.xml" rel="alternate" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+        <link href="/index.xml" rel="feed" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+
+    </head>
+
+    
+    
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">How to spot outdated JavaScript</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="https://www.themaingate.net/">Home</a></li>
+                            
+                                <li><a href="/">Posts</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:david.b.calhoun@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/davidcalhoun/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/franksvalli/"><i class="fa fa-twitter"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/davidcalhoun/"><i class="fa fa-linkedin"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://stackoverflow.com/users/214017/david-calhoun/"><i class="fa fa-stack-overflow"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main role="main" itemscope itemType="http://schema.org/BlogPosting">
+    <meta itemprop="inLanguage" content="en-US" />
+    <span itemscope itemprop="author" itemType="https://schema.org/Person">
+        <meta itemprop="name" content="David Calhoun" />
+    </span>
+    <span itemscope itemprop="publisher" itemType="https://schema.org/Organization">
+        <meta itemprop="name" content="David Calhoun" />
+        <meta itemprop="url" content="https://themaingate.net" />
+        <meta itemprop="logo" content="https://themaingate.net/david-calhoun-logo.png">
+    </span>
+    <meta itemprop="image" content="https://themaingate.net/david-calhoun-logo.png">
+
+    <article class="item">
+
+    
+    
+    
+
+    
+    
+
+    <meta property="article:section" content="Article" />
+    <meta property="article:publisher" content="https://www.davidbcalhoun.com" />
+    <meta property="article:published_time" content="January 7, 2011" />
+    <meta property="article:modified_time" content="January 7, 2011" />
+    <meta property="article:tag" content="javascript" />
+    <meta property="article:tag" content="programming" />
+    <meta property="article:tag" content="webdev" />
+    
+    <meta property="og:site_name" content="CSS-Tricks" />
+    <meta property="og:updated_time" content="January 7, 2011" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="/2011/how-to-spot-outdated-javascript/" />
+    <meta property="og:title" content="How to spot outdated JavaScript" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="How to spot outdated JavaScript" />
+    <meta name="twitter:site" content="@franksvalli" />
+    <meta name="twitter:creator" content="@franksvalli" />
+    <meta name="twitter:domain" content="davidbcalhoun.com" />
+
+
+    <h4 itemprop="headline">
+        <a href="/2011/how-to-spot-outdated-javascript/" itemprop="url">How to spot outdated JavaScript</a>
+    </h4>
+    <h5 class="meta date" itemprop="datePublished dateModified" content="January 7, 2011" datetime="January 7, 2011">
+        <time>January 7, 2011</time>
+    </h5>
+    
+    <a href="https://davidbcalhoun.com/tags/javascript"><kbd class="item-tag">javascript</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/programming"><kbd class="item-tag">programming</kbd></a>
+    
+    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
+    
+
+</article>
+
+
+    <br> <div class="text-justify">
+
+<h3 id="introduction">Introduction</h3>
+
+<p>Those that are just setting out to learn JavaScript are typically overwhelmed by the amount of online resources to be found about learning JavaScript. Not only this, but every webpage visited presents a potential learning opportunity just by inspecting the source.</p>
+
+<p>However, not all resources are guaranteed to be up-to-date. JavaScript has been around for over a decade, and coding standards have changed drastically over time. While a code snippet may still work in today&rsquo;s browsers, you may unknowingly be using an outdated practice that might eventually lead to a bit of embarrassment.</p>
+
+<p>You may sometimes find these old practices mixed in with good and modern code. It seems that folks might learn new code styles without necessarily casting away all their old habits. So keep in mind not to throw out the baby with the bathwater!</p>
+
+<p>Here&rsquo;s some old practices that should help you spot old outdated code.</p>
+
+<h3 id="global-variables">Global variables</h3>
+
+<pre><code class="language-js">function foo() {  // global function
+  greeting = 'Hello' + name;  // global function
+};
+name = 'James';  // global variable
+foo();
+</code></pre>
+
+<p>Tons of global variables is a sure sign of outdated code. Ideally you want to aim to have at most one global variable, which is a namespace for all your code to be written under. All variables in your functions should be defined with the &#8216;var&rsquo; keyword to ensure they don&rsquo;t break out of their scope.</p>
+
+<p>Here&rsquo;s an example where we defined one global variable entry point (myNamespace) for our code:</p>
+
+<pre><code class="language-js">var myNamespace = (function() {
+  // declare all variables with var
+  var greeting, name;
+  
+  name = 'James';
+  
+  greeting = function() {
+    return 'Hello ' + name;
+  };
+  
+  return {
+    greeting: greeting
+  }
+})();
+
+greeting();              // ERROR: not defined
+myNameSpace.greeting();  // 'Hello James'
+</code></pre>
+
+<h3 id="commented-cdata-blocks">Commented CDATA blocks</h3>
+
+<pre><code class="language-js">/* &amp;lt;![CDATA[ */
+// code here
+/* ]]&amp;gt; */
+</code></pre>
+
+<p>This appears in old scripts that are presented inline (instead of externally in a separate file). The original purpose of those was to get around HTML validator errors (and to conform to XHTML), but that appears to no longer be an issue with validators today. Also, the usage of HTML validators itself seems to be waning, although they may sometimes be helpful in the development of websites.</p>
+
+<h3 id="document-write">document.write()</h3>
+
+<pre><code class="language-js">document.write('foo');
+</code></pre>
+
+<p>The <a href="http://dev.w3.org/html5/spec/apis-in-html-documents.html#document.write">W3C</a>, along with most everyone else, warns against using this, as it may result in overwriting (blanking) the entire page and other unwanted behavior.</p>
+
+<p>It&rsquo;s now used mostly by ads, and <a href="http://www.stevesouders.com/blog/2010/12/15/controljs-part-3/">developers have for years been trying to control them</a>. So don&rsquo;t use it, unless you&rsquo;re trying to prevent ads from using them. In other words, don&rsquo;t use it unless you know what you&rsquo;re doing.</p>
+
+<h3 id="inlined-event-handlers">Inlined event handlers</h3>
+
+<pre><code class="language-html">&lt;a onclick=“myClickFunction()” href=“http://foo.com&quot;&gt;&lt;/a&gt;
+&lt;a onmouseover=“myMouseoverFunction()” href=“http://foo.com&quot;&gt;&lt;/a&gt;
+&lt;form onsubmit=“mySubmitFunction()” href=“http://foo.com&quot;&gt;&lt;/form&gt;
+</code></pre>
+
+<p>This mixes behavior with the actual content, which means when it&rsquo;s time to make changes to the code, you likely have to change both the HTML and the JavaScript, instead of simply just the JavaScript. It also means that you may be serving useless content to users with JavaScript disabled (<a href="http://developer.yahoo.com/blogs/ydn/posts/2010/10/followup-how-many-users-have-javascript-disabled/">they&rsquo;re still out there</a>, believe it or not). This also might have an affect on search engines, that might not be able to access this JavaScript-only content (although crawlers are getting more sophisticated and this may be less of an issue as time progresses).</p>
+
+<p>Instead, the very least you can do is add IDs to each element (or better, use a JavaScript selector engine) and hook into them in your JavaScript, which makes the code much easier to maintain:</p>
+
+<pre><code class="language-html">&lt;a id=“link1” href=“http://foo.com&quot;&gt;&lt;/a&gt;
+&lt;a id=“link2” href=“http://foo.com&quot;&gt;&lt;/a&gt;
+&lt;form id=“myForm” href=“http://foo.com&quot;&gt;&lt;/form&gt;
+</code></pre>
+
+<pre><code class="language-js">(function() {  // sandbox everything
+  // variable declarations
+  var link1, link2, myForm;
+
+  window.onload = function() {  // or onDOMContentLoaded (wait for DOM to be ready)
+    // simple DOM selectors
+    link1 = document.getElementById('link1');
+    link2 = document.getElementById('link2');
+    myForm = document.getElementById('myForm');
+    
+    // well-supported older event handler
+    link1.onclick = function(){
+      // code
+    };
+    
+    // better (DOM2)
+    link1.addEventListener('click', function(){ // or attachEvent for IE
+      // code
+    },false);
+    
+    // etc...
+  }
+
+})();
+</code></pre>
+
+<p>link1.onclick is widely supported, but there&rsquo;s a few downsides, including the fact you can only add ONE event listener on the element (it will be overwritten if you try to add another). Use addEventListener (attachEvent in IE) instead, or the method of your favorite JavaScript engine.</p>
+
+<p>In any case, the point here is to get the JavaScript out of the HTML and into the rest of your JavaScript.</p>
+
+<h3 id="inline-javascript-in-link-hrefs">Inline JavaScript in link hrefs</h3>
+
+<pre><code class="language-html">&lt;a href=“javascript:doSomething()”&gt;&lt;/a&gt;
+&lt;a href=“javascript:void(0)”&gt;&lt;/a&gt;
+</code></pre>
+
+<p>Both of these examples commit the same error as above - mixing JavaScript behavior with the HTML content. And the solution is similar: find these links with JavaScript (most simply by adding an id on them) and hook into them there.</p>
+
+<p>The second example brings up a good issue, and a point of contention. Ideally this would be a link to fallback content for users that have JavaScript disabled (and for search engines!), which would be a link to a new page (Flickr is an example of a modern site that uses this approach). For better or worse, however, you might be building a web app that only works with JavaScript, and you might want a link that only exists to kick off a JavaScript event.</p>
+
+<p>You&rsquo;ll find that removing the href value or making it blank (href=&ldquo;&rdquo;) might remove the styling from the link and no longer makes it clickable. An easy fix is to set the href equal to a hash tag (href=&ldquo;#&rdquo;). A side effect might be a &ldquo;jump&rdquo; to the top of the page after clicking the link, which requires and requires e.preventDefault() within the attached event. Href=&ldquo;#&rdquo; may soon become an antipattern (or maybe it is already), since you can also fix this with CSS styling:</p>
+
+<pre><code class="language-css">a { cursor: pointer; }
+</code></pre>
+
+<p>This gives the cursor a pointer when the user hovers over the link, even if it&rsquo;s missing the href value.</p>
+
+<p>But again, this isn&rsquo;t generally recommended. It&rsquo;s better to make a non-JavaScript fallback by linking to an actual page, then overriding it with e.preventDefault() for JavaScript-enabled users!</p>
+
+<h3 id="slow-arrays">Slow arrays</h3>
+
+<pre><code class="language-js">var arr = [1, 2, 3, 4, 5];
+
+for(var x in arr) {
+  /* code */
+}
+
+for(var i=0; i &amp;lt; arr.length; i++) {
+  /* code */
+}
+</code></pre>
+
+<p>For-in loops turn out to be quite slow while going through arrays, so only use them when iterating through properties of an object. The second for loop is much faster, but can be made faster still when we realize what&rsquo;s being evaluated on each iteration:</p>
+
+<pre><code class="language-js">for(1; n; n) {}
+</code></pre>
+
+<p>The first statement is evaluated once (1 time) as the loop is initialized, and the second and third parts are evaluated on each run through the loop (n times). Because of this, just as removing fluff from the main body of the loop itself, we would also do well to remove fluff from these statements themselves. As it turns out, it&rsquo;s quite slow finding the length of the array (arr.length) on each pass, and it&rsquo;s not necessary to do it more than once since it&rsquo;s not changing. So we can &ldquo;cache&rdquo; the length in a variable in the initializer:</p>
+
+<pre><code class="language-js">for(var i=0, len=arr.length; i &amp;lt; len; i++) {
+  // code
+}
+</code></pre>
+
+<p>And faster yet is a while loop (keep in mind that it will run backwards), which stops when the counter hits 0, which is falsy, causing the loop to stop:</p>
+
+<pre><code class="language-js">var i = arr.length;
+while(i--) {
+  // code
+}
+</code></pre>
+
+<h3 id="new-object-new-array-new-function-etc">new Object(), new Array(), new Function(), etc</h3>
+
+<pre><code class="language-js">var obj  = new Object();
+var arr  = new Array();
+var func = new Function(&quot;param1&quot;, &quot;param2&quot;, &quot;return true;&quot;);
+</code></pre>
+
+<p>While these work, no one really uses them, as there exist less verbose and more common alternatives. Use these instead, which are exactly equal to the above code:</p>
+
+<pre><code class="language-js">var obj  = {};
+var arr  = [];
+var func = function(param1, param1) {return true;}
+</code></pre>
+
+<h3 id="alert">alert()</h3>
+
+<p>Ok, alert can sometimes still be useful for debugging, but generally you want to use console.log for that anyway. Generally you don&rsquo;t want to ever prompt the user with alert() however. Its use on the desktop for mainstream use has long been discouraged.</p>
+
+<p>I&rsquo;m still on the fence about using alert() however, as I think it&rsquo;s pretty useful and not necessarily ugly in mobile browsers. I&rsquo;ll spare you and save that for another post.</p>
+
+<h3 id="missing-semicolons">Missing semicolons</h3>
+
+<pre><code class="language-js">var name='Bill'
+alert('Hi ' + name)
+</code></pre>
+
+<p>The above code works fine because of a controversial feature of JavaScript called semicolon insertion. But doesn&rsquo;t it make you feel dirty? It should, especially if you&rsquo;ve read JavaScript: The Good Parts. Use semicolons for your own good and to prevent major headaches. Leave it to your JavaScript minifier to be clever in deciding when to remove them:</p>
+
+<pre><code class="language-js">var name='Bill';
+alert('Hi ' + name);
+</code></pre>
+
+<h3 id="code-for-particular-user-agents">Code for particular user agents</h3>
+
+<p>This is also a bit controversial, since unfortunately user agent sniffing is still sometimes necessary. However, in the past it was really abused with code such as this:</p>
+
+<pre><code class="language-js">isIE  = document.all;
+isNS4 = document.layers;
+isNS6 = document.getElementById;
+if(isIE) {
+  // code for IE
+} else if(isNS4) {
+  // code for Netscape 4
+} else if(isNS6) {
+  // code for Netscape 6
+}
+</code></pre>
+
+<p>(did I mention that any references to ancient browsers like Netscape is also a surefire sign of old code? But that&rsquo;s probably too obvious&hellip;)</p>
+
+<p>This example detects browsers by features that only exist in each of these old browsers, but the same sin is committed by &ldquo;sniffing&rdquo; for words in the user agent string. The unfortunate result is fragmented code targeting each predetermined browser. Not to mention that it&rsquo;s not future-proof, as it can&rsquo;t properly anticipate newer browsers.</p>
+
+<p>The better method? If there&rsquo;s a question about the availability of a method, simply check for it first before using it:</p>
+
+<pre><code class="language-js">if(document.addEventListener) {  // detect addEventListener
+  // Try the standard first
+  document.addEventListener('click', function(){}, false);
+} else if(document.attachEvent) {  // detect attachEvent
+  // Typically IE
+  document.attachEvent('onclick', function(){});
+}
+</code></pre>
+
+<p>This code is considered feature detection, which is much more acceptable. It also anticipates newer browsers such as IE9, which support addEventListener. This makes sure the code you write doesn&rsquo;t condemn Internet Explorer to forever use attachEvent.</p>
+
+<h3 id="related-links">Related links</h3>
+
+<p>Christian Heilmann and PPK&rsquo;s old posts inspired me to write this brief post. You can read much better rationale against using some of the things above at these links:</p>
+
+<p><a href="http://www.wait-till-i.com/2005/06/21/six-javascript-features-we-do-not-need-any-longer/">Six JavaScript features we do not need any longer (Christian Heilmann, 2005)</a></p>
+
+<p><a href="http://icant.co.uk/articles/from-dhtml-to-dom/from-dhtml-to-dom-scripting.html">From DHTML to DOM scripting (Christian Heilmann, 2006)</a></p>
+
+<p><a href="http://www.quirksmode.org/blog/archives/2005/06/three_javascrip_1.html">Three JavaScript articles and one best practice (PPK 2005)</a></p>
+</div>
+
+    
+    
+
+    
+
+    
+
+        <h4 class="page-header">Comments</h4>
+
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "davidbcalhoun" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+
+</main>
+
+        <footer role="contentinfo">
+
+            <p class="copyright text-muted">© <span itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="David Calhoun"><a href="mailto:david.b.calhoun@gmail.com" itemprop="email">David Calhoun</a> (<a href="https://twitter.com/franksvalli" itemprop="url">@franksvalli</a>) - <a href="https://www.linkedin.com/in/davidcalhoun" itemprop="url">LinkedIn</a> - <a href="http://themaingate.net/resume/" itemprop="url">Resume</a></span></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+

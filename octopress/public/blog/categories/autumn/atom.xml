@@ -4,7 +4,7 @@
   <title><![CDATA[Category: autumn | David Calhoun]]></title>
   <link href="http://davidbcalhoun.com/blog/categories/autumn/atom.xml" rel="self"/>
   <link href="http://davidbcalhoun.com/"/>
-  <updated>2017-03-11T11:38:47-08:00</updated>
+  <updated>2018-07-04T17:23:39-07:00</updated>
   <id>http://davidbcalhoun.com/</id>
   <author>
     <name><![CDATA[David Calhoun]]></name>
@@ -18,7 +18,7 @@
     <link href="http://davidbcalhoun.com/2016/time-for-autumn-adventures/"/>
     <updated>2016-09-29T16:06:18-07:00</updated>
     <id>http://davidbcalhoun.com/2016/time-for-autumn-adventures</id>
-    <content type="html"><![CDATA[<p><figure itemprop='image' itemscope itemtype='http://schema.org/ImageObject' class='center'><meta itemprop='width' content='1000'><meta itemprop='height' content='666'><meta itemprop='url' content='http://davidbcalhoun.com/wp-content/uploads/2016/kyoto-autumn-maple-leaves-tofukuji.jpg'><img itemprop='contentUrl' src="http://davidbcalhoun.com/wp-content/uploads/2016/kyoto-autumn-maple-leaves-tofukuji.jpg" width="1000" height="666" title="Maple leaves at Tofukuji Temple, Kyoto" ><figcaption itemprop='caption'>Maple leaves at Tofukuji Temple, Kyoto</figcaption></figure></p>
+    <content type="html"><![CDATA[<p>{% imgcap center http://davidbcalhoun.com/wp-content/uploads/2016/kyoto-autumn-maple-leaves-tofukuji.jpg 1000 666 Maple leaves at Tofukuji Temple, Kyoto %}</p>
 
 <p>It’s autumn again.  The temperatures are dropping up here in the mountains of Big Bear, especially at night, when it’s now approaching freezing or below.  A surprising number of trees are changing colors.  I say surprising because this is California, after all, and we don’t usually see fall colors unless we know where to look.</p>
 
