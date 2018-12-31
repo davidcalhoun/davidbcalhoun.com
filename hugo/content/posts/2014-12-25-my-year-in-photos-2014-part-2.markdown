@@ -18,6 +18,7 @@ tags:
 - nara
 - naruko gorge
 - fossil falls
+- "year in photos"
 ---
 
 I was just putting together this article and these photos on New Year's Eve when I glanced and the clock and noticed I was already four minutes into 2015.  Oops!

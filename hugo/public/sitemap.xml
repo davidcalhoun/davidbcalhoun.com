@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://davidbcalhoun.com/2018/my-year-in-photos-2018/</loc>
+    <lastmod>2018-12-31T08:48:41-08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://davidbcalhoun.com/2018/a-simple-introduction-to-javascript-map-and-reduce-array-helper-functions/</loc>
     <lastmod>2018-08-26T00:00:00+00:00</lastmod>
   </url>
@@ -733,7 +738,13 @@
   
   <url>
     <loc>https://davidbcalhoun.com/tags/autumn/</loc>
-    <lastmod>2016-09-29T16:06:18-07:00</lastmod>
+    <lastmod>2018-12-31T08:48:41-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://davidbcalhoun.com/tags/autumn-colors/</loc>
+    <lastmod>2018-12-31T08:48:41-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -758,6 +769,12 @@
   <url>
     <loc>https://davidbcalhoun.com/tags/big-basin/</loc>
     <lastmod>2016-02-02T08:47:58-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://davidbcalhoun.com/tags/big-basin-redwoods-state-park/</loc>
+    <lastmod>2018-12-31T08:48:41-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -829,7 +846,7 @@
   
   <url>
     <loc>https://davidbcalhoun.com/tags/california/</loc>
-    <lastmod>2016-12-31T23:17:16-08:00</lastmod>
+    <lastmod>2018-12-31T08:48:41-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -901,7 +918,7 @@
   
   <url>
     <loc>https://davidbcalhoun.com/</loc>
-    <lastmod>2018-08-26T00:00:00+00:00</lastmod>
+    <lastmod>2018-12-31T08:48:41-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -944,6 +961,12 @@
   <url>
     <loc>https://davidbcalhoun.com/tags/drama/</loc>
     <lastmod>2016-01-26T02:31:10-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://davidbcalhoun.com/tags/eastern-sierra/</loc>
+    <lastmod>2018-12-31T08:48:41-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1063,7 +1086,7 @@
   
   <url>
     <loc>https://davidbcalhoun.com/tags/hawaii/</loc>
-    <lastmod>2014-12-31T23:00:00-07:00</lastmod>
+    <lastmod>2018-12-31T08:48:41-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1567,7 +1590,7 @@
   
   <url>
     <loc>https://davidbcalhoun.com/tags/photography/</loc>
-    <lastmod>2017-03-11T11:23:40-08:00</lastmod>
+    <lastmod>2018-12-31T08:48:41-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1579,7 +1602,7 @@
   
   <url>
     <loc>https://davidbcalhoun.com/tags/photos/</loc>
-    <lastmod>2016-12-31T23:17:16-08:00</lastmod>
+    <lastmod>2018-12-31T08:48:41-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1596,6 +1619,12 @@
   </url>
   
   <url>
+    <loc>https://davidbcalhoun.com/tags/pigeon-point-light-station/</loc>
+    <lastmod>2018-12-31T08:48:41-08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://davidbcalhoun.com/tags/pinnacles/</loc>
     <lastmod>2015-09-12T23:40:12-07:00</lastmod>
     <priority>0</priority>
@@ -1603,7 +1632,7 @@
   
   <url>
     <loc>https://davidbcalhoun.com/tags/pinnacles-national-park/</loc>
-    <lastmod>2015-09-12T23:40:12-07:00</lastmod>
+    <lastmod>2018-12-31T08:48:41-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1621,7 +1650,7 @@
   
   <url>
     <loc>https://davidbcalhoun.com/posts/</loc>
-    <lastmod>2018-08-26T00:00:00+00:00</lastmod>
+    <lastmod>2018-12-31T08:48:41-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1868,6 +1897,12 @@
   <url>
     <loc>https://davidbcalhoun.com/tags/yahoo/</loc>
     <lastmod>2009-12-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://davidbcalhoun.com/tags/year-in-photos/</loc>
+    <lastmod>2018-12-31T08:48:41-08:00</lastmod>
     <priority>0</priority>
   </url>
   

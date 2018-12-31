@@ -24,6 +24,7 @@ tags:
 - "lundy lake"
 - "lobdell lake"
 - "zion national park"
+- "year in photos"
 ---
 
 A few years back I put together my favorite photos of the year (see it: <a href="//davidbcalhoun.com/2014/my-year-in-photos-2014/">part one</a> and <a href="//davidbcalhoun.com/2014/my-year-in-photos-2014-part-2/">part two</a>).  I decided to resurrect the tradition, and I hope to keep it going in the coming years!
