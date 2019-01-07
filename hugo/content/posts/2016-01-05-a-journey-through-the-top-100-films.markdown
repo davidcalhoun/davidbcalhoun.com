@@ -61,10 +61,10 @@ I'll be linking each title to my full review as I work my way through.
 | Position | AFI Position | Title | Year | Previously Watched? |
 | :----- | :---- | :------------- | ------------- | ------------ |
 | 1 | - | The Shawshank Redemption | 1994 | yes |
-| 2 | 3 | The Godfather | 1972 | yes |
+| 2 | 3 | [The Godfather](https://www.davidbcalhoun.com/2019/the-godfather-review-top-100-films/) | 1972 | yes |
 | 3 | 32 | The Godfather: Part II | 1974 | yes |
 | 4 | - | 12 Angry Men | 1957 | yes |
-| 5 | 9 | Schindler's List | 1993 | no |
+| 5 | 9 | [Schindler's List](https://www.davidbcalhoun.com/2016/schindlers-list-1993-top-100-films/) | 1993 | no |
 | 6 | 95 | Pulp Fiction | 1994 | yes |
 | 7 | Ineligible - Italian | The Good, the Bad and the Ugly | 1966 | yes |
 | 8 | - | Fight Club | 1999 | yes |
@@ -85,7 +85,7 @@ I'll be linking each title to my full review as I work my way through.
 | 23 | Ineligible - Italian | Once Upon a Time in the West | 1968 | yes |
 | 24 | 76 | City Lights | 1931 | no |
 | 25 | - | Saving Private Ryan | 1998 | yes |
-| 26 | 2 | Casablanca | 1942 | yes |
+| 26 | 2 | [Casablanca](https://www.davidbcalhoun.com/2016/casablanca-1942-top-100-films/) | 1942 | yes |
 | 27 | - | American History X | 1998 | yes |
 | 28 | 81 | Modern Times | 1936 | yes |
 | 29 | 60 | Raiders of the Lost Ark | 1981 | yes |
@@ -133,10 +133,10 @@ I'll be linking each title to my full review as I work my way through.
 | 71 | Ineligible - Japanese | Rashomon | 1950 | yes |
 | 72 | - | Full Metal Jacket | 1987 | yes |
 | 73 | 30 | The Treasure of the Sierra Madre | 1948 | yes |
-| 74 | Ineligible - British | Monty Python and the Holy Grail | 1975 | yes |
+| 74 | Ineligible - British | [Monty Python and the Holy Grail](https://www.davidbcalhoun.com/2016/monty-python-and-the-holy-grail-1975-top-100-films/) | 1975 | yes |
 | 75 | 93 | The Apartment | 1960 | yes |
 | 76 | 22 | 2001: A Space Odyssey | 1968 | yes |
-| 77 | Ineligible - Japanese | [Ikiru](http://davidbcalhoun.com/2016/ikiru-1952-top-100-films/) | 1952 | yes |
+| 77 | Ineligible - Japanese | [Ikiru](https://davidbcalhoun.com/2016/ikiru-1952-top-100-films/) | 1952 | yes |
 | 78 | Ineligible - German | Metropolis | 1927 | yes |
 | 79 | Ineligible - Italian | For a Few Dollars More | 1965 | no |
 | 80 | 57 | The Third Man | 1949 | yes |

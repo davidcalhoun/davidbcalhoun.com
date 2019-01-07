@@ -124,3 +124,23 @@ main {
 main h2 {
     margin-top: 3rem;
 }
+
+table {
+    border: solid 1px black;
+
+}
+
+table th {
+    white-space: pre;
+    background-color: #e6e6e6;
+}
+
+table td,
+table th {
+    padding: 0.5rem 1rem;
+}
+
+table tr:nth-child(odd),
+table tr:hover {
+    background-color: #f9f9f9;
+}
