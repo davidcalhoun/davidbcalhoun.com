@@ -20,18 +20,28 @@
     <meta property="article:publisher" content="https://www.davidbcalhoun.com" />
     <meta property="article:published_time" content="{{ $.Scratch.Get "subtitle" }}" />
     <meta property="article:modified_time" content="{{ $.Scratch.Get "subtitle" }}" />
+    {{ if .Params.image }}
+    <meta property="article:image" content="{{ .Params.image }}"/>
+    {{ end }}
     {{ range .Params.tags }}<meta property="article:tag" content="{{ . }}" />
     {{ end }}
-    <meta property="og:site_name" content="CSS-Tricks" />
+    <meta property="og:locale" content="en">
+    <meta property="og:site_name" content="David Calhoun's Blog" />
     <meta property="og:updated_time" content="{{ $.Scratch.Get "subtitle" }}" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="{{ .Scratch.Get "link" }}" />
     <meta property="og:title" content="{{ .Title }}" />
+    {{ if .Params.image }}
+    <meta property="og:image" content="{{ .Params.image }}"/>
+    {{ end }}
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="{{ .Title }}" />
     <meta name="twitter:site" content="@franksvalli" />
     <meta name="twitter:creator" content="@franksvalli" />
     <meta name="twitter:domain" content="davidbcalhoun.com" />
+    {{ if .Params.image }}
+    <meta property="twitter:image" content="{{ .Params.image }}"/>
+    {{ end }}
 
 
     <h4 itemprop="headline">
