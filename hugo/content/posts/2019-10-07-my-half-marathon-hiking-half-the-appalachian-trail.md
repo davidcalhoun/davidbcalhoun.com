@@ -1,7 +1,7 @@
 ---
 title: "My Half Marathon: Hiking Half the Appalachian Trail"
 date: 2019-10-07
-draft: true
+draft: false
 tags:
 - hiking
 - appalachian trail
