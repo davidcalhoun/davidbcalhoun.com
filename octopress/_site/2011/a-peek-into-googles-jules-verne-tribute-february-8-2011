@@ -1,7 +1,0 @@
-<p><a href='http://www.youtube.com/watch?v=CW2IXHBPOIo'><img alt='' class='aligncenter size-full wp-image-626' height='346' src='http://davidbcalhoun.com/wp-content/uploads/2011/02/google-doodle-jules-verne.png' title='Google Doodle: Jules Verne tribute' width='938' /></a></p>
-
-<p>This is just a fun little <a href='http://www.youtube.com/watch?v=CW2IXHBPOIo'>video demo</a> into the inner workings of today&#8217;s Google Doodle. Nothing you can&#8217;t do yourself with Firebug or Web Inspector (built into WebKit browsers such as Safari and Chrome). But I liked this doodle so much, I wanted to talk about it!</p>
-
-<p>Disclaimer: I know the difference between HTML5 and CSS3, but I&#8217;m not much one for pedantic nomenclature (however, I am apparently supportive of pedantic words like nomenclature). For the purposes of this video, webkit transforms and transitions are part of HTML5.</p>
-
-<p>EDIT: Apparently I missed that the doodle has accelerometer support for devices that support it! Confirmed that it works on my MacBook Pro in Chrome.</p>

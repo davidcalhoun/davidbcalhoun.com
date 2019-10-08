@@ -1,8 +1,0 @@
-<p>In case you hadn&#8217;t seen it yet, <a href='http://ejohn.org/'>John Resig</a> was kind enough to stop by Yahoo! for the December <a href='http://www.meetup.com/BayJax/'>Bayjax</a> meetup. Here&#8217;s the <a href='http://developer.yahoo.com/yui/theater/video.php?v=resig-testing'>video</a>:</p>
-<div class='video' style='width:576px; height: 324px;'>
-</div>
-<p>Usually developers are more interested in just getting the dang code to work, and as a result actual the testing and maintenance of JavaScript isn&#8217;t talked about too much, so I&#8217;m sure this will be new territory for many developers. And since it&#8217;s John Resig speaking, there was of course a bit about using <a href='http://testswarm.com/'>TestSwarm</a>, a testing distributed framework-agnostic automated testing tool (that&#8217;s a mouthful!).</p>
-
-<p>Included in the talk are good things to note while testing, such as the fact unless you&#8217;re running Firefox or Chrome on Windows, all test times have a margin of error of up to 15ms (not to be confused with <a href='http://www.quirksmode.org/blog/archives/2009/08/when_to_read_ou.html'>PPK&#8217;s observation of the delay between JavaScript computation and browser rendering</a>).</p>
-
-<p>(via <a href='http://www.yuiblog.com/blog/2009/12/16/video-resig-testing-and-jquery/'>YUIBlog</a>)</p>
