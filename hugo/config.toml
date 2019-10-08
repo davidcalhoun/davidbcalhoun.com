@@ -16,7 +16,7 @@ googleAnalytics = "UA-5530615-3"
     highlight = true
     highlightStyle = "foundation"
     highlightLanguages = ["go", "haskell", "kotlin", "scala", "swift", "javascript"]
-    copyright = '© <span itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="David Calhoun"><a href="mailto:david.b.calhoun@gmail.com" itemprop="email">David Calhoun</a> (<a href="https://twitter.com/franksvalli" itemprop="url">@franksvalli</a>) - <a href="https://www.linkedin.com/in/davidcalhoun" itemprop="url">LinkedIn</a> - <a href="http://themaingate.net/resume/" itemprop="url">Resume</a></span>'
+    copyright = '© <span itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="David Calhoun"><a href="mailto:david.b.calhoun@gmail.com" itemprop="email">David Calhoun</a> (<a href="https://twitter.com/franksvalli" itemprop="url">@franksvalli</a>) - <a href="https://www.linkedin.com/in/davidcalhoun" itemprop="url">LinkedIn</a> - <a href="https://themaingate.net/resume/" itemprop="url">Resume</a></span>'
 
 [permalinks]
   posts = "/:year/:slug/"

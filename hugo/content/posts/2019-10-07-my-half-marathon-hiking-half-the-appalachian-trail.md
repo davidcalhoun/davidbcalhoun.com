@@ -9,6 +9,8 @@ tags:
 image: https://www.davidbcalhoun.com/wp-content/uploads/2019/20190919-IMG_8770-me-katahdin-summit-david-calhoun.jpg
 ---
 
+<meta itemprop="mainEntityOfPage" content="https://en.wikipedia.org/wiki/Appalachian_Trail" />
+
 <figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
     <meta itemprop="width" content="1500" />
     <meta itemprop="height" content="1125" />
@@ -25,18 +27,18 @@ image: https://www.davidbcalhoun.com/wp-content/uploads/2019/20190919-IMG_8770-m
 
 Thanks to everyone who helped me on my AT journey!  Special thanks:
 
-* to my mom for helping mail me resupply packages
-* to my sister and her family for their support, small snacks, kids' drawings for support, and for liking some of my best picture uploads
-* to my friends James and Jessica for the very generous care package which helped me get back on the trail after a month away
-* to Gomer Pyle (John) and Sawbones (Sarah) who let me tag along with them and bought me too many meals, drinks, and even a book.  Hope to see you guys again sometime!
-* to all trail angels who provided food and beverages and offering help me offload my trash.  Thank you Old Buzzard for letting us tired hikers eat and then camp nearby - thanks for the great "northern hospitality".
+* to my **mom** for helping mail me resupply packages
+* to my **sister and her family** for their support, small snacks, kids' drawings for support, and for liking some of my best picture uploads
+* to my friends **James and Jessica** for the very generous care package which helped me get back on the trail after a month away
+* to **Gomer Pyle (John) and Sawbones (Sarah)** who let me tag along with them and bought me too many meals, drinks, and even a book.  Hope to see you guys again sometime!
+* to all **trail angels** who provided food and beverages and offering help me offload my trash.  Thank you **Old Buzzard** for letting us tired hikers eat and then camp nearby - thanks for the great "northern hospitality".
 * to the Maine family who picked me up when I was hitchhiking
 * to the Maine couple who bought my dinner at Hug's Italian in Carrabassett
 * to the guests at one of the White Mountain huts who generously gave us poor hikers wine (!) and dessert while we were waiting outside for the rest of the guests to finish their dinners
 
 ## Intro: the ultimate challenge
 
-When my work contract ended in April, it was perfect timing for me to put my stuff into storage and attempt what I had been planning for at least a few years now: see how much of the **Appalachian Trail (AT)** I could hike - a sort of challenge for myself to see how far I could go before giving up mentally or physically.
+When my work contract ended in April, it was perfect timing for me to put my stuff into storage and attempt what I had been planning for at least a few years now: see how much of the **[Appalachian Trail (AT)](https://en.wikipedia.org/wiki/Appalachian_Trail)** I could hike - a sort of challenge for myself to see how far I could go before giving up mentally or physically.
 
 I had been car camping and day hiking before, but never backpacking - this would be my very first time.
 
@@ -44,12 +46,12 @@ I had been car camping and day hiking before, but never backpacking - this would
 The Appalachian Trail is a hiking path that roughly follows the Appalachian mountain range through 14 states on the east coast of the United States, spanning from Georgia in the south to Maine in the north.
 
 ### The longest roller coaster
-The construction of the trail was completed in 1937, and the trail itself and continues to change every year, as parts are improved and diverted.  This year it is roughly 2,200 miles long, and it takes the average hiker around six months to complete.
+The construction of the trail was completed in 1937, and the trail itself and continues to change every year, as parts are improved and diverted.  This year it is roughly **2,200 miles long**, and it takes the average hiker around six months to complete.
 
 The trail length only tells some of the story.  As for the other dimension, height, the AT ascends and descends vertically 89 miles.  Which means that a successful AT through hike is equivalent to hiking the elevation of Everest about 16 times!
 
 ### Types of Trail
-It turns out that not all miles are created equal, even if they share the same length and elevation gain and loss.  Depending on the type of terrain, one mile on the AT can take anywhere from 15-20 minutes to several hours (the latter number care of the "longest mile" in southern Maine called Mahoosec Notch).
+It turns out that not all miles are created equal, even if they share the same length and elevation gain and loss.  Depending on the type of terrain, one mile on the AT can take anywhere from 15-20 minutes to several hours (the latter number care of the "longest mile" in southern Maine called [Mahoosec Notch](https://en.wikipedia.org/wiki/Mahoosuc_Notch)).
 
 The AT is a really varied trail passing through over 2000 miles of terrain, and there is no one way to describe it.  It comes in various forms, and various levels of difficulty.  Here I've ranked them roughly into levels of increasing difficulty:
 
@@ -69,22 +71,22 @@ The AT is a really varied trail passing through over 2000 miles of terrain, and 
     <figcaption itemprop="caption">A few easy miles along the Potomac River, just after Harper's Ferry</figcaption>
   </figure>
 * This is not so bad
-  * Scattered rocks and roots to literally trip you up a few times a day at least, sometimes some rock steps installed by trail maintainers to help with mud
+  * **Scattered rocks and roots** to literally trip you up a few times a day at least, sometimes some rock steps installed by trail maintainers to help with mud
   * Example: western Pennslyvania
 * Curse you, rocks
-  * Dense small and large rocks, forcing you to consider each step, and giving you blisters in weird places like the sides of your heels.
+  * **Dense small and large rocks**, forcing you to consider each step, and giving you blisters in weird places like the sides of your heels.
   * Example: eastern Pennslyvania
 * Is this hiking?  More like rock climbing at this point...
-  * Vertical trail with boulders requiring hand-over-hand rock climbing at times.  You are lucky when you see rebar handles, ladders, and even ropes.  Other times it's a bit of a puzzle trying to find the best way up and down.
+  * **Vertical trail with boulders** requiring hand-over-hand rock climbing at times.  You are lucky when you see rebar handles, ladders, and even ropes.  Other times it's a bit of a puzzle trying to find the best way up and down.
   * Example: Lehigh Gap, the White Mountains.
 * Who decided to put the trail here?  Maybe it was nice before it eroded to the bare rock...
-  * 45 degree bare eroded rock slabs, often requiring you to hang onto the trees and roots growing on the sides of the trail, and whatever else you can get your hands on
+  * **45 degree bare eroded rock slabs**, often requiring you to hang onto the trees and roots growing on the sides of the trail, and whatever else you can get your hands on
   * Example: Mahoosec Arm
 * Surprise!  The rockfall is now the trail!
-  * Some time in the past these fallen rocks found the quickest way down the mountain, straight down.  Let's put the trail here!
+  * Some time in the past these **rocks and boulders** found the quickest way down the mountain, straight down.  Let's put the trail here!
   * Example: north of Garfield campsite in the Whites, also Abol trail (not technically part of the AT)
 * Surprise!  The trail is now a stream!
-  * Trail maintainers neglected to install water bars, so when it's recently rained the water finds the well-eroded path down the mountain - aka the trail you will be walking on.  Good luck!
+  * Trail maintainers neglected to install water bars, so when it's recently rained the water finds this well-eroded path down the mountain - aka the trail you will be walking on.  Good luck!
   * Example: the start of Hunt trail going up Katahdin
 * Surprise!  The trail is now a muddy swamp!  "Embrace the suck"
   * Usually bog bridges help with these types of trail, but they don't ever cover 100% of the mud.  Most of the side you can rock hop or step around the sides of the mud, but sometimes you must simply go in full bore and "embrace the suck" (think of the sound your shoes make while lifting them up out of the mud)
@@ -102,17 +104,17 @@ The AT is a really varied trail passing through over 2000 miles of terrain, and 
 
 Most folks start at the southern terminus in Georgia and work their way up to Maine (aka Northbounders or NOBOs), but alternatively it can also be hiked southbound (aka SOBOs) and even as a "flip-flip", where hikers start somewhere in the middle, hike to a terminus, and then "flip" back to the middle and hike to the opposite terminus.  I chose this latter method mostly to avoid the crowds in general - what they call "bubbles" of hikers on the trail.  Avoiding these bubbles would also mean likely avoiding norovirus outbreaks which occur in heavily-used areas of the trail.
 
-Folks who complete the entire AT in one year are called "thru-hikers".  Unfortunately it turns out I don't have what it takes to be a thru-hiker.  But I successfully hiked from Harper's Ferry, West Virginia, to Baxter State Park, Maine - as distance of over 1000 miles, and just over half the trail.  (Harper's Ferry is at roughly mile 1025, and Katahdin is roughly at mile 2190, which means I hiked 1165 miles.. not too shabby!)
+Folks who complete the entire AT in one year are called "thru-hikers".  Unfortunately it turns out I don't have what it takes to be a thru-hiker.  But I successfully hiked from Harper's Ferry, West Virginia, to Baxter State Park, Maine - **a distance of over 1100 miles**, and just over half the trail.  (Harper's Ferry is at roughly mile 1025, and Katahdin is roughly at mile 2190, which means I hiked 1165 miles.. not too shabby!).  I started on April 7 and summitted Katahdin on September 19 - with a month off in between, and lots of "zero mile" days.
 
 My trail name started as Kierkegaard - my favorite philosopher - but was too obscure for most folks, so I soon evolved it into simply "Philosopher".  Somewhat apt since my undergrad degree is in Philosophy!
 
 ## Local philosopher hikes ten states with two feet, ten toes
 
-I walked through a total of 10 US states on my hike, many of which I was visiting for the first time.
+I walked through a total of **10 US states** on my hike, many of which I was visiting for the first time.
 
 It turns out that when you walk through these states in slow motion rather than flying over them or driving through them, you tend to remember them better.  To evidence that, I correctly wrote out the following state headings in order!
 
-Here's some things that stand out from these states as I write this now - and of course you can see preference for recency, as the northermost states are still freshest in my memory. 
+Here's some things that stand out from these states as I write this now.  And of course you can see preference for recency, as the northermost states are still freshest in my memory. 
 
 ### West Virginia
 In early April I took a few days to enjoy spring in Washington DC, then conveniently hopped on a train to Harper's Ferry, West Virginia, which is the unofficial midpoint of the AT.  Midday I registered my hike at the Appalachian Trail Conservancy Office there and chatted with the super friendly folks before starting my hike mid-afternoon.
@@ -122,7 +124,7 @@ My time in West Virginia was super short.  I hiked probably less than a mile fro
 ### Maryland
 I don't remember much of Maryland, except that it was the only state I visited that had bear poles from which to hang bear bags from.  The idea is that you put all your food and smellables in there to keep it out of reach of bears and other critters, so they won't bug you in your tent.
 
-I also remember some firsts - the first big climb up to the Weverton Cliffs, where I was easily winded and had to take multiple breaks as my body was getting used to hiking with a pack.  I remember the first shelter - Ed Garvey shelter, not that far away from where I started that first afternoon.  I wasn't yet comfortable with sleeping with other people (strangers!) in shelters, so I setup my tent nearby that evening, giving myself plenty of daylight to figure out mundane chores to wind down the day, things which would soon become automatic.
+I also remember some firsts - the first big climb up to the **Weverton Cliffs**, where I was easily winded and had to take multiple breaks as my body was getting used to hiking with a pack.  I remember the first shelter - Ed Garvey shelter, not that far away from where I started that first afternoon.  I wasn't yet comfortable with sleeping with other people (strangers!) in shelters, so I setup my tent nearby that evening, giving myself plenty of daylight to figure out mundane chores to wind down the day, things which would soon become automatic.
 
 I remember seeing another hiker there in the morning - an older man in his 60s named Piper - who I would see at the next shelter, then briefly the day after that, then never again.  So it goes with most AT interactions.
 
@@ -143,7 +145,7 @@ Onward.
 
 I crossed into Pennslyvania state and stayed at my first trail down, Waynesboro.  I remember feeling so accomplished after some 30 or so miles.  The people there at a bar wished me luck, but kind of chuckled and reminded me that I was only just getting started...
 
-The colloquial name for this state is "Rockslyvania", which I first saw scribbled in a trail log at the Mason-Dixon line at the border crossing into PA.  I really didn't notice the annoying rocks until eastern PA.  By then I was literally cursing at the rocks out of annoyance.  Every single step had to be carefully thought out in advance, with my head looking down and then looking up occasionally to spot the white blazes on trees, showing the path forward, then down again to plot out my next steps.
+The colloquial name for this state is **"Rockslyvania"**, which I first saw scribbled in a trail log at the Mason-Dixon line at the border crossing into PA.  I really didn't notice the annoying rocks until eastern PA.  By then I was literally cursing at the rocks out of annoyance.  **Every single step** had to be carefully thought out in advance, with my head looking down and then looking up occasionally to spot the white blazes on trees, showing the path forward, then down again to plot out my next steps.
 
 ### New Jersey
 <figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
@@ -160,7 +162,7 @@ People laugh that this state is referred to as "The Garden State", but it really
 
 In my memory, this is where the bog bridges started.  The types of trails were always changing and keeping me guessing...
 
-This was also the start of the "deli-section", where you would conveniently come upon great delis near the trail almost every day.
+This was also the start of the **"deli section"**, where you would conveniently come upon great delis near the trail almost every day.
 
 ### New York
 <figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
@@ -175,7 +177,7 @@ This was also the start of the "deli-section", where you would conveniently come
 
 This state was surprisingly challenging in a lot of places.  Little did I know, this was a sneak preview for the sheer rock faces I would climb over and over again farther north in New England, grabbing onto trees and roots to lift myself up.
 
-I remember scrambling up to bare rock faces, sometimes very carefully in the rain.  I remember slipping and falling a lot because of the constant rain.  I'm pretty sure this is where I sustained some injuries to my knees - one which broke open my pant leg but thankfully no skin. The falls here are likely the reason I had issues with my knees later, part of the reason I took a month off the trail.
+I remember **scrambling up bare rock faces**, sometimes very carefully in the rain.  I remember slipping and falling a lot because of the constant rain.  I'm pretty sure this is where I sustained some injuries to my knees - one which broke open my pant leg but thankfully no skin. The falls here are likely the reason I had issues with my knees later, part of the reason I took a month off the trail.
 
 I remember hiking with Wrong Way for a bit; I remember us seeing the far-away stick buildings of New York City pointing up out of the earth miles away.
 
@@ -199,7 +201,7 @@ More well-maintained trails, campgrounds, and shelters.
 
 My knees were getting pretty bad at this point.  I decided to take a month off in June to help out my folks as they moved across the country from LA to the east coast, and I also used the opportunity to let my poor knees recover.
 
-When I flew back a month later, the first day or two had my knees hurting worse than ever, readjusting to the pain.  I was almost in despair, thinking that they wouldn't recover enough for me to resume my hike, and that my flight back had been a waste of money (and worse, that I'd have to re-enter the "real world" sooner than I expected).  I babied my knees and gave my legs themselves a bit more time to readjust, only making slow progress on sub-10 mile days.
+When I flew back a month later, the first day or two had my knees hurting worse than ever, readjusting to the pain.  I was almost in despair, thinking that they wouldn't recover enough for me to resume my hike, and that my flight back had been a waste of money (and worse, that I'd have to re-enter the "real world" sooner than I expected).  I babied my knees and gave my legs themselves a bit more time to readjust, making only slow progress on sub-10 mile days.
 
 ### Vermont ("Vermud")
 <figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
@@ -214,9 +216,9 @@ When I flew back a month later, the first day or two had my knees hurting worse 
 
 The nickname for Vermont is "Vermud", and there was plenty of mud to be sure, but for my hike and my timing I think the mud in Maine was way worse.
 
-I really liked the Christmas-tree scented pines and greenery of Vermont, my favorite state on my entire half-hike.  But sadly I had to bid farewell to the nice shelters with bear boxes, and the convenient on-trail delis.  On the other hand, with the vanishing conveniences offered by the close proximity to highways and towns came an increasing remoteness and quiet.  Gone were the far-away sounds of highways and farming equipment.  Only the occasional plane flew overhead.  Other than that only the sound of birds could be heard over my own footsteps.
+I really liked the **Christmas-tree scented pines and greenery** of Vermont, my favorite state on my entire half-hike.  But sadly I had to bid farewell to the nice shelters with bear boxes, and the convenient on-trail delis.  On the other hand, with the vanishing conveniences offered by the close proximity to highways and towns came an increasing remoteness and quietness.  Gone were the far-away sounds of highways and farming equipment.  Only the occasional plane flew overhead while walking through the Green Mountains.  Other than that only the sound of birds could be heard over my own footsteps.
 
-The Green Mountains were wonderful and rugged, with a fair bit of blowdown on the trail - trees that had been toppled recently, forcing hikers over, under, or around them.  The entire area was probably the most remote and least populated with hikers than any other section on my hike, even the supposedly remote 100 Mile Wilderness in Maine. 
+The **Green Mountains** were wonderful and rugged, with a fair bit of blowdown on the trail - trees that had been toppled recently, forcing hikers over, under, or around them.  The entire area was probably the most remote and least populated with hikers than any other section on my hike, even the supposedly remote 100 Mile Wilderness in Maine. 
 
 The entire trail was walled in by greenery, even when reaching mountain peaks.  A few of these peaks offered fire towers to climb up and get a better view above the trees.  I only made it partway up one of those towers before getting too shaky and slowly and safely making my way back down...
 
@@ -231,7 +233,7 @@ The entire trail was walled in by greenery, even when reaching mountain peaks.  
     <figcaption itemprop="caption">Sunset above treeline, looking toward Mt Eisenhower (White Mountains, New Hampshire)</figcaption>
 </figure>
 
-An infamous state on the AT, home to the challenging White Mountain National Forest, those rocky giants with all their beauty and challenge.  I found the hardest parts were just to the west and east of the White Mountains - Kinsman Mountain in the west and the Wildcats in the east.  It seems these regions are a bit more neglected because they're out of range of the moneymaking hut system further inside the park.
+An infamous state on the AT, home to the challenging [White Mountain National Forest](https://en.wikipedia.org/wiki/White_Mountain_National_Forest), those rocky giants with all their beauty and challenge.  I found the hardest parts were just to the west and east of the White Mountains - **[Kinsman Mountain](https://en.wikipedia.org/wiki/Kinsman_Mountain)** in the west and the **[Wildcats](https://en.wikipedia.org/wiki/Wildcat_Mountain_(New_Hampshire))** in the east.  It seems these regions are a bit more neglected because they're out of range of the moneymaking hut system further inside the park.
 
 <figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
     <meta itemprop="width" content="1500" />
@@ -243,7 +245,7 @@ An infamous state on the AT, home to the challenging White Mountain National For
     <figcaption itemprop="caption">Vertical rock climbing in the Wildcats.  This spot in particular was definitely one of the most challenging parts of the AT for me, if not the hardest.</figcaption>
 </figure>
 
-I remember the Wildcats in particular.  One part of the ascent was particularly technical - an impossible vertical climb up a rock slab.  I saw two paths up, and both made me shaky.  On the left was rock with no footholds or handholds, just sheer rock face at a steep angle.  But clearly there was wear on the top of the rock, made by more intrepid hikers that came before me.  I wasn't confident about that route - I just imagined me stepping up and immediately losing balance and falling backwards, or immediately losing balance and falling forwards and then sliding down off the rock, my carcass falling onto the terrain below.
+**I remember the Wildcats in particular**.  One part of the ascent was particularly technical - an impossible vertical climb up a rock slab.  I saw two paths up, and both made me shaky.  On the left was rock with no footholds or handholds, just sheer rock face at a steep angle.  But clearly there was wear on the top of the rock, made by more intrepid hikers that came before me.  I wasn't confident about that route - I just imagined me stepping up and immediately losing balance and falling backwards, or immediately losing balance and falling forwards and then sliding down off the rock, my carcass falling onto the terrain below.
 
 On the right was some sort of high rock steps wedged between two boulders (rock and a hard place?), with the first step impossible to climb up on.  I pushed myself up and was dangling in midair, looking vainly for the next hold.  I started losing grip and knew I would fall down if I didn't get off fast.
 
@@ -274,7 +276,7 @@ The dreaded Mahoosec Trail proved I wasn't out of the woods yet after the Whites
 
 Somehow I thought things would get easier, but this was definitely still part of the hard section of the AT.  Mahoosec Notch, the "slowest mile of the AT" was luckily more fun than challenging, but still scary.  After reaching Mt Success the trail seemed to leave behind the "crazy insane mode" of the Whites and Southern Maine, and the trail became more and more normal as it got into territory managed by the M.A.T.C. (Maine Appalachian Trail Club).  Of course there were a few surprise bouldering sections here and there, just to keep me on my toes (and climbing with my hands).
 
-The trail still went up and down mountains, but with less and less technical skills needed to get up and down thankfully.  Finally I got to Monson, the last trail town, and prepared for the 100 mile wilderness.  The first half of the wilderness had two big mountain ranges to get through, and the second half was a joyous breeze, finally casting me out of the wilderness and onto Abol Bridge, just at the foot of the famous Mt Katahdin.  I finally summitted in mid-September - a very slow run compared to most hikers, but I did it.  I felt like I was finally getting into proper shape and doing decent mileage on easier terrain, until I summitted Mt Katahdin, and then my hike was at a sudden end.
+The trail still went up and down mountains, but with less and less technical skills needed to get up and down thankfully.  Finally I got to Monson, the last trail town, and prepared for the 100 mile wilderness.  The first half of the wilderness had two big mountain ranges to get through, and the second half was a joyous breeze, finally casting me out of the wilderness and onto Abol Bridge, just at the foot of the famous Mt Katahdin.  **I finally summitted in mid-September - a very slow run compared to most hikers, but I did it**.  I felt like I was finally getting into proper shape and doing decent mileage on easier terrain, and getting into the groove of things, ready to keep going.  Until I summitted Mt Katahdin, and then my hike was at a sudden end.
 
 I had decided not to "flip" back down to West Virginia and continue south for this year.  I'm looking forward to doing that easier southern half some other year!
 
@@ -323,7 +325,7 @@ Surprisingly I did a pretty good job picking out my gear and sticking with most 
 The AT is the most social of America's long-distance trails.  But it is still a place where people seek solitude and peace.  Somehow we all have to deal with each other.
 
 ### On-trail hiker interactions
-For the most part, a lot of hiker interactions are surface-level polite and pleasant.  Folks have to put up with each other in shelters in particular, and usually they have better things to worry about than to create drama.  That being said, there is sometimes drama...  But for the most part, when you see people frowning at you or with a negative attitude, it's usually a day hiker (you can tell who they are by their gear, their scent, and their level of dirtiness).
+For the most part, a lot of hiker interactions are surface-level polite and pleasant.  Folks have to put up with each other in shelters in particular, and usually they have better things to worry about than to create drama.  That being said, there is sometimes drama...  But for the most part, when you see people frowning at you or with a negative attitude, it's usually a day hiker (you can tell who they are by their gear, their flowery scent which as a long-distance hiker you can smell far away, and their level of dirtiness).
 
 I think thru hikers bonded better than day hikers because we were all struggling towards a common goal.  In life people struggle towards disparate goals which sometimes coincide: marriage, children, a house, a nice car.  But the AT goal is not as materialistic - it is simply to reach a common goal - Katahdin.  And each day's mileage brings us closer to that big goal.  We were all going through the same struggle, just like schoolkids.
 
@@ -334,7 +336,7 @@ My advice for asocial hikers such as myself who seek solitude is to simply avoid
 * shelters and campsites
 * mountain peaks
 
-Sometimes these places can be enjoyed just by hiking 100 feet away.  For instance, hike to a shelter for the convenience of water and a privy, but setup a tent far away from the actual shelter itself.  Or when reaching a mountain peak and wanting to snack and take in the view, simply find a place just off the peak.  This worked surprisingly well even in crowded places like the tops of peaks on Franconia Ridge in the White Mountains.
+Sometimes these places can be enjoyed just **by hiking 100 feet away**.  For instance, hike to a shelter for the convenience of water and a privy, but setup a tent far away from the actual shelter itself.  Or when reaching a mountain peak and wanting to snack and take in the view, simply find a place just off the peak.  This worked surprisingly well even in crowded places like the tops of peaks on Franconia Ridge in the White Mountains.
 
 ### Social media
 More and more, social media has been playing into the AT journey.  Many folks follow YouTubers who vlog their journey day by day, becoming mini-celebrities.  There were a few cases where trail angels (who helped hikers) sometimes tracked these mini-celebrities and were setting up their trail magic location in order to meet the celebrities.  This seemed really strange to me, but hey, they shared their food with noncelebrities like me, so I guess I can't complain too much.
@@ -359,9 +361,9 @@ Not everything is fun on the trail.  Here's some notable low points to balance o
 ## Advice to myself for avoiding the AT rat race: steer clear of numbers
 I found that many of the 20-somethings were in rat race mode, perhaps because they hadn't yet experienced life's true rat race and saw no reason to escape from it.  As such, they were obsessed with doing X number of miles, keeping up a certain mileage, etc.
 
-As a slow hiker and as someone no longer in their 20s, it was really hard not to let this upset my morale.  There is a certain saying - "Hike your own hike" - but it's very hard not to get discouraged when it seems every hiker is passing you by.  Especially when I started in the middle of the AT and was initially getting passed by mostly just-retired older men.  (Wrong Way joked that they were trying to finish the AT before they dropped dead, which may actually be a half-truth).
+As a slow hiker and as someone no longer in their 20s, it was really hard not to let this upset my morale.  There is a certain saying - "Hike your own hike" - but it's very hard not to get discouraged when it seems every hiker is passing you by.  Especially when I started in the middle of the AT and was initially getting passed by mostly just-retired older men much older than me, in way better shape.  (Wrong Way joked that they were trying to finish the AT before they dropped dead, which may actually be a half-truth).
 
-My general advice to avoid the AT's own rat race is to avoid numbers in all forms and units.  Learn to identify questions like the following, and not let them upset you:
+My general advice to avoid the AT's own rat race is to **avoid numbers in all forms** and units.  Learn to identify questions like the following, and not let them upset you:
 
 * How many miles did you hike today?
 * How much does your pack weigh?
@@ -371,10 +373,10 @@ My general advice to avoid the AT's own rat race is to avoid numbers in all form
 
 ## General life lessons learned on the Appalachian Trail
 
-* It's very comforting to be able to have one big goal (Maine), and being able to see your concrete progress towards that goal in the form of miles traversed and miles remaining.  It gives meaning to all that you do each day.  Too bad life in general isn't structured this way automatically, but I suspect it can help to setup life in a similar way: set big goals, then find a way to track your progress towards those goals
-* It's ok to let others pass you by.  They are setting their own pace.  Hike your own hike.
-* You're not going to get along with everyone, and that's ok.  But you need to learn how to tolerate others.
-* You can get by with surprisingly little, and you can carry it all on your back - over boulders and over entire mountains.
+* It's very comforting to be able to have **one big goal** (Maine), and being able to see your concrete progress towards that goal in the form of miles traversed and miles remaining.  **It gives meaning to all that you do each day**.  Too bad "real life" in general isn't structured this way automatically, but I suspect it can help to learn the lesson from this and apply this to your "real life" off the trail: set big goals, then find a way to track your progress towards those goals each day.  It also distinguishes hiking from traveling in general, the latter of which can be very aimless and goal-less.
+* **It's ok to let others pass you by**.  They are setting their own pace.  Hike your own hike.
+* You're not going to get along with everyone, and that's ok.  But you need to **learn how to tolerate others**.
+* **You can get by with surprisingly little**, and you can carry it all on your back - over boulders and over entire mountains.
 
 
 <figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
