@@ -112,6 +112,8 @@ figure[itemprop="image"] {
 
 figure[itemprop="image"] figcaption {
     font-size: 1.4rem;
+    line-height: 2rem;
+    margin-top: 0.4rem;
 }
 
 main {
@@ -119,10 +121,23 @@ main {
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
     hyphens: auto;
+    font-size: 1.8rem;
+    line-height: 2.8rem;
 }
 
 main h2 {
+    font-size: 3rem;
     margin-top: 3rem;
+    line-height: 4rem;
+}
+
+main h3 {
+    font-size: 2.5rem;
+    margin-top: 2.5rem;
+}
+
+main li {
+    margin-bottom: 0.5rem;
 }
 
 table {
