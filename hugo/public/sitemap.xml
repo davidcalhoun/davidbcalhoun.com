@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://davidbcalhoun.com/2019/matching-accented-strings-in-javascript/</loc>
+    <lastmod>2019-10-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://davidbcalhoun.com/2019/my-half-marathon-hiking-half-the-appalachian-trail/</loc>
     <lastmod>2019-10-07T00:00:00+00:00</lastmod>
   </url>
@@ -915,6 +920,12 @@
   </url>
   
   <url>
+    <loc>https://davidbcalhoun.com/tags/criterion/</loc>
+    <lastmod>2019-10-10T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://davidbcalhoun.com/tags/css/</loc>
     <lastmod>2012-08-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -934,7 +945,7 @@
   
   <url>
     <loc>https://davidbcalhoun.com/</loc>
-    <lastmod>2019-10-07T00:00:00+00:00</lastmod>
+    <lastmod>2019-10-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1276,7 +1287,7 @@
   
   <url>
     <loc>https://davidbcalhoun.com/tags/javascript/</loc>
-    <lastmod>2018-08-26T00:00:00+00:00</lastmod>
+    <lastmod>2019-10-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1666,7 +1677,7 @@
   
   <url>
     <loc>https://davidbcalhoun.com/posts/</loc>
-    <lastmod>2019-10-07T00:00:00+00:00</lastmod>
+    <lastmod>2019-10-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1715,6 +1726,12 @@
   <url>
     <loc>https://davidbcalhoun.com/tags/reduce/</loc>
     <lastmod>2018-08-26T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://davidbcalhoun.com/tags/regexp/</loc>
+    <lastmod>2019-10-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
