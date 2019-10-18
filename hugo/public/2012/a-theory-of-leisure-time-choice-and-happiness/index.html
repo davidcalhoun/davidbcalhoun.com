@@ -3,6 +3,7 @@
     <head>
          
         <meta charset="utf-8">
+        <meta name="author" content="David Calhoun">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>A theory of leisure time, choice, and happiness - David Calhoun&#39;s blog</title>
         
@@ -24,27 +25,50 @@
 <link rel="stylesheet" href="https://davidbcalhoun.com/css/main.css">
 
 
-
-
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-
-
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/foundation.min.css"> 
-
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
  
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script async>
+function initSyntaxHighlighting() {
+    if (!hljs) return;
 
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script> 
+    hljs.initHighlighting();
 
-    <script>hljs.initHighlightingOnLoad();</script>
+    
+    
+    hljs.registerLanguage("css",function(e){var c="[a-zA-Z-][a-zA-Z0-9_-]*",t={b:/[A-Z\_\.\-]+\s*:/,rB:!0,e:";",eW:!0,c:[{cN:"attribute",b:/\S/,e:":",eE:!0,starts:{eW:!0,eE:!0,c:[{b:/[\w-]+\(/,rB:!0,c:[{cN:"built_in",b:/[\w-]+/},{b:/\(/,e:/\)/,c:[e.ASM,e.QSM]}]},e.CSSNM,e.QSM,e.ASM,e.CBCM,{cN:"number",b:"#[0-9A-Fa-f]+"},{cN:"meta",b:"!important"}]}}]};return{cI:!0,i:/[=\/|'\$]/,c:[e.CBCM,{cN:"selector-id",b:/#[A-Za-z0-9_-]+/},{cN:"selector-class",b:/\.[A-Za-z0-9_-]+/},{cN:"selector-attr",b:/\[/,e:/\]/,i:"$"},{cN:"selector-pseudo",b:/:(:)?[a-zA-Z0-9\_\-\+\(\)"'.]+/},{b:"@(font-face|page)",l:"[a-z-]+",k:"font-face page"},{b:"@",e:"[{;]",i:/:/,c:[{cN:"keyword",b:/\w+/},{b:/\s/,eW:!0,eE:!0,r:0,c:[e.ASM,e.QSM,e.CSSNM]}]},{cN:"selector-tag",b:c,r:0},{b:"{",e:"}",i:/\S/,c:[e.CBCM,t]}]}});
+
+    
+    
+    hljs.registerLanguage("javascript",function(e){var r="[A-Za-z$_][0-9A-Za-z$_]*",t={keyword:"in of if for while finally var new function do return void else break catch instanceof with throw case default try this switch continue typeof delete let yield const export super debugger as async await static import from as",literal:"true false null undefined NaN Infinity",built_in:"eval isFinite isNaN parseFloat parseInt decodeURI decodeURIComponent encodeURI encodeURIComponent escape unescape Object Function Boolean Error EvalError InternalError RangeError ReferenceError StopIteration SyntaxError TypeError URIError Number Math Date String RegExp Array Float32Array Float64Array Int16Array Int32Array Int8Array Uint16Array Uint32Array Uint8Array Uint8ClampedArray ArrayBuffer DataView JSON Intl arguments require module console window document Symbol Set Map WeakSet WeakMap Proxy Reflect Promise"},a={cN:"number",v:[{b:"\\b(0[bB][01]+)"},{b:"\\b(0[oO][0-7]+)"},{b:e.CNR}],r:0},n={cN:"subst",b:"\\$\\{",e:"\\}",k:t,c:[]},c={cN:"string",b:"`",e:"`",c:[e.BE,n]};n.c=[e.ASM,e.QSM,c,a,e.RM];var s=n.c.concat([e.CBCM,e.CLCM]);return{aliases:["js","jsx"],k:t,c:[{cN:"meta",r:10,b:/^\s*['"]use (strict|asm)['"]/},{cN:"meta",b:/^#!/,e:/$/},e.ASM,e.QSM,c,e.CLCM,e.CBCM,a,{b:/[{,]\s*/,r:0,c:[{b:r+"\\s*:",rB:!0,r:0,c:[{cN:"attr",b:r,r:0}]}]},{b:"("+e.RSR+"|\\b(case|return|throw)\\b)\\s*",k:"return throw case",c:[e.CLCM,e.CBCM,e.RM,{cN:"function",b:"(\\(.*?\\)|"+r+")\\s*=>",rB:!0,e:"\\s*=>",c:[{cN:"params",v:[{b:r},{b:/\(\s*\)/},{b:/\(/,e:/\)/,eB:!0,eE:!0,k:t,c:s}]}]},{b:/</,e:/(\/\w+|\w+\/)>/,sL:"xml",c:[{b:/<\w+\s*\/>/,skip:!0},{b:/<\w+/,e:/(\/\w+|\w+\/)>/,skip:!0,c:[{b:/<\w+\s*\/>/,skip:!0},"self"]}]}],r:0},{cN:"function",bK:"function",e:/\{/,eE:!0,c:[e.inherit(e.TM,{b:r}),{cN:"params",b:/\(/,e:/\)/,eB:!0,eE:!0,c:s}],i:/\[|%/},{b:/\$[(.]/},e.METHOD_GUARD,{cN:"class",bK:"class",e:/[{;=]/,eE:!0,i:/[:"\[\]]/,c:[{bK:"extends"},e.UTM]},{bK:"constructor",e:/\{/,eE:!0}],i:/#(?!!)/}});
+}
+
+function loadScripts() {
+    var scripts = [
+        {
+            src: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js',
+            callback: function() {
+                initSyntaxHighlighting();
+            }
+        }
+    ];
+
+    scripts.forEach(function(script) {
+        var elt = document.createElement('script');
+        elt.setAttribute('async', '');
+        elt.setAttribute('defer', '');
+        elt.setAttribute('src', script.src);
+        elt.addEventListener('load', script.callback, true);
+
+        document.head.appendChild(elt);
+    });
+}
+loadScripts()
+    </script>
+
+
+    <script>
 
 
 
@@ -52,13 +76,12 @@
 
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </script>
 
 
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 
-<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+
  <meta name="generator" content="Hugo 0.42.2" />
         
 
@@ -73,67 +96,39 @@
           gtag('config', 'UA-5530615-3');
         </script>
         
-
-        <meta name="author" content="David Calhoun">
+        <meta name="description" content="Personal blog of photographer and web developer David Calhoun."/>
+        <meta name="theme-color" content="#fff">
+        <link rel="canonical" href="https://davidbcalhoun.com/2012/a-theory-of-leisure-time-choice-and-happiness/">
         <link href="/index.xml" rel="alternate" type="application/rss+xml" title="David Calhoun&#39;s blog" />
         <link href="/index.xml" rel="feed" type="application/rss+xml" title="David Calhoun&#39;s blog" />
 
     </head>
 
     
-    
-    <script type="text/javascript" async
-      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-    </script>
-    
 
     <body>
          
-        <nav class="navbar navbar-default navbar-fixed-top">
+        <nav class="navbar">
 
-            <div class="container">
-
-                <div class="navbar-header">
-                    <a class="navbar-brand visible-xs" href="#">David Calhoun&#39;s blog</a>
-                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-
-                </div>
-
-                <div class="collapse navbar-collapse">
-
-                    
-                        <ul class="nav navbar-nav">
-                            
-                                <li><a href="https://www.themaingate.net/">Home</a></li>
-                            
-                                <li><a href="/">Posts</a></li>
-                            
-                        </ul>
-                    
-
-                    
-                        <ul class="nav navbar-nav navbar-right">
-                            
-                                <li class="navbar-icon"><a href="mailto:david.b.calhoun@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
-                            
-                                <li class="navbar-icon"><a href="https://github.com/davidcalhoun/"><i class="fa fa-github"></i></a></li>
-                            
-                                <li class="navbar-icon"><a href="https://twitter.com/franksvalli/"><i class="fa fa-twitter"></i></a></li>
-                            
-                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/davidcalhoun/"><i class="fa fa-linkedin"></i></a></li>
-                            
-                                <li class="navbar-icon"><a href="https://stackoverflow.com/users/214017/david-calhoun/"><i class="fa fa-stack-overflow"></i></a></li>
-                            
-                        </ul>
-                    
-
-                </div>
-
+            <div class="navbar-header">
+                <a class="navbar-brand" href="https://davidbcalhoun.com/">David Calhoun&#39;s blog</a>
             </div>
+
+            
+                <ul class="navbar-links">
+                    
+                        <li class="navbar-icon"><a aria-label="Send an email" href="mailto:david.b.calhoun@gmail.com"><svg width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1664 1504v-768q-32 36-69 66-268 206-426 338-51 43-83 67t-86.5 48.5-102.5 24.5h-2q-48 0-102.5-24.5t-86.5-48.5-83-67q-158-132-426-338-37-30-69-66v768q0 13 9.5 22.5t22.5 9.5h1472q13 0 22.5-9.5t9.5-22.5zm0-1051v-24.5l-.5-13-3-12.5-5.5-9-9-7.5-14-2.5h-1472q-13 0-22.5 9.5t-9.5 22.5q0 168 147 284 193 152 401 317 6 5 35 29.5t46 37.5 44.5 31.5 50.5 27.5 43 9h2q20 0 43-9t50.5-27.5 44.5-31.5 46-37.5 35-29.5q208-165 401-317 54-43 100.5-115.5t46.5-131.5zm128-37v1088q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-1088q0-66 47-113t113-47h1472q66 0 113 47t47 113z"/></svg></i></a></li>
+                    
+                        <li class="navbar-icon"><a aria-label="Github" href="https://github.com/davidcalhoun/"><svg width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M896 128q209 0 385.5 103t279.5 279.5 103 385.5q0 251-146.5 451.5t-378.5 277.5q-27 5-40-7t-13-30q0-3 .5-76.5t.5-134.5q0-97-52-142 57-6 102.5-18t94-39 81-66.5 53-105 20.5-150.5q0-119-79-206 37-91-8-204-28-9-81 11t-92 44l-38 24q-93-26-192-26t-192 26q-16-11-42.5-27t-83.5-38.5-85-13.5q-45 113-8 204-79 87-79 206 0 85 20.5 150t52.5 105 80.5 67 94 39 102.5 18q-39 36-49 103-21 10-45 15t-57 5-65.5-21.5-55.5-62.5q-19-32-48.5-52t-49.5-24l-20-3q-21 0-29 4.5t-5 11.5 9 14 13 12l7 5q22 10 43.5 38t31.5 51l10 23q13 38 44 61.5t67 30 69.5 7 55.5-3.5l23-4q0 38 .5 88.5t.5 54.5q0 18-13 30t-40 7q-232-77-378.5-277.5t-146.5-451.5q0-209 103-385.5t279.5-279.5 385.5-103zm-477 1103q3-7-7-12-10-3-13 2-3 7 7 12 9 6 13-2zm31 34q7-5-2-16-10-9-16-3-7 5 2 16 10 10 16 3zm30 45q9-7 0-19-8-13-17-6-9 5 0 18t17 7zm42 42q8-8-4-19-12-12-20-3-9 8 4 19 12 12 20 3zm57 25q3-11-13-16-15-4-19 7t13 15q15 6 19-6zm63 5q0-13-17-11-16 0-16 11 0 13 17 11 16 0 16-11zm58-10q-2-11-18-9-16 3-14 15t18 8 14-14z"/></svg></i></a></li>
+                    
+                        <li class="navbar-icon"><a aria-label="Twitter" href="https://twitter.com/franksvalli/"><svg width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"/></svg></i></a></li>
+                    
+                        <li class="navbar-icon"><a aria-label="Linkedin" href="https://www.linkedin.com/in/davidcalhoun/"><svg width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z"/></svg></i></a></li>
+                    
+                        <li class="navbar-icon"><a aria-label="Stack Overflow" href="https://stackoverflow.com/users/214017/david-calhoun/"><svg width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1417 1632h-1118v-480h-160v640h1438v-640h-160v480zm-942-524l33-157 783 165-33 156zm103-374l67-146 725 339-67 145zm201-356l102-123 614 513-102 123zm397-378l477 641-128 96-477-641zm-718 1471v-159h800v159h-800z"/></svg></i></a></li>
+                    
+                </ul>
+            
 
         </nav>
 
@@ -182,22 +177,25 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/2012/a-theory-of-leisure-time-choice-and-happiness/" itemprop="url">A theory of leisure time, choice, and happiness</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="October 19, 2012" datetime="October 19, 2012">
-        <time>October 19, 2012</time>
-    </h5>
-    
-    <a href="https://davidbcalhoun.com/tags/philosophy"><kbd class="item-tag">philosophy</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/life"><kbd class="item-tag">life</kbd></a>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="October 19, 2012" datetime="October 19, 2012">
+        October 19, 2012
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://davidbcalhoun.com/tags/philosophy"><span class="item-tag">philosophy</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/life"><span class="item-tag">life</span></a>
+        
+    </aside>
 
 </article>
 
 
-    <br> <div class="text-justify"><p>This is finally the end of my first week in Japanese language school here in Kyoto. It&rsquo;s been quite a long week, with the most studying I&rsquo;ve ever done in my life. We&rsquo;ve gone through nine chapters in a week, and just Friday received two more books for learning Kanji. We&rsquo;ll learn our first 50 Kanji in a week, alongside the rest of our classes. I already know some words here and there, but for the most part, much of what we&rsquo;ve just learned is a blur, which is forcing me to use almost all of my free time in running to catch up.</p>
+    <div class="text-justify"><p>This is finally the end of my first week in Japanese language school here in Kyoto. It&rsquo;s been quite a long week, with the most studying I&rsquo;ve ever done in my life. We&rsquo;ve gone through nine chapters in a week, and just Friday received two more books for learning Kanji. We&rsquo;ll learn our first 50 Kanji in a week, alongside the rest of our classes. I already know some words here and there, but for the most part, much of what we&rsquo;ve just learned is a blur, which is forcing me to use almost all of my free time in running to catch up.</p>
 
 <p>Having very little leisure time has been good in some ways. It&rsquo;s been a marked change in the cozy, comfortable lifestyle of sitting in front of a computer screen all day, doing tasks which were somewhat challenging but ultimately not rewarding. Those days in Silicon Valley were ended with a gratuitous amount of free time (which is unusual, working for a startup). Which seems nice for a while, but becomes a bit maddening after long, at least for me.</p>
 

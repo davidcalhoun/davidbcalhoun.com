@@ -3,6 +3,7 @@
     <head>
          
         <meta charset="utf-8">
+        <meta name="author" content="David Calhoun">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Tags - David Calhoun&#39;s blog</title>
         
@@ -24,27 +25,50 @@
 <link rel="stylesheet" href="https://davidbcalhoun.com/css/main.css">
 
 
-
-
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-
-
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/foundation.min.css"> 
-
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
  
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script async>
+function initSyntaxHighlighting() {
+    if (!hljs) return;
 
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script> 
+    hljs.initHighlighting();
 
-    <script>hljs.initHighlightingOnLoad();</script>
+    
+    
+    hljs.registerLanguage("css",function(e){var c="[a-zA-Z-][a-zA-Z0-9_-]*",t={b:/[A-Z\_\.\-]+\s*:/,rB:!0,e:";",eW:!0,c:[{cN:"attribute",b:/\S/,e:":",eE:!0,starts:{eW:!0,eE:!0,c:[{b:/[\w-]+\(/,rB:!0,c:[{cN:"built_in",b:/[\w-]+/},{b:/\(/,e:/\)/,c:[e.ASM,e.QSM]}]},e.CSSNM,e.QSM,e.ASM,e.CBCM,{cN:"number",b:"#[0-9A-Fa-f]+"},{cN:"meta",b:"!important"}]}}]};return{cI:!0,i:/[=\/|'\$]/,c:[e.CBCM,{cN:"selector-id",b:/#[A-Za-z0-9_-]+/},{cN:"selector-class",b:/\.[A-Za-z0-9_-]+/},{cN:"selector-attr",b:/\[/,e:/\]/,i:"$"},{cN:"selector-pseudo",b:/:(:)?[a-zA-Z0-9\_\-\+\(\)"'.]+/},{b:"@(font-face|page)",l:"[a-z-]+",k:"font-face page"},{b:"@",e:"[{;]",i:/:/,c:[{cN:"keyword",b:/\w+/},{b:/\s/,eW:!0,eE:!0,r:0,c:[e.ASM,e.QSM,e.CSSNM]}]},{cN:"selector-tag",b:c,r:0},{b:"{",e:"}",i:/\S/,c:[e.CBCM,t]}]}});
+
+    
+    
+    hljs.registerLanguage("javascript",function(e){var r="[A-Za-z$_][0-9A-Za-z$_]*",t={keyword:"in of if for while finally var new function do return void else break catch instanceof with throw case default try this switch continue typeof delete let yield const export super debugger as async await static import from as",literal:"true false null undefined NaN Infinity",built_in:"eval isFinite isNaN parseFloat parseInt decodeURI decodeURIComponent encodeURI encodeURIComponent escape unescape Object Function Boolean Error EvalError InternalError RangeError ReferenceError StopIteration SyntaxError TypeError URIError Number Math Date String RegExp Array Float32Array Float64Array Int16Array Int32Array Int8Array Uint16Array Uint32Array Uint8Array Uint8ClampedArray ArrayBuffer DataView JSON Intl arguments require module console window document Symbol Set Map WeakSet WeakMap Proxy Reflect Promise"},a={cN:"number",v:[{b:"\\b(0[bB][01]+)"},{b:"\\b(0[oO][0-7]+)"},{b:e.CNR}],r:0},n={cN:"subst",b:"\\$\\{",e:"\\}",k:t,c:[]},c={cN:"string",b:"`",e:"`",c:[e.BE,n]};n.c=[e.ASM,e.QSM,c,a,e.RM];var s=n.c.concat([e.CBCM,e.CLCM]);return{aliases:["js","jsx"],k:t,c:[{cN:"meta",r:10,b:/^\s*['"]use (strict|asm)['"]/},{cN:"meta",b:/^#!/,e:/$/},e.ASM,e.QSM,c,e.CLCM,e.CBCM,a,{b:/[{,]\s*/,r:0,c:[{b:r+"\\s*:",rB:!0,r:0,c:[{cN:"attr",b:r,r:0}]}]},{b:"("+e.RSR+"|\\b(case|return|throw)\\b)\\s*",k:"return throw case",c:[e.CLCM,e.CBCM,e.RM,{cN:"function",b:"(\\(.*?\\)|"+r+")\\s*=>",rB:!0,e:"\\s*=>",c:[{cN:"params",v:[{b:r},{b:/\(\s*\)/},{b:/\(/,e:/\)/,eB:!0,eE:!0,k:t,c:s}]}]},{b:/</,e:/(\/\w+|\w+\/)>/,sL:"xml",c:[{b:/<\w+\s*\/>/,skip:!0},{b:/<\w+/,e:/(\/\w+|\w+\/)>/,skip:!0,c:[{b:/<\w+\s*\/>/,skip:!0},"self"]}]}],r:0},{cN:"function",bK:"function",e:/\{/,eE:!0,c:[e.inherit(e.TM,{b:r}),{cN:"params",b:/\(/,e:/\)/,eB:!0,eE:!0,c:s}],i:/\[|%/},{b:/\$[(.]/},e.METHOD_GUARD,{cN:"class",bK:"class",e:/[{;=]/,eE:!0,i:/[:"\[\]]/,c:[{bK:"extends"},e.UTM]},{bK:"constructor",e:/\{/,eE:!0}],i:/#(?!!)/}});
+}
+
+function loadScripts() {
+    var scripts = [
+        {
+            src: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js',
+            callback: function() {
+                initSyntaxHighlighting();
+            }
+        }
+    ];
+
+    scripts.forEach(function(script) {
+        var elt = document.createElement('script');
+        elt.setAttribute('async', '');
+        elt.setAttribute('defer', '');
+        elt.setAttribute('src', script.src);
+        elt.addEventListener('load', script.callback, true);
+
+        document.head.appendChild(elt);
+    });
+}
+loadScripts()
+    </script>
+
+
+    <script>
 
 
 
@@ -52,13 +76,12 @@
 
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </script>
 
 
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 
-<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+
  <meta name="generator" content="Hugo 0.42.2" />
         
         <link href="https://davidbcalhoun.com/tags/index.xml" rel="alternate" type="application/rss+xml" title="David Calhoun&#39;s blog" />
@@ -76,67 +99,39 @@
           gtag('config', 'UA-5530615-3');
         </script>
         
-
-        <meta name="author" content="David Calhoun">
+        <meta name="description" content="Personal blog of photographer and web developer David Calhoun."/>
+        <meta name="theme-color" content="#fff">
+        <link rel="canonical" href="https://davidbcalhoun.com/tags/">
         <link href="/index.xml" rel="alternate" type="application/rss+xml" title="David Calhoun&#39;s blog" />
         <link href="/index.xml" rel="feed" type="application/rss+xml" title="David Calhoun&#39;s blog" />
 
     </head>
 
     
-    
-    <script type="text/javascript" async
-      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-    </script>
-    
 
     <body>
          
-        <nav class="navbar navbar-default navbar-fixed-top">
+        <nav class="navbar">
 
-            <div class="container">
-
-                <div class="navbar-header">
-                    <a class="navbar-brand visible-xs" href="#">David Calhoun&#39;s blog</a>
-                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-
-                </div>
-
-                <div class="collapse navbar-collapse">
-
-                    
-                        <ul class="nav navbar-nav">
-                            
-                                <li><a href="https://www.themaingate.net/">Home</a></li>
-                            
-                                <li><a href="/">Posts</a></li>
-                            
-                        </ul>
-                    
-
-                    
-                        <ul class="nav navbar-nav navbar-right">
-                            
-                                <li class="navbar-icon"><a href="mailto:david.b.calhoun@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
-                            
-                                <li class="navbar-icon"><a href="https://github.com/davidcalhoun/"><i class="fa fa-github"></i></a></li>
-                            
-                                <li class="navbar-icon"><a href="https://twitter.com/franksvalli/"><i class="fa fa-twitter"></i></a></li>
-                            
-                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/davidcalhoun/"><i class="fa fa-linkedin"></i></a></li>
-                            
-                                <li class="navbar-icon"><a href="https://stackoverflow.com/users/214017/david-calhoun/"><i class="fa fa-stack-overflow"></i></a></li>
-                            
-                        </ul>
-                    
-
-                </div>
-
+            <div class="navbar-header">
+                <a class="navbar-brand" href="https://davidbcalhoun.com/">David Calhoun&#39;s blog</a>
             </div>
+
+            
+                <ul class="navbar-links">
+                    
+                        <li class="navbar-icon"><a aria-label="Send an email" href="mailto:david.b.calhoun@gmail.com"><svg width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1664 1504v-768q-32 36-69 66-268 206-426 338-51 43-83 67t-86.5 48.5-102.5 24.5h-2q-48 0-102.5-24.5t-86.5-48.5-83-67q-158-132-426-338-37-30-69-66v768q0 13 9.5 22.5t22.5 9.5h1472q13 0 22.5-9.5t9.5-22.5zm0-1051v-24.5l-.5-13-3-12.5-5.5-9-9-7.5-14-2.5h-1472q-13 0-22.5 9.5t-9.5 22.5q0 168 147 284 193 152 401 317 6 5 35 29.5t46 37.5 44.5 31.5 50.5 27.5 43 9h2q20 0 43-9t50.5-27.5 44.5-31.5 46-37.5 35-29.5q208-165 401-317 54-43 100.5-115.5t46.5-131.5zm128-37v1088q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-1088q0-66 47-113t113-47h1472q66 0 113 47t47 113z"/></svg></i></a></li>
+                    
+                        <li class="navbar-icon"><a aria-label="Github" href="https://github.com/davidcalhoun/"><svg width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M896 128q209 0 385.5 103t279.5 279.5 103 385.5q0 251-146.5 451.5t-378.5 277.5q-27 5-40-7t-13-30q0-3 .5-76.5t.5-134.5q0-97-52-142 57-6 102.5-18t94-39 81-66.5 53-105 20.5-150.5q0-119-79-206 37-91-8-204-28-9-81 11t-92 44l-38 24q-93-26-192-26t-192 26q-16-11-42.5-27t-83.5-38.5-85-13.5q-45 113-8 204-79 87-79 206 0 85 20.5 150t52.5 105 80.5 67 94 39 102.5 18q-39 36-49 103-21 10-45 15t-57 5-65.5-21.5-55.5-62.5q-19-32-48.5-52t-49.5-24l-20-3q-21 0-29 4.5t-5 11.5 9 14 13 12l7 5q22 10 43.5 38t31.5 51l10 23q13 38 44 61.5t67 30 69.5 7 55.5-3.5l23-4q0 38 .5 88.5t.5 54.5q0 18-13 30t-40 7q-232-77-378.5-277.5t-146.5-451.5q0-209 103-385.5t279.5-279.5 385.5-103zm-477 1103q3-7-7-12-10-3-13 2-3 7 7 12 9 6 13-2zm31 34q7-5-2-16-10-9-16-3-7 5 2 16 10 10 16 3zm30 45q9-7 0-19-8-13-17-6-9 5 0 18t17 7zm42 42q8-8-4-19-12-12-20-3-9 8 4 19 12 12 20 3zm57 25q3-11-13-16-15-4-19 7t13 15q15 6 19-6zm63 5q0-13-17-11-16 0-16 11 0 13 17 11 16 0 16-11zm58-10q-2-11-18-9-16 3-14 15t18 8 14-14z"/></svg></i></a></li>
+                    
+                        <li class="navbar-icon"><a aria-label="Twitter" href="https://twitter.com/franksvalli/"><svg width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"/></svg></i></a></li>
+                    
+                        <li class="navbar-icon"><a aria-label="Linkedin" href="https://www.linkedin.com/in/davidcalhoun/"><svg width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z"/></svg></i></a></li>
+                    
+                        <li class="navbar-icon"><a aria-label="Stack Overflow" href="https://stackoverflow.com/users/214017/david-calhoun/"><svg width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1417 1632h-1118v-480h-160v640h1438v-640h-160v480zm-942-524l33-157 783 165-33 156zm103-374l67-146 725 339-67 145zm201-356l102-123 614 513-102 123zm397-378l477 641-128 96-477-641zm-718 1471v-159h800v159h-800z"/></svg></i></a></li>
+                    
+                </ul>
+            
 
         </nav>
 
@@ -175,13 +170,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/" itemprop="url"></a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 8, 2009" datetime="December 8, 2009">
-        <time>December 8, 2009</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 8, 2009" datetime="December 8, 2009">
+        December 8, 2009
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -214,13 +212,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/1.7/" itemprop="url">1.7</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="September 15, 2009" datetime="September 15, 2009">
-        <time>September 15, 2009</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="September 15, 2009" datetime="September 15, 2009">
+        September 15, 2009
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -253,13 +254,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/6.12/" itemprop="url">6.12</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="August 31, 2009" datetime="August 31, 2009">
-        <time>August 31, 2009</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="August 31, 2009" datetime="August 31, 2009">
+        August 31, 2009
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -292,13 +296,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/agile/" itemprop="url">Agile</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="October 8, 2015" datetime="October 8, 2015">
-        <time>October 8, 2015</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="October 8, 2015" datetime="October 8, 2015">
+        October 8, 2015
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -331,13 +338,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/amd/" itemprop="url">Amd</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="April 30, 2014" datetime="April 30, 2014">
-        <time>April 30, 2014</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="April 30, 2014" datetime="April 30, 2014">
+        April 30, 2014
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -370,13 +380,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/android/" itemprop="url">Android</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="February 24, 2011" datetime="February 24, 2011">
-        <time>February 24, 2011</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="February 24, 2011" datetime="February 24, 2011">
+        February 24, 2011
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -409,13 +422,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/appalachian-trail/" itemprop="url">Appalachian Trail</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="October 7, 2019" datetime="October 7, 2019">
-        <time>October 7, 2019</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="October 7, 2019" datetime="October 7, 2019">
+        October 7, 2019
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -448,13 +464,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/apple/" itemprop="url">Apple</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="June 19, 2012" datetime="June 19, 2012">
-        <time>June 19, 2012</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="June 19, 2012" datetime="June 19, 2012">
+        June 19, 2012
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -487,13 +506,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/apps/" itemprop="url">Apps</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="April 14, 2014" datetime="April 14, 2014">
-        <time>April 14, 2014</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="April 14, 2014" datetime="April 14, 2014">
+        April 14, 2014
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -526,13 +548,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/astronomy/" itemprop="url">Astronomy</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="September 12, 2015" datetime="September 12, 2015">
-        <time>September 12, 2015</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="September 12, 2015" datetime="September 12, 2015">
+        September 12, 2015
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -565,13 +590,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/astrophotography/" itemprop="url">Astrophotography</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="September 12, 2015" datetime="September 12, 2015">
-        <time>September 12, 2015</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="September 12, 2015" datetime="September 12, 2015">
+        September 12, 2015
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -604,13 +632,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/async/" itemprop="url">Async</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="September 8, 2014" datetime="September 8, 2014">
-        <time>September 8, 2014</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="September 8, 2014" datetime="September 8, 2014">
+        September 8, 2014
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -643,13 +674,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/autofocus/" itemprop="url">Autofocus</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="October 7, 2010" datetime="October 7, 2010">
-        <time>October 7, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="October 7, 2010" datetime="October 7, 2010">
+        October 7, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -682,13 +716,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/autumn/" itemprop="url">Autumn</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 31, 2018" datetime="December 31, 2018">
-        <time>December 31, 2018</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 31, 2018" datetime="December 31, 2018">
+        December 31, 2018
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -721,13 +758,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/autumn-colors/" itemprop="url">Autumn Colors</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 31, 2018" datetime="December 31, 2018">
-        <time>December 31, 2018</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 31, 2018" datetime="December 31, 2018">
+        December 31, 2018
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -760,13 +800,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/avd/" itemprop="url">Avd</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="June 9, 2010" datetime="June 9, 2010">
-        <time>June 9, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="June 9, 2010" datetime="June 9, 2010">
+        June 9, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -799,13 +842,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/basejs/" itemprop="url">Basejs</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="June 29, 2010" datetime="June 29, 2010">
-        <time>June 29, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="June 29, 2010" datetime="June 29, 2010">
+        June 29, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -838,13 +884,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/beginner/" itemprop="url">Beginner</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 4, 2009" datetime="December 4, 2009">
-        <time>December 4, 2009</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 4, 2009" datetime="December 4, 2009">
+        December 4, 2009
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -877,13 +926,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/big-basin/" itemprop="url">Big Basin</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="February 2, 2016" datetime="February 2, 2016">
-        <time>February 2, 2016</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="February 2, 2016" datetime="February 2, 2016">
+        February 2, 2016
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -916,13 +968,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/big-basin-redwoods-state-park/" itemprop="url">Big Basin Redwoods State Park</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 31, 2018" datetime="December 31, 2018">
-        <time>December 31, 2018</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 31, 2018" datetime="December 31, 2018">
+        December 31, 2018
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -955,13 +1010,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/big-bear-lake/" itemprop="url">Big Bear Lake</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 31, 2014" datetime="December 31, 2014">
-        <time>December 31, 2014</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 31, 2014" datetime="December 31, 2014">
+        December 31, 2014
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -994,13 +1052,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/biography/" itemprop="url">Biography</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="January 26, 2016" datetime="January 26, 2016">
-        <time>January 26, 2016</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="January 26, 2016" datetime="January 26, 2016">
+        January 26, 2016
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -1033,13 +1094,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/blackberry/" itemprop="url">Blackberry</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="August 18, 2010" datetime="August 18, 2010">
-        <time>August 18, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="August 18, 2010" datetime="August 18, 2010">
+        August 18, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -1072,13 +1136,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/blackberry.network/" itemprop="url">Blackberry.network</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="June 29, 2010" datetime="June 29, 2010">
-        <time>June 29, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="June 29, 2010" datetime="June 29, 2010">
+        June 29, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -1111,13 +1178,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/blackberry.system/" itemprop="url">Blackberry.system</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="June 29, 2010" datetime="June 29, 2010">
-        <time>June 29, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="June 29, 2010" datetime="June 29, 2010">
+        June 29, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -1150,13 +1220,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/block-scope/" itemprop="url">Block Scope</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="September 15, 2009" datetime="September 15, 2009">
-        <time>September 15, 2009</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="September 15, 2009" datetime="September 15, 2009">
+        September 15, 2009
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -1189,13 +1262,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/box-model/" itemprop="url">Box Model</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="March 2, 2010" datetime="March 2, 2010">
-        <time>March 2, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="March 2, 2010" datetime="March 2, 2010">
+        March 2, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -1228,13 +1304,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/bullshit/" itemprop="url">Bullshit</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="October 8, 2015" datetime="October 8, 2015">
-        <time>October 8, 2015</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="October 8, 2015" datetime="October 8, 2015">
+        October 8, 2015
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -1267,13 +1346,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/button/" itemprop="url">Button</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="May 19, 2010" datetime="May 19, 2010">
-        <time>May 19, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="May 19, 2010" datetime="May 19, 2010">
+        May 19, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -1306,13 +1388,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/cache-manifest/" itemprop="url">Cache Manifest</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="October 7, 2010" datetime="October 7, 2010">
-        <time>October 7, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="October 7, 2010" datetime="October 7, 2010">
+        October 7, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -1345,13 +1430,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/cafe/" itemprop="url">Cafe</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="April 29, 2015" datetime="April 29, 2015">
-        <time>April 29, 2015</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="April 29, 2015" datetime="April 29, 2015">
+        April 29, 2015
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -1384,13 +1472,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/california/" itemprop="url">California</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 31, 2018" datetime="December 31, 2018">
-        <time>December 31, 2018</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 31, 2018" datetime="December 31, 2018">
+        December 31, 2018
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -1423,13 +1514,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/capture-api/" itemprop="url">Capture Api</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="June 29, 2010" datetime="June 29, 2010">
-        <time>June 29, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="June 29, 2010" datetime="June 29, 2010">
+        June 29, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -1462,13 +1556,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/charset/" itemprop="url">Charset</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="October 7, 2010" datetime="October 7, 2010">
-        <time>October 7, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="October 7, 2010" datetime="October 7, 2010">
+        October 7, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -1501,13 +1598,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/cherry-blossoms/" itemprop="url">Cherry Blossoms</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="April 29, 2015" datetime="April 29, 2015">
-        <time>April 29, 2015</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="April 29, 2015" datetime="April 29, 2015">
+        April 29, 2015
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -1540,13 +1640,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/color/" itemprop="url">Color</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 29, 2009" datetime="December 29, 2009">
-        <time>December 29, 2009</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 29, 2009" datetime="December 29, 2009">
+        December 29, 2009
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -1579,13 +1682,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/comedy/" itemprop="url">Comedy</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="July 6, 2016" datetime="July 6, 2016">
-        <time>July 6, 2016</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="July 6, 2016" datetime="July 6, 2016">
+        July 6, 2016
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -1618,13 +1724,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/commonjs/" itemprop="url">Commonjs</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="April 30, 2014" datetime="April 30, 2014">
-        <time>April 30, 2014</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="April 30, 2014" datetime="April 30, 2014">
+        April 30, 2014
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -1657,13 +1766,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/conditional-comments/" itemprop="url">Conditional Comments</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="July 7, 2010" datetime="July 7, 2010">
-        <time>July 7, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="July 7, 2010" datetime="July 7, 2010">
+        July 7, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -1696,13 +1808,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/criterion/" itemprop="url">Criterion</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="October 10, 2019" datetime="October 10, 2019">
-        <time>October 10, 2019</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="October 10, 2019" datetime="October 10, 2019">
+        October 10, 2019
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -1735,13 +1850,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/css/" itemprop="url">Css</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="August 10, 2012" datetime="August 10, 2012">
-        <time>August 10, 2012</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="August 10, 2012" datetime="August 10, 2012">
+        August 10, 2012
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -1774,13 +1892,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/culture/" itemprop="url">Culture</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="June 14, 2016" datetime="June 14, 2016">
-        <time>June 14, 2016</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="June 14, 2016" datetime="June 14, 2016">
+        June 14, 2016
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -1813,13 +1934,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/defer/" itemprop="url">Defer</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="October 7, 2010" datetime="October 7, 2010">
-        <time>October 7, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="October 7, 2010" datetime="October 7, 2010">
+        October 7, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -1852,13 +1976,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/demo/" itemprop="url">Demo</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="November 23, 2013" datetime="November 23, 2013">
-        <time>November 23, 2013</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="November 23, 2013" datetime="November 23, 2013">
+        November 23, 2013
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -1891,13 +2018,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/design/" itemprop="url">Design</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="May 10, 2013" datetime="May 10, 2013">
-        <time>May 10, 2013</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="May 10, 2013" datetime="May 10, 2013">
+        May 10, 2013
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -1930,13 +2060,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/display/" itemprop="url">Display</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="August 31, 2009" datetime="August 31, 2009">
-        <time>August 31, 2009</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="August 31, 2009" datetime="August 31, 2009">
+        August 31, 2009
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -1969,13 +2102,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/doctype/" itemprop="url">Doctype</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="October 7, 2010" datetime="October 7, 2010">
-        <time>October 7, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="October 7, 2010" datetime="October 7, 2010">
+        October 7, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -2008,13 +2144,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/drama/" itemprop="url">Drama</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="January 6, 2019" datetime="January 6, 2019">
-        <time>January 6, 2019</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="January 6, 2019" datetime="January 6, 2019">
+        January 6, 2019
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -2047,13 +2186,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/eastern-sierra/" itemprop="url">Eastern Sierra</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 31, 2018" datetime="December 31, 2018">
-        <time>December 31, 2018</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 31, 2018" datetime="December 31, 2018">
+        December 31, 2018
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -2086,13 +2228,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/em/" itemprop="url">Em</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="October 5, 2010" datetime="October 5, 2010">
-        <time>October 5, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="October 5, 2010" datetime="October 5, 2010">
+        October 5, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -2125,13 +2270,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/emulator/" itemprop="url">Emulator</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="June 9, 2010" datetime="June 9, 2010">
-        <time>June 9, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="June 9, 2010" datetime="June 9, 2010">
+        June 9, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -2164,13 +2312,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/event/" itemprop="url">Event</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="July 17, 2010" datetime="July 17, 2010">
-        <time>July 17, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="July 17, 2010" datetime="July 17, 2010">
+        July 17, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -2203,13 +2354,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/exercise/" itemprop="url">Exercise</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="March 2, 2015" datetime="March 2, 2015">
-        <time>March 2, 2015</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="March 2, 2015" datetime="March 2, 2015">
+        March 2, 2015
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -2242,13 +2396,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/exists/" itemprop="url">Exists</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 1, 2009" datetime="December 1, 2009">
-        <time>December 1, 2009</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 1, 2009" datetime="December 1, 2009">
+        December 1, 2009
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -2281,13 +2438,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/fall/" itemprop="url">Fall</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="September 29, 2016" datetime="September 29, 2016">
-        <time>September 29, 2016</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="September 29, 2016" datetime="September 29, 2016">
+        September 29, 2016
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -2320,13 +2480,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/film/" itemprop="url">Film</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="January 6, 2019" datetime="January 6, 2019">
-        <time>January 6, 2019</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="January 6, 2019" datetime="January 6, 2019">
+        January 6, 2019
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -2359,13 +2522,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/flickr/" itemprop="url">Flickr</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="July 16, 2010" datetime="July 16, 2010">
-        <time>July 16, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="July 16, 2010" datetime="July 16, 2010">
+        July 16, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -2398,13 +2564,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/florida/" itemprop="url">Florida</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 16, 2014" datetime="December 16, 2014">
-        <time>December 16, 2014</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 16, 2014" datetime="December 16, 2014">
+        December 16, 2014
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -2437,13 +2606,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/fossil-falls/" itemprop="url">Fossil Falls</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 31, 2014" datetime="December 31, 2014">
-        <time>December 31, 2014</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 31, 2014" datetime="December 31, 2014">
+        December 31, 2014
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -2476,13 +2648,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/function_exists/" itemprop="url">Function_exists</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 1, 2009" datetime="December 1, 2009">
-        <time>December 1, 2009</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 1, 2009" datetime="December 1, 2009">
+        December 1, 2009
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -2515,13 +2690,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/functional-programming/" itemprop="url">Functional Programming</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="August 26, 2018" datetime="August 26, 2018">
-        <time>August 26, 2018</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="August 26, 2018" datetime="August 26, 2018">
+        August 26, 2018
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -2554,13 +2732,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/functions/" itemprop="url">Functions</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 4, 2009" datetime="December 4, 2009">
-        <time>December 4, 2009</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 4, 2009" datetime="December 4, 2009">
+        December 4, 2009
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -2593,13 +2774,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/gesture-events/" itemprop="url">Gesture Events</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="June 29, 2010" datetime="June 29, 2010">
-        <time>June 29, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="June 29, 2010" datetime="June 29, 2010">
+        June 29, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -2632,13 +2816,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/gym/" itemprop="url">Gym</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="March 2, 2015" datetime="March 2, 2015">
-        <time>March 2, 2015</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="March 2, 2015" datetime="March 2, 2015">
+        March 2, 2015
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -2671,13 +2858,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/hacks/" itemprop="url">Hacks</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="July 7, 2010" datetime="July 7, 2010">
-        <time>July 7, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="July 7, 2010" datetime="July 7, 2010">
+        July 7, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -2710,13 +2900,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/hakodate/" itemprop="url">Hakodate</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 31, 2016" datetime="December 31, 2016">
-        <time>December 31, 2016</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 31, 2016" datetime="December 31, 2016">
+        December 31, 2016
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -2749,13 +2942,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/handheldfriendly/" itemprop="url">Handheldfriendly</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="May 6, 2010" datetime="May 6, 2010">
-        <time>May 6, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="May 6, 2010" datetime="May 6, 2010">
+        May 6, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -2788,13 +2984,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/hash/" itemprop="url">Hash</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="August 17, 2010" datetime="August 17, 2010">
-        <time>August 17, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="August 17, 2010" datetime="August 17, 2010">
+        August 17, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -2827,13 +3026,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/hawaii/" itemprop="url">Hawaii</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 31, 2018" datetime="December 31, 2018">
-        <time>December 31, 2018</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 31, 2018" datetime="December 31, 2018">
+        December 31, 2018
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -2866,13 +3068,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/hex/" itemprop="url">Hex</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 29, 2009" datetime="December 29, 2009">
-        <time>December 29, 2009</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 29, 2009" datetime="December 29, 2009">
+        December 29, 2009
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -2905,13 +3110,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/hiking/" itemprop="url">Hiking</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="October 7, 2019" datetime="October 7, 2019">
-        <time>October 7, 2019</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="October 7, 2019" datetime="October 7, 2019">
+        October 7, 2019
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -2944,13 +3152,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/history/" itemprop="url">History</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="January 26, 2016" datetime="January 26, 2016">
-        <time>January 26, 2016</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="January 26, 2016" datetime="January 26, 2016">
+        January 26, 2016
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -2983,13 +3194,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/htc-evo/" itemprop="url">Htc Evo</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="June 10, 2010" datetime="June 10, 2010">
-        <time>June 10, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="June 10, 2010" datetime="June 10, 2010">
+        June 10, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -3022,13 +3236,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/htc-incredible/" itemprop="url">Htc Incredible</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="June 10, 2010" datetime="June 10, 2010">
-        <time>June 10, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="June 10, 2010" datetime="June 10, 2010">
+        June 10, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -3061,13 +3278,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/html/" itemprop="url">Html</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="October 7, 2010" datetime="October 7, 2010">
-        <time>October 7, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="October 7, 2010" datetime="October 7, 2010">
+        October 7, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -3100,13 +3320,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/html5/" itemprop="url">Html5</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="October 7, 2010" datetime="October 7, 2010">
-        <time>October 7, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="October 7, 2010" datetime="October 7, 2010">
+        October 7, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -3139,13 +3362,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/ie/" itemprop="url">Ie</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="August 31, 2009" datetime="August 31, 2009">
-        <time>August 31, 2009</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="August 31, 2009" datetime="August 31, 2009">
+        August 31, 2009
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -3178,13 +3404,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/ie-hack/" itemprop="url">Ie Hack</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="July 7, 2010" datetime="July 7, 2010">
-        <time>July 7, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="July 7, 2010" datetime="July 7, 2010">
+        July 7, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -3217,13 +3446,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/ie6/" itemprop="url">Ie6</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="July 7, 2010" datetime="July 7, 2010">
-        <time>July 7, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="July 7, 2010" datetime="July 7, 2010">
+        July 7, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -3256,13 +3488,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/ie7/" itemprop="url">Ie7</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="July 7, 2010" datetime="July 7, 2010">
-        <time>July 7, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="July 7, 2010" datetime="July 7, 2010">
+        July 7, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -3295,13 +3530,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/ie8/" itemprop="url">Ie8</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="July 7, 2010" datetime="July 7, 2010">
-        <time>July 7, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="July 7, 2010" datetime="July 7, 2010">
+        July 7, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -3334,13 +3572,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/ie9/" itemprop="url">Ie9</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="July 7, 2010" datetime="July 7, 2010">
-        <time>July 7, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="July 7, 2010" datetime="July 7, 2010">
+        July 7, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -3373,13 +3614,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/iemobile/" itemprop="url">Iemobile</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="August 31, 2009" datetime="August 31, 2009">
-        <time>August 31, 2009</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="August 31, 2009" datetime="August 31, 2009">
+        August 31, 2009
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -3412,13 +3656,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/indonesia/" itemprop="url">Indonesia</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="May 26, 2016" datetime="May 26, 2016">
-        <time>May 26, 2016</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="May 26, 2016" datetime="May 26, 2016">
+        May 26, 2016
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -3451,13 +3698,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/inline/" itemprop="url">Inline</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="August 31, 2009" datetime="August 31, 2009">
-        <time>August 31, 2009</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="August 31, 2009" datetime="August 31, 2009">
+        August 31, 2009
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -3490,13 +3740,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/inline-block/" itemprop="url">Inline Block</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="August 31, 2009" datetime="August 31, 2009">
-        <time>August 31, 2009</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="August 31, 2009" datetime="August 31, 2009">
+        August 31, 2009
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -3529,13 +3782,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/internet-explorer/" itemprop="url">Internet Explorer</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="August 31, 2009" datetime="August 31, 2009">
-        <time>August 31, 2009</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="August 31, 2009" datetime="August 31, 2009">
+        August 31, 2009
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -3568,13 +3824,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/ios/" itemprop="url">Ios</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="June 7, 2011" datetime="June 7, 2011">
-        <time>June 7, 2011</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="June 7, 2011" datetime="June 7, 2011">
+        June 7, 2011
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -3607,13 +3866,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/iphone/" itemprop="url">Iphone</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="October 14, 2011" datetime="October 14, 2011">
-        <time>October 14, 2011</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="October 14, 2011" datetime="October 14, 2011">
+        October 14, 2011
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -3646,13 +3908,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/iphone-4/" itemprop="url">Iphone 4</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="June 25, 2010" datetime="June 25, 2010">
-        <time>June 25, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="June 25, 2010" datetime="June 25, 2010">
+        June 25, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -3685,13 +3950,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/isset/" itemprop="url">Isset</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 1, 2009" datetime="December 1, 2009">
-        <time>December 1, 2009</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 1, 2009" datetime="December 1, 2009">
+        December 1, 2009
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -3724,13 +3992,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/iui/" itemprop="url">Iui</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="June 29, 2010" datetime="June 29, 2010">
-        <time>June 29, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="June 29, 2010" datetime="June 29, 2010">
+        June 29, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -3763,13 +4034,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/japan/" itemprop="url">Japan</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 31, 2016" datetime="December 31, 2016">
-        <time>December 31, 2016</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 31, 2016" datetime="December 31, 2016">
+        December 31, 2016
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -3802,13 +4076,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/japanese/" itemprop="url">Japanese</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="February 27, 2013" datetime="February 27, 2013">
-        <time>February 27, 2013</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="February 27, 2013" datetime="February 27, 2013">
+        February 27, 2013
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -3841,13 +4118,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/javascript/" itemprop="url">Javascript</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="October 10, 2019" datetime="October 10, 2019">
-        <time>October 10, 2019</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="October 10, 2019" datetime="October 10, 2019">
+        October 10, 2019
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -3880,13 +4160,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/john-resig/" itemprop="url">John Resig</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 21, 2009" datetime="December 21, 2009">
-        <time>December 21, 2009</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 21, 2009" datetime="December 21, 2009">
+        December 21, 2009
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -3919,13 +4202,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/jqtouch/" itemprop="url">Jqtouch</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="June 29, 2010" datetime="June 29, 2010">
-        <time>June 29, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="June 29, 2010" datetime="June 29, 2010">
+        June 29, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -3958,13 +4244,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/jquery/" itemprop="url">Jquery</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 8, 2009" datetime="December 8, 2009">
-        <time>December 8, 2009</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 8, 2009" datetime="December 8, 2009">
+        December 8, 2009
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -3997,13 +4286,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/jsperf/" itemprop="url">Jsperf</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="August 17, 2010" datetime="August 17, 2010">
-        <time>August 17, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="August 17, 2010" datetime="August 17, 2010">
+        August 17, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -4036,13 +4328,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/june-lake/" itemprop="url">June Lake</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 31, 2016" datetime="December 31, 2016">
-        <time>December 31, 2016</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 31, 2016" datetime="December 31, 2016">
+        December 31, 2016
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -4075,13 +4370,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/kierkegaard/" itemprop="url">Kierkegaard</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="July 11, 2017" datetime="July 11, 2017">
-        <time>July 11, 2017</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="July 11, 2017" datetime="July 11, 2017">
+        July 11, 2017
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -4114,13 +4412,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/kiyomizudera/" itemprop="url">Kiyomizudera</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 31, 2016" datetime="December 31, 2016">
-        <time>December 31, 2016</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 31, 2016" datetime="December 31, 2016">
+        December 31, 2016
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -4153,13 +4454,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/korea/" itemprop="url">Korea</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 31, 2016" datetime="December 31, 2016">
-        <time>December 31, 2016</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 31, 2016" datetime="December 31, 2016">
+        December 31, 2016
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -4192,13 +4496,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/kyoto/" itemprop="url">Kyoto</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 31, 2016" datetime="December 31, 2016">
-        <time>December 31, 2016</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 31, 2016" datetime="December 31, 2016">
+        December 31, 2016
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -4231,13 +4538,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/lake-sabrina/" itemprop="url">Lake Sabrina</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 31, 2014" datetime="December 31, 2014">
-        <time>December 31, 2014</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 31, 2014" datetime="December 31, 2014">
+        December 31, 2014
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -4270,13 +4580,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/let/" itemprop="url">Let</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="September 15, 2009" datetime="September 15, 2009">
-        <time>September 15, 2009</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="September 15, 2009" datetime="September 15, 2009">
+        September 15, 2009
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -4309,13 +4622,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/life/" itemprop="url">Life</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="October 4, 2015" datetime="October 4, 2015">
-        <time>October 4, 2015</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="October 4, 2015" datetime="October 4, 2015">
+        October 4, 2015
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -4348,13 +4664,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/links/" itemprop="url">Links</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="October 5, 2010" datetime="October 5, 2010">
-        <time>October 5, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="October 5, 2010" datetime="October 5, 2010">
+        October 5, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -4387,13 +4706,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/lobdell-lake/" itemprop="url">Lobdell Lake</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 31, 2016" datetime="December 31, 2016">
-        <time>December 31, 2016</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 31, 2016" datetime="December 31, 2016">
+        December 31, 2016
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -4426,13 +4748,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/localstorage/" itemprop="url">Localstorage</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="October 7, 2010" datetime="October 7, 2010">
-        <time>October 7, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="October 7, 2010" datetime="October 7, 2010">
+        October 7, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -4465,13 +4790,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/lundy-lake/" itemprop="url">Lundy Lake</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 31, 2016" datetime="December 31, 2016">
-        <time>December 31, 2016</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 31, 2016" datetime="December 31, 2016">
+        December 31, 2016
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -4504,13 +4832,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/map/" itemprop="url">Map</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="August 26, 2018" datetime="August 26, 2018">
-        <time>August 26, 2018</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="August 26, 2018" datetime="August 26, 2018">
+        August 26, 2018
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -4543,13 +4874,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/maui/" itemprop="url">Maui</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="September 7, 2014" datetime="September 7, 2014">
-        <time>September 7, 2014</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="September 7, 2014" datetime="September 7, 2014">
+        September 7, 2014
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -4582,13 +4916,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/media-queries/" itemprop="url">Media Queries</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="October 5, 2010" datetime="October 5, 2010">
-        <time>October 5, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="October 5, 2010" datetime="October 5, 2010">
+        October 5, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -4621,13 +4958,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/metatag/" itemprop="url">Metatag</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="May 6, 2010" datetime="May 6, 2010">
-        <time>May 6, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="May 6, 2010" datetime="May 6, 2010">
+        May 6, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -4660,13 +5000,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/method_exists/" itemprop="url">Method_exists</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 1, 2009" datetime="December 1, 2009">
-        <time>December 1, 2009</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 1, 2009" datetime="December 1, 2009">
+        December 1, 2009
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -4699,13 +5042,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/mobile/" itemprop="url">Mobile</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="April 14, 2014" datetime="April 14, 2014">
-        <time>April 14, 2014</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="April 14, 2014" datetime="April 14, 2014">
+        April 14, 2014
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -4738,13 +5084,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/mobile-safari/" itemprop="url">Mobile Safari</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="June 7, 2011" datetime="June 7, 2011">
-        <time>June 7, 2011</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="June 7, 2011" datetime="June 7, 2011">
+        June 7, 2011
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -4777,13 +5126,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/mobile-web/" itemprop="url">Mobile Web</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="April 14, 2014" datetime="April 14, 2014">
-        <time>April 14, 2014</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="April 14, 2014" datetime="April 14, 2014">
+        April 14, 2014
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -4816,13 +5168,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/mobileoptimized/" itemprop="url">Mobileoptimized</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="May 6, 2010" datetime="May 6, 2010">
-        <time>May 6, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="May 6, 2010" datetime="May 6, 2010">
+        May 6, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -4855,13 +5210,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/mono-lake/" itemprop="url">Mono Lake</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 31, 2016" datetime="December 31, 2016">
-        <time>December 31, 2016</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 31, 2016" datetime="December 31, 2016">
+        December 31, 2016
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -4894,13 +5252,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/mount-shasta/" itemprop="url">Mount Shasta</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 31, 2014" datetime="December 31, 2014">
-        <time>December 31, 2014</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 31, 2014" datetime="December 31, 2014">
+        December 31, 2014
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -4933,13 +5294,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/movies/" itemprop="url">Movies</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="January 6, 2019" datetime="January 6, 2019">
-        <time>January 6, 2019</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="January 6, 2019" datetime="January 6, 2019">
+        January 6, 2019
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -4972,13 +5336,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/mozorientation/" itemprop="url">Mozorientation</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="June 29, 2010" datetime="June 29, 2010">
-        <time>June 29, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="June 29, 2010" datetime="June 29, 2010">
+        June 29, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -5011,13 +5378,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/muir-woods/" itemprop="url">Muir Woods</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 31, 2014" datetime="December 31, 2014">
-        <time>December 31, 2014</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 31, 2014" datetime="December 31, 2014">
+        December 31, 2014
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -5050,13 +5420,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/nara/" itemprop="url">Nara</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 31, 2016" datetime="December 31, 2016">
-        <time>December 31, 2016</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 31, 2016" datetime="December 31, 2016">
+        December 31, 2016
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -5089,13 +5462,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/naruko-gorge/" itemprop="url">Naruko Gorge</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 31, 2014" datetime="December 31, 2014">
-        <time>December 31, 2014</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 31, 2014" datetime="December 31, 2014">
+        December 31, 2014
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -5128,13 +5504,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/national-park/" itemprop="url">National Park</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="September 12, 2015" datetime="September 12, 2015">
-        <time>September 12, 2015</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="September 12, 2015" datetime="September 12, 2015">
+        September 12, 2015
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -5167,13 +5546,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/nature/" itemprop="url">Nature</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="October 7, 2019" datetime="October 7, 2019">
-        <time>October 7, 2019</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="October 7, 2019" datetime="October 7, 2019">
+        October 7, 2019
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -5206,13 +5588,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/new-orleans/" itemprop="url">New Orleans</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 31, 2016" datetime="December 31, 2016">
-        <time>December 31, 2016</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 31, 2016" datetime="December 31, 2016">
+        December 31, 2016
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -5245,13 +5630,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/new-year/" itemprop="url">New Year</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="January 3, 2015" datetime="January 3, 2015">
-        <time>January 3, 2015</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="January 3, 2015" datetime="January 3, 2015">
+        January 3, 2015
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -5284,13 +5672,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/nexus-one/" itemprop="url">Nexus One</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="June 10, 2010" datetime="June 10, 2010">
-        <time>June 10, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="June 10, 2010" datetime="June 10, 2010">
+        June 10, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -5323,13 +5714,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/night/" itemprop="url">Night</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="June 14, 2016" datetime="June 14, 2016">
-        <time>June 14, 2016</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="June 14, 2016" datetime="June 14, 2016">
+        June 14, 2016
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -5362,13 +5756,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/night-photography/" itemprop="url">Night Photography</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="June 14, 2016" datetime="June 14, 2016">
-        <time>June 14, 2016</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="June 14, 2016" datetime="June 14, 2016">
+        June 14, 2016
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -5401,13 +5798,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/night-sky/" itemprop="url">Night Sky</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="September 12, 2015" datetime="September 12, 2015">
-        <time>September 12, 2015</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="September 12, 2015" datetime="September 12, 2015">
+        September 12, 2015
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -5440,13 +5840,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/node/" itemprop="url">Node</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="September 8, 2014" datetime="September 8, 2014">
-        <time>September 8, 2014</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="September 8, 2014" datetime="September 8, 2014">
+        September 8, 2014
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -5479,13 +5882,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/node.js/" itemprop="url">Node.js</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="September 8, 2014" datetime="September 8, 2014">
-        <time>September 8, 2014</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="September 8, 2014" datetime="September 8, 2014">
+        September 8, 2014
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -5518,13 +5924,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/oo/" itemprop="url">Oo</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="September 14, 2009" datetime="September 14, 2009">
-        <time>September 14, 2009</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="September 14, 2009" datetime="September 14, 2009">
+        September 14, 2009
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -5557,13 +5966,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/orientation/" itemprop="url">Orientation</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="August 24, 2010" datetime="August 24, 2010">
-        <time>August 24, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="August 24, 2010" datetime="August 24, 2010">
+        August 24, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -5596,13 +6008,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/orientationchange/" itemprop="url">Orientationchange</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="June 29, 2010" datetime="June 29, 2010">
-        <time>June 29, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="June 29, 2010" datetime="June 29, 2010">
+        June 29, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -5635,13 +6050,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/osaka/" itemprop="url">Osaka</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 31, 2016" datetime="December 31, 2016">
-        <time>December 31, 2016</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 31, 2016" datetime="December 31, 2016">
+        December 31, 2016
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -5674,13 +6092,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/parody/" itemprop="url">Parody</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="October 8, 2015" datetime="October 8, 2015">
-        <time>October 8, 2015</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="October 8, 2015" datetime="October 8, 2015">
+        October 8, 2015
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -5713,13 +6134,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/pastrykit/" itemprop="url">Pastrykit</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="June 29, 2010" datetime="June 29, 2010">
-        <time>June 29, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="June 29, 2010" datetime="June 29, 2010">
+        June 29, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -5752,13 +6176,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/performance/" itemprop="url">Performance</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="October 14, 2011" datetime="October 14, 2011">
-        <time>October 14, 2011</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="October 14, 2011" datetime="October 14, 2011">
+        October 14, 2011
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -5791,13 +6218,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/philosophy/" itemprop="url">Philosophy</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="July 11, 2017" datetime="July 11, 2017">
-        <time>July 11, 2017</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="July 11, 2017" datetime="July 11, 2017">
+        July 11, 2017
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -5830,13 +6260,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/photo-assignment/" itemprop="url">Photo Assignment</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="June 14, 2016" datetime="June 14, 2016">
-        <time>June 14, 2016</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="June 14, 2016" datetime="June 14, 2016">
+        June 14, 2016
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -5869,13 +6302,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/photography/" itemprop="url">Photography</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 31, 2018" datetime="December 31, 2018">
-        <time>December 31, 2018</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 31, 2018" datetime="December 31, 2018">
+        December 31, 2018
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -5908,13 +6344,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/photos/" itemprop="url">Photos</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 31, 2018" datetime="December 31, 2018">
-        <time>December 31, 2018</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 31, 2018" datetime="December 31, 2018">
+        December 31, 2018
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -5947,13 +6386,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/php/" itemprop="url">Php</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 1, 2009" datetime="December 1, 2009">
-        <time>December 1, 2009</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 1, 2009" datetime="December 1, 2009">
+        December 1, 2009
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -5986,13 +6428,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/pigeon-point-light-station/" itemprop="url">Pigeon Point Light Station</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 31, 2018" datetime="December 31, 2018">
-        <time>December 31, 2018</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 31, 2018" datetime="December 31, 2018">
+        December 31, 2018
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -6025,13 +6470,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/pinnacles/" itemprop="url">Pinnacles</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="September 12, 2015" datetime="September 12, 2015">
-        <time>September 12, 2015</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="September 12, 2015" datetime="September 12, 2015">
+        September 12, 2015
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -6064,13 +6512,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/pinnacles-national-park/" itemprop="url">Pinnacles National Park</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 31, 2018" datetime="December 31, 2018">
-        <time>December 31, 2018</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 31, 2018" datetime="December 31, 2018">
+        December 31, 2018
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -6103,13 +6554,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/placeholder/" itemprop="url">Placeholder</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="October 7, 2010" datetime="October 7, 2010">
-        <time>October 7, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="October 7, 2010" datetime="October 7, 2010">
+        October 7, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -6142,13 +6596,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/politics/" itemprop="url">Politics</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="November 9, 2016" datetime="November 9, 2016">
-        <time>November 9, 2016</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="November 9, 2016" datetime="November 9, 2016">
+        November 9, 2016
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -6181,13 +6638,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/privacy/" itemprop="url">Privacy</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="July 4, 2013" datetime="July 4, 2013">
-        <time>July 4, 2013</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="July 4, 2013" datetime="July 4, 2013">
+        July 4, 2013
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -6220,13 +6680,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/programming/" itemprop="url">Programming</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="August 26, 2018" datetime="August 26, 2018">
-        <time>August 26, 2018</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="August 26, 2018" datetime="August 26, 2018">
+        August 26, 2018
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -6259,13 +6722,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/pseudoelements/" itemprop="url">Pseudoelements</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="August 10, 2012" datetime="August 10, 2012">
-        <time>August 10, 2012</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="August 10, 2012" datetime="August 10, 2012">
+        August 10, 2012
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -6298,13 +6764,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/px/" itemprop="url">Px</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="October 5, 2010" datetime="October 5, 2010">
-        <time>October 5, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="October 5, 2010" datetime="October 5, 2010">
+        October 5, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -6337,13 +6806,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/railroad/" itemprop="url">Railroad</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="May 16, 2015" datetime="May 16, 2015">
-        <time>May 16, 2015</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="May 16, 2015" datetime="May 16, 2015">
+        May 16, 2015
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -6376,13 +6848,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/rant/" itemprop="url">Rant</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="July 9, 2017" datetime="July 9, 2017">
-        <time>July 9, 2017</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="July 9, 2017" datetime="July 9, 2017">
+        July 9, 2017
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -6415,13 +6890,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/reduce/" itemprop="url">Reduce</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="August 26, 2018" datetime="August 26, 2018">
-        <time>August 26, 2018</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="August 26, 2018" datetime="August 26, 2018">
+        August 26, 2018
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -6454,13 +6932,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/regexp/" itemprop="url">Regexp</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="October 10, 2019" datetime="October 10, 2019">
-        <time>October 10, 2019</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="October 10, 2019" datetime="October 10, 2019">
+        October 10, 2019
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -6493,13 +6974,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/rgb/" itemprop="url">Rgb</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 29, 2009" datetime="December 29, 2009">
-        <time>December 29, 2009</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 29, 2009" datetime="December 29, 2009">
+        December 29, 2009
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -6532,13 +7016,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/rgba/" itemprop="url">Rgba</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 29, 2009" datetime="December 29, 2009">
-        <time>December 29, 2009</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 29, 2009" datetime="December 29, 2009">
+        December 29, 2009
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -6571,13 +7058,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/romance/" itemprop="url">Romance</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="January 26, 2016" datetime="January 26, 2016">
-        <time>January 26, 2016</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="January 26, 2016" datetime="January 26, 2016">
+        January 26, 2016
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -6610,13 +7100,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/sakura/" itemprop="url">Sakura</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="April 29, 2015" datetime="April 29, 2015">
-        <time>April 29, 2015</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="April 29, 2015" datetime="April 29, 2015">
+        April 29, 2015
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -6649,13 +7142,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/sapporo/" itemprop="url">Sapporo</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 31, 2016" datetime="December 31, 2016">
-        <time>December 31, 2016</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 31, 2016" datetime="December 31, 2016">
+        December 31, 2016
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -6688,13 +7184,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/sessionstorage/" itemprop="url">Sessionstorage</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="October 7, 2010" datetime="October 7, 2010">
-        <time>October 7, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="October 7, 2010" datetime="October 7, 2010">
+        October 7, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -6727,13 +7226,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/shirakawago/" itemprop="url">Shirakawago</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 31, 2016" datetime="December 31, 2016">
-        <time>December 31, 2016</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 31, 2016" datetime="December 31, 2016">
+        December 31, 2016
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -6766,13 +7268,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/silicon-valley/" itemprop="url">Silicon Valley</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="October 22, 2011" datetime="October 22, 2011">
-        <time>October 22, 2011</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="October 22, 2011" datetime="October 22, 2011">
+        October 22, 2011
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -6805,13 +7310,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/simulator/" itemprop="url">Simulator</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="May 11, 2010" datetime="May 11, 2010">
-        <time>May 11, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="May 11, 2010" datetime="May 11, 2010">
+        May 11, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -6844,13 +7352,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/singleton/" itemprop="url">Singleton</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="September 14, 2009" datetime="September 14, 2009">
-        <time>September 14, 2009</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="September 14, 2009" datetime="September 14, 2009">
+        September 14, 2009
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -6883,13 +7394,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/spring/" itemprop="url">Spring</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="April 29, 2015" datetime="April 29, 2015">
-        <time>April 29, 2015</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="April 29, 2015" datetime="April 29, 2015">
+        April 29, 2015
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -6922,13 +7436,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/st-augustine/" itemprop="url">St Augustine</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 16, 2014" datetime="December 16, 2014">
-        <time>December 16, 2014</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 16, 2014" datetime="December 16, 2014">
+        December 16, 2014
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -6961,13 +7478,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/sunspider/" itemprop="url">Sunspider</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="August 18, 2010" datetime="August 18, 2010">
-        <time>August 18, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="August 18, 2010" datetime="August 18, 2010">
+        August 18, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -7000,13 +7520,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/switch/" itemprop="url">Switch</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="August 17, 2010" datetime="August 17, 2010">
-        <time>August 17, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="August 17, 2010" datetime="August 17, 2010">
+        August 17, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -7039,13 +7562,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/testing/" itemprop="url">Testing</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="May 19, 2010" datetime="May 19, 2010">
-        <time>May 19, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="May 19, 2010" datetime="May 19, 2010">
+        May 19, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -7078,13 +7604,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/the-bible/" itemprop="url">The Bible</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="March 9, 2015" datetime="March 9, 2015">
-        <time>March 9, 2015</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="March 9, 2015" datetime="March 9, 2015">
+        March 9, 2015
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -7117,13 +7646,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/top-100-films/" itemprop="url">Top 100 Films</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="January 6, 2019" datetime="January 6, 2019">
-        <time>January 6, 2019</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="January 6, 2019" datetime="January 6, 2019">
+        January 6, 2019
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -7156,13 +7688,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/touch-events/" itemprop="url">Touch Events</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="June 29, 2010" datetime="June 29, 2010">
-        <time>June 29, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="June 29, 2010" datetime="June 29, 2010">
+        June 29, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -7195,13 +7730,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/travel/" itemprop="url">Travel</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="July 9, 2017" datetime="July 9, 2017">
-        <time>July 9, 2017</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="July 9, 2017" datetime="July 9, 2017">
+        July 9, 2017
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -7234,13 +7772,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/usability/" itemprop="url">Usability</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="May 19, 2010" datetime="May 19, 2010">
-        <time>May 19, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="May 19, 2010" datetime="May 19, 2010">
+        May 19, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -7273,13 +7814,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/video/" itemprop="url">Video</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="March 11, 2017" datetime="March 11, 2017">
-        <time>March 11, 2017</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="March 11, 2017" datetime="March 11, 2017">
+        March 11, 2017
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -7312,13 +7856,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/viewport/" itemprop="url">Viewport</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="May 6, 2010" datetime="May 6, 2010">
-        <time>May 6, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="May 6, 2010" datetime="May 6, 2010">
+        May 6, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -7351,13 +7898,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/vlog/" itemprop="url">Vlog</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="April 19, 2016" datetime="April 19, 2016">
-        <time>April 19, 2016</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="April 19, 2016" datetime="April 19, 2016">
+        April 19, 2016
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -7390,13 +7940,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/war/" itemprop="url">War</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="January 26, 2016" datetime="January 26, 2016">
-        <time>January 26, 2016</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="January 26, 2016" datetime="January 26, 2016">
+        January 26, 2016
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -7429,13 +7982,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/web/" itemprop="url">Web</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="April 14, 2014" datetime="April 14, 2014">
-        <time>April 14, 2014</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="April 14, 2014" datetime="April 14, 2014">
+        April 14, 2014
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -7468,13 +8024,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/web-safe/" itemprop="url">Web Safe</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 29, 2009" datetime="December 29, 2009">
-        <time>December 29, 2009</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 29, 2009" datetime="December 29, 2009">
+        December 29, 2009
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -7507,13 +8066,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/webdev/" itemprop="url">Webdev</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="August 26, 2018" datetime="August 26, 2018">
-        <time>August 26, 2018</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="August 26, 2018" datetime="August 26, 2018">
+        August 26, 2018
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -7546,13 +8108,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/webkit/" itemprop="url">Webkit</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="August 10, 2012" datetime="August 10, 2012">
-        <time>August 10, 2012</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="August 10, 2012" datetime="August 10, 2012">
+        August 10, 2012
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -7585,13 +8150,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/xui/" itemprop="url">Xui</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="June 29, 2010" datetime="June 29, 2010">
-        <time>June 29, 2010</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="June 29, 2010" datetime="June 29, 2010">
+        June 29, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -7624,13 +8192,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/yahoo/" itemprop="url">Yahoo</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 21, 2009" datetime="December 21, 2009">
-        <time>December 21, 2009</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 21, 2009" datetime="December 21, 2009">
+        December 21, 2009
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -7663,13 +8234,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/year-in-photos/" itemprop="url">Year in Photos</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 31, 2018" datetime="December 31, 2018">
-        <time>December 31, 2018</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 31, 2018" datetime="December 31, 2018">
+        December 31, 2018
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -7702,13 +8276,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/yosemite/" itemprop="url">Yosemite</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 31, 2016" datetime="December 31, 2016">
-        <time>December 31, 2016</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 31, 2016" datetime="December 31, 2016">
+        December 31, 2016
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -7741,13 +8318,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/youtube/" itemprop="url">Youtube</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="March 11, 2017" datetime="March 11, 2017">
-        <time>March 11, 2017</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="March 11, 2017" datetime="March 11, 2017">
+        March 11, 2017
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -7780,13 +8360,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/zion-national-park/" itemprop="url">Zion National Park</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 31, 2016" datetime="December 31, 2016">
-        <time>December 31, 2016</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 31, 2016" datetime="December 31, 2016">
+        December 31, 2016
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -7819,13 +8402,16 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/tags/_/" itemprop="url">_</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 8, 2009" datetime="December 8, 2009">
-        <time>December 8, 2009</time>
-    </h5>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 8, 2009" datetime="December 8, 2009">
+        December 8, 2009
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+    </aside>
 
 </article>
  

@@ -44,14 +44,17 @@
     {{ end }}
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="{{ .Scratch.Get "link" }}" itemprop="url">{{ .Title }}</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="{{ $.Scratch.Get "subtitle" }}" datetime="{{ $.Scratch.Get "subtitle" }}">
-        <time>{{ $.Scratch.Get "subtitle" }}</time>
-    </h5>
-    {{ range .Params.tags }}
-    <a href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}"><kbd class="item-tag">{{ . }}</kbd></a>
-    {{ end }}
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="{{ $.Scratch.Get "subtitle" }}" datetime="{{ $.Scratch.Get "subtitle" }}">
+        {{ $.Scratch.Get "subtitle" }}
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        {{ range .Params.tags }}
+        <a href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}"><span class="item-tag">{{ . }}</span></a>
+        {{ end }}
+    </aside>
 
 </article>

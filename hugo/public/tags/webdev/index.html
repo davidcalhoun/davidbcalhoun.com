@@ -3,6 +3,7 @@
     <head>
          
         <meta charset="utf-8">
+        <meta name="author" content="David Calhoun">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Webdev - David Calhoun&#39;s blog</title>
         
@@ -24,27 +25,50 @@
 <link rel="stylesheet" href="https://davidbcalhoun.com/css/main.css">
 
 
-
-
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-
-
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/foundation.min.css"> 
-
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
  
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script async>
+function initSyntaxHighlighting() {
+    if (!hljs) return;
 
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js"></script> 
+    hljs.initHighlighting();
 
-    <script>hljs.initHighlightingOnLoad();</script>
+    
+    
+    hljs.registerLanguage("css",function(e){var c="[a-zA-Z-][a-zA-Z0-9_-]*",t={b:/[A-Z\_\.\-]+\s*:/,rB:!0,e:";",eW:!0,c:[{cN:"attribute",b:/\S/,e:":",eE:!0,starts:{eW:!0,eE:!0,c:[{b:/[\w-]+\(/,rB:!0,c:[{cN:"built_in",b:/[\w-]+/},{b:/\(/,e:/\)/,c:[e.ASM,e.QSM]}]},e.CSSNM,e.QSM,e.ASM,e.CBCM,{cN:"number",b:"#[0-9A-Fa-f]+"},{cN:"meta",b:"!important"}]}}]};return{cI:!0,i:/[=\/|'\$]/,c:[e.CBCM,{cN:"selector-id",b:/#[A-Za-z0-9_-]+/},{cN:"selector-class",b:/\.[A-Za-z0-9_-]+/},{cN:"selector-attr",b:/\[/,e:/\]/,i:"$"},{cN:"selector-pseudo",b:/:(:)?[a-zA-Z0-9\_\-\+\(\)"'.]+/},{b:"@(font-face|page)",l:"[a-z-]+",k:"font-face page"},{b:"@",e:"[{;]",i:/:/,c:[{cN:"keyword",b:/\w+/},{b:/\s/,eW:!0,eE:!0,r:0,c:[e.ASM,e.QSM,e.CSSNM]}]},{cN:"selector-tag",b:c,r:0},{b:"{",e:"}",i:/\S/,c:[e.CBCM,t]}]}});
+
+    
+    
+    hljs.registerLanguage("javascript",function(e){var r="[A-Za-z$_][0-9A-Za-z$_]*",t={keyword:"in of if for while finally var new function do return void else break catch instanceof with throw case default try this switch continue typeof delete let yield const export super debugger as async await static import from as",literal:"true false null undefined NaN Infinity",built_in:"eval isFinite isNaN parseFloat parseInt decodeURI decodeURIComponent encodeURI encodeURIComponent escape unescape Object Function Boolean Error EvalError InternalError RangeError ReferenceError StopIteration SyntaxError TypeError URIError Number Math Date String RegExp Array Float32Array Float64Array Int16Array Int32Array Int8Array Uint16Array Uint32Array Uint8Array Uint8ClampedArray ArrayBuffer DataView JSON Intl arguments require module console window document Symbol Set Map WeakSet WeakMap Proxy Reflect Promise"},a={cN:"number",v:[{b:"\\b(0[bB][01]+)"},{b:"\\b(0[oO][0-7]+)"},{b:e.CNR}],r:0},n={cN:"subst",b:"\\$\\{",e:"\\}",k:t,c:[]},c={cN:"string",b:"`",e:"`",c:[e.BE,n]};n.c=[e.ASM,e.QSM,c,a,e.RM];var s=n.c.concat([e.CBCM,e.CLCM]);return{aliases:["js","jsx"],k:t,c:[{cN:"meta",r:10,b:/^\s*['"]use (strict|asm)['"]/},{cN:"meta",b:/^#!/,e:/$/},e.ASM,e.QSM,c,e.CLCM,e.CBCM,a,{b:/[{,]\s*/,r:0,c:[{b:r+"\\s*:",rB:!0,r:0,c:[{cN:"attr",b:r,r:0}]}]},{b:"("+e.RSR+"|\\b(case|return|throw)\\b)\\s*",k:"return throw case",c:[e.CLCM,e.CBCM,e.RM,{cN:"function",b:"(\\(.*?\\)|"+r+")\\s*=>",rB:!0,e:"\\s*=>",c:[{cN:"params",v:[{b:r},{b:/\(\s*\)/},{b:/\(/,e:/\)/,eB:!0,eE:!0,k:t,c:s}]}]},{b:/</,e:/(\/\w+|\w+\/)>/,sL:"xml",c:[{b:/<\w+\s*\/>/,skip:!0},{b:/<\w+/,e:/(\/\w+|\w+\/)>/,skip:!0,c:[{b:/<\w+\s*\/>/,skip:!0},"self"]}]}],r:0},{cN:"function",bK:"function",e:/\{/,eE:!0,c:[e.inherit(e.TM,{b:r}),{cN:"params",b:/\(/,e:/\)/,eB:!0,eE:!0,c:s}],i:/\[|%/},{b:/\$[(.]/},e.METHOD_GUARD,{cN:"class",bK:"class",e:/[{;=]/,eE:!0,i:/[:"\[\]]/,c:[{bK:"extends"},e.UTM]},{bK:"constructor",e:/\{/,eE:!0}],i:/#(?!!)/}});
+}
+
+function loadScripts() {
+    var scripts = [
+        {
+            src: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js',
+            callback: function() {
+                initSyntaxHighlighting();
+            }
+        }
+    ];
+
+    scripts.forEach(function(script) {
+        var elt = document.createElement('script');
+        elt.setAttribute('async', '');
+        elt.setAttribute('defer', '');
+        elt.setAttribute('src', script.src);
+        elt.addEventListener('load', script.callback, true);
+
+        document.head.appendChild(elt);
+    });
+}
+loadScripts()
+    </script>
+
+
+    <script>
 
 
 
@@ -52,13 +76,12 @@
 
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </script>
 
 
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 
-<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+
  <meta name="generator" content="Hugo 0.42.2" />
         
         <link href="https://davidbcalhoun.com/tags/webdev/index.xml" rel="alternate" type="application/rss+xml" title="David Calhoun&#39;s blog" />
@@ -76,67 +99,39 @@
           gtag('config', 'UA-5530615-3');
         </script>
         
-
-        <meta name="author" content="David Calhoun">
+        <meta name="description" content="Personal blog of photographer and web developer David Calhoun."/>
+        <meta name="theme-color" content="#fff">
+        <link rel="canonical" href="https://davidbcalhoun.com/tags/webdev/">
         <link href="/index.xml" rel="alternate" type="application/rss+xml" title="David Calhoun&#39;s blog" />
         <link href="/index.xml" rel="feed" type="application/rss+xml" title="David Calhoun&#39;s blog" />
 
     </head>
 
     
-    
-    <script type="text/javascript" async
-      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-    </script>
-    
 
     <body>
          
-        <nav class="navbar navbar-default navbar-fixed-top">
+        <nav class="navbar">
 
-            <div class="container">
-
-                <div class="navbar-header">
-                    <a class="navbar-brand visible-xs" href="#">David Calhoun&#39;s blog</a>
-                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-
-                </div>
-
-                <div class="collapse navbar-collapse">
-
-                    
-                        <ul class="nav navbar-nav">
-                            
-                                <li><a href="https://www.themaingate.net/">Home</a></li>
-                            
-                                <li><a href="/">Posts</a></li>
-                            
-                        </ul>
-                    
-
-                    
-                        <ul class="nav navbar-nav navbar-right">
-                            
-                                <li class="navbar-icon"><a href="mailto:david.b.calhoun@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
-                            
-                                <li class="navbar-icon"><a href="https://github.com/davidcalhoun/"><i class="fa fa-github"></i></a></li>
-                            
-                                <li class="navbar-icon"><a href="https://twitter.com/franksvalli/"><i class="fa fa-twitter"></i></a></li>
-                            
-                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/davidcalhoun/"><i class="fa fa-linkedin"></i></a></li>
-                            
-                                <li class="navbar-icon"><a href="https://stackoverflow.com/users/214017/david-calhoun/"><i class="fa fa-stack-overflow"></i></a></li>
-                            
-                        </ul>
-                    
-
-                </div>
-
+            <div class="navbar-header">
+                <a class="navbar-brand" href="https://davidbcalhoun.com/">David Calhoun&#39;s blog</a>
             </div>
+
+            
+                <ul class="navbar-links">
+                    
+                        <li class="navbar-icon"><a aria-label="Send an email" href="mailto:david.b.calhoun@gmail.com"><svg width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1664 1504v-768q-32 36-69 66-268 206-426 338-51 43-83 67t-86.5 48.5-102.5 24.5h-2q-48 0-102.5-24.5t-86.5-48.5-83-67q-158-132-426-338-37-30-69-66v768q0 13 9.5 22.5t22.5 9.5h1472q13 0 22.5-9.5t9.5-22.5zm0-1051v-24.5l-.5-13-3-12.5-5.5-9-9-7.5-14-2.5h-1472q-13 0-22.5 9.5t-9.5 22.5q0 168 147 284 193 152 401 317 6 5 35 29.5t46 37.5 44.5 31.5 50.5 27.5 43 9h2q20 0 43-9t50.5-27.5 44.5-31.5 46-37.5 35-29.5q208-165 401-317 54-43 100.5-115.5t46.5-131.5zm128-37v1088q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-1088q0-66 47-113t113-47h1472q66 0 113 47t47 113z"/></svg></i></a></li>
+                    
+                        <li class="navbar-icon"><a aria-label="Github" href="https://github.com/davidcalhoun/"><svg width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M896 128q209 0 385.5 103t279.5 279.5 103 385.5q0 251-146.5 451.5t-378.5 277.5q-27 5-40-7t-13-30q0-3 .5-76.5t.5-134.5q0-97-52-142 57-6 102.5-18t94-39 81-66.5 53-105 20.5-150.5q0-119-79-206 37-91-8-204-28-9-81 11t-92 44l-38 24q-93-26-192-26t-192 26q-16-11-42.5-27t-83.5-38.5-85-13.5q-45 113-8 204-79 87-79 206 0 85 20.5 150t52.5 105 80.5 67 94 39 102.5 18q-39 36-49 103-21 10-45 15t-57 5-65.5-21.5-55.5-62.5q-19-32-48.5-52t-49.5-24l-20-3q-21 0-29 4.5t-5 11.5 9 14 13 12l7 5q22 10 43.5 38t31.5 51l10 23q13 38 44 61.5t67 30 69.5 7 55.5-3.5l23-4q0 38 .5 88.5t.5 54.5q0 18-13 30t-40 7q-232-77-378.5-277.5t-146.5-451.5q0-209 103-385.5t279.5-279.5 385.5-103zm-477 1103q3-7-7-12-10-3-13 2-3 7 7 12 9 6 13-2zm31 34q7-5-2-16-10-9-16-3-7 5 2 16 10 10 16 3zm30 45q9-7 0-19-8-13-17-6-9 5 0 18t17 7zm42 42q8-8-4-19-12-12-20-3-9 8 4 19 12 12 20 3zm57 25q3-11-13-16-15-4-19 7t13 15q15 6 19-6zm63 5q0-13-17-11-16 0-16 11 0 13 17 11 16 0 16-11zm58-10q-2-11-18-9-16 3-14 15t18 8 14-14z"/></svg></i></a></li>
+                    
+                        <li class="navbar-icon"><a aria-label="Twitter" href="https://twitter.com/franksvalli/"><svg width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"/></svg></i></a></li>
+                    
+                        <li class="navbar-icon"><a aria-label="Linkedin" href="https://www.linkedin.com/in/davidcalhoun/"><svg width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z"/></svg></i></a></li>
+                    
+                        <li class="navbar-icon"><a aria-label="Stack Overflow" href="https://stackoverflow.com/users/214017/david-calhoun/"><svg width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1417 1632h-1118v-480h-160v640h1438v-640h-160v480zm-942-524l33-157 783 165-33 156zm103-374l67-146 725 339-67 145zm201-356l102-123 614 513-102 123zm397-378l477 641-128 96-477-641zm-718 1471v-159h800v159h-800z"/></svg></i></a></li>
+                    
+                </ul>
+            
 
         </nav>
 
@@ -181,25 +176,28 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/2018/a-simple-introduction-to-javascript-map-and-reduce-array-helper-functions/" itemprop="url">A Simple Introduction to Javascript Map and Reduce Array Helper Functions</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="August 26, 2018" datetime="August 26, 2018">
-        <time>August 26, 2018</time>
-    </h5>
-    
-    <a href="https://davidbcalhoun.com/tags/javascript"><kbd class="item-tag">javascript</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/programming"><kbd class="item-tag">programming</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/map"><kbd class="item-tag">map</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/reduce"><kbd class="item-tag">reduce</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/functional-programming"><kbd class="item-tag">functional programming</kbd></a>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="August 26, 2018" datetime="August 26, 2018">
+        August 26, 2018
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://davidbcalhoun.com/tags/javascript"><span class="item-tag">javascript</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/programming"><span class="item-tag">programming</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/webdev"><span class="item-tag">webdev</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/map"><span class="item-tag">map</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/reduce"><span class="item-tag">reduce</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/functional-programming"><span class="item-tag">functional programming</span></a>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -237,23 +235,26 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/2014/async.parallel-with-a-simple-timeout-node.js/" itemprop="url">async.parallel with a simple timeout (node.js)</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="September 8, 2014" datetime="September 8, 2014">
-        <time>September 8, 2014</time>
-    </h5>
-    
-    <a href="https://davidbcalhoun.com/tags/node.js"><kbd class="item-tag">node.js</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/node"><kbd class="item-tag">node</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/javascript"><kbd class="item-tag">javascript</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/async"><kbd class="item-tag">async</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="September 8, 2014" datetime="September 8, 2014">
+        September 8, 2014
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://davidbcalhoun.com/tags/node.js"><span class="item-tag">node.js</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/node"><span class="item-tag">node</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/javascript"><span class="item-tag">javascript</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/async"><span class="item-tag">async</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/webdev"><span class="item-tag">webdev</span></a>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -290,21 +291,24 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/2014/what-is-amd-commonjs-and-umd/" itemprop="url">What is AMD, CommonJS, and UMD?</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="April 30, 2014" datetime="April 30, 2014">
-        <time>April 30, 2014</time>
-    </h5>
-    
-    <a href="https://davidbcalhoun.com/tags/javascript"><kbd class="item-tag">javascript</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/amd"><kbd class="item-tag">amd</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/commonjs"><kbd class="item-tag">commonjs</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="April 30, 2014" datetime="April 30, 2014">
+        April 30, 2014
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://davidbcalhoun.com/tags/javascript"><span class="item-tag">javascript</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/amd"><span class="item-tag">amd</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/commonjs"><span class="item-tag">commonjs</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/webdev"><span class="item-tag">webdev</span></a>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -342,23 +346,26 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/2014/the-mobile-web-is-dead-and-we-have-killed-it/" itemprop="url">The mobile web is dead (and we have killed it)</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="April 14, 2014" datetime="April 14, 2014">
-        <time>April 14, 2014</time>
-    </h5>
-    
-    <a href="https://davidbcalhoun.com/tags/mobile"><kbd class="item-tag">mobile</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/web"><kbd class="item-tag">web</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/apps"><kbd class="item-tag">apps</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/mobile-web"><kbd class="item-tag">mobile web</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="April 14, 2014" datetime="April 14, 2014">
+        April 14, 2014
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://davidbcalhoun.com/tags/mobile"><span class="item-tag">mobile</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/web"><span class="item-tag">web</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/apps"><span class="item-tag">apps</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/mobile-web"><span class="item-tag">mobile web</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/webdev"><span class="item-tag">webdev</span></a>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -394,19 +401,22 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/2013/introducing-negative-scroll-blur-for-browsers-that-support-css-filters/" itemprop="url">Introducing Negative Scroll Blur (for browsers that support CSS filters)</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="November 23, 2013" datetime="November 23, 2013">
-        <time>November 23, 2013</time>
-    </h5>
-    
-    <a href="https://davidbcalhoun.com/tags/javascript"><kbd class="item-tag">javascript</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/demo"><kbd class="item-tag">demo</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="November 23, 2013" datetime="November 23, 2013">
+        November 23, 2013
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://davidbcalhoun.com/tags/javascript"><span class="item-tag">javascript</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/demo"><span class="item-tag">demo</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/webdev"><span class="item-tag">webdev</span></a>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -442,19 +452,22 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/2013/you-cant-javascript-under-pressure-walkthrough/" itemprop="url">You Can&#39;t JavaScript Under Pressure walkthrough</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="October 4, 2013" datetime="October 4, 2013">
-        <time>October 4, 2013</time>
-    </h5>
-    
-    <a href="https://davidbcalhoun.com/tags/javascript"><kbd class="item-tag">javascript</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/programming"><kbd class="item-tag">programming</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="October 4, 2013" datetime="October 4, 2013">
+        October 4, 2013
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://davidbcalhoun.com/tags/javascript"><span class="item-tag">javascript</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/programming"><span class="item-tag">programming</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/webdev"><span class="item-tag">webdev</span></a>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -490,19 +503,22 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/2013/quick-style-comparison-of-mobile-image-search-sites/" itemprop="url">Quick style comparison of mobile image search sites</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="May 10, 2013" datetime="May 10, 2013">
-        <time>May 10, 2013</time>
-    </h5>
-    
-    <a href="https://davidbcalhoun.com/tags/mobile"><kbd class="item-tag">mobile</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/design"><kbd class="item-tag">design</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="May 10, 2013" datetime="May 10, 2013">
+        May 10, 2013
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://davidbcalhoun.com/tags/mobile"><span class="item-tag">mobile</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/design"><span class="item-tag">design</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/webdev"><span class="item-tag">webdev</span></a>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -539,21 +555,24 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/2012/more-fun-with-webkit-pseudoelements--webkit-search-cancel-button-or-pseudoclass-inception/" itemprop="url">More fun with WebKit pseudoelements: -webkit-search-cancel-button (or: Pseudoclass Inception)</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="August 10, 2012" datetime="August 10, 2012">
-        <time>August 10, 2012</time>
-    </h5>
-    
-    <a href="https://davidbcalhoun.com/tags/css"><kbd class="item-tag">css</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/webkit"><kbd class="item-tag">webkit</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/pseudoelements"><kbd class="item-tag">pseudoelements</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="August 10, 2012" datetime="August 10, 2012">
+        August 10, 2012
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://davidbcalhoun.com/tags/css"><span class="item-tag">css</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/webkit"><span class="item-tag">webkit</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/pseudoelements"><span class="item-tag">pseudoelements</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/webdev"><span class="item-tag">webdev</span></a>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -589,19 +608,22 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/2012/response-to-whats-next-for-mobile-now-that-adaptive-design-has-failed/" itemprop="url">Response to &#39;What’s next for mobile now that adaptive design has failed?&#39;</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="May 23, 2012" datetime="May 23, 2012">
-        <time>May 23, 2012</time>
-    </h5>
-    
-    <a href="https://davidbcalhoun.com/tags/mobile"><kbd class="item-tag">mobile</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/design"><kbd class="item-tag">design</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="May 23, 2012" datetime="May 23, 2012">
+        May 23, 2012
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://davidbcalhoun.com/tags/mobile"><span class="item-tag">mobile</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/design"><span class="item-tag">design</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/webdev"><span class="item-tag">webdev</span></a>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -635,15 +657,18 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/2012/post-a-status-update-to-the-native-facebook-app-from-a-web-link/" itemprop="url">Post a status update to the native Facebook app from a web link</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="February 2, 2012" datetime="February 2, 2012">
-        <time>February 2, 2012</time>
-    </h5>
-    
-    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="February 2, 2012" datetime="February 2, 2012">
+        February 2, 2012
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://davidbcalhoun.com/tags/webdev"><span class="item-tag">webdev</span></a>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -681,23 +706,26 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/2011/ios5-sunspider-iphone-4s-vs-iphone-4-vs-iphone-3gs/" itemprop="url">iOS5 SunSpider: iPhone 4S vs iPhone 4 vs iPhone 3GS</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="October 14, 2011" datetime="October 14, 2011">
-        <time>October 14, 2011</time>
-    </h5>
-    
-    <a href="https://davidbcalhoun.com/tags/performance"><kbd class="item-tag">performance</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/javascript"><kbd class="item-tag">javascript</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/mobile"><kbd class="item-tag">mobile</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/iphone"><kbd class="item-tag">iphone</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="October 14, 2011" datetime="October 14, 2011">
+        October 14, 2011
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://davidbcalhoun.com/tags/performance"><span class="item-tag">performance</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/javascript"><span class="item-tag">javascript</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/mobile"><span class="item-tag">mobile</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/iphone"><span class="item-tag">iphone</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/webdev"><span class="item-tag">webdev</span></a>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -733,19 +761,22 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/2011/iphone-4s-iphone-4-and-iphone-3gs-photo-comparison/" itemprop="url">iPhone 4S, iPhone 4, and iPhone 3GS photo comparison</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="October 14, 2011" datetime="October 14, 2011">
-        <time>October 14, 2011</time>
-    </h5>
-    
-    <a href="https://davidbcalhoun.com/tags/mobile"><kbd class="item-tag">mobile</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/iphone"><kbd class="item-tag">iphone</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="October 14, 2011" datetime="October 14, 2011">
+        October 14, 2011
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://davidbcalhoun.com/tags/mobile"><span class="item-tag">mobile</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/iphone"><span class="item-tag">iphone</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/webdev"><span class="item-tag">webdev</span></a>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -781,19 +812,22 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/2011/mobile-performance-manifesto/" itemprop="url">Mobile Performance Manifesto</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="October 11, 2011" datetime="October 11, 2011">
-        <time>October 11, 2011</time>
-    </h5>
-    
-    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/mobile"><kbd class="item-tag">mobile</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/performance"><kbd class="item-tag">performance</kbd></a>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="October 11, 2011" datetime="October 11, 2011">
+        October 11, 2011
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://davidbcalhoun.com/tags/webdev"><span class="item-tag">webdev</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/mobile"><span class="item-tag">mobile</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/performance"><span class="item-tag">performance</span></a>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -828,17 +862,20 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/2011/when-to-base64-encode-images-and-when-not-to/" itemprop="url">When to base64 encode images (and when not to)</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="August 28, 2011" datetime="August 28, 2011">
-        <time>August 28, 2011</time>
-    </h5>
-    
-    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/performance"><kbd class="item-tag">performance</kbd></a>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="August 28, 2011" datetime="August 28, 2011">
+        August 28, 2011
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://davidbcalhoun.com/tags/webdev"><span class="item-tag">webdev</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/performance"><span class="item-tag">performance</span></a>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -874,19 +911,22 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/2011/different-ways-of-defining-functions-in-javascript-this-is-madness/" itemprop="url">Different ways of defining functions in JavaScript (this is madness!)</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="June 24, 2011" datetime="June 24, 2011">
-        <time>June 24, 2011</time>
-    </h5>
-    
-    <a href="https://davidbcalhoun.com/tags/javascript"><kbd class="item-tag">javascript</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/programming"><kbd class="item-tag">programming</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="June 24, 2011" datetime="June 24, 2011">
+        June 24, 2011
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://davidbcalhoun.com/tags/javascript"><span class="item-tag">javascript</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/programming"><span class="item-tag">programming</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/webdev"><span class="item-tag">webdev</span></a>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -923,21 +963,24 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/2011/new-mobile-safari-stuff-in-ios5-positionfixed-overflowscroll-new-input-type-support-web-workers-ecmascript-5/" itemprop="url">New Mobile Safari stuff in iOS5: position:fixed, overflow:scroll, new input type support, web workers, ECMAScript 5</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="June 7, 2011" datetime="June 7, 2011">
-        <time>June 7, 2011</time>
-    </h5>
-    
-    <a href="https://davidbcalhoun.com/tags/ios"><kbd class="item-tag">ios</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/mobile-safari"><kbd class="item-tag">mobile safari</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/mobile"><kbd class="item-tag">mobile</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="June 7, 2011" datetime="June 7, 2011">
+        June 7, 2011
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://davidbcalhoun.com/tags/ios"><span class="item-tag">ios</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/mobile-safari"><span class="item-tag">mobile safari</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/mobile"><span class="item-tag">mobile</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/webdev"><span class="item-tag">webdev</span></a>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -971,15 +1014,18 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/2011/the-incredibly-painful-way-of-getting-an-rss-feed-of-a-twitter-list/" itemprop="url">The incredibly painful way of getting an RSS feed of a Twitter list</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="June 5, 2011" datetime="June 5, 2011">
-        <time>June 5, 2011</time>
-    </h5>
-    
-    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="June 5, 2011" datetime="June 5, 2011">
+        June 5, 2011
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://davidbcalhoun.com/tags/webdev"><span class="item-tag">webdev</span></a>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -1016,21 +1062,24 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/2011/android-3.0-honeycomb-is-first-to-implement-the-device-api/" itemprop="url">Android 3.0 Honeycomb is first to implement the Device API</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="February 24, 2011" datetime="February 24, 2011">
-        <time>February 24, 2011</time>
-    </h5>
-    
-    <a href="https://davidbcalhoun.com/tags/javascript"><kbd class="item-tag">javascript</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/programming"><kbd class="item-tag">programming</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/android"><kbd class="item-tag">android</kbd></a>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="February 24, 2011" datetime="February 24, 2011">
+        February 24, 2011
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://davidbcalhoun.com/tags/javascript"><span class="item-tag">javascript</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/programming"><span class="item-tag">programming</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/webdev"><span class="item-tag">webdev</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/android"><span class="item-tag">android</span></a>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -1065,17 +1114,20 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/2011/my-oreilly-books-wishlist/" itemprop="url">My O&#39;Reilly Books Wishlist</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="February 22, 2011" datetime="February 22, 2011">
-        <time>February 22, 2011</time>
-    </h5>
-    
-    <a href="https://davidbcalhoun.com/tags/programming"><kbd class="item-tag">programming</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="February 22, 2011" datetime="February 22, 2011">
+        February 22, 2011
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://davidbcalhoun.com/tags/programming"><span class="item-tag">programming</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/webdev"><span class="item-tag">webdev</span></a>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -1111,19 +1163,22 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/2011/checking-for-undefined-null-and-empty-variables-in-javascript/" itemprop="url">Checking for undefined, null, and empty variables in JavaScript</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="February 11, 2011" datetime="February 11, 2011">
-        <time>February 11, 2011</time>
-    </h5>
-    
-    <a href="https://davidbcalhoun.com/tags/javascript"><kbd class="item-tag">javascript</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/programming"><kbd class="item-tag">programming</kbd></a>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="February 11, 2011" datetime="February 11, 2011">
+        February 11, 2011
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://davidbcalhoun.com/tags/javascript"><span class="item-tag">javascript</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/webdev"><span class="item-tag">webdev</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/programming"><span class="item-tag">programming</span></a>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -1158,17 +1213,20 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/2011/a-peek-into-googles-jules-verne-tribute-february-8-2011/" itemprop="url">A peek into Google&#39;s Jules Verne tribute (February 8, 2011)</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="February 7, 2011" datetime="February 7, 2011">
-        <time>February 7, 2011</time>
-    </h5>
-    
-    <a href="https://davidbcalhoun.com/tags/video"><kbd class="item-tag">video</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="February 7, 2011" datetime="February 7, 2011">
+        February 7, 2011
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://davidbcalhoun.com/tags/video"><span class="item-tag">video</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/webdev"><span class="item-tag">webdev</span></a>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -1206,23 +1264,26 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/2011/javascript-sunspider-benchmark-ios-4.3-vs-ios-4.0/" itemprop="url">JavaScript SunSpider benchmark: iOS 4.3 vs iOS 4.0</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="January 22, 2011" datetime="January 22, 2011">
-        <time>January 22, 2011</time>
-    </h5>
-    
-    <a href="https://davidbcalhoun.com/tags/javascript"><kbd class="item-tag">javascript</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/performance"><kbd class="item-tag">performance</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/mobile"><kbd class="item-tag">mobile</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/ios"><kbd class="item-tag">ios</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="January 22, 2011" datetime="January 22, 2011">
+        January 22, 2011
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://davidbcalhoun.com/tags/javascript"><span class="item-tag">javascript</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/performance"><span class="item-tag">performance</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/mobile"><span class="item-tag">mobile</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/ios"><span class="item-tag">ios</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/webdev"><span class="item-tag">webdev</span></a>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -1258,19 +1319,22 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/2011/notes-mobile-web-design-cameron-moll-2007/" itemprop="url">Notes: Mobile Web Design (Cameron Moll, 2007)</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="January 21, 2011" datetime="January 21, 2011">
-        <time>January 21, 2011</time>
-    </h5>
-    
-    <a href="https://davidbcalhoun.com/tags/mobile"><kbd class="item-tag">mobile</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/design"><kbd class="item-tag">design</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="January 21, 2011" datetime="January 21, 2011">
+        January 21, 2011
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://davidbcalhoun.com/tags/mobile"><span class="item-tag">mobile</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/design"><span class="item-tag">design</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/webdev"><span class="item-tag">webdev</span></a>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -1307,21 +1371,24 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/2011/implementing-iphones-slider-unlock-with-input-typerange/" itemprop="url">Implementing iPhone&#39;s slider unlock with input type=&#39;range&#39;</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="January 16, 2011" datetime="January 16, 2011">
-        <time>January 16, 2011</time>
-    </h5>
-    
-    <a href="https://davidbcalhoun.com/tags/css"><kbd class="item-tag">css</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/iphone"><kbd class="item-tag">iphone</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/demo"><kbd class="item-tag">demo</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="January 16, 2011" datetime="January 16, 2011">
+        January 16, 2011
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://davidbcalhoun.com/tags/css"><span class="item-tag">css</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/iphone"><span class="item-tag">iphone</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/demo"><span class="item-tag">demo</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/webdev"><span class="item-tag">webdev</span></a>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -1357,19 +1424,22 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/2011/javascript-news-resources/" itemprop="url">JavaScript news resources</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="January 14, 2011" datetime="January 14, 2011">
-        <time>January 14, 2011</time>
-    </h5>
-    
-    <a href="https://davidbcalhoun.com/tags/javascript"><kbd class="item-tag">javascript</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/programming"><kbd class="item-tag">programming</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="January 14, 2011" datetime="January 14, 2011">
+        January 14, 2011
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://davidbcalhoun.com/tags/javascript"><span class="item-tag">javascript</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/programming"><span class="item-tag">programming</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/webdev"><span class="item-tag">webdev</span></a>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -1405,19 +1475,22 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/2011/what-happens-when-you-have-no-javascript-fallback/" itemprop="url">What happens when you have no JavaScript fallback?</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="January 12, 2011" datetime="January 12, 2011">
-        <time>January 12, 2011</time>
-    </h5>
-    
-    <a href="https://davidbcalhoun.com/tags/javascript"><kbd class="item-tag">javascript</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/programming"><kbd class="item-tag">programming</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="January 12, 2011" datetime="January 12, 2011">
+        January 12, 2011
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://davidbcalhoun.com/tags/javascript"><span class="item-tag">javascript</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/programming"><span class="item-tag">programming</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/webdev"><span class="item-tag">webdev</span></a>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -1453,19 +1526,22 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/2011/how-to-spot-outdated-javascript/" itemprop="url">How to spot outdated JavaScript</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="January 7, 2011" datetime="January 7, 2011">
-        <time>January 7, 2011</time>
-    </h5>
-    
-    <a href="https://davidbcalhoun.com/tags/javascript"><kbd class="item-tag">javascript</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/programming"><kbd class="item-tag">programming</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="January 7, 2011" datetime="January 7, 2011">
+        January 7, 2011
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://davidbcalhoun.com/tags/javascript"><span class="item-tag">javascript</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/programming"><span class="item-tag">programming</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/webdev"><span class="item-tag">webdev</span></a>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -1500,17 +1576,20 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/2011/what-is-a-closure-in-javascript/" itemprop="url">What is a closure in JavaScript?</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="January 3, 2011" datetime="January 3, 2011">
-        <time>January 3, 2011</time>
-    </h5>
-    
-    <a href="https://davidbcalhoun.com/tags/javascript"><kbd class="item-tag">javascript</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="January 3, 2011" datetime="January 3, 2011">
+        January 3, 2011
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://davidbcalhoun.com/tags/javascript"><span class="item-tag">javascript</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/webdev"><span class="item-tag">webdev</span></a>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -1547,21 +1626,24 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/2010/mobile-javascript-libraries-and-frameworks-mobile-web-part-7/" itemprop="url">Mobile JavaScript libraries and frameworks (Mobile Web Part 7)</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 6, 2010" datetime="December 6, 2010">
-        <time>December 6, 2010</time>
-    </h5>
-    
-    <a href="https://davidbcalhoun.com/tags/javascript"><kbd class="item-tag">javascript</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/mobile"><kbd class="item-tag">mobile</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/programming"><kbd class="item-tag">programming</kbd></a>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 6, 2010" datetime="December 6, 2010">
+        December 6, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://davidbcalhoun.com/tags/javascript"><span class="item-tag">javascript</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/mobile"><span class="item-tag">mobile</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/webdev"><span class="item-tag">webdev</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/programming"><span class="item-tag">programming</span></a>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -1596,17 +1678,20 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/2010/what-happens-when-we-serve-javascript-with-random-mime-types/" itemprop="url">What happens when we serve JavaScript with random MIME types?</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="November 1, 2010" datetime="November 1, 2010">
-        <time>November 1, 2010</time>
-    </h5>
-    
-    <a href="https://davidbcalhoun.com/tags/javascript"><kbd class="item-tag">javascript</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="November 1, 2010" datetime="November 1, 2010">
+        November 1, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://davidbcalhoun.com/tags/javascript"><span class="item-tag">javascript</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/webdev"><span class="item-tag">webdev</span></a>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -1652,39 +1737,42 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/2010/top-ten-things-html5-makes-simpler/" itemprop="url">Top ten things HTML5 makes simpler</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="October 7, 2010" datetime="October 7, 2010">
-        <time>October 7, 2010</time>
-    </h5>
-    
-    <a href="https://davidbcalhoun.com/tags/async"><kbd class="item-tag">async</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/autofocus"><kbd class="item-tag">autofocus</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/cache-manifest"><kbd class="item-tag">cache manifest</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/charset"><kbd class="item-tag">charset</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/defer"><kbd class="item-tag">defer</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/doctype"><kbd class="item-tag">doctype</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/html5"><kbd class="item-tag">html5</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/localstorage"><kbd class="item-tag">localStorage</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/placeholder"><kbd class="item-tag">placeholder</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/sessionstorage"><kbd class="item-tag">sessionStorage</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/video"><kbd class="item-tag">video</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/html"><kbd class="item-tag">html</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="October 7, 2010" datetime="October 7, 2010">
+        October 7, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://davidbcalhoun.com/tags/async"><span class="item-tag">async</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/autofocus"><span class="item-tag">autofocus</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/cache-manifest"><span class="item-tag">cache manifest</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/charset"><span class="item-tag">charset</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/defer"><span class="item-tag">defer</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/doctype"><span class="item-tag">doctype</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/html5"><span class="item-tag">html5</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/localstorage"><span class="item-tag">localStorage</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/placeholder"><span class="item-tag">placeholder</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/sessionstorage"><span class="item-tag">sessionStorage</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/video"><span class="item-tag">video</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/html"><span class="item-tag">html</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/webdev"><span class="item-tag">webdev</span></a>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -1721,21 +1809,24 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/2010/javascript-links-from-last-week-september-26/" itemprop="url">JavaScript links from last week (September 26)</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="October 5, 2010" datetime="October 5, 2010">
-        <time>October 5, 2010</time>
-    </h5>
-    
-    <a href="https://davidbcalhoun.com/tags/javascript"><kbd class="item-tag">javascript</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/programming"><kbd class="item-tag">programming</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/links"><kbd class="item-tag">links</kbd></a>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="October 5, 2010" datetime="October 5, 2010">
+        October 5, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://davidbcalhoun.com/tags/javascript"><span class="item-tag">javascript</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/webdev"><span class="item-tag">webdev</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/programming"><span class="item-tag">programming</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/links"><span class="item-tag">links</span></a>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -1770,17 +1861,20 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/2010/mobile-monday-best-practices-for-mobile-design-september-20-2010/" itemprop="url">Mobile Monday: Best Practices for Mobile Design (September 20, 2010)</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="September 21, 2010" datetime="September 21, 2010">
-        <time>September 21, 2010</time>
-    </h5>
-    
-    <a href="https://davidbcalhoun.com/tags/mobile"><kbd class="item-tag">mobile</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="September 21, 2010" datetime="September 21, 2010">
+        September 21, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://davidbcalhoun.com/tags/mobile"><span class="item-tag">mobile</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/webdev"><span class="item-tag">webdev</span></a>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -1815,17 +1909,20 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/2010/server-side-console.log/" itemprop="url">Server side console.log</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="September 15, 2010" datetime="September 15, 2010">
-        <time>September 15, 2010</time>
-    </h5>
-    
-    <a href="https://davidbcalhoun.com/tags/javascript"><kbd class="item-tag">javascript</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="September 15, 2010" datetime="September 15, 2010">
+        September 15, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://davidbcalhoun.com/tags/javascript"><span class="item-tag">javascript</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/webdev"><span class="item-tag">webdev</span></a>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -1861,19 +1958,22 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/2010/optimizing-based-on-connection-speed-using-navigator.connection-on-android-2.2-/" itemprop="url">Optimizing based on connection speed: using navigator.connection on Android 2.2&#43;</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="September 14, 2010" datetime="September 14, 2010">
-        <time>September 14, 2010</time>
-    </h5>
-    
-    <a href="https://davidbcalhoun.com/tags/javascript"><kbd class="item-tag">javascript</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/android"><kbd class="item-tag">android</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="September 14, 2010" datetime="September 14, 2010">
+        September 14, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://davidbcalhoun.com/tags/javascript"><span class="item-tag">javascript</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/android"><span class="item-tag">android</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/webdev"><span class="item-tag">webdev</span></a>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -1909,19 +2009,22 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/2010/basic-html5-template/" itemprop="url">Basic HTML5 template</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="September 8, 2010" datetime="September 8, 2010">
-        <time>September 8, 2010</time>
-    </h5>
-    
-    <a href="https://davidbcalhoun.com/tags/html"><kbd class="item-tag">html</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/html5"><kbd class="item-tag">html5</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="September 8, 2010" datetime="September 8, 2010">
+        September 8, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://davidbcalhoun.com/tags/html"><span class="item-tag">html</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/html5"><span class="item-tag">html5</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/webdev"><span class="item-tag">webdev</span></a>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -1959,23 +2062,26 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/2010/dealing-with-device-orientation-mobile-web-part-6/" itemprop="url">Dealing with device orientation (Mobile web part 6)</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="August 24, 2010" datetime="August 24, 2010">
-        <time>August 24, 2010</time>
-    </h5>
-    
-    <a href="https://davidbcalhoun.com/tags/javascript"><kbd class="item-tag">javascript</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/mobile"><kbd class="item-tag">mobile</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/media-queries"><kbd class="item-tag">media queries</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/orientation"><kbd class="item-tag">orientation</kbd></a>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="August 24, 2010" datetime="August 24, 2010">
+        August 24, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://davidbcalhoun.com/tags/javascript"><span class="item-tag">javascript</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/webdev"><span class="item-tag">webdev</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/mobile"><span class="item-tag">mobile</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/media-queries"><span class="item-tag">media queries</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/orientation"><span class="item-tag">orientation</span></a>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -2015,27 +2121,30 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/2010/blackberry-torch-sunspider-results-javascript-benchmark/" itemprop="url">BlackBerry Torch SunSpider results (JavaScript benchmark)</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="August 18, 2010" datetime="August 18, 2010">
-        <time>August 18, 2010</time>
-    </h5>
-    
-    <a href="https://davidbcalhoun.com/tags/javascript"><kbd class="item-tag">javascript</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/performance"><kbd class="item-tag">performance</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/mobile"><kbd class="item-tag">mobile</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/blackberry"><kbd class="item-tag">blackberry</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/sunspider"><kbd class="item-tag">sunspider</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/webkit"><kbd class="item-tag">webkit</kbd></a>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="August 18, 2010" datetime="August 18, 2010">
+        August 18, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://davidbcalhoun.com/tags/javascript"><span class="item-tag">javascript</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/performance"><span class="item-tag">performance</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/mobile"><span class="item-tag">mobile</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/webdev"><span class="item-tag">webdev</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/blackberry"><span class="item-tag">blackberry</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/sunspider"><span class="item-tag">sunspider</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/webkit"><span class="item-tag">webkit</span></a>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -2076,29 +2185,32 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/2010/is-a-hash-faster-than-a-switch-in-javascript/" itemprop="url">Is a hash faster than a Switch in JavaScript?</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="August 17, 2010" datetime="August 17, 2010">
-        <time>August 17, 2010</time>
-    </h5>
-    
-    <a href="https://davidbcalhoun.com/tags/javascript"><kbd class="item-tag">javascript</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/performance"><kbd class="item-tag">performance</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/android"><kbd class="item-tag">android</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/hash"><kbd class="item-tag">hash</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/jsperf"><kbd class="item-tag">jsperf</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/mobile-safari"><kbd class="item-tag">mobile safari</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/switch"><kbd class="item-tag">switch</kbd></a>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="August 17, 2010" datetime="August 17, 2010">
+        August 17, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://davidbcalhoun.com/tags/javascript"><span class="item-tag">javascript</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/performance"><span class="item-tag">performance</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/webdev"><span class="item-tag">webdev</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/android"><span class="item-tag">android</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/hash"><span class="item-tag">hash</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/jsperf"><span class="item-tag">jsperf</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/mobile-safari"><span class="item-tag">mobile safari</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/switch"><span class="item-tag">switch</span></a>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -2133,17 +2245,20 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/2010/open-web-camp-ii-at-stanford-july-17-2010/" itemprop="url">Open Web Camp II at Stanford (July 17, 2010)</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="July 17, 2010" datetime="July 17, 2010">
-        <time>July 17, 2010</time>
-    </h5>
-    
-    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/event"><kbd class="item-tag">event</kbd></a>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="July 17, 2010" datetime="July 17, 2010">
+        July 17, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://davidbcalhoun.com/tags/webdev"><span class="item-tag">webdev</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/event"><span class="item-tag">event</span></a>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -2178,17 +2293,20 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/2010/friday-links-mobile-performance-studies-the-upcoming-device-element-and-more-july-15/" itemprop="url">Friday links: mobile performance studies, the upcoming device element, and more (July 15)</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="July 16, 2010" datetime="July 16, 2010">
-        <time>July 16, 2010</time>
-    </h5>
-    
-    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/programming"><kbd class="item-tag">programming</kbd></a>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="July 16, 2010" datetime="July 16, 2010">
+        July 16, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://davidbcalhoun.com/tags/webdev"><span class="item-tag">webdev</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/programming"><span class="item-tag">programming</span></a>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -2228,27 +2346,30 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/2010/iphone-4-sunspider-test-results-22-faster-than-iphone-3gs/" itemprop="url">iPhone 4 SunSpider test results (22% faster than iPhone 3GS)</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="June 25, 2010" datetime="June 25, 2010">
-        <time>June 25, 2010</time>
-    </h5>
-    
-    <a href="https://davidbcalhoun.com/tags/iphone"><kbd class="item-tag">iphone</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/iphone-4"><kbd class="item-tag">iphone 4</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/performance"><kbd class="item-tag">performance</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/sunspider"><kbd class="item-tag">sunspider</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/javascript"><kbd class="item-tag">javascript</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/mobile"><kbd class="item-tag">mobile</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="June 25, 2010" datetime="June 25, 2010">
+        June 25, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://davidbcalhoun.com/tags/iphone"><span class="item-tag">iphone</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/iphone-4"><span class="item-tag">iphone 4</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/performance"><span class="item-tag">performance</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/sunspider"><span class="item-tag">sunspider</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/javascript"><span class="item-tag">javascript</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/mobile"><span class="item-tag">mobile</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/webdev"><span class="item-tag">webdev</span></a>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -2288,27 +2409,30 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/2010/javascript-sunspider-test-ios-3.1.3-versus-ios-4-gm/" itemprop="url">JavaScript SunSpider test: iOS 3.1.3 versus iOS 4 GM</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="June 10, 2010" datetime="June 10, 2010">
-        <time>June 10, 2010</time>
-    </h5>
-    
-    <a href="https://davidbcalhoun.com/tags/ios"><kbd class="item-tag">ios</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/iphone"><kbd class="item-tag">iphone</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/sunspider"><kbd class="item-tag">sunspider</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/javascript"><kbd class="item-tag">javascript</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/performance"><kbd class="item-tag">performance</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/mobile"><kbd class="item-tag">mobile</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="June 10, 2010" datetime="June 10, 2010">
+        June 10, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://davidbcalhoun.com/tags/ios"><span class="item-tag">ios</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/iphone"><span class="item-tag">iphone</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/sunspider"><span class="item-tag">sunspider</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/javascript"><span class="item-tag">javascript</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/performance"><span class="item-tag">performance</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/mobile"><span class="item-tag">mobile</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/webdev"><span class="item-tag">webdev</span></a>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -2344,19 +2468,22 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/2010/on-designing-a-mobile-webpage-mobile-web-part-4/" itemprop="url">On designing a mobile webpage (Mobile web part 4)</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="May 26, 2010" datetime="May 26, 2010">
-        <time>May 26, 2010</time>
-    </h5>
-    
-    <a href="https://davidbcalhoun.com/tags/design"><kbd class="item-tag">design</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/mobile"><kbd class="item-tag">mobile</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="May 26, 2010" datetime="May 26, 2010">
+        May 26, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://davidbcalhoun.com/tags/design"><span class="item-tag">design</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/mobile"><span class="item-tag">mobile</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/webdev"><span class="item-tag">webdev</span></a>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -2394,23 +2521,26 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/2010/designing-buttons-that-dont-suck-mobile-web-part-3/" itemprop="url">Designing buttons that don&#39;t suck (Mobile web part 3)</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="May 19, 2010" datetime="May 19, 2010">
-        <time>May 19, 2010</time>
-    </h5>
-    
-    <a href="https://davidbcalhoun.com/tags/button"><kbd class="item-tag">button</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/testing"><kbd class="item-tag">testing</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/usability"><kbd class="item-tag">usability</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/mobile"><kbd class="item-tag">mobile</kbd></a>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="May 19, 2010" datetime="May 19, 2010">
+        May 19, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://davidbcalhoun.com/tags/button"><span class="item-tag">button</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/testing"><span class="item-tag">testing</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/usability"><span class="item-tag">usability</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/webdev"><span class="item-tag">webdev</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/mobile"><span class="item-tag">mobile</span></a>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -2447,21 +2577,24 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/2010/the-mobile-developers-toolkit-mobile-web-part-2/" itemprop="url">The mobile developer&#39;s toolkit (Mobile web part 2)</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="May 11, 2010" datetime="May 11, 2010">
-        <time>May 11, 2010</time>
-    </h5>
-    
-    <a href="https://davidbcalhoun.com/tags/emulator"><kbd class="item-tag">emulator</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/simulator"><kbd class="item-tag">simulator</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/mobile"><kbd class="item-tag">mobile</kbd></a>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="May 11, 2010" datetime="May 11, 2010">
+        May 11, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://davidbcalhoun.com/tags/emulator"><span class="item-tag">emulator</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/simulator"><span class="item-tag">simulator</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/webdev"><span class="item-tag">webdev</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/mobile"><span class="item-tag">mobile</span></a>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -2497,19 +2630,22 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/2010/a-clockwork-box/" itemprop="url">A Clockwork Box</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="March 2, 2010" datetime="March 2, 2010">
-        <time>March 2, 2010</time>
-    </h5>
-    
-    <a href="https://davidbcalhoun.com/tags/box-model"><kbd class="item-tag">box model</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/css"><kbd class="item-tag">css</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="March 2, 2010" datetime="March 2, 2010">
+        March 2, 2010
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://davidbcalhoun.com/tags/box-model"><span class="item-tag">box model</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/css"><span class="item-tag">css</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/webdev"><span class="item-tag">webdev</span></a>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -2550,29 +2686,32 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/2009/video-john-resig---testing-performance-analysis-and-jquery-1.4/" itemprop="url">Video: John Resig - Testing, Performance Analysis, and jQuery 1.4</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 21, 2009" datetime="December 21, 2009">
-        <time>December 21, 2009</time>
-    </h5>
-    
-    <a href="https://davidbcalhoun.com/tags/javascript"><kbd class="item-tag">javascript</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/john-resig"><kbd class="item-tag">john resig</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/performance"><kbd class="item-tag">performance</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/testing"><kbd class="item-tag">testing</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/video"><kbd class="item-tag">video</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/yahoo"><kbd class="item-tag">yahoo</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/programming"><kbd class="item-tag">programming</kbd></a>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 21, 2009" datetime="December 21, 2009">
+        December 21, 2009
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://davidbcalhoun.com/tags/javascript"><span class="item-tag">javascript</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/john-resig"><span class="item-tag">john resig</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/performance"><span class="item-tag">performance</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/testing"><span class="item-tag">testing</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/video"><span class="item-tag">video</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/yahoo"><span class="item-tag">yahoo</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/webdev"><span class="item-tag">webdev</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/programming"><span class="item-tag">programming</span></a>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -2610,23 +2749,26 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/2009/ways-of-passing-data-to-functions-in-javascript/" itemprop="url">Ways of passing data to functions in JavaScript</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="December 4, 2009" datetime="December 4, 2009">
-        <time>December 4, 2009</time>
-    </h5>
-    
-    <a href="https://davidbcalhoun.com/tags/beginner"><kbd class="item-tag">beginner</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/functions"><kbd class="item-tag">functions</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/javascript"><kbd class="item-tag">javascript</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/programming"><kbd class="item-tag">programming</kbd></a>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="December 4, 2009" datetime="December 4, 2009">
+        December 4, 2009
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://davidbcalhoun.com/tags/beginner"><span class="item-tag">beginner</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/functions"><span class="item-tag">functions</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/javascript"><span class="item-tag">javascript</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/webdev"><span class="item-tag">webdev</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/programming"><span class="item-tag">programming</span></a>
+        
+    </aside>
 
 </article>
   <article class="item">
@@ -2670,35 +2812,38 @@
     
 
 
-    <h4 itemprop="headline">
+    <h1 itemprop="headline" class="meta title">
         <a href="/2009/ie-mobile-6.12-problem-browser-ignores-the-specificity-of-css-display-styles/" itemprop="url">IE Mobile 6.12 problem: browser ignores the specificity of CSS display styles</a>
-    </h4>
-    <h5 class="meta date" itemprop="datePublished dateModified" content="August 31, 2009" datetime="August 31, 2009">
-        <time>August 31, 2009</time>
-    </h5>
-    
-    <a href="https://davidbcalhoun.com/tags/6.12"><kbd class="item-tag">6.12</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/css"><kbd class="item-tag">css</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/display"><kbd class="item-tag">display</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/ie6"><kbd class="item-tag">ie6</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/iemobile"><kbd class="item-tag">iemobile</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/inline"><kbd class="item-tag">inline</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/inline-block"><kbd class="item-tag">inline-block</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/webdev"><kbd class="item-tag">webdev</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/ie"><kbd class="item-tag">ie</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/internet-explorer"><kbd class="item-tag">internet explorer</kbd></a>
-    
-    <a href="https://davidbcalhoun.com/tags/mobile"><kbd class="item-tag">mobile</kbd></a>
-    
+    </h1>
+    <time class="meta date" itemprop="datePublished dateModified" content="August 31, 2009" datetime="August 31, 2009">
+        August 31, 2009
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://davidbcalhoun.com/tags/6.12"><span class="item-tag">6.12</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/css"><span class="item-tag">css</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/display"><span class="item-tag">display</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/ie6"><span class="item-tag">ie6</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/iemobile"><span class="item-tag">iemobile</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/inline"><span class="item-tag">inline</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/inline-block"><span class="item-tag">inline-block</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/webdev"><span class="item-tag">webdev</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/ie"><span class="item-tag">ie</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/internet-explorer"><span class="item-tag">internet explorer</span></a>
+        
+        <a href="https://davidbcalhoun.com/tags/mobile"><span class="item-tag">mobile</span></a>
+        
+    </aside>
 
 </article>
  

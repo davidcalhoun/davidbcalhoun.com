@@ -345,7 +345,7 @@ The in-you-face vlogging style is pretty stale by this point.  I did keep up a s
 
 Here's the first video of my AT video series for folks who are interested:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/csoYoI6bc2I" frameborder="0" allowfullscreen style="margin: 0 auto; display: block;"></iframe>
+<iframe width="560" height="315" title="YouTube video" src="https://www.youtube.com/embed/csoYoI6bc2I" frameborder="0" allowfullscreen style="margin: 0 auto; display: block;"></iframe>
 
 ## Low points
 Not everything is fun on the trail.  Here's some notable low points to balance out all the positive fluff.

@@ -105,7 +105,7 @@ This handy function can convert Unicode characters between their composed and de
 // Remember, though Unicode equivalent and identical in display, this is false...
 '\u0069\u0308' === '\u00ef';  // false
 
-// BUT we can use String.protype.normalize() to help out!
+// BUT we can use String.prototype.normalize() to help out!
 
 // To composed form ('NFC' means Normalization Form Canonical Composition)
 '\u0069\u0308'.normalize('NFC') === '\u00ef';  // true
