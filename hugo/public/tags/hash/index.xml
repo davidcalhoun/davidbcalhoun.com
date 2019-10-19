@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hash on David Calhoun&#39;s blog</title>
-    <link>https://davidbcalhoun.com/tags/hash/</link>
+    <link>https://www.davidbcalhoun.com/tags/hash/</link>
     <description>Recent content in Hash on David Calhoun&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Tue, 17 Aug 2010 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://davidbcalhoun.com/tags/hash/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.davidbcalhoun.com/tags/hash/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Is a hash faster than a Switch in JavaScript?</title>
-      <link>https://davidbcalhoun.com/2010/is-a-hash-faster-than-a-switch-in-javascript/</link>
+      <link>https://www.davidbcalhoun.com/2010/is-a-hash-faster-than-a-switch-in-javascript/</link>
       <pubDate>Tue, 17 Aug 2010 00:00:00 +0000</pubDate>
       
-      <guid>https://davidbcalhoun.com/2010/is-a-hash-faster-than-a-switch-in-javascript/</guid>
+      <guid>https://www.davidbcalhoun.com/2010/is-a-hash-faster-than-a-switch-in-javascript/</guid>
       <description>I stumbled across this concept recently and I thought I&amp;rsquo;d share it, because I don&amp;rsquo;t generally see this pattern being used. More importantly, I also share test results that show that maybe it&amp;rsquo;s not always a good idea to use this pattern&amp;hellip;
 The problem with Switch statements The basic switch statement in JavaScript looks something like this:
 var foo = &#39;c&#39;; switch(foo) { case &#39;a&#39;: break; case &#39;b&#39;: break; case &#39;c&#39;: break; default: }  So what&amp;rsquo;s wrong with this?</description>

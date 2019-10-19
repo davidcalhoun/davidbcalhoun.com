@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cache Manifest on David Calhoun&#39;s blog</title>
-    <link>https://davidbcalhoun.com/tags/cache-manifest/</link>
+    <link>https://www.davidbcalhoun.com/tags/cache-manifest/</link>
     <description>Recent content in Cache Manifest on David Calhoun&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Thu, 07 Oct 2010 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://davidbcalhoun.com/tags/cache-manifest/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.davidbcalhoun.com/tags/cache-manifest/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Top ten things HTML5 makes simpler</title>
-      <link>https://davidbcalhoun.com/2010/top-ten-things-html5-makes-simpler/</link>
+      <link>https://www.davidbcalhoun.com/2010/top-ten-things-html5-makes-simpler/</link>
       <pubDate>Thu, 07 Oct 2010 00:00:00 +0000</pubDate>
       
-      <guid>https://davidbcalhoun.com/2010/top-ten-things-html5-makes-simpler/</guid>
+      <guid>https://www.davidbcalhoun.com/2010/top-ten-things-html5-makes-simpler/</guid>
       <description>General word of caution: not all of these HTML5 simplifications are compatible with older browsers. Test it for yourself before implementing!
 1. The doctype Old &amp;lt;!DOCTYPE HTML PUBLIC &amp;quot;-//W3C//DTD HTML 4.01//EN&amp;quot; &amp;quot;http://www.w3.org/TR/html4/strict.dtd&amp;quot;&amp;gt;  New &amp;lt;!DOCTYPE html&amp;gt;  2. charset Old &amp;lt;meta http-equiv=&amp;quot;Content-Type&amp;quot; content=&amp;quot;text/html; charset=utf-8&amp;quot;&amp;gt;  New &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt;  3. The link tag’s type attribute Old &amp;lt;link href=&amp;quot;style.css&amp;quot; type=&amp;quot;text/css&amp;quot; rel=&amp;quot;stylesheet&amp;quot; /&amp;gt;  New &amp;lt;link href=&amp;quot;style.css&amp;quot; rel=&amp;quot;stylesheet&amp;quot; /&amp;gt;  This one may be a bit controversial, but the HTML5 spec actually tells browser vendors not to treat the type attribute as the final word, which makes it seem pretty redundant:</description>
     </item>

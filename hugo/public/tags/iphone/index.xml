@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Iphone on David Calhoun&#39;s blog</title>
-    <link>https://davidbcalhoun.com/tags/iphone/</link>
+    <link>https://www.davidbcalhoun.com/tags/iphone/</link>
     <description>Recent content in Iphone on David Calhoun&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Fri, 14 Oct 2011 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://davidbcalhoun.com/tags/iphone/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.davidbcalhoun.com/tags/iphone/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>iOS5 SunSpider: iPhone 4S vs iPhone 4 vs iPhone 3GS</title>
-      <link>https://davidbcalhoun.com/2011/ios5-sunspider-iphone-4s-vs-iphone-4-vs-iphone-3gs/</link>
+      <link>https://www.davidbcalhoun.com/2011/ios5-sunspider-iphone-4s-vs-iphone-4-vs-iphone-3gs/</link>
       <pubDate>Fri, 14 Oct 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://davidbcalhoun.com/2011/ios5-sunspider-iphone-4s-vs-iphone-4-vs-iphone-3gs/</guid>
+      <guid>https://www.davidbcalhoun.com/2011/ios5-sunspider-iphone-4s-vs-iphone-4-vs-iphone-3gs/</guid>
       <description>Result table (SunSpider 0.9.1, all devices running iOS 5)   Test   iPhone 4S   iPhone 4   iPhone 3GS     Total  2270ms   3483ms   4903ms     3D  281ms   486ms   672ms     Access  279ms   410ms   614ms     Bitops  177ms   200ms   270ms     Controlflow  20ms   26ms   34ms     Crypto  164ms   211ms   315ms     Date  332ms   528ms   770ms     Math  219ms   433ms   553ms     Regexp  88ms   117ms   151ms     String  711ms   1072ms   1525ms    Raw results iPhone 4S (iOS5)</description>
     </item>
     
     <item>
       <title>iPhone 4S, iPhone 4, and iPhone 3GS photo comparison</title>
-      <link>https://davidbcalhoun.com/2011/iphone-4s-iphone-4-and-iphone-3gs-photo-comparison/</link>
+      <link>https://www.davidbcalhoun.com/2011/iphone-4s-iphone-4-and-iphone-3gs-photo-comparison/</link>
       <pubDate>Fri, 14 Oct 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://davidbcalhoun.com/2011/iphone-4s-iphone-4-and-iphone-3gs-photo-comparison/</guid>
+      <guid>https://www.davidbcalhoun.com/2011/iphone-4s-iphone-4-and-iphone-3gs-photo-comparison/</guid>
       <description>More photos likely to come.. this is just after I unboxed my new 4S. Time to play with it a bit!
 iPhone 4S 
 iPhone 4 
@@ -35,10 +35,10 @@ iPhone 3GS (alternate white balance point)</description>
     
     <item>
       <title>Implementing iPhone&#39;s slider unlock with input type=&#39;range&#39;</title>
-      <link>https://davidbcalhoun.com/2011/implementing-iphones-slider-unlock-with-input-typerange/</link>
+      <link>https://www.davidbcalhoun.com/2011/implementing-iphones-slider-unlock-with-input-typerange/</link>
       <pubDate>Sun, 16 Jan 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://davidbcalhoun.com/2011/implementing-iphones-slider-unlock-with-input-typerange/</guid>
+      <guid>https://www.davidbcalhoun.com/2011/implementing-iphones-slider-unlock-with-input-typerange/</guid>
       <description>(check out the live demo)
 Introduction After reading &amp;ldquo;What the Heck is Shadow DOM?&amp;rdquo; I was inspired to see how far I could style the &amp;lt;input type=&amp;quot;range&amp;quot;&amp;gt; element. Pretty far, as it turns out!
 My goal was to change the input&amp;rsquo;s default appearance:
@@ -48,28 +48,28 @@ As far as I can tell, only WebKit-based browsers and Opera have implemented inpu
     
     <item>
       <title>iPhone 4 SunSpider test results (22% faster than iPhone 3GS)</title>
-      <link>https://davidbcalhoun.com/2010/iphone-4-sunspider-test-results-22-faster-than-iphone-3gs/</link>
+      <link>https://www.davidbcalhoun.com/2010/iphone-4-sunspider-test-results-22-faster-than-iphone-3gs/</link>
       <pubDate>Fri, 25 Jun 2010 00:00:00 +0000</pubDate>
       
-      <guid>https://davidbcalhoun.com/2010/iphone-4-sunspider-test-results-22-faster-than-iphone-3gs/</guid>
+      <guid>https://www.davidbcalhoun.com/2010/iphone-4-sunspider-test-results-22-faster-than-iphone-3gs/</guid>
       <description>============================================ RESULTS (means and 95% confidence intervals) -------------------------------------------- Total: 10669.4ms +/- 1.0% -------------------------------------------- 3d: 1471.5ms +/- 2.1% cube: 428.7ms +/- 2.6% morph: 584.3ms +/- 4.7% raytrace: 458.5ms +/- 0.6% access: 1476.7ms +/- 1.3% binary-trees: 151.6ms +/- 1.3% fannkuch: 664.0ms +/- 0.1% nbody: 397.9ms +/- 2.1% nsieve: 263.2ms +/- 6.3% bitops: 947.2ms +/- 2.1% 3bit-bits-in-byte: 195.7ms +/- 2.0% bits-in-byte: 206.1ms +/- 1.0% bitwise-and: 179.7ms +/- 1.1% nsieve-bits: 365.7ms +/- 3.9% controlflow: 169.</description>
     </item>
     
     <item>
       <title>JavaScript SunSpider test: iOS 3.1.3 versus iOS 4 GM</title>
-      <link>https://davidbcalhoun.com/2010/javascript-sunspider-test-ios-3.1.3-versus-ios-4-gm/</link>
+      <link>https://www.davidbcalhoun.com/2010/javascript-sunspider-test-ios-3.1.3-versus-ios-4-gm/</link>
       <pubDate>Thu, 10 Jun 2010 00:00:00 +0000</pubDate>
       
-      <guid>https://davidbcalhoun.com/2010/javascript-sunspider-test-ios-3.1.3-versus-ios-4-gm/</guid>
+      <guid>https://www.davidbcalhoun.com/2010/javascript-sunspider-test-ios-3.1.3-versus-ios-4-gm/</guid>
       <description>Result table    Test   iOS 3.1.3 (3GS)   iOS 4 GM (3GS)   % change     Total   15396ms   13787ms  -10.5%     3D   2411ms   1917ms  -20.5%     Access   1884ms   1893ms  +0.5%     Bitops   1044ms   1239ms  +18.</description>
     </item>
     
     <item>
       <title>PastryKit: digging into an Apple Pie</title>
-      <link>https://davidbcalhoun.com/2009/pastrykit-digging-into-an-apple-pie/</link>
+      <link>https://www.davidbcalhoun.com/2009/pastrykit-digging-into-an-apple-pie/</link>
       <pubDate>Wed, 16 Dec 2009 00:00:00 +0000</pubDate>
       
-      <guid>https://davidbcalhoun.com/2009/pastrykit-digging-into-an-apple-pie/</guid>
+      <guid>https://www.davidbcalhoun.com/2009/pastrykit-digging-into-an-apple-pie/</guid>
       <description>Yesterday John Gruber wrote about Apple&amp;#8217;s PastryKit, iPhone&amp;#8217;s JavaScript framework that&amp;#8217;s been discovered &amp;#8220;in the wild&amp;#8221; on the iPhone user guide at http://help.apple.com/iphone/3/mobile/. There&amp;#8217;s a few ways to access the page:
  with an actual iPhone or iTouch by browsing with an iPhone/iTouch user agent. If you&amp;#8217;re using Safari, enable the Developer menu in Safari&amp;gt;Preferences&amp;gt;Advanced and switching user agents by clicking on Develope&amp;gt;User Agent  What&amp;#8217;s all the big fuss?</description>
     </item>

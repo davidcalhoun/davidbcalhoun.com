@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Yahoo on David Calhoun&#39;s blog</title>
-    <link>https://davidbcalhoun.com/tags/yahoo/</link>
+    <link>https://www.davidbcalhoun.com/tags/yahoo/</link>
     <description>Recent content in Yahoo on David Calhoun&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Mon, 21 Dec 2009 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://davidbcalhoun.com/tags/yahoo/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.davidbcalhoun.com/tags/yahoo/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Video: John Resig - Testing, Performance Analysis, and jQuery 1.4</title>
-      <link>https://davidbcalhoun.com/2009/video-john-resig---testing-performance-analysis-and-jquery-1.4/</link>
+      <link>https://www.davidbcalhoun.com/2009/video-john-resig---testing-performance-analysis-and-jquery-1.4/</link>
       <pubDate>Mon, 21 Dec 2009 00:00:00 +0000</pubDate>
       
-      <guid>https://davidbcalhoun.com/2009/video-john-resig---testing-performance-analysis-and-jquery-1.4/</guid>
+      <guid>https://www.davidbcalhoun.com/2009/video-john-resig---testing-performance-analysis-and-jquery-1.4/</guid>
       <description>In case you hadn&amp;#8217;t seen it yet, John Resig was kind enough to stop by Yahoo! for the December Bayjax meetup. Here&amp;#8217;s the video:
  Usually developers are more interested in just getting the dang code to work, and as a result actual the testing and maintenance of JavaScript isn&amp;#8217;t talked about too much, so I&amp;#8217;m sure this will be new territory for many developers. And since it&amp;#8217;s John Resig speaking, there was of course a bit about using TestSwarm, a testing distributed framework-agnostic automated testing tool (that&amp;#8217;s a mouthful!</description>
     </item>

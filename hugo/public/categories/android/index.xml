@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Android on David Calhoun&#39;s blog</title>
-    <link>https://davidbcalhoun.com/categories/android/</link>
+    <link>https://www.davidbcalhoun.com/categories/android/</link>
     <description>Recent content in Android on David Calhoun&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Wed, 09 Jun 2010 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://davidbcalhoun.com/categories/android/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.davidbcalhoun.com/categories/android/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>How to install obsolete Android Virtual Devices (AVDs)</title>
-      <link>https://davidbcalhoun.com/2010/how-to-install-obsolete-android-virtual-devices-avds/</link>
+      <link>https://www.davidbcalhoun.com/2010/how-to-install-obsolete-android-virtual-devices-avds/</link>
       <pubDate>Wed, 09 Jun 2010 00:00:00 +0000</pubDate>
       
-      <guid>https://davidbcalhoun.com/2010/how-to-install-obsolete-android-virtual-devices-avds/</guid>
+      <guid>https://www.davidbcalhoun.com/2010/how-to-install-obsolete-android-virtual-devices-avds/</guid>
       <description>Apparently it&amp;#8217;s no longer possible to easily download Android versions 2.0 and 2.0.1 from the AVD Manager. I noticed this problem when I got a new machine and had to install everything from scratch. In the future I suspect even more AVDs will be made obsolete, so this solution also applies to them.
 Why would you want to install obsolete AVDs? In my case it&amp;#8217;s a matter of research: I simply want to see the progress of features being added to its browser, and track those changes over time.</description>
     </item>

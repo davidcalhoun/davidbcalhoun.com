@@ -1,4 +1,4 @@
-baseURL = "https://davidbcalhoun.com/"
+baseURL = "https://www.davidbcalhoun.com/"
 languageCode = "en-US"
 title = "David Calhoun's blog"
 theme = "minimal-dc-mod"

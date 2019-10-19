@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ios on David Calhoun&#39;s blog</title>
-    <link>https://davidbcalhoun.com/tags/ios/</link>
+    <link>https://www.davidbcalhoun.com/tags/ios/</link>
     <description>Recent content in Ios on David Calhoun&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Tue, 07 Jun 2011 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://davidbcalhoun.com/tags/ios/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.davidbcalhoun.com/tags/ios/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>New Mobile Safari stuff in iOS5: position:fixed, overflow:scroll, new input type support, web workers, ECMAScript 5</title>
-      <link>https://davidbcalhoun.com/2011/new-mobile-safari-stuff-in-ios5-positionfixed-overflowscroll-new-input-type-support-web-workers-ecmascript-5/</link>
+      <link>https://www.davidbcalhoun.com/2011/new-mobile-safari-stuff-in-ios5-positionfixed-overflowscroll-new-input-type-support-web-workers-ecmascript-5/</link>
       <pubDate>Tue, 07 Jun 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://davidbcalhoun.com/2011/new-mobile-safari-stuff-in-ios5-positionfixed-overflowscroll-new-input-type-support-web-workers-ecmascript-5/</guid>
+      <guid>https://www.davidbcalhoun.com/2011/new-mobile-safari-stuff-in-ios5-positionfixed-overflowscroll-new-input-type-support-web-workers-ecmascript-5/</guid>
       <description>(note: this is based on the first iOS5 beta [9A5220p] and is subject to change on final release)
 It looks like there&amp;rsquo;s finally some major improvements in mobile Safari, some of which I&amp;rsquo;ve found below on my &amp;ldquo;first glance&amp;rdquo; after downloading the SDK. Chime in if you find anything yourself!
 Bad news first Much to my disappointment, browser-based file uploads are still not supported (input type=&amp;ldquo;file&amp;rdquo;), even though they have been supported on Android since version 2.</description>
@@ -24,19 +24,19 @@ Bad news first Much to my disappointment, browser-based file uploads are still n
     
     <item>
       <title>JavaScript SunSpider benchmark: iOS 4.3 vs iOS 4.0</title>
-      <link>https://davidbcalhoun.com/2011/javascript-sunspider-benchmark-ios-4.3-vs-ios-4.0/</link>
+      <link>https://www.davidbcalhoun.com/2011/javascript-sunspider-benchmark-ios-4.3-vs-ios-4.0/</link>
       <pubDate>Sat, 22 Jan 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://davidbcalhoun.com/2011/javascript-sunspider-benchmark-ios-4.3-vs-ios-4.0/</guid>
+      <guid>https://www.davidbcalhoun.com/2011/javascript-sunspider-benchmark-ios-4.3-vs-ios-4.0/</guid>
       <description>Result table (SunSpider 0.9.1)    Test   iOS 4 (3GS)   iOS 4.3 beta 2 (3GS)   % change     Total   13787ms  5357ms  -61.1%     3D   1917ms  737ms  -61.6%     Access   1893ms  617ms  -67.4%     Bitops   1239ms  289ms  -76.</description>
     </item>
     
     <item>
       <title>JavaScript SunSpider test: iOS 3.1.3 versus iOS 4 GM</title>
-      <link>https://davidbcalhoun.com/2010/javascript-sunspider-test-ios-3.1.3-versus-ios-4-gm/</link>
+      <link>https://www.davidbcalhoun.com/2010/javascript-sunspider-test-ios-3.1.3-versus-ios-4-gm/</link>
       <pubDate>Thu, 10 Jun 2010 00:00:00 +0000</pubDate>
       
-      <guid>https://davidbcalhoun.com/2010/javascript-sunspider-test-ios-3.1.3-versus-ios-4-gm/</guid>
+      <guid>https://www.davidbcalhoun.com/2010/javascript-sunspider-test-ios-3.1.3-versus-ios-4-gm/</guid>
       <description>Result table    Test   iOS 3.1.3 (3GS)   iOS 4 GM (3GS)   % change     Total   15396ms   13787ms  -10.5%     3D   2411ms   1917ms  -20.5%     Access   1884ms   1893ms  +0.5%     Bitops   1044ms   1239ms  +18.</description>
     </item>
     

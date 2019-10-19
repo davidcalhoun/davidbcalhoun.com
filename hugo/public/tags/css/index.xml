@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Css on David Calhoun&#39;s blog</title>
-    <link>https://davidbcalhoun.com/tags/css/</link>
+    <link>https://www.davidbcalhoun.com/tags/css/</link>
     <description>Recent content in Css on David Calhoun&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Fri, 10 Aug 2012 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://davidbcalhoun.com/tags/css/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.davidbcalhoun.com/tags/css/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>More fun with WebKit pseudoelements: -webkit-search-cancel-button (or: Pseudoclass Inception)</title>
-      <link>https://davidbcalhoun.com/2012/more-fun-with-webkit-pseudoelements--webkit-search-cancel-button-or-pseudoclass-inception/</link>
+      <link>https://www.davidbcalhoun.com/2012/more-fun-with-webkit-pseudoelements--webkit-search-cancel-button-or-pseudoclass-inception/</link>
       <pubDate>Fri, 10 Aug 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://davidbcalhoun.com/2012/more-fun-with-webkit-pseudoelements--webkit-search-cancel-button-or-pseudoclass-inception/</guid>
+      <guid>https://www.davidbcalhoun.com/2012/more-fun-with-webkit-pseudoelements--webkit-search-cancel-button-or-pseudoclass-inception/</guid>
       <description>Introduction UPDATE 2016: this appears to have even less support than before, and it&amp;rsquo;s not recommended to be used on a production site. Use a helper JS library instead.
 (check out the Demo)
 A while back I had a bit of a field day messing around with input type=&amp;ldquo;range&amp;rdquo;, trying to replicate the &amp;ldquo;unlock slider&amp;rdquo; on iOS using CSS, targeting special WebKit-only CSS pseudoelements such as webkit-slider-thumb.
@@ -25,10 +25,10 @@ Well, now I&amp;rsquo;m at it again, this time with a much simpler use case, try
     
     <item>
       <title>Implementing iPhone&#39;s slider unlock with input type=&#39;range&#39;</title>
-      <link>https://davidbcalhoun.com/2011/implementing-iphones-slider-unlock-with-input-typerange/</link>
+      <link>https://www.davidbcalhoun.com/2011/implementing-iphones-slider-unlock-with-input-typerange/</link>
       <pubDate>Sun, 16 Jan 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://davidbcalhoun.com/2011/implementing-iphones-slider-unlock-with-input-typerange/</guid>
+      <guid>https://www.davidbcalhoun.com/2011/implementing-iphones-slider-unlock-with-input-typerange/</guid>
       <description>(check out the live demo)
 Introduction After reading &amp;ldquo;What the Heck is Shadow DOM?&amp;rdquo; I was inspired to see how far I could style the &amp;lt;input type=&amp;quot;range&amp;quot;&amp;gt; element. Pretty far, as it turns out!
 My goal was to change the input&amp;rsquo;s default appearance:
@@ -38,10 +38,10 @@ As far as I can tell, only WebKit-based browsers and Opera have implemented inpu
     
     <item>
       <title>Thursday links (July 8)</title>
-      <link>https://davidbcalhoun.com/2010/thursday-links-july-8/</link>
+      <link>https://www.davidbcalhoun.com/2010/thursday-links-july-8/</link>
       <pubDate>Thu, 08 Jul 2010 00:00:00 +0000</pubDate>
       
-      <guid>https://davidbcalhoun.com/2010/thursday-links-july-8/</guid>
+      <guid>https://www.davidbcalhoun.com/2010/thursday-links-july-8/</guid>
       <description>Mobile YouTube Mobile Gets a Kick Start
 Battle of Champions: HTC Droid Incredible vs. Palm Pre Plus
 Designing for the Retina Display (326ppi)
@@ -55,10 +55,10 @@ Mobile Access 2010 (Pew Research)</description>
     
     <item>
       <title>Using mobile-specific HTML, CSS, and JavaScript (Mobile web part 5)</title>
-      <link>https://davidbcalhoun.com/2010/using-mobile-specific-html-css-and-javascript-mobile-web-part-5/</link>
+      <link>https://www.davidbcalhoun.com/2010/using-mobile-specific-html-css-and-javascript-mobile-web-part-5/</link>
       <pubDate>Tue, 29 Jun 2010 00:00:00 +0000</pubDate>
       
-      <guid>https://davidbcalhoun.com/2010/using-mobile-specific-html-css-and-javascript-mobile-web-part-5/</guid>
+      <guid>https://www.davidbcalhoun.com/2010/using-mobile-specific-html-css-and-javascript-mobile-web-part-5/</guid>
       <description>(updated June 27, 2011)
 Mobile-specific HTML Viewport tag Use the viewport tag to properly fit the content to the screen:
 &amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1.0&amp;quot;/&amp;gt;  Tel scheme (to initiate phone calls) &amp;lt;a href=&amp;quot;tel:18005555555&amp;quot;&amp;gt;Call us at 1-800-555-5555&amp;lt;/a&amp;gt;  Sms scheme (to initiate text messages) &amp;lt;a href=&amp;quot;sms:18005555555&amp;quot;&amp;gt; &amp;lt;a href=&amp;quot;sms:18005555555,18005555556&amp;quot;&amp;gt; &amp;lt;!-- multiple recipients --&amp;gt; &amp;lt;a href=&amp;quot;sms:18005555555?body=Text%20goes%20here&amp;quot;&amp;gt; &amp;lt;!-- predefined message body --&amp;gt;  Disable automatic telephone number linking &amp;lt;meta name=&amp;quot;format-detection&amp;quot; content=&amp;quot;telephone=no&amp;quot;&amp;gt;  iOS-specific HTML (some work on Android as well) You also have access to several Apple-specific tags to use in your iOS applications (iPhone, iPad, and don&amp;rsquo;t forget the iPod Touch!</description>
@@ -66,20 +66,20 @@ Mobile-specific HTML Viewport tag Use the viewport tag to properly fit the conte
     
     <item>
       <title>A Clockwork Box</title>
-      <link>https://davidbcalhoun.com/2010/a-clockwork-box/</link>
+      <link>https://www.davidbcalhoun.com/2010/a-clockwork-box/</link>
       <pubDate>Tue, 02 Mar 2010 00:00:00 +0000</pubDate>
       
-      <guid>https://davidbcalhoun.com/2010/a-clockwork-box/</guid>
+      <guid>https://www.davidbcalhoun.com/2010/a-clockwork-box/</guid>
       <description>With CSS there are always various ways to accomplish something. After reading this short tidbit, you should be familiar with the various ways of controlling the size of an element&amp;#8217;s padding, border, and margin, and you should know what the handy &amp;#8220;clockwork&amp;#8221; tip is, and how it will be useful to remember when you&amp;#8217;re putting your CSS into practice.
 Equal values on all four sides If all four values (top, right, bottom, and left) are equal, then you simply write the following:</description>
     </item>
     
     <item>
       <title>A primer on CSS colors</title>
-      <link>https://davidbcalhoun.com/2009/a-primer-on-css-colors/</link>
+      <link>https://www.davidbcalhoun.com/2009/a-primer-on-css-colors/</link>
       <pubDate>Tue, 29 Dec 2009 00:00:00 +0000</pubDate>
       
-      <guid>https://davidbcalhoun.com/2009/a-primer-on-css-colors/</guid>
+      <guid>https://www.davidbcalhoun.com/2009/a-primer-on-css-colors/</guid>
       <description>Color keywords Example usage:
 // Example body { color: red; } // Generalization (not actual code) body { color: color_name; } Because color names are easy to remember, they&amp;#8217;re handy for getting quick results, especially while doing rapid prototyping.
 W3C&amp;#8217;s CSS1 recommendation first mentioned 16 color keywords that you can use: aqua, black, blue, fuchsia, gray, green, lime, maroon, navy, olive, purple, red, silver, teal, white, and yellow:
@@ -88,10 +88,10 @@ W3C&amp;#8217;s CSS1 recommendation first mentioned 16 color keywords that you c
     
     <item>
       <title>IE Mobile 6.12 problem: browser ignores the specificity of CSS display styles</title>
-      <link>https://davidbcalhoun.com/2009/ie-mobile-6.12-problem-browser-ignores-the-specificity-of-css-display-styles/</link>
+      <link>https://www.davidbcalhoun.com/2009/ie-mobile-6.12-problem-browser-ignores-the-specificity-of-css-display-styles/</link>
       <pubDate>Mon, 31 Aug 2009 00:00:00 +0000</pubDate>
       
-      <guid>https://davidbcalhoun.com/2009/ie-mobile-6.12-problem-browser-ignores-the-specificity-of-css-display-styles/</guid>
+      <guid>https://www.davidbcalhoun.com/2009/ie-mobile-6.12-problem-browser-ignores-the-specificity-of-css-display-styles/</guid>
       <description>UPDATE: I found that the problem is actually that inline-block is completely unsupported in this version of IE Mobile, and is likely also unsupported in IE Mobile 7, which is also based on IE4. This is in contrast to desktop IE6, where inline-block is supported on elements that are natively inline (span, em, etc.).
 Just found this today, for what it&amp;#8217;s worth. If you&amp;#8217;re unlucky enough to be working with older Windows Mobile phones you have probably realized that the browser is based on IE6, which all the desktop web developers notoriously complain about constantly.</description>
     </item>
