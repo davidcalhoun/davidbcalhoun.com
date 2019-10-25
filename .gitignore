@@ -3,3 +3,4 @@
 .pygments-cache
 hugo/public
 hugo/node_modules
+hugo/resources/_gen
