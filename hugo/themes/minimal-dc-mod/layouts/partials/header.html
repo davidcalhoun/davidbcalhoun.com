@@ -52,7 +52,7 @@
             {{ if .Site.Menus.icon }}
                 <ul class="navbar-links">
                     {{ range sort .Site.Menus.icon }}
-                        <li class="navbar-icon"><a aria-label="{{ .Name }}" href="{{ .URL }}">{{ .Pre }}</i></a></li>
+                        <li class="navbar-icon"><a aria-label="{{ .Name }}" title="{{ .Name }}" href="{{ .URL }}">{{ .Pre }}</i></a></li>
                     {{ end }}
                 </ul>
             {{ end }}

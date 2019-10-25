@@ -1,0 +1,13 @@
+{
+  "name": "davidbcalhoun",
+  "version": "1.0.0",
+  "description": "Personal website of David Calhoun",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "hugo server -D -v",
+    "build": "hugo"
+  },
+  "author": "",
+  "license": "ISC"
+}

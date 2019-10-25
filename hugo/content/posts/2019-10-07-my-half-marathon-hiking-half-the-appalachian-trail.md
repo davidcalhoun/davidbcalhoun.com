@@ -9,8 +9,6 @@ tags:
 image: https://www.davidbcalhoun.com/wp-content/uploads/2019/20190919-IMG_8770-me-katahdin-summit-david-calhoun.jpg
 ---
 
-<meta itemprop="mainEntityOfPage" content="https://en.wikipedia.org/wiki/Appalachian_Trail" />
-
 <figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
     <meta itemprop="width" content="1500" />
     <meta itemprop="height" content="1125" />
@@ -66,7 +64,7 @@ The AT is a really varied trail passing through over 2000 miles of terrain, and 
     <meta itemprop="height" content="1125" />
     <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190406-IMG_2263-wv-near-harpers-ferry-sm.jpg" />
     <a href="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190406-IMG_2263-wv-near-harpers-ferry-sm.jpg">
-        <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190406-IMG_2263-wv-near-harpers-ferry-sm.jpg" title="A few easy miles along the Potomac River, just after Harper's Ferry" />
+        <img itemprop="contentUrl" loading="lazy" src="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190406-IMG_2263-wv-near-harpers-ferry-sm.jpg" title="A few easy miles along the Potomac River, just after Harper's Ferry" />
     </a>
     <figcaption itemprop="caption">A few easy miles along the Potomac River, just after Harper's Ferry</figcaption>
   </figure>
@@ -97,7 +95,7 @@ The AT is a really varied trail passing through over 2000 miles of terrain, and 
     <meta itemprop="height" content="1500" />
     <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190528-IMG_4830-cn-falls-village-sm.jpg" />
     <a href="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190528-IMG_4830-cn-falls-village-sm.jpg">
-        <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190528-IMG_4830-cn-falls-village-sm.jpg" title="Forest path near Falls Village, Connecticut" />
+        <img itemprop="contentUrl" loading="lazy" src="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190528-IMG_4830-cn-falls-village-sm.jpg" title="Forest path near Falls Village, Connecticut" />
     </a>
     <figcaption itemprop="caption">Forest path near Falls Village, Connecticut</figcaption>
 </figure>
@@ -138,7 +136,7 @@ Onward.
     <meta itemprop="height" content="1125" />
     <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190504-IMG_4002-pa-worthington-state-forest-sm.jpg" />
     <a href="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190504-IMG_4002-pa-worthington-state-forest-sm.jpg">
-        <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190504-IMG_4002-pa-worthington-state-forest-sm.jpg" title="Mist lifting out of the Delaware river basin in Worthington State Forest, near Delaware Water Gap, Pennslyvania" />
+        <img itemprop="contentUrl" loading="lazy" src="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190504-IMG_4002-pa-worthington-state-forest-sm.jpg" title="Mist lifting out of the Delaware river basin in Worthington State Forest, near Delaware Water Gap, Pennslyvania" />
     </a>
     <figcaption itemprop="caption">Mist lifting out of the Delaware river basin in Worthington State Forest, near Delaware Water Gap, Pennslyvania</figcaption>
 </figure>
@@ -153,7 +151,7 @@ The colloquial name for this state is **"Rockslyvania"**, which I first saw scri
     <meta itemprop="height" content="1125" />
     <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190509-IMG_4198-nj-pochuk-mountain-state-park-sm.jpg" />
     <a href="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190509-IMG_4198-nj-pochuk-mountain-state-park-sm.jpg">
-        <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190509-IMG_4198-nj-pochuk-mountain-state-park-sm.jpg" title="Bog bridges in Pochuk Mountain State Park, New Jersey.  Garden State!" />
+        <img itemprop="contentUrl" loading="lazy" src="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190509-IMG_4198-nj-pochuk-mountain-state-park-sm.jpg" title="Bog bridges in Pochuk Mountain State Park, New Jersey.  Garden State!" />
     </a>
     <figcaption itemprop="caption">Bog bridges in Pochuk Mountain State Park, New Jersey.  Garden State!</figcaption>
 </figure>
@@ -170,7 +168,7 @@ This was also the start of the **"deli section"**, where you would conveniently 
     <meta itemprop="height" content="1125" />
     <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190520-IMG_4562-ny-east-fishkill-sm.jpg" />
     <a href="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190520-IMG_4562-ny-east-fishkill-sm.jpg">
-        <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190520-IMG_4562-ny-east-fishkill-sm.jpg" title="Peering through the trees at someone's prized estate in East Fishkill, New York." />
+        <img itemprop="contentUrl" loading="lazy" src="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190520-IMG_4562-ny-east-fishkill-sm.jpg" title="Peering through the trees at someone's prized estate in East Fishkill, New York." />
     </a>
     <figcaption itemprop="caption">Peering through the trees at someone's prized estate in East Fishkill, New York.</figcaption>
 </figure>
@@ -192,7 +190,7 @@ Bear boxes at every campsite!  This saved a lot of time trying to hang a bear ba
     <meta itemprop="height" content="1125" />
     <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190603-IMG_5185-ma-tyringham-sm.jpg" />
     <a href="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190603-IMG_5185-ma-tyringham-sm.jpg">
-        <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190603-IMG_5185-ma-tyringham-sm.jpg" title="Cows grazing very near the AT, just after a road crossing with an awesome refrigerated trail stand (payments on the honor system). (Tyringham, Massachusetts)" />
+        <img itemprop="contentUrl" loading="lazy" src="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190603-IMG_5185-ma-tyringham-sm.jpg" title="Cows grazing very near the AT, just after a road crossing with an awesome refrigerated trail stand (payments on the honor system). (Tyringham, Massachusetts)" />
     </a>
     <figcaption itemprop="caption">Cows grazing very near the AT, just after a road crossing with an awesome refrigerated trail stand (payments on the honor system). (Tyringham, Massachusetts)</figcaption>
 </figure>
@@ -209,7 +207,7 @@ When I flew back a month later, the first day or two had my knees hurting worse 
     <meta itemprop="height" content="1125" />
     <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190718-IMG_6481-vt-killington-sm.jpg" />
     <a href="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190718-IMG_6481-vt-killington-sm.jpg">
-        <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190718-IMG_6481-vt-killington-sm.jpg" title="Amazing thick fern forest in Killington, Vermont" />
+        <img itemprop="contentUrl" loading="lazy" src="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190718-IMG_6481-vt-killington-sm.jpg" title="Amazing thick fern forest in Killington, Vermont" />
     </a>
     <figcaption itemprop="caption">Amazing thick fern forest in Killington, Vermont</figcaption>
 </figure>
@@ -228,7 +226,7 @@ The entire trail was walled in by greenery, even when reaching mountain peaks.  
     <meta itemprop="height" content="1125" />
     <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190806-IMG_7290-nh-white-mountains-towards-mt-eisenhower-sm.jpg" />
     <a href="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190806-IMG_7290-nh-white-mountains-towards-mt-eisenhower-sm.jpg">
-        <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190806-IMG_7290-nh-white-mountains-towards-mt-eisenhower-sm.jpg" title="Sunset above treeline, looking toward Mt Eisenhower (White Mountains, New Hampshire)" />
+        <img itemprop="contentUrl" loading="lazy" src="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190806-IMG_7290-nh-white-mountains-towards-mt-eisenhower-sm.jpg" title="Sunset above treeline, looking toward Mt Eisenhower (White Mountains, New Hampshire)" />
     </a>
     <figcaption itemprop="caption">Sunset above treeline, looking toward Mt Eisenhower (White Mountains, New Hampshire)</figcaption>
 </figure>
@@ -240,7 +238,7 @@ An infamous state on the AT, home to the challenging [White Mountain National Fo
     <meta itemprop="height" content="1125" />
     <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190813-IMG_7470-nh-wildcats-sm.jpg" />
     <a href="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190813-IMG_7470-nh-wildcats-sm.jpg">
-        <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190813-IMG_7470-nh-wildcats-sm.jpg" title="Vertical rock climbing in the Wildcats.  This spot in particular was definitely one of the most challenging parts of the AT for me, if not the hardest." />
+        <img itemprop="contentUrl" loading="lazy" src="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190813-IMG_7470-nh-wildcats-sm.jpg" title="Vertical rock climbing in the Wildcats.  This spot in particular was definitely one of the most challenging parts of the AT for me, if not the hardest." />
     </a>
     <figcaption itemprop="caption">Vertical rock climbing in the Wildcats.  This spot in particular was definitely one of the most challenging parts of the AT for me, if not the hardest.</figcaption>
 </figure>
@@ -261,7 +259,7 @@ That surely was a full body workout - I remember my arms being as tired as my le
     <meta itemprop="height" content="1125" />
     <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190903-IMG_8183-me-bigelows-view-sm.jpg" />
     <a href="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190903-IMG_8183-me-bigelows-view-sm.jpg">
-        <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190903-IMG_8183-me-bigelows-view-sm.jpg" title="View of the lakes of Maine from the Bigelow mountain range" />
+        <img itemprop="contentUrl" loading="lazy" src="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190903-IMG_8183-me-bigelows-view-sm.jpg" title="View of the lakes of Maine from the Bigelow mountain range" />
     </a>
     <figcaption itemprop="caption">View of the lakes of Maine from the Bigelow mountain range</figcaption>
 </figure>
@@ -293,7 +291,7 @@ On the day of my Mt Katahdin summit I was appreciating the light of the new day 
     <meta itemprop="height" content="1125" />
     <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190409-IMG_2462-md-washington-monument-state-park-sm.jpg" />
     <a href="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190409-IMG_2462-md-washington-monument-state-park-sm.jpg">
-        <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190409-IMG_2462-md-washington-monument-state-park-sm.jpg" title="White blazes directing hikers to the left, with a blossoming cherry tree in the background (Maryland's Washington Monument State Park)" />
+        <img itemprop="contentUrl" loading="lazy" src="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190409-IMG_2462-md-washington-monument-state-park-sm.jpg" title="White blazes directing hikers to the left, with a blossoming cherry tree in the background (Maryland's Washington Monument State Park)" />
     </a>
     <figcaption itemprop="caption">White blazes directing hikers to the left, with a blossoming cherry tree in the background (Maryland's Washington Monument State Park)</figcaption>
 </figure>
@@ -345,7 +343,7 @@ The in-you-face vlogging style is pretty stale by this point.  I did keep up a s
 
 Here's the first video of my AT video series for folks who are interested:
 
-<iframe width="560" height="315" title="YouTube video" src="https://www.youtube.com/embed/csoYoI6bc2I" frameborder="0" allowfullscreen style="margin: 0 auto; display: block;"></iframe>
+<iframe width="560" height="315" title="YouTube video" loading="lazy" src="https://www.youtube.com/embed/csoYoI6bc2I" frameborder="0" allowfullscreen style="margin: 0 auto; display: block;"></iframe>
 
 ## Low points
 Not everything is fun on the trail.  Here's some notable low points to balance out all the positive fluff.
@@ -378,14 +376,25 @@ My general advice to avoid the AT's own rat race is to **avoid numbers in all fo
 * You're not going to get along with everyone, and that's ok.  But you need to **learn how to tolerate others**.
 * **You can get by with surprisingly little**, and you can carry it all on your back - over boulders and over entire mountains.
 
-
 <figure itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject" class="center">
-    <meta itemprop="width" content="1500" />
-    <meta itemprop="height" content="1125" />
-    <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190919-IMG_8770-me-katahdin-summit-david-calhoun.jpg" />
-    <a href="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190919-IMG_8770-me-katahdin-summit-david-calhoun.jpg">
-        <img itemprop="contentUrl" src="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190919-IMG_8770-me-katahdin-summit-david-calhoun.jpg" title="Yours truly standing at the top of Mt Katahdin" />
-    </a>
-    <figcaption itemprop="caption">Yours truly standing at the top of Mt Katahdin</figcaption>
+  <meta itemprop="width" content="1500" />
+  <meta itemprop="height" content="1125" />
+  <meta itemprop="url" content="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190919-IMG_8770-me-katahdin-summit-david-calhoun.jpg" />
+  <a href="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190919-IMG_8770-me-katahdin-summit-david-calhoun.jpg">
+    <picture>
+      <source type="image/webp" media="(max-width: 500px)" srcset="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190919-IMG_8770-me-katahdin-summit-david-calhoun_500w.webp">
+      <source type="image/webp" media="(min-width: 501px) and (max-width: 750px)" srcset="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190919-IMG_8770-me-katahdin-summit-david-calhoun_750w.webp">
+      <source type="image/webp" media="(min-width: 751px) and (max-width: 1000px)" srcset="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190919-IMG_8770-me-katahdin-summit-david-calhoun_1000w.webp">
+      <source type="image/webp" media="(min-width: 1001px)" srcset="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190919-IMG_8770-me-katahdin-summit-david-calhoun_1500w.webp">
+      <source type="image/jpeg" media="(max-width: 500px)" srcset="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190919-IMG_8770-me-katahdin-summit-david-calhoun_500w.jpeg">
+      <source type="image/jpeg" media="(min-width: 501px) and (max-width: 750px)" srcset="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190919-IMG_8770-me-katahdin-summit-david-calhoun_750w.jpeg">
+      <source type="image/jpeg" media="(min-width: 751px) and (max-width: 1000px)" srcset="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190919-IMG_8770-me-katahdin-summit-david-calhoun_1000w.jpeg">
+      <source type="image/jpeg" media="(min-width: 1001px)" srcset="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190919-IMG_8770-me-katahdin-summit-david-calhoun_1500w.jpeg">
+      <img itemprop="contentUrl" loading="lazy" src="https://www.davidbcalhoun.com/wp-content/uploads/2019/20190919-IMG_8770-me-katahdin-summit-david-calhoun_1500w.jpeg" alt="Yours truly standing at the top of Mt Katahdin" />
+    </picture>
+  </a>
+  <figcaption itemprop="caption">Yours truly standing at the top of Mt Katahdin</figcaption>
 </figure>
 
+
+<meta itemprop="mainEntityOfPage" content="https://en.wikipedia.org/wiki/Appalachian_Trail" />

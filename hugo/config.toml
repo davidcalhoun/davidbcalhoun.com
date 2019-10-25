@@ -16,7 +16,7 @@ googleAnalytics = "UA-5530615-3"
     highlight = true
     highlightStyle = "foundation"
     highlightLanguages = ["css", "javascript"]
-    copyright = '© <span itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="David Calhoun"><a href="mailto:david.b.calhoun@gmail.com" itemprop="email">David Calhoun</a> (<a href="https://twitter.com/franksvalli" itemprop="url">@franksvalli</a>) - <a href="https://www.linkedin.com/in/davidcalhoun" itemprop="url">LinkedIn</a> - <a href="https://themaingate.net/resume/" itemprop="url">Resume</a></span>'
+    copyright = '©<span itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="David Calhoun"><a href="https://themaingate.net/">David Calhoun</a></span>'
 
 [permalinks]
   posts = "/:year/:slug/"
@@ -35,7 +35,7 @@ googleAnalytics = "UA-5530615-3"
     url = "https://github.com/davidcalhoun/"
     name = "Github"
     pre = '<svg width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M896 128q209 0 385.5 103t279.5 279.5 103 385.5q0 251-146.5 451.5t-378.5 277.5q-27 5-40-7t-13-30q0-3 .5-76.5t.5-134.5q0-97-52-142 57-6 102.5-18t94-39 81-66.5 53-105 20.5-150.5q0-119-79-206 37-91-8-204-28-9-81 11t-92 44l-38 24q-93-26-192-26t-192 26q-16-11-42.5-27t-83.5-38.5-85-13.5q-45 113-8 204-79 87-79 206 0 85 20.5 150t52.5 105 80.5 67 94 39 102.5 18q-39 36-49 103-21 10-45 15t-57 5-65.5-21.5-55.5-62.5q-19-32-48.5-52t-49.5-24l-20-3q-21 0-29 4.5t-5 11.5 9 14 13 12l7 5q22 10 43.5 38t31.5 51l10 23q13 38 44 61.5t67 30 69.5 7 55.5-3.5l23-4q0 38 .5 88.5t.5 54.5q0 18-13 30t-40 7q-232-77-378.5-277.5t-146.5-451.5q0-209 103-385.5t279.5-279.5 385.5-103zm-477 1103q3-7-7-12-10-3-13 2-3 7 7 12 9 6 13-2zm31 34q7-5-2-16-10-9-16-3-7 5 2 16 10 10 16 3zm30 45q9-7 0-19-8-13-17-6-9 5 0 18t17 7zm42 42q8-8-4-19-12-12-20-3-9 8 4 19 12 12 20 3zm57 25q3-11-13-16-15-4-19 7t13 15q15 6 19-6zm63 5q0-13-17-11-16 0-16 11 0 13 17 11 16 0 16-11zm58-10q-2-11-18-9-16 3-14 15t18 8 14-14z"/></svg>'
-    weight = 2
+    weight = 4
 
 [[menu.icon]]
     url = "https://twitter.com/franksvalli/"
@@ -45,12 +45,12 @@ googleAnalytics = "UA-5530615-3"
 
 [[menu.icon]]
     url = "https://www.linkedin.com/in/davidcalhoun/"
-    name = "Linkedin"
+    name = "LinkedIn"
     pre = '<svg width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z"/></svg>'
     weight = 4
 
 [[menu.icon]]
-    url = "https://stackoverflow.com/users/214017/david-calhoun/"
-    name = "Stack Overflow"
-    pre = '<svg width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1417 1632h-1118v-480h-160v640h1438v-640h-160v480zm-942-524l33-157 783 165-33 156zm103-374l67-146 725 339-67 145zm201-356l102-123 614 513-102 123zm397-378l477 641-128 96-477-641zm-718 1471v-159h800v159h-800z"/></svg>'
-    weight = 5
+    url = "https://www.themaingate.net/"
+    name = "Home Page"
+    pre = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"/></svg>'
+    weight = 2
