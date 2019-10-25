@@ -7,5 +7,5 @@
 </style>
 
 <!-- main -->
-<link rel="stylesheet" href="{{ "css/main.css" | absURL }}">
+<link rel="stylesheet" href="{{ "css/main.css" | absURL }}?{{ (querify "version" ( now.Format "20060102" )) | safeURL }}">
 
