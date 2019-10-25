@@ -16,8 +16,8 @@
 </style>
 
 
-<link rel="stylesheet" href="https://www.davidbcalhoun.com/css/main.css?version=20191025">
-
+ 
+<link rel="stylesheet" href="https://www.davidbcalhoun.com/css/main.min.db1c28f08ef53ffc18b871ca2d7f92752986edaaf90eab68dd09938ad708b462.css">
  <link rel="preconnect" href="https://ssl.gstatic.com">
 <link rel="preconnect" href="https://a.disquscdn.com">
 <link rel="preconnect" href="https://cdnjs.cloudflare.com">
@@ -80,7 +80,7 @@ loadScripts()
 
 
 
- <meta name="generator" content="Hugo 0.42.2" />
+ <meta name="generator" content="Hugo 0.59.0" />
         
 
         
@@ -219,15 +219,15 @@ loadScripts()
 <ul>
 <li><p><code>window.orientation</code>: this property gives the current screen orientation: 0 in portrait mode, 90 when rotated left, -90 when rotated right (no special value when the screen is upside-down)</p></li>
 
-<li><p><code>orientationchange</code> event: this window event fires after every 90 degrees of rotation and, like other events, <a href="http://en.wikipedia.org/wiki/DOM_events">can be applied in various ways</a>:</p></li>
-</ul>
+<li><p><code>orientationchange</code> event: this window event fires after every 90 degrees of rotation and, like other events, <a href="http://en.wikipedia.org/wiki/DOM_events">can be applied in various ways</a>:</p>
 
 <pre><code class="language-js">// DOM Level 0 (avoid)
 window.onorientationchange = function(){};
 
 // DOM Level 2
 window.addEventListener('orientationchange', function(){}, false);
-</code></pre>
+</code></pre></li>
+</ul>
 
 <p><a href="http://www.iphonemicrosites.com/articles/6-tips-to-optimize-your-current-site-for-the-iphone/">Some websites</a> recommend using <code>orientationchange</code> to dynamically add an <code>orient</code> attribute on the <code>body</code> element and target the orientation with CSS selectors (<code>body[orient=landscape]</code>), <em>but this is in error</em>. As it turns out, <code>orientationchange</code> is only fired AFTER the screen has been rotated (which also <a href="http://www.stubbornella.org/content/2009/03/27/reflows-repaints-css-performance-making-your-javascript-slow/">triggers a CSS reflow</a>), which means this attribute is updated later (after the reflow). And unfortunately editing this <code>orient</code> attribute doesn&rsquo;t trigger another CSS reflow. The result? When you rotate the device, these new CSS styles don&rsquo;t get applied!</p>
 
@@ -415,7 +415,7 @@ window.addEventListener('DOMContentLoaded', init, false);
         <h4 class="page-header">Comments</h4>
 
         <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     

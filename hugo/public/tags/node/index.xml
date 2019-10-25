@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Node on David Calhoun&#39;s blog</title>
+    <title>node on David Calhoun&#39;s blog</title>
     <link>https://www.davidbcalhoun.com/tags/node/</link>
-    <description>Recent content in Node on David Calhoun&#39;s blog</description>
+    <description>Recent content in node on David Calhoun&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Mon, 08 Sep 2014 00:36:52 -0700</lastBuildDate>

@@ -7,5 +7,5 @@
 </style>
 
 <!-- main -->
-<link rel="stylesheet" href="{{ "css/main.css" | absURL }}?{{ (querify "version" ( now.Format "20060102" )) | safeURL }}">
-
+{{ $style := resources.Get "css/main.scss" | toCSS | minify | fingerprint }} 
+<link rel="stylesheet" href="{{ $style.Permalink }}">

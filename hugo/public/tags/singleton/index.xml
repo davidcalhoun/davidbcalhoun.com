@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Singleton on David Calhoun&#39;s blog</title>
+    <title>singleton on David Calhoun&#39;s blog</title>
     <link>https://www.davidbcalhoun.com/tags/singleton/</link>
-    <description>Recent content in Singleton on David Calhoun&#39;s blog</description>
+    <description>Recent content in singleton on David Calhoun&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Mon, 14 Sep 2009 00:00:00 +0000</lastBuildDate>

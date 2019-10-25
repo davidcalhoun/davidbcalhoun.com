@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Webdev on David Calhoun&#39;s blog</title>
+    <title>webdev on David Calhoun&#39;s blog</title>
     <link>https://www.davidbcalhoun.com/tags/webdev/</link>
-    <description>Recent content in Webdev on David Calhoun&#39;s blog</description>
+    <description>Recent content in webdev on David Calhoun&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Sun, 26 Aug 2018 00:00:00 +0000</lastBuildDate>
@@ -95,10 +95,10 @@ I also noticed that the images are a variety of sizes, leading to a less sterile
     
     <item>
       <title>More fun with WebKit pseudoelements: -webkit-search-cancel-button (or: Pseudoclass Inception)</title>
-      <link>https://www.davidbcalhoun.com/2012/more-fun-with-webkit-pseudoelements--webkit-search-cancel-button-or-pseudoclass-inception/</link>
+      <link>https://www.davidbcalhoun.com/2012/more-fun-with-webkit-pseudoelements-webkit-search-cancel-button-or-pseudoclass-inception/</link>
       <pubDate>Fri, 10 Aug 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://www.davidbcalhoun.com/2012/more-fun-with-webkit-pseudoelements--webkit-search-cancel-button-or-pseudoclass-inception/</guid>
+      <guid>https://www.davidbcalhoun.com/2012/more-fun-with-webkit-pseudoelements-webkit-search-cancel-button-or-pseudoclass-inception/</guid>
       <description>Introduction UPDATE 2016: this appears to have even less support than before, and it&amp;rsquo;s not recommended to be used on a production site. Use a helper JS library instead.
 (check out the Demo)
 A while back I had a bit of a field day messing around with input type=&amp;ldquo;range&amp;rdquo;, trying to replicate the &amp;ldquo;unlock slider&amp;rdquo; on iOS using CSS, targeting special WebKit-only CSS pseudoelements such as webkit-slider-thumb.
@@ -528,10 +528,10 @@ Equal values on all four sides If all four values (top, right, bottom, and left)
     
     <item>
       <title>Video: John Resig - Testing, Performance Analysis, and jQuery 1.4</title>
-      <link>https://www.davidbcalhoun.com/2009/video-john-resig---testing-performance-analysis-and-jquery-1.4/</link>
+      <link>https://www.davidbcalhoun.com/2009/video-john-resig-testing-performance-analysis-and-jquery-1.4/</link>
       <pubDate>Mon, 21 Dec 2009 00:00:00 +0000</pubDate>
       
-      <guid>https://www.davidbcalhoun.com/2009/video-john-resig---testing-performance-analysis-and-jquery-1.4/</guid>
+      <guid>https://www.davidbcalhoun.com/2009/video-john-resig-testing-performance-analysis-and-jquery-1.4/</guid>
       <description>In case you hadn&amp;#8217;t seen it yet, John Resig was kind enough to stop by Yahoo! for the December Bayjax meetup. Here&amp;#8217;s the video:
  Usually developers are more interested in just getting the dang code to work, and as a result actual the testing and maintenance of JavaScript isn&amp;#8217;t talked about too much, so I&amp;#8217;m sure this will be new territory for many developers. And since it&amp;#8217;s John Resig speaking, there was of course a bit about using TestSwarm, a testing distributed framework-agnostic automated testing tool (that&amp;#8217;s a mouthful!</description>
     </item>

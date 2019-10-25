@@ -2,3 +2,4 @@
 .sass-cache
 .pygments-cache
 hugo/public
+hugo/node_modules
