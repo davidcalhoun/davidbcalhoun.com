@@ -4,7 +4,6 @@ title = "David Calhoun's blog"
 theme = "minimal-dc-mod"
 disqusShortname = "davidbcalhoun" # delete this to disable disqus comments
 googleAnalytics = "UA-5530615-3"
-assetDir = "foo"
 
 [params]
     author = "David Calhoun"
