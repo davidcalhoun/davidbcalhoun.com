@@ -71,6 +71,10 @@ https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/foundation.min
         --text-color: #cacaca;
         --text-emphasis-color: white;
     }
+
+    .hljs {
+        background: black;
+    }
 }
 
 /* reduced animations */
