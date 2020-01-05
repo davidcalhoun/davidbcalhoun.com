@@ -80,7 +80,7 @@ function myFunc(){};
 module.exports = myFunc;
 ```
 
-And our more complicate example, with multiple dependencies and multiple exposed methods:
+And our more complicated example, with multiple dependencies and multiple exposed methods:
 
 ```javascript
 //    filename: foo.js

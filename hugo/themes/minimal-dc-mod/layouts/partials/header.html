@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}">
+<html lang="{{ .Site.LanguageCode }}" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
     <head>
         {{ partial "head-open" . }}
         <meta charset="utf-8">
@@ -26,12 +26,97 @@
           gtag('config', '{{ .Site.GoogleAnalytics }}');
         </script>
         {{ end }}
+
+        <style>
+            /** https://fonts.googleapis.com/css?family=Roboto&display=swap */
+            /** Apache Licence 2.0: https://www.apache.org/licenses/LICENSE-2.0 */
+            /* roboto-regular - latin */
+            @font-face {
+              font-family: 'Roboto';
+              font-style: normal;
+              font-weight: 400;
+              font-display: swap;
+              src: local('Roboto'), local('Roboto-Regular'),
+                   url('/wp-content/fonts/roboto-v20-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+                   url('/wp-content/fonts/roboto-v20-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+            }
+        </style>
+
+        {{ if .Params.description }}
+        <meta name="description" content="{{ .Params.description }}"/>
+        {{ else }}
         <meta name="description" content="Personal blog of photographer and web developer David Calhoun."/>
+        {{ end }}
         <meta name="theme-color" content="#fff">
         <link rel="canonical" href="{{ .Page.Permalink }}">
         <link href="/index.xml" rel="alternate" type="application/rss+xml" title="David Calhoun&#39;s blog" />
         <link href="/index.xml" rel="feed" type="application/rss+xml" title="David Calhoun&#39;s blog" />
 
+        <!-- Schema.org -->
+        <meta itemprop="name" content="{{ .Title }}"/>
+        <meta itemprop="headline" content="{{ .Title }}"/>
+        {{ if .Params.description }}
+        <meta itemprop="description" content="{{ .Params.description }}"/>
+        {{ end }}
+        {{ if .Params.image }}
+        <meta itemprop="image" content="{{ .Params.image }}"/>
+        {{ end }}
+        <meta itemprop="author" content="David Calhoun"/>
+
+        <!-- Facebook Open Graph -->
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="{{ .Page.Permalink }}" />
+        <meta property="og:title" content="{{ .Title }}" />
+        {{ if .Params.image }}
+        <meta property="og:image" content="{{ .Params.image }}"/>
+        {{ end }}
+        {{ if .Params.imageAlt }}
+        <meta property="og:image:alt" content="{{ .Params.imageAlt }}"/>
+        {{ end }}
+        {{ if .Params.description }}
+        <meta property="og:description" content="{{ .Params.description }}"/>
+        {{ end }}
+        <meta property="og:site_name" content="David Calhoun's Blog" />
+        {{ if .Params.date }}
+        <meta property="og:updated_time" content={{ dateFormat "2006-01-02T15:04:05Z0700" .Params.date }} />
+        {{ end }}
+
+        <!-- Facebook Open Graph article: https://ogp.me/#type_article -->
+        {{ if .Params.date }}
+        <meta property="article:published_time" content={{ dateFormat "2006-01-02T15:04:05Z0700" .Params.date }} />
+        <meta property="article:modified_time" content={{ dateFormat "2006-01-02T15:04:05Z0700" .Params.date }} />
+        {{ end }}
+        {{ if .Params.tags }}
+        {{ range first 1 .Params.tags }}
+        <meta property="article:section" content="{{ . }}" />
+        {{ end }}
+        {{ else }}
+        <meta property="article:section" content="Blog entry" />
+        {{ end }}
+        <meta property="article:author" content="https://www.davidbcalhoun.com" />
+        {{ if .Params.image }}
+        <meta property="article:image" content="{{ .Params.image }}"/>
+        {{ end }}
+        {{ range .Params.tags }}<meta property="article:tag" content="{{ . }}" />
+        {{ end }}
+
+        <!-- Twitter Cards -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="{{ .Title }}" />
+        <meta name="twitter:url" content="{{ .Page.Permalink }}"/>
+        <meta name="twitter:site" content="@franksvalli" />
+        <meta name="twitter:creator" content="@franksvalli" />
+        <meta name="twitter:domain" content="davidbcalhoun.com" />
+        {{ if .Params.description }}
+        <meta name="twitter:description" content="{{ .Params.description }}"/>
+        {{ end }}
+        {{ if .Params.image }}
+        <meta name="twitter:image" content="{{ .Params.image }}"/>
+        {{ end }}
+        {{ if .Params.imageAlt }}
+        <meta name="twitter:image:alt" content="{{ .Params.imageAlt }}"/>
+        {{ end }}
     </head>
 
     {{ if .Site.Params.MathJax | default false }}

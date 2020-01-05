@@ -1,0 +1,32 @@
+<!-- The shortcode functionality - in layouts/shortcodes/img.html -->
+  {{ if .Get "caption"}}
+  <figure itemprop="image" itemscope="" itemtype="https://schema.org/ImageObject" class="center">
+  {{ end }}
+    <a href="/wp-content/uploads/{{ .Get "src" }}.jpg" class="picture">
+      <picture>
+        {{ if .Get "width"}}
+        <meta itemprop="width" content="{{ .Get "width" }}" />
+        {{ end }}
+        {{ if .Get "width"}}
+        <meta itemprop="height" content="{{ .Get "height" }}" />
+        {{ end }}
+        {{ if .Get "caption"}}
+        <meta itemprop="height" content="{{ .Get "caption" }}" />
+        {{ end }}
+        <meta itemprop="url" content="/wp-content/uploads/{{ .Get "src" }}.jpg" />
+
+        <source type="image/webp" media="(max-width: 500px)" srcset="/wp-content/uploads/{{ .Get "src" }}-500px-resize.webp" />
+        <source type="image/webp" media="(max-width: 1000px)" srcset="/wp-content/uploads/{{ .Get "src" }}-1000px-resize.webp" />
+        <source type="image/webp" media="(min-width: 1001px)" srcset="/wp-content/uploads/{{ .Get "src" }}-2000px-resize.webp" />
+
+        <source type="image/jpeg" media="(max-width: 500px)" srcset="/wp-content/uploads/{{ .Get "src" }}-500px-resize.jpeg" />
+        <source type="image/jpeg" media="(max-width: 1000px)" srcset="/wp-content/uploads/{{ .Get "src" }}-1000px-resize.jpeg" />
+        <source type="image/jpeg" media="(min-width: 1001px)" srcset="/wp-content/uploads/{{ .Get "src" }}-2000px-resize.jpeg" />
+
+        <img itemprop="caption" src="/wp-content/uploads/{{ .Get "src" }}.jpg" alt="{{ .Get "caption" }}" loading="lazy"/>
+      </picture>
+    </a>
+  {{ if .Get "caption"}}
+    <figcaption>{{ .Get "caption" }}</figcaption>
+  </figure>
+  {{ end }}

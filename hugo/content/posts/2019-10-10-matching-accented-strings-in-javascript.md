@@ -6,6 +6,8 @@ tags:
 - javascript
 - regexp
 - criterion
+image: https://www.davidbcalhoun.com/wp-content/uploads/2019/criterion-search-without-diacritic.gif
+imageAlt: A bug when performing a search for maches with accents (diacritics).
 ---
 
 ## The problem: accented characters versus user input
@@ -66,10 +68,12 @@ What is somewhat strange is that though the Unicode characters display exactly t
 'ï' === '\u00ef';        // true
 'ï' === '\u0069\u0308';  // true
 
-// You may then think that the following must be true in JavaScript (transitive equality), but you'd be wrong!
+// You may then think that the following must be true in JavaScript
+// (e.g. transitive equality), but you'd be wrong!
 
 '\u00ef' === '\u0069\u0308';  // false
-// Note that the line above may display as 'ï' === 'ï', but it will still evaluate to false!
+// Note that the line above may display as 'ï' === 'ï', but it will
+// still evaluate to false!
 ```
 
 ## Removing diacritics
@@ -129,7 +133,7 @@ removeDiacritics('àbçdëfghïjklmñöpqrśtüvwxÿž');
 ```
 
 ## Complete example code
-Now we can put it all together into a working example that would solve the original problem with user input in the Criteria Channel's website:
+Now we can put it all together into a working example that would solve the original problem with user input in the Criterion Channel's website:
 
 ```js
 // Strips diacritics from a string

@@ -1,6 +1,7 @@
 {{ partial "header" . }}
 
 <main role="main" itemscope itemType="https://schema.org/BlogPosting">
+    <meta itemprop="mainEntityOfPage" content="{{ .Page.Permalink }}" />
     <meta itemprop="inLanguage" content="en-US" />
     <span itemscope itemprop="author" itemType="https://schema.org/Person">
         <meta itemprop="name" content="David Calhoun" />
@@ -8,9 +9,17 @@
     <span itemscope itemprop="publisher" itemType="https://schema.org/Organization">
         <meta itemprop="name" content="David Calhoun" />
         <meta itemprop="url" content="https://themaingate.net" />
-        <meta itemprop="logo" content="https://themaingate.net/david-calhoun-logo.png" />
+        <span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+            <meta itemprop="url" content="https://themaingate.net/david-calhoun-logo.png">
+            <meta itemprop="width" content="459">
+            <meta itemprop="height" content="459">
+        </span>
     </span>
     <meta itemprop="image" content="https://themaingate.net/david-calhoun-logo.png" />
+    {{ if .Params.date }}
+    <meta itemprop="datePublished" content={{ dateFormat "2006-01-02T15:04:05Z0700" .Params.date }}/>
+    <meta itemprop="dateModified" content={{ dateFormat "2006-01-02T15:04:05Z0700" .Params.date }}/>
+    {{ end }}
 
     {{ partial "list-item" . }}
 

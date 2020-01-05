@@ -17,9 +17,21 @@ unsafe = true
     backgroundColor = "white"
     font = "Roboto" # should match the name on Google Fonts!
     highlight = true
-    highlightStyle = "foundation"
+    highlightStyle = "monokai"
     highlightLanguages = ["css", "javascript"]
     copyright = '©<span itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="David Calhoun"><a href="https://themaingate.net/">David Calhoun</a></span>'
+
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ""
+    lineNoStart = 1
+    lineNos = true
+    lineNumbersInTable = true
+    noClasses = true
+    style = "monokai"
+    tabWidth = 4
 
 [permalinks]
   posts = "/:year/:slug/"
