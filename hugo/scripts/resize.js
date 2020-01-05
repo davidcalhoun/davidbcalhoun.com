@@ -1,3 +1,10 @@
+/**
+ * Resizes all jpgs in a directory.
+ * Outputs to different sizes and formats (jpeg, webp)
+ *
+ * Sharp docs: https://sharp.pixelplumbing.com
+ */
+
 import sharp from 'sharp';
 import fs from 'fs';
 import util from 'util';
@@ -34,13 +41,6 @@ function getStuff() {
 }
 
 async function processFilesInDir(dir) {
-    let file;
-    try {
-        file = await readFile('20190112-5D__1419-stanford-theatre-palo-alto-apu-trilogy.jpg');
-    } catch(e) {
-        console.error(e);
-    }
-
     let files;
     try {
         files = await readDir(dir);
