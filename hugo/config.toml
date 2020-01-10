@@ -19,7 +19,7 @@ unsafe = true
     highlight = true
     highlightStyle = "monokai"
     highlightLanguages = ["css", "javascript"]
-    copyright = '©<span itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="David Calhoun"><a href="https://themaingate.net/">David Calhoun</a></span>'
+    copyright = '©<span itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="David Calhoun"><a href="https://www.themaingate.net/">David Calhoun</a></span> - <a href="https://www.davidbcalhoun.com/privacy/">Privacy</a> - <a href="https://www.davidbcalhoun.com/terms-of-service/">Terms</a>'
 
 [markup]
   [markup.highlight]

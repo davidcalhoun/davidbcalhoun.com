@@ -12,6 +12,7 @@
     --border-width: 5px;
     --transition-duration: 0.25s;
     --transition-timing-function: cubic-bezier(.83,.68,.61,1.35);
+    --max-width: 850px;
 }
 
 /* light theme (default) */
@@ -247,9 +248,10 @@ main {
     padding: 1.5rem 1rem;
     margin: auto;
     flex: 1 0 auto;
-    max-width: 850px;
+    max-width: var(--max-width);
     width: 100%;
     min-height: 100vh;
+    word-break: break-word;
 }
 
 main p {
@@ -407,4 +409,38 @@ blockquote p {
 b,
 strong {
     color: var(--text-emphasis-color);
+}
+
+.comments {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    text-align: left;
+    width: 100%;
+}
+
+.comments .commento-root * {
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+.comments .commento-root .commento-card .commento-name,
+.comments .commento-root .commento-logged-container .commento-logged-in-as .commento-name {
+    color: var(--accent);
+}
+
+.comments .commento-root .commento-textarea-container {
+    border: 1px solid var(--accent);
+}
+
+.comments .commento-root .commento-card {
+    border-top: 1px solid var(--accent);
+}
+
+.comments .commento-root .commento-login-box-container .commento-login-box {
+    background: var(--bg-color);
+    border: 1px solid var(--accent);
+}
+
+.page-header {
+    margin-bottom: 0.5rem;
 }
