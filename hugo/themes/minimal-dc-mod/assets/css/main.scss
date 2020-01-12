@@ -397,8 +397,8 @@ code {
 blockquote {
     border-left: 2px solid var(--accent);
     padding-left: 1rem;
-    margin-left: 2rem;
     font-style: italic;
+    margin: 3rem 0 3rem 2rem;
 }
 
 blockquote p {
@@ -439,6 +439,10 @@ strong {
 .comments .commento-root .commento-login-box-container .commento-login-box {
     background: var(--bg-color);
     border: 1px solid var(--accent);
+}
+
+.comments .commento-root .commento-footer .commento-logo-container .commento-logo-text {
+    color: var(--text-color);
 }
 
 .page-header {

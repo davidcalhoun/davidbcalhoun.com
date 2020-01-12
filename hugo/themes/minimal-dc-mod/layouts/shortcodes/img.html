@@ -1,19 +1,36 @@
 <!-- The shortcode functionality - in layouts/shortcodes/img.html -->
   {{ if .Get "caption"}}
-  <figure itemprop="image" itemscope="" itemtype="https://schema.org/ImageObject" class="center">
+  <figure itemprop="image" itemscope itemtype="https://schema.org/ImageObject" class="center">
   {{ end }}
-    <a href="/wp-content/uploads/{{ .Get "src" }}.jpg" class="picture">
+    <a href="/wp-content/uploads/{{ .Get "src" }}-2000px-resize.jpeg" class="picture">
       <picture>
-        {{ if .Get "width"}}
+        <span itemscope itemprop="author" itemtype="https://schema.org/Person">
+            <meta itemprop="name" content="David Calhoun" />
+            <meta itemprop="url" content="https://www.themaingate.net" />
+        </span>
+        {{ if .Get "caption" }}
+        <meta itemprop="caption" content="{{ .Get "caption" }}" />
+        <meta itemprop="name" content="{{ .Get "caption" }}" />
+        {{ end }}
+        {{ if .Get "width" }}
         <meta itemprop="width" content="{{ .Get "width" }}" />
         {{ end }}
-        {{ if .Get "width"}}
+        {{ if .Get "height" }}
         <meta itemprop="height" content="{{ .Get "height" }}" />
         {{ end }}
-        {{ if .Get "caption"}}
-        <meta itemprop="height" content="{{ .Get "caption" }}" />
+        <span itemscope itemprop="thumbnail" itemtype="https://schema.org/ImageObject">
+          <meta itemprop="url" content="/wp-content/uploads/{{ .Get "src" }}-500px-resize.jpeg" />
+        </span>
+        {{ if .Get "genre" }}
+        <meta itemprop="genre" content="{{ .Get "genre" }}" />
         {{ end }}
-        <meta itemprop="url" content="/wp-content/uploads/{{ .Get "src" }}.jpg" />
+        {{ if .Get "keywords" }}
+        <meta itemprop="keywords" content="{{ .Get "keywords" }}" />
+        {{ end }}
+        {{ if .Get "location" }}
+        <meta itemprop="contentLocation" content="{{ .Get "location" }}" />
+        {{ end }}
+        <meta itemprop="isFamilyFriendly" content="true" />
 
         <source type="image/webp" media="(max-width: 500px)" srcset="/wp-content/uploads/{{ .Get "src" }}-500px-resize.webp" />
         <source type="image/webp" media="(max-width: 1000px)" srcset="/wp-content/uploads/{{ .Get "src" }}-1000px-resize.webp" />
@@ -23,7 +40,7 @@
         <source type="image/jpeg" media="(max-width: 1000px)" srcset="/wp-content/uploads/{{ .Get "src" }}-1000px-resize.jpeg" />
         <source type="image/jpeg" media="(min-width: 1001px)" srcset="/wp-content/uploads/{{ .Get "src" }}-2000px-resize.jpeg" />
 
-        <img itemprop="caption" src="/wp-content/uploads/{{ .Get "src" }}.jpg" alt="{{ .Get "caption" }}" loading="lazy"/>
+        <img itemprop="url" src="/wp-content/uploads/{{ .Get "src" }}.jpg" loading="lazy"/>
       </picture>
     </a>
   {{ if .Get "caption"}}
