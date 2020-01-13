@@ -13,6 +13,7 @@
     --transition-duration: 0.25s;
     --transition-timing-function: cubic-bezier(.83,.68,.61,1.35);
     --max-width: 850px;
+    --page-side-padding: 1rem;
 }
 
 /* light theme (default) */
@@ -32,6 +33,7 @@
         --tag-highlight-text-color: white;
         --text-color: #555;
         --text-emphasis-color: black;
+        --text-muted-color: #666;
     }
 }
 
@@ -46,12 +48,13 @@
         --bg-color: #131313;
         --link-color: var(--accent);
         --link-highlight-color: var(--accent-secondary);
-        --tag-bg-color: #3e3e3e;
-        --tag-text-color: #cacaca;
+        --tag-bg-color: #222;
+        --tag-text-color: #888;
         --tag-highlight-bg-color: var(--accent-secondary);
         --tag-highlight-text-color: white;
         --text-color: #cacaca;
         --text-emphasis-color: white;
+        --text-muted-color: #666;
     }
 }
 
@@ -245,7 +248,7 @@ main {
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
     hyphens: auto;
-    padding: 1.5rem 1rem;
+    padding: 1.5rem var(--page-side-padding);
     margin: auto;
     flex: 1 0 auto;
     max-width: var(--max-width);
@@ -297,7 +300,7 @@ table tr:hover {
 
 .item .meta.title {
     font-size: 1.5rem;
-    line-height: 1.5rem;
+    line-height: 1.8rem;
     text-align: left;
     margin-bottom: 0.4rem;
 }
@@ -319,6 +322,7 @@ table tr:hover {
 }
 
 .meta.date {
+    color: var(--text-muted-color);
     display: block;
     font-size: 0.9rem;
     line-height: 0.9rem;
@@ -326,9 +330,11 @@ table tr:hover {
 }
 
 .meta.tags {
+    margin-top: 1rem;
+    color: var(--text-muted-color);
     font-size: 0.9rem;
-    line-height: 2rem;
     hyphens: none;
+    text-align: left;
 }
 
 .meta.tags a {
@@ -341,7 +347,7 @@ table tr:hover {
 
 .meta.tags a:not(:last-of-type) {
     margin-right: 0.5rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
     display: inline-block;
 }
 
@@ -416,6 +422,7 @@ strong {
     margin: 0 auto;
     text-align: left;
     width: 100%;
+    padding: 0 var(--page-side-padding);
 }
 
 .comments .commento-root * {

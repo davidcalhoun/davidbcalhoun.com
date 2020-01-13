@@ -10,7 +10,9 @@
         </span>
         {{ if .Get "caption" }}
         <meta itemprop="caption" content="{{ .Get "caption" }}" />
-        <meta itemprop="name" content="{{ .Get "caption" }}" />
+        {{ end }}
+        {{ if .Get "title" }}
+        <meta itemprop="name" content="{{ .Get "title" }}" />
         {{ end }}
         {{ if .Get "width" }}
         <meta itemprop="width" content="{{ .Get "width" }}" />
