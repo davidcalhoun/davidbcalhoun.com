@@ -17,9 +17,9 @@
     {{ with .Description }} {{ $.Scratch.Set "subtitle" . }} {{ end }}
 
 
-    <h2 itemprop="headline" class="meta title">
+    <h1 itemprop="headline" class="meta title">
         <a href="{{ .Page.Permalink }}" itemprop="url">{{ .Title }}</a>
-    </h2>
+    </h1>
 
     <time class="meta date" datetime="{{ .Params.date }}">
         {{ if .Params.date }}

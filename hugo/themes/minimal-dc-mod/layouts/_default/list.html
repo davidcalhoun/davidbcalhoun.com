@@ -1,8 +1,11 @@
 {{ partial "header" . }}
 
 <main>
-
-    <h2>{{ .Title }} - {{ .Site.Title }}</h2>
+	{{ if eq "tags" .Type }}
+    	<h1>Posts about {{ .Title }} - {{ .Site.Title }}</h1>
+    {{ else }}
+    	<h1>{{ .Title }} - {{ .Site.Title }}</h1>
+    {{ end }}
 
     {{ range (.Paginator 500).Pages }} {{ partial "list-item" . }} {{ end }}
 
