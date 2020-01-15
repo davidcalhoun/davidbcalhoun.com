@@ -2,7 +2,7 @@
 
 <main>
 	{{ if eq "tags" .Type }}
-    	<h1>Posts about {{ .Title }} - {{ .Site.Title }}</h1>
+    	<h1>Posts about {{ humanize .Title }} - {{ .Site.Title }}</h1>
     {{ else }}
     	<h1>{{ .Title }} - {{ .Site.Title }}</h1>
     {{ end }}
