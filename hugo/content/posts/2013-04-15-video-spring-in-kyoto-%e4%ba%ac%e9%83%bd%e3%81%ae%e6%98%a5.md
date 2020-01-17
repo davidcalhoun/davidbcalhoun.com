@@ -11,4 +11,7 @@ tags:
 - travel
 ---
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/qv6Jovqb_nU?rel=0" frameborder="0" allowfullscreen></iframe>
+<video controls preload="metadata" poster="https://www.davidbcalhoun.com/videos/spring-in-kyoto.jpg">
+	<source src="https://www.davidbcalhoun.com/videos/spring-in-kyoto.mp4" type="video/mp4">
+	Your browser does not support the HTML5 video tag.
+</video>
