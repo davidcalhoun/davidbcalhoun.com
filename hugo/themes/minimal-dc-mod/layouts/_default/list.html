@@ -1,11 +1,18 @@
+{{ $title := title .Title }}
+{{ $titleSuffix := .Site.Title | printf "%s%s" " - " | printf "%s%s" $title }}
+{{ $titlePrefix := "Posts about " }}
+
+{{ if eq "tags" .Type }}
+    {{ $title := $titleSuffix | printf "%s%s" $titlePrefix }}
+    {{ $.Scratch.Set "pageTitle" $title }}
+{{ else }}
+    {{ $.Scratch.Set "pageTitle" $titleSuffix }}
+{{ end }}
+
 {{ partial "header" . }}
 
 <main>
-	{{ if eq "tags" .Type }}
-    	<h1>Posts about {{ humanize .Title }} - {{ .Site.Title }}</h1>
-    {{ else }}
-    	<h1>{{ .Title }} - {{ .Site.Title }}</h1>
-    {{ end }}
+    <h1>{{ .Scratch.Get "pageTitle" }}</h1>
 
     {{ range (.Paginator 500).Pages }} {{ partial "list-item" . }} {{ end }}
 

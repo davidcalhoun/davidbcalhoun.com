@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="author" content="David Calhoun">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{{ .Title }} - {{ .Site.Title }}</title>
+        <title>{{ .Scratch.Get "pageTitle" }}</title>
         {{ if .Site.Params.favicon }}
         <link rel="icon" href="{{ .Site.Params.favicon | absURL }}">
         {{ end }}
