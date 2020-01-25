@@ -8,6 +8,8 @@ tags:
 - kyoto
 - japan
 - travel
+image: https://www.davidbcalhoun.com/videos/spring-in-kyoto.jpg
+imageAlt: "Spring in Kyoto video preview"
 ---
 
 <video controls preload="metadata" poster="https://www.davidbcalhoun.com/videos/spring-in-kyoto.jpg">
