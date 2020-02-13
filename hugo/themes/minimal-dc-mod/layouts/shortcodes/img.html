@@ -30,7 +30,22 @@
         <meta itemprop="keywords" content="{{ .Get "keywords" }}" />
         {{ end }}
         {{ if .Get "location" }}
-        <meta itemprop="contentLocation" content="{{ .Get "location" }}" />
+        <span itemprop="contentLocation" itemscope itemtype="http://schema.org/Place">
+            <meta itemprop="address" content="{{ .Get "location" }}">
+            {{ if .Get "latitude" }}
+            <span itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
+                <meta itemprop="latitude" content="{{ .Get "latitude"}}" />
+                <meta itemprop="longitude" content="{{ .Get "longitude"}}" />
+                {{ if .Get "altitudeMeters" }}
+                <meta itemprop="elevation" content="{{ .Get "altitudeMeters"}}" />
+                {{ end }}
+            </span>
+            <meta itemprop="latitude" content="{{ .Get "latitude" }}">
+            {{ end }}
+            {{ if .Get "longitude" }}
+            <meta itemprop="longitude" content="{{ .Get "longitude" }}">
+            {{ end }}
+        </span>
         {{ end }}
         <meta itemprop="isFamilyFriendly" content="true" />
 
