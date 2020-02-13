@@ -42,7 +42,7 @@
         <source type="image/jpeg" media="(max-width: 1000px)" srcset="/wp-content/uploads/{{ .Get "src" }}-1000px-resize.jpeg" />
         <source type="image/jpeg" media="(min-width: 1001px)" srcset="/wp-content/uploads/{{ .Get "src" }}-2000px-resize.jpeg" />
 
-        <img itemprop="url" src="/wp-content/uploads/{{ .Get "src" }}.jpg" loading="lazy"/>
+        <img itemprop="url" src="/wp-content/uploads/{{ .Get "src" }}.jpg" loading="lazy" alt="{{ .Get "title" }}" />
       </picture>
     </a>
   {{ if .Get "caption"}}
