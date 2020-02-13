@@ -3,8 +3,8 @@
     <head>
         {{ partial "head-open" . }}
         <meta charset="utf-8">
-        <meta name="author" content="David Calhoun">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="David Calhoun">
         <title>{{ .Title }} - David Calhoun's blog</title>
         {{ if .Site.Params.favicon }}
         <link rel="icon" href="{{ .Site.Params.favicon | absURL }}">
@@ -51,6 +51,8 @@
         <link rel="canonical" href="{{ .Page.Permalink }}">
         <link href="/index.xml" rel="alternate" type="application/rss+xml" title="David Calhoun&#39;s blog" />
         <link href="/index.xml" rel="feed" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+        <link href="/index.xml" rel="self" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+        <meta name="format-detection" content="telephone=no">
 
         <!-- Schema.org -->
         <meta itemprop="name" content="{{ .Title }}"/>
@@ -62,6 +64,12 @@
         <meta itemprop="image" content="{{ .Params.image }}"/>
         {{ end }}
         <meta itemprop="author" content="David Calhoun"/>
+        <link rel="me" href="https://www.themaingate.net/" type="text/html">
+        <link rel="me" href="mailto:david.b.calhoun@gmail.com">
+        <link rel="me" href="https://www.linkedin.com/in/davidcalhoun/" type="text/html">
+        <link rel="me" href="https://github.com/davidcalhoun" type="text/html">
+        <link rel="me" href="https://twitter.com/franksvalli" type="text/html">
+        <link rel="archives" href="https://example.com/archives/">
 
         <!-- Facebook Open Graph -->
         <meta property="og:locale" content="en_US" />
