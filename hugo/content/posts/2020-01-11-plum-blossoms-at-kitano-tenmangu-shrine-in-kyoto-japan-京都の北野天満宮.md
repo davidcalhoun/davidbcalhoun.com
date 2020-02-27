@@ -7,6 +7,7 @@ tags:
 - kyoto
 - japan
 - travel photography
+- photography
 - photos
 - kitano tenmangu
 - shrine
