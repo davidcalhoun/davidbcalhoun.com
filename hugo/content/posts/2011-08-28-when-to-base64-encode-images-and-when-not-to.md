@@ -26,7 +26,7 @@ But there's a few drawbacks with using image sprites:
 
 *   hard to maintain and update: without some tool to help, manually editing and putting together image sprites is quite a chore
 *   [increased memory consumption][2] (possibly very dramatic): this is often overlooked. The time to deliver the images is decreased at the expense of a bigger memory and CPU footprint, especially for large sprites and sprites with a lot of whitespace. 
-*   bleedthrough: for sprites that don't have much whitespace to separate images, there's an increased chance of nearby images visibly bleeding through other elements, as in this case where bleedthrough was only seen on iOS (but looked fine on Chrome and Safari on the desktop). Note the bleedthrough under the CNN logo:[<img src="http://davidbcalhoun.com/wp-content/uploads/2011/08/image-sprite-bleedthrough-example.png" alt="Example of image sprite bleedthrough on Reddit" width="360" height="75" class="aligncenter size-full wp-image-1157" />][3]
+*   bleedthrough: for sprites that don't have much whitespace to separate images, there's an increased chance of nearby images visibly bleeding through other elements, as in this case where bleedthrough was only seen on iOS (but looked fine on Chrome and Safari on the desktop). Note the bleedthrough under the CNN logo:[<img src="https://davidbcalhoun.com/wp-content/uploads/2011/08/image-sprite-bleedthrough-example.png" alt="Example of image sprite bleedthrough on Reddit" width="360" height="75" class="aligncenter size-full wp-image-1157" />][3]
 
 #### Data URIs and Base64 encoding
 
@@ -92,11 +92,11 @@ Practically, the developer has two options: deliver 5,140 bytes to the user in 5
 
 | File          | Binary         | Binary Gzipped | CSS + Base64   | CSS + Base64 Gzipped  |
 | ------------- | :------------- | :------------- | :------------- | :-------------------- |
-| <a href="http://www.flickr.com/photos/franksvalli/6064665766/sizes/sq/in/photostream/">1</a> | 6734 | ***5557*** | 9095 | 6010 |
-| <a href="http://www.flickr.com/photos/franksvalli/6064638202/sizes/sq/in/photostream/">2</a> | 5379 | ***4417*** | 7287 | 4781 |
-| <a href="http://www.flickr.com/photos/franksvalli/6063380824/sizes/sq/in/photostream/">3</a> | 25626 | ***18387*** | 34283 | 20103 |
-| <a href="http://www.flickr.com/photos/franksvalli/6062803159/sizes/sq/in/photostream/">4</a> | 7031 | ***6399*** | 9491 | 6702 |
-| <a href="http://www.flickr.com/photos/franksvalli/6017796233/sizes/sq/in/photostream/">5</a> | 5847 | ***4655*** | 7911 | 5077 |
+| <a href="https://www.flickr.com/photos/franksvalli/6064665766/sizes/sq/in/photostream/">1</a> | 6734 | ***5557*** | 9095 | 6010 |
+| <a href="https://www.flickr.com/photos/franksvalli/6064638202/sizes/sq/in/photostream/">2</a> | 5379 | ***4417*** | 7287 | 4781 |
+| <a href="https://www.flickr.com/photos/franksvalli/6063380824/sizes/sq/in/photostream/">3</a> | 25626 | ***18387*** | 34283 | 20103 |
+| <a href="https://www.flickr.com/photos/franksvalli/6062803159/sizes/sq/in/photostream/">4</a> | 7031 | ***6399*** | 9491 | 6702 |
+| <a href="https://www.flickr.com/photos/franksvalli/6017796233/sizes/sq/in/photostream/">5</a> | 5847 | ***4655*** | 7911 | 5077 |
 | Total | 50,617 | ***39,415*** | 68,067 | 42,673 |
 | Combined file | (50,617) | ***(36,838)*** | 68,067 | 40,312 |
 
@@ -144,12 +144,12 @@ But for image content, where there is nothing to be saved but HTTP requests, you
 
 EDIT May 2013: added an example of sprite bleedthrough
 
- [1]: http://en.wikipedia.org/wiki/Portable_Network_Graphics#File_header
- [2]: http://blog.vlad1.com/2009/06/22/to-sprite-or-not-to-sprite/
- [3]: http://davidbcalhoun.com/wp-content/uploads/2011/08/image-sprite-bleedthrough-example.png
- [4]: http://www.phpied.com/data-urls-what-are-they-and-how-to-use/
- [5]: http://css-tricks.com/5970-data-uris/
- [6]: http://www.nczonline.net/blog/2010/07/06/data-uris-make-css-sprites-obsolete/
- [7]: http://en.wikipedia.org/wiki/Base64
- [8]: http://twitter.com/#!/stoyanstefanov/status/106605257265655809
- [9]: http://p.yusukekamiyamane.com/
+ [1]: https://en.wikipedia.org/wiki/Portable_Network_Graphics#File_header
+ [2]: https://web.archive.org/web/20110810152343/https://blog.vlad1.com/2009/06/22/to-sprite-or-not-to-sprite/
+ [3]: https://www.davidbcalhoun.com/wp-content/uploads/2011/08/image-sprite-bleedthrough-example.png
+ [4]: https://www.phpied.com/data-urls-what-are-they-and-how-to-use/
+ [5]: https://css-tricks.com/data-uris/
+ [6]: https://humanwhocodes.com/blog/2010/07/06/data-uris-make-css-sprites-obsolete/
+ [7]: https://en.wikipedia.org/wiki/Base64
+ [8]: https://twitter.com/stoyanstefanov/status/106605257265655809
+ [9]: https://p.yusukekamiyamane.com/
