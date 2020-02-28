@@ -19,8 +19,8 @@
 /* light theme (default) */
 @media all {
     :root {
-        --accent-secondary: #6297E8;
-        --accent: #0D47A1;
+        --accent-secondary: #385786;
+        --accent: #033A8E;
         --banner-bg-color: #f7f7f7;
         --banner-border-color: #dadada;
         --banner-link-color: #6e6e6e;
@@ -454,4 +454,12 @@ strong {
 
 .page-header {
     margin-bottom: 0.5rem;
+}
+
+.comments .commento-root .commento-logged-container .commento-profile-button {
+    color: #535353;
+}
+
+.comments .commento-root .commento-sort-policy-buttons-container .commento-sort-policy-buttons .commento-sort-policy-button {
+    color: #535353;
 }
