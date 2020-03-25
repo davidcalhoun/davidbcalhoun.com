@@ -13,8 +13,8 @@ imageAlt: "Black and white view of a bog boardwalk leading into a misty forest, 
 
 {{< img
     src="2020/20190817-mahoosec-trail-new-hampshire-north-of-dream-lake"
-    width="2000"
-    height="1333"
+    width="1125"
+    height="1500"
     title="The Appalachian Trail along the Mahoosec Trail in New Hampshire"
     caption="Black and white view of a bog boardwalk leading into a misty forest, along the Mahoosec Trail in New Hampshire."
     genre="Travel Photography"
@@ -55,8 +55,8 @@ I don't think a complete back-to-nature movement is what's needed though, someho
 
 {{< img
     src="2020/20190704-IMG_5822-wwi-memorial-mt-greylock-massachussets"
-    width="2000"
-    height="1333"
+    width="1125"
+    height="1500"
     title="Veterans War Memorial Tower at the top of Mt. Greylock"
     caption="Veterans War Memorial Tower (WWI) at Mt Greylock in Massachussets.  These sorts of artificial landmarks on the trail, usually crowded with tourists, provided a glimse back into 'civilian life', before being able to escape again anytime into the thicket and away from the crowds."
     genre="Travel Photography"
@@ -78,7 +78,7 @@ It is true that long term hiking is an escape, so in that sense it truly is an e
 {{< img
     src="2020/20190410-stone-mailbox-trail-register-at-the-mason-dixon-line-appalachian-trail"
     width="2000"
-    height="1333"
+    height="1500"
     title="Mailbox trail register at the Mason-Dixon line, along the Appalachian Trail"
     caption="A wooden marker delineating the famous Mason-Dixon line, on the border between Maryland and Pennslyvania.  On the right is a stone mailbox with a trail register for hikers to sign and leave their thoughts."
     genre="Travel Photography"

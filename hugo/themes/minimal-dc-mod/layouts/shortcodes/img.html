@@ -1,6 +1,13 @@
+{{ $width := .Get "width" | int }}
+{{ $height := .Get "height" | int }}
+{{ $orientation := "landscape" }}
+{{ if lt $width $height }}
+    {{ $orientation = "portrait" }}
+{{ end }}
+
 <!-- The shortcode functionality - in layouts/shortcodes/img.html -->
   {{ if .Get "caption"}}
-  <figure itemprop="image" itemscope itemtype="https://schema.org/ImageObject" class="center">
+  <figure itemprop="image" itemscope itemtype="https://schema.org/ImageObject" class="center {{ $orientation }}">
   {{ end }}
     <a href="/wp-content/uploads/{{ .Get "src" }}-2000px-resize.jpeg" class="picture">
       <picture>
