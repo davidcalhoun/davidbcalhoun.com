@@ -8,7 +8,7 @@ tags:
 - hiking
 - backpacking
 image: https://www.davidbcalhoun.com/wp-content/uploads/2020/20190407-IMG_2289-2000px-resize.jpeg
-imageAlt: "The Appalachian Trail Conservancy (ATC) takes photos of all hikes passing through Harper's Ferry, including folks like me who just started."
+imageAlt: "The Appalachian Trail Conservancy (ATC) takes photos of all hikers passing through Harper's Ferry, including folks like me who just started."
 ---
 
 {{< img
@@ -16,7 +16,7 @@ imageAlt: "The Appalachian Trail Conservancy (ATC) takes photos of all hikes pas
     width="1500"
     height="2000"
     title="Me in front of the ATC in Harper's Ferry"
-    caption="The Appalachian Trail Conservancy (ATC) takes photos of all hikes passing through Harper's Ferry, including folks like me who just started."
+    caption="The Appalachian Trail Conservancy (ATC) takes photos of all hikers passing through Harper's Ferry, including folks like me who just started."
     genre="Travel Photography"
     latitude="39.32555277833333"
     longitude="77.74062222166667"
@@ -119,4 +119,8 @@ I’ll be sure not to make the mistake of not carrying water through the day.  T
 I remember running into some day hikers at the first shelter (Ed Garvey shelter) and I really thought they must be AT hikers settling in for the night, since they were starting a fire.  I wasn't ready to stay and socialize at a shelter, so I sidestepped them and pitched my tent.  A good time to try out my gear, too!  The next morning I saw that one of them had written in the shelter's log and signed their name "Son of Gath".  What the heck did that mean?!  I would discover the next day that they coined their name after the nearby Gathland State Park, where they had likely hiked in from during their day hike.
 
 There was an older gentleman who stayed in the shelter overnight, named Piper, but I was really asocial, so I kept my distance.  I would run into him at the next campsite.
+
+I also remember the Weverton Cliffs, a hard steep uphill that required me to take lots of breaks.  It was a little embarassing - lots of folks passed me up.  I told them I was ok, I was just out of shape.  Fast forward a couple months and I'd be passing up day hikers going uphill left and right!  And it would turn out that I would look forward to the uphills more than the downhills (the latter having less traction and more of a chance of a fall).
+
+I also remembered taking a side trail to an overlook that first day, where if you knew where to look, you could see Harper's Ferry starting to vanish into the distance.  A considerate day hiker at the same viewpoint let me know his dog was friendly.  I don't remember too well his words, something like "Sir, please don't mind my dog, he's a kind dog.  But let me know if he gets too close."  It was like a different country here.  If I was in California, the guy would straight up ignore me or side-eye me.  Here are the lost polite honorifics ("sir"!) and possibly a little bit of undertone of gun culture, which I suspect was the reason he was giving me a heads up, so I wouldn't shoot his dog.
 
