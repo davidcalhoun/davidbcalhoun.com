@@ -20,13 +20,13 @@ imageAlt: "HAL 9000 computer interface from Stanley Kubrick's 2001"
 >}}
 
 ## Summary
-Partial application and currying often get muddled; they are related but not the same.  They're both techniques that transform functions that accept multiple arguments, but they transform them in different ways.
+Partial application and currying often get muddled; they are related but not the same.  They're both techniques that transform functions that accept multiple arguments, but the difference is in the transformation.
 
-* [**Partial application**](https://en.wikipedia.org/wiki/Partial_application) simplifies functions by prefilling arguments, so the newly-returned function accepts less arguments.  E.g. `add(2, 3)` becomes `addTwo(3)`, which calls `add()` and prefills the first argument as `2`.[^1]
+* [**Partial application**](https://en.wikipedia.org/wiki/Partial_application) simplifies a function by prefilling arguments, so the newly-returned function accepts less arguments.  E.g. `add(2, 3)` becomes `addTwo(3)`, which calls `add()` and prefills the first argument as `2`.[^1]
 
-* [**Currying**](https://en.wikipedia.org/wiki/Currying) simplifies functions by breaking down a function with multiple arguments and transforming it into multiple one-argument functions.  E.g. `add(3, 1, 4)` becomes `add(3)(1)(4)`.  Also called "chaining", used by libraries such as D3 and jQuery.[^2]
+* [**Currying**](https://en.wikipedia.org/wiki/Currying) simplifies a function by breaking it down into multiple one-argument functions.  E.g. `add(3, 1, 4)` becomes `add(3)(1)(4)`.  Also called "chaining", used by libraries such as D3 and jQuery.[^2]
 
-* [**`bind()`**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind) is a native Javascript helper function that helps us achieve both partial application and currying.  It makes sure the function is called from a specific `this` context, with n number of arguments prefilled.
+* [**`bind()`**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind) is a native Javascript function that helps us achieve both partial application and currying.  It makes sure the function is called from a specific `this` context, with n number of arguments prefilled.
 
 ## Introduction / Why should I care?
 Why should you even care about these functional programming concepts?  After all, you can build applications perfectly well without utilizing these.  This is true, but getting your code to run is only the first step.  Making your code cleaner and more readable by coworkers (or your future self) can make it much easier to maintain.
