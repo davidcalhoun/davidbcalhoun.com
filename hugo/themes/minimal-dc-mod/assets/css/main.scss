@@ -25,6 +25,7 @@
         --banner-border-color: #dadada;
         --banner-link-color: #6e6e6e;
         --bg-color: #fbfbfb;
+        --bg-secondary-color: #f7f7f7;
         --link-color: var(--accent);
         --link-highlight-color: var(--accent-secondary);
         --tag-bg-color: #e8e8e8;
@@ -32,6 +33,7 @@
         --tag-highlight-bg-color: var(--accent-secondary);
         --tag-highlight-text-color: white;
         --text-color: #555;
+        --text-secondary-color: #033A8E;
         --text-emphasis-color: black;
         --text-muted-color: #666;
     }
@@ -279,15 +281,16 @@ main iframe {
 }
 
 table {
-    border: solid 1px black;
+    border: solid 1px var(--text-color);
     max-width: 100%;
     overflow-x: scroll;
     table-layout: fixed;
+    word-break: normal;
 }
 
 table th {
     white-space: pre;
-    background-color: #e6e6e6;
+    background-color: var(--bg-color);
 }
 
 table td,
@@ -295,9 +298,13 @@ table th {
     padding: 0.5rem 1rem;
 }
 
-table tr:nth-child(odd),
+table tr:nth-child(odd) {
+    background-color: var(--tag-bg-color);
+}
+
 table tr:hover {
-    background-color: #f9f9f9;
+    color: var(--text-secondary-color);
+    background-color: var(--bg-secondary-color);
 }
 
 .item .meta.title {
