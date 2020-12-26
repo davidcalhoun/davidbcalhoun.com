@@ -228,7 +228,7 @@ body > footer {
 img, video {
     max-width: 100%;
     max-height: 100vh;
-    width: auto;
+    width: 100%;
     height: auto;
 }
 
@@ -459,6 +459,11 @@ strong {
 
 .comments .commento-root .commento-footer .commento-logo-container .commento-logo-text {
     color: var(--text-color);
+}
+
+.comments .commento-markdown-button {
+    color: var(--text-color);
+    font-weight: 600;
 }
 
 .page-header {
