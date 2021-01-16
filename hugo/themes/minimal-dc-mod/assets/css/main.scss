@@ -51,12 +51,12 @@
         --link-color: var(--accent);
         --link-highlight-color: var(--accent-secondary);
         --tag-bg-color: #222;
-        --tag-text-color: #888;
+        --tag-text-color: #b0b0b0;
         --tag-highlight-bg-color: var(--accent-secondary);
         --tag-highlight-text-color: white;
         --text-color: #cacaca;
         --text-emphasis-color: white;
-        --text-muted-color: #666;
+        --text-muted-color: #afafaf;
     }
 }
 
@@ -260,6 +260,15 @@ main {
     width: 100%;
     min-height: 100vh;
     word-break: break-word;
+}
+
+main h1,
+main h2,
+main h3,
+main h4,
+main h5,
+main h6 {
+    text-align: left;
 }
 
 main p {
@@ -467,6 +476,10 @@ strong {
     font-weight: 600;
 }
 
+.comments .commento-root .commento-markdown-button {
+    color: inherit;
+}
+
 .page-header {
     margin-bottom: 0.5rem;
 }
@@ -474,5 +487,15 @@ strong {
 .comments .commento-root .commento-logged-container .commento-profile-button,
 .comments .commento-root .commento-login .commento-login-text,
 .comments .commento-root .commento-sort-policy-buttons-container .commento-sort-policy-buttons .commento-sort-policy-button {
-    color: #535353;
+    color: inherit;
+}
+
+
+.comments .commento-root .commento-login-box-container .commento-login-box .commento-login-box-close::after,
+.comments .commento-root .commento-login-box-container .commento-login-box .commento-login-box-close::before {
+    background-color: var(--tag-highlight-text-color);
+}
+
+.comments .commento-root .commento-login-box-container .commento-login-box .commento-email-container .commento-email .commento-input::placeholder {
+    color: var(--tag-bg-color);
 }
