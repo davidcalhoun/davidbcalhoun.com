@@ -28,7 +28,7 @@ Apart from that, I was able to travel a bit in February, when I booked a short t
 {{< img
     src="2020/2020-02-19-5D__7810-new-york-city-skyline-at-dusk"
     width="2000"
-    height="1500"
+    height="736"
     title="Manhattan Skyline at dusk"
     caption="Classic Manhattan Skyline at dusk, taken from the Staten Island Ferry"
     genre="Travel Photography"
@@ -52,7 +52,7 @@ I knew the northern route would already be a much longer route, and that I'd be 
 {{< img
     src="2020/2020-06-06-5D__9538-sleeping-giant-mountain-wyoming"
     width="2000"
-    height="1500"
+    height="1333"
     title="Sleeping Giant Mountain, Wyoming"
     caption="Sleeping Giant Mountain, Wyoming.  Seen from the east side of Yellowstone National Park."
     genre="Travel Photography"
@@ -72,7 +72,7 @@ The blasé attitude towards mask-wearing was all around this region.  I remember
 {{< img
     src="2020/2020-06-07-5D__9577-mather-peak-east-wyoming"
     width="2000"
-    height="1500"
+    height="1333"
     title="Mather Peak East, Wyoming"
     caption="Mather Peak East, Wyoming"
     genre="Travel Photography"
@@ -97,7 +97,7 @@ In any case, these are attitudes which linger in the air long after any one pres
 {{< img
     src="2020/2020-06-07-5D__9896-george-washington-profile-mount-rushmore-south-dakota"
     width="2000"
-    height="1500"
+    height="1333"
     title="George Washington's profile at Mount Rushmore National Memorial"
     caption="George Washington's profile at Mount Rushmore National Memorial"
     genre="Travel Photography"
@@ -113,7 +113,7 @@ In any case, these are attitudes which linger in the air long after any one pres
 {{< img
     src="2020/2020-06-07-5D__9685-devils-tower-wyoming"
     width="2000"
-    height="1500"
+    height="1333"
     title="Devils Tower National Monument, Wyoming"
     caption="Devils Tower National Monument, Wyoming"
     genre="Travel Photography"
@@ -129,7 +129,7 @@ In any case, these are attitudes which linger in the air long after any one pres
 {{< img
     src="2020/2020-06-05-5D__9247-steens-mountain-oregon"
     width="2000"
-    height="1500"
+    height="565"
     title="Steens Mountain, Oregon"
     caption="Steens Mountain, Oregon"
     genre="Travel Photography"
@@ -167,7 +167,7 @@ In the Great Smoky Mountains National Park, there's often wildlife alongside the
 {{< img
     src="2020/2020-02-05-5D__6418-smoky-mountains-elk"
     width="2000"
-    height="1500"
+    height="1333"
     title="Female elk in Great Smoky Mountains National Park"
     caption="Female elk in Great Smoky Mountains.  I initially parked respectfully very far away, but this vegetating group inched closer and closer towards me.  This shot is the closest they got to me before I carefully backed away."
     genre="Travel Photography"
@@ -185,7 +185,7 @@ I also spotted a flock of robins by the road, and waited patiently.  I could see
 {{< img
     src="2020/2020-03-09-5D__8154-american-robin-in-smoky-mountains"
     width="2000"
-    height="1500"
+    height="1333"
     title="American Robin at Great Smoky Mountains National Park"
     caption="American Robin at Great Smoky Mountains National Park"
     genre="Travel Photography"
@@ -203,7 +203,7 @@ I also spotted a flock of robins by the road, and waited patiently.  I could see
 {{< img
     src="2020/2020-05-14-5D__9173-squirrel-in-wheelbarrow"
     width="2000"
-    height="1500"
+    height="1333"
     title="Mischievous squirrel in a wheelbarrow"
     caption="Mischievous squirrel in a wheelbarrow, at my parents' house in South Carolina."
     genre="Travel Photography"
@@ -219,7 +219,7 @@ I also spotted a flock of robins by the road, and waited patiently.  I could see
 {{< img
     src="2020/2020-07-17-5D__0424-comet-neowise-from-edisto-island"
     width="2000"
-    height="1500"
+    height="1333"
     title="Comet Neowise"
     caption="Comet Neowise seen from Bay Creek Park in Edisto Island, South Carolina"
     genre="Travel Photography"
@@ -236,7 +236,7 @@ I also spotted a flock of robins by the road, and waited patiently.  I could see
 {{< img
     src="2020/2020-01-08-5D__6291-angel-oak"
     width="2000"
-    height="1500"
+    height="1333"
     title="Angel Oak in South Carolina"
     caption="Angel Oak is a Southern live oak located in Angel Oak Park on Johns Island near Charleston, South Carolina.  The tree is estimated to be 400–500 years old."
     genre="Travel Photography"
@@ -252,7 +252,7 @@ I also spotted a flock of robins by the road, and waited patiently.  I could see
 {{< img
     src="2020/2020-07-20-5D__0785-arthur-ravenal-bridge-charleston"
     width="2000"
-    height="1500"
+    height="1333"
     title="Arthur Ravenel Jr. Bridge, Charleston, South Carolina"
     caption="Arthur Ravenel Jr. Bridge, Charleston, South Carolina"
     genre="Travel Photography"
