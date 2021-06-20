@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>programming on David Calhoun&#39;s blog</title>
+    <link>https://www.davidbcalhoun.com/tags/programming/</link>
+    <description>Recent content in programming on David Calhoun&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 16 Jun 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.davidbcalhoun.com/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Javascript Bind, Partial Application, and Currying</title>
+      <link>https://www.davidbcalhoun.com/2020/javascript-bind-partial-application-and-currying/</link>
+      <pubDate>Tue, 16 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2020/javascript-bind-partial-application-and-currying/</guid>
+      <description>HAL 9000 computer interface from Stanley Kubrick&amp;#39;s 2001  Summary Partial application and currying often get muddled; they are related but not the same. They&#39;re both techniques that transform functions that accept multiple arguments, but the difference is in the transformation.
+  Partial application simplifies a function by prefilling arguments, so the newly-returned function accepts less arguments. E.g. add(2, 3) becomes addTwo(3), which calls add() and prefills the first argument as 2.</description>
+    </item>
+    
+    <item>
+      <title>A Simple Introduction to Javascript Map and Reduce Array Helper Functions</title>
+      <link>https://www.davidbcalhoun.com/2018/a-simple-introduction-to-javascript-map-and-reduce-array-helper-functions/</link>
+      <pubDate>Sun, 26 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2018/a-simple-introduction-to-javascript-map-and-reduce-array-helper-functions/</guid>
+      <description>Perhaps you&#39;ve been programming for a while, and you&#39;re pretty comfortable using for loops to traverse Arrays. However, you know how untidy and complicated for loops can get, and you are interested in better approaches to keep the code clean. Enter map and reduce!
+First steps with for loops Most folks find for loops powerful enough to achieve all they need when they need to process items in an Array. For example, say we have a simple list of items:</description>
+    </item>
+    
+    <item>
+      <title>You Can&#39;t JavaScript Under Pressure walkthrough</title>
+      <link>https://www.davidbcalhoun.com/2013/you-cant-javascript-under-pressure-walkthrough/</link>
+      <pubDate>Fri, 04 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2013/you-cant-javascript-under-pressure-walkthrough/</guid>
+      <description>A friend posted a link to this fun little quiz - You Can&#39;t JavaScript Under Pressure.
+The quizzes get more and more difficult, and they present a nice challenge if you fear your skills are getting rusty. Give it an honest try first, then come back here if you get seriously, honestly stuck. Try to do it yourself!
+Quiz 1: doubleInteger Problem function doubleInteger(i) { // i will be an integer.</description>
+    </item>
+    
+    <item>
+      <title>Descartes on building software frameworks</title>
+      <link>https://www.davidbcalhoun.com/2012/descartes-on-building-software-frameworks/</link>
+      <pubDate>Tue, 02 Oct 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2012/descartes-on-building-software-frameworks/</guid>
+      <description>Rene Descartes  Years ago I read Descartes&#39;s Discourse on Method for what I found to be some of the more interesting philosophy courses of my college career: those of the history of modern philosophy. Modern philosophy technically starts with Descartes, so it&#39;s a good place to start, or to get re-acquainted with philosophy in general.
+I&#39;ve been reading through the Discourse again, and have found it to be more interesting and relatable this time around (particularly about lessons learned while traveling, but that&#39;s a topic for another post).</description>
+    </item>
+    
+    <item>
+      <title>Different ways of defining functions in JavaScript (this is madness!)</title>
+      <link>https://www.davidbcalhoun.com/2011/different-ways-of-defining-functions-in-javascript-this-is-madness/</link>
+      <pubDate>Fri, 24 Jun 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2011/different-ways-of-defining-functions-in-javascript-this-is-madness/</guid>
+      <description>Note: updated in July 2016 with ES6 arrow functions.
+Russian translation thanks to Yevgeniy Pyastolov
+This is madness! This&amp;hellip; is&amp;hellip; JavaScript! In JavaScript, there&#39;s many different ways of doing something. This is both a good thing and a bad thing. To the newcomer this is definitely a bad thing, as it means not only more things to learn, but more little caveats and more places to go wrong. And so it is with declaring functions!</description>
+    </item>
+    
+    <item>
+      <title>Android 3.0 Honeycomb is first to implement the Device API</title>
+      <link>https://www.davidbcalhoun.com/2011/android-3.0-honeycomb-is-first-to-implement-the-device-api/</link>
+      <pubDate>Thu, 24 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2011/android-3.0-honeycomb-is-first-to-implement-the-device-api/</guid>
+      <description>I fired up the newly released Android 3.0 SDK to run some tests and found they&#39;ve implemented part of the long-awaited Device API (aka the Media Capture API). From your browser you can now upload pictures and videos from the camera as well as sounds from the microphone. The returned data should be available to manipulate via the File API (although I haven&#39;t yet tested this).
+Video I made a short video demo with some explanation:</description>
+    </item>
+    
+    <item>
+      <title>My O&#39;Reilly Books Wishlist</title>
+      <link>https://www.davidbcalhoun.com/2011/my-oreilly-books-wishlist/</link>
+      <pubDate>Tue, 22 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2011/my-oreilly-books-wishlist/</guid>
+      <description>Introduction Ok, so this post is only here in the hopes I&#39;ll actually win something.
+O&#39;Reilly Books has a promotion where a random winner will receive up to $500 of books on their wishlist, provided they post the list somewhere online. You can probably see why this is here then!
+The List Programming the Mobile Web ($50)
+Palm webOS ($45)
+MongoDB: The Definitive Guide ($40)
+JavaScript: The Definitive Guide: Rough Cuts Version, Sixth Edition ($50)</description>
+    </item>
+    
+    <item>
+      <title>Improving yourself as a programmer versus as a human being</title>
+      <link>https://www.davidbcalhoun.com/2011/improving-yourself-as-a-programmer-versus-as-a-human-being/</link>
+      <pubDate>Sun, 20 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2011/improving-yourself-as-a-programmer-versus-as-a-human-being/</guid>
+      <description>(OR &amp;ldquo;The Post In Which I Conflate Programming and Philosophy&amp;rdquo; OR &amp;ldquo;The Programmer&#39;s Existentialist Crisis&amp;rdquo;)
+I woke up this morning to read Dmitry A. Soshnikov&#39;s tweet:
+
+While this seems like good advice for aspiring programmers, I can&#39;t help but think what this means for those who will buy into this. Us programmers have a keen ability to sit and focus on problems for extended periods of time, usually to the detriment of everything else around us.</description>
+    </item>
+    
+    <item>
+      <title>Checking for undefined, null, and empty variables in JavaScript</title>
+      <link>https://www.davidbcalhoun.com/2011/checking-for-undefined-null-and-empty-variables-in-javascript/</link>
+      <pubDate>Fri, 11 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2011/checking-for-undefined-null-and-empty-variables-in-javascript/</guid>
+      <description>In general it&#39;s a good practice to check for the existence of something before blindly using it by faith and hoping it works. There are various times during the execution of scripts when a variable may not be defined, it may be null, or it might be an empty string. These are three things that are easily conflated. A good way to look at this is thinking of these as having increasing levels of existence (getting a bit philosophical here for a moment&amp;hellip;):</description>
+    </item>
+    
+    <item>
+      <title>JavaScript news resources</title>
+      <link>https://www.davidbcalhoun.com/2011/javascript-news-resources/</link>
+      <pubDate>Fri, 14 Jan 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2011/javascript-news-resources/</guid>
+      <description>There&#39;s an overwhelming amount of information being pumped out of the JavaScript community each week, but how do you keep up with it? Here&#39;s some sources to keep you busy.
+Twitter This merits a category of its own. This has replaced the RSS reader for a lot of folks, or at the very least supplemented it.
+I&#39;ve consistently recommended Nathan Smith&#39;s list of JavaScript folks. When I&#39;m diligent, I keep up with this several times a week and favorite items from the feed to be considered for inclusion in that week&#39;s JSMag Blog update.</description>
+    </item>
+    
+    <item>
+      <title>What happens when you have no JavaScript fallback?</title>
+      <link>https://www.davidbcalhoun.com/2011/what-happens-when-you-have-no-javascript-fallback/</link>
+      <pubDate>Wed, 12 Jan 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2011/what-happens-when-you-have-no-javascript-fallback/</guid>
+      <description>Here&#39;s an example of what happens when your interface completely relies on JavaScript. There&#39;s code with translated mojibake of some sort which caused the JavaScript to break. The code wasn&#39;t in a try-catch block, so it caused all of the code on the page to fail, thus presenting me with the only part of the screen that wasn&#39;t generated by JavaScript: the completely useless header.
+Where&#39;s the tweets!?</description>
+    </item>
+    
+    <item>
+      <title>How to spot outdated JavaScript</title>
+      <link>https://www.davidbcalhoun.com/2011/how-to-spot-outdated-javascript/</link>
+      <pubDate>Fri, 07 Jan 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2011/how-to-spot-outdated-javascript/</guid>
+      <description>Introduction Those that are just setting out to learn JavaScript are typically overwhelmed by the amount of online resources to be found about learning JavaScript. Not only this, but every webpage visited presents a potential learning opportunity just by inspecting the source.
+However, not all resources are guaranteed to be up-to-date. JavaScript has been around for over a decade, and coding standards have changed drastically over time. While a code snippet may still work in today&#39;s browsers, you may unknowingly be using an outdated practice that might eventually lead to a bit of embarrassment.</description>
+    </item>
+    
+    <item>
+      <title>Mobile JavaScript libraries and frameworks (Mobile Web Part 7)</title>
+      <link>https://www.davidbcalhoun.com/2010/mobile-javascript-libraries-and-frameworks-mobile-web-part-7/</link>
+      <pubDate>Mon, 06 Dec 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2010/mobile-javascript-libraries-and-frameworks-mobile-web-part-7/</guid>
+      <description>Intro This is designed to be a &amp;ldquo;living&amp;rdquo; post of available materials which will hopefully be updated frequently.
+Right now there&#39;s not much, just some links, but I hope to keep adding materials, so check back!
+The List Sencha Touch
+PhoneGap - native wrapper which provides access to native hardware through their own JavaScript APIs
+jQuery Mobile - a separate mobile UI which has jQuery as a dependency
+iAd - an update to Apple&#39;s PastryKit, but probably intended only for ads</description>
+    </item>
+    
+    <item>
+      <title>JavaScript links from last week (September 26)</title>
+      <link>https://www.davidbcalhoun.com/2010/javascript-links-from-last-week-september-26/</link>
+      <pubDate>Tue, 05 Oct 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2010/javascript-links-from-last-week-september-26/</guid>
+      <description>JavaScript Asteroids - blow up any webpage with this bookmarklet!
+JS1k contest - and the winner
+PromoteJS - Google bombing with a good intent. Better links to JavaScript documentation!
+Async and defer attributes for Script tags added to WebKit
+Evercookie - uses devious ways to try to track users. Hmm, this one is questionable. Please use it for good, not evil&amp;hellip; :/
+JSPerf.com - not really new news, but a nice quick way to test algorithm performance in JavaScript</description>
+    </item>
+    
+    <item>
+      <title>Friday links: mobile performance studies, the upcoming device element, and more (July 15)</title>
+      <link>https://www.davidbcalhoun.com/2010/friday-links-mobile-performance-studies-the-upcoming-device-element-and-more-july-15/</link>
+      <pubDate>Fri, 16 Jul 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2010/friday-links-mobile-performance-studies-the-upcoming-device-element-and-more-july-15/</guid>
+      <description>Mobile Flickr for iPhone 1.2 released
+Firefox Home For iPhone Approved, Lets You Sync Bookmarks, Open Tabs And More
+Opera Mobile 10.1 for S60: W3C gelocation, border-radius &amp;amp; 2D transforms on S60 platform
+Mobile Browser Cache Limits, Revisited by Ryan Grove
+Mobile cache file sizes (and other performance tests on mobile devices) by Steve Souders
+Out Of Nowhere, The iPad Has A Real Competitor: the Android-based Pandigital Novel
+Ex-Apple Javascript Guru: HTML5 and Native Apps Can Live Together</description>
+    </item>
+    
+    <item>
+      <title>Video: John Resig - Testing, Performance Analysis, and jQuery 1.4</title>
+      <link>https://www.davidbcalhoun.com/2009/video-john-resig-testing-performance-analysis-and-jquery-1.4/</link>
+      <pubDate>Mon, 21 Dec 2009 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2009/video-john-resig-testing-performance-analysis-and-jquery-1.4/</guid>
+      <description>In case you hadn’t seen it yet, John Resig was kind enough to stop by Yahoo! for the December Bayjax meetup. Here’s the video:
+ Usually developers are more interested in just getting the dang code to work, and as a result actual the testing and maintenance of JavaScript isn’t talked about too much, so I’m sure this will be new territory for many developers. And since it’s John Resig speaking, there was of course a bit about using TestSwarm, a testing distributed framework-agnostic automated testing tool (that’s a mouthful!</description>
+    </item>
+    
+    <item>
+      <title>Ways of passing data to functions in JavaScript</title>
+      <link>https://www.davidbcalhoun.com/2009/ways-of-passing-data-to-functions-in-javascript/</link>
+      <pubDate>Fri, 04 Dec 2009 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2009/ways-of-passing-data-to-functions-in-javascript/</guid>
+      <description>Passing data is quite important in functional programming languages like JavaScript. When there are multiple functions (which is most of the time), there needs to be a way to pass data between the functions. This is done by passing values in parenthesis: myFunction(myData). Even when there is no data to be passed, we still have to declare and execute functions by using parenthesis: myFunction().
+Simple Passing I&#39;ve already referred to the common method of passing data.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>links on David Calhoun&#39;s blog</title>
+    <link>https://www.davidbcalhoun.com/tags/links/</link>
+    <description>Recent content in links on David Calhoun&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 05 Oct 2010 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.davidbcalhoun.com/tags/links/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>JavaScript links from last week (September 26)</title>
+      <link>https://www.davidbcalhoun.com/2010/javascript-links-from-last-week-september-26/</link>
+      <pubDate>Tue, 05 Oct 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2010/javascript-links-from-last-week-september-26/</guid>
+      <description>JavaScript Asteroids - blow up any webpage with this bookmarklet!
+JS1k contest - and the winner
+PromoteJS - Google bombing with a good intent. Better links to JavaScript documentation!
+Async and defer attributes for Script tags added to WebKit
+Evercookie - uses devious ways to try to track users. Hmm, this one is questionable. Please use it for good, not evil&amp;hellip; :/
+JSPerf.com - not really new news, but a nice quick way to test algorithm performance in JavaScript</description>
+    </item>
+    
+  </channel>
+</rss>

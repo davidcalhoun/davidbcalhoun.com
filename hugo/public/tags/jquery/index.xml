@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>jQuery on David Calhoun&#39;s blog</title>
+    <link>https://www.davidbcalhoun.com/tags/jquery/</link>
+    <description>Recent content in jQuery on David Calhoun&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 08 Dec 2009 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.davidbcalhoun.com/tags/jquery/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>JavaScript tidbit: special variables ($, $$, _, etc)</title>
+      <link>https://www.davidbcalhoun.com/2009/javascript-tidbit-special-variables-_-etc/</link>
+      <pubDate>Tue, 08 Dec 2009 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2009/javascript-tidbit-special-variables-_-etc/</guid>
+      <description>You&#39;re probably used to typical variables names such as the following:
+1  var personName = &amp;#39;Joe&amp;#39;;   You may not realize it, but there are some non-alphanumeric variables at your disposal.
+Using $ For instance, the $ variable has been made popular by several JavaScript libraries, most notably jQuery. You can use it to alias operations that are commonly performed, such as the following (1):
+1 2  var $ = document.</description>
+    </item>
+    
+  </channel>
+</rss>

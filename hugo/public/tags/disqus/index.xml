@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>disqus on David Calhoun&#39;s blog</title>
+    <link>https://www.davidbcalhoun.com/tags/disqus/</link>
+    <description>Recent content in disqus on David Calhoun&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Fri, 10 Jan 2020 10:28:03 -0500</lastBuildDate>
+    
+	<atom:link href="https://www.davidbcalhoun.com/tags/disqus/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ditching Disqus (Migrating Away Since It Has Become a Monster)</title>
+      <link>https://www.davidbcalhoun.com/2020/ditching-disqus-migrating-away-since-it-has-become-a-monster/</link>
+      <pubDate>Fri, 10 Jan 2020 10:28:03 -0500</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2020/ditching-disqus-migrating-away-since-it-has-become-a-monster/</guid>
+      <description>The time has finally come for me to ditch Disqus for comments. I&#39;ll let this gif do the talking:
+ Disqus unleashed: making almost 100 HTTP requests to its own servers and random ad servers.  The downside of a free service As the addage goes: if you are not paying for the product, you are the product. And the ad companies are the customers, vying for the ability to track you and your interests as you move around the web.</description>
+    </item>
+    
+  </channel>
+</rss>

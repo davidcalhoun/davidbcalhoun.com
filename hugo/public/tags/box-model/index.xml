@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>box model on David Calhoun&#39;s blog</title>
+    <link>https://www.davidbcalhoun.com/tags/box-model/</link>
+    <description>Recent content in box model on David Calhoun&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 02 Mar 2010 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.davidbcalhoun.com/tags/box-model/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A Clockwork Box</title>
+      <link>https://www.davidbcalhoun.com/2010/a-clockwork-box/</link>
+      <pubDate>Tue, 02 Mar 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2010/a-clockwork-box/</guid>
+      <description>With CSS there are always various ways to accomplish something. After reading this short tidbit, you should be familiar with the various ways of controlling the size of an element’s padding, border, and margin, and you should know what the handy “clockwork” tip is, and how it will be useful to remember when you’re putting your CSS into practice.
+Equal values on all four sides If all four values (top, right, bottom, and left) are equal, then you simply write the following:</description>
+    </item>
+    
+  </channel>
+</rss>

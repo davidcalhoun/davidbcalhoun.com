@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mobile on David Calhoun&#39;s blog</title>
+    <link>https://www.davidbcalhoun.com/tags/mobile/</link>
+    <description>Recent content in mobile on David Calhoun&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Mon, 14 Apr 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.davidbcalhoun.com/tags/mobile/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>The mobile web is dead (and we have killed it)</title>
+      <link>https://www.davidbcalhoun.com/2014/the-mobile-web-is-dead-and-we-have-killed-it/</link>
+      <pubDate>Mon, 14 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2014/the-mobile-web-is-dead-and-we-have-killed-it/</guid>
+      <description>The mobile web is dead.
+(Banner: would you like to download the app?)
+The mobile web remains dead.
+(Splash screen: download the app!)
+And we have killed it.
+(JavaScript prompt: &amp;ldquo;Yahoo! can serve you more accurate local weather and news if you enable location services&amp;rdquo;)
+Yet its shadow still looms.
+(Prompt: Yahoo! would like to use your Current Location)
+How shall we comfort ourselves, the murderers of all murderers?
+(&amp;ldquo;Do you want to change your search engine to Yahoo?</description>
+    </item>
+    
+    <item>
+      <title>Quick style comparison of mobile image search sites</title>
+      <link>https://www.davidbcalhoun.com/2013/quick-style-comparison-of-mobile-image-search-sites/</link>
+      <pubDate>Fri, 10 May 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2013/quick-style-comparison-of-mobile-image-search-sites/</guid>
+      <description>The other day I glanced at a classmate using Baidu to perform an image search and was impressed with their presentation:
+
+Note the nice big images and the lack of margins around images. After seeing this presentation, I realized that the common approach of adding margins around images is pretty unnecessary.
+I also noticed that the images are a variety of sizes, leading to a less sterile experience. There&#39;s surely some clever math going on behind the scenes here to make sure the images appear &amp;ldquo;justified&amp;rdquo; (to use a word from the recent Flickr redesign).</description>
+    </item>
+    
+    <item>
+      <title>Response to &#39;What’s next for mobile now that adaptive design has failed?&#39;</title>
+      <link>https://www.davidbcalhoun.com/2012/response-to-whats-next-for-mobile-now-that-adaptive-design-has-failed/</link>
+      <pubDate>Wed, 23 May 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2012/response-to-whats-next-for-mobile-now-that-adaptive-design-has-failed/</guid>
+      <description>There&#39;s been a flurry of response to this article, entitled &amp;ldquo;What’s next for mobile now that adaptive design has failed?&amp;quot;.
+There&#39;s many problems with this article, so it&#39;s hard to know where to start.
+I will admit that defenders of responsive design have come out of the woodwork in trashing this article, but I suppose I count myself among them, being a proponent of responsive design. I still see the web heading that direction, and I definitely don&#39;t see it heading in the direction the author of the article has described.</description>
+    </item>
+    
+    <item>
+      <title>iOS5 SunSpider: iPhone 4S vs iPhone 4 vs iPhone 3GS</title>
+      <link>https://www.davidbcalhoun.com/2011/ios5-sunspider-iphone-4s-vs-iphone-4-vs-iphone-3gs/</link>
+      <pubDate>Fri, 14 Oct 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2011/ios5-sunspider-iphone-4s-vs-iphone-4-vs-iphone-3gs/</guid>
+      <description>Result table (SunSpider 0.9.1, all devices running iOS 5)   Test  &amp;lt;td&amp;gt; iPhone 4S &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; iPhone 4 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; iPhone 3GS &amp;lt;/td&amp;gt;     Total  &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 2270ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 3483ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 4903ms &amp;lt;/td&amp;gt;     3D  &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 281ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 486ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 672ms &amp;lt;/td&amp;gt;     Access  &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 279ms &amp;lt;/td&amp;gt;&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 410ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 614ms &amp;lt;/td&amp;gt;     Bitops  &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 177ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 200ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 270ms &amp;lt;/td&amp;gt;     Controlflow  &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 20ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 26ms &amp;lt;/td&amp;gt;&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 34ms &amp;lt;/td&amp;gt;     Crypto  &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 164ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 211ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 315ms &amp;lt;/td&amp;gt;     Date  &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 332ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 528ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 770ms &amp;lt;/td&amp;gt;     Math  &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 219ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 433ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 553ms &amp;lt;/td&amp;gt;     Regexp  &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 88ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 117ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 151ms &amp;lt;/td&amp;gt;     String  &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 711ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1072ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1525ms &amp;lt;/td&amp;gt;    Raw results iPhone 4S (iOS5)</description>
+    </item>
+    
+    <item>
+      <title>iPhone 4S, iPhone 4, and iPhone 3GS photo comparison</title>
+      <link>https://www.davidbcalhoun.com/2011/iphone-4s-iphone-4-and-iphone-3gs-photo-comparison/</link>
+      <pubDate>Fri, 14 Oct 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2011/iphone-4s-iphone-4-and-iphone-3gs-photo-comparison/</guid>
+      <description>More photos likely to come.. this is just after I unboxed my new 4S. Time to play with it a bit!
+iPhone 4S 
+iPhone 4 
+iPhone 3GS 
+iPhone 3GS (alternate white balance point)</description>
+    </item>
+    
+    <item>
+      <title>Mobile Performance Manifesto</title>
+      <link>https://www.davidbcalhoun.com/2011/mobile-performance-manifesto/</link>
+      <pubDate>Tue, 11 Oct 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2011/mobile-performance-manifesto/</guid>
+      <description>Earlier this year I gave a talk (slides) outlining the latest and greatest in mobile performance, including a bit of my own unscientific research into carrier latency and bandwidth thanks to boomerang.js.
+I realized that interest in mobile performance has exploded recently, especially with Steve Souders announcing his focus on mobile, and I thought it was time for an update, this time in blog form. Also, my old slides have been somewhat embarrassing.</description>
+    </item>
+    
+    <item>
+      <title>New Mobile Safari stuff in iOS5: position:fixed, overflow:scroll, new input type support, web workers, ECMAScript 5</title>
+      <link>https://www.davidbcalhoun.com/2011/new-mobile-safari-stuff-in-ios5-positionfixed-overflowscroll-new-input-type-support-web-workers-ecmascript-5/</link>
+      <pubDate>Tue, 07 Jun 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2011/new-mobile-safari-stuff-in-ios5-positionfixed-overflowscroll-new-input-type-support-web-workers-ecmascript-5/</guid>
+      <description>(note: this is based on the first iOS5 beta [9A5220p] and is subject to change on final release)
+It looks like there&#39;s finally some major improvements in mobile Safari, some of which I&#39;ve found below on my &amp;ldquo;first glance&amp;rdquo; after downloading the SDK. Chime in if you find anything yourself!
+Bad news first Much to my disappointment, browser-based file uploads are still not supported (input type=&amp;quot;file&amp;rdquo;), even though they have been supported on Android since version 2.</description>
+    </item>
+    
+    <item>
+      <title>JavaScript SunSpider benchmark: iOS 4.3 vs iOS 4.0</title>
+      <link>https://www.davidbcalhoun.com/2011/javascript-sunspider-benchmark-ios-4.3-vs-ios-4.0/</link>
+      <pubDate>Sat, 22 Jan 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2011/javascript-sunspider-benchmark-ios-4.3-vs-ios-4.0/</guid>
+      <description>Result table (SunSpider 0.9.1)    Test  &amp;lt;td&amp;gt; iOS 4 (3GS) &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; iOS 4.3 beta 2 (3GS) &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; % change &amp;lt;/td&amp;gt;     Total  &amp;lt;td&amp;gt; 13787ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 5357ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; -61.1% &amp;lt;/td&amp;gt;     3D  &amp;lt;td&amp;gt; 1917ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 737ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; -61.6% &amp;lt;/td&amp;gt;     Access  &amp;lt;td&amp;gt; 1893ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 617ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; -67.</description>
+    </item>
+    
+    <item>
+      <title>Notes: Mobile Web Design (Cameron Moll, 2007)</title>
+      <link>https://www.davidbcalhoun.com/2011/notes-mobile-web-design-cameron-moll-2007/</link>
+      <pubDate>Fri, 21 Jan 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2011/notes-mobile-web-design-cameron-moll-2007/</guid>
+      <description>What&#39;s this? These are some notes I collect as I read through Cameron Moll&#39;s Mobile Web Design.
+Introduction Further info:  Designing the Mobile User Experience (Barbara Ballard)
+dotMobi Web Developer&#39;s Guide (dev.mobi)
+Global Authoring Practices for the Mobile Web (Luca Passani) (passani.it/gap)
+Constant Touch: A Global History of the Mobile Web (Jon Agar)
+Personal, Portable, Pedestrian: Mobile Phones in Japanese Life (Mizuko Ito)
+Mobile Interaction Design (Matt Jones)
+iPhone released just before publication  Mobile Web Fundamentals  Putting 2.</description>
+    </item>
+    
+    <item>
+      <title>Mobile JavaScript libraries and frameworks (Mobile Web Part 7)</title>
+      <link>https://www.davidbcalhoun.com/2010/mobile-javascript-libraries-and-frameworks-mobile-web-part-7/</link>
+      <pubDate>Mon, 06 Dec 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2010/mobile-javascript-libraries-and-frameworks-mobile-web-part-7/</guid>
+      <description>Intro This is designed to be a &amp;ldquo;living&amp;rdquo; post of available materials which will hopefully be updated frequently.
+Right now there&#39;s not much, just some links, but I hope to keep adding materials, so check back!
+The List Sencha Touch
+PhoneGap - native wrapper which provides access to native hardware through their own JavaScript APIs
+jQuery Mobile - a separate mobile UI which has jQuery as a dependency
+iAd - an update to Apple&#39;s PastryKit, but probably intended only for ads</description>
+    </item>
+    
+    <item>
+      <title>Does it still make sense to use em rather than px?</title>
+      <link>https://www.davidbcalhoun.com/2010/does-it-still-make-sense-to-use-em-rather-than-px/</link>
+      <pubDate>Tue, 05 Oct 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2010/does-it-still-make-sense-to-use-em-rather-than-px/</guid>
+      <description>Alex Kessinger tweeted asking if there was a reason to still use EMs instead of PX measurements in mobile. This is an interesting question, but 140 characters isn&#39;t quite enough to explain my thoughts. So here&#39;s an old-fashioned blog post!
+Just a quick review: em and percentage (%) units in CSS are relative measurements, whereas px and other measurements are not. What this means is that the resulting size of relative measurements depends on the size of the parent.</description>
+    </item>
+    
+    <item>
+      <title>Mobile Monday: Best Practices for Mobile Design (September 20, 2010)</title>
+      <link>https://www.davidbcalhoun.com/2010/mobile-monday-best-practices-for-mobile-design-september-20-2010/</link>
+      <pubDate>Tue, 21 Sep 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2010/mobile-monday-best-practices-for-mobile-design-september-20-2010/</guid>
+      <description>Mobile Monday panel left to right: Wesley Yun (RIM), Jared Benson (Punchcut), Anne Sullivan (Microsoft/Tellme Networks), Chris Nesladek (Google), Sue Booker (Nokia) (taken with my iPhone 3GS)
+I just came back from Mobile Monday Silicon Valley: Best Practices for Mobile Design at the Computer History Museum in Mountain View. This was a panel discussion with representatives from Google, Microsoft, Nokia, RIM, and Punchcut. There were quite a few little nuggets of wisdom which I tried to write down in bullet form:</description>
+    </item>
+    
+    <item>
+      <title>Dealing with device orientation (Mobile web part 6)</title>
+      <link>https://www.davidbcalhoun.com/2010/dealing-with-device-orientation-mobile-web-part-6/</link>
+      <pubDate>Tue, 24 Aug 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2010/dealing-with-device-orientation-mobile-web-part-6/</guid>
+      <description>Introduction If you read part 4 of this series, you&#39;ll know that because of the variety of screen sizes, the best way to develop for mobile is to develop fluid layouts that take 100% of the available space on the screen.
+What you probably didn&#39;t think of is that there&#39;s different screen widths even on the same device! This is due to screen orientation. And when the user changes the screen orientation, stuff may break (hey, it&#39;s not a perfect world).</description>
+    </item>
+    
+    <item>
+      <title>BlackBerry Torch SunSpider results (JavaScript benchmark)</title>
+      <link>https://www.davidbcalhoun.com/2010/blackberry-torch-sunspider-results-javascript-benchmark/</link>
+      <pubDate>Wed, 18 Aug 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2010/blackberry-torch-sunspider-results-javascript-benchmark/</guid>
+      <description>Results ============================================RESULTS (means and 95% confidence intervals)--------------------------------------------Total: 322.2ms +/- 4.9%--------------------------------------------3d: 55.0ms +/- 15.3%cube: 19.8ms +/- 12.1%morph: 16.6ms +/- 35.8%raytrace: 18.6ms +/- 22.5%access: 32.8ms +/- 12.4%binary-trees: 1.8ms +/- 30.9%fannkuch: 14.2ms +/- 7.3%nbody: 12.6ms +/- 26.7%nsieve: 4.2ms +/- 24.8%bitops: 29.4ms +/- 10.2%3bit-bits-in-byte: 2.4ms +/- 28.4%bits-in-byte: 8.0ms +/- 15.5%bitwise-and: 8.6ms +/- 21.9%nsieve-bits: 10.4ms +/- 21.7%controlflow: 2.</description>
+    </item>
+    
+    <item>
+      <title>Thursday links (July 8)</title>
+      <link>https://www.davidbcalhoun.com/2010/thursday-links-july-8/</link>
+      <pubDate>Thu, 08 Jul 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2010/thursday-links-july-8/</guid>
+      <description>Mobile YouTube Mobile Gets a Kick Start
+Battle of Champions: HTC Droid Incredible vs. Palm Pre Plus
+Designing for the Retina Display (326ppi)
+AUDIO: John Resig: You Don’t Know Mobile (Webstyle Magazine) – ~$5,000 minimum to do mobile testing
+Tapworthy: Designing Great iPhone Apps
+eMobile: We have the fastest network in Japan!
+Apple iPad User Analysis — Phase II
+VIDEO: Using iPhone with a Braille display (Victor Tsaran)
+Mobile Access 2010 (Pew Research)</description>
+    </item>
+    
+    <item>
+      <title>Using mobile-specific HTML, CSS, and JavaScript (Mobile web part 5)</title>
+      <link>https://www.davidbcalhoun.com/2010/using-mobile-specific-html-css-and-javascript-mobile-web-part-5/</link>
+      <pubDate>Tue, 29 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2010/using-mobile-specific-html-css-and-javascript-mobile-web-part-5/</guid>
+      <description>(updated June 27, 2011)
+Mobile-specific HTML Viewport tag Use the viewport tag to properly fit the content to the screen:
+1  &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1.0&amp;#34;/&amp;gt;   Tel scheme (to initiate phone calls) 1  &amp;lt;a href=&amp;#34;tel:18005555555&amp;#34;&amp;gt;Call us at 1-800-555-5555&amp;lt;/a&amp;gt;   Sms scheme (to initiate text messages) 1 2 3  &amp;lt;a href=&amp;#34;sms:18005555555&amp;#34;&amp;gt; &amp;lt;a href=&amp;#34;sms:18005555555,18005555556&amp;#34;&amp;gt; &amp;lt;!--multiple recipients --&amp;gt; &amp;lt;a href=&amp;#34;sms:18005555555?body=Text%20goes%20here&amp;#34;&amp;gt; &amp;lt;!--predefined message body --&amp;gt;   Disable automatic telephone number linking 1  &amp;lt;meta name=&amp;#34;format-detection&amp;#34; content=&amp;#34;telephone=no&amp;#34;&amp;gt;   iOS-specific HTML (some work on Android as well) You also have access to several Apple-specific tags to use in your iOS applications (iPhone, iPad, and don&#39;t forget the iPod Touch!</description>
+    </item>
+    
+    <item>
+      <title>iPhone 4 SunSpider test results (22% faster than iPhone 3GS)</title>
+      <link>https://www.davidbcalhoun.com/2010/iphone-4-sunspider-test-results-22-faster-than-iphone-3gs/</link>
+      <pubDate>Fri, 25 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2010/iphone-4-sunspider-test-results-22-faster-than-iphone-3gs/</guid>
+      <description>============================================RESULTS (means and 95% confidence intervals)--------------------------------------------Total: 10669.4ms +/- 1.0%--------------------------------------------3d: 1471.5ms +/- 2.1%cube: 428.7ms +/- 2.6%morph: 584.3ms +/- 4.7%raytrace: 458.5ms +/- 0.6%access: 1476.7ms +/- 1.3%binary-trees: 151.6ms +/- 1.3%fannkuch: 664.0ms +/- 0.1%nbody: 397.9ms +/- 2.1%nsieve: 263.2ms +/- 6.3%bitops: 947.2ms +/- 2.1%3bit-bits-in-byte: 195.7ms +/- 2.0%bits-in-byte: 206.1ms +/- 1.0%bitwise-and: 179.7ms +/- 1.1%nsieve-bits: 365.7ms +/- 3.9%controlflow: 169.</description>
+    </item>
+    
+    <item>
+      <title>JavaScript SunSpider test: iOS 3.1.3 versus iOS 4 GM</title>
+      <link>https://www.davidbcalhoun.com/2010/javascript-sunspider-test-ios-3.1.3-versus-ios-4-gm/</link>
+      <pubDate>Thu, 10 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2010/javascript-sunspider-test-ios-3.1.3-versus-ios-4-gm/</guid>
+      <description>Result table    Test  &amp;lt;td&amp;gt; iOS 3.1.3 (3GS) &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; iOS 4 GM (3GS) &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; % change &amp;lt;/td&amp;gt;     Total  &amp;lt;td&amp;gt; 15396ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 13787ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; -10.5% &amp;lt;/td&amp;gt;     3D  &amp;lt;td&amp;gt; 2411ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1917ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; -20.5% &amp;lt;/td&amp;gt;     Access  &amp;lt;td&amp;gt; 1884ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1893ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;negative&amp;quot;&amp;gt; +0.5% &amp;lt;/td&amp;gt;     Bitops  &amp;lt;td&amp;gt; 1044ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1239ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;negative&amp;quot;&amp;gt; +18.</description>
+    </item>
+    
+    <item>
+      <title>JavaScript SunSpider: HTC Evo versus HTC Incredible versus Nexus One</title>
+      <link>https://www.davidbcalhoun.com/2010/javascript-sunspider-htc-evo-versus-htc-incredible-versus-nexus-one/</link>
+      <pubDate>Thu, 10 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2010/javascript-sunspider-htc-evo-versus-htc-incredible-versus-nexus-one/</guid>
+      <description>Result table    Test  &amp;lt;td&amp;gt; Evo (2.1) &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; Incredible (2.1) &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; Nexus One (2.2) &amp;lt;/td&amp;gt;     Total  &amp;lt;td&amp;gt; 16167ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 15237ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 5452ms &amp;lt;/td&amp;gt;     3D  &amp;lt;td&amp;gt; 2014ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1835ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 946ms &amp;lt;/td&amp;gt;     Access  &amp;lt;td&amp;gt; 2126ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1892ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 463ms &amp;lt;/td&amp;gt;     Bitops  &amp;lt;td&amp;gt; 1519ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1591ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 360ms &amp;lt;/td&amp;gt;     Controlflow  &amp;lt;td&amp;gt; 243ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 206ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 20ms &amp;lt;/td&amp;gt;     Crypto  &amp;lt;td&amp;gt; 1033ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1003ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 344ms &amp;lt;/td&amp;gt;     Date  &amp;lt;td&amp;gt; 1849ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1896ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 639ms &amp;lt;/td&amp;gt;     Math  &amp;lt;td&amp;gt; 1684ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1419ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 602ms &amp;lt;/td&amp;gt;     Regexp  &amp;lt;td&amp;gt; 1779ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1673ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 155ms &amp;lt;/td&amp;gt;     String  &amp;lt;td&amp;gt; 3920ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 3722ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 1923ms &amp;lt;/td&amp;gt;    Thoughts The Incredible is just slightly faster than the Evo, to the point where it’s probably negligible or within a margin of error.</description>
+    </item>
+    
+    <item>
+      <title>Mobile First: Luke Wroblewski on mobile design</title>
+      <link>https://www.davidbcalhoun.com/2010/mobile-first-luke-wroblewski-on-mobile-design/</link>
+      <pubDate>Sat, 05 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2010/mobile-first-luke-wroblewski-on-mobile-design/</guid>
+      <description>In episode 6 of The Big Web Show, Luke Wroblewski gives his “Mobile First” talk, explaining his philosophy for designing for mobile, the challenges, and a look at the road ahead. Luke explains that because of the limitations on mobile, developers are forced to really optimize the user experience for mobile. Often times this mobile experience turns out much better than on the desktop, where the “gluttony of resources” results in distracting and excessive webpages.</description>
+    </item>
+    
+    <item>
+      <title>On designing a mobile webpage (Mobile web part 4)</title>
+      <link>https://www.davidbcalhoun.com/2010/on-designing-a-mobile-webpage-mobile-web-part-4/</link>
+      <pubDate>Wed, 26 May 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2010/on-designing-a-mobile-webpage-mobile-web-part-4/</guid>
+      <description>The frontend engineer lives at the intersection between design and engineering, and this is perhaps nowhere more true than in the world of mobile. In order to make a usable desktop website, an engineer must have at least some sense of design, and fortunately a lot of this has been standardized over the years. But the world of mobile is full of more unknowns, and the field is changing rapidly, especially lately from the shift away from older feature phones to the focus on smartphones.</description>
+    </item>
+    
+    <item>
+      <title>Designing buttons that don&#39;t suck (Mobile web part 3)</title>
+      <link>https://www.davidbcalhoun.com/2010/designing-buttons-that-dont-suck-mobile-web-part-3/</link>
+      <pubDate>Wed, 19 May 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2010/designing-buttons-that-dont-suck-mobile-web-part-3/</guid>
+      <description>A button is something that seems to be made just for mobile: it’s designed to be big and easy to activate, as opposed to small and harder to activate, like normal text links. This seems ideal for a mobile devices, which have a small display area and whose form of input is a person’s (relatively) fat finger interacting with the screen. Contrast this with the desktop, where the display area is much larger and the input device, the mouse, is a much more highly refined and sensitive pointing device.</description>
+    </item>
+    
+    <item>
+      <title>The mobile developer&#39;s toolkit (Mobile web part 2)</title>
+      <link>https://www.davidbcalhoun.com/2010/the-mobile-developers-toolkit-mobile-web-part-2/</link>
+      <pubDate>Tue, 11 May 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2010/the-mobile-developers-toolkit-mobile-web-part-2/</guid>
+      <description>Tools of the trade You’re no mobile developer unless you have the tools to develop on mobile! And while it’s good to own at least one of the smartphones you’re developing on, it’s probably unrealistic to think that you’re going to go out of your way to buy several other unlocked smartphones just to test with. So you should have the next best thing: an SDK!
+But an SDK is just one of the tools of the trade.</description>
+    </item>
+    
+    <item>
+      <title>The viewport metatag (Mobile web part 1)</title>
+      <link>https://www.davidbcalhoun.com/2010/the-viewport-metatag-mobile-web-part-1/</link>
+      <pubDate>Thu, 06 May 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2010/the-viewport-metatag-mobile-web-part-1/</guid>
+      <description>The skinny Use this:
+1  &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1&amp;#34;/&amp;gt;   Introduction This series of posts is intended to introduce web developers to basic techniques for designing for the mobile web. It assumes at least a basic knowledge of creating desktop websites.
+The problem Ok, so you&#39;ve settled down to learn how to write a website for a mobile device using your current knowledge of building desktop websites. So you start off with some pretty basic HTML:</description>
+    </item>
+    
+    <item>
+      <title>IE Mobile 6.12 problem: browser ignores the specificity of CSS display styles</title>
+      <link>https://www.davidbcalhoun.com/2009/ie-mobile-6.12-problem-browser-ignores-the-specificity-of-css-display-styles/</link>
+      <pubDate>Mon, 31 Aug 2009 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2009/ie-mobile-6.12-problem-browser-ignores-the-specificity-of-css-display-styles/</guid>
+      <description>UPDATE: I found that the problem is actually that inline-block is completely unsupported in this version of IE Mobile, and is likely also unsupported in IE Mobile 7, which is also based on IE4. This is in contrast to desktop IE6, where inline-block is supported on elements that are natively inline (span, em, etc.).
+Just found this today, for what it’s worth. If you’re unlucky enough to be working with older Windows Mobile phones you have probably realized that the browser is based on IE6, which all the desktop web developers notoriously complain about constantly.</description>
+    </item>
+    
+  </channel>
+</rss>

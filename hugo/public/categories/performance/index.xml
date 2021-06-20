@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>performance on David Calhoun&#39;s blog</title>
+    <link>https://www.davidbcalhoun.com/categories/performance/</link>
+    <description>Recent content in performance on David Calhoun&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Thu, 10 Jun 2010 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.davidbcalhoun.com/categories/performance/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>JavaScript SunSpider: HTC Evo versus HTC Incredible versus Nexus One</title>
+      <link>https://www.davidbcalhoun.com/2010/javascript-sunspider-htc-evo-versus-htc-incredible-versus-nexus-one/</link>
+      <pubDate>Thu, 10 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2010/javascript-sunspider-htc-evo-versus-htc-incredible-versus-nexus-one/</guid>
+      <description>Result table    Test  &amp;lt;td&amp;gt; Evo (2.1) &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; Incredible (2.1) &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; Nexus One (2.2) &amp;lt;/td&amp;gt;     Total  &amp;lt;td&amp;gt; 16167ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 15237ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 5452ms &amp;lt;/td&amp;gt;     3D  &amp;lt;td&amp;gt; 2014ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1835ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 946ms &amp;lt;/td&amp;gt;     Access  &amp;lt;td&amp;gt; 2126ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1892ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 463ms &amp;lt;/td&amp;gt;     Bitops  &amp;lt;td&amp;gt; 1519ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1591ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 360ms &amp;lt;/td&amp;gt;     Controlflow  &amp;lt;td&amp;gt; 243ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 206ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 20ms &amp;lt;/td&amp;gt;     Crypto  &amp;lt;td&amp;gt; 1033ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1003ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 344ms &amp;lt;/td&amp;gt;     Date  &amp;lt;td&amp;gt; 1849ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1896ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 639ms &amp;lt;/td&amp;gt;     Math  &amp;lt;td&amp;gt; 1684ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1419ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 602ms &amp;lt;/td&amp;gt;     Regexp  &amp;lt;td&amp;gt; 1779ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1673ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 155ms &amp;lt;/td&amp;gt;     String  &amp;lt;td&amp;gt; 3920ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 3722ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 1923ms &amp;lt;/td&amp;gt;    Thoughts The Incredible is just slightly faster than the Evo, to the point where it’s probably negligible or within a margin of error.</description>
+    </item>
+    
+  </channel>
+</rss>
