@@ -8,4 +8,3 @@ Source code of [davidbcalhoun.com](https://www.davidbcalhoun.com/)
 - `npm run build` - builds to `/docs` for Github pages
 
 - Update Hugo: `brew update hugo`
-- New post: ``
