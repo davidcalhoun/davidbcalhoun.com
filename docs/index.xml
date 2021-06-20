@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>David Calhoun&#39;s blog</title>
-    <link>https://www.davidbcalhoun.com/</link>
-    <description>Recent content on David Calhoun&#39;s blog</description>
+    <title>Posts on David Calhoun&#39;s blog</title>
+    <link>https://www.davidbcalhoun.com/posts/</link>
+    <description>Recent content in Posts on David Calhoun&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Wed, 30 Dec 2020 10:39:59 -0500</lastBuildDate><atom:link href="https://www.davidbcalhoun.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 30 Dec 2020 10:39:59 -0500</lastBuildDate><atom:link href="https://www.davidbcalhoun.com/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My year in photos (2020)</title>
       <link>https://www.davidbcalhoun.com/2020/my-year-in-photos-2020/</link>
