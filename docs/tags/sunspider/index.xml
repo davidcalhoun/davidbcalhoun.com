@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>sunspider on David Calhoun&#39;s blog</title>
+    <link>https://www.davidbcalhoun.com/tags/sunspider/</link>
+    <description>Recent content in sunspider on David Calhoun&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Wed, 18 Aug 2010 00:00:00 +0000</lastBuildDate><atom:link href="https://www.davidbcalhoun.com/tags/sunspider/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>BlackBerry Torch SunSpider results (JavaScript benchmark)</title>
+      <link>https://www.davidbcalhoun.com/2010/blackberry-torch-sunspider-results-javascript-benchmark/</link>
+      <pubDate>Wed, 18 Aug 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2010/blackberry-torch-sunspider-results-javascript-benchmark/</guid>
+      <description>Results ============================================RESULTS (means and 95% confidence intervals)--------------------------------------------Total: 322.2ms +/- 4.9%--------------------------------------------3d: 55.0ms +/- 15.3%cube: 19.8ms +/- 12.1%morph: 16.6ms +/- 35.8%raytrace: 18.6ms +/- 22.5%access: 32.8ms +/- 12.4%binary-trees: 1.8ms +/- 30.9%fannkuch: 14.2ms +/- 7.3%nbody: 12.6ms +/- 26.7%nsieve: 4.2ms +/- 24.8%bitops: 29.4ms +/- 10.2%3bit-bits-in-byte: 2.4ms +/- 28.4%bits-in-byte: 8.0ms +/- 15.5%bitwise-and: 8.6ms +/- 21.9%nsieve-bits: 10.4ms +/- 21.7%controlflow: 2.</description>
+    </item>
+    
+    <item>
+      <title>iPhone 4 SunSpider test results (22% faster than iPhone 3GS)</title>
+      <link>https://www.davidbcalhoun.com/2010/iphone-4-sunspider-test-results-22-faster-than-iphone-3gs/</link>
+      <pubDate>Fri, 25 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2010/iphone-4-sunspider-test-results-22-faster-than-iphone-3gs/</guid>
+      <description>============================================RESULTS (means and 95% confidence intervals)--------------------------------------------Total: 10669.4ms +/- 1.0%--------------------------------------------3d: 1471.5ms +/- 2.1%cube: 428.7ms +/- 2.6%morph: 584.3ms +/- 4.7%raytrace: 458.5ms +/- 0.6%access: 1476.7ms +/- 1.3%binary-trees: 151.6ms +/- 1.3%fannkuch: 664.0ms +/- 0.1%nbody: 397.9ms +/- 2.1%nsieve: 263.2ms +/- 6.3%bitops: 947.2ms +/- 2.1%3bit-bits-in-byte: 195.7ms +/- 2.0%bits-in-byte: 206.1ms +/- 1.0%bitwise-and: 179.7ms +/- 1.1%nsieve-bits: 365.7ms +/- 3.9%controlflow: 169.</description>
+    </item>
+    
+    <item>
+      <title>JavaScript SunSpider test: iOS 3.1.3 versus iOS 4 GM</title>
+      <link>https://www.davidbcalhoun.com/2010/javascript-sunspider-test-ios-3.1.3-versus-ios-4-gm/</link>
+      <pubDate>Thu, 10 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2010/javascript-sunspider-test-ios-3.1.3-versus-ios-4-gm/</guid>
+      <description>Result table    Test  &amp;lt;td&amp;gt; iOS 3.1.3 (3GS) &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; iOS 4 GM (3GS) &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; % change &amp;lt;/td&amp;gt;     Total  &amp;lt;td&amp;gt; 15396ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 13787ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; -10.5% &amp;lt;/td&amp;gt;     3D  &amp;lt;td&amp;gt; 2411ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1917ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; -20.5% &amp;lt;/td&amp;gt;     Access  &amp;lt;td&amp;gt; 1884ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1893ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;negative&amp;quot;&amp;gt; +0.5% &amp;lt;/td&amp;gt;     Bitops  &amp;lt;td&amp;gt; 1044ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1239ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;negative&amp;quot;&amp;gt; +18.</description>
+    </item>
+    
+    <item>
+      <title>JavaScript SunSpider: HTC Evo versus HTC Incredible versus Nexus One</title>
+      <link>https://www.davidbcalhoun.com/2010/javascript-sunspider-htc-evo-versus-htc-incredible-versus-nexus-one/</link>
+      <pubDate>Thu, 10 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2010/javascript-sunspider-htc-evo-versus-htc-incredible-versus-nexus-one/</guid>
+      <description>Result table    Test  &amp;lt;td&amp;gt; Evo (2.1) &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; Incredible (2.1) &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; Nexus One (2.2) &amp;lt;/td&amp;gt;     Total  &amp;lt;td&amp;gt; 16167ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 15237ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 5452ms &amp;lt;/td&amp;gt;     3D  &amp;lt;td&amp;gt; 2014ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1835ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 946ms &amp;lt;/td&amp;gt;     Access  &amp;lt;td&amp;gt; 2126ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1892ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 463ms &amp;lt;/td&amp;gt;     Bitops  &amp;lt;td&amp;gt; 1519ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1591ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 360ms &amp;lt;/td&amp;gt;     Controlflow  &amp;lt;td&amp;gt; 243ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 206ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 20ms &amp;lt;/td&amp;gt;     Crypto  &amp;lt;td&amp;gt; 1033ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1003ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 344ms &amp;lt;/td&amp;gt;     Date  &amp;lt;td&amp;gt; 1849ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1896ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 639ms &amp;lt;/td&amp;gt;     Math  &amp;lt;td&amp;gt; 1684ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1419ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 602ms &amp;lt;/td&amp;gt;     Regexp  &amp;lt;td&amp;gt; 1779ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1673ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 155ms &amp;lt;/td&amp;gt;     String  &amp;lt;td&amp;gt; 3920ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 3722ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 1923ms &amp;lt;/td&amp;gt;    Thoughts The Incredible is just slightly faster than the Evo, to the point where it’s probably negligible or within a margin of error.</description>
+    </item>
+    
+  </channel>
+</rss>

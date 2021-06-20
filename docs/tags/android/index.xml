@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>android on David Calhoun&#39;s blog</title>
+    <link>https://www.davidbcalhoun.com/tags/android/</link>
+    <description>Recent content in android on David Calhoun&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Thu, 24 Feb 2011 00:00:00 +0000</lastBuildDate><atom:link href="https://www.davidbcalhoun.com/tags/android/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Android 3.0 Honeycomb is first to implement the Device API</title>
+      <link>https://www.davidbcalhoun.com/2011/android-3.0-honeycomb-is-first-to-implement-the-device-api/</link>
+      <pubDate>Thu, 24 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2011/android-3.0-honeycomb-is-first-to-implement-the-device-api/</guid>
+      <description>I fired up the newly released Android 3.0 SDK to run some tests and found they&amp;rsquo;ve implemented part of the long-awaited Device API (aka the Media Capture API). From your browser you can now upload pictures and videos from the camera as well as sounds from the microphone. The returned data should be available to manipulate via the File API (although I haven&amp;rsquo;t yet tested this).
+Video I made a short video demo with some explanation:</description>
+    </item>
+    
+    <item>
+      <title>Optimizing based on connection speed: using navigator.connection on Android 2.2&#43;</title>
+      <link>https://www.davidbcalhoun.com/2010/optimizing-based-on-connection-speed-using-navigator.connection-on-android-2.2-/</link>
+      <pubDate>Tue, 14 Sep 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2010/optimizing-based-on-connection-speed-using-navigator.connection-on-android-2.2-/</guid>
+      <description>Introduction A little while back this post made the rounds, which took us on a journey through some of the new features introduced in the browser in Android 2.2 Froyo. Among the most overlooked features are the file upload functionality (you can upload photos from your browser now! But we&amp;rsquo;re still waiting on iPhone to support this&amp;hellip;) and a little-known JavaScript addition to the Browser Object Model (BOM) in the form of navigator.</description>
+    </item>
+    
+    <item>
+      <title>Is a hash faster than a Switch in JavaScript?</title>
+      <link>https://www.davidbcalhoun.com/2010/is-a-hash-faster-than-a-switch-in-javascript/</link>
+      <pubDate>Tue, 17 Aug 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2010/is-a-hash-faster-than-a-switch-in-javascript/</guid>
+      <description>I stumbled across this concept recently and I thought I&amp;rsquo;d share it, because I don&amp;rsquo;t generally see this pattern being used. More importantly, I also share test results that show that maybe it&amp;rsquo;s not always a good idea to use this pattern&amp;hellip;
+The problem with Switch statements The basic switch statement in JavaScript looks something like this:
+1 2 3 4 5 6 7 8 9 10 11 12 13 14  var foo = &amp;#39;c&amp;#39;; switch(foo) { case &amp;#39;a&amp;#39;: break; case &amp;#39;b&amp;#39;: break; case &amp;#39;c&amp;#39;: break; default: }   So what&amp;rsquo;s wrong with this?</description>
+    </item>
+    
+    <item>
+      <title>How to install obsolete Android Virtual Devices (AVDs)</title>
+      <link>https://www.davidbcalhoun.com/2010/how-to-install-obsolete-android-virtual-devices-avds/</link>
+      <pubDate>Wed, 09 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2010/how-to-install-obsolete-android-virtual-devices-avds/</guid>
+      <description>Apparently it’s no longer possible to easily download Android versions 2.0 and 2.0.1 from the AVD Manager. I noticed this problem when I got a new machine and had to install everything from scratch. In the future I suspect even more AVDs will be made obsolete, so this solution also applies to them.
+Why would you want to install obsolete AVDs? In my case it’s a matter of research: I simply want to see the progress of features being added to its browser, and track those changes over time.</description>
+    </item>
+    
+  </channel>
+</rss>

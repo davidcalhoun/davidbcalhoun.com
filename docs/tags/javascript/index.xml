@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>javascript on David Calhoun&#39;s blog</title>
+    <link>https://www.davidbcalhoun.com/tags/javascript/</link>
+    <description>Recent content in javascript on David Calhoun&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 16 Jun 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.davidbcalhoun.com/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Javascript Bind, Partial Application, and Currying</title>
+      <link>https://www.davidbcalhoun.com/2020/javascript-bind-partial-application-and-currying/</link>
+      <pubDate>Tue, 16 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2020/javascript-bind-partial-application-and-currying/</guid>
+      <description>HAL 9000 computer interface from Stanley Kubrick&amp;#39;s 2001  Summary Partial application and currying often get muddled; they are related but not the same. They&amp;rsquo;re both techniques that transform functions that accept multiple arguments, but the difference is in the transformation.
+  Partial application simplifies a function by prefilling arguments, so the newly-returned function accepts less arguments. E.g. add(2, 3) becomes addTwo(3), which calls add() and prefills the first argument as 2.</description>
+    </item>
+    
+    <item>
+      <title>Matching Accented Strings in Javascript</title>
+      <link>https://www.davidbcalhoun.com/2019/matching-accented-strings-in-javascript/</link>
+      <pubDate>Thu, 10 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2019/matching-accented-strings-in-javascript/</guid>
+      <description>The problem: accented characters versus user input I&amp;rsquo;ve really been enjoying (wait for it, unpaid endorsement) The Criterion Channel since it launched earlier this year. The app and the website are nascent and therefore have had their share of problems, but to their credit they have been hard at work making things smoother day by day.
+But one big annoying thing in general is searchability of films in general. Recently I found a reddit post revealing another big search annoyance: bad handling of matching strings with accented titles, particularly when searching for &amp;lsquo;samourai&amp;rsquo; and expecting &amp;lsquo;Le Samouraï&amp;rsquo; to pop up in the results:</description>
+    </item>
+    
+    <item>
+      <title>A Simple Introduction to Javascript Map and Reduce Array Helper Functions</title>
+      <link>https://www.davidbcalhoun.com/2018/a-simple-introduction-to-javascript-map-and-reduce-array-helper-functions/</link>
+      <pubDate>Sun, 26 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2018/a-simple-introduction-to-javascript-map-and-reduce-array-helper-functions/</guid>
+      <description>Perhaps you&amp;rsquo;ve been programming for a while, and you&amp;rsquo;re pretty comfortable using for loops to traverse Arrays. However, you know how untidy and complicated for loops can get, and you are interested in better approaches to keep the code clean. Enter map and reduce!
+First steps with for loops Most folks find for loops powerful enough to achieve all they need when they need to process items in an Array. For example, say we have a simple list of items:</description>
+    </item>
+    
+    <item>
+      <title>async.parallel with a simple timeout (node.js)</title>
+      <link>https://www.davidbcalhoun.com/2014/async.parallel-with-a-simple-timeout-node.js/</link>
+      <pubDate>Mon, 08 Sep 2014 00:36:52 -0700</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2014/async.parallel-with-a-simple-timeout-node.js/</guid>
+      <description>A while back I had a need for a general timeout option for async.parallel and was surprised I couldn&amp;rsquo;t find much information about how to do it. I was using async.parallel to make a lot of REST calls in parallel, but one of them was getting blocked by a firewall, resulting in an eventual timeout minutes later.
+One option was to specify a shorter timeout for each individual REST call, including the one causing the problem.</description>
+    </item>
+    
+    <item>
+      <title>What is AMD, CommonJS, and UMD?</title>
+      <link>https://www.davidbcalhoun.com/2014/what-is-amd-commonjs-and-umd/</link>
+      <pubDate>Wed, 30 Apr 2014 11:59:21 -0700</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2014/what-is-amd-commonjs-and-umd/</guid>
+      <description>Intro Over the years there&amp;rsquo;s been a steadily increasing ecosystem of JavaScript components to choose from. The sheer amount of choices is fantastic, but this also infamously presents a difficulty when components are mixed-and-matched. And it doesn&amp;rsquo;t take too long for budding developers to find out that not all components are built to play nicely together.
+To address these issues, the competing module specs AMD and CommonJS have appeared on the scene, allowing developers to write their code in an agreed-upon sandboxed and modularized way, so as not to &amp;ldquo;pollute the ecosystem&amp;rdquo;.</description>
+    </item>
+    
+    <item>
+      <title>Introducing Negative Scroll Blur (for browsers that support CSS filters)</title>
+      <link>https://www.davidbcalhoun.com/2013/introducing-negative-scroll-blur-for-browsers-that-support-css-filters/</link>
+      <pubDate>Sat, 23 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2013/introducing-negative-scroll-blur-for-browsers-that-support-css-filters/</guid>
+      <description>(2016: in retrospect, this is kind of gratuitous and doesn&amp;rsquo;t appear to be fully working anymore&amp;hellip;)
+Demo
+Just for fun, I wanted to reproduce a cool but completely superfluous UI I saw in the updated Foursquare app recently. Basically, when the user tries to scroll past the upper bound of the app/page, the header image becomes blurred.
+We can do the same thing on the web by listening for negative scroll and then using (abusing?</description>
+    </item>
+    
+    <item>
+      <title>You Can&#39;t JavaScript Under Pressure walkthrough</title>
+      <link>https://www.davidbcalhoun.com/2013/you-cant-javascript-under-pressure-walkthrough/</link>
+      <pubDate>Fri, 04 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2013/you-cant-javascript-under-pressure-walkthrough/</guid>
+      <description>A friend posted a link to this fun little quiz - You Can&amp;rsquo;t JavaScript Under Pressure.
+The quizzes get more and more difficult, and they present a nice challenge if you fear your skills are getting rusty. Give it an honest try first, then come back here if you get seriously, honestly stuck. Try to do it yourself!
+Quiz 1: doubleInteger Problem function doubleInteger(i) { // i will be an integer.</description>
+    </item>
+    
+    <item>
+      <title>iOS5 SunSpider: iPhone 4S vs iPhone 4 vs iPhone 3GS</title>
+      <link>https://www.davidbcalhoun.com/2011/ios5-sunspider-iphone-4s-vs-iphone-4-vs-iphone-3gs/</link>
+      <pubDate>Fri, 14 Oct 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2011/ios5-sunspider-iphone-4s-vs-iphone-4-vs-iphone-3gs/</guid>
+      <description>Result table (SunSpider 0.9.1, all devices running iOS 5)   Test  &amp;lt;td&amp;gt; iPhone 4S &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; iPhone 4 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; iPhone 3GS &amp;lt;/td&amp;gt;     Total  &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 2270ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 3483ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 4903ms &amp;lt;/td&amp;gt;     3D  &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 281ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 486ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 672ms &amp;lt;/td&amp;gt;     Access  &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 279ms &amp;lt;/td&amp;gt;&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 410ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 614ms &amp;lt;/td&amp;gt;     Bitops  &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 177ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 200ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 270ms &amp;lt;/td&amp;gt;     Controlflow  &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 20ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 26ms &amp;lt;/td&amp;gt;&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 34ms &amp;lt;/td&amp;gt;     Crypto  &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 164ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 211ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 315ms &amp;lt;/td&amp;gt;     Date  &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 332ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 528ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 770ms &amp;lt;/td&amp;gt;     Math  &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 219ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 433ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 553ms &amp;lt;/td&amp;gt;     Regexp  &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 88ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 117ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 151ms &amp;lt;/td&amp;gt;     String  &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 711ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1072ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1525ms &amp;lt;/td&amp;gt;    Raw results iPhone 4S (iOS5)</description>
+    </item>
+    
+    <item>
+      <title>Different ways of defining functions in JavaScript (this is madness!)</title>
+      <link>https://www.davidbcalhoun.com/2011/different-ways-of-defining-functions-in-javascript-this-is-madness/</link>
+      <pubDate>Fri, 24 Jun 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2011/different-ways-of-defining-functions-in-javascript-this-is-madness/</guid>
+      <description>Note: updated in July 2016 with ES6 arrow functions.
+Russian translation thanks to Yevgeniy Pyastolov
+This is madness! This&amp;hellip; is&amp;hellip; JavaScript! In JavaScript, there&amp;rsquo;s many different ways of doing something. This is both a good thing and a bad thing. To the newcomer this is definitely a bad thing, as it means not only more things to learn, but more little caveats and more places to go wrong. And so it is with declaring functions!</description>
+    </item>
+    
+    <item>
+      <title>Android 3.0 Honeycomb is first to implement the Device API</title>
+      <link>https://www.davidbcalhoun.com/2011/android-3.0-honeycomb-is-first-to-implement-the-device-api/</link>
+      <pubDate>Thu, 24 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2011/android-3.0-honeycomb-is-first-to-implement-the-device-api/</guid>
+      <description>I fired up the newly released Android 3.0 SDK to run some tests and found they&amp;rsquo;ve implemented part of the long-awaited Device API (aka the Media Capture API). From your browser you can now upload pictures and videos from the camera as well as sounds from the microphone. The returned data should be available to manipulate via the File API (although I haven&amp;rsquo;t yet tested this).
+Video I made a short video demo with some explanation:</description>
+    </item>
+    
+    <item>
+      <title>Checking for undefined, null, and empty variables in JavaScript</title>
+      <link>https://www.davidbcalhoun.com/2011/checking-for-undefined-null-and-empty-variables-in-javascript/</link>
+      <pubDate>Fri, 11 Feb 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2011/checking-for-undefined-null-and-empty-variables-in-javascript/</guid>
+      <description>In general it&amp;rsquo;s a good practice to check for the existence of something before blindly using it by faith and hoping it works. There are various times during the execution of scripts when a variable may not be defined, it may be null, or it might be an empty string. These are three things that are easily conflated. A good way to look at this is thinking of these as having increasing levels of existence (getting a bit philosophical here for a moment&amp;hellip;):</description>
+    </item>
+    
+    <item>
+      <title>JavaScript SunSpider benchmark: iOS 4.3 vs iOS 4.0</title>
+      <link>https://www.davidbcalhoun.com/2011/javascript-sunspider-benchmark-ios-4.3-vs-ios-4.0/</link>
+      <pubDate>Sat, 22 Jan 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2011/javascript-sunspider-benchmark-ios-4.3-vs-ios-4.0/</guid>
+      <description>Result table (SunSpider 0.9.1)    Test  &amp;lt;td&amp;gt; iOS 4 (3GS) &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; iOS 4.3 beta 2 (3GS) &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; % change &amp;lt;/td&amp;gt;     Total  &amp;lt;td&amp;gt; 13787ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 5357ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; -61.1% &amp;lt;/td&amp;gt;     3D  &amp;lt;td&amp;gt; 1917ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 737ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; -61.6% &amp;lt;/td&amp;gt;     Access  &amp;lt;td&amp;gt; 1893ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 617ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; -67.</description>
+    </item>
+    
+    <item>
+      <title>JavaScript news resources</title>
+      <link>https://www.davidbcalhoun.com/2011/javascript-news-resources/</link>
+      <pubDate>Fri, 14 Jan 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2011/javascript-news-resources/</guid>
+      <description>There&amp;rsquo;s an overwhelming amount of information being pumped out of the JavaScript community each week, but how do you keep up with it? Here&amp;rsquo;s some sources to keep you busy.
+Twitter This merits a category of its own. This has replaced the RSS reader for a lot of folks, or at the very least supplemented it.
+I&amp;rsquo;ve consistently recommended Nathan Smith&amp;rsquo;s list of JavaScript folks. When I&amp;rsquo;m diligent, I keep up with this several times a week and favorite items from the feed to be considered for inclusion in that week&amp;rsquo;s JSMag Blog update.</description>
+    </item>
+    
+    <item>
+      <title>What happens when you have no JavaScript fallback?</title>
+      <link>https://www.davidbcalhoun.com/2011/what-happens-when-you-have-no-javascript-fallback/</link>
+      <pubDate>Wed, 12 Jan 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2011/what-happens-when-you-have-no-javascript-fallback/</guid>
+      <description>Here&amp;rsquo;s an example of what happens when your interface completely relies on JavaScript. There&amp;rsquo;s code with translated mojibake of some sort which caused the JavaScript to break. The code wasn&amp;rsquo;t in a try-catch block, so it caused all of the code on the page to fail, thus presenting me with the only part of the screen that wasn&amp;rsquo;t generated by JavaScript: the completely useless header.
+Where&amp;rsquo;s the tweets!?</description>
+    </item>
+    
+    <item>
+      <title>How to spot outdated JavaScript</title>
+      <link>https://www.davidbcalhoun.com/2011/how-to-spot-outdated-javascript/</link>
+      <pubDate>Fri, 07 Jan 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2011/how-to-spot-outdated-javascript/</guid>
+      <description>Introduction Those that are just setting out to learn JavaScript are typically overwhelmed by the amount of online resources to be found about learning JavaScript. Not only this, but every webpage visited presents a potential learning opportunity just by inspecting the source.
+However, not all resources are guaranteed to be up-to-date. JavaScript has been around for over a decade, and coding standards have changed drastically over time. While a code snippet may still work in today&amp;rsquo;s browsers, you may unknowingly be using an outdated practice that might eventually lead to a bit of embarrassment.</description>
+    </item>
+    
+    <item>
+      <title>What is a closure in JavaScript?</title>
+      <link>https://www.davidbcalhoun.com/2011/what-is-a-closure-in-javascript/</link>
+      <pubDate>Mon, 03 Jan 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2011/what-is-a-closure-in-javascript/</guid>
+      <description>Intro There have been many attempts to answer this question in a succinct way, but I haven&amp;rsquo;t really been satisfied by them. Here&amp;rsquo;s my attempt at a (relatively) concise explanation.
+This is adapted from a reply I posted on reddit which people seemed to have found useful.
+Broad definition Normally when people talk about closures in JavaScript, they&amp;rsquo;re talking about methods and properties that outlive the scope of their original function (more on that in a second), but actually the definition is a bit broader.</description>
+    </item>
+    
+    <item>
+      <title>Mobile JavaScript libraries and frameworks (Mobile Web Part 7)</title>
+      <link>https://www.davidbcalhoun.com/2010/mobile-javascript-libraries-and-frameworks-mobile-web-part-7/</link>
+      <pubDate>Mon, 06 Dec 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2010/mobile-javascript-libraries-and-frameworks-mobile-web-part-7/</guid>
+      <description>Intro This is designed to be a &amp;ldquo;living&amp;rdquo; post of available materials which will hopefully be updated frequently.
+Right now there&amp;rsquo;s not much, just some links, but I hope to keep adding materials, so check back!
+The List Sencha Touch
+PhoneGap - native wrapper which provides access to native hardware through their own JavaScript APIs
+jQuery Mobile - a separate mobile UI which has jQuery as a dependency
+iAd - an update to Apple&amp;rsquo;s PastryKit, but probably intended only for ads</description>
+    </item>
+    
+    <item>
+      <title>What happens when we serve JavaScript with random MIME types?</title>
+      <link>https://www.davidbcalhoun.com/2010/what-happens-when-we-serve-javascript-with-random-mime-types/</link>
+      <pubDate>Mon, 01 Nov 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2010/what-happens-when-we-serve-javascript-with-random-mime-types/</guid>
+      <description>Introduction When people started to learn about the HTML5 doctype, they kind of freaked out a little, not knowing how older browsers would handle it. A post by Dustin Diaz prompted me to test out how pages rendered (in QuirksMode or Standards Mode) with a little help from document.compatMode, and I found that surprisingly every browser rendered in Standards Mode with the new doctype. In other words, no need to worry!</description>
+    </item>
+    
+    <item>
+      <title>JavaScript links from last week (September 26)</title>
+      <link>https://www.davidbcalhoun.com/2010/javascript-links-from-last-week-september-26/</link>
+      <pubDate>Tue, 05 Oct 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2010/javascript-links-from-last-week-september-26/</guid>
+      <description>JavaScript Asteroids - blow up any webpage with this bookmarklet!
+JS1k contest - and the winner
+PromoteJS - Google bombing with a good intent. Better links to JavaScript documentation!
+Async and defer attributes for Script tags added to WebKit
+Evercookie - uses devious ways to try to track users. Hmm, this one is questionable. Please use it for good, not evil&amp;hellip; :/
+JSPerf.com - not really new news, but a nice quick way to test algorithm performance in JavaScript</description>
+    </item>
+    
+    <item>
+      <title>Server side console.log</title>
+      <link>https://www.davidbcalhoun.com/2010/server-side-console.log/</link>
+      <pubDate>Wed, 15 Sep 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2010/server-side-console.log/</guid>
+      <description>The problem On the desktop we&amp;rsquo;re quite privileged to have nice debugging tools such as Firebug and Web Inspector in Webkit-based browsers. But when it comes to mobile, debugging JavaScript with console.log.
+isn&amp;rsquo;t quite as easy.
+Probably the best available tool on mobile at the moment is mobile Safari&amp;rsquo;s console, which looks like the following when enabled (Settings -&amp;gt; Safari -&amp;gt; Developer -&amp;gt; Debug Console):
+Mobile Safari&#39;s debug console  On the left you can see the debug console displayed above the document itself, and on the right is an example of what you might see after outputting an object or a string of text to</description>
+    </item>
+    
+    <item>
+      <title>Optimizing based on connection speed: using navigator.connection on Android 2.2&#43;</title>
+      <link>https://www.davidbcalhoun.com/2010/optimizing-based-on-connection-speed-using-navigator.connection-on-android-2.2-/</link>
+      <pubDate>Tue, 14 Sep 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2010/optimizing-based-on-connection-speed-using-navigator.connection-on-android-2.2-/</guid>
+      <description>Introduction A little while back this post made the rounds, which took us on a journey through some of the new features introduced in the browser in Android 2.2 Froyo. Among the most overlooked features are the file upload functionality (you can upload photos from your browser now! But we&amp;rsquo;re still waiting on iPhone to support this&amp;hellip;) and a little-known JavaScript addition to the Browser Object Model (BOM) in the form of navigator.</description>
+    </item>
+    
+    <item>
+      <title>Dealing with device orientation (Mobile web part 6)</title>
+      <link>https://www.davidbcalhoun.com/2010/dealing-with-device-orientation-mobile-web-part-6/</link>
+      <pubDate>Tue, 24 Aug 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2010/dealing-with-device-orientation-mobile-web-part-6/</guid>
+      <description>Introduction If you read part 4 of this series, you&amp;rsquo;ll know that because of the variety of screen sizes, the best way to develop for mobile is to develop fluid layouts that take 100% of the available space on the screen.
+What you probably didn&amp;rsquo;t think of is that there&amp;rsquo;s different screen widths even on the same device! This is due to screen orientation. And when the user changes the screen orientation, stuff may break (hey, it&amp;rsquo;s not a perfect world).</description>
+    </item>
+    
+    <item>
+      <title>BlackBerry Torch SunSpider results (JavaScript benchmark)</title>
+      <link>https://www.davidbcalhoun.com/2010/blackberry-torch-sunspider-results-javascript-benchmark/</link>
+      <pubDate>Wed, 18 Aug 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2010/blackberry-torch-sunspider-results-javascript-benchmark/</guid>
+      <description>Results ============================================RESULTS (means and 95% confidence intervals)--------------------------------------------Total: 322.2ms +/- 4.9%--------------------------------------------3d: 55.0ms +/- 15.3%cube: 19.8ms +/- 12.1%morph: 16.6ms +/- 35.8%raytrace: 18.6ms +/- 22.5%access: 32.8ms +/- 12.4%binary-trees: 1.8ms +/- 30.9%fannkuch: 14.2ms +/- 7.3%nbody: 12.6ms +/- 26.7%nsieve: 4.2ms +/- 24.8%bitops: 29.4ms +/- 10.2%3bit-bits-in-byte: 2.4ms +/- 28.4%bits-in-byte: 8.0ms +/- 15.5%bitwise-and: 8.6ms +/- 21.9%nsieve-bits: 10.4ms +/- 21.7%controlflow: 2.</description>
+    </item>
+    
+    <item>
+      <title>Is a hash faster than a Switch in JavaScript?</title>
+      <link>https://www.davidbcalhoun.com/2010/is-a-hash-faster-than-a-switch-in-javascript/</link>
+      <pubDate>Tue, 17 Aug 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2010/is-a-hash-faster-than-a-switch-in-javascript/</guid>
+      <description>I stumbled across this concept recently and I thought I&amp;rsquo;d share it, because I don&amp;rsquo;t generally see this pattern being used. More importantly, I also share test results that show that maybe it&amp;rsquo;s not always a good idea to use this pattern&amp;hellip;
+The problem with Switch statements The basic switch statement in JavaScript looks something like this:
+1 2 3 4 5 6 7 8 9 10 11 12 13 14  var foo = &amp;#39;c&amp;#39;; switch(foo) { case &amp;#39;a&amp;#39;: break; case &amp;#39;b&amp;#39;: break; case &amp;#39;c&amp;#39;: break; default: }   So what&amp;rsquo;s wrong with this?</description>
+    </item>
+    
+    <item>
+      <title>Thursday links (July 8)</title>
+      <link>https://www.davidbcalhoun.com/2010/thursday-links-july-8/</link>
+      <pubDate>Thu, 08 Jul 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2010/thursday-links-july-8/</guid>
+      <description>Mobile YouTube Mobile Gets a Kick Start
+Battle of Champions: HTC Droid Incredible vs. Palm Pre Plus
+Designing for the Retina Display (326ppi)
+AUDIO: John Resig: You Don’t Know Mobile (Webstyle Magazine) – ~$5,000 minimum to do mobile testing
+Tapworthy: Designing Great iPhone Apps
+eMobile: We have the fastest network in Japan!
+Apple iPad User Analysis — Phase II
+VIDEO: Using iPhone with a Braille display (Victor Tsaran)
+Mobile Access 2010 (Pew Research)</description>
+    </item>
+    
+    <item>
+      <title>Using mobile-specific HTML, CSS, and JavaScript (Mobile web part 5)</title>
+      <link>https://www.davidbcalhoun.com/2010/using-mobile-specific-html-css-and-javascript-mobile-web-part-5/</link>
+      <pubDate>Tue, 29 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2010/using-mobile-specific-html-css-and-javascript-mobile-web-part-5/</guid>
+      <description>(updated June 27, 2011)
+Mobile-specific HTML Viewport tag Use the viewport tag to properly fit the content to the screen:
+1  &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1.0&amp;#34;/&amp;gt;   Tel scheme (to initiate phone calls) 1  &amp;lt;a href=&amp;#34;tel:18005555555&amp;#34;&amp;gt;Call us at 1-800-555-5555&amp;lt;/a&amp;gt;   Sms scheme (to initiate text messages) 1 2 3  &amp;lt;a href=&amp;#34;sms:18005555555&amp;#34;&amp;gt; &amp;lt;a href=&amp;#34;sms:18005555555,18005555556&amp;#34;&amp;gt; &amp;lt;!-- multiple recipients --&amp;gt; &amp;lt;a href=&amp;#34;sms:18005555555?body=Text%20goes%20here&amp;#34;&amp;gt; &amp;lt;!-- predefined message body --&amp;gt;   Disable automatic telephone number linking 1  &amp;lt;meta name=&amp;#34;format-detection&amp;#34; content=&amp;#34;telephone=no&amp;#34;&amp;gt;   iOS-specific HTML (some work on Android as well) You also have access to several Apple-specific tags to use in your iOS applications (iPhone, iPad, and don&amp;rsquo;t forget the iPod Touch!</description>
+    </item>
+    
+    <item>
+      <title>iPhone 4 SunSpider test results (22% faster than iPhone 3GS)</title>
+      <link>https://www.davidbcalhoun.com/2010/iphone-4-sunspider-test-results-22-faster-than-iphone-3gs/</link>
+      <pubDate>Fri, 25 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2010/iphone-4-sunspider-test-results-22-faster-than-iphone-3gs/</guid>
+      <description>============================================RESULTS (means and 95% confidence intervals)--------------------------------------------Total: 10669.4ms +/- 1.0%--------------------------------------------3d: 1471.5ms +/- 2.1%cube: 428.7ms +/- 2.6%morph: 584.3ms +/- 4.7%raytrace: 458.5ms +/- 0.6%access: 1476.7ms +/- 1.3%binary-trees: 151.6ms +/- 1.3%fannkuch: 664.0ms +/- 0.1%nbody: 397.9ms +/- 2.1%nsieve: 263.2ms +/- 6.3%bitops: 947.2ms +/- 2.1%3bit-bits-in-byte: 195.7ms +/- 2.0%bits-in-byte: 206.1ms +/- 1.0%bitwise-and: 179.7ms +/- 1.1%nsieve-bits: 365.7ms +/- 3.9%controlflow: 169.</description>
+    </item>
+    
+    <item>
+      <title>JavaScript SunSpider test: iOS 3.1.3 versus iOS 4 GM</title>
+      <link>https://www.davidbcalhoun.com/2010/javascript-sunspider-test-ios-3.1.3-versus-ios-4-gm/</link>
+      <pubDate>Thu, 10 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2010/javascript-sunspider-test-ios-3.1.3-versus-ios-4-gm/</guid>
+      <description>Result table    Test  &amp;lt;td&amp;gt; iOS 3.1.3 (3GS) &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; iOS 4 GM (3GS) &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; % change &amp;lt;/td&amp;gt;     Total  &amp;lt;td&amp;gt; 15396ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 13787ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; -10.5% &amp;lt;/td&amp;gt;     3D  &amp;lt;td&amp;gt; 2411ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1917ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; -20.5% &amp;lt;/td&amp;gt;     Access  &amp;lt;td&amp;gt; 1884ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1893ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;negative&amp;quot;&amp;gt; +0.5% &amp;lt;/td&amp;gt;     Bitops  &amp;lt;td&amp;gt; 1044ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1239ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;negative&amp;quot;&amp;gt; +18.</description>
+    </item>
+    
+    <item>
+      <title>JavaScript SunSpider: HTC Evo versus HTC Incredible versus Nexus One</title>
+      <link>https://www.davidbcalhoun.com/2010/javascript-sunspider-htc-evo-versus-htc-incredible-versus-nexus-one/</link>
+      <pubDate>Thu, 10 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2010/javascript-sunspider-htc-evo-versus-htc-incredible-versus-nexus-one/</guid>
+      <description>Result table    Test  &amp;lt;td&amp;gt; Evo (2.1) &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; Incredible (2.1) &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; Nexus One (2.2) &amp;lt;/td&amp;gt;     Total  &amp;lt;td&amp;gt; 16167ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 15237ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 5452ms &amp;lt;/td&amp;gt;     3D  &amp;lt;td&amp;gt; 2014ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1835ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 946ms &amp;lt;/td&amp;gt;     Access  &amp;lt;td&amp;gt; 2126ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1892ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 463ms &amp;lt;/td&amp;gt;     Bitops  &amp;lt;td&amp;gt; 1519ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1591ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 360ms &amp;lt;/td&amp;gt;     Controlflow  &amp;lt;td&amp;gt; 243ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 206ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 20ms &amp;lt;/td&amp;gt;     Crypto  &amp;lt;td&amp;gt; 1033ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1003ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 344ms &amp;lt;/td&amp;gt;     Date  &amp;lt;td&amp;gt; 1849ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1896ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 639ms &amp;lt;/td&amp;gt;     Math  &amp;lt;td&amp;gt; 1684ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1419ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 602ms &amp;lt;/td&amp;gt;     Regexp  &amp;lt;td&amp;gt; 1779ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1673ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 155ms &amp;lt;/td&amp;gt;     String  &amp;lt;td&amp;gt; 3920ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 3722ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 1923ms &amp;lt;/td&amp;gt;    Thoughts The Incredible is just slightly faster than the Evo, to the point where it’s probably negligible or within a margin of error.</description>
+    </item>
+    
+    <item>
+      <title>Video: John Resig - Testing, Performance Analysis, and jQuery 1.4</title>
+      <link>https://www.davidbcalhoun.com/2009/video-john-resig-testing-performance-analysis-and-jquery-1.4/</link>
+      <pubDate>Mon, 21 Dec 2009 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2009/video-john-resig-testing-performance-analysis-and-jquery-1.4/</guid>
+      <description>In case you hadn’t seen it yet, John Resig was kind enough to stop by Yahoo! for the December Bayjax meetup. Here’s the video:
+ Usually developers are more interested in just getting the dang code to work, and as a result actual the testing and maintenance of JavaScript isn’t talked about too much, so I’m sure this will be new territory for many developers. And since it’s John Resig speaking, there was of course a bit about using TestSwarm, a testing distributed framework-agnostic automated testing tool (that’s a mouthful!</description>
+    </item>
+    
+    <item>
+      <title>JavaScript tidbit: special variables ($, $$, _, etc)</title>
+      <link>https://www.davidbcalhoun.com/2009/javascript-tidbit-special-variables-_-etc/</link>
+      <pubDate>Tue, 08 Dec 2009 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2009/javascript-tidbit-special-variables-_-etc/</guid>
+      <description>You&amp;rsquo;re probably used to typical variables names such as the following:
+1  var personName = &amp;#39;Joe&amp;#39;;   You may not realize it, but there are some non-alphanumeric variables at your disposal.
+Using $ For instance, the $ variable has been made popular by several JavaScript libraries, most notably jQuery. You can use it to alias operations that are commonly performed, such as the following (1):
+1 2  var $ = document.</description>
+    </item>
+    
+    <item>
+      <title>Ways of passing data to functions in JavaScript</title>
+      <link>https://www.davidbcalhoun.com/2009/ways-of-passing-data-to-functions-in-javascript/</link>
+      <pubDate>Fri, 04 Dec 2009 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2009/ways-of-passing-data-to-functions-in-javascript/</guid>
+      <description>Passing data is quite important in functional programming languages like JavaScript. When there are multiple functions (which is most of the time), there needs to be a way to pass data between the functions. This is done by passing values in parenthesis: myFunction(myData). Even when there is no data to be passed, we still have to declare and execute functions by using parenthesis: myFunction().
+Simple Passing I&amp;rsquo;ve already referred to the common method of passing data.</description>
+    </item>
+    
+    <item>
+      <title>Pitfalls of declaring variables in JavaScript</title>
+      <link>https://www.davidbcalhoun.com/2009/pitfalls-of-declaring-variables-in-javascript/</link>
+      <pubDate>Wed, 18 Nov 2009 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2009/pitfalls-of-declaring-variables-in-javascript/</guid>
+      <description>Introduction One of the things that’s always been confusing to me is that there are multiple ways to declare variables in JavaScript, and some ways are better than others. For the beginner programmer, just getting to code to work means complete success, but for the intermediate or advanced programmer, this is just the first step. The next step is to clean up the code and make sure everything is written in the best way it could have been written.</description>
+    </item>
+    
+    <item>
+      <title>JavaScript Tidbit: Block scope with let</title>
+      <link>https://www.davidbcalhoun.com/2009/javascript-tidbit-block-scope-with-let/</link>
+      <pubDate>Tue, 15 Sep 2009 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2009/javascript-tidbit-block-scope-with-let/</guid>
+      <description>JavaScript has functional scope. Meaning that if you (properly) define variables within functions, those variables remain accessible only inside the function.
+Block scope, on the other hand, defines scope within a block of code, usually defined by braces. JavaScript now has block scope as of version 1.7, which means it’s available in these browsers:
+ Firefox 2+  Block scope is enabled in JavaScript with the use of “let”:
+let(x=100) { alert(x); }; It also works perfectly well on one line, without the use of braces:</description>
+    </item>
+    
+    <item>
+      <title>JavaScript Tidbit: Shorthand Object Instantiation</title>
+      <link>https://www.davidbcalhoun.com/2009/javascript-tidbit-shorthand-object-instantiation/</link>
+      <pubDate>Mon, 14 Sep 2009 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2009/javascript-tidbit-shorthand-object-instantiation/</guid>
+      <description>The skinny: here’s a neat little trick to reduce the amount of code users have to type to instantiate objects:
+function jQuery(str, con){ if ( window == this ) return new jQuery(str, con); // ... } new jQuery(&amp;quot;#foo&amp;quot;); // this is now equivalent... jQuery(&amp;quot;#foo&amp;quot;); // ...to this!  {:lang=&amp;ldquo;js&amp;rdquo;}
+Explanation: when jQuery(“#foo”) is typed, the function first determines if the context in which it’s being called is the global object (window).</description>
+    </item>
+    
+  </channel>
+</rss>

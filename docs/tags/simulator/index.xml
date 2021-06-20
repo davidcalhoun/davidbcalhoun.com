@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>simulator on David Calhoun&#39;s blog</title>
+    <link>https://www.davidbcalhoun.com/tags/simulator/</link>
+    <description>Recent content in simulator on David Calhoun&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 11 May 2010 00:00:00 +0000</lastBuildDate><atom:link href="https://www.davidbcalhoun.com/tags/simulator/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The mobile developer&#39;s toolkit (Mobile web part 2)</title>
+      <link>https://www.davidbcalhoun.com/2010/the-mobile-developers-toolkit-mobile-web-part-2/</link>
+      <pubDate>Tue, 11 May 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2010/the-mobile-developers-toolkit-mobile-web-part-2/</guid>
+      <description>Tools of the trade You’re no mobile developer unless you have the tools to develop on mobile! And while it’s good to own at least one of the smartphones you’re developing on, it’s probably unrealistic to think that you’re going to go out of your way to buy several other unlocked smartphones just to test with. So you should have the next best thing: an SDK!
+But an SDK is just one of the tools of the trade.</description>
+    </item>
+    
+  </channel>
+</rss>
