@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>method_exists on David Calhoun&#39;s blog</title>
+    <link>https://www.davidbcalhoun.com/tags/method_exists/</link>
+    <description>Recent content in method_exists on David Calhoun&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 01 Dec 2009 00:00:00 +0000</lastBuildDate><atom:link href="https://www.davidbcalhoun.com/tags/method_exists/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PHP: dealing with stuff that doesn&#39;t exist</title>
+      <link>https://www.davidbcalhoun.com/2009/php-dealing-with-stuff-that-doesnt-exist/</link>
+      <pubDate>Tue, 01 Dec 2009 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2009/php-dealing-with-stuff-that-doesnt-exist/</guid>
+      <description>Introduction As the application you’re coding becomes more and more complex, there’s more of an opportunity for things to go wrong in all sorts of unforseen ways. One of these problems is variables or functions that don’t exist. The problem is when you code in such a way that you presuppose their existence. But their existence isn’t guaranteed!
+A simple case of this happening is when you’re dealing with user input.</description>
+    </item>
+    
+  </channel>
+</rss>

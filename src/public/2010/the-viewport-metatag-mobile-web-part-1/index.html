@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en-US"
+    prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+
+<head>
+     
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="David Calhoun">
+    <title>The viewport metatag (Mobile web part 1) - David Calhoun's blog</title>
+    
+    <style>
+
+    html body {
+        font-family: 'Roboto', sans-serif;
+    }
+
+</style>
+
+
+ 
+<link rel="stylesheet" href="https://www.davidbcalhoun.com/css/main.min.75c50b525fe10531193d275e0b011a8c7aa4355ee7b4e6d8b33348de70804ef8.css">
+ <link rel="preconnect" href="https://comments.davidbcalhoun.com">
+<link rel="preconnect" href="https://ssl.gstatic.com">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="preconnect" href="https://accounts.google.com">
+<link rel="preconnect" href="https://apis.google.com">
+<link rel="preconnect" href="https://www.google-analytics.com">
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<link rel="preload" href="/commento.css" as="style">
+
+
+
+ <meta name="generator" content="Hugo 0.84.0" />
+    
+
+    
+    
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-5530615-3', 'auto');
+        ga('send', 'pageview');
+    </script>
+    
+    
+
+    <style>
+         
+         
+         
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: local('Roboto'), local('Roboto-Regular'),
+                url('/wp-content/fonts/roboto-v20-latin-regular.woff2') format('woff2'),
+                 
+                url('/wp-content/fonts/roboto-v20-latin-regular.woff') format('woff');
+             
+        }
+    </style>
+
+    
+    <meta name="description" content="Personal blog of photographer and web developer David Calhoun." />
+    
+    <link rel="canonical" href="https://www.davidbcalhoun.com/2010/the-viewport-metatag-mobile-web-part-1/">
+    <link href="/index.xml" rel="alternate" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+    <link href="/index.xml" rel="feed" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+    <link href="/index.xml" rel="self" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+    <meta name="format-detection" content="telephone=no">
+
+    
+    <meta itemprop="name" content="The viewport metatag (Mobile web part 1)" />
+    <meta itemprop="headline" content="The viewport metatag (Mobile web part 1)" />
+    
+    
+    <meta itemprop="author" content="David Calhoun" />
+    <link rel="me" href="https://www.themaingate.net/" type="text/html">
+    <link rel="me" href="mailto:david.b.calhoun+dc@gmail.com">
+    <link rel="me" href="https://www.linkedin.com/in/davidcalhoun/" type="text/html">
+    <link rel="me" href="https://github.com/davidcalhoun" type="text/html">
+    <link rel="me" href="https://twitter.com/franksvalli" type="text/html">
+    <link rel="archives" href="https://example.com/archives/">
+
+    
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://www.davidbcalhoun.com/2010/the-viewport-metatag-mobile-web-part-1/" />
+    <meta property="og:title" content="The viewport metatag (Mobile web part 1)" />
+    
+    
+    
+    <meta property="og:site_name" content="David Calhoun's Blog" />
+    
+    <meta property="og:updated_time" content=2010-05-06T00:00:00Z />
+    
+
+    
+    
+    <meta property="article:published_time" content=2010-05-06T00:00:00Z />
+    <meta property="article:modified_time" content=2010-05-06T00:00:00Z />
+    
+    
+    
+    <meta property="article:section" content="handheldfriendly" />
+    
+    
+    <meta property="article:author" content="https://www.davidbcalhoun.com" />
+    
+    
+    <meta property="article:tag" content="handheldfriendly" />
+    
+    <meta property="article:tag" content="metatag" />
+    
+    <meta property="article:tag" content="mobile" />
+    
+    <meta property="article:tag" content="mobileoptimized" />
+    
+    <meta property="article:tag" content="viewport" />
+    
+
+    
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="The viewport metatag (Mobile web part 1)" />
+    <meta name="twitter:url" content="https://www.davidbcalhoun.com/2010/the-viewport-metatag-mobile-web-part-1/" />
+    <meta name="twitter:site" content="@franksvalli" />
+    <meta name="twitter:creator" content="@franksvalli" />
+    <meta name="twitter:domain" content="davidbcalhoun.com" />
+    
+    
+    
+
+
+    <link rel="Shortcut Icon" type="image/ico" href="https://www.davidbcalhoun.com/favicon.ico">
+</head>
+
+
+
+<body>
+     
+    <nav class="navbar">
+
+        <div class="navbar-header">
+            <a class="navbar-brand" href="https://www.davidbcalhoun.com/">David Calhoun&#39;s blog</a>
+        </div>
+
+        
+        <ul class="navbar-links">
+            
+            <li class="navbar-icon"><a aria-label="Send an email" title="Send an email" href="mailto:david.b.calhoun&#43;dc@gmail.com"><svg aria-label="email" role="img" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1664 1504v-768q-32 36-69 66-268 206-426 338-51 43-83 67t-86.5 48.5-102.5 24.5h-2q-48 0-102.5-24.5t-86.5-48.5-83-67q-158-132-426-338-37-30-69-66v768q0 13 9.5 22.5t22.5 9.5h1472q13 0 22.5-9.5t9.5-22.5zm0-1051v-24.5l-.5-13-3-12.5-5.5-9-9-7.5-14-2.5h-1472q-13 0-22.5 9.5t-9.5 22.5q0 168 147 284 193 152 401 317 6 5 35 29.5t46 37.5 44.5 31.5 50.5 27.5 43 9h2q20 0 43-9t50.5-27.5 44.5-31.5 46-37.5 35-29.5q208-165 401-317 54-43 100.5-115.5t46.5-131.5zm128-37v1088q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-1088q0-66 47-113t113-47h1472q66 0 113 47t47 113z"/></svg></i></a>
+            </li>
+            
+            <li class="navbar-icon"><a aria-label="Home Page" title="Home Page" href="https://www.themaingate.net/"><svg aria-label="home site" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"/></svg></i></a>
+            </li>
+            
+            <li class="navbar-icon"><a aria-label="Twitter" title="Twitter" href="https://twitter.com/franksvalli/"><svg aria-label="twitter" role="img" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"/></svg></i></a>
+            </li>
+            
+            <li class="navbar-icon"><a aria-label="Github" title="Github" href="https://github.com/davidcalhoun/"><svg aria-label="github" role="img" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M896 128q209 0 385.5 103t279.5 279.5 103 385.5q0 251-146.5 451.5t-378.5 277.5q-27 5-40-7t-13-30q0-3 .5-76.5t.5-134.5q0-97-52-142 57-6 102.5-18t94-39 81-66.5 53-105 20.5-150.5q0-119-79-206 37-91-8-204-28-9-81 11t-92 44l-38 24q-93-26-192-26t-192 26q-16-11-42.5-27t-83.5-38.5-85-13.5q-45 113-8 204-79 87-79 206 0 85 20.5 150t52.5 105 80.5 67 94 39 102.5 18q-39 36-49 103-21 10-45 15t-57 5-65.5-21.5-55.5-62.5q-19-32-48.5-52t-49.5-24l-20-3q-21 0-29 4.5t-5 11.5 9 14 13 12l7 5q22 10 43.5 38t31.5 51l10 23q13 38 44 61.5t67 30 69.5 7 55.5-3.5l23-4q0 38 .5 88.5t.5 54.5q0 18-13 30t-40 7q-232-77-378.5-277.5t-146.5-451.5q0-209 103-385.5t279.5-279.5 385.5-103zm-477 1103q3-7-7-12-10-3-13 2-3 7 7 12 9 6 13-2zm31 34q7-5-2-16-10-9-16-3-7 5 2 16 10 10 16 3zm30 45q9-7 0-19-8-13-17-6-9 5 0 18t17 7zm42 42q8-8-4-19-12-12-20-3-9 8 4 19 12 12 20 3zm57 25q3-11-13-16-15-4-19 7t13 15q15 6 19-6zm63 5q0-13-17-11-16 0-16 11 0 13 17 11 16 0 16-11zm58-10q-2-11-18-9-16 3-14 15t18 8 14-14z"/></svg></i></a>
+            </li>
+            
+            <li class="navbar-icon"><a aria-label="LinkedIn" title="LinkedIn" href="https://www.linkedin.com/in/davidcalhoun/"><svg aria-label="linkedin" role="img" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z"/></svg></i></a>
+            </li>
+            
+        </ul>
+        
+
+    </nav>
+
+<main role="main" itemscope itemType="https://schema.org/BlogPosting">
+    <meta itemprop="mainEntityOfPage" content="https://www.davidbcalhoun.com/2010/the-viewport-metatag-mobile-web-part-1/" />
+    <meta itemprop="inLanguage" content="en-US" />
+    <span itemscope itemprop="author" itemType="https://schema.org/Person">
+        <meta itemprop="name" content="David Calhoun" />
+        <meta itemprop="url" content="https://www.themaingate.net" />
+    </span>
+    <span itemscope itemprop="publisher" itemType="https://schema.org/Organization">
+        <meta itemprop="name" content="David Calhoun" />
+        <meta itemprop="url" content="https://www.themaingate.net" />
+        <span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+            <meta itemprop="url" content="https://www.themaingate.net/david-calhoun-logo.png">
+            <meta itemprop="width" content="459">
+            <meta itemprop="height" content="459">
+        </span>
+    </span>
+    <meta itemprop="image" content="https://www.themaingate.net/david-calhoun-logo.png" />
+    
+    <meta itemprop="datePublished" content=2010-05-06T00:00:00Z/>
+    <meta itemprop="dateModified" content=2010-05-06T00:00:00Z/>
+    
+
+    <article class="item">
+
+    
+    
+    
+
+    
+    
+
+
+    <h1 itemprop="headline" class="meta title">
+        <a href="https://www.davidbcalhoun.com/2010/the-viewport-metatag-mobile-web-part-1/" itemprop="url">The viewport metatag (Mobile web part 1)</a>
+    </h1>
+
+    <time class="meta date" datetime="2010-05-06 00:00:00 &#43;0000 UTC">
+        
+        May 6, 2010
+        
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://www.davidbcalhoun.com/tags/handheldfriendly"><span class="item-tag">handheldfriendly</span></a>
+        
+        <a href="https://www.davidbcalhoun.com/tags/metatag"><span class="item-tag">metatag</span></a>
+        
+        <a href="https://www.davidbcalhoun.com/tags/mobile"><span class="item-tag">mobile</span></a>
+        
+        <a href="https://www.davidbcalhoun.com/tags/mobileoptimized"><span class="item-tag">mobileoptimized</span></a>
+        
+        <a href="https://www.davidbcalhoun.com/tags/viewport"><span class="item-tag">viewport</span></a>
+        
+    </aside>
+
+</article>
+
+
+    <div class="text-justify"><h3 id="the-skinny">The skinny</h3>
+<p>Use this:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1&#34;</span>/&gt;
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="introduction">Introduction</h3>
+<p>This series of posts is intended to introduce web developers to basic techniques for designing for the mobile web. It assumes at least a basic knowledge of creating desktop websites.</p>
+<h3 id="the-problem">The problem</h3>
+<p>Ok, so you&rsquo;ve settled down to learn how to write a website for a mobile device using your current knowledge of building desktop websites. So you start off with some pretty basic HTML:</p>
+<pre><code>&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Hello world!&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;p&gt;Hello world!&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>{:lang=&ldquo;html&rdquo;}</p>
+<p>Ok! You can&rsquo;t get much simpler than that. You check it out and it looks good on all the desktop browsers, since there&rsquo;s really no opportunity yet for any cross-browser inconsistencies. And then you check it out on your mobile device:</p>
+<p>{% imgcap center <a href="http://davidbcalhoun.com/wp-content/uploads/2010/05/hello-world-iphone.png">http://davidbcalhoun.com/wp-content/uploads/2010/05/hello-world-iphone.png</a> 320 480 Hello World on the iPhone, WITHOUT the viewport metatag %}</p>
+<p>Doh! Where&rsquo;d we go wrong? The text is obviously way too small to read without zooming in.</p>
+<p>This is the first lesson in making mobile websites: width is your enemy. This is the first of many countless problems with device width you will encounter. Fair warning.</p>
+<p>If you think about it logically, it seems to make sense: mobile Safari took a look at the page and assumed it was a document designed for the desktop, which is true of the vast majority of websites. So it gave the website a width of 980 pixels and presented it zoomed out. Which is why we can&rsquo;t read anything until we zoom into the page.</p>
+<h3 id="viewport">Viewport</h3>
+<p>But this is no good! What we need to do is tell the browser that this webpage is optimized for mobile. And this is where the viewport metatag comes into the picture.</p>
+<p>Now we tweak our Hello World just a bit&hellip;</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">    <span style="color:#75715e">&lt;!doctype html&gt;</span>
+    &lt;<span style="color:#f92672">html</span>&gt;
+    &lt;<span style="color:#f92672">head</span>&gt;
+        &lt;<span style="color:#f92672">title</span>&gt;Hello world!&lt;/<span style="color:#f92672">title</span>&gt;
+
+        &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width&#34;</span>/&gt;
+    &lt;/<span style="color:#f92672">head</span>&gt;
+
+    &lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">p</span>&gt;Hello world!&lt;/<span style="color:#f92672">p</span>&gt;
+    &lt;/<span style="color:#f92672">body</span>&gt;
+    &lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>And we get this&hellip;</p>
+<p>{% imgcap center <a href="http://davidbcalhoun.com/wp-content/uploads/2010/05/hello-world-viewport-iphone.png">http://davidbcalhoun.com/wp-content/uploads/2010/05/hello-world-viewport-iphone.png</a> 320 480 Hello World with the Viewport tag %}</p>
+<p>Much better! By setting the viewport width equal to &ldquo;device-width&rdquo;, we&rsquo;re essentially telling it that the device width is 320px, not the default value of 980px that it guessed. If we set width=320 it would achieve the same result on the iPhone and a few other smartphones, but not all phones have this exact width, so it&rsquo;s best to simply set device-width and let the mobile browser figure it out.</p>
+<p>This viewport metatag is supported on many smartphones, from iPhone to Android to webOS (Palm) to even Internet Explorer Mobile, Opera Mini and Opera Mobile.</p>
+<p>At the end of the day here&rsquo;s what the standard viewport looks like, as grabbed from <a href="http://m.yahoo.com">m.yahoo.com</a>:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no&#34;</span>/&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>EDIT: It&rsquo;s been discussed a bit, and it seems that preventing the user from scaling the page (pinch zooming) isn&rsquo;t necessarily desirable. So here&rsquo;s a version of the tag that allows the user to pinch zoom:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>/&gt;
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="more-fun-with-the-viewport-tag">More fun with the viewport tag</h3>
+<p>In addition to solving our biggest concern with the width of the content, the viewport tag has more options to play with:</p>
+<table class="datatable-medium">
+  <tr>
+    <td>
+      Property
+    </td>
+<pre><code>&lt;td&gt;
+  Description
+&lt;/td&gt;
+</code></pre>
+  </tr>
+  <tr>
+    <td>
+      width
+    </td>
+<pre><code>&lt;td&gt;
+  Width of the viewport in pixels (or device-width). If width isn't set, it defaults to a desktop size (980px on mobile Safari).
+&lt;/td&gt;
+</code></pre>
+  </tr>
+  <tr>
+    <td>
+      height
+    </td>
+<pre><code>&lt;td&gt;
+  Height of the viewport in pixels (or device-height). Generally you don't need to worry about setting this property.
+&lt;/td&gt;
+</code></pre>
+  </tr>
+  <tr>
+    <td>
+      initial-scale
+    </td>
+<pre><code>&lt;td&gt;
+  (0 to 10.0) Multiplier that sets the scale of the page after its initial display. Safe bet: if you need to set it, set it to 1.0. Larger values = zoomed in, smaller values = zoomed out
+&lt;/td&gt;
+</code></pre>
+  </tr>
+  <tr>
+    <td>
+      minimum-scale
+    </td>
+<pre><code>&lt;td&gt;
+  (0 to 10.0) The minimum multiplier the user can &quot;zoom out&quot; to. Defaults to 0.25 on mobile Safari.
+&lt;/td&gt;
+</code></pre>
+  </tr>
+  <tr>
+    <td>
+      maximum-scale
+    </td>
+<pre><code>&lt;td&gt;
+  (0 to 10.0) The minimum multiplier the user can &quot;zoom in&quot; to. Defaults to 1.6 on mobile Safari.
+&lt;/td&gt;
+</code></pre>
+  </tr>
+  <tr>
+    <td>
+      user-scalable
+    </td>
+<pre><code>&lt;td&gt;
+  (yes/no) Whether to allow a user from scaling in/out (zooming in/out). Default to &quot;yes&quot; on mobile Safari.
+&lt;/td&gt;
+</code></pre>
+  </tr>
+</table>
+<h3 id="feature-phones-when-viewport-isnt-available">Feature phones: when viewport isn&rsquo;t available&hellip;</h3>
+<p>Note: this info is now very outdated and is preserved here just for historical reference.  In general, you can ignore this stuff these days.</p>
+<p>Unfortunately the viewport tag is relatively new and as such isn&rsquo;t universally supported, especially if you&rsquo;re working on older feature phones. But there are some older methods at your disposal for identifying your website as optimized for mobile:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;HandheldFriendly&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span>/&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>This tag was originally used to identify mobile content in AvantGo browsers, but has now been made the general standard for identifying mobile websites. However, it&rsquo;s unknown what range of browsers support this meta tag.</p>
+<p>Another tag at your disposal is a Windows-proprietary meta tag that also took root and eventually became used as another means of identifying mobile content. The drawback with this tag is that a specific width must be given, which doesn&rsquo;t make it as flexible as the viewport tag (see above). Again, it&rsquo;s unknown what the support for this tag is:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;MobileOptimized&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;320&#34;</span>/&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>Lastly, your website will be identified as a mobile optimized site if your doctype is either XHTML-MP or WML. However, this is becoming less and less the case these days, as browsers begin to support good old HTML4.01 and HTML5+.</p>
+<p>(info for this section comes from <a href="http://www.amazon.com/gp/product/B003U890OQ/ref=pd_lpo_k2_dp_sr_1?pf_rd_p=486539851%EF%BF%BDpf_rd_s=lpo-top-stripe-1%EF%BF%BDpf_rd_t=201%EF%BF%BDpf_rd_i=143022620X%EF%BF%BDpf_rd_m=ATVPDKIKX0DER%EF%BF%BDpf_rd_r=017307F07YKBPJX46DXB">Beginning Smartphone Web Development</a>)</p>
+<h3 id="custom-android-properties">Custom Android properties</h3>
+<p><a href="http://developer.android.com/reference/android/webkit/WebView.html">The official Android documentation</a> lists a special property they&rsquo;ve added to the meta tag: target-densitydpi. This property essentially allows developers to specify which screen resolution the page has been developed for, or more specifically how to handle the scaling of media such as images.</p>
+<p>Here&rsquo;s an example of the tag in action:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;target-densitydpi=device-dpi&#34;</span> /&gt;
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="references">References</h3>
+<p><a href="http://developer.apple.com/safari/library/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html">Safari HTML Reference: Supported Meta Tags</a><br>
+<a href="http://learnthemobileweb.com/tag/mobile-web-development/page/3/">Mobile META Tags</a></p>
+<h3 id="more-from-the-mobile-web-series">More from the Mobile Web series:</h3>
+<ul>
+<li><a href="http://davidbcalhoun.com/2010/viewport-metatag">Part 1: The viewport metatag</a></li>
+<li><a href="http://davidbcalhoun.com/2010/the-mobile-developers-toolkit-mobile-web-part-2">Part 2: The mobile developer’s toolkit</a></li>
+<li><a href="http://davidbcalhoun.com/2010/designing-buttons-that-dont-suck">Part 3: Designing buttons that don’t suck</a></li>
+<li><a href="http://davidbcalhoun.com/2010/on-designing-a-mobile-webpage">Part 4: On designing a mobile webpage</a></li>
+<li><a href="http://davidbcalhoun.com/2010/using-mobile-specific-html-css-javascript">Part 5: Using mobile-specific HTML, CSS, and JavaScript</a></li>
+<li><a href="http://davidbcalhoun.com/2010/dealing-with-device-orientation">Part 6: Dealing with device orientation</a></li>
+<li><a href="http://davidbcalhoun.com/2010/mobile-javascript-libraries-and-frameworks">Part 7: Mobile JavaScript libraries and frameworks</a></li>
+</ul>
+</div>
+
+    
+    
+
+    
+
+</main>
+
+		<section class="comments">
+			<h2 class="page-header">Comments</h2>
+			<section id="commento"></section>
+			<script src="/commento.js"></script>
+		</section>
+
+        <footer role="contentinfo">
+
+            <p class="copyright text-muted">©<span itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="David Calhoun"><a href="https://www.themaingate.net/">David Calhoun</a></span> - <a href="https://www.davidbcalhoun.com/privacy/">Privacy</a> - <a href="https://www.davidbcalhoun.com/terms-of-service/">Terms</a></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>css on David Calhoun&#39;s blog</title>
+    <link>https://www.davidbcalhoun.com/tags/css/</link>
+    <description>Recent content in css on David Calhoun&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Fri, 10 Aug 2012 00:00:00 +0000</lastBuildDate><atom:link href="https://www.davidbcalhoun.com/tags/css/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>More fun with WebKit pseudoelements: -webkit-search-cancel-button (or: Pseudoclass Inception)</title>
+      <link>https://www.davidbcalhoun.com/2012/more-fun-with-webkit-pseudoelements-webkit-search-cancel-button-or-pseudoclass-inception/</link>
+      <pubDate>Fri, 10 Aug 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2012/more-fun-with-webkit-pseudoelements-webkit-search-cancel-button-or-pseudoclass-inception/</guid>
+      <description>Introduction UPDATE 2016: this appears to have even less support than before, and it&amp;rsquo;s not recommended to be used on a production site. Use a helper JS library instead.
+(check out the Demo)
+A while back I had a bit of a field day messing around with input type=&amp;ldquo;range&amp;rdquo;, trying to replicate the &amp;ldquo;unlock slider&amp;rdquo; on iOS using CSS, targeting special WebKit-only CSS pseudoelements such as webkit-slider-thumb.
+Well, now I&amp;rsquo;m at it again, this time with a much simpler use case, trying to implement a custom &amp;ldquo;clear&amp;rdquo; button on search field inputs (note that this only works on input type=&amp;ldquo;search&amp;rdquo;):</description>
+    </item>
+    
+    <item>
+      <title>Implementing iPhone&#39;s slider unlock with input type=&#39;range&#39;</title>
+      <link>https://www.davidbcalhoun.com/2011/implementing-iphones-slider-unlock-with-input-typerange/</link>
+      <pubDate>Sun, 16 Jan 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2011/implementing-iphones-slider-unlock-with-input-typerange/</guid>
+      <description>(check out the live demo)
+Introduction After reading &amp;ldquo;What the Heck is Shadow DOM?&amp;quot; I was inspired to see how far I could style the &amp;lt;input type=&amp;quot;range&amp;quot;&amp;gt; element. Pretty far, as it turns out!
+My goal was to change the input&amp;rsquo;s default appearance:
+To the visual appearance of the iPhone&amp;rsquo;s unlock slider:
+As far as I can tell, only WebKit-based browsers and Opera have implemented input type=range. Mobile Safari hasn&amp;rsquo;t yet implemented it as of iOS 4.</description>
+    </item>
+    
+    <item>
+      <title>Thursday links (July 8)</title>
+      <link>https://www.davidbcalhoun.com/2010/thursday-links-july-8/</link>
+      <pubDate>Thu, 08 Jul 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2010/thursday-links-july-8/</guid>
+      <description>Mobile YouTube Mobile Gets a Kick Start
+Battle of Champions: HTC Droid Incredible vs. Palm Pre Plus
+Designing for the Retina Display (326ppi)
+AUDIO: John Resig: You Don’t Know Mobile (Webstyle Magazine) – ~$5,000 minimum to do mobile testing
+Tapworthy: Designing Great iPhone Apps
+eMobile: We have the fastest network in Japan!
+Apple iPad User Analysis — Phase II
+VIDEO: Using iPhone with a Braille display (Victor Tsaran)
+Mobile Access 2010 (Pew Research)</description>
+    </item>
+    
+    <item>
+      <title>Using mobile-specific HTML, CSS, and JavaScript (Mobile web part 5)</title>
+      <link>https://www.davidbcalhoun.com/2010/using-mobile-specific-html-css-and-javascript-mobile-web-part-5/</link>
+      <pubDate>Tue, 29 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2010/using-mobile-specific-html-css-and-javascript-mobile-web-part-5/</guid>
+      <description>(updated June 27, 2011)
+Mobile-specific HTML Viewport tag Use the viewport tag to properly fit the content to the screen:
+1  &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1.0&amp;#34;/&amp;gt;   Tel scheme (to initiate phone calls) 1  &amp;lt;a href=&amp;#34;tel:18005555555&amp;#34;&amp;gt;Call us at 1-800-555-5555&amp;lt;/a&amp;gt;   Sms scheme (to initiate text messages) 1 2 3  &amp;lt;a href=&amp;#34;sms:18005555555&amp;#34;&amp;gt; &amp;lt;a href=&amp;#34;sms:18005555555,18005555556&amp;#34;&amp;gt; &amp;lt;!-- multiple recipients --&amp;gt; &amp;lt;a href=&amp;#34;sms:18005555555?body=Text%20goes%20here&amp;#34;&amp;gt; &amp;lt;!-- predefined message body --&amp;gt;   Disable automatic telephone number linking 1  &amp;lt;meta name=&amp;#34;format-detection&amp;#34; content=&amp;#34;telephone=no&amp;#34;&amp;gt;   iOS-specific HTML (some work on Android as well) You also have access to several Apple-specific tags to use in your iOS applications (iPhone, iPad, and don&amp;rsquo;t forget the iPod Touch!</description>
+    </item>
+    
+    <item>
+      <title>A Clockwork Box</title>
+      <link>https://www.davidbcalhoun.com/2010/a-clockwork-box/</link>
+      <pubDate>Tue, 02 Mar 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2010/a-clockwork-box/</guid>
+      <description>With CSS there are always various ways to accomplish something. After reading this short tidbit, you should be familiar with the various ways of controlling the size of an element’s padding, border, and margin, and you should know what the handy “clockwork” tip is, and how it will be useful to remember when you’re putting your CSS into practice.
+Equal values on all four sides If all four values (top, right, bottom, and left) are equal, then you simply write the following:</description>
+    </item>
+    
+    <item>
+      <title>A primer on CSS colors</title>
+      <link>https://www.davidbcalhoun.com/2009/a-primer-on-css-colors/</link>
+      <pubDate>Tue, 29 Dec 2009 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2009/a-primer-on-css-colors/</guid>
+      <description>Color keywords Example usage:
+// Example body { color: red; } // Generalization (not actual code) body { color: color_name; } Because color names are easy to remember, they’re handy for getting quick results, especially while doing rapid prototyping.
+W3C’s CSS1 recommendation first mentioned 16 color keywords that you can use: aqua, black, blue, fuchsia, gray, green, lime, maroon, navy, olive, purple, red, silver, teal, white, and yellow:
+   Color  &amp;lt;th&amp;gt; Hexadecimal &amp;lt;/th&amp;gt; &amp;lt;th&amp;gt; Color &amp;lt;/th&amp;gt; &amp;lt;th&amp;gt; Hexadecimal &amp;lt;/th&amp;gt; &amp;lt;th&amp;gt; Color &amp;lt;/th&amp;gt; &amp;lt;th&amp;gt; Hexadecimal &amp;lt;/th&amp;gt; &amp;lt;th&amp;gt; Color &amp;lt;/th&amp;gt; &amp;lt;th&amp;gt; Hexadecimal &amp;lt;/th&amp;gt;     aqua / cyan  &amp;lt;td style=&amp;quot;background:#0FF; color:#000; font-family:monospace;&amp;quot;&amp;gt; #00FFFF &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; gray &amp;lt;/td&amp;gt; &amp;lt;td style=&amp;quot;background:#808080; color:#FFF; font-family:monospace;&amp;quot;&amp;gt; #808080 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; navy &amp;lt;/td&amp;gt; &amp;lt;td style=&amp;quot;background:#000080; color:#FFF; font-family:monospace;&amp;quot;&amp;gt; #000080 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; silver &amp;lt;/td&amp;gt; &amp;lt;td style=&amp;quot;background:#C0C0C0; color:#000; font-family:monospace;&amp;quot;&amp;gt; #C0C0C0 &amp;lt;/td&amp;gt;     black  &amp;lt;td style=&amp;quot;background:#000; color:#FFF; font-family:monospace;&amp;quot;&amp;gt; #000000 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; green &amp;lt;/td&amp;gt; &amp;lt;td style=&amp;quot;background:#008000; color:#FFF; font-family:monospace;&amp;quot;&amp;gt; #008000 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; olive &amp;lt;/td&amp;gt; &amp;lt;td style=&amp;quot;background:#808000; color:#FFF; font-family:monospace;&amp;quot;&amp;gt; #808000 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; teal &amp;lt;/td&amp;gt; &amp;lt;td style=&amp;quot;background:#008080; color:#fff; font-family:monospace;&amp;quot;&amp;gt; #008080 &amp;lt;/td&amp;gt;     blue  &amp;lt;td style=&amp;quot;background:#00F; color:#FFF; font-family:monospace;&amp;quot;&amp;gt; #0000FF &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; lime &amp;lt;/td&amp;gt; &amp;lt;td style=&amp;quot;background:#0F0; color:#000; font-family:monospace;&amp;quot;&amp;gt; #00FF00 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; purple &amp;lt;/td&amp;gt; &amp;lt;td style=&amp;quot;background:#800080; color:#FFF; font-family:monospace;&amp;quot;&amp;gt; #800080 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; white &amp;lt;/td&amp;gt; &amp;lt;td style=&amp;quot;background:#FFF; color:#000; font-family:monospace;&amp;quot;&amp;gt; #FFFFFF &amp;lt;/td&amp;gt;     fuchsia / magenta  &amp;lt;td style=&amp;quot;background:#F0F; color:#000; font-family:monospace;&amp;quot;&amp;gt; #FF00FF &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; maroon &amp;lt;/td&amp;gt; &amp;lt;td style=&amp;quot;background:#800000; color:#FFF; font-family:monospace;&amp;quot;&amp;gt; #800000 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; red &amp;lt;/td&amp;gt; &amp;lt;td style=&amp;quot;background:#F00; color:#FFF; font-family:monospace;&amp;quot;&amp;gt; #FF0000 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; yellow &amp;lt;/td&amp;gt; &amp;lt;td style=&amp;quot;background:#FF0; color:#000; font-family:monospace;&amp;quot;&amp;gt; #FFFF00 &amp;lt;/td&amp;gt;    (color table from Wikipedia)</description>
+    </item>
+    
+    <item>
+      <title>IE Mobile 6.12 problem: browser ignores the specificity of CSS display styles</title>
+      <link>https://www.davidbcalhoun.com/2009/ie-mobile-6.12-problem-browser-ignores-the-specificity-of-css-display-styles/</link>
+      <pubDate>Mon, 31 Aug 2009 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2009/ie-mobile-6.12-problem-browser-ignores-the-specificity-of-css-display-styles/</guid>
+      <description>UPDATE: I found that the problem is actually that inline-block is completely unsupported in this version of IE Mobile, and is likely also unsupported in IE Mobile 7, which is also based on IE4. This is in contrast to desktop IE6, where inline-block is supported on elements that are natively inline (span, em, etc.).
+Just found this today, for what it’s worth. If you’re unlucky enough to be working with older Windows Mobile phones you have probably realized that the browser is based on IE6, which all the desktop web developers notoriously complain about constantly.</description>
+    </item>
+    
+  </channel>
+</rss>

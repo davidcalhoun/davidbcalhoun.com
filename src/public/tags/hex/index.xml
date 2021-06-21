@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hex on David Calhoun&#39;s blog</title>
+    <link>https://www.davidbcalhoun.com/tags/hex/</link>
+    <description>Recent content in hex on David Calhoun&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 29 Dec 2009 00:00:00 +0000</lastBuildDate><atom:link href="https://www.davidbcalhoun.com/tags/hex/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A primer on CSS colors</title>
+      <link>https://www.davidbcalhoun.com/2009/a-primer-on-css-colors/</link>
+      <pubDate>Tue, 29 Dec 2009 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2009/a-primer-on-css-colors/</guid>
+      <description>Color keywords Example usage:
+// Example body { color: red; } // Generalization (not actual code) body { color: color_name; } Because color names are easy to remember, they’re handy for getting quick results, especially while doing rapid prototyping.
+W3C’s CSS1 recommendation first mentioned 16 color keywords that you can use: aqua, black, blue, fuchsia, gray, green, lime, maroon, navy, olive, purple, red, silver, teal, white, and yellow:
+   Color  &amp;lt;th&amp;gt; Hexadecimal &amp;lt;/th&amp;gt; &amp;lt;th&amp;gt; Color &amp;lt;/th&amp;gt; &amp;lt;th&amp;gt; Hexadecimal &amp;lt;/th&amp;gt; &amp;lt;th&amp;gt; Color &amp;lt;/th&amp;gt; &amp;lt;th&amp;gt; Hexadecimal &amp;lt;/th&amp;gt; &amp;lt;th&amp;gt; Color &amp;lt;/th&amp;gt; &amp;lt;th&amp;gt; Hexadecimal &amp;lt;/th&amp;gt;     aqua / cyan  &amp;lt;td style=&amp;quot;background:#0FF; color:#000; font-family:monospace;&amp;quot;&amp;gt; #00FFFF &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; gray &amp;lt;/td&amp;gt; &amp;lt;td style=&amp;quot;background:#808080; color:#FFF; font-family:monospace;&amp;quot;&amp;gt; #808080 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; navy &amp;lt;/td&amp;gt; &amp;lt;td style=&amp;quot;background:#000080; color:#FFF; font-family:monospace;&amp;quot;&amp;gt; #000080 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; silver &amp;lt;/td&amp;gt; &amp;lt;td style=&amp;quot;background:#C0C0C0; color:#000; font-family:monospace;&amp;quot;&amp;gt; #C0C0C0 &amp;lt;/td&amp;gt;     black  &amp;lt;td style=&amp;quot;background:#000; color:#FFF; font-family:monospace;&amp;quot;&amp;gt; #000000 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; green &amp;lt;/td&amp;gt; &amp;lt;td style=&amp;quot;background:#008000; color:#FFF; font-family:monospace;&amp;quot;&amp;gt; #008000 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; olive &amp;lt;/td&amp;gt; &amp;lt;td style=&amp;quot;background:#808000; color:#FFF; font-family:monospace;&amp;quot;&amp;gt; #808000 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; teal &amp;lt;/td&amp;gt; &amp;lt;td style=&amp;quot;background:#008080; color:#fff; font-family:monospace;&amp;quot;&amp;gt; #008080 &amp;lt;/td&amp;gt;     blue  &amp;lt;td style=&amp;quot;background:#00F; color:#FFF; font-family:monospace;&amp;quot;&amp;gt; #0000FF &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; lime &amp;lt;/td&amp;gt; &amp;lt;td style=&amp;quot;background:#0F0; color:#000; font-family:monospace;&amp;quot;&amp;gt; #00FF00 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; purple &amp;lt;/td&amp;gt; &amp;lt;td style=&amp;quot;background:#800080; color:#FFF; font-family:monospace;&amp;quot;&amp;gt; #800080 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; white &amp;lt;/td&amp;gt; &amp;lt;td style=&amp;quot;background:#FFF; color:#000; font-family:monospace;&amp;quot;&amp;gt; #FFFFFF &amp;lt;/td&amp;gt;     fuchsia / magenta  &amp;lt;td style=&amp;quot;background:#F0F; color:#000; font-family:monospace;&amp;quot;&amp;gt; #FF00FF &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; maroon &amp;lt;/td&amp;gt; &amp;lt;td style=&amp;quot;background:#800000; color:#FFF; font-family:monospace;&amp;quot;&amp;gt; #800000 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; red &amp;lt;/td&amp;gt; &amp;lt;td style=&amp;quot;background:#F00; color:#FFF; font-family:monospace;&amp;quot;&amp;gt; #FF0000 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; yellow &amp;lt;/td&amp;gt; &amp;lt;td style=&amp;quot;background:#FF0; color:#000; font-family:monospace;&amp;quot;&amp;gt; #FFFF00 &amp;lt;/td&amp;gt;    (color table from Wikipedia)</description>
+    </item>
+    
+  </channel>
+</rss>
