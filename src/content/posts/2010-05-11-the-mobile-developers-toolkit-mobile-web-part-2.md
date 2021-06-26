@@ -6,11 +6,14 @@ author: David
 layout: post
 permalink: /2010/the-mobile-developers-toolkit-mobile-web-part-2
 tags:
-- emulator
-- simulator
-- webdev
-- mobile
+  - emulator
+  - simulator
+  - webdev
+  - mobile
 ---
+
+## ⚠️ Warning: this is an old article and may include information that's out of date. ⚠️
+
 ### Tools of the trade
 
 You&#8217;re no mobile developer unless you have the tools to develop on mobile! And while it&#8217;s good to own at least one of the smartphones you&#8217;re developing on, it&#8217;s probably unrealistic to think that you&#8217;re going to go out of your way to buy several other unlocked smartphones just to test with. So you should have the next best thing: an SDK!
@@ -153,44 +156,44 @@ Keep up to date! There&#8217;s new stuff happening all the time on the mobile we
 [Part 6: Dealing with device orientation][41]  
 [Part 7: Mobile JavaScript libraries and frameworks][12]
 
- [1]: http://developer.apple.com/
- [2]: http://developer.android.com/sdk
- [3]: http://developer.palm.com/
- [4]: https://developer.mozilla.org/En/Mobile
- [5]: http://www.opera.com/developer/tools/
- [6]: http://www.opera.com/mini/demo/
- [7]: http://developer.windowsphone.com/windows-phone-7-series/
- [8]: http://www.mobilexweb.com/emulators
- [9]: http://www.perfectomobile.com/
- [10]: http://mite.keynote.com/
- [11]: http://www.deviceanywhere.com/
- [12]: http://davidbcalhoun.com/2010/mobile-javascript-libraries-and-frameworks
- [13]: http://www.phonegap.com/
- [14]: http://www.appcelerator.com/products/titanium-mobile-application-development/
- [15]: http://www.quickconnectfamily.org/
- [16]: http://rhomobile.com/
- [17]: https://addons.mozilla.org/en-US/firefox/addon/59/
- [18]: http://wiki.forum.nokia.com/index.php/Detecting_Mobile_Devices_on_Web_Services
- [19]: //andymoore.info
- [20]: http://plugins.svn.wordpress.org/wordpress-mobile-pack/trunk/plugins/wpmp_switcher/lite_detection.php
- [21]: http://wurfl.sourceforge.net/
- [22]: http://deviceatlas.com/
- [23]: https://bugs.webkit.org/
- [24]: http://source.android.com/report-bugs
- [25]: http://www.quirksmode.org/blog/
- [26]: http://twitter.com/ppk
- [27]: http://daringfireball.net/
- [28]: http://webkit.org/blog/
- [29]: http://android-developers.blogspot.com/
- [30]: http://blogs.msdn.com/iemobile/
- [31]: http://my.opera.com/operamobile/blog/
- [32]: http://blogs.blackberry.com/
- [33]: http://ymobileblog.com/
- [34]: http://googlemobile.blogspot.com/
- [35]: http://mobile.yahoo.com/devcenter
- [36]: http://davidbcalhoun.com/2010/viewport-metatag
- [37]: http://davidbcalhoun.com/2010/the-mobile-developers-toolkit-mobile-web-part-2
- [38]: http://davidbcalhoun.com/2010/designing-buttons-that-dont-suck
- [39]: http://davidbcalhoun.com/2010/on-designing-a-mobile-webpage
- [40]: http://davidbcalhoun.com/2010/using-mobile-specific-html-css-javascript
- [41]: http://davidbcalhoun.com/2010/dealing-with-device-orientation
+[1]: http://developer.apple.com/
+[2]: http://developer.android.com/sdk
+[3]: http://developer.palm.com/
+[4]: https://developer.mozilla.org/En/Mobile
+[5]: http://www.opera.com/developer/tools/
+[6]: http://www.opera.com/mini/demo/
+[7]: http://developer.windowsphone.com/windows-phone-7-series/
+[8]: http://www.mobilexweb.com/emulators
+[9]: http://www.perfectomobile.com/
+[10]: http://mite.keynote.com/
+[11]: http://www.deviceanywhere.com/
+[12]: http://davidbcalhoun.com/2010/mobile-javascript-libraries-and-frameworks
+[13]: http://www.phonegap.com/
+[14]: http://www.appcelerator.com/products/titanium-mobile-application-development/
+[15]: http://www.quickconnectfamily.org/
+[16]: http://rhomobile.com/
+[17]: https://addons.mozilla.org/en-US/firefox/addon/59/
+[18]: http://wiki.forum.nokia.com/index.php/Detecting_Mobile_Devices_on_Web_Services
+[19]: //andymoore.info
+[20]: http://plugins.svn.wordpress.org/wordpress-mobile-pack/trunk/plugins/wpmp_switcher/lite_detection.php
+[21]: http://wurfl.sourceforge.net/
+[22]: http://deviceatlas.com/
+[23]: https://bugs.webkit.org/
+[24]: http://source.android.com/report-bugs
+[25]: http://www.quirksmode.org/blog/
+[26]: http://twitter.com/ppk
+[27]: http://daringfireball.net/
+[28]: http://webkit.org/blog/
+[29]: http://android-developers.blogspot.com/
+[30]: http://blogs.msdn.com/iemobile/
+[31]: http://my.opera.com/operamobile/blog/
+[32]: http://blogs.blackberry.com/
+[33]: http://ymobileblog.com/
+[34]: http://googlemobile.blogspot.com/
+[35]: http://mobile.yahoo.com/devcenter
+[36]: http://davidbcalhoun.com/2010/viewport-metatag
+[37]: http://davidbcalhoun.com/2010/the-mobile-developers-toolkit-mobile-web-part-2
+[38]: http://davidbcalhoun.com/2010/designing-buttons-that-dont-suck
+[39]: http://davidbcalhoun.com/2010/on-designing-a-mobile-webpage
+[40]: http://davidbcalhoun.com/2010/using-mobile-specific-html-css-javascript
+[41]: http://davidbcalhoun.com/2010/dealing-with-device-orientation

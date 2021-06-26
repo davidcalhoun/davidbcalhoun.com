@@ -5,10 +5,12 @@ comments: true
 author: David
 layout: post
 tags:
-- box model
-- css
-- webdev
+  - box model
+  - css
+  - webdev
 ---
+
+## ⚠️ Warning: this is an old article and may include information that's out of date. ⚠️
 
 <img src="http://davidbcalhoun.com/wp-content/uploads/2010/03/clockwork-box.png" alt="Clockwork Orange cover" title="Clockwork Orange cover" class="left alignleft size-full wp-image-174" /> <div>
 
@@ -60,8 +62,8 @@ margin: 1px 2px 3px 4px;
 This is the style I find myself writing in most often, but there are two other shorthand styles you should be aware of:
 
 ```css
-padding: 1px 2px 3px;  /* top, left/right, bottom */
-padding: 1px 2px;      /* top/bottom, left/right */
+padding: 1px 2px 3px; /* top, left/right, bottom */
+padding: 1px 2px; /* top/bottom, left/right */
 ```
 
 ### Summary
@@ -69,8 +71,8 @@ padding: 1px 2px;      /* top/bottom, left/right */
 In short, there are various ways to define the padding, border, and margin on an element. Here&#8217;s a recap, with padding used as an example:
 
 ```css
-padding: 1px;              /* 1 value: top/right/bottom/left     */
-padding: 1px 2px;          /* 2 values: top/bottom, left/right   */
-padding: 1px 2px 3px;      /* 3 values: top, left/right, bottom  */
-padding: 1px 2px 3px 4px;  /* 4 values: top, right, bottom, left */
+padding: 1px; /* 1 value: top/right/bottom/left     */
+padding: 1px 2px; /* 2 values: top/bottom, left/right   */
+padding: 1px 2px 3px; /* 3 values: top, left/right, bottom  */
+padding: 1px 2px 3px 4px; /* 4 values: top, right, bottom, left */
 ```

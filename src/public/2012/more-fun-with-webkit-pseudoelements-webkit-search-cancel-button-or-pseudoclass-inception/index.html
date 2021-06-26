@@ -229,8 +229,9 @@
 </article>
 
 
-    <div class="text-justify"><h3 id="introduction">Introduction</h3>
-<p><em><strong>UPDATE</strong></em> 2016: this appears to have even less support than before, and it&rsquo;s not recommended to be used on a production site.  Use a helper JS library instead.</p></p>
+    <div class="text-justify"><h2 id="-warning-this-is-an-old-article-and-may-include-information-thats-out-of-date-">⚠️ Warning: this is an old article and may include information that&rsquo;s out of date. ⚠️</h2>
+<h3 id="introduction">Introduction</h3>
+<p><strong><em>UPDATE</em></strong> 2016: this appears to have even less support than before, and it&rsquo;s not recommended to be used on a production site. Use a helper JS library instead.</p></p>
 <p>(check out the <strong><a href="https://www.davidbcalhoun.com/a/_old%20mobile%20tests/webkit-search-cancel-button.html">Demo</a></strong>)</p>
 <p>A while back I had a bit of a field day <a href="https://www.davidbcalhoun.com/2011/implementing-iphone-slider-unlock-with-input-type-range">messing around with input type=&ldquo;range&rdquo;</a>, trying to replicate the &ldquo;unlock slider&rdquo; on iOS using CSS, targeting special WebKit-only CSS pseudoelements such as webkit-slider-thumb.</p>
 <p>Well, now I&rsquo;m at it again, this time with a much simpler use case, trying to implement a custom &ldquo;clear&rdquo; button on search field inputs (note that this only works on input type=&ldquo;search&rdquo;):</p>
@@ -243,10 +244,12 @@
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">::<span style="color:#a6e22e">-webkit-search-cancel-button</span> {   <span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#960050;background-color:#1e0010">select</span> <span style="color:#960050;background-color:#1e0010">all</span> <span style="color:#960050;background-color:#1e0010">&#34;X&#34;</span> <span style="color:#960050;background-color:#1e0010">buttons</span> <span style="color:#960050;background-color:#1e0010">in</span> <span style="color:#960050;background-color:#1e0010">search</span> <span style="color:#960050;background-color:#1e0010">inputs</span>
-    <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">appearance</span>: <span style="color:#66d9ef">none</span>;      <span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#960050;background-color:#1e0010">hide</span> <span style="color:#960050;background-color:#1e0010">the</span> <span style="color:#960050;background-color:#1e0010">default</span> <span style="color:#960050;background-color:#1e0010">&#34;X&#34;</span> <span style="color:#960050;background-color:#1e0010">button</span>
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">::<span style="color:#a6e22e">-webkit-search-cancel-button</span> {
+  <span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#960050;background-color:#1e0010">select</span> <span style="color:#960050;background-color:#1e0010">all</span> <span style="color:#960050;background-color:#1e0010">&#34;X&#34;</span> <span style="color:#960050;background-color:#1e0010">buttons</span> <span style="color:#960050;background-color:#1e0010">in</span> <span style="color:#960050;background-color:#1e0010">search</span> <span style="color:#960050;background-color:#1e0010">inputs</span>
+  <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">appearance</span>: <span style="color:#66d9ef">none</span>; <span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#960050;background-color:#1e0010">hide</span> <span style="color:#960050;background-color:#1e0010">the</span> <span style="color:#960050;background-color:#1e0010">default</span> <span style="color:#960050;background-color:#1e0010">&#34;X&#34;</span> <span style="color:#960050;background-color:#1e0010">button</span>
 }
 </code></pre></td></tr></table>
 </div>
@@ -284,37 +287,41 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">::<span style="color:#a6e22e">-webkit-search-cancel-button</span> {   <span style="color:#75715e">/* select all &#34;X&#34; buttons in search inputs */</span>
-    <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">appearance</span>: <span style="color:#66d9ef">none</span>;      <span style="color:#75715e">/* hide the default &#34;X&#34; button */</span>
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">::<span style="color:#a6e22e">-webkit-search-cancel-button</span> {
+  <span style="color:#75715e">/* select all &#34;X&#34; buttons in search inputs */</span>
+  <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">appearance</span>: <span style="color:#66d9ef">none</span>; <span style="color:#75715e">/* hide the default &#34;X&#34; button */</span>
 }
 
-::<span style="color:#a6e22e">-webkit-search-cancel-button</span>:<span style="color:#a6e22e">after</span> {  <span style="color:#75715e">/* generate content after all &#34;X&#34; buttons */</span>
-    <span style="color:#66d9ef">content</span>: <span style="color:#e6db74">&#39;&#39;</span>;    <span style="color:#75715e">/* required for :after content to show */</span>
-    <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">block</span>;
+::<span style="color:#a6e22e">-webkit-search-cancel-button</span>:<span style="color:#a6e22e">after</span> {
+  <span style="color:#75715e">/* generate content after all &#34;X&#34; buttons */</span>
+  <span style="color:#66d9ef">content</span>: <span style="color:#e6db74">&#34;&#34;</span>; <span style="color:#75715e">/* required for :after content to show */</span>
+  <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">block</span>;
 
-    <span style="color:#75715e">/*
+  <span style="color:#75715e">/*
 </span><span style="color:#75715e">     * Setup dimensions for the custom icon.  Note that these dimensions seem to
 </span><span style="color:#75715e">     * affect positioning.
 </span><span style="color:#75715e">     */</span>
-    <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">14</span><span style="color:#66d9ef">px</span>;
-    <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
-    
-    <span style="color:#75715e">/*
+  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">14</span><span style="color:#66d9ef">px</span>;
+  <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
+
+  <span style="color:#75715e">/*
 </span><span style="color:#75715e">     * Base64 encoded custom &#34;X&#34; icon
 </span><span style="color:#75715e">     * Natively 30x30, but downscaled for highres screens
 </span><span style="color:#75715e">     */</span>
-    <span style="color:#66d9ef">background-image</span>: url(<span style="color:#e6db74">data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAn0lEQVR42u3UMQrDMBBEUZ9WfQqDmm22EaTyjRMHAlM5K+Y7lb0wnUZPIKHlnutOa+25Z4D++MRBX98MD1V/trSppLKHqj9TTBWKcoUqffbUcbBBEhTjBOV4ja4l4OIAZThEOV6jHO8ARXD+gPPvKMABinGOrnu6gTNUawrcQKNCAQ7QeTxORzle3+sDfjJpPCqhJh7GixZq4rHcc9l5A9qZ+WeBhgEuAAAAAElFTkSuQmCC</span>);
+  <span style="color:#66d9ef">background-image</span>: url(<span style="color:#e6db74">data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAn0lEQVR42u3UMQrDMBBEUZ9WfQqDmm22EaTyjRMHAlM5K+Y7lb0wnUZPIKHlnutOa+25Z4D++MRBX98MD1V/trSppLKHqj9TTBWKcoUqffbUcbBBEhTjBOV4ja4l4OIAZThEOV6jHO8ARXD+gPPvKMABinGOrnu6gTNUawrcQKNCAQ7QeTxORzle3+sDfjJpPCqhJh7GixZq4rHcc9l5A9qZ+WeBhgEuAAAAAElFTkSuQmCC</span>);
 
-    <span style="color:#75715e">/* setup all the background tweaks for our custom icon */</span>
-    <span style="color:#66d9ef">background-repeat</span>: <span style="color:#66d9ef">no-repeat</span>;
+  <span style="color:#75715e">/* setup all the background tweaks for our custom icon */</span>
+  <span style="color:#66d9ef">background-repeat</span>: <span style="color:#66d9ef">no-repeat</span>;
 
-    <span style="color:#75715e">/* icon size */</span>
-    <span style="color:#66d9ef">background-size</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
+  <span style="color:#75715e">/* icon size */</span>
+  <span style="color:#66d9ef">background-size</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
 
-    <span style="color:#75715e">/* note: this positioning will need to be tweaked for iOS */</span>
-    <span style="color:#66d9ef">background-position</span>: <span style="color:#66d9ef">top</span> <span style="color:#66d9ef">left</span>;
+  <span style="color:#75715e">/* note: this positioning will need to be tweaked for iOS */</span>
+  <span style="color:#66d9ef">background-position</span>: <span style="color:#66d9ef">top</span> <span style="color:#66d9ef">left</span>;
 }
 </code></pre></td></tr></table>
 </div>

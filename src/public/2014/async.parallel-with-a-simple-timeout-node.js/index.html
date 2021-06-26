@@ -233,8 +233,9 @@
 </article>
 
 
-    <div class="text-justify"><p>A while back I had a need for a general timeout option for async.parallel and was surprised I couldn&rsquo;t find much information about how to do it.  I was using async.parallel to make a lot of REST calls in parallel, but one of them was getting blocked by a firewall, resulting in an eventual timeout minutes later.</p>
-<p>One option was to specify a shorter timeout for each individual REST call, including the one causing the problem.  But I wanted a simpler solution: a general timeout for that specific async.parallel instance that made it clear all tasks should finish within a certain period of time. Otherwise return a timeout as an error, allowing the program to continue (and retry if necessary).</p>
+    <div class="text-justify"><h2 id="-warning-this-is-an-old-article-and-may-include-information-thats-out-of-date-">⚠️ Warning: this is an old article and may include information that&rsquo;s out of date. ⚠️</h2>
+<p>A while back I had a need for a general timeout option for async.parallel and was surprised I couldn&rsquo;t find much information about how to do it. I was using async.parallel to make a lot of REST calls in parallel, but one of them was getting blocked by a firewall, resulting in an eventual timeout minutes later.</p>
+<p>One option was to specify a shorter timeout for each individual REST call, including the one causing the problem. But I wanted a simpler solution: a general timeout for that specific async.parallel instance that made it clear all tasks should finish within a certain period of time. Otherwise return a timeout as an error, allowing the program to continue (and retry if necessary).</p>
 <p>It was somewhat surprising there wasn&rsquo;t an option built into async.parallel, as I could imagine other folks must have had the same problem at some point in time.</p>
 <p>In any case, I wrote a pretty simple wrapper function that gets the job done (see example usage below):</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">

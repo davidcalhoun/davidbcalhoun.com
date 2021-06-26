@@ -6,10 +6,12 @@ author: David
 layout: post
 permalink: /2011/different-ways-of-defining-functions-in-javascript-this-is-madness
 tags:
-- javascript
-- programming
-- webdev
+  - javascript
+  - programming
+  - webdev
 ---
+
+## ⚠️ Warning: this is an old article and may include information that's out of date. ⚠️
 
 Note: updated in July 2016 with ES6 arrow functions.
 
@@ -25,19 +27,19 @@ How about ways to execute functions? That opens up another can of worms, and inc
 
 ### Overview: different ways of declaring functions
 
-``` javascript
-function A(){};             // function declaration
-var B = function(){};       // function expression
-var C = (function(){});     // function expression with grouping operators
-var D = function foo(){};   // named function expression
-var E = (function(){        // IIFE that returns a function
-  return function(){}
+```javascript
+function A() {} // function declaration
+var B = function () {}; // function expression
+var C = function () {}; // function expression with grouping operators
+var D = function foo() {}; // named function expression
+var E = (function () {
+  // IIFE that returns a function
+  return function () {};
 })();
-var F = new Function();     // Function constructor
-var G = new function(){};   // special case: object constructor
-var H = x => x * 2;         // ES6 arrow function
+var F = new Function(); // Function constructor
+var G = new (function () {})(); // special case: object constructor
+var H = (x) => x * 2; // ES6 arrow function
 ```
-
 
 ### A: Function declarations: function A(){};
 
@@ -47,26 +49,27 @@ Function declarations are probably the most familiar and oldest way of doing thi
 
 The interesting thing about these is that they are "hoisted" to the top of their scope, which means this code:
 
-``` javascript
+```javascript
 A();
-function A(){
-  console.log('foo');
-};
+function A() {
+  console.log("foo");
+}
 ```
 
 Gets executed as this code:
 
-``` javascript
-function A(){
-  console.log('foo');
-};
+```javascript
+function A() {
+  console.log("foo");
+}
 A();
 ```
 
 Which practically means that, yes, you can call the functions before they're written in your code. It won't matter, because the entire function gets hoisted to the top of its containing scope. (This is contrasted with variables, which only have their declaration hoisted, not their contents, as we'll see in the next section).
 
-#### 2. No function declarations in ``if`` statements (or loops, etc)
-You can't define functions this way in expressions, for example ``if`` statements, which is common if we want to define different versions of a function for different circumstances, usually to address browser inconsistencies. Well, you *can* in some implementations, but the way the code is processed is inconsistent (kangax has documented the inconsistencies [here][1]). If you want to use this pattern, use function expressions instead.
+#### 2. No function declarations in `if` statements (or loops, etc)
+
+You can't define functions this way in expressions, for example `if` statements, which is common if we want to define different versions of a function for different circumstances, usually to address browser inconsistencies. Well, you _can_ in some implementations, but the way the code is processed is inconsistent (kangax has documented the inconsistencies [here][1]). If you want to use this pattern, use function expressions instead.
 
 #### 3. Functions declarations must have names
 
@@ -80,40 +83,39 @@ A function expression looks similar to function declarations, except that the fu
 
 #### 1. Anonymous functions (they don't need names)
 
-The function name is optional in function expressions, and we call these anonymous. Here we're setting the variable B equal to an anonymous function: ```var B = function(){};```
-
+The function name is optional in function expressions, and we call these anonymous. Here we're setting the variable B equal to an anonymous function: `var B = function(){};`
 
 #### 2. Variable declaration hoisting
 
-Variable declarations are hoisted to the top of their scope, somewhat similarly to function hoisting *except* the contents of the variable are not hoisted as well. This happens with all variables, and it means it's now happening with our functions, now that we're assigning them to variables.
+Variable declarations are hoisted to the top of their scope, somewhat similarly to function hoisting _except_ the contents of the variable are not hoisted as well. This happens with all variables, and it means it's now happening with our functions, now that we're assigning them to variables.
 
 This code:
 
-``` javascript
-var A = function(){};
-var B = function(){};
-var C = function(){};
+```javascript
+var A = function () {};
+var B = function () {};
+var C = function () {};
 ```
 
 Will be executed as this:
 
-``` javascript
-var A, B, C;  // variable declarations are hoisted
-A = function(){};
-B = function(){};
-C = function(){};
+```javascript
+var A, B, C; // variable declarations are hoisted
+A = function () {};
+B = function () {};
+C = function () {};
 ```
 
 Therefore the order of setting and calling this type of function is important:
 
-``` javascript
+```javascript
 // this works
-var B = function(){};
+var B = function () {};
 B();
 
 // this doesn't work
-B2();  // TypeError (B2 is undefined)
-var B2 = function(){};
+B2(); // TypeError (B2 is undefined)
+var B2 = function () {};
 ```
 
 The second example gives us an error because only the variable B2's declaration is hoisted, but not its definition, thus the "undefined" error.
@@ -124,7 +126,7 @@ These really aren't different from plain old function expressions and aren't rea
 
 Here's a good way to see what's happening:
 
-``` javascript
+```javascript
 function(){};  // SyntaxError
 (function(){});
 ```
@@ -133,27 +135,27 @@ Why does one work and the other doesn't? The first example is a function declara
 
 The second example is using parenthesis - grouping operators - and is therefore evaluated differently, as a function expression. The grouping operators are the things we use to help show what should be evaluated first, as in mathematical problems. We're saying "evaluate this first, then take the result and do something with it":
 
-``` javascript
-(1 + 2) * 3;  // 9
-1 + (2 * 3);  // 7
+```javascript
+(1 + 2) * 3; // 9
+1 + 2 * 3; // 7
 ```
 
 In the first example we're saying "first add 1 and 2, then take the result and multiply by 3", whereas in the second example we're saying "first multiply 2 and 3, then take the result and add 1".
 
 Because functions are first class, we can use similar grouping operators. Here's a facetious example, but it shows how we can essentially drop in a function in the same way:
 
-``` javascript
-(function(){} + 1);  // function(){}1
+```javascript
+(function () {} + 1); // function(){}1
 ```
 
 The result is a string (because toString is being called on the function, then added/appended with 1), but you get the idea I hope.
 
 When the JavaScript engine encounters the opening parenthesis here, we're essentially saying "ok, start grouping this together with something else". Using our technical terms, we're telling the engine that we're not making a function declaration, but instead a function expression. And then we can assign the result to a variable:
 
-``` javascript
-(function(){});           // resulting function not assigned
-var foo = (function(){}); // resulting function assigned to foo
-var bar = function(){};   // resulting function assigned to bar
+```javascript
+(function () {}); // resulting function not assigned
+var foo = function () {}; // resulting function assigned to foo
+var bar = function () {}; // resulting function assigned to bar
 ```
 
 Here we can see that foo and bar are really just the same, because in foo we're not grouping the function together with anything but itself.
@@ -166,12 +168,12 @@ Here we have our same old friend, the function expression. But instead of assign
 
 We haven't exposed the function name (foo) to the enclosing scope (in this case the global scope):
 
-``` javascript
-var D = function foo(){
+```javascript
+var D = function foo() {
   console.log(typeof foo);
 };
-D();                       // function
-console.log(typeof foo);   // undefined
+D(); // function
+console.log(typeof foo); // undefined
 ```
 
 #### 2. Useful for recursion
@@ -180,14 +182,14 @@ Because the function's name is accessible in the function itself, this turns out
 
 Here's a trivial recursive function to illustrate calling itself from within the named function expression:
 
-``` javascript
-var countdown = function a(count){
-  if(count > 0) {
+```javascript
+var countdown = function a(count) {
+  if (count > 0) {
     count--;
-    return a(count);  // we can also do this: a(--count), which is less clear
+    return a(count); // we can also do this: a(--count), which is less clear
   }
-  console.log('end of recursive function');
-}
+  console.log("end of recursive function");
+};
 countdown(5);
 ```
 
@@ -207,40 +209,40 @@ The named function becomes a global variable, is hoisted like a function declara
 
 First we'll use an example that doesn't look like magic:
 
-``` javascript
-var foo = function(){
-  return 'bar';
+```javascript
+var foo = function () {
+  return "bar";
 };
 var output = foo();
-console.log(output);  // 'bar'
+console.log(output); // 'bar'
 ```
 
 We already learned about grouping operators above, so you should feel comfortable with saying this is equivalent:
 
-``` javascript
-var foo = function(){
-  return 'bar';
+```javascript
+var foo = function () {
+  return "bar";
 };
-var output = (foo)(); // note the extra grouping operators
-console.log(output);  // 'bar'
+var output = foo(); // note the extra grouping operators
+console.log(output); // 'bar'
 ```
 
 Since foo is pointing to our function expression, we know that we can simply refrain from using the variable "foo" and drop in the entire function as an anonymous function (since functions are first class, after all!):
 
-``` javascript
-var output = (function(){
-  return 'bar';
+```javascript
+var output = (function () {
+  return "bar";
 })();
-console.log(output);  // 'bar'
+console.log(output); // 'bar'
 ```
 
 Hey wait, we just arrived at the magical resulting function! It turns out to be not so magical after all, once we break it down and see it for what it is. It's simply shorthand for the code we wrote originally, where we defined a function, executed it, and defined output to be its return value.
 
 I've included this method on the list of declaring functions because we can assign the return value to itself be a function:
 
-``` javascript
-var E = (function(){
-  return function(){}
+```javascript
+var E = (function () {
+  return function () {};
 })();
 ```
 
@@ -256,13 +258,14 @@ This method is extremely old and it's not recommended to be used. You pass in an
 
 You can create a function like this:
 
-``` javascript
-var F = new Function('arg1', 'arg2', 'console.log(arg1 + ", " + arg2)');
-F('foo', 'bar');  // 'foo, bar'
+```javascript
+var F = new Function("arg1", "arg2", 'console.log(arg1 + ", " + arg2)');
+F("foo", "bar"); // 'foo, bar'
 ```
 
-#### 2. You don't need the ``new`` operator 
-You can simply write ``var F = Function();`` to get the same result.
+#### 2. You don't need the `new` operator
+
+You can simply write `var F = Function();` to get the same result.
 
 #### 3. Quirks
 
@@ -270,24 +273,24 @@ The [MDN docs][7] have some good examples of the quirks, including the fact that
 
 What this means is that they don't have access to variables in their enclosing scope, which isn't particularly useful:
 
-``` javascript
-function foo(){
-  var bar = 'blah';
-  
-  var first = new Function('console.log(typeof bar)');
-  first();   // undefined
-  
-  var second = function(){
+```javascript
+function foo() {
+  var bar = "blah";
+
+  var first = new Function("console.log(typeof bar)");
+  first(); // undefined
+
+  var second = function () {
     console.log(typeof bar);
-  }
-  second();  // string
+  };
+  second(); // string
 }
 foo();
 ```
 
 In the function "first", we're using the Function constructor, so it doesn't have access to the variable bar. However, if we use the function "second", which is a function expression, it does in fact have access to variables defined in its enclosing scope (via closure).
 
-In other words, *don't use the Function constructor*.
+In other words, _don't use the Function constructor_.
 
 ### G: Special case - object constructor: var G = new function foo(){};
 
@@ -297,10 +300,10 @@ I saved this for last because we're not really defining a function, though we ar
 
 It's a bit unusual to see it in this form. Let's do it the proper way:
 
-``` javascript
-var Person = function(){
-  console.log(this);  // Person
-}
+```javascript
+var Person = function () {
+  console.log(this); // Person
+};
 var joe = new Person();
 ```
 
@@ -314,27 +317,31 @@ Arrow functions bring no brand new functionality, instead offering some syntacti
 
 Arrow functions are particularly handy in cases where we would've had one-line functions before, as in this case with ES5 JavaScript:
 
-``` javascript
-[1, 2, 3].map(function(x) {return x * 2});
+```javascript
+[1, 2, 3].map(function (x) {
+  return x * 2;
+});
 // [2, 4, 6]
 ```
 
 We can now write this as follows:
 
-``` javascript
-[1, 2, 3].map(x => x * 2);
+```javascript
+[1, 2, 3].map((x) => x * 2);
 // [2, 4, 6]
 ```
 
-The second benefit of arrow functions is that they preserve their ``this`` context, which is super convenient.  Often times it's a tedious task trying to preserve scope in JavaScript, usually through the use of ``bind()``.  But this allows us to bypass it and write less.
+The second benefit of arrow functions is that they preserve their `this` context, which is super convenient. Often times it's a tedious task trying to preserve scope in JavaScript, usually through the use of `bind()`. But this allows us to bypass it and write less.
 
 Consider the following case:
 
-``` javascript
+```javascript
 function multiply(valuesArray) {
   this.multiplier = 2;
-  return valuesArray.map(function(x) {return x * this.multiplier});
-};
+  return valuesArray.map(function (x) {
+    return x * this.multiplier;
+  });
+}
 
 var fakeContext = {};
 
@@ -342,15 +349,15 @@ multiply.call(fakeContext, [1, 2, 3]);
 // -> [NaN, NaN, NaN]
 ```
 
-This didn't work because the ``this`` context of the multiply function wasn't preserved in the ``map()`` function, forcing us to rewrite things slightly to preserve function context through defining a variable in ``multiple()`` (such as ``var self = this``) or by using ``bind()``.
+This didn't work because the `this` context of the multiply function wasn't preserved in the `map()` function, forcing us to rewrite things slightly to preserve function context through defining a variable in `multiple()` (such as `var self = this`) or by using `bind()`.
 
-Instead, using an arrow function we know our ``this`` context will be preserved, allowing us to write with a minor tweak:
+Instead, using an arrow function we know our `this` context will be preserved, allowing us to write with a minor tweak:
 
-``` javascript
+```javascript
 function multiply(valuesArray) {
   this.multiplier = 2;
-  return valuesArray.map(x => x * this.multiplier);
-};
+  return valuesArray.map((x) => x * this.multiplier);
+}
 
 var fakeContext = {};
 
@@ -358,7 +365,7 @@ multiply.call(fakeContext, [1, 2, 3]);
 // -> [2, 4, 6]
 ```
 
-As with much of ES6, use caution, as it may not be completely supported yet (see <a href="http://caniuse.com/#feat=arrow-functions">caniuse.com</a>).  As most folks are using some sort of transpiler these days, they probably don't have to worry about this.  It's good to keep in mind however.
+As with much of ES6, use caution, as it may not be completely supported yet (see <a href="http://caniuse.com/#feat=arrow-functions">caniuse.com</a>). As most folks are using some sort of transpiler these days, they probably don't have to worry about this. It's good to keep in mind however.
 
 Read more about arrow functions <a href="http://exploringjs.com/es6/ch_arrow-functions.html">here</a>.
 
@@ -376,14 +383,14 @@ Read more about arrow functions <a href="http://exploringjs.com/es6/ch_arrow-fun
 
 [JavaScript: The Definitive Guide][11] (classic book by David Flanagan)
 
- [1]: http://kangax.github.com/nfe/
- [2]: http://en.wikipedia.org/wiki/First-class_function
- [3]: http://ironjs.wordpress.com/2011/06/22/my-gripes-with-javascript/
- [4]: http://javascriptweblog.wordpress.com/2010/07/06/function-declarations-vs-function-expressions/
- [5]: http://www.klauskomenda.com/code/javascript-programming-patterns/#module
- [6]: http://ejohn.org/blog/partial-functions-in-javascript/
- [7]: https://developer.mozilla.org/en/JavaScript/Reference/Functions_and_function_scope#Function_constructor_vs._function_declaration_vs._function_expression
- [8]: http://benalman.com/news/2010/11/immediately-invoked-function-expression/
- [9]: https://developer.mozilla.org/en/JavaScript/Reference/Functions_and_function_scope
- [10]: http://stackoverflow.com/questions/1140089/how-does-an-anonymous-function-in-javascript-work
- [11]: http://www.amazon.com/gp/product/0596805527/
+[1]: http://kangax.github.com/nfe/
+[2]: http://en.wikipedia.org/wiki/First-class_function
+[3]: http://ironjs.wordpress.com/2011/06/22/my-gripes-with-javascript/
+[4]: http://javascriptweblog.wordpress.com/2010/07/06/function-declarations-vs-function-expressions/
+[5]: http://www.klauskomenda.com/code/javascript-programming-patterns/#module
+[6]: http://ejohn.org/blog/partial-functions-in-javascript/
+[7]: https://developer.mozilla.org/en/JavaScript/Reference/Functions_and_function_scope#Function_constructor_vs._function_declaration_vs._function_expression
+[8]: http://benalman.com/news/2010/11/immediately-invoked-function-expression/
+[9]: https://developer.mozilla.org/en/JavaScript/Reference/Functions_and_function_scope
+[10]: http://stackoverflow.com/questions/1140089/how-does-an-anonymous-function-in-javascript-work
+[11]: http://www.amazon.com/gp/product/0596805527/

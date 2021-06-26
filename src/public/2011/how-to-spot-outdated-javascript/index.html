@@ -225,7 +225,8 @@
 </article>
 
 
-    <div class="text-justify"><h3 id="introduction">Introduction</h3>
+    <div class="text-justify"><h2 id="-warning-this-is-an-old-article-and-may-include-information-thats-out-of-date-">⚠️ Warning: this is an old article and may include information that&rsquo;s out of date. ⚠️</h2>
+<h3 id="introduction">Introduction</h3>
 <p>Those that are just setting out to learn JavaScript are typically overwhelmed by the amount of online resources to be found about learning JavaScript. Not only this, but every webpage visited presents a potential learning opportunity just by inspecting the source.</p>
 <p>However, not all resources are guaranteed to be up-to-date. JavaScript has been around for over a decade, and coding standards have changed drastically over time. While a code snippet may still work in today&rsquo;s browsers, you may unknowingly be using an outdated practice that might eventually lead to a bit of embarrassment.</p>
 <p>You may sometimes find these old practices mixed in with good and modern code. It seems that folks might learn new code styles without necessarily casting away all their old habits. So keep in mind not to throw out the baby with the bathwater!</p>
@@ -238,12 +239,14 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">foo</span>() {  <span style="color:#75715e">// global function
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">greeting</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Hello&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">name</span>;  <span style="color:#75715e">// global function
-</span><span style="color:#75715e"></span>};
-<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;James&#39;</span>;  <span style="color:#75715e">// global variable
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">foo</span>() {
+  <span style="color:#75715e">// global function
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">greeting</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hello&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">name</span>; <span style="color:#75715e">// global function
+</span><span style="color:#75715e"></span>}
+<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;James&#34;</span>; <span style="color:#75715e">// global variable
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">foo</span>();
 </code></pre></td></tr></table>
 </div>
@@ -270,23 +273,23 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">myNamespace</span> <span style="color:#f92672">=</span> (<span style="color:#66d9ef">function</span>() {
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">myNamespace</span> <span style="color:#f92672">=</span> (<span style="color:#66d9ef">function</span> () {
   <span style="color:#75715e">// declare all variables with var
 </span><span style="color:#75715e"></span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">greeting</span>, <span style="color:#a6e22e">name</span>;
-  
-  <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;James&#39;</span>;
-  
-  <span style="color:#a6e22e">greeting</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
-    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;Hello &#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">name</span>;
+
+  <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;James&#34;</span>;
+
+  <span style="color:#a6e22e">greeting</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Hello &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">name</span>;
   };
-  
+
   <span style="color:#66d9ef">return</span> {
-    <span style="color:#a6e22e">greeting</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">greeting</span>
-  }
+    <span style="color:#a6e22e">greeting</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">greeting</span>,
+  };
 })();
 
-<span style="color:#a6e22e">greeting</span>();              <span style="color:#75715e">// ERROR: not defined
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">myNameSpace</span>.<span style="color:#a6e22e">greeting</span>();  <span style="color:#75715e">// &#39;Hello James&#39;
+<span style="color:#a6e22e">greeting</span>(); <span style="color:#75715e">// ERROR: not defined
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">myNameSpace</span>.<span style="color:#a6e22e">greeting</span>(); <span style="color:#75715e">// &#39;Hello James&#39;
 </span></code></pre></td></tr></table>
 </div>
 </div><h3 id="commented-cdata-blocks">Commented CDATA blocks</h3>
@@ -309,7 +312,7 @@
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">document.<span style="color:#a6e22e">write</span>(<span style="color:#e6db74">&#39;foo&#39;</span>);
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">document.<span style="color:#a6e22e">write</span>(<span style="color:#e6db74">&#34;foo&#34;</span>);
 </code></pre></td></tr></table>
 </div>
 </div><p>The <a href="http://dev.w3.org/html5/spec/apis-in-html-documents.html#document.write">W3C</a>, along with most everyone else, warns against using this, as it may result in overwriting (blanking) the entire page and other unwanted behavior.</p>
@@ -367,31 +370,43 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">(<span style="color:#66d9ef">function</span>() {  <span style="color:#75715e">// sandbox everything
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">(<span style="color:#66d9ef">function</span> () {
+  <span style="color:#75715e">// sandbox everything
 </span><span style="color:#75715e"></span>  <span style="color:#75715e">// variable declarations
 </span><span style="color:#75715e"></span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">link1</span>, <span style="color:#a6e22e">link2</span>, <span style="color:#a6e22e">myForm</span>;
 
-  window.<span style="color:#a6e22e">onload</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {  <span style="color:#75715e">// or onDOMContentLoaded (wait for DOM to be ready)
+  window.<span style="color:#a6e22e">onload</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+    <span style="color:#75715e">// or onDOMContentLoaded (wait for DOM to be ready)
 </span><span style="color:#75715e"></span>    <span style="color:#75715e">// simple DOM selectors
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">link1</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;link1&#39;</span>);
-    <span style="color:#a6e22e">link2</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;link2&#39;</span>);
-    <span style="color:#a6e22e">myForm</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#39;myForm&#39;</span>);
-    
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">link1</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;link1&#34;</span>);
+    <span style="color:#a6e22e">link2</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;link2&#34;</span>);
+    <span style="color:#a6e22e">myForm</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;myForm&#34;</span>);
+
     <span style="color:#75715e">// well-supported older event handler
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">link1</span>.<span style="color:#a6e22e">onclick</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(){
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">link1</span>.<span style="color:#a6e22e">onclick</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
       <span style="color:#75715e">// code
 </span><span style="color:#75715e"></span>    };
-    
-    <span style="color:#75715e">// better (DOM2)
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">link1</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#66d9ef">function</span>(){ <span style="color:#75715e">// or attachEvent for IE
-</span><span style="color:#75715e"></span>      <span style="color:#75715e">// code
-</span><span style="color:#75715e"></span>    },<span style="color:#66d9ef">false</span>);
-    
-    <span style="color:#75715e">// etc...
-</span><span style="color:#75715e"></span>  }
 
+    <span style="color:#75715e">// better (DOM2)
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">link1</span>.<span style="color:#a6e22e">addEventListener</span>(
+      <span style="color:#e6db74">&#34;click&#34;</span>,
+      <span style="color:#66d9ef">function</span> () {
+        <span style="color:#75715e">// or attachEvent for IE
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// code
+</span><span style="color:#75715e"></span>      },
+      <span style="color:#66d9ef">false</span>
+    );
+
+    <span style="color:#75715e">// etc...
+</span><span style="color:#75715e"></span>  };
 })();
 </code></pre></td></tr></table>
 </div>
@@ -401,11 +416,9 @@
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">“javascript:doSomething()”</span>&gt;&lt;/<span style="color:#f92672">a</span>&gt;
-&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">“javascript:void(0)”</span>&gt;&lt;/<span style="color:#f92672">a</span>&gt;
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;“javascript:doSomething()”&#34;</span>&gt;&lt;/<span style="color:#f92672">a</span>&gt; &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;“javascript:void(0)”&#34;</span>&gt;&lt;/<span style="color:#f92672">a</span>&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p>Both of these examples commit the same error as above - mixing JavaScript behavior with the HTML content. And the solution is similar: find these links with JavaScript (most simply by adding an id on them) and hook into them there.</p>
@@ -414,9 +427,13 @@
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">a</span> { <span style="color:#66d9ef">cursor</span>: <span style="color:#66d9ef">pointer</span>; }
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">a</span> {
+  <span style="color:#66d9ef">cursor</span>: <span style="color:#66d9ef">pointer</span>;
+}
 </code></pre></td></tr></table>
 </div>
 </div><p>This gives the cursor a pointer when the user hovers over the link, even if it&rsquo;s missing the href value.</p>
@@ -452,7 +469,7 @@
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">for</span>(<span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">n</span>; <span style="color:#a6e22e">n</span>) {}
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">for</span> (<span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">n</span>; <span style="color:#a6e22e">n</span>) {}
 </code></pre></td></tr></table>
 </div>
 </div><p>The first statement is evaluated once (1 time) as the loop is initialized, and the second and third parts are evaluated on each run through the loop (n times). Because of this, just as removing fluff from the main body of the loop itself, we would also do well to remove fluff from these statements themselves. As it turns out, it&rsquo;s quite slow finding the length of the array (arr.length) on each pass, and it&rsquo;s not necessary to do it more than once since it&rsquo;s not changing. So we can &ldquo;cache&rdquo; the length in a variable in the initializer:</p>
@@ -478,7 +495,7 @@
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">arr</span>.<span style="color:#a6e22e">length</span>;
-<span style="color:#66d9ef">while</span>(<span style="color:#a6e22e">i</span><span style="color:#f92672">--</span>) {
+<span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">i</span><span style="color:#f92672">--</span>) {
   <span style="color:#75715e">// code
 </span><span style="color:#75715e"></span>}
 </code></pre></td></tr></table>
@@ -491,8 +508,8 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span>  <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Object();
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arr</span>  <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Array();
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Object();
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Array();
 <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">func</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Function(<span style="color:#e6db74">&#34;param1&#34;</span>, <span style="color:#e6db74">&#34;param2&#34;</span>, <span style="color:#e6db74">&#34;return true;&#34;</span>);
 </code></pre></td></tr></table>
 </div>
@@ -502,11 +519,15 @@
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span>  <span style="color:#f92672">=</span> {};
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arr</span>  <span style="color:#f92672">=</span> [];
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">func</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">param1</span>, <span style="color:#a6e22e">param1</span>) {<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;}
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {};
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [];
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">func</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">param1</span>, <span style="color:#a6e22e">param1</span>) {
+  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+};
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="alert">alert()</h3>
@@ -519,8 +540,8 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Bill&#39;</span>
-<span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;Hi &#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">name</span>)
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Bill&#34;</span>;
+<span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#34;Hi &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">name</span>);
 </code></pre></td></tr></table>
 </div>
 </div><p>The above code works fine because of a controversial feature of JavaScript called semicolon insertion. But doesn&rsquo;t it make you feel dirty? It should, especially if you&rsquo;ve read JavaScript: The Good Parts. Use semicolons for your own good and to prevent major headaches. Leave it to your JavaScript minifier to be clever in deciding when to remove them:</p>
@@ -530,8 +551,8 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Bill&#39;</span>;
-<span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;Hi &#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">name</span>);
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Bill&#34;</span>;
+<span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#34;Hi &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">name</span>);
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="code-for-particular-user-agents">Code for particular user agents</h3>
@@ -550,14 +571,14 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">isIE</span>  <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">all</span>;
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">isIE</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">all</span>;
 <span style="color:#a6e22e">isNS4</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">layers</span>;
 <span style="color:#a6e22e">isNS6</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>;
-<span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">isIE</span>) {
+<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">isIE</span>) {
   <span style="color:#75715e">// code for IE
-</span><span style="color:#75715e"></span>} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">isNS4</span>) {
+</span><span style="color:#75715e"></span>} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">isNS4</span>) {
   <span style="color:#75715e">// code for Netscape 4
-</span><span style="color:#75715e"></span>} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">isNS6</span>) {
+</span><span style="color:#75715e"></span>} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">isNS6</span>) {
   <span style="color:#75715e">// code for Netscape 6
 </span><span style="color:#75715e"></span>}
 </code></pre></td></tr></table>
@@ -574,14 +595,18 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">if</span>(document.<span style="color:#a6e22e">addEventListener</span>) {  <span style="color:#75715e">// detect addEventListener
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">addEventListener</span>) {
+  <span style="color:#75715e">// detect addEventListener
 </span><span style="color:#75715e"></span>  <span style="color:#75715e">// Try the standard first
-</span><span style="color:#75715e"></span>  document.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#66d9ef">function</span>(){}, <span style="color:#66d9ef">false</span>);
-} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(document.<span style="color:#a6e22e">attachEvent</span>) {  <span style="color:#75715e">// detect attachEvent
+</span><span style="color:#75715e"></span>  document.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;click&#34;</span>, <span style="color:#66d9ef">function</span> () {}, <span style="color:#66d9ef">false</span>);
+} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (document.<span style="color:#a6e22e">attachEvent</span>) {
+  <span style="color:#75715e">// detect attachEvent
 </span><span style="color:#75715e"></span>  <span style="color:#75715e">// Typically IE
-</span><span style="color:#75715e"></span>  document.<span style="color:#a6e22e">attachEvent</span>(<span style="color:#e6db74">&#39;onclick&#39;</span>, <span style="color:#66d9ef">function</span>(){});
+</span><span style="color:#75715e"></span>  document.<span style="color:#a6e22e">attachEvent</span>(<span style="color:#e6db74">&#34;onclick&#34;</span>, <span style="color:#66d9ef">function</span> () {});
 }
 </code></pre></td></tr></table>
 </div>

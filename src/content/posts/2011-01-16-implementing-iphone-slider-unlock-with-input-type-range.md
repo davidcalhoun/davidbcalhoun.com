@@ -5,13 +5,15 @@ comments: true
 author: David
 layout: post
 aliases:
-- /2011/implementing-iphone-slider-unlock-with-input-type-range/
+  - /2011/implementing-iphone-slider-unlock-with-input-type-range/
 tags:
-- css
-- iphone
-- demo
-- webdev
+  - css
+  - iphone
+  - demo
+  - webdev
 ---
+
+## ⚠️ Warning: this is an old article and may include information that's out of date. ⚠️
 
 (check out the live [demo][1])
 
@@ -35,8 +37,8 @@ However, the focus here will be to get this working on just Chrome and WebKit. T
 
 Of course we have our simple range input:
 
-``` html
-<input type="range">
+```html
+<input type="range" />
 ```
 
 Which looks like this:
@@ -45,15 +47,16 @@ Which looks like this:
 
 We can target the input itself with a CSS attribute selector:
 
-``` css
-input[type='range'] {}
+```css
+input[type="range"] {
+}
 ```
 
 And if we want, we can transform it into a vertical slider by changing the `-webkit-appearance` property:
 
-``` css
-input[type='range'] {
-    -webkit-appearance: slider-vertical;
+```css
+input[type="range"] {
+  -webkit-appearance: slider-vertical;
 }
 ```
 
@@ -63,10 +66,10 @@ Which looks like this:
 
 If we want to style it as if it was any other element, there's a slight catch, as we first have to set "-webkit-appearance" to "none" and then add our customizations (this appears to mean that we can't actually style vertical sliders...). Here we'll set the background color as a simple demo:
 
-``` css
-input[type='range'] {
-    -webkit-appearance: none;
-    background-color: gray;
+```css
+input[type="range"] {
+  -webkit-appearance: none;
+  background-color: gray;
 }
 ```
 
@@ -76,17 +79,17 @@ This outputs the following:
 
 Most interestingly, we can target and style the slider button itself with CSS, although we can't get access to it with JavaScript (for the time being anyhow). Here we'll style it a slightly darker shade of gray:
 
-``` css
-input[type='range'] {
-    -webkit-appearance: none;
-    background-color: gray;
+```css
+input[type="range"] {
+  -webkit-appearance: none;
+  background-color: gray;
 }
 
-input[type='range']::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    background-color: #444;
-    width: 15px;
-    height: 20px;
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color: #444;
+  width: 15px;
+  height: 20px;
 }
 ```
 
@@ -99,22 +102,22 @@ Now all the pieces are in place to fully style the input!
 
 This part's no big deal. We just want to set up the width/height, slap on some handy rounded corners, and add a very slight background gradient:
 
-``` css
-input[type='range'] {
-    -webkit-appearance: none;
-    width: 280px;
-    height: 46px;
-    padding: 3px;
-    -webkit-border-radius: 15px;
-    border-radius: 15px;
-    border: 1px solid #525252;
-    background-image: -webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #000000),
-        color-stop(1, #222222)
-    );
+```css
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 280px;
+  height: 46px;
+  padding: 3px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+  border: 1px solid #525252;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0, #000000),
+    color-stop(1, #222222)
+  );
 }
 ```
 
@@ -130,25 +133,17 @@ So what do we do? Take advantage of multiple backgrounds! We can specify the bac
 
 The CSS for the button looks like this:
 
-``` css
-input[type='range']::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 68px;
-    height: 44px;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAYCAYAAAB0kZQKAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAASJJREFUeNpi7OnpYaAC0AXiF0D8mhzNTAzUASBHnAdim4F0BAhIA/EBIC4aSEeAADMQ9wLxRiDmHyhHwIAfNHqMiXZEcXExGJMCiNCjCMTHgDiTkFmM////p4rXe3t78Rm0DIjTgfgLNkkWoGZQij7MQFsQBY2aICC+Rq80gQ2oA/EZIE4YSEeAACcQzwfimVD2gDgCBtKgiVZlIB0BAgbQbBwykI5A5I4BtPsaNLfcHKiQWADEJiAHDERIfAfiLKgjBiQ67kCD/zK2NAFqjMyi0AJQVnPCI78GiBNxFttQF6ZToVjG5ohfoLoOiKcMVO54BA3+swPVntgKxIbEOIAWjvgLxJVA7APE7waisHoKxBFAfGSgSszL0MLnBTmaAQIMAKg/OsrT7JG8AAAAAElFTkSuQmCC'),
-    -webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #fefefe),
-        color-stop(0.49, #dddddd),
-        color-stop(0.51, #d1d1d1),
-        color-stop(1, #a1a1a1)
-    );
-    background-repeat: no-repeat;
-    background-position: 50%;
+```css
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 68px;
+  height: 44px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAYCAYAAAB0kZQKAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAASJJREFUeNpi7OnpYaAC0AXiF0D8mhzNTAzUASBHnAdim4F0BAhIA/EBIC4aSEeAADMQ9wLxRiDmHyhHwIAfNHqMiXZEcXExGJMCiNCjCMTHgDiTkFmM////p4rXe3t78Rm0DIjTgfgLNkkWoGZQij7MQFsQBY2aICC+Rq80gQ2oA/EZIE4YSEeAACcQzwfimVD2gDgCBtKgiVZlIB0BAgbQbBwykI5A5I4BtPsaNLfcHKiQWADEJiAHDERIfAfiLKgjBiQ67kCD/zK2NAFqjMyi0AJQVnPCI78GiBNxFttQF6ZToVjG5ohfoLoOiKcMVO54BA3+swPVntgKxIbEOIAWjvgLxJVA7APE7waisHoKxBFAfGSgSszL0MLnBTmaAQIMAKg/OsrT7JG8AAAAAElFTkSuQmCC"),
+    -webkit-gradient(linear, left top, left bottom, color-stop(0, #fefefe), color-stop(0.49, #dddddd), color-stop(0.51, #d1d1d1), color-stop(1, #a1a1a1));
+  background-repeat: no-repeat;
+  background-position: 50%;
 }
 ```
 
@@ -161,8 +156,8 @@ Now we're getting somewhere! And now we're approaching the limits of what we can
 
 The first thing to do is to move the slider all the way to the left, to the default position. We do this through HTML by setting the value to 0:
 
-``` html
-<input type="range" value="0">
+```html
+<input type="range" value="0" />
 ```
 
 Ok, that wasn't too hard. But what about the text? We can't modify anything in the input itself, because it doesn't contain any element to display text. And we can't dynamically add text with JavaScript, because again, it's the shadow DOM! What we can do is create a separate text element outside of the input and position it on top of the slider using absolute positioning.
@@ -184,85 +179,77 @@ The final complete CSS is as follows:
 
 ```css
 .iphone-slider {
-    width: 280px;
-    height: 46px;
-    
-    /* set the wrapper as the anchor element for positioning */
-    position: relative;
+  width: 280px;
+  height: 46px;
+
+  /* set the wrapper as the anchor element for positioning */
+  position: relative;
 }
 
 .iphone-slider input {
-    -webkit-appearance: none;
-    width: 100%;
-    background: #ddd;
-    padding: 3px;
-    border: 1px solid #525252;
-    -webkit-border-radius: 15px;
-    border-radius: 15px;
-    background-image: -webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #000000),
-        color-stop(1, #222222)
-    );
+  -webkit-appearance: none;
+  width: 100%;
+  background: #ddd;
+  padding: 3px;
+  border: 1px solid #525252;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0, #000000),
+    color-stop(1, #222222)
+  );
 }
 
 .iphone-slider input::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    
-    /* position the button on top of everything */
-    z-index: 100;
-    position: relative;
-    
-    width: 68px;
-    height: 44px;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    
-    /* arrow and button gradient */
-    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAYCAYAAAB0kZQKAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAASJJREFUeNpi7OnpYaAC0AXiF0D8mhzNTAzUASBHnAdim4F0BAhIA/EBIC4aSEeAADMQ9wLxRiDmHyhHwIAfNHqMiXZEcXExGJMCiNCjCMTHgDiTkFmM////p4rXe3t78Rm0DIjTgfgLNkkWoGZQij7MQFsQBY2aICC+Rq80gQ2oA/EZIE4YSEeAACcQzwfimVD2gDgCBtKgiVZlIB0BAgbQbBwykI5A5I4BtPsaNLfcHKiQWADEJiAHDERIfAfiLKgjBiQ67kCD/zK2NAFqjMyi0AJQVnPCI78GiBNxFttQF6ZToVjG5ohfoLoOiKcMVO54BA3+swPVntgKxIbEOIAWjvgLxJVA7APE7waisHoKxBFAfGSgSszL0MLnBTmaAQIMAKg/OsrT7JG8AAAAAElFTkSuQmCC'),
-    -webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #fefefe),
-        color-stop(0.49, #dddddd),
-        color-stop(0.51, #d1d1d1),
-        color-stop(1, #a1a1a1)
-    );
-    background-repeat: no-repeat;
-    background-position: 50%;
+  -webkit-appearance: none;
+
+  /* position the button on top of everything */
+  z-index: 100;
+  position: relative;
+
+  width: 68px;
+  height: 44px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+
+  /* arrow and button gradient */
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAYCAYAAAB0kZQKAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAASJJREFUeNpi7OnpYaAC0AXiF0D8mhzNTAzUASBHnAdim4F0BAhIA/EBIC4aSEeAADMQ9wLxRiDmHyhHwIAfNHqMiXZEcXExGJMCiNCjCMTHgDiTkFmM////p4rXe3t78Rm0DIjTgfgLNkkWoGZQij7MQFsQBY2aICC+Rq80gQ2oA/EZIE4YSEeAACcQzwfimVD2gDgCBtKgiVZlIB0BAgbQbBwykI5A5I4BtPsaNLfcHKiQWADEJiAHDERIfAfiLKgjBiQ67kCD/zK2NAFqjMyi0AJQVnPCI78GiBNxFttQF6ZToVjG5ohfoLoOiKcMVO54BA3+swPVntgKxIbEOIAWjvgLxJVA7APE7waisHoKxBFAfGSgSszL0MLnBTmaAQIMAKg/OsrT7JG8AAAAAElFTkSuQmCC"),
+    -webkit-gradient(linear, left top, left bottom, color-stop(0, #fefefe), color-stop(0.49, #dddddd), color-stop(0.51, #d1d1d1), color-stop(1, #a1a1a1));
+  background-repeat: no-repeat;
+  background-position: 50%;
 }
 
 .iphone-slider span {
-    /* position the text just under the button in the stacking order */
-    position: absolute;
-    z-index: 99;
-    top: 30%;
-    left: 37%;
-    
-    font-family: "Helvetica Neue", Helvetica, sans;
-    font-size: 24px;
-    color: white;
-    cursor: default;
-    -webkit-user-select: none;
-    
-    /* semitransparent gradient mask to animate over the text */
-    -webkit-mask-image: -webkit-gradient(
-        linear,
-        left top,
-        right top,
-        color-stop(0, rgba(0,0,0,0.3)),
-        color-stop(0.45, rgba(0,0,0,0.3)),
-        color-stop(0.5, rgba(0,0,0,1)),
-        color-stop(0.55, rgba(0,0,0,0.3)),
-        color-stop(1, rgba(0,0,0,0.3))
-    );
-    -webkit-mask-size: 1000px;
-    -webkit-mask-repeat: no-repeat;
-    -webkit-animation-timing-function: ease-in-out;
-    -webkit-animation: text-spotlight 4s infinite;
+  /* position the text just under the button in the stacking order */
+  position: absolute;
+  z-index: 99;
+  top: 30%;
+  left: 37%;
+
+  font-family: "Helvetica Neue", Helvetica, sans;
+  font-size: 24px;
+  color: white;
+  cursor: default;
+  -webkit-user-select: none;
+
+  /* semitransparent gradient mask to animate over the text */
+  -webkit-mask-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    color-stop(0, rgba(0, 0, 0, 0.3)),
+    color-stop(0.45, rgba(0, 0, 0, 0.3)),
+    color-stop(0.5, rgba(0, 0, 0, 1)),
+    color-stop(0.55, rgba(0, 0, 0, 0.3)),
+    color-stop(1, rgba(0, 0, 0, 0.3))
+  );
+  -webkit-mask-size: 1000px;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation: text-spotlight 4s infinite;
 }
 
 /* animate the webkit-mark over the text */
@@ -270,7 +257,7 @@ The final complete CSS is as follows:
   0% {
     -webkit-mask-position: -800px;
   }
-  
+
   100% {
     -webkit-mask-position: 0px;
   }
@@ -292,56 +279,61 @@ Also, you'll notice the opacity of the text slowly fade as the slider is moved f
 Here's the JavaScript to make this work:
 
 ```javascript
-(function() {
+(function () {
   // variable declarations
-  var slider, sliderInput, sliderButton, sliderText, sliderTimeout, sliderOnchange, unlockCheck;
-  
+  var slider,
+    sliderInput,
+    sliderButton,
+    sliderText,
+    sliderTimeout,
+    sliderOnchange,
+    unlockCheck;
+
   // cache our DOM elements in variables
-  slider = document.querySelector('.iphone-slider');
-  sliderInput = slider.querySelector('input');
-  sliderButton = sliderInput.querySelector('::-webkit-slider-thumb');
-  sliderText = slider.querySelector('span');
-  
+  slider = document.querySelector(".iphone-slider");
+  sliderInput = slider.querySelector("input");
+  sliderButton = sliderInput.querySelector("::-webkit-slider-thumb");
+  sliderText = slider.querySelector("span");
+
   /*
       Check if it's been unlocked, else return the
       button back to the left side (default position).
   */
-  unlockCheck = function() {
-    if(sliderInput.value == 100) {
-      sliderText.innerHTML = 'Unlocked!';
+  unlockCheck = function () {
+    if (sliderInput.value == 100) {
+      sliderText.innerHTML = "Unlocked!";
       sliderInput.value = 0;
       sliderText.style.opacity = 1;
     } else {
-      setTimeout(function(){
+      setTimeout(function () {
         sliderInput.value = 0;
         sliderText.style.opacity = 1;
       }, 1000);
     }
   };
-  
-  sliderOnchange = function() {
+
+  sliderOnchange = function () {
     /*
         Set the opacity of the text relative to the value
         on the input range.
     */
-    sliderText.style.opacity = ((100 - sliderInput.value) / 200);
-    
+    sliderText.style.opacity = (100 - sliderInput.value) / 200;
+
     /*
         Add a timeout to prevent the function from being called
         on EVERY onchange event.
     */
     clearTimeout(sliderTimeout);
     sliderTimeout = setTimeout(unlockCheck, 300);
-  }
-  
+  };
+
   slider.onchange = sliderOnchange;
 })();
 ```
 
 ### Live example
 
-Here's a [video][3] of the slider in action:  
-
+Here's a [video][3] of the slider in action:
 
 If you're running Safari or Chrome, you should be able to see and interact with the [standalone demo][1].
 
@@ -349,7 +341,7 @@ Sweet! Well, that was fun! This was some good practice of using a ton of good st
 
 UPDATE: [Chrome has now made the shadow DOM inspectable][4].
 
- [1]: https://www.davidbcalhoun.com/a/_old%20mobile%20tests/iphone-slider.html
- [2]: http://glazkov.com/2011/01/14/what-the-heck-is-shadow-dom/
- [3]: http://www.youtube.com/watch?v=lC_pcRZgNm0
- [4]: http://peter.sh/2011/05/inspectable-shadow-dom-the-file-browser-and-new-default-avatars/
+[1]: https://www.davidbcalhoun.com/a/_old%20mobile%20tests/iphone-slider.html
+[2]: http://glazkov.com/2011/01/14/what-the-heck-is-shadow-dom/
+[3]: http://www.youtube.com/watch?v=lC_pcRZgNm0
+[4]: http://peter.sh/2011/05/inspectable-shadow-dom-the-file-browser-and-new-default-avatars/

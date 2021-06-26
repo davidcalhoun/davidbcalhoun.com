@@ -6,13 +6,15 @@ author: David
 layout: post
 permalink: /2010/mobile-javascript-libraries-and-frameworks
 aliases:
-- /2010/mobile-javascript-libraries-and-frameworks
+  - /2010/mobile-javascript-libraries-and-frameworks
 tags:
-- javascript
-- mobile
-- webdev
-- programming
+  - javascript
+  - mobile
+  - webdev
+  - programming
 ---
+
+## ⚠️ Warning: this is an old article and may include information that's out of date. ⚠️
 
 ### Intro
 
@@ -57,34 +59,34 @@ Right now there's not much, just some links, but I hope to keep adding materials
 [Part 6: Dealing with device orientation][30]  
 [Part 7: Mobile JavaScript libraries and frameworks][31]
 
- [1]: http://www.sencha.com/products/touch/
- [2]: http://www.phonegap.com/
- [3]: http://jquerymobile.com/
- [4]: http://developer.apple.com/iad/
- [5]: http://zeptojs.com/
- [6]: http://joapp.com/
- [7]: http://touch.sproutcore.com/hedwig/
- [8]: http://unify.github.com/unify/
- [9]: http://developer.yahoo.com/yui/3/
- [10]: http://www.springsource.org/spring-mobile
- [11]: http://pyxismobile.com/
- [12]: http://www.winktoolkit.org/
- [13]: http://chocolatechipmobile.wordpress.com/
- [14]: http://webapp-net.com/
- [15]: http://paularmstrongdesigns.com/projects/basejs/
- [16]: http://xuijs.com/
- [17]: http://iwebkit.net/
- [18]: http://www.jqtouch.com/
- [19]: http://notes.sencha.com/post/1483278482/wed-like-to-extend-a-warm-welcome-to-one-of-our
- [20]: http://code.google.com/p/iphone-universal/
- [21]: http://code.google.com/p/ciui-dev/
- [22]: http://www.iui-js.org/
- [23]: http://code.google.com/p/iui/
- [24]: http://davidbcalhoun.com/2009/pastrykit-digging-into-an-apple-pie
- [25]: http://davidbcalhoun.com/2010/viewport-metatag
- [26]: http://davidbcalhoun.com/2010/the-mobile-developers-toolkit-mobile-web-part-2
- [27]: http://davidbcalhoun.com/2010/designing-buttons-that-dont-suck
- [28]: http://davidbcalhoun.com/2010/on-designing-a-mobile-webpage
- [29]: http://davidbcalhoun.com/2010/using-mobile-specific-html-css-javascript
- [30]: http://davidbcalhoun.com/2010/dealing-with-device-orientation
- [31]: http://davidbcalhoun.com/2010/mobile-javascript-libraries-and-frameworks
+[1]: http://www.sencha.com/products/touch/
+[2]: http://www.phonegap.com/
+[3]: http://jquerymobile.com/
+[4]: http://developer.apple.com/iad/
+[5]: http://zeptojs.com/
+[6]: http://joapp.com/
+[7]: http://touch.sproutcore.com/hedwig/
+[8]: http://unify.github.com/unify/
+[9]: http://developer.yahoo.com/yui/3/
+[10]: http://www.springsource.org/spring-mobile
+[11]: http://pyxismobile.com/
+[12]: http://www.winktoolkit.org/
+[13]: http://chocolatechipmobile.wordpress.com/
+[14]: http://webapp-net.com/
+[15]: http://paularmstrongdesigns.com/projects/basejs/
+[16]: http://xuijs.com/
+[17]: http://iwebkit.net/
+[18]: http://www.jqtouch.com/
+[19]: http://notes.sencha.com/post/1483278482/wed-like-to-extend-a-warm-welcome-to-one-of-our
+[20]: http://code.google.com/p/iphone-universal/
+[21]: http://code.google.com/p/ciui-dev/
+[22]: http://www.iui-js.org/
+[23]: http://code.google.com/p/iui/
+[24]: http://davidbcalhoun.com/2009/pastrykit-digging-into-an-apple-pie
+[25]: http://davidbcalhoun.com/2010/viewport-metatag
+[26]: http://davidbcalhoun.com/2010/the-mobile-developers-toolkit-mobile-web-part-2
+[27]: http://davidbcalhoun.com/2010/designing-buttons-that-dont-suck
+[28]: http://davidbcalhoun.com/2010/on-designing-a-mobile-webpage
+[29]: http://davidbcalhoun.com/2010/using-mobile-specific-html-css-javascript
+[30]: http://davidbcalhoun.com/2010/dealing-with-device-orientation
+[31]: http://davidbcalhoun.com/2010/mobile-javascript-libraries-and-frameworks

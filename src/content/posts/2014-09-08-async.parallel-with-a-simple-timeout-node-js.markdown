@@ -4,24 +4,26 @@ title: "async.parallel with a simple timeout (node.js)"
 date: 2014-09-08 00:36:52 -0700
 comments: true
 aliases:
-- /2014/async.parallel-with-a-simple-timeout-node-js/
+  - /2014/async.parallel-with-a-simple-timeout-node-js/
 tags:
-- node.js
-- node
-- javascript
-- async
-- webdev
+  - node.js
+  - node
+  - javascript
+  - async
+  - webdev
 ---
 
-A while back I had a need for a general timeout option for async.parallel and was surprised I couldn't find much information about how to do it.  I was using async.parallel to make a lot of REST calls in parallel, but one of them was getting blocked by a firewall, resulting in an eventual timeout minutes later.
+## ⚠️ Warning: this is an old article and may include information that's out of date. ⚠️
 
-One option was to specify a shorter timeout for each individual REST call, including the one causing the problem.  But I wanted a simpler solution: a general timeout for that specific async.parallel instance that made it clear all tasks should finish within a certain period of time. Otherwise return a timeout as an error, allowing the program to continue (and retry if necessary).
+A while back I had a need for a general timeout option for async.parallel and was surprised I couldn't find much information about how to do it. I was using async.parallel to make a lot of REST calls in parallel, but one of them was getting blocked by a firewall, resulting in an eventual timeout minutes later.
+
+One option was to specify a shorter timeout for each individual REST call, including the one causing the problem. But I wanted a simpler solution: a general timeout for that specific async.parallel instance that made it clear all tasks should finish within a certain period of time. Otherwise return a timeout as an error, allowing the program to continue (and retry if necessary).
 
 It was somewhat surprising there wasn't an option built into async.parallel, as I could imagine other folks must have had the same problem at some point in time.
 
 In any case, I wrote a pretty simple wrapper function that gets the job done (see example usage below):
 
-``` javascript
+```javascript
 var async = require('async');
 
 // async.parallel with optional timeout (options.timeoutMS)

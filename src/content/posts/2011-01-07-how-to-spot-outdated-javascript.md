@@ -6,10 +6,12 @@ author: David
 layout: post
 permalink: /2011/how-to-spot-outdated-javascript
 tags:
-- javascript
-- programming
-- webdev
+  - javascript
+  - programming
+  - webdev
 ---
+
+## ⚠️ Warning: this is an old article and may include information that's out of date. ⚠️
 
 ### Introduction
 
@@ -19,15 +21,16 @@ However, not all resources are guaranteed to be up-to-date. JavaScript has been 
 
 You may sometimes find these old practices mixed in with good and modern code. It seems that folks might learn new code styles without necessarily casting away all their old habits. So keep in mind not to throw out the baby with the bathwater!
 
-Here's some old practices that should help you spot old outdated code. 
+Here's some old practices that should help you spot old outdated code.
 
 ### Global variables
 
 ```js
-function foo() {  // global function
-  greeting = 'Hello' + name;  // global function
-};
-name = 'James';  // global variable
+function foo() {
+  // global function
+  greeting = "Hello" + name; // global function
+}
+name = "James"; // global variable
 foo();
 ```
 
@@ -36,23 +39,23 @@ Tons of global variables is a sure sign of outdated code. Ideally you want to ai
 Here's an example where we defined one global variable entry point (myNamespace) for our code:
 
 ```js
-var myNamespace = (function() {
+var myNamespace = (function () {
   // declare all variables with var
   var greeting, name;
-  
-  name = 'James';
-  
-  greeting = function() {
-    return 'Hello ' + name;
+
+  name = "James";
+
+  greeting = function () {
+    return "Hello " + name;
   };
-  
+
   return {
-    greeting: greeting
-  }
+    greeting: greeting,
+  };
 })();
 
-greeting();              // ERROR: not defined
-myNameSpace.greeting();  // 'Hello James'
+greeting(); // ERROR: not defined
+myNameSpace.greeting(); // 'Hello James'
 ```
 
 ### Commented CDATA blocks
@@ -68,7 +71,7 @@ This appears in old scripts that are presented inline (instead of externally in 
 ### document.write()
 
 ```js
-document.write('foo');
+document.write("foo");
 ```
 
 The [W3C][1], along with most everyone else, warns against using this, as it may result in overwriting (blanking) the entire page and other unwanted behavior.
@@ -94,29 +97,35 @@ Instead, the very least you can do is add IDs to each element (or better, use a 
 ```
 
 ```js
-(function() {  // sandbox everything
+(function () {
+  // sandbox everything
   // variable declarations
   var link1, link2, myForm;
 
-  window.onload = function() {  // or onDOMContentLoaded (wait for DOM to be ready)
+  window.onload = function () {
+    // or onDOMContentLoaded (wait for DOM to be ready)
     // simple DOM selectors
-    link1 = document.getElementById('link1');
-    link2 = document.getElementById('link2');
-    myForm = document.getElementById('myForm');
-    
+    link1 = document.getElementById("link1");
+    link2 = document.getElementById("link2");
+    myForm = document.getElementById("myForm");
+
     // well-supported older event handler
-    link1.onclick = function(){
+    link1.onclick = function () {
       // code
     };
-    
-    // better (DOM2)
-    link1.addEventListener('click', function(){ // or attachEvent for IE
-      // code
-    },false);
-    
-    // etc...
-  }
 
+    // better (DOM2)
+    link1.addEventListener(
+      "click",
+      function () {
+        // or attachEvent for IE
+        // code
+      },
+      false
+    );
+
+    // etc...
+  };
 })();
 ```
 
@@ -127,8 +136,7 @@ In any case, the point here is to get the JavaScript out of the HTML and into th
 ### Inline JavaScript in link hrefs
 
 ```html
-<a href=“javascript:doSomething()”></a>
-<a href=“javascript:void(0)”></a>
+<a href="“javascript:doSomething()”"></a> <a href="“javascript:void(0)”"></a>
 ```
 
 Both of these examples commit the same error as above - mixing JavaScript behavior with the HTML content. And the solution is similar: find these links with JavaScript (most simply by adding an id on them) and hook into them there.
@@ -138,7 +146,9 @@ The second example brings up a good issue, and a point of contention. Ideally th
 You'll find that removing the href value or making it blank (href="") might remove the styling from the link and no longer makes it clickable. An easy fix is to set the href equal to a hash tag (href="#"). A side effect might be a "jump" to the top of the page after clicking the link, which requires and requires e.preventDefault() within the attached event. Href="#" may soon become an antipattern (or maybe it is already), since you can also fix this with CSS styling:
 
 ```css
-a { cursor: pointer; }
+a {
+  cursor: pointer;
+}
 ```
 
 This gives the cursor a pointer when the user hovers over the link, even if it's missing the href value.
@@ -162,7 +172,7 @@ for(var i=0; i &lt; arr.length; i++) {
 For-in loops turn out to be quite slow while going through arrays, so only use them when iterating through properties of an object. The second for loop is much faster, but can be made faster still when we realize what's being evaluated on each iteration:
 
 ```js
-for(1; n; n) {}
+for (1; n; n) {}
 ```
 
 The first statement is evaluated once (1 time) as the loop is initialized, and the second and third parts are evaluated on each run through the loop (n times). Because of this, just as removing fluff from the main body of the loop itself, we would also do well to remove fluff from these statements themselves. As it turns out, it's quite slow finding the length of the array (arr.length) on each pass, and it's not necessary to do it more than once since it's not changing. So we can "cache" the length in a variable in the initializer:
@@ -177,7 +187,7 @@ And faster yet is a while loop (keep in mind that it will run backwards), which 
 
 ```js
 var i = arr.length;
-while(i--) {
+while (i--) {
   // code
 }
 ```
@@ -185,17 +195,19 @@ while(i--) {
 ### new Object(), new Array(), new Function(), etc
 
 ```js
-var obj  = new Object();
-var arr  = new Array();
+var obj = new Object();
+var arr = new Array();
 var func = new Function("param1", "param2", "return true;");
 ```
 
 While these work, no one really uses them, as there exist less verbose and more common alternatives. Use these instead, which are exactly equal to the above code:
 
 ```js
-var obj  = {};
-var arr  = [];
-var func = function(param1, param1) {return true;}
+var obj = {};
+var arr = [];
+var func = function (param1, param1) {
+  return true;
+};
 ```
 
 ### alert()
@@ -207,15 +219,15 @@ I'm still on the fence about using alert() however, as I think it's pretty usefu
 ### Missing semicolons
 
 ```js
-var name='Bill'
-alert('Hi ' + name)
+var name = "Bill";
+alert("Hi " + name);
 ```
 
 The above code works fine because of a controversial feature of JavaScript called semicolon insertion. But doesn't it make you feel dirty? It should, especially if you've read JavaScript: The Good Parts. Use semicolons for your own good and to prevent major headaches. Leave it to your JavaScript minifier to be clever in deciding when to remove them:
 
 ```js
-var name='Bill';
-alert('Hi ' + name);
+var name = "Bill";
+alert("Hi " + name);
 ```
 
 ### Code for particular user agents
@@ -223,14 +235,14 @@ alert('Hi ' + name);
 This is also a bit controversial, since unfortunately user agent sniffing is still sometimes necessary. However, in the past it was really abused with code such as this:
 
 ```js
-isIE  = document.all;
+isIE = document.all;
 isNS4 = document.layers;
 isNS6 = document.getElementById;
-if(isIE) {
+if (isIE) {
   // code for IE
-} else if(isNS4) {
+} else if (isNS4) {
   // code for Netscape 4
-} else if(isNS6) {
+} else if (isNS6) {
   // code for Netscape 6
 }
 ```
@@ -242,12 +254,14 @@ This example detects browsers by features that only exist in each of these old b
 The better method? If there's a question about the availability of a method, simply check for it first before using it:
 
 ```js
-if(document.addEventListener) {  // detect addEventListener
+if (document.addEventListener) {
+  // detect addEventListener
   // Try the standard first
-  document.addEventListener('click', function(){}, false);
-} else if(document.attachEvent) {  // detect attachEvent
+  document.addEventListener("click", function () {}, false);
+} else if (document.attachEvent) {
+  // detect attachEvent
   // Typically IE
-  document.attachEvent('onclick', function(){});
+  document.attachEvent("onclick", function () {});
 }
 ```
 
@@ -263,9 +277,9 @@ Christian Heilmann and PPK's old posts inspired me to write this brief post. You
 
 [Three JavaScript articles and one best practice (PPK 2005)][6]
 
- [1]: http://dev.w3.org/html5/spec/apis-in-html-documents.html#document.write
- [2]: http://www.stevesouders.com/blog/2010/12/15/controljs-part-3/
- [3]: http://developer.yahoo.com/blogs/ydn/posts/2010/10/followup-how-many-users-have-javascript-disabled/
- [4]: http://www.wait-till-i.com/2005/06/21/six-javascript-features-we-do-not-need-any-longer/
- [5]: http://icant.co.uk/articles/from-dhtml-to-dom/from-dhtml-to-dom-scripting.html
- [6]: http://www.quirksmode.org/blog/archives/2005/06/three_javascrip_1.html
+[1]: http://dev.w3.org/html5/spec/apis-in-html-documents.html#document.write
+[2]: http://www.stevesouders.com/blog/2010/12/15/controljs-part-3/
+[3]: http://developer.yahoo.com/blogs/ydn/posts/2010/10/followup-how-many-users-have-javascript-disabled/
+[4]: http://www.wait-till-i.com/2005/06/21/six-javascript-features-we-do-not-need-any-longer/
+[5]: http://icant.co.uk/articles/from-dhtml-to-dom/from-dhtml-to-dom-scripting.html
+[6]: http://www.quirksmode.org/blog/archives/2005/06/three_javascrip_1.html

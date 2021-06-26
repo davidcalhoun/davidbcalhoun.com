@@ -1,15 +1,17 @@
 ---
-title: 'Optimizing based on connection speed: using navigator.connection on Android 2.2+'
+title: "Optimizing based on connection speed: using navigator.connection on Android 2.2+"
 date: 2010-09-14
 comments: true
 author: David
 layout: post
 permalink: /2010/using-navigator-connection-android
 tags:
-- javascript
-- android
-- webdev
+  - javascript
+  - android
+  - webdev
 ---
+
+## ⚠️ Warning: this is an old article and may include information that's out of date. ⚠️
 
 ### Introduction
 
@@ -36,9 +38,15 @@ So how exactly do we target this?
 The purpose of this code is to first find the connection speed, and then add a class to the `html` element based on this connection. The goal is to be able to target these connections with CSS, so the right content is delivered to the right connection:
 
 ```css
-.highbandwidth .logo   { background-image:url('logo-high.jpg'); }
-.mediumbandwidth .logo { background-image:url('logo-medium.jpg'); }
-.lowbandwidth .logo    { background-image:url('logo-low.jpg'); }
+.highbandwidth .logo {
+  background-image: url("logo-high.jpg");
+}
+.mediumbandwidth .logo {
+  background-image: url("logo-medium.jpg");
+}
+.lowbandwidth .logo {
+  background-image: url("logo-low.jpg");
+}
 ```
 
 And here's the JavaScript:
@@ -47,27 +55,27 @@ And here's the JavaScript:
 var connection, connectionSpeed, htmlNode, htmlClass;
 
 // create a custom object if navigator.connection isn't available
-connection = navigator.connection || {'type':'0'};
+connection = navigator.connection || { type: "0" };
 
 // set connectionSpeed
-switch(connection.type) {
+switch (connection.type) {
   case connection.CELL_3G:
     // 3G
-    connectionSpeed = 'mediumbandwidth';
-  break;
+    connectionSpeed = "mediumbandwidth";
+    break;
   case connection.CELL_2G:
     // 2G
-    connectionSpeed = 'lowbandwidth';
-  break;
+    connectionSpeed = "lowbandwidth";
+    break;
   default:
     // WIFI, ETHERNET, UNKNOWN
-    connectionSpeed = 'highbandwidth';
+    connectionSpeed = "highbandwidth";
 }
 
 // set the connection speed on the html element, i.e. <html class="lowbandwidth">
 htmlNode = document.body.parentNode;
-htmlClass = htmlNode.getAttribute('class') || '';
-htmlNode.setAttribute('class', htmlClass + ' ' + connectionSpeed);
+htmlClass = htmlNode.getAttribute("class") || "";
+htmlNode.setAttribute("class", htmlClass + " " + connectionSpeed);
 ```
 
 ### Give the user control!
@@ -86,4 +94,4 @@ So give them control! You can provide something like the following:
   </p>
 </div>
 
- [1]: http://www.mobilexweb.com/blog/android-froyo-html5-accelerometer-flash-player
+[1]: http://www.mobilexweb.com/blog/android-froyo-html5-accelerometer-flash-player

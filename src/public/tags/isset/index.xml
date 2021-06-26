@@ -13,8 +13,7 @@
       <pubDate>Tue, 01 Dec 2009 00:00:00 +0000</pubDate>
       
       <guid>https://www.davidbcalhoun.com/2009/php-dealing-with-stuff-that-doesnt-exist/</guid>
-      <description>Introduction As the application you’re coding becomes more and more complex, there’s more of an opportunity for things to go wrong in all sorts of unforseen ways. One of these problems is variables or functions that don’t exist. The problem is when you code in such a way that you presuppose their existence. But their existence isn’t guaranteed!
-A simple case of this happening is when you’re dealing with user input.</description>
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ Introduction As the application you’re coding becomes more and more complex, there’s more of an opportunity for things to go wrong in all sorts of unforseen ways. One of these problems is variables or functions that don’t exist. The problem is when you code in such a way that you presuppose their existence. But their existence isn’t guaranteed!</description>
     </item>
     
   </channel>

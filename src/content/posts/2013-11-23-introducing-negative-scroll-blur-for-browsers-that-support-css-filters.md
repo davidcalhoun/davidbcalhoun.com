@@ -6,10 +6,12 @@ author: David
 layout: post
 permalink: /2013/introducing-negative-scroll-blur-for-browsers-that-support-css-filters
 tags:
-- javascript
-- demo
-- webdev
+  - javascript
+  - demo
+  - webdev
 ---
+
+## ⚠️ Warning: this is an old article and may include information that's out of date. ⚠️
 
 (2016: in retrospect, this is kind of gratuitous and doesn't appear to be fully working anymore...)
 
@@ -34,5 +36,5 @@ Note that there's an extra trick for iOS, which presents problems I had forgotte
 [Demo][1]  
 [Github][2]
 
- [1]: https://www.davidbcalhoun.com/a/_old%20mobile%20tests/negative-scroll-blur.html
- [2]: https://github.com/davidcalhoun/negative-scroll-blur
+[1]: https://www.davidbcalhoun.com/a/_old%20mobile%20tests/negative-scroll-blur.html
+[2]: https://github.com/davidcalhoun/negative-scroll-blur

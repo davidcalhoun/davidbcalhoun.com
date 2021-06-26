@@ -6,18 +6,22 @@ author: David
 layout: post
 permalink: /2010/server-side-console-log
 aliases:
-- /2010/server-side-console-log
+  - /2010/server-side-console-log
 tags:
-- javascript
-- webdev
+  - javascript
+  - webdev
 ---
+
+## ⚠️ Warning: this is an old article and may include information that's out of date. ⚠️
+
 ### The problem
 
 On the desktop we're quite privileged to have nice debugging tools such as Firebug and Web Inspector in Webkit-based browsers. But when it comes to mobile, debugging JavaScript with `console.log`.
 
 isn't quite as easy.
 
-Probably the best available tool on mobile at the moment is mobile Safari's console, which looks like the following when enabled (Settings -> Safari -> Developer -> Debug Console):  
+Probably the best available tool on mobile at the moment is mobile Safari's console, which looks like the following when enabled (Settings -> Safari -> Developer -> Debug Console):
+
 <div id="attachment_453" style="width: 710px" class="wp-caption aligncenter">
   <img src="http://davidbcalhoun.com/wp-content/uploads/2010/09/mobile-safari-console.png" alt="" title="mobile-safari-console" width="700" height="480" class="size-full wp-image-453" /><p class="wp-caption-text">
     Mobile Safari's debug console
@@ -63,47 +67,45 @@ Why not just send the contents of your console message to a server, and have it 
 The implementation is pretty simple. In JavaScript we have this code:
 
 ```js
-(function(){
+(function () {
+  // define console if not already defined
+  console || (console = {});
 
-// define console if not already defined
-console || (console = {});
+  // new toFile method
+  console.toFile = function (log) {
+    // variable declarations
+    var http, url, params;
 
-// new toFile method
-console.toFile = function(log) {
-  // variable declarations
-  var http, url, params;
-  
-  // might as well use the traditional console.log() as well
-  console.log(log);
-  
-  // ajax request
-  http = new XMLHttpRequest();
-  url = "//example.com/log.php";
-  params = "log=" + Date.now() + ' ' + escape(sanitize(log));
-  http.open("POST", url, true);
-  http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  http.send(params);
-}
+    // might as well use the traditional console.log() as well
+    console.log(log);
 
-// do something special if txt is an object
-var sanitize = function(txt) {
-  var output, x;
-  
-  if(typeof txt == 'object') {
-    // create a new object to get around circular references
-    output = {};
-    for(x in txt) {
+    // ajax request
+    http = new XMLHttpRequest();
+    url = "//example.com/log.php";
+    params = "log=" + Date.now() + " " + escape(sanitize(log));
+    http.open("POST", url, true);
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    http.send(params);
+  };
+
+  // do something special if txt is an object
+  var sanitize = function (txt) {
+    var output, x;
+
+    if (typeof txt == "object") {
+      // create a new object to get around circular references
+      output = {};
+      for (x in txt) {
         // type conversion of each element to a string
-        output[x] = txt[x] + '';
+        output[x] = txt[x] + "";
+      }
+      output = JSON.stringify(output, null, 2);
+    } else {
+      output = txt;
     }
-    output = JSON.stringify(output, null, 2);
-  } else {
-    output = txt;
-  }
-  
-  return output;
-}
 
+    return output;
+  };
 })();
 ```
 
@@ -133,7 +135,7 @@ tail -f console.log
 Once we have the above code in place, using the console is very simple:
 
 ```js
-console.toFile('hello world!');
+console.toFile("hello world!");
 console.toFile(navigator);
 ```
 
@@ -173,7 +175,7 @@ After running this code, you should see this pop up on your terminal:
 }
 ```
 
-Sweet! Now we can easily see console messages from *actual devices*. You can potentially use this code to log Events as they occur (on click or touch interactions) and view the actual x/y coordinate values as they're being detected on the device!
+Sweet! Now we can easily see console messages from _actual devices_. You can potentially use this code to log Events as they occur (on click or touch interactions) and view the actual x/y coordinate values as they're being detected on the device!
 
 ### Related
 
@@ -183,6 +185,6 @@ Alex Kessinger implemented a [similar concept with node.js running locally][2]
 
 It turns out that Joe Hewitt did this before me with his ["Firebug for iPhone"][3]. I have no idea why it took me so long to find this!
 
- [1]: http://developer.android.com/guide/developing/tools/adb.html
- [2]: http://alexkessinger.net/story/one-file-remote-consolelog-using-nodejs
- [3]: http://www.joehewitt.com/blog/firebug_for_iph.php
+[1]: http://developer.android.com/guide/developing/tools/adb.html
+[2]: http://alexkessinger.net/story/one-file-remote-consolelog-using-nodejs
+[3]: http://www.joehewitt.com/blog/firebug_for_iph.php

@@ -6,9 +6,11 @@ author: David
 layout: post
 permalink: /2010/what-happens-when-we-serve-javascript-with-random-mime-types
 tags:
-- javascript
-- webdev
+  - javascript
+  - webdev
 ---
+
+## ⚠️ Warning: this is an old article and may include information that's out of date. ⚠️
 
 ### Introduction
 
@@ -46,12 +48,12 @@ My index.html contains a little helper utility for each of these scripts to use:
 ```js
 var TEST = {
   node: document.body,
-  addMessage: function(message) {
-    var p = document.createElement('p');
+  addMessage: function (message) {
+    var p = document.createElement("p");
     p.innerHTML = message;
     this.node.appendChild(p);
-  }
-}
+  },
+};
 ```
 
 TEST.addMessage() is simply a glorified document.write. As each of the six scripts is run, they'll write out a message to the page essentially saying "I'm here! It worked!".
@@ -86,13 +88,13 @@ In my second test I instead changed the "type" attribute on the script tag itsel
 
 I only tested in Chrome, Safari, and Firefox, so the story might be different in IE. Anyhow, this is an edge case anyway and more of a test out of curiosity! It seems the way browsers handle caching in these instances is truly RESTful, that is, the current state of the file is determined entirely by the filename.
 
- [1]: http://www.dustindiaz.com/skinny-on-doctypes/
- [2]: http://themaingate.net/dev/html/all-you-need-is-doctype-html
- [3]: http://davidbcalhoun.com/2010/top-ten-things-html5-makes-simpler
- [4]: http://dev.w3.org/html5/spec/Overview.html#script
- [5]: http://yui.yahooapis.com/3.2.0/build/yui/yui-min.js
- [6]: http://code.jquery.com/jquery-1.4.3.min.js
- [7]: https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js
- [8]: http://browsershots.org/
- [9]: http://twitter.com/#!/paul_irish/status/29416115232
- [10]: http://twitter.com/#!/bluesmoon/status/29418676869
+[1]: http://www.dustindiaz.com/skinny-on-doctypes/
+[2]: http://themaingate.net/dev/html/all-you-need-is-doctype-html
+[3]: http://davidbcalhoun.com/2010/top-ten-things-html5-makes-simpler
+[4]: http://dev.w3.org/html5/spec/Overview.html#script
+[5]: http://yui.yahooapis.com/3.2.0/build/yui/yui-min.js
+[6]: http://code.jquery.com/jquery-1.4.3.min.js
+[7]: https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js
+[8]: http://browsershots.org/
+[9]: http://twitter.com/#!/paul_irish/status/29416115232
+[10]: http://twitter.com/#!/bluesmoon/status/29418676869

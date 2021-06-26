@@ -21,17 +21,20 @@ tags:
   - webdev
 ---
 
+## ⚠️ Warning: this is an old article and may include information that's out of date. ⚠️
+
 General word of caution: not all of these HTML5 simplifications are compatible with older browsers. Test it for yourself before implementing!
 
 ### 1. The doctype
 
 #### Old
+
 ```html
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
-"http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 ```
 
 #### New
+
 ```html
 <!DOCTYPE html>
 ```
@@ -39,24 +42,27 @@ General word of caution: not all of these HTML5 simplifications are compatible w
 ### 2. charset
 
 #### Old
+
 ```html
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 ```
 
 #### New
-```html
-<meta charset="utf-8">
-```
 
+```html
+<meta charset="utf-8" />
+```
 
 ### 3. The link tag’s `type` attribute
 
 #### Old
+
 ```html
 <link href="style.css" type="text/css" rel="stylesheet" />
 ```
 
 #### New
+
 ```html
 <link href="style.css" rel="stylesheet" />
 ```
@@ -72,11 +78,13 @@ The spec then goes on to state that the browser must effectively determine the t
 ### 4. The script tag’s `type` attribute
 
 #### Old
+
 ```html
 <script src="script.js" type="text/javascript"></script>
 ```
 
 #### New
+
 ```html
 <script src="script.js"></script>
 ```
@@ -84,7 +92,7 @@ The spec then goes on to state that the browser must effectively determine the t
 According the the W3C, if the `type` attribute isn’t present, it should default to `text/javascript`:
 
 > The type attribute gives the language of the script or format of the data. If the attribute is present, its value must be a valid MIME type. The charset parameter must not be specified. The default, which is used if the attribute is absent, is “text/javascript”.
-> 
+>
 > -[W3C HTML5 spec](http://w3c.github.io/html/#script)
 
 ### 5. The script tag’s `async` and `defer` attributes
@@ -109,10 +117,10 @@ Believe it or not, this attribute was first implemented in IE4! It tells the bro
 
 ### 6. placeholder and autofocus attributes
 
-The `placeholder` attribute can be added to `input` and `textarea` elements.  This is a piece of interaction that was originally accomplished with a bit of JavaScript: placeholder text (usually gray in appearance) appears in a text field, but disappears when the user focuses on it (and reappears if the user moves focus without typing any text).
+The `placeholder` attribute can be added to `input` and `textarea` elements. This is a piece of interaction that was originally accomplished with a bit of JavaScript: placeholder text (usually gray in appearance) appears in a text field, but disappears when the user focuses on it (and reappears if the user moves focus without typing any text).
 
 ```html
-<input type="text" placeholder="Search">
+<input type="text" placeholder="Search" />
 <textarea type="text" placeholder="Search"></textarea>
 ```
 
@@ -142,7 +150,6 @@ localStorage.userName = "Biff Tannen";
 sessionStorage.userMood = "Angry";
 ```
 
-
 ### 8. Caching
 
 Traditionally, you could only control caching on your website through primarily headers (Cache-Control and Expires headers). Now through the use of the [cache manifest](http://diveintohtml5.org/offline.html), developers have more control over which components they want to be cached. Theoretically, controlling this caching is now as easy as changing one file (instead of having to change server configurations and such).
@@ -150,7 +157,8 @@ Traditionally, you could only control caching on your website through primarily 
 Setting up the cache manifest is relatively easy:
 
 1. Add this line to your `.htaccess` file or Apache configuration: `AddType text/cache-manifest .manifest`
-1. Create a file. For this example we’ll call it `cache.manifest`.  This file contains a list of files that should be cached:
+1. Create a file. For this example we’ll call it `cache.manifest`. This file contains a list of files that should be cached:
+
 ```
 CACHE MANIFEST
 # version 1
@@ -158,7 +166,9 @@ CACHE MANIFEST
 /script.js
 /image.jpg
 ```
+
 1. Add the manifest attribute on the `html` element, pointing to your `cache.manifest` file:
+
 ```js
 <html manifest="/cache.manifest">
 ```
@@ -174,20 +184,21 @@ CACHE MANIFEST
 ```
 
 ### 9. Form input validation
+
 HTML5 has a ton of new features for forms, one of which is handy form validation which requires no JavaScript. In the days before Ajax, form validation was perhaps the most useful feature of JavaScript, giving developers the ability to prevent unnecessary roundtrips to the server for forms with incomplete or invalid data.
 
 Now you can use the `required` attribute to make sure a particular input is filled out. The browser won’t send the form without the completed input:
 
 ```html
-<input type="text" name="email" required>
+<input type="text" name="email" required />
 ```
 
 There’s much more to be said about improvements to forms in general, in addition to some other handy form validation tools such as the [`min` and `max` attributes](http://dev.w3.org/html5/spec/Overview.html#the-min-and-max-attributes) and the [`pattern` attribute](http://dev.w3.org/html5/spec/Overview.html#the-placeholder-attribute).
 
-
 ### 10. Video (and [audio](http://html5doctor.com/native-audio-in-the-browser/))
 
 #### Old
+
 The old way - a common example using a Flash container in an object:
 
 ```html
@@ -199,6 +210,7 @@ The old way - a common example using a Flash container in an object:
 ```
 
 #### New
+
 ```html
 <video id="movie" width="500" height="350" controls>
   <source src="movie.mp4" />
@@ -225,5 +237,6 @@ Also, here’s an example with a Flash fallback (read more [here](http://diveint
 ```
 
 ### Related
-* [Basic HTML5 template](https://www.davidbcalhoun.com/2010/basic-html5-template)
-* [W3C: HTML5 differences](http://www.w3.org/TR/html5-diff/)
+
+- [Basic HTML5 template](https://www.davidbcalhoun.com/2010/basic-html5-template)
+- [W3C: HTML5 differences](http://www.w3.org/TR/html5-diff/)

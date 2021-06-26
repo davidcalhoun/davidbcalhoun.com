@@ -245,7 +245,8 @@
 </article>
 
 
-    <div class="text-justify"><p>I stumbled across this concept recently and I thought I&rsquo;d share it, because I don&rsquo;t generally see this pattern being used. More importantly, I also share test results that show that maybe it&rsquo;s not always a good idea to use this pattern&hellip;</p>
+    <div class="text-justify"><h2 id="-warning-this-is-an-old-article-and-may-include-information-thats-out-of-date-">⚠️ Warning: this is an old article and may include information that&rsquo;s out of date. ⚠️</h2>
+<p>I stumbled across this concept recently and I thought I&rsquo;d share it, because I don&rsquo;t generally see this pattern being used. More importantly, I also share test results that show that maybe it&rsquo;s not always a good idea to use this pattern&hellip;</p>
 <h3 id="the-problem-with-switch-statements">The problem with Switch statements</h3>
 <p>The basic switch statement in JavaScript looks something like this:</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
@@ -266,17 +267,17 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">foo</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;c&#39;</span>;
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">foo</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;c&#34;</span>;
 
-<span style="color:#66d9ef">switch</span>(<span style="color:#a6e22e">foo</span>) {
-  <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;a&#39;</span><span style="color:#f92672">:</span>
-  <span style="color:#66d9ef">break</span>;
+<span style="color:#66d9ef">switch</span> (<span style="color:#a6e22e">foo</span>) {
+  <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;a&#34;</span><span style="color:#f92672">:</span>
+    <span style="color:#66d9ef">break</span>;
 
-  <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;b&#39;</span><span style="color:#f92672">:</span>
-  <span style="color:#66d9ef">break</span>;
+  <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;b&#34;</span><span style="color:#f92672">:</span>
+    <span style="color:#66d9ef">break</span>;
 
-  <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#39;c&#39;</span><span style="color:#f92672">:</span>
-  <span style="color:#66d9ef">break</span>;
+  <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;c&#34;</span><span style="color:#f92672">:</span>
+    <span style="color:#66d9ef">break</span>;
 
   <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
 }
@@ -310,21 +311,21 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">foo</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;c&#39;</span>;
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">foo</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;c&#34;</span>;
 <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">cases</span> <span style="color:#f92672">=</span> {};
-<span style="color:#a6e22e">cases</span>[<span style="color:#e6db74">&#39;a&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
-  <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;I am A!&#39;</span>);
+<span style="color:#a6e22e">cases</span>[<span style="color:#e6db74">&#34;a&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+  <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#34;I am A!&#34;</span>);
 };
-<span style="color:#a6e22e">cases</span>[<span style="color:#e6db74">&#39;b&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
-  <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;I am B!&#39;</span>);
+<span style="color:#a6e22e">cases</span>[<span style="color:#e6db74">&#34;b&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+  <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#34;I am B!&#34;</span>);
 };
-<span style="color:#a6e22e">cases</span>[<span style="color:#e6db74">&#39;c&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
-  <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;I am C!&#39;</span>);
-}
+<span style="color:#a6e22e">cases</span>[<span style="color:#e6db74">&#34;c&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+  <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#34;I am C!&#34;</span>);
+};
 
-<span style="color:#66d9ef">if</span>(<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">cases</span>[<span style="color:#a6e22e">foo</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;function&#39;</span>) {
+<span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">cases</span>[<span style="color:#a6e22e">foo</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;function&#34;</span>) {
   <span style="color:#75715e">// only executes if we&#39;ve defined it above
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">cases</span>[<span style="color:#a6e22e">foo</span>]();  <span style="color:#75715e">// I am C!
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">cases</span>[<span style="color:#a6e22e">foo</span>](); <span style="color:#75715e">// I am C!
 </span><span style="color:#75715e"></span>} <span style="color:#66d9ef">else</span> {
   <span style="color:#75715e">// default (the fallthrough)
 </span><span style="color:#75715e"></span>}

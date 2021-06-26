@@ -6,10 +6,12 @@ author: David
 layout: post
 permalink: /2010/basic-html5-template
 tags:
-- html
-- html5
-- webdev
+  - html
+  - html5
+  - webdev
 ---
+
+## ⚠️ Warning: this is an old article and may include information that's out of date. ⚠️
 
 ### Introduction
 
@@ -18,34 +20,33 @@ Often times I end up creating short pages for testing short pieces of code, and 
 ### The code
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8"/>
-  <title></title>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
-  <link rel="stylesheet" href=""/>
-</head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
+    <link rel="stylesheet" href="" />
+  </head>
 
-<body>
-  <header>
-  </header>
+  <body>
+    <header></header>
 
-  <div>
-  </div>
+    <div></div>
 
-  <footer>
-  </footer>
+    <footer></footer>
 
-  <script src=""></script>
-</body>
-
+    <script src=""></script>
+  </body>
 </html>
 ```
 
 Edit: Self-closed tags for compatibility.  
 Edit2: removed `type="text/css"` from the link tag
 
- [1]: http://html5boilerplate.com/
- [2]: http://remysharp.com/2009/01/07/html5-enabling-script/
+[1]: http://html5boilerplate.com/
+[2]: http://remysharp.com/2009/01/07/html5-enabling-script/

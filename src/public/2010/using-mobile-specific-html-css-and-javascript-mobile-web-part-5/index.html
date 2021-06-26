@@ -285,7 +285,8 @@
 </article>
 
 
-    <div class="text-justify"><p><em>(updated June 27, 2011)</em></p>
+    <div class="text-justify"><h2 id="-warning-this-is-an-old-article-and-may-include-information-thats-out-of-date-">⚠️ Warning: this is an old article and may include information that&rsquo;s out of date. ⚠️</h2>
+<p><em>(updated June 27, 2011)</em></p>
 <h3 id="mobile-specific-html">Mobile-specific HTML</h3>
 <h4 id="viewport-tag">Viewport tag</h4>
 <p>Use the <a href="http://davidbcalhoun.com/2010/viewport-metatag">viewport tag</a> to properly fit the content to the screen:</p>
@@ -294,7 +295,7 @@
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span>/&gt;
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;viewport&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width=device-width, initial-scale=1.0&#34;</span> /&gt;
 </code></pre></td></tr></table>
 </div>
 </div><h4 id="tel-scheme2-to-initiate-phone-calls"><a href="http://www.rfc-editor.org/rfc/rfc3966.txt">Tel scheme</a> (to initiate phone calls)</h4>
@@ -303,7 +304,7 @@
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">    &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tel:18005555555&#34;</span>&gt;Call us at 1-800-555-5555&lt;/<span style="color:#f92672">a</span>&gt;
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;tel:18005555555&#34;</span>&gt;Call us at 1-800-555-5555&lt;/<span style="color:#f92672">a</span>&gt;
 </code></pre></td></tr></table>
 </div>
 </div><h4 id="sms-scheme3-to-initiate-text-messages"><a href="http://www.rfc-editor.org/rfc/rfc5724.txt">Sms scheme</a> (to initiate text messages)</h4>
@@ -312,11 +313,21 @@
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">    &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sms:18005555555&#34;</span>&gt;
-    &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sms:18005555555,18005555556&#34;</span>&gt;                <span style="color:#75715e">&lt;!-- multiple recipients --&gt;</span>
-    &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sms:18005555555?body=Text%20goes%20here&#34;</span>&gt;    <span style="color:#75715e">&lt;!-- predefined message body --&gt;</span>
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sms:18005555555&#34;</span>&gt;
+  &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sms:18005555555,18005555556&#34;</span>&gt;
+    <span style="color:#75715e">&lt;!-- multiple recipients --&gt;</span>
+    &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sms:18005555555?body=Text%20goes%20here&#34;</span>&gt;
+      <span style="color:#75715e">&lt;!-- predefined message body --&gt;</span>&lt;/<span style="color:#f92672">a</span>
+    &gt;&lt;/<span style="color:#f92672">a</span>
+  &gt;&lt;/<span style="color:#f92672">a</span>
+&gt;
 </code></pre></td></tr></table>
 </div>
 </div><h4 id="disable-automatic-telephone-number-linking">Disable automatic telephone number linking</h4>
@@ -325,7 +336,7 @@
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;format-detection&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;telephone=no&#34;</span>&gt;
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;format-detection&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;telephone=no&#34;</span> /&gt;
 </code></pre></td></tr></table>
 </div>
 </div><h4 id="ios-specific-html-some-work-on-android-as-well">iOS-specific HTML (some work on Android as well)</h4>
@@ -354,26 +365,26 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">    <span style="color:#75715e">&lt;!-- iOS 1.1.3+: this is the icon that&#39;s used when the user adds your app to the home screen --&gt;</span>
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!-- iOS 1.1.3+: this is the icon that&#39;s used when the user adds your app to the home screen --&gt;</span>
 
-    <span style="color:#75715e">&lt;!-- also works on Android! --&gt;</span>
-    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;apple-touch-icon&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;icon.png&#34;</span> /&gt;
+<span style="color:#75715e">&lt;!-- also works on Android! --&gt;</span>
+&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;apple-touch-icon&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;icon.png&#34;</span> /&gt;
 
-    <span style="color:#75715e">&lt;!-- iOS 2.0+: tell iOS not to apply any glare effects to the icon --&gt;</span>
-    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;apple-touch-icon-precomposed&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;icon.png&#34;</span> /&gt;
+<span style="color:#75715e">&lt;!-- iOS 2.0+: tell iOS not to apply any glare effects to the icon --&gt;</span>
+&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;apple-touch-icon-precomposed&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;icon.png&#34;</span> /&gt;
 
-    <span style="color:#75715e">&lt;!-- iOS 4.2+ icons for different resolutions --&gt;</span>
-    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;apple-touch-icon&#34;</span> <span style="color:#a6e22e">sizes</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;72x72&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;touch-icon-ipad.png&#34;</span> /&gt;
-    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;apple-touch-icon&#34;</span> <span style="color:#a6e22e">sizes</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;114x114&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;touch-icon-iphone4.png&#34;</span> /&gt;
+<span style="color:#75715e">&lt;!-- iOS 4.2+ icons for different resolutions --&gt;</span>
+&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;apple-touch-icon&#34;</span> <span style="color:#a6e22e">sizes</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;72x72&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;touch-icon-ipad.png&#34;</span> /&gt;
+&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;apple-touch-icon&#34;</span> <span style="color:#a6e22e">sizes</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;114x114&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;touch-icon-iphone4.png&#34;</span> /&gt;
 
-    <span style="color:#75715e">&lt;!-- iOS 3+: full-screen startup splash screen image (must be 320x460) --&gt;</span>
-    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;apple-touch-startup-image&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;startup.png&#34;</span> /&gt;
+<span style="color:#75715e">&lt;!-- iOS 3+: full-screen startup splash screen image (must be 320x460) --&gt;</span>
+&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;apple-touch-startup-image&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;startup.png&#34;</span> /&gt;
 
-    <span style="color:#75715e">&lt;!-- enable full-screen mode (only when launched from home screen) --&gt;</span>
-    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;apple-mobile-web-app-capable&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;yes&#34;</span> /&gt;
+<span style="color:#75715e">&lt;!-- enable full-screen mode (only when launched from home screen) --&gt;</span>
+&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;apple-mobile-web-app-capable&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;yes&#34;</span> /&gt;
 
-    <span style="color:#75715e">&lt;!-- controls the appearance of the status bar in full-screen mode --&gt;</span>
-    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;apple-mobile-web-app-status-bar-style&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;black&#34;</span> /&gt;
+<span style="color:#75715e">&lt;!-- controls the appearance of the status bar in full-screen mode --&gt;</span>
+&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;apple-mobile-web-app-status-bar-style&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;black&#34;</span> /&gt;
 </code></pre></td></tr></table>
 </div>
 </div><h4 id="turn-off-autocorrect-autocomplete-and-autocapitalize">Turn off autocorrect, autocomplete, and autocapitalize</h4>
@@ -383,7 +394,7 @@
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">autocorrect</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;off&#34;</span> <span style="color:#a6e22e">autocomplete</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;off&#34;</span> <span style="color:#a6e22e">autocapitalize</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;off&#34;</span>&gt;
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">autocorrect</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;off&#34;</span> <span style="color:#a6e22e">autocomplete</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;off&#34;</span> <span style="color:#a6e22e">autocapitalize</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;off&#34;</span> /&gt;
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="mobile-specific-css">Mobile-specific CSS</h3>
@@ -397,9 +408,9 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">    <span style="color:#f92672">div</span> {
-      <span style="color:#66d9ef">-webkit-</span>overflow-scrolling: touch;
-    }
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">div</span> {
+  <span style="color:#66d9ef">-webkit-</span>overflow-scrolling: touch;
+}
 </code></pre></td></tr></table>
 </div>
 </div><h4 id="media-queries">Media queries</h4>
@@ -411,21 +422,33 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">    @<span style="color:#66d9ef">media</span> <span style="color:#f92672">all</span> <span style="color:#f92672">and</span> <span style="color:#f92672">(</span><span style="color:#f92672">orientation</span><span style="color:#f92672">:</span> <span style="color:#f92672">portrait</span><span style="color:#f92672">)</span> {
-      <span style="color:#f92672">body</span> { }
-      <span style="color:#f92672">div</span> { }
-    }
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">@<span style="color:#66d9ef">media</span> <span style="color:#f92672">all</span> <span style="color:#f92672">and</span> <span style="color:#f92672">(</span><span style="color:#f92672">orientation</span><span style="color:#f92672">:</span> <span style="color:#f92672">portrait</span><span style="color:#f92672">)</span> {
+  <span style="color:#f92672">body</span> {
+  }
+  <span style="color:#f92672">div</span> {
+  }
+}
 </code></pre></td></tr></table>
 </div>
 </div><p>Here&rsquo;s the same media query using the other method, which points to an external stylesheet (not recommended):</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">media</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;all and (orientation: portrait)&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;portrait.css&#34;</span> /&gt;
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">link</span>
+  <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span>
+  <span style="color:#a6e22e">media</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;all and (orientation: portrait)&#34;</span>
+  <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;portrait.css&#34;</span>
+/&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p>This is not recommended because it creates an additional HTTP request (bad for performance). Also, in the case of screen orientation, the separate CSS stylesheet is NOT downloaded when the screen is rotated.</p>
@@ -450,26 +473,34 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">    <span style="color:#f92672">//</span> <span style="color:#f92672">target</span> <span style="color:#f92672">small</span> <span style="color:#f92672">screens</span> <span style="color:#f92672">(</span><span style="color:#f92672">mobile</span> <span style="color:#f92672">devices</span> <span style="color:#f92672">or</span> <span style="color:#f92672">small</span> <span style="color:#f92672">desktop</span> <span style="color:#f92672">windows</span><span style="color:#f92672">)</span>
-    @<span style="color:#66d9ef">media</span> <span style="color:#f92672">only</span> <span style="color:#f92672">screen</span> <span style="color:#f92672">and</span> <span style="color:#f92672">(</span><span style="color:#f92672">max-width</span><span style="color:#f92672">:</span> <span style="color:#f92672">480px</span><span style="color:#f92672">)</span> {
-      <span style="color:#75715e">/* CSS goes here */</span>
-    }
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">//</span> <span style="color:#f92672">target</span> <span style="color:#f92672">small</span> <span style="color:#f92672">screens</span> <span style="color:#f92672">(</span><span style="color:#f92672">mobile</span> <span style="color:#f92672">devices</span> <span style="color:#f92672">or</span> <span style="color:#f92672">small</span> <span style="color:#f92672">desktop</span> <span style="color:#f92672">windows</span><span style="color:#f92672">)</span>
+@<span style="color:#66d9ef">media</span> <span style="color:#f92672">only</span> <span style="color:#f92672">screen</span> <span style="color:#f92672">and</span> <span style="color:#f92672">(</span><span style="color:#f92672">max-width</span><span style="color:#f92672">:</span> <span style="color:#f92672">480px</span><span style="color:#f92672">)</span> {
+  <span style="color:#75715e">/* CSS goes here */</span>
+}
 
-    <span style="color:#75715e">/* high resolution screens */</span>
-    @<span style="color:#66d9ef">media</span> <span style="color:#f92672">(</span><span style="color:#f92672">-webkit-min-device-pixel-ratio</span><span style="color:#f92672">:</span> <span style="color:#f92672">2</span><span style="color:#f92672">),</span>
-                 <span style="color:#f92672">(</span><span style="color:#f92672">min--moz-device-pixel-ratio</span><span style="color:#f92672">:</span> <span style="color:#f92672">2</span><span style="color:#f92672">),</span>
-                 <span style="color:#f92672">(</span><span style="color:#f92672">min-resolution</span><span style="color:#f92672">:</span> <span style="color:#f92672">300dpi</span><span style="color:#f92672">)</span> {
-      <span style="color:#f92672">header</span> { <span style="color:#66d9ef">background-image</span>: url(<span style="color:#e6db74">header-highres.png</span>); }
-    }
+<span style="color:#75715e">/* high resolution screens */</span>
+@<span style="color:#66d9ef">media</span> <span style="color:#f92672">(</span><span style="color:#f92672">-webkit-min-device-pixel-ratio</span><span style="color:#f92672">:</span> <span style="color:#f92672">2</span><span style="color:#f92672">),</span>
+  <span style="color:#f92672">(</span><span style="color:#f92672">min--moz-device-pixel-ratio</span><span style="color:#f92672">:</span> <span style="color:#f92672">2</span><span style="color:#f92672">),</span>
+  <span style="color:#f92672">(</span><span style="color:#f92672">min-resolution</span><span style="color:#f92672">:</span> <span style="color:#f92672">300dpi</span><span style="color:#f92672">)</span> {
+  <span style="color:#f92672">header</span> {
+    <span style="color:#66d9ef">background-image</span>: url(<span style="color:#e6db74">header-highres.png</span>);
+  }
+}
 
-    <span style="color:#75715e">/* low resolution screens */</span>
-    @<span style="color:#66d9ef">media</span> <span style="color:#f92672">(</span><span style="color:#f92672">-webkit-max-device-pixel-ratio</span><span style="color:#f92672">:</span> <span style="color:#f92672">1</span>.<span style="color:#a6e22e">5</span><span style="color:#f92672">),</span>
-                 <span style="color:#f92672">(</span><span style="color:#f92672">max--moz-device-pixel-ratio</span><span style="color:#f92672">:</span> <span style="color:#f92672">1</span>.<span style="color:#a6e22e">5</span><span style="color:#f92672">),</span>
-                 <span style="color:#f92672">(</span><span style="color:#f92672">max-resolution</span><span style="color:#f92672">:</span> <span style="color:#f92672">299dpi</span><span style="color:#f92672">)</span> {
-      <span style="color:#f92672">header</span> { <span style="color:#66d9ef">background-image</span>: url(<span style="color:#e6db74">header-lowres.png</span>); }
-    }
+<span style="color:#75715e">/* low resolution screens */</span>
+@<span style="color:#66d9ef">media</span> <span style="color:#f92672">(</span><span style="color:#f92672">-webkit-max-device-pixel-ratio</span><span style="color:#f92672">:</span> <span style="color:#f92672">1</span>.<span style="color:#a6e22e">5</span><span style="color:#f92672">),</span>
+  <span style="color:#f92672">(</span><span style="color:#f92672">max--moz-device-pixel-ratio</span><span style="color:#f92672">:</span> <span style="color:#f92672">1</span>.<span style="color:#a6e22e">5</span><span style="color:#f92672">),</span>
+  <span style="color:#f92672">(</span><span style="color:#f92672">max-resolution</span><span style="color:#f92672">:</span> <span style="color:#f92672">299dpi</span><span style="color:#f92672">)</span> {
+  <span style="color:#f92672">header</span> {
+    <span style="color:#66d9ef">background-image</span>: url(<span style="color:#e6db74">header-lowres.png</span>);
+  }
+}
 </code></pre></td></tr></table>
 </div>
 </div><p>Read more: <a href="https://developer.mozilla.org/en/css/media_queries">Media queries (Mozilla Developer Center)</a></p>
@@ -499,9 +530,9 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">connection</span>.<span style="color:#a6e22e">type</span><span style="color:#f92672">==</span><span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">connection</span>.<span style="color:#a6e22e">WIFI</span>) {
-      <span style="color:#75715e">// code for WiFi connections (high-bandwidth)
-</span><span style="color:#75715e"></span>    }
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">connection</span>.<span style="color:#a6e22e">type</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">connection</span>.<span style="color:#a6e22e">WIFI</span>) {
+  <span style="color:#75715e">// code for WiFi connections (high-bandwidth)
+</span><span style="color:#75715e"></span>}
 </code></pre></td></tr></table>
 </div>
 </div><h4 id="windowdevicepixelratio"><code>window.devicePixelRatio</code></h4>

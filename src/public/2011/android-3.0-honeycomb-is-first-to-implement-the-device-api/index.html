@@ -229,7 +229,8 @@
 </article>
 
 
-    <div class="text-justify"><p>I fired up the newly released Android 3.0 SDK to run some tests and found they&rsquo;ve implemented part of the long-awaited <a href="http://www.w3.org/2009/dap/">Device API</a> (aka the Media Capture API). From your browser you can now upload pictures and videos from the camera as well as sounds from the microphone. The returned data should be available to manipulate via the <a href="http://www.w3.org/TR/FileAPI/">File API</a> (although I haven&rsquo;t yet tested this).</p>
+    <div class="text-justify"><h2 id="-warning-this-is-an-old-article-and-may-include-information-thats-out-of-date-">⚠️ Warning: this is an old article and may include information that&rsquo;s out of date. ⚠️</h2>
+<p>I fired up the newly released Android 3.0 SDK to run some tests and found they&rsquo;ve implemented part of the long-awaited <a href="http://www.w3.org/2009/dap/">Device API</a> (aka the Media Capture API). From your browser you can now upload pictures and videos from the camera as well as sounds from the microphone. The returned data should be available to manipulate via the <a href="http://www.w3.org/TR/FileAPI/">File API</a> (although I haven&rsquo;t yet tested this).</p>
 <h3 id="video">Video</h3>
 <p>I made a <a href="http://www.youtube.com/watch?v=L1XqvLOi-3I">short video demo</a> with some explanation:</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/L1XqvLOi-3I" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -255,13 +256,13 @@
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">enctype</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;multipart/form-data&#34;</span> <span style="color:#a6e22e">method</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;post&#34;</span>&gt;
   &lt;<span style="color:#f92672">h2</span>&gt;Regular file upload&lt;/<span style="color:#f92672">h2</span>&gt;
   &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file&#34;</span>&gt;&lt;/<span style="color:#f92672">input</span>&gt;
-  
+
   &lt;<span style="color:#f92672">h2</span>&gt;capture=camera&lt;/<span style="color:#f92672">h2</span>&gt;
   &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file&#34;</span> <span style="color:#a6e22e">accept</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;image/*;capture=camera&#34;</span>&gt;&lt;/<span style="color:#f92672">input</span>&gt;
-  
+
   &lt;<span style="color:#f92672">h2</span>&gt;capture=camcorder&lt;/<span style="color:#f92672">h2</span>&gt;
   &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file&#34;</span> <span style="color:#a6e22e">accept</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;video/*;capture=camcorder&#34;</span>&gt;&lt;/<span style="color:#f92672">input</span>&gt;
-  
+
   &lt;<span style="color:#f92672">h2</span>&gt;capture=microphone&lt;/<span style="color:#f92672">h2</span>&gt;
   &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;file&#34;</span> <span style="color:#a6e22e">accept</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;audio/*;capture=microphone&#34;</span>&gt;&lt;/<span style="color:#f92672">input</span>&gt;
 &lt;/<span style="color:#f92672">form</span>&gt;

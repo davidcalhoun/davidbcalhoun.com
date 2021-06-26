@@ -6,9 +6,11 @@ author: David
 layout: post
 permalink: /2011/what-is-a-closure-in-javascript
 tags:
-- javascript
-- webdev
+  - javascript
+  - webdev
 ---
+
+## ⚠️ Warning: this is an old article and may include information that's out of date. ⚠️
 
 ### Intro
 
@@ -36,16 +38,16 @@ a;  // 1 (global scope)
 But when people get excited about closures, they're not really talking about the example above, but about the ability for functional variables to outlive their original functional scope:
 
 ```js
-var b = function() {
-  var myPrivateVar = 'Foo';
-  var myPublicVar = 'Bar';
+var b = function () {
+  var myPrivateVar = "Foo";
+  var myPublicVar = "Bar";
 
   return myPublicVar;
 };
 
-b();  // 'Bar'
-myPrivateVar;  // ERROR (not defined, because it was only defined in functional scope and is trying to be accessed from the global [window] scope)
-myPublicVar;   // ERROR (not defined)
+b(); // 'Bar'
+myPrivateVar; // ERROR (not defined, because it was only defined in functional scope and is trying to be accessed from the global [window] scope)
+myPublicVar; // ERROR (not defined)
 ```
 
 But note that the original method name (myPublicVar) isn't available - but the value IS available from what we exposed to the global scope through the variable &#8216;b'.
@@ -57,40 +59,42 @@ How is this useful? This turns out to be the foundation for the Module Pattern i
 So in essence this is the module pattern, with both private and public properties and methods:
 
 ```js
-var myAPI = (function() {
-  var privateProperty = 'Foo';
-  var publicProperty = 'Bar';
+var myAPI = (function () {
+  var privateProperty = "Foo";
+  var publicProperty = "Bar";
 
-  var privateMethod = function() {
-    alert('I can only be executed from the scope of myAPI');
+  var privateMethod = function () {
+    alert("I can only be executed from the scope of myAPI");
   };
 
-  var publicMethod = function() {
-    alert('I am publicly accessible (through the global scope) because a reference to publicMethod is returned by myAPI');
+  var publicMethod = function () {
+    alert(
+      "I am publicly accessible (through the global scope) because a reference to publicMethod is returned by myAPI"
+    );
   };
 
   // set up an object whose own property names (on the left) match the references to the internal, functionally-scoped methods (on the right)
   var publicStuff = {
     publicProperty: publicProperty,
-    publicMethod: publicMethod
+    publicMethod: publicMethod,
   };
 
   // return our public object (myAPI is now equal to this object)
   return publicStuff;
-})();   // immediately execute myAPI as a function, which returns an object that contains pointers to stuff in myAPI, which is exposed through myAPI.x, myAPI.y, etc
+})(); // immediately execute myAPI as a function, which returns an object that contains pointers to stuff in myAPI, which is exposed through myAPI.x, myAPI.y, etc
 ```
 
 By the time we reach the last line of the above script, the function has stopped executing, but some original pieces of the function still live on! Because some references to functional variables were returned by the function, we can now access these through the "namespace" myAPI:
 
 ```js
-myAPI.publicProperty;  // 'Bar'
+myAPI.publicProperty; // 'Bar'
 myAPI.publicMethod(); // (alert: 'I am publicly accessible'...)
 ```
 
 But those variables that were not exposed are of course not accessible:
 
 ```js
-myAPI.privateProperty;  // error (not defined)
+myAPI.privateProperty; // error (not defined)
 myAPI.privateMethod(); // error (not defined)
 ```
 
@@ -99,24 +103,24 @@ myAPI.privateMethod(); // error (not defined)
 Exposed public methods still have the context of the original function, meaning that they have access to all the function's variables, public and private:
 
 ```js
-var myAPI = (function(){
-  var privateProperty = 'Foo';
+var myAPI = (function () {
+  var privateProperty = "Foo";
 
-  var publicFunction = function() {
+  var publicFunction = function () {
     // this function has access to privateProperty because it's in the same scope, even after the main function stops executing!
     return privateProperty;
   };
-  
+
   // create a new object and return it
   return {
-    publicFunction: publicFunction
+    publicFunction: publicFunction,
   };
 })();
 
-privateProperty;         // ERROR (not defined)
-myAPI.publicFunction();  // 'Foo'
+privateProperty; // ERROR (not defined)
+myAPI.publicFunction(); // 'Foo'
 ```
 
 There's definitely more to be said here, but hopefully this helps!
 
- [1]: http://www.reddit.com/r/javascript/comments/eti86/can_somebody_explain_closures_to_me/c1atir1
+[1]: http://www.reddit.com/r/javascript/comments/eti86/can_somebody_explain_closures_to_me/c1atir1

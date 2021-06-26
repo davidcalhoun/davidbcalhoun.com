@@ -13,10 +13,9 @@
       <pubDate>Fri, 10 Aug 2012 00:00:00 +0000</pubDate>
       
       <guid>https://www.davidbcalhoun.com/2012/more-fun-with-webkit-pseudoelements-webkit-search-cancel-button-or-pseudoclass-inception/</guid>
-      <description>Introduction UPDATE 2016: this appears to have even less support than before, and it&amp;rsquo;s not recommended to be used on a production site. Use a helper JS library instead.
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ Introduction UPDATE 2016: this appears to have even less support than before, and it&amp;rsquo;s not recommended to be used on a production site. Use a helper JS library instead.
 (check out the Demo)
-A while back I had a bit of a field day messing around with input type=&amp;ldquo;range&amp;rdquo;, trying to replicate the &amp;ldquo;unlock slider&amp;rdquo; on iOS using CSS, targeting special WebKit-only CSS pseudoelements such as webkit-slider-thumb.
-Well, now I&amp;rsquo;m at it again, this time with a much simpler use case, trying to implement a custom &amp;ldquo;clear&amp;rdquo; button on search field inputs (note that this only works on input type=&amp;ldquo;search&amp;rdquo;):</description>
+A while back I had a bit of a field day messing around with input type=&amp;ldquo;range&amp;rdquo;, trying to replicate the &amp;ldquo;unlock slider&amp;rdquo; on iOS using CSS, targeting special WebKit-only CSS pseudoelements such as webkit-slider-thumb.</description>
     </item>
     
   </channel>

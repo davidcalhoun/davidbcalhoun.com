@@ -6,12 +6,15 @@ author: David
 layout: post
 permalink: /2013/comparison-of-mobile-image-search-sites
 aliases:
-- /2013/comparison-of-mobile-image-search-sites/
+  - /2013/comparison-of-mobile-image-search-sites/
 tags:
-- mobile
-- design
-- webdev
+  - mobile
+  - design
+  - webdev
 ---
+
+## ⚠️ Warning: this is an old article and may include information that's out of date. ⚠️
+
 The other day I glanced at a classmate using [Baidu][1] to perform an image search and was impressed with their presentation:
 
 [<img src="https://www.davidbcalhoun.com/wp-content/uploads/2013/05/baidu-mobile-image-search.jpg" alt="Baidu mobile image search" width="320" height="480" class="aligncenter size-full wp-image-1163" />][2]
@@ -64,10 +67,10 @@ This is certainly the worst out of the bunch. It's a real waste of space, with s
 
 I think this is just due to the website's age. Flickr's mobile website is much neglected and is showing its age. I would be really nice to see updates to match the nice progress they've made with the "justified layout" that you can see on their desktop site and mobile app.
 
- [1]: http://www.baidu.com/
- [2]: https://www.davidbcalhoun.com/wp-content/uploads/2013/05/baidu-mobile-image-search.jpg
- [3]: https://www.davidbcalhoun.com/wp-content/uploads/2013/05/google-mobile-image-search.jpg
- [4]: https://www.davidbcalhoun.com/wp-content/uploads/2013/05/bing-mobile-image-search.jpg
- [5]: https://www.davidbcalhoun.com/wp-content/uploads/2013/05/yahoo-mobile-image-search.jpg
- [6]: https://www.davidbcalhoun.com/wp-content/uploads/2013/05/flickr-mobile-app-image-search.jpg
- [7]: https://www.davidbcalhoun.com/wp-content/uploads/2013/05/flickr-mobile-web-image-search.jpg
+[1]: http://www.baidu.com/
+[2]: https://www.davidbcalhoun.com/wp-content/uploads/2013/05/baidu-mobile-image-search.jpg
+[3]: https://www.davidbcalhoun.com/wp-content/uploads/2013/05/google-mobile-image-search.jpg
+[4]: https://www.davidbcalhoun.com/wp-content/uploads/2013/05/bing-mobile-image-search.jpg
+[5]: https://www.davidbcalhoun.com/wp-content/uploads/2013/05/yahoo-mobile-image-search.jpg
+[6]: https://www.davidbcalhoun.com/wp-content/uploads/2013/05/flickr-mobile-app-image-search.jpg
+[7]: https://www.davidbcalhoun.com/wp-content/uploads/2013/05/flickr-mobile-web-image-search.jpg

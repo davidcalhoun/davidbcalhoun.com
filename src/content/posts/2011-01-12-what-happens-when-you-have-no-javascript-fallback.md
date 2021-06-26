@@ -6,10 +6,12 @@ author: David
 layout: post
 permalink: /2011/what-happens-when-you-have-no-javascript-fallback
 tags:
-- javascript
-- programming
-- webdev
+  - javascript
+  - programming
+  - webdev
 ---
+
+## ⚠️ Warning: this is an old article and may include information that's out of date. ⚠️
 
 [<img src="http://davidbcalhoun.com/wp-content/uploads/2011/01/twitter-fallback.png" alt="" title="Twitter no-JavaScript fallback" class="aligncenter size-full wp-image-556" />][1]
 
@@ -17,5 +19,5 @@ Here's an example of what happens when your interface completely relies on JavaS
 
 Where's the tweets!?
 
- [1]: http://davidbcalhoun.com/wp-content/uploads/2011/01/twitter-fallback.png
- [2]: http://en.wikipedia.org/wiki/Mojibake
+[1]: http://davidbcalhoun.com/wp-content/uploads/2011/01/twitter-fallback.png
+[2]: http://en.wikipedia.org/wiki/Mojibake

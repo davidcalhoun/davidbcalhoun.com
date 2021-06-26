@@ -6,12 +6,15 @@ author: David
 layout: post
 permalink: /2010/on-designing-a-mobile-webpage
 aliases:
-- /2010/on-designing-a-mobile-webpage
+  - /2010/on-designing-a-mobile-webpage
 tags:
-- design
-- mobile
-- webdev
+  - design
+  - mobile
+  - webdev
 ---
+
+## ⚠️ Warning: this is an old article and may include information that's out of date. ⚠️
+
 The frontend engineer lives at the intersection between design and engineering, and this is perhaps nowhere more true than in the world of mobile. In order to make a usable desktop website, an engineer must have at least some sense of design, and fortunately a lot of this has been standardized over the years. But the world of mobile is full of more unknowns, and the field is changing rapidly, especially lately from the shift away from older feature phones to the focus on smartphones. As such, the mobile engineer has to be on their toes in the sense of both design and engineering.
 
 The focus of this article is on mobile design in general. I&#8217;m by no means an expert, but these are some things I&#8217;ve found to be essential and basic topics. Hopefully you will find this useful!
@@ -58,14 +61,14 @@ In the case of the last question, it&#8217;s easy to see from the above screensh
 [Part 6: Dealing with device orientation][10]  
 [Part 7: Mobile JavaScript libraries and frameworks][11]
 
- [1]: http://yahoo.com
- [2]: http://m.yahoo.com
- [3]: http://www.w3.org/TR/mobile-bp/
- [4]: http://carsonified.com/blog/dev/tips-and-tricks-for-developing-mobile-widgets/
- [5]: http://davidbcalhoun.com/2010/viewport-metatag
- [6]: http://davidbcalhoun.com/2010/the-mobile-developers-toolkit-mobile-web-part-2
- [7]: http://davidbcalhoun.com/2010/designing-buttons-that-dont-suck
- [8]: http://davidbcalhoun.com/2010/on-designing-a-mobile-webpage
- [9]: http://davidbcalhoun.com/2010/using-mobile-specific-html-css-javascript
- [10]: http://davidbcalhoun.com/2010/dealing-with-device-orientation
- [11]: http://davidbcalhoun.com/2010/mobile-javascript-libraries-and-frameworks
+[1]: http://yahoo.com
+[2]: http://m.yahoo.com
+[3]: http://www.w3.org/TR/mobile-bp/
+[4]: http://carsonified.com/blog/dev/tips-and-tricks-for-developing-mobile-widgets/
+[5]: http://davidbcalhoun.com/2010/viewport-metatag
+[6]: http://davidbcalhoun.com/2010/the-mobile-developers-toolkit-mobile-web-part-2
+[7]: http://davidbcalhoun.com/2010/designing-buttons-that-dont-suck
+[8]: http://davidbcalhoun.com/2010/on-designing-a-mobile-webpage
+[9]: http://davidbcalhoun.com/2010/using-mobile-specific-html-css-javascript
+[10]: http://davidbcalhoun.com/2010/dealing-with-device-orientation
+[11]: http://davidbcalhoun.com/2010/mobile-javascript-libraries-and-frameworks

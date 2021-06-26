@@ -225,7 +225,8 @@
 </article>
 
 
-    <div class="text-justify"><p><img src="http://davidbcalhoun.com/wp-content/uploads/2011/10/odometer.jpg" alt="" title="Dashboard with odometer" width="800" height="299" class="aligncenter size-full wp-image-806" /></p>
+    <div class="text-justify"><h2 id="-warning-this-is-an-old-article-and-may-include-information-thats-out-of-date-">⚠️ Warning: this is an old article and may include information that&rsquo;s out of date. ⚠️</h2>
+<p><img src="http://davidbcalhoun.com/wp-content/uploads/2011/10/odometer.jpg" alt="" title="Dashboard with odometer" width="800" height="299" class="aligncenter size-full wp-image-806" /></p>
 <p>Earlier this year I gave a <a href="http://www.meetup.com/SF-Web-Performance-Group/events/16116764">talk</a> (<a href="http://davidbcalhoun.com/present/mobile-performance/">slides</a>) outlining the latest and greatest in mobile performance, including a bit of my own unscientific research into carrier latency and bandwidth thanks to <a href="https://github.com/yahoo/boomerang">boomerang.js</a>.</p>
 <p>I realized that interest in mobile performance has exploded recently, especially with <a href="http://www.stevesouders.com/blog/2011/01/10/announcing-my-focus-on-mobile/">Steve Souders announcing his focus on mobile</a>, and I thought it was time for an update, this time in blog form. Also, my old <a href="http://davidbcalhoun.com/present/mobile-performance/">slides</a> have been somewhat embarrassing. For some strange reason, at the time I wanted to give <a href="http://meyerweb.com/eric/tools/s5/">S5</a> a try - that outdated, ancient, not-performant slideshow framework. The result is a slideshow on performance that loads slowly&hellip; doh! (incidentally, I recommend <a href="http://imakewebthings.github.com/deck.js/">deck.js</a> as an alternative).</p>
 <p>In any case, it was time for a roundup of mobile performance best practices, in blog form. I&rsquo;m not sure if it&rsquo;s properly called a manifesto, but it is what it is! Onward!</p>
@@ -290,7 +291,7 @@
 <p><img src="http://davidbcalhoun.com/wp-content/uploads/2011/10/mobile-site-organization.png" alt="" title="Smart phone versus feature phone website organization" width="645" height="633" class="aligncenter size-full wp-image-793" /></p>
 <p>For feature phones that have little to no caching, aggressively combine requests (deliver HTML/CSS/JS all in one package). For smart phones, take advantage of caching by mirroring desktop frontend best practices: separate HTML, CSS, and JS so they can be cached (per-session and across sessions).</p>
 <p>There&rsquo;s old research about <a href="http://www.yuiblog.com/blog/2008/02/06/iphone-cacheability/">extremely small cache sizes on iOS in particular</a>, but this research has been followed up on by more recent research by <a href="http://www.yuiblog.com/blog/2010/07/12/mobile-browser-cache-limits-revisited/">Ryan Grove (Yahoo!)</a> and <a href="http://www.stevesouders.com/blog/2010/07/12/mobile-cache-file-sizes/">Steve Souders (Google)</a>, which shows that we shouldn&rsquo;t be so paranoid, since caching is pretty decent across all the major mobile browsers.</p>
-<p>Of particular interest is a browser&rsquo;s capability to cache files in a current session, browsing from page-to-page, which is what most users will end up doing (caching of the page across sessions is another matter). What is the maximum file size a browser will cache during a session? The <a href="http://www.browserscope.org/user/tests/table/agt1YS1wcm9maWxlcnINCxIEVGVzdBj_1OsBDA?v=3%EF%BF%BDlayout=simple%EF%BF%BDf=Max%20js%20Cache%20Size%20(kB)">results (via Browserscope)</a> end up being encouraging:</p>
+<p>Of particular interest is a browser&rsquo;s capability to cache files in a current session, browsing from page-to-page, which is what most users will end up doing (caching of the page across sessions is another matter). What is the maximum file size a browser will cache during a session? The <a href="http://www.browserscope.org/user/tests/table/agt1YS1wcm9maWxlcnINCxIEVGVzdBj_1OsBDA?v=3&amp;layout=simple&amp;f=Max%20js%20Cache%20Size%20(kB)">results (via Browserscope)</a> end up being encouraging:</p>
 <table style="width: 100%;">
   <th>
     <td>
@@ -430,9 +431,9 @@ Deliver appropriately-sized images to devices. The philosophy of responsive desi
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">window.<span style="color:#a6e22e">innerHeight</span>;       <span style="color:#75715e">// max height actually available
-</span><span style="color:#75715e"></span>window.<span style="color:#a6e22e">innerWidth</span>;        <span style="color:#75715e">// max width actually available
-</span><span style="color:#75715e"></span>window.<span style="color:#a6e22e">devicePixelRatio</span>;  <span style="color:#75715e">// pixel density (standard is 1, high resolution is generally &gt; 1)
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">window.<span style="color:#a6e22e">innerHeight</span>; <span style="color:#75715e">// max height actually available
+</span><span style="color:#75715e"></span>window.<span style="color:#a6e22e">innerWidth</span>; <span style="color:#75715e">// max width actually available
+</span><span style="color:#75715e"></span>window.<span style="color:#a6e22e">devicePixelRatio</span>; <span style="color:#75715e">// pixel density (standard is 1, high resolution is generally &gt; 1)
 </span></code></pre></td></tr></table>
 </div>
 </div><p>(note that <code>screen.width</code> and <code>screen.height</code> are also available to tell you the dimensions of the entire screen, but this isn&rsquo;t all available due to the space taken by the OS and browser chrome)</p>
@@ -464,9 +465,9 @@ Deliver appropriately-sized images to devices. The philosophy of responsive desi
 }
 
 @<span style="color:#66d9ef">media</span> <span style="color:#f92672">(</span><span style="color:#f92672">-webkit-min-device-pixel-ratio</span><span style="color:#f92672">:</span> <span style="color:#f92672">1</span>.<span style="color:#a6e22e">5</span><span style="color:#f92672">),</span>
-       <span style="color:#f92672">(</span><span style="color:#f92672">-o-min-device-pixel-ratio</span><span style="color:#f92672">:</span> <span style="color:#f92672">3</span><span style="color:#f92672">/</span><span style="color:#f92672">2</span><span style="color:#f92672">),</span>
-       <span style="color:#f92672">(</span><span style="color:#f92672">min--moz-device-pixel-ratio</span><span style="color:#f92672">:</span> <span style="color:#f92672">1</span>.<span style="color:#a6e22e">5</span><span style="color:#f92672">),</span>
-       <span style="color:#f92672">(</span><span style="color:#f92672">min-device-pixel-ratio</span><span style="color:#f92672">:</span> <span style="color:#f92672">1</span>.<span style="color:#a6e22e">5</span><span style="color:#f92672">)</span> {
+  <span style="color:#f92672">(</span><span style="color:#f92672">-o-min-device-pixel-ratio</span><span style="color:#f92672">:</span> <span style="color:#f92672">3</span><span style="color:#f92672">/</span><span style="color:#f92672">2</span><span style="color:#f92672">),</span>
+  <span style="color:#f92672">(</span><span style="color:#f92672">min--moz-device-pixel-ratio</span><span style="color:#f92672">:</span> <span style="color:#f92672">1</span>.<span style="color:#a6e22e">5</span><span style="color:#f92672">),</span>
+  <span style="color:#f92672">(</span><span style="color:#f92672">min-device-pixel-ratio</span><span style="color:#f92672">:</span> <span style="color:#f92672">1</span>.<span style="color:#a6e22e">5</span><span style="color:#f92672">)</span> {
   <span style="color:#75715e">/* high resolution styles */</span>
 }
 </code></pre></td></tr></table>
@@ -509,13 +510,21 @@ Deliver appropriately-sized images to devices. The philosophy of responsive desi
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">(<span style="color:#66d9ef">function</span>(){  <span style="color:#75715e">// sandbox our code
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">connection</span>) <span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">connection</span> <span style="color:#f92672">=</span> {<span style="color:#a6e22e">type</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">UNKNOWN</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>};  <span style="color:#75715e">// polyfill
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">(<span style="color:#66d9ef">function</span> () {
+  <span style="color:#75715e">// sandbox our code
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">connection</span>) <span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">connection</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">UNKNOWN</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span> }; <span style="color:#75715e">// polyfill
 </span><span style="color:#75715e"></span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">connection</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">connection</span>;
-  
-  <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">connection</span>.<span style="color:#a6e22e">type</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">connection</span>.<span style="color:#a6e22e">WIFI</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">connection</span>.<span style="color:#a6e22e">type</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">connection</span>.<span style="color:#a6e22e">ETHERNET</span>) {
+
+  <span style="color:#66d9ef">if</span> (
+    <span style="color:#a6e22e">connection</span>.<span style="color:#a6e22e">type</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">connection</span>.<span style="color:#a6e22e">WIFI</span> <span style="color:#f92672">||</span>
+    <span style="color:#a6e22e">connection</span>.<span style="color:#a6e22e">type</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">connection</span>.<span style="color:#a6e22e">ETHERNET</span>
+  ) {
     <span style="color:#75715e">// high bandwidth
 </span><span style="color:#75715e"></span>  } <span style="color:#66d9ef">else</span> {
     <span style="color:#75715e">// normal bandwidth
@@ -536,17 +545,23 @@ Deliver appropriately-sized images to devices. The philosophy of responsive desi
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">(<span style="color:#66d9ef">function</span>(){  <span style="color:#75715e">// sandbox our code
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">connection</span>) <span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">connection</span> <span style="color:#f92672">=</span> {<span style="color:#a6e22e">type</span><span style="color:#f92672">:</span><span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">UNKNOWN</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>};  <span style="color:#75715e">// polyfill
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">(<span style="color:#66d9ef">function</span> () {
+  <span style="color:#75715e">// sandbox our code
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">connection</span>) <span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">connection</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">UNKNOWN</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span> }; <span style="color:#75715e">// polyfill
 </span><span style="color:#75715e"></span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">connection</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">connection</span>;
-  
-  <span style="color:#75715e">// add a custom test to Modernizr
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">Modernizr</span>.<span style="color:#a6e22e">addTest</span>(<span style="color:#e6db74">&#39;highbandwidth&#39;</span>, <span style="color:#66d9ef">function</span>(){
-    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">connection</span>.<span style="color:#a6e22e">type</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">connection</span>.<span style="color:#a6e22e">WIFI</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">connection</span>.<span style="color:#a6e22e">type</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">connection</span>.<span style="color:#a6e22e">ETHERNET</span>;
-  });
 
+  <span style="color:#75715e">// add a custom test to Modernizr
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">Modernizr</span>.<span style="color:#a6e22e">addTest</span>(<span style="color:#e6db74">&#34;highbandwidth&#34;</span>, <span style="color:#66d9ef">function</span> () {
+    <span style="color:#66d9ef">return</span> (
+      <span style="color:#a6e22e">connection</span>.<span style="color:#a6e22e">type</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">connection</span>.<span style="color:#a6e22e">WIFI</span> <span style="color:#f92672">||</span>
+      <span style="color:#a6e22e">connection</span>.<span style="color:#a6e22e">type</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">connection</span>.<span style="color:#a6e22e">ETHERNET</span>
+    );
+  });
 })();
 </code></pre></td></tr></table>
 </div>
@@ -555,10 +570,18 @@ Deliver appropriately-sized images to devices. The philosophy of responsive desi
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">highbandwidth</span> .<span style="color:#a6e22e">logo</span> {<span style="color:#66d9ef">background-image</span>:url(<span style="color:#e6db74">&#39;logo-high.jpg&#39;</span>);}
-.<span style="color:#a6e22e">no-highbandwidth</span> .<span style="color:#a6e22e">logo</span> {<span style="color:#66d9ef">background-image</span>:url(<span style="color:#e6db74">&#39;logo.jpg&#39;</span>);}
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">highbandwidth</span> .<span style="color:#a6e22e">logo</span> {
+  <span style="color:#66d9ef">background-image</span>: url(<span style="color:#e6db74">&#34;logo-high.jpg&#34;</span>);
+}
+.<span style="color:#a6e22e">no-highbandwidth</span> .<span style="color:#a6e22e">logo</span> {
+  <span style="color:#66d9ef">background-image</span>: url(<span style="color:#e6db74">&#34;logo.jpg&#34;</span>);
+}
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="base64-encode-small-ui-images">base64 encode small UI images</h3>
@@ -569,11 +592,17 @@ Deliver appropriately-sized images to devices. The philosophy of responsive desi
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUA
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">img</span>
+  <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUA
 </span><span style="color:#e6db74">AAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO
-</span><span style="color:#e6db74">9TXL0Y4OHwAAAABJRU5ErkJggg==&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Red dot&#34;</span>&gt;
+</span><span style="color:#e6db74">9TXL0Y4OHwAAAABJRU5ErkJggg==&#34;</span>
+  <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Red dot&#34;</span>
+/&gt;
 </code></pre></td></tr></table>
 </div>
 </div><h4 id="css">CSS</h4>
@@ -587,9 +616,9 @@ Deliver appropriately-sized images to devices. The philosophy of responsive desi
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">dot</span> {
-  <span style="color:#66d9ef">background-image</span>: <span style="color:#a6e22e">url</span>(<span style="color:#e6db74">&#39;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUA  
+  <span style="color:#66d9ef">background-image</span>: <span style="color:#a6e22e">url</span>(<span style="color:#e6db74">&#34;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUA  
 </span><span style="color:#e6db74">AAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO  
-</span><span style="color:#e6db74">9TXL0Y4OHwAAAABJRU5ErkJggg==&#39;</span>);
+</span><span style="color:#e6db74">9TXL0Y4OHwAAAABJRU5ErkJggg==&#34;</span>);
 }
 </code></pre></td></tr></table>
 </div>
@@ -647,7 +676,7 @@ Deliver appropriately-sized images to devices. The philosophy of responsive desi
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">carousel</span> {
-  <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">transform</span>: translate3d(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>);  <span style="color:#75715e">/* or translateZ(0); */</span>
+  <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">transform</span>: translate3d(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>); <span style="color:#75715e">/* or translateZ(0); */</span>
 }
 </code></pre></td></tr></table>
 </div>
@@ -664,11 +693,11 @@ Deliver appropriately-sized images to devices. The philosophy of responsive desi
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">carousel</span> {
-  <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">transform</span>: translate3d(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>);  <span style="color:#75715e">/* or translateZ(0); */</span>
+  <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">transform</span>: translate3d(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>); <span style="color:#75715e">/* or translateZ(0); */</span>
 }
 
 .<span style="color:#a6e22e">carousel-pane</span> {
-  <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">transform</span>: translate3d(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>);  <span style="color:#75715e">/* or translateZ(0); */</span>
+  <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">transform</span>: translate3d(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>); <span style="color:#75715e">/* or translateZ(0); */</span>
 }
 </code></pre></td></tr></table>
 </div>
@@ -697,7 +726,7 @@ Deliver appropriately-sized images to devices. The philosophy of responsive desi
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">http-equiv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;x-dns-prefetch-control&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;off&#34;</span>&gt;
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">http-equiv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;x-dns-prefetch-control&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;off&#34;</span> /&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p>You can also explicitly force a DNS lookup:</p>
@@ -706,7 +735,7 @@ Deliver appropriately-sized images to devices. The philosophy of responsive desi
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dns-prefetch&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://www.example.com/&#34;</span>&gt;
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;dns-prefetch&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://www.example.com/&#34;</span> /&gt;
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="avoid-library-code-bloat">Avoid library code bloat</h3>

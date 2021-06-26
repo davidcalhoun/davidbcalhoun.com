@@ -6,8 +6,10 @@ author: David
 layout: post
 permalink: /2012/post-a-status-update-to-the-native-facebook-app-from-a-web-link
 tags:
-- webdev
+  - webdev
 ---
+
+## ⚠️ Warning: this is an old article and may include information that's out of date. ⚠️
 
 ### **UPDATE 2/25/2013**
 
@@ -18,6 +20,7 @@ tags:
 Copy this code:
 
     <a href="fb://publish/profile/me?text=foo">Post to Facebook</a>
+
 {:lang="html"}
 
 ### Explanation
@@ -31,6 +34,7 @@ which seems to be mainly used by native developers. What most folks don't realiz
 After poking around a bit, you might find [this topic on Stackoverflow][2], which contains a ton of protocols for getting to specific sections of the Facebook app, as well as this interesting snippet:
 
     <a href="fb://publish/profile/#ID#?text=#BODY#">fb://publish/profile/#ID#?text=#BODY#</a>
+
 {:lang="html"}
 
 Trying that as a link does work, but it takes you to this blank screen:
@@ -69,9 +73,9 @@ Also note that the Share button is disabled until the user types in text themsel
 
 ### Detecting if the Facebook app is installed
 
-There's another issue with *folks who don't have the native Facebook app installed*. There doesn't seem to be a perfect way to detect if the link failed and went nowhere. What we have to work with are [hacky workarounds involving setTimeout][4].
+There's another issue with _folks who don't have the native Facebook app installed_. There doesn't seem to be a perfect way to detect if the link failed and went nowhere. What we have to work with are [hacky workarounds involving setTimeout][4].
 
-It looks like native iOS apps have an ideal URL scheme checking ability with a [canOpenURL][5] method. Unfortunately it doesn't look like the web has this function (yet). Let's bug Apple to implement it! <img src='http://davidbcalhoun.com/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> 
+It looks like native iOS apps have an ideal URL scheme checking ability with a [canOpenURL][5] method. Unfortunately it doesn't look like the web has this function (yet). Let's bug Apple to implement it! <img src='http://davidbcalhoun.com/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' />
 
 ### Related
 
@@ -79,10 +83,10 @@ Just a heads up - I'm definitely not the first one to figure this out, as I foun
 
 [More URI schemes for other launching other native apps][7]
 
- [1]: http://wiki.akosma.com/IPhone_URL_Schemes#Facebook
- [2]: http://stackoverflow.com/questions/5707722/what-are-all-the-custom-url-schemes-supported-by-the-facebook-iphone-app/
- [3]: http://stackoverflow.com/questions/9077817/open-facebook-app-with-text-from-ipad-app
- [4]: http://stackoverflow.com/questions/7231085/how-to-fall-back-to-marketplace-when-android-custom-url-scheme-not-handled
- [5]: http://mobile.tutsplus.com/tutorials/iphone/ios-sdk-working-with-url-schemes/
- [6]: http://jsfiddle.net/ThinkingStiff/dpUKh/
- [7]: http://wiki.akosma.com/IPhone_URL_Schemes
+[1]: http://wiki.akosma.com/IPhone_URL_Schemes#Facebook
+[2]: http://stackoverflow.com/questions/5707722/what-are-all-the-custom-url-schemes-supported-by-the-facebook-iphone-app/
+[3]: http://stackoverflow.com/questions/9077817/open-facebook-app-with-text-from-ipad-app
+[4]: http://stackoverflow.com/questions/7231085/how-to-fall-back-to-marketplace-when-android-custom-url-scheme-not-handled
+[5]: http://mobile.tutsplus.com/tutorials/iphone/ios-sdk-working-with-url-schemes/
+[6]: http://jsfiddle.net/ThinkingStiff/dpUKh/
+[7]: http://wiki.akosma.com/IPhone_URL_Schemes

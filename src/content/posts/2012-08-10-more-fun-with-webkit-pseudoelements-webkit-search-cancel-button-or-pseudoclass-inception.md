@@ -1,20 +1,23 @@
 ---
-title: 'More fun with WebKit pseudoelements: -webkit-search-cancel-button (or: Pseudoclass Inception)'
+title: "More fun with WebKit pseudoelements: -webkit-search-cancel-button (or: Pseudoclass Inception)"
 date: 2012-08-10
 comments: true
 author: David
 layout: post
 aliases:
-- /2012/more-fun-with-webkit-pseudoelements-webkit-search-cancel-button-or-pseudoclass-inception/
+  - /2012/more-fun-with-webkit-pseudoelements-webkit-search-cancel-button-or-pseudoclass-inception/
 tags:
-- css
-- webkit
-- pseudoelements
-- webdev
+  - css
+  - webkit
+  - pseudoelements
+  - webdev
 ---
+
+## ⚠️ Warning: this is an old article and may include information that's out of date. ⚠️
+
 ### Introduction
 
-***UPDATE*** 2016: this appears to have even less support than before, and it's not recommended to be used on a production site.  Use a helper JS library instead.</p>
+**_UPDATE_** 2016: this appears to have even less support than before, and it's not recommended to be used on a production site. Use a helper JS library instead.</p>
 
 (check out the **[Demo][1]**)
 
@@ -31,8 +34,9 @@ It turns out this is relatively easy to do, and is somewhat supported, at least 
 So how do we do it? First, we need the special WebKit CSS pseudoselector (`-webkit-search-cancel-button`), and secondly, we need to use that to wipe out the default WebKit styling (with -webkit-appearance: none;):
 
 ```css
-::-webkit-search-cancel-button {   // select all "X" buttons in search inputs
-    -webkit-appearance: none;      // hide the default "X" button
+::-webkit-search-cancel-button {
+  // select all "X" buttons in search inputs
+  -webkit-appearance: none; // hide the default "X" button
 }
 ```
 
@@ -41,35 +45,37 @@ You would think that the next step might be adding our own custom background-ima
 What we need now is a little bit of trickery, using an `:after` pseudoclass on the pseduoclass (!?). The result is a bit of "pseudoclass Inception":
 
 ```css
-::-webkit-search-cancel-button {   /* select all "X" buttons in search inputs */
-    -webkit-appearance: none;      /* hide the default "X" button */
+::-webkit-search-cancel-button {
+  /* select all "X" buttons in search inputs */
+  -webkit-appearance: none; /* hide the default "X" button */
 }
 
-::-webkit-search-cancel-button:after {  /* generate content after all "X" buttons */
-    content: '';    /* required for :after content to show */
-    display: block;
+::-webkit-search-cancel-button:after {
+  /* generate content after all "X" buttons */
+  content: ""; /* required for :after content to show */
+  display: block;
 
-    /*
+  /*
      * Setup dimensions for the custom icon.  Note that these dimensions seem to
      * affect positioning.
      */
-    width: 14px;
-    height: 10px;
-    
-    /*
+  width: 14px;
+  height: 10px;
+
+  /*
      * Base64 encoded custom "X" icon
      * Natively 30x30, but downscaled for highres screens
      */
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAn0lEQVR42u3UMQrDMBBEUZ9WfQqDmm22EaTyjRMHAlM5K+Y7lb0wnUZPIKHlnutOa+25Z4D++MRBX98MD1V/trSppLKHqj9TTBWKcoUqffbUcbBBEhTjBOV4ja4l4OIAZThEOV6jHO8ARXD+gPPvKMABinGOrnu6gTNUawrcQKNCAQ7QeTxORzle3+sDfjJpPCqhJh7GixZq4rHcc9l5A9qZ+WeBhgEuAAAAAElFTkSuQmCC);
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAn0lEQVR42u3UMQrDMBBEUZ9WfQqDmm22EaTyjRMHAlM5K+Y7lb0wnUZPIKHlnutOa+25Z4D++MRBX98MD1V/trSppLKHqj9TTBWKcoUqffbUcbBBEhTjBOV4ja4l4OIAZThEOV6jHO8ARXD+gPPvKMABinGOrnu6gTNUawrcQKNCAQ7QeTxORzle3+sDfjJpPCqhJh7GixZq4rHcc9l5A9qZ+WeBhgEuAAAAAElFTkSuQmCC);
 
-    /* setup all the background tweaks for our custom icon */
-    background-repeat: no-repeat;
+  /* setup all the background tweaks for our custom icon */
+  background-repeat: no-repeat;
 
-    /* icon size */
-    background-size: 10px;
+  /* icon size */
+  background-size: 10px;
 
-    /* note: this positioning will need to be tweaked for iOS */
-    background-position: top left;
+  /* note: this positioning will need to be tweaked for iOS */
+  background-position: top left;
 }
 ```
 
@@ -87,5 +93,5 @@ Here's a video if you're not in the mood to read (view in HD so you can read the
 
 <iframe width="480" height="360" src="https://www.youtube.com/embed/3wyWJKJuo4o" frameborder="0" allowfullscreen></iframe>
 
- [1]: https://www.davidbcalhoun.com/a/_old%20mobile%20tests/webkit-search-cancel-button.html
- [2]: https://www.davidbcalhoun.com/2011/implementing-iphone-slider-unlock-with-input-type-range
+[1]: https://www.davidbcalhoun.com/a/_old%20mobile%20tests/webkit-search-cancel-button.html
+[2]: https://www.davidbcalhoun.com/2011/implementing-iphone-slider-unlock-with-input-type-range

@@ -6,14 +6,17 @@ author: David
 layout: post
 permalink: /2010/designing-buttons-that-dont-suck
 aliases:
-- /2010/designing-buttons-that-dont-suck
+  - /2010/designing-buttons-that-dont-suck
 tags:
-- button
-- testing
-- usability
-- webdev
-- mobile
+  - button
+  - testing
+  - usability
+  - webdev
+  - mobile
 ---
+
+## ⚠️ Warning: this is an old article and may include information that's out of date. ⚠️
+
 A button is something that seems to be made just for mobile: it&#8217;s designed to be big and easy to activate, as opposed to small and harder to activate, like normal text links. This seems ideal for a mobile devices, which have a small display area and whose form of input is a person&#8217;s (relatively) fat finger interacting with the screen. Contrast this with the desktop, where the display area is much larger and the input device, the mouse, is a much more highly refined and sensitive pointing device.
 
 But you probably don&#8217;t want to make everything into a button. After all, there&#8217;s still a place for good old fashioned anchor tags. So what do you make into a button? Simple: areas of your website that get frequent usage. For instance, [mobile.twitter.com][1] has buttons for Search, Refresh results, and More (display more tweets), but leaves other things as anchors/hyperlinks, such as usernames and links in tweets. Basically, use common sense. You should have a mixture of both buttons and hyperlinks.
@@ -74,5 +77,5 @@ See if you can tell the difference between these two buttons:
           <a href="http://davidbcalhoun.com/2010/viewport-metatag">Part 1: The viewport metatag</a><br /> <a href="http://davidbcalhoun.com/2010/the-mobile-developers-toolkit-mobile-web-part-2">Part 2: The mobile developer’s toolkit</a><br /> <a href="http://davidbcalhoun.com/2010/designing-buttons-that-dont-suck">Part 3: Designing buttons that don’t suck</a><br /> <a href="http://davidbcalhoun.com/2010/on-designing-a-mobile-webpage">Part 4: On designing a mobile webpage</a><br /> <a href="http://davidbcalhoun.com/2010/using-mobile-specific-html-css-javascript">Part 5: Using mobile-specific HTML, CSS, and JavaScript</a><br /> <a href="http://davidbcalhoun.com/2010/dealing-with-device-orientation">Part 6: Dealing with device orientation</a><br /> <a href="http://davidbcalhoun.com/2010/mobile-javascript-libraries-and-frameworks">Part 7: Mobile JavaScript libraries and frameworks</a>
         </p>
 
- [1]: http://mobile.twitter.com
- [2]: http://girliemac.com/blog/2010/02/04/css3-box-shadow-with-inset-values-the-aqua-button-rerevisited/
+[1]: http://mobile.twitter.com
+[2]: http://girliemac.com/blog/2010/02/04/css3-box-shadow-with-inset-values-the-aqua-button-rerevisited/

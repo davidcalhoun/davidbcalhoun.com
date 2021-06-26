@@ -6,10 +6,12 @@ author: David
 layout: post
 permalink: /2011/the-incredibly-painful-way-of-getting-an-rss-feed-of-a-twitter-list
 tags:
-- webdev
+  - webdev
 ---
 
-***Update: the Twitter REST API v1 is no longer active.  This post has been preserved as a reference.***
+## ⚠️ Warning: this is an old article and may include information that's out of date. ⚠️
+
+**_Update: the Twitter REST API v1 is no longer active. This post has been preserved as a reference._**
 
 (why does Twitter make it so hard? What did RSS ever do to it?)
 
@@ -67,7 +69,7 @@ There's our list_id (and incidentally, the same API call [with json instead of a
 
 And it works, without having to mess around with OAuth or authentication, registering an app, or whatever. Of course now we can refer back to the API docs and mess around with some parameters to get just the data I'm looking for. Maybe most useful to developers is the handy ability to get easily paginated results:
 
-> <http://api.twitter.com/1/lists/statuses.atom?list_id=41981352&#038;page=2>
+> <http://api.twitter.com/1/lists/statuses.atom?list_id=41981352&page=2>
 
 There's also what would be a handy "count" variable, but it's altogether useless as it appears to be ignored. The API always returned 20 results for me.
 
@@ -79,8 +81,8 @@ Thanks to [this site][5], it looks like there's a more straightforward way of ge
 
 > http://api.twitter.com/1/nathansmith/lists/javascript/statuses.atom
 
- [1]: https://support.twitter.com/groups/31-twitter-basics/topics/111-features/articles/15361-how-to-find-your-rss-feed
- [2]: http://twiterlist2rss.appspot.com/
- [3]: http://dev.twitter.com/doc/get/lists/statuses
- [4]: https://twitter.com/#!/nathansmith/javascript
- [5]: http://sociable.co/2011/05/05/as-twitter-protects-its-ecosystem-heres-how-to-create-an-rss-feed-of-a-twitter-list/
+[1]: https://support.twitter.com/groups/31-twitter-basics/topics/111-features/articles/15361-how-to-find-your-rss-feed
+[2]: http://twiterlist2rss.appspot.com/
+[3]: http://dev.twitter.com/doc/get/lists/statuses
+[4]: https://twitter.com/#!/nathansmith/javascript
+[5]: http://sociable.co/2011/05/05/as-twitter-protects-its-ecosystem-heres-how-to-create-an-rss-feed-of-a-twitter-list/

@@ -6,17 +6,19 @@ author: David
 layout: post
 permalink: /2010/is-hash-faster-than-switch-in-javascript
 aliases:
-- /2010/is-hash-faster-than-switch-in-javascript
+  - /2010/is-hash-faster-than-switch-in-javascript
 tags:
-- javascript
-- performance
-- webdev
-- android
-- hash
-- jsperf
-- mobile safari
-- switch
+  - javascript
+  - performance
+  - webdev
+  - android
+  - hash
+  - jsperf
+  - mobile safari
+  - switch
 ---
+
+## ⚠️ Warning: this is an old article and may include information that's out of date. ⚠️
 
 I stumbled across this concept recently and I thought I'd share it, because I don't generally see this pattern being used. More importantly, I also share test results that show that maybe it's not always a good idea to use this pattern...
 
@@ -25,17 +27,17 @@ I stumbled across this concept recently and I thought I'd share it, because I do
 The basic switch statement in JavaScript looks something like this:
 
 ```js
-var foo = 'c';
+var foo = "c";
 
-switch(foo) {
-  case 'a':
-  break;
+switch (foo) {
+  case "a":
+    break;
 
-  case 'b':
-  break;
+  case "b":
+    break;
 
-  case 'c':
-  break;
+  case "c":
+    break;
 
   default:
 }
@@ -54,21 +56,21 @@ There is a way to avoid this extra processing! It's by leading the code directly
 You can do this using a hash. In JavaScript we accomplish this with an object:
 
 ```js
-var foo = 'c';
+var foo = "c";
 var cases = {};
-cases['a'] = function() {
-  alert('I am A!');
+cases["a"] = function () {
+  alert("I am A!");
 };
-cases['b'] = function() {
-  alert('I am B!');
+cases["b"] = function () {
+  alert("I am B!");
 };
-cases['c'] = function() {
-  alert('I am C!');
-}
+cases["c"] = function () {
+  alert("I am C!");
+};
 
-if(typeof cases[foo] == 'function') {
+if (typeof cases[foo] == "function") {
   // only executes if we've defined it above
-  cases[foo]();  // I am C!
+  cases[foo](); // I am C!
 } else {
   // default (the fallthrough)
 }
@@ -264,8 +266,8 @@ I created a [simple performance test on jsperf.com][2] and got these results:
   </tr>
 </table>
 
-* Ops/sec = Operations per second. Higher is better  
-* Chrome, Safari, Opera, and Firefox were tested on Mac OSX 10.6.4 2.53GHz Intel Core i5. IE tests were run on Windows 7 64bit 2.4GHz Quad Core
+- Ops/sec = Operations per second. Higher is better
+- Chrome, Safari, Opera, and Firefox were tested on Mac OSX 10.6.4 2.53GHz Intel Core i5. IE tests were run on Windows 7 64bit 2.4GHz Quad Core
 
 ### The Results
 
@@ -275,7 +277,7 @@ From the results, it looks like the hash optimization is only a benefit for Chro
 
 Although I first read about this online, by no surprise this trick also appears in [Nicholas Zakas's][3] [High Performance JavaScript][4] in a section on "Lookup Tables" (p. 72).
 
- [1]: http://en.wikipedia.org/wiki/Big_O_notation
- [2]: http://jsperf.com/switch-vs-hash/3
- [3]: http://www.nczonline.net/
- [4]: http://www.amazon.com/Performance-JavaScript-Faster-Application-Interfaces/dp/059680279X
+[1]: http://en.wikipedia.org/wiki/Big_O_notation
+[2]: http://jsperf.com/switch-vs-hash/3
+[3]: http://www.nczonline.net/
+[4]: http://www.amazon.com/Performance-JavaScript-Faster-Application-Interfaces/dp/059680279X

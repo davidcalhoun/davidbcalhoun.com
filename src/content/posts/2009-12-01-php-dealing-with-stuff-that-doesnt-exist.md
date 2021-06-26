@@ -13,6 +13,9 @@ tags:
   - method_exists
   - php
 ---
+
+## ⚠️ Warning: this is an old article and may include information that's out of date. ⚠️
+
 ### Introduction
 
 As the application you&#8217;re coding becomes more and more complex, there&#8217;s more of an opportunity for things to go wrong in all sorts of unforseen ways.  One of these problems is variables or functions that don&#8217;t exist.  The problem is when you code in such a way that you presuppose their existence. But their existence isn&#8217;t guaranteed!
@@ -103,7 +106,7 @@ if(method_exists($myObject, 'my_function')) {
 	// Do stuff here
 }</pre>
 
- [1]: http://www.php.net/manual/en/function.empty.php
- [2]: http://www.zachstronaut.com/posts/2009/02/09/careful-with-php-empty.html
- [3]: http://us3.php.net/manual/en/function.function-exists.php
- [4]: http://php.net/manual/en/function.method-exists.php
+[1]: http://www.php.net/manual/en/function.empty.php
+[2]: http://www.zachstronaut.com/posts/2009/02/09/careful-with-php-empty.html
+[3]: http://us3.php.net/manual/en/function.function-exists.php
+[4]: http://php.net/manual/en/function.method-exists.php

@@ -9,15 +9,18 @@ categories: ["webdev", "javascript", "programming"]
 tags:
   - javascript
 ---
+
+## ⚠️ Warning: this is an old article and may include information that's out of date. ⚠️
+
 ### Introduction
 
 One of the things that&#8217;s always been confusing to me is that there are multiple ways to declare variables in JavaScript, and some ways are better than others. For the beginner programmer, just getting to code to work means complete success, but for the intermediate or advanced programmer, this is just the first step. The next step is to clean up the code and make sure everything is written in the best way it could have been written.
 
-Declaring variables seems like such a basic thing that one almost feels insulted reading about it. Yes, this whole post is about declaring variables. But not just this &#8211; it&#8217;s about declaring variables *the right way*. This means declaring variables in the scope they were intended to be declared in.  For the most part this means writing variables in the scope of a function, as opposed to the global namespace (in which everything becomes a property of the window object).
+Declaring variables seems like such a basic thing that one almost feels insulted reading about it. Yes, this whole post is about declaring variables. But not just this &#8211; it&#8217;s about declaring variables _the right way_. This means declaring variables in the scope they were intended to be declared in.  For the most part this means writing variables in the scope of a function, as opposed to the global namespace (in which everything becomes a property of the window object).
 
 ### Global variables can be declared in functions
 
-When I was starting to learn JavaScript, I read about global and functional scope and *wrongly* assumed that functions *completely* protected the variables declared inside.  As it turns out, there&#8217;s many ways to create global variables in JavaScript, and none of them throw up red flags or sound off bells and whistles (unfortunately).
+When I was starting to learn JavaScript, I read about global and functional scope and _wrongly_ assumed that functions _completely_ protected the variables declared inside.  As it turns out, there&#8217;s many ways to create global variables in JavaScript, and none of them throw up red flags or sound off bells and whistles (unfortunately).
 
 Here&#8217;s a few ways to create global variables in JavaScript:
 
@@ -47,7 +50,7 @@ test();</pre>
 
 ### Same name, but different variables
 
-And check this out &#8211; confusingly, you can create a global variable, then create a variable with the *same name* that&#8217;s functionally-scoped, yet a completely different variable!
+And check this out &#8211; confusingly, you can create a global variable, then create a variable with the _same name_ that&#8217;s functionally-scoped, yet a completely different variable!
 
 <pre name="code" class="JScript">var number = 0;
 
@@ -62,7 +65,7 @@ When you precede a variable with the var keyword, you&#8217;re essentially sayin
 
 ### There&#8217;s no such thing as magical protective parenthesis
 
-For some reason I was further mistaken into believing that extra parenthesis around an anonymous function magically protected *all* the variables within:
+For some reason I was further mistaken into believing that extra parenthesis around an anonymous function magically protected _all_ the variables within:
 
 <pre name="code" class="JScript">(function() {
     global = null;
@@ -134,5 +137,5 @@ test();</pre>
   </p>
 </div>
 
- [1]: http://stackoverflow.com/questions/1758576/multiple-left-hand-assignment-with-javascript/1758912#1758912
- [2]: http://www.jslint.com/
+[1]: http://stackoverflow.com/questions/1758576/multiple-left-hand-assignment-with-javascript/1758912#1758912
+[2]: http://www.jslint.com/

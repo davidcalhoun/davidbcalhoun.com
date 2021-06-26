@@ -265,17 +265,16 @@
 </article>
 
 
-    <div class="text-justify"><p>General word of caution: not all of these HTML5 simplifications are compatible with older browsers. Test it for yourself before implementing!</p>
+    <div class="text-justify"><h2 id="-warning-this-is-an-old-article-and-may-include-information-thats-out-of-date-">⚠️ Warning: this is an old article and may include information that&rsquo;s out of date. ⚠️</h2>
+<p>General word of caution: not all of these HTML5 simplifications are compatible with older browsers. Test it for yourself before implementing!</p>
 <h3 id="1-the-doctype">1. The doctype</h3>
 <h4 id="old">Old</h4>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE HTML PUBLIC &#34;-//W3C//DTD HTML 4.01//EN&#34;
-</span><span style="color:#75715e">&#34;http://www.w3.org/TR/html4/strict.dtd&#34;&gt;</span>
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html PUBLIC &#34;-//W3C//DTD HTML 4.01//EN&#34; &#34;http://www.w3.org/TR/html4/strict.dtd&#34;&gt;</span>
 </code></pre></td></tr></table>
 </div>
 </div><h4 id="new">New</h4>
@@ -294,7 +293,7 @@
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">http-equiv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Content-Type&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/html; charset=utf-8&#34;</span>&gt;
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">http-equiv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Content-Type&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/html; charset=utf-8&#34;</span> /&gt;
 </code></pre></td></tr></table>
 </div>
 </div><h4 id="new-1">New</h4>
@@ -303,7 +302,7 @@
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>&gt;
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span> /&gt;
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="3-the-link-tags-type-attribute">3. The link tag’s <code>type</code> attribute</h3>
@@ -378,14 +377,14 @@
 </div>
 </div><p>Believe it or not, this attribute was first implemented in IE4! It tells the browser the same thing: to download and execute the script in such a way that it doesn’t block the elements below it from rendering. The difference from <code>async</code> is that <code>defer</code> executes the scripts in the order they appear in the document.</p>
 <h3 id="6-placeholder-and-autofocus-attributes">6. placeholder and autofocus attributes</h3>
-<p>The <code>placeholder</code> attribute can be added to <code>input</code> and <code>textarea</code> elements.  This is a piece of interaction that was originally accomplished with a bit of JavaScript: placeholder text (usually gray in appearance) appears in a text field, but disappears when the user focuses on it (and reappears if the user moves focus without typing any text).</p>
+<p>The <code>placeholder</code> attribute can be added to <code>input</code> and <code>textarea</code> elements. This is a piece of interaction that was originally accomplished with a bit of JavaScript: placeholder text (usually gray in appearance) appears in a text field, but disappears when the user focuses on it (and reappears if the user moves focus without typing any text).</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Search&#34;</span>&gt;
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Search&#34;</span> /&gt;
 &lt;<span style="color:#f92672">textarea</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Search&#34;</span>&gt;&lt;/<span style="color:#f92672">textarea</span>&gt;
 </code></pre></td></tr></table>
 </div>
@@ -425,7 +424,7 @@
 <p>Setting up the cache manifest is relatively easy:</p>
 <ol>
 <li>Add this line to your <code>.htaccess</code> file or Apache configuration: <code>AddType text/cache-manifest .manifest</code></li>
-<li>Create a file. For this example we’ll call it <code>cache.manifest</code>.  This file contains a list of files that should be cached:</li>
+<li>Create a file. For this example we’ll call it <code>cache.manifest</code>. This file contains a list of files that should be cached:</li>
 </ol>
 <pre><code>CACHE MANIFEST
 # version 1
@@ -457,7 +456,7 @@
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;email&#34;</span> <span style="color:#a6e22e">required</span>&gt;
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;email&#34;</span> <span style="color:#a6e22e">required</span> /&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p>There’s much more to be said about improvements to forms in general, in addition to some other handy form validation tools such as the <a href="http://dev.w3.org/html5/spec/Overview.html#the-min-and-max-attributes"><code>min</code> and <code>max</code> attributes</a> and the <a href="http://dev.w3.org/html5/spec/Overview.html#the-placeholder-attribute"><code>pattern</code> attribute</a>.</p>

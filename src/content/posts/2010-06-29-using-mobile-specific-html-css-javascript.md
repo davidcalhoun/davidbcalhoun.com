@@ -26,7 +26,10 @@ tags:
   - webkit
   - xui
 ---
-*(updated June 27, 2011)*
+
+## ⚠️ Warning: this is an old article and may include information that's out of date. ⚠️
+
+_(updated June 27, 2011)_
 
 ### Mobile-specific HTML
 
@@ -34,63 +37,68 @@ tags:
 
 Use the [viewport tag][1] to properly fit the content to the screen:
 
-``` html
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 ```
 
 #### [Tel scheme][2] (to initiate phone calls)
 
-``` html
-    <a href="tel:18005555555">Call us at 1-800-555-5555</a>
+```html
+<a href="tel:18005555555">Call us at 1-800-555-5555</a>
 ```
 
 #### [Sms scheme][3] (to initiate text messages)
 
-``` html
-    <a href="sms:18005555555">
-    <a href="sms:18005555555,18005555556">                <!-- multiple recipients -->
-    <a href="sms:18005555555?body=Text%20goes%20here">    <!-- predefined message body -->
+```html
+<a href="sms:18005555555">
+  <a href="sms:18005555555,18005555556">
+    <!-- multiple recipients -->
+    <a href="sms:18005555555?body=Text%20goes%20here">
+      <!-- predefined message body --></a
+    ></a
+  ></a
+>
 ```
 
 #### Disable automatic telephone number linking
 
-``` html
-    <meta name="format-detection" content="telephone=no">
+```html
+<meta name="format-detection" content="telephone=no" />
 ```
 
 #### iOS-specific HTML (some work on Android as well)
 
 You also have access to several [Apple-specific tags to use in your iOS applications (iPhone, iPad, and don't forget the iPod Touch!)][4].
 
-``` html
-    <!-- iOS 1.1.3+: this is the icon that's used when the user adds your app to the home screen -->
+```html
+<!-- iOS 1.1.3+: this is the icon that's used when the user adds your app to the home screen -->
 
-    <!-- also works on Android! -->
-    <link rel="apple-touch-icon" href="icon.png" />
+<!-- also works on Android! -->
+<link rel="apple-touch-icon" href="icon.png" />
 
-    <!-- iOS 2.0+: tell iOS not to apply any glare effects to the icon -->
-    <link rel="apple-touch-icon-precomposed" href="icon.png" />
+<!-- iOS 2.0+: tell iOS not to apply any glare effects to the icon -->
+<link rel="apple-touch-icon-precomposed" href="icon.png" />
 
-    <!-- iOS 4.2+ icons for different resolutions -->
-    <link rel="apple-touch-icon" sizes="72x72" href="touch-icon-ipad.png" />
-    <link rel="apple-touch-icon" sizes="114x114" href="touch-icon-iphone4.png" />
+<!-- iOS 4.2+ icons for different resolutions -->
+<link rel="apple-touch-icon" sizes="72x72" href="touch-icon-ipad.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="touch-icon-iphone4.png" />
 
-    <!-- iOS 3+: full-screen startup splash screen image (must be 320x460) -->
-    <link rel="apple-touch-startup-image" href="startup.png" />
+<!-- iOS 3+: full-screen startup splash screen image (must be 320x460) -->
+<link rel="apple-touch-startup-image" href="startup.png" />
 
-    <!-- enable full-screen mode (only when launched from home screen) -->
-    <meta name="apple-mobile-web-app-capable" content="yes" />
+<!-- enable full-screen mode (only when launched from home screen) -->
+<meta name="apple-mobile-web-app-capable" content="yes" />
 
-    <!-- controls the appearance of the status bar in full-screen mode -->
-    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<!-- controls the appearance of the status bar in full-screen mode -->
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
 ```
 
 #### Turn off autocorrect, autocomplete, and autocapitalize
 
 And also some handy attributes to turn off annoying autocorrect features:
 
-``` html
-    <input autocorrect="off" autocomplete="off" autocapitalize="off">
+```html
+<input autocorrect="off" autocomplete="off" autocapitalize="off" />
 ```
 
 ### Mobile-specific CSS
@@ -101,10 +109,10 @@ Mobile browsers are now starting to support these basic CSS properties better. P
 
 Also, iOS 5 has additional CSS to give the native scrollbar and momentum/intertia to elements with overflow:scroll:
 
-``` css
-    div {
-      -webkit-overflow-scrolling: touch;
-    }
+```css
+div {
+  -webkit-overflow-scrolling: touch;
+}
 ```
 
 #### Media queries
@@ -113,95 +121,105 @@ Also, iOS 5 has additional CSS to give the native scrollbar and momentum/interti
 
 You can use them two ways: 1) inline in a CSS stylesheet or 2) as the "media" attribute in the link tag, which loads an external stylesheet. The following is an example of inline CSS that's applied only when the device is in portrait mode:
 
-``` css
-    @media all and (orientation: portrait) {
-      body { }
-      div { }
-    }
+```css
+@media all and (orientation: portrait) {
+  body {
+  }
+  div {
+  }
+}
 ```
 
 Here's the same media query using the other method, which points to an external stylesheet (not recommended):
 
-``` html
-    <link rel="stylesheet" media="all and (orientation: portrait)" href="portrait.css" />
+```html
+<link
+  rel="stylesheet"
+  media="all and (orientation: portrait)"
+  href="portrait.css"
+/>
 ```
 
 This is not recommended because it creates an additional HTTP request (bad for performance). Also, in the case of screen orientation, the separate CSS stylesheet is NOT downloaded when the screen is rotated.
 
 Here's a few examples of using inline CSS:
 
-``` css
-    // target small screens (mobile devices or small desktop windows)
-    @media only screen and (max-width: 480px) {
-      /* CSS goes here */
-    }
+```css
+// target small screens (mobile devices or small desktop windows)
+@media only screen and (max-width: 480px) {
+  /* CSS goes here */
+}
 
-    /* high resolution screens */
-    @media (-webkit-min-device-pixel-ratio: 2),
-                 (min--moz-device-pixel-ratio: 2),
-                 (min-resolution: 300dpi) {
-      header { background-image: url(header-highres.png); }
-    }
+/* high resolution screens */
+@media (-webkit-min-device-pixel-ratio: 2),
+  (min--moz-device-pixel-ratio: 2),
+  (min-resolution: 300dpi) {
+  header {
+    background-image: url(header-highres.png);
+  }
+}
 
-    /* low resolution screens */
-    @media (-webkit-max-device-pixel-ratio: 1.5),
-                 (max--moz-device-pixel-ratio: 1.5),
-                 (max-resolution: 299dpi) {
-      header { background-image: url(header-lowres.png); }
-    }
+/* low resolution screens */
+@media (-webkit-max-device-pixel-ratio: 1.5),
+  (max--moz-device-pixel-ratio: 1.5),
+  (max-resolution: 299dpi) {
+  header {
+    background-image: url(header-lowres.png);
+  }
+}
 ```
 
 Read more: [Media queries (Mozilla Developer Center)][6]
 
 #### Miscellaneous CSS
 
-* ``-webkit-tap-highlight-color`` (iOS): override the semitransparent color overlay when a user clicks a link or clickable element. To completely disable it, set the value to 'transparent' or 'rgba(0,0,0,0)'
+- `-webkit-tap-highlight-color` (iOS): override the semitransparent color overlay when a user clicks a link or clickable element. To completely disable it, set the value to 'transparent' or 'rgba(0,0,0,0)'
 
-* ``-webkit-user-select: none;`` - prevent the user from selecting text (also works on desktop WebKit)
+- `-webkit-user-select: none;` - prevent the user from selecting text (also works on desktop WebKit)
 
-* ``-webkit-touch-callout: none;`` - prevent the callout toolbar from appearing when a user touches and holds an element such as an anchor tag.
+- `-webkit-touch-callout: none;` - prevent the callout toolbar from appearing when a user touches and holds an element such as an anchor tag.
 
 ### Mobile-specific JavaScript
 
-#### ``window.scrollTo(0,0);``
+#### `window.scrollTo(0,0);`
 
 This hides the address bar and takes advantage of the entire device screen. You'll have to set this in a timeout and make sure to get the timing right. See [Remy Sharp's post][7] for more details.
 
-#### ``window.matchMedia()``
+#### `window.matchMedia()`
 
 (iOS 5+) Again, just as CSS media queries aren't specific to mobile, they do come in especially useful for mobile, so it's worth mentioning their JavaScript counterpart. window.matchMedia() is a JavaScript-based version of media queries. You can use [respond.js][8] as a polyfill for devices that don't support this functionality natively.
 
-#### ``navigator.connection``
+#### `navigator.connection`
 
 (Android 2.2+) Determine if the phone is running on WiFi, 3G, etc. Example:
 
-``` javascript
-    if (navigator.connection.type==navigator.connection.WIFI) {
-      // code for WiFi connections (high-bandwidth)
-    }
+```javascript
+if (navigator.connection.type == navigator.connection.WIFI) {
+  // code for WiFi connections (high-bandwidth)
+}
 ```
 
-#### ``window.devicePixelRatio``
+#### `window.devicePixelRatio`
 
 Determine screen resolution (analogue to the CSS media query). (iPhone 4 has the value 2, while Nexus One has the value 1.5).
 
-#### ``window.navigator.onLine``
+#### `window.navigator.onLine`
 
 Not strictly mobile, but helpful for apps to determine if they're being run offline.
 
-#### ``window.navigator.standalone``
+#### `window.navigator.standalone`
 
 (iOS 2.1+): determine if it's running in full-screen mode
 
 #### Touch and gesture events
 
-* [touch events (iOS, Android 2.2+)][9]: touchstart, touchmove, touchend, touchcancel
+- [touch events (iOS, Android 2.2+)][9]: touchstart, touchmove, touchend, touchcancel
 
-* [gesture events (Apple only, iOS 2+)][10]: gesturestart, gesturechange, gesturend give access to predefined gestures (rotation, scale, position)
+- [gesture events (Apple only, iOS 2+)][10]: gesturestart, gesturechange, gesturend give access to predefined gestures (rotation, scale, position)
 
 #### Screen orientation (every 90 degrees)
 
-* [orientationchange event][11]: triggered every 90 degrees of rotation (portrait and landscape modes). The current orientation is available through window.orientation
+- [orientationchange event][11]: triggered every 90 degrees of rotation (portrait and landscape modes). The current orientation is available through window.orientation
 
 #### Device orientation (more fine-grained)
 
@@ -210,13 +228,13 @@ The [deviceorientation event][12] will fire very frequently, and gives more fine
 
 #### devicemotion (shake gestures, etc.)
 
-* [devicemotion][14] fires when the user shakes or moves their device. Devicemotion taps into the accelerometer, which is fires off when the device accelerates. Contrast this with the deviceorientation event, which taps into the device's gyroscope (if it has one), which only measures the 3D angle orientation, even when the device is at rest.
+- [devicemotion][14] fires when the user shakes or moves their device. Devicemotion taps into the accelerometer, which is fires off when the device accelerates. Contrast this with the deviceorientation event, which taps into the device's gyroscope (if it has one), which only measures the 3D angle orientation, even when the device is at rest.
 
 #### Media capture API
 
 While iOS is still lacking basic file inputs, Android is forging ahead, giving developers fine-grained control over content users can upload.
 
-``` html
+```html
     <!-- regular file upload (Android 2.2+, NO iOS) -->
     <input type="file"></input>
 
@@ -272,35 +290,35 @@ While not specific to mobile, there's a lot of new stuff in general that you can
 [Part 6: Dealing with device orientation][32]  
 [Part 7: Mobile JavaScript libraries and frameworks][17]
 
- [1]: http://davidbcalhoun.com/2010/viewport-metatag
- [2]: http://www.rfc-editor.org/rfc/rfc3966.txt
- [3]: http://www.rfc-editor.org/rfc/rfc5724.txt
- [4]: http://developer.apple.com/library/safari/#documentation/appleapplications/reference/safariwebcontent/configuringwebapplications/configuringwebapplications.html
- [5]: http://www.w3.org/TR/css3-mediaqueries/
- [6]: https://developer.mozilla.org/en/css/media_queries
- [7]: http://remysharp.com/2010/08/05/doing-it-right-skipping-the-iphone-url-bar/
- [8]: https://github.com/scottjehl/Respond
- [9]: http://developer.apple.com/safari/library/documentation/appleapplications/reference/safariwebcontent/handlingevents/handlingevents.html
- [10]: http://developer.apple.com/safari/library/documentation/internetweb/conceptual/safarivisualeffectsprogguide/InteractiveVisualEffects/InteractiveVisualEffects.html
- [11]: http://ajaxian.com/archives/iphone-windowonorientationchange-code
- [12]: http://frontendstuff.com/javascript/examples/deviceorientation.html
- [13]: https://developer.mozilla.org/en/Detecting_device_orientation
- [14]: http://frontendstuff.com/javascript/examples/devicemotion.html
- [15]: http://www.blackberry.com/developers/docs/widgetapi/Summary_system.html
- [16]: http://phonegap.com/
- [17]: http://davidbcalhoun.com/2010/mobile-javascript-libraries-and-frameworks
- [18]: http://doctyper.com/archives/200808/fixed-positioning-on-mobile-safari/
- [19]: http://diveintohtml5.org/
- [20]: http://webkit.org/blog/130/css-transforms/
- [21]: http://webkit.org/blog/386/3d-transforms/
- [22]: http://border-radius.com/
- [23]: https://developer.mozilla.org/en/css/@font-face
- [24]: http://ejohn.org/blog/ecmascript-5-strict-mode-json-and-more/
- [25]: https://developer.mozilla.org/en/Core_JavaScript_1.5_Guide/Core_Language_Features#Constants
- [26]: http://davidbcalhoun.com/2009/javascript-tidbit-block-scope-with-let
- [27]: https://developer.mozilla.org/en/Core_JavaScript_1.5_Reference/Objects/Date
- [28]: http://davidbcalhoun.com/2010/the-mobile-developers-toolkit-mobile-web-part-2
- [29]: http://davidbcalhoun.com/2010/designing-buttons-that-dont-suck
- [30]: http://davidbcalhoun.com/2010/on-designing-a-mobile-webpage
- [31]: http://davidbcalhoun.com/2010/using-mobile-specific-html-css-javascript
- [32]: http://davidbcalhoun.com/2010/dealing-with-device-orientation
+[1]: http://davidbcalhoun.com/2010/viewport-metatag
+[2]: http://www.rfc-editor.org/rfc/rfc3966.txt
+[3]: http://www.rfc-editor.org/rfc/rfc5724.txt
+[4]: http://developer.apple.com/library/safari/#documentation/appleapplications/reference/safariwebcontent/configuringwebapplications/configuringwebapplications.html
+[5]: http://www.w3.org/TR/css3-mediaqueries/
+[6]: https://developer.mozilla.org/en/css/media_queries
+[7]: http://remysharp.com/2010/08/05/doing-it-right-skipping-the-iphone-url-bar/
+[8]: https://github.com/scottjehl/Respond
+[9]: http://developer.apple.com/safari/library/documentation/appleapplications/reference/safariwebcontent/handlingevents/handlingevents.html
+[10]: http://developer.apple.com/safari/library/documentation/internetweb/conceptual/safarivisualeffectsprogguide/InteractiveVisualEffects/InteractiveVisualEffects.html
+[11]: http://ajaxian.com/archives/iphone-windowonorientationchange-code
+[12]: http://frontendstuff.com/javascript/examples/deviceorientation.html
+[13]: https://developer.mozilla.org/en/Detecting_device_orientation
+[14]: http://frontendstuff.com/javascript/examples/devicemotion.html
+[15]: http://www.blackberry.com/developers/docs/widgetapi/Summary_system.html
+[16]: http://phonegap.com/
+[17]: http://davidbcalhoun.com/2010/mobile-javascript-libraries-and-frameworks
+[18]: http://doctyper.com/archives/200808/fixed-positioning-on-mobile-safari/
+[19]: http://diveintohtml5.org/
+[20]: http://webkit.org/blog/130/css-transforms/
+[21]: http://webkit.org/blog/386/3d-transforms/
+[22]: http://border-radius.com/
+[23]: https://developer.mozilla.org/en/css/@font-face
+[24]: http://ejohn.org/blog/ecmascript-5-strict-mode-json-and-more/
+[25]: https://developer.mozilla.org/en/Core_JavaScript_1.5_Guide/Core_Language_Features#Constants
+[26]: http://davidbcalhoun.com/2009/javascript-tidbit-block-scope-with-let
+[27]: https://developer.mozilla.org/en/Core_JavaScript_1.5_Reference/Objects/Date
+[28]: http://davidbcalhoun.com/2010/the-mobile-developers-toolkit-mobile-web-part-2
+[29]: http://davidbcalhoun.com/2010/designing-buttons-that-dont-suck
+[30]: http://davidbcalhoun.com/2010/on-designing-a-mobile-webpage
+[31]: http://davidbcalhoun.com/2010/using-mobile-specific-html-css-javascript
+[32]: http://davidbcalhoun.com/2010/dealing-with-device-orientation

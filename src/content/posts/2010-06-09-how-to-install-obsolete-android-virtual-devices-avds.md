@@ -11,6 +11,9 @@ tags:
   - avd
   - emulator
 ---
+
+## ⚠️ Warning: this is an old article and may include information that's out of date. ⚠️
+
 Apparently it&#8217;s no longer possible to easily download Android versions 2.0 and 2.0.1 from the AVD Manager. I noticed this problem when I got a new machine and had to install everything from scratch. In the future I suspect even more AVDs will be made obsolete, so this solution also applies to them.
 
 Why would you want to install obsolete AVDs? In my case it&#8217;s a matter of research: I simply want to see the progress of features being added to its browser, and track those changes over time.
@@ -47,9 +50,9 @@ Start up the AVD Manager and click on &#8220;Installed Packages&#8221;. If you d
 
 Now you can create new AVDs with these obsolete packages!
 
- [1]: https://dl-ssl.google.com/android/repository/android-2.0_r01-linux.zip
- [2]: https://dl-ssl.google.com/android/repository/android-2.0_r01-macosx.zip
- [3]: https://dl-ssl.google.com/android/repository/android-2.0_r01-windows.zip
- [4]: https://dl-ssl.google.com/android/repository/android-2.0.1_r01-linux.zip
- [5]: https://dl-ssl.google.com/android/repository/android-2.0.1_r01-macosx.zip
- [6]: https://dl-ssl.google.com/android/repository/android-2.0.1_r01-windows.zip
+[1]: https://dl-ssl.google.com/android/repository/android-2.0_r01-linux.zip
+[2]: https://dl-ssl.google.com/android/repository/android-2.0_r01-macosx.zip
+[3]: https://dl-ssl.google.com/android/repository/android-2.0_r01-windows.zip
+[4]: https://dl-ssl.google.com/android/repository/android-2.0.1_r01-linux.zip
+[5]: https://dl-ssl.google.com/android/repository/android-2.0.1_r01-macosx.zip
+[6]: https://dl-ssl.google.com/android/repository/android-2.0.1_r01-windows.zip

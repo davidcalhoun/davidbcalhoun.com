@@ -13,9 +13,9 @@
       <pubDate>Tue, 29 Jun 2010 00:00:00 +0000</pubDate>
       
       <guid>https://www.davidbcalhoun.com/2010/using-mobile-specific-html-css-and-javascript-mobile-web-part-5/</guid>
-      <description>(updated June 27, 2011)
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ (updated June 27, 2011)
 Mobile-specific HTML Viewport tag Use the viewport tag to properly fit the content to the screen:
-1  &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1.0&amp;#34;/&amp;gt;   Tel scheme (to initiate phone calls) 1  &amp;lt;a href=&amp;#34;tel:18005555555&amp;#34;&amp;gt;Call us at 1-800-555-5555&amp;lt;/a&amp;gt;   Sms scheme (to initiate text messages) 1 2 3  &amp;lt;a href=&amp;#34;sms:18005555555&amp;#34;&amp;gt; &amp;lt;a href=&amp;#34;sms:18005555555,18005555556&amp;#34;&amp;gt; &amp;lt;!-- multiple recipients --&amp;gt; &amp;lt;a href=&amp;#34;sms:18005555555?body=Text%20goes%20here&amp;#34;&amp;gt; &amp;lt;!-- predefined message body --&amp;gt;   Disable automatic telephone number linking 1  &amp;lt;meta name=&amp;#34;format-detection&amp;#34; content=&amp;#34;telephone=no&amp;#34;&amp;gt;   iOS-specific HTML (some work on Android as well) You also have access to several Apple-specific tags to use in your iOS applications (iPhone, iPad, and don&amp;rsquo;t forget the iPod Touch!</description>
+1  &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1.0&amp;#34; /&amp;gt;   Tel scheme (to initiate phone calls) 1  &amp;lt;a href=&amp;#34;tel:18005555555&amp;#34;&amp;gt;Call us at 1-800-555-5555&amp;lt;/a&amp;gt;   Sms scheme (to initiate text messages) 1 2 3 4 5 6 7 8  &amp;lt;a href=&amp;#34;sms:18005555555&amp;#34;&amp;gt; &amp;lt;a href=&amp;#34;sms:18005555555,18005555556&amp;#34;&amp;gt; &amp;lt;!</description>
     </item>
     
   </channel>

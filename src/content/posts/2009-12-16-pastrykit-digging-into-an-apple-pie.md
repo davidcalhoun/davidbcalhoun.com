@@ -1,5 +1,5 @@
 ---
-title: 'PastryKit: digging into an Apple Pie'
+title: "PastryKit: digging into an Apple Pie"
 date: 2009-12-16
 comments: true
 author: David
@@ -12,10 +12,13 @@ tags:
   - jqtouch
   - pastrykit
 ---
+
+## ⚠️ Warning: this is an old article and may include information that's out of date. ⚠️
+
 Yesterday [John Gruber wrote about Apple&#8217;s PastryKit][1], iPhone&#8217;s JavaScript framework that&#8217;s been discovered &#8220;in the wild&#8221; on the iPhone user guide at <http://help.apple.com/iphone/3/mobile/>. There&#8217;s a few ways to access the page:
 
-*   with an actual iPhone or iTouch
-*   by browsing with an iPhone/iTouch user agent. If you&#8217;re using Safari, enable the Developer menu in Safari>Preferences>Advanced and switching user agents by clicking on Develope>User Agent
+- with an actual iPhone or iTouch
+- by browsing with an iPhone/iTouch user agent. If you&#8217;re using Safari, enable the Developer menu in Safari>Preferences>Advanced and switching user agents by clicking on Develope>User Agent
 
 ### What&#8217;s all the big fuss?
 
@@ -34,9 +37,9 @@ Hopefully with all of this increased attention, we&#8217;ll see Apple take notic
 
 There&#8217;s even more interesting takeaways from the PastryKit code, and I&#8217;m sure I&#8217;ve just barely scratched the surface:
 
-*   implements its own form of Object-Oriented programming (obj.inherits and obj.synthetizes properties). When modules are declared, they&#8217;re registered as a PK Class (i.e. PKClass(PKBarButtonItem) registers PKBarButtonItem as a PK Class)
-*   CSS3 wrapper functions (PKUtils.t() is a wrapper for translate3d, etc.)
-*   no single library namespace (surprisingly) &#8211; which means there are many many global variables. This however is somewhat acceptable, as all variables are prefixed with &#8220;PK&#8221; and are declared to be constant (const PKStartEvent, const PKEndEvent) and cannot be overwritten.
+- implements its own form of Object-Oriented programming (obj.inherits and obj.synthetizes properties). When modules are declared, they&#8217;re registered as a PK Class (i.e. PKClass(PKBarButtonItem) registers PKBarButtonItem as a PK Class)
+- CSS3 wrapper functions (PKUtils.t() is a wrapper for translate3d, etc.)
+- no single library namespace (surprisingly) &#8211; which means there are many many global variables. This however is somewhat acceptable, as all variables are prefixed with &#8220;PK&#8221; and are declared to be constant (const PKStartEvent, const PKEndEvent) and cannot be overwritten.
 
 There&#8217;s also some interesting takeaways not from PastryKit itself, but from the way the iPhone user guide is implemented. Most of the data on the page &#8211; including each menu icon (base64 encoded) &#8211; is located in a single 650kb JSON-encoded file called content.json. This means the initial loading of the page is quite slower than the user would normally expect, but once the initial payload has been delivered, it&#8217;s a relatively smooth browsing experience thereafter.
 
@@ -58,33 +61,33 @@ The next thing I did was separate each module into its own file. I was able to s
 
 The following is an explanation of each module I found. The descriptions are definitely incomplete and possibly inaccurate, so any comments or help is appreciated. But this should hopefully shed some light on the matter!
 
-*   PKUtils &#8211; general helper functions (PKUtils.t() is a wrapper for CSS translate3d, PKUtils.degreesToRadians(), etc, etc.)
-*   PKEventTriage &#8211; general event handler
-*   PKPropertyTriage &#8211; handlePropertyChange() method &#8211; ?
-*   Element &#8211; helper functions added to HTML Element prototype
-*   Node &#8211; adds getNearestView() method to HTML Node prototype
-*   PKClass &#8211; custom-rolled class with with &#8220;inherits&#8221; and &#8220;synthetizes&#8221; properties
-*   PKObject &#8211; custom-rolled object with observer pattern. Most modules extend from this.
-*   PKPoint &#8211; wrapper for WebKitPoint &#8211; used for touch events?
-*   PKSize &#8211; wrapper for width/height properties
-*   PKImage (inherits PKObject) &#8211; helper for creating Image elements and knowing when it&#8217;s finished loading (but doesn&#8217;t add the image to the DOM)
-*   PKAnimator &#8211; basic animation tweens
-*   PKTransition &#8211; helper for proprietary Webkit CSS transitions
-*   PKTransaction &#8211; interacts with PKTransition &#8211; ?
-*   PKView (extends PKObject) &#8211; manages a view, such as handling events that occur within that view &#8211; ?
-*   PKContentView (extends PKView) &#8211; ?
-*   PKRootView (extends PKContentView) &#8211; ?
-*   PKScrollIndicator (extends PKView) &#8211; custom scrollbar
-*   PKScrollView (extends PKView) &#8211; handles dynamically positioning the page when it&#8217;s scrolled
-*   PKTableView (extends PKScrollView) &#8211; handles more touch/scroll events?
-*   PKCellPath &#8211; ?
-*   PKTableViewCell (extends PKView) &#8211; ?
-*   PKToolbar (extends PKView) &#8211; manages the top toolbar
-*   PKNavigationView (extends PKView) &#8211; manages bottom navigation bar
-*   PKNavigationItem (extends PKObject) &#8211; manages bottom navigation buttons
-*   PKControl (extends PKView) &#8211; manages generic controls
-*   PKBarButtonItem (extends PKControl) &#8211; manages button controls
-*   PKSearchBar.js (extends PKView) &#8211; manages the search bar
+- PKUtils &#8211; general helper functions (PKUtils.t() is a wrapper for CSS translate3d, PKUtils.degreesToRadians(), etc, etc.)
+- PKEventTriage &#8211; general event handler
+- PKPropertyTriage &#8211; handlePropertyChange() method &#8211; ?
+- Element &#8211; helper functions added to HTML Element prototype
+- Node &#8211; adds getNearestView() method to HTML Node prototype
+- PKClass &#8211; custom-rolled class with with &#8220;inherits&#8221; and &#8220;synthetizes&#8221; properties
+- PKObject &#8211; custom-rolled object with observer pattern. Most modules extend from this.
+- PKPoint &#8211; wrapper for WebKitPoint &#8211; used for touch events?
+- PKSize &#8211; wrapper for width/height properties
+- PKImage (inherits PKObject) &#8211; helper for creating Image elements and knowing when it&#8217;s finished loading (but doesn&#8217;t add the image to the DOM)
+- PKAnimator &#8211; basic animation tweens
+- PKTransition &#8211; helper for proprietary Webkit CSS transitions
+- PKTransaction &#8211; interacts with PKTransition &#8211; ?
+- PKView (extends PKObject) &#8211; manages a view, such as handling events that occur within that view &#8211; ?
+- PKContentView (extends PKView) &#8211; ?
+- PKRootView (extends PKContentView) &#8211; ?
+- PKScrollIndicator (extends PKView) &#8211; custom scrollbar
+- PKScrollView (extends PKView) &#8211; handles dynamically positioning the page when it&#8217;s scrolled
+- PKTableView (extends PKScrollView) &#8211; handles more touch/scroll events?
+- PKCellPath &#8211; ?
+- PKTableViewCell (extends PKView) &#8211; ?
+- PKToolbar (extends PKView) &#8211; manages the top toolbar
+- PKNavigationView (extends PKView) &#8211; manages bottom navigation bar
+- PKNavigationItem (extends PKObject) &#8211; manages bottom navigation buttons
+- PKControl (extends PKView) &#8211; manages generic controls
+- PKBarButtonItem (extends PKControl) &#8211; manages button controls
+- PKSearchBar.js (extends PKView) &#8211; manages the search bar
 
 ### Conclusion after a first glance
 
@@ -94,10 +97,10 @@ On first glance PastryKit seems to be at most a nice development framework for m
 
 I echo the sentiments of Gruber &#8211; I do hope we hear more about this from Apple!
 
- [1]: http://daringfireball.net/2009/12/pastrykit
- [2]: http://stackoverflow.com/questions/1143589/what-is-the-pastrykit-framework
- [3]: http://twitter.com/jQTouch/status/6146839190
- [4]: http://help.apple.com/iphone/3/mobile/dist/PastryKit-ug-compact.js
- [5]: http://jsbeautifier.org/
- [6]: http://davidbcalhoun.com/pastrykit/PastryKit.js
- [7]: http://davidbcalhoun.com/pastrykit/pastrykit-sdk.zip
+[1]: http://daringfireball.net/2009/12/pastrykit
+[2]: http://stackoverflow.com/questions/1143589/what-is-the-pastrykit-framework
+[3]: http://twitter.com/jQTouch/status/6146839190
+[4]: http://help.apple.com/iphone/3/mobile/dist/PastryKit-ug-compact.js
+[5]: http://jsbeautifier.org/
+[6]: http://davidbcalhoun.com/pastrykit/PastryKit.js
+[7]: http://davidbcalhoun.com/pastrykit/pastrykit-sdk.zip

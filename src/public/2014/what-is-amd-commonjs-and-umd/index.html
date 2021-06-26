@@ -229,8 +229,9 @@
 </article>
 
 
-    <div class="text-justify"><h2 id="intro">Intro</h2>
-<p>Over the years there&rsquo;s been a steadily increasing ecosystem of JavaScript components to choose from.  The sheer amount of choices is fantastic, but this also infamously presents a difficulty when components are mixed-and-matched.  And it doesn&rsquo;t take too long for budding developers to find out that not all components are built to play nicely together.</p>
+    <div class="text-justify"><h2 id="-warning-this-is-an-old-article-and-may-include-information-thats-out-of-date-">⚠️ Warning: this is an old article and may include information that&rsquo;s out of date. ⚠️</h2>
+<h2 id="intro">Intro</h2>
+<p>Over the years there&rsquo;s been a steadily increasing ecosystem of JavaScript components to choose from. The sheer amount of choices is fantastic, but this also infamously presents a difficulty when components are mixed-and-matched. And it doesn&rsquo;t take too long for budding developers to find out that not all components are built to play nicely together.</p>
 <p>To address these issues, the competing module specs AMD and CommonJS have appeared on the scene, allowing developers to write their code in an agreed-upon sandboxed and modularized way, so as not to &ldquo;pollute the ecosystem&rdquo;.</p>
 <h2 id="amd">AMD</h2>
 <p>Asynchronous Module Definition (AMD) has gained traction on the frontend, with RequireJS being the most popular implementation.</p>
@@ -248,12 +249,12 @@
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">//    filename: foo.js
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">define</span>([<span style="color:#e6db74">&#39;jquery&#39;</span>], <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">$</span>) {
-    <span style="color:#75715e">//    methods
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">myFunc</span>(){};
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">define</span>([<span style="color:#e6db74">&#34;jquery&#34;</span>], <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">$</span>) {
+  <span style="color:#75715e">//    methods
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">myFunc</span>() {}
 
-    <span style="color:#75715e">//    exposed public methods
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">myFunc</span>;
+  <span style="color:#75715e">//    exposed public methods
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">myFunc</span>;
 });
 </code></pre></td></tr></table>
 </div>
@@ -276,26 +277,26 @@
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">//    filename: foo.js
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">define</span>([<span style="color:#e6db74">&#39;jquery&#39;</span>, <span style="color:#e6db74">&#39;underscore&#39;</span>], <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">$</span>, <span style="color:#ae81ff">_</span>) {
-    <span style="color:#75715e">//    methods
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">a</span>(){};    <span style="color:#75715e">//    private because it&#39;s not returned (see below)
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">b</span>(){};    <span style="color:#75715e">//    public because it&#39;s returned
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">c</span>(){};    <span style="color:#75715e">//    public because it&#39;s returned
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">define</span>([<span style="color:#e6db74">&#34;jquery&#34;</span>, <span style="color:#e6db74">&#34;underscore&#34;</span>], <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">$</span>, <span style="color:#ae81ff">_</span>) {
+  <span style="color:#75715e">//    methods
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">a</span>() {} <span style="color:#75715e">//    private because it&#39;s not returned (see below)
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">b</span>() {} <span style="color:#75715e">//    public because it&#39;s returned
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">c</span>() {} <span style="color:#75715e">//    public because it&#39;s returned
 </span><span style="color:#75715e"></span>
-    <span style="color:#75715e">//    exposed public methods
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> {
-        <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">b</span>,
-        <span style="color:#a6e22e">c</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">c</span>
-    }
+  <span style="color:#75715e">//    exposed public methods
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">return</span> {
+    <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">b</span>,
+    <span style="color:#a6e22e">c</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">c</span>,
+  };
 });
 </code></pre></td></tr></table>
 </div>
 </div><p>The first part of the define is an array of dependencies, while the second part is essentially the callback function which is only executed when the dependencies are available (script loaders like RequireJS take care of that part, including figuring out where the files are located).</p>
 <p>Note that the dependency to variable order is important (ex. jquery-&gt;<code>$</code>, underscore-&gt;<code>_</code>).</p>
-<p>Also note that we can map the dependencies to any arbitrary variables we want here.  If we change <code>$</code> to <code>$$</code> in the code above, all jQuery references within our function block will be <code>$$</code> instead of <code>$</code>.</p>
-<p>And note, most importantly, that you can&rsquo;t reference the variables <code>$</code> and <code>_</code> outside of the function, because it&rsquo;s sandboxed from other code.  That&rsquo;s the goal here!</p>
+<p>Also note that we can map the dependencies to any arbitrary variables we want here. If we change <code>$</code> to <code>$$</code> in the code above, all jQuery references within our function block will be <code>$$</code> instead of <code>$</code>.</p>
+<p>And note, most importantly, that you can&rsquo;t reference the variables <code>$</code> and <code>_</code> outside of the function, because it&rsquo;s sandboxed from other code. That&rsquo;s the goal here!</p>
 <h2 id="commonjs">CommonJS</h2>
-<p>CommonJS is a style you may be familiar with if you&rsquo;re written anything in Node (which uses a slight variant).  It&rsquo;s also been gaining traction on the frontend with Browserify.</p>
+<p>CommonJS is a style you may be familiar with if you&rsquo;re written anything in Node (which uses a slight variant). It&rsquo;s also been gaining traction on the frontend with Browserify.</p>
 <p>Using the same format as before, here&rsquo;s what our <code>foo</code> module looks like in CommonJS:</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -314,10 +315,10 @@
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">//    filename: foo.js
 </span><span style="color:#75715e"></span>
 <span style="color:#75715e">//    dependencies
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">$</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;jquery&#39;</span>);
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">$</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;jquery&#34;</span>);
 
 <span style="color:#75715e">//    methods
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">myFunc</span>(){};
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">myFunc</span>() {}
 
 <span style="color:#75715e">//    exposed public method (single)
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">myFunc</span>;
@@ -343,23 +344,23 @@
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">//    filename: foo.js
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">$</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;jquery&#39;</span>);
-<span style="color:#66d9ef">var</span> <span style="color:#ae81ff">_</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;underscore&#39;</span>);
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">$</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;jquery&#34;</span>);
+<span style="color:#66d9ef">var</span> <span style="color:#ae81ff">_</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;underscore&#34;</span>);
 
 <span style="color:#75715e">//    methods
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">a</span>(){};    <span style="color:#75715e">//    private because it&#39;s omitted from module.exports (see below)
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">b</span>(){};    <span style="color:#75715e">//    public because it&#39;s defined in module.exports
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">c</span>(){};    <span style="color:#75715e">//    public because it&#39;s defined in module.exports
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">a</span>() {} <span style="color:#75715e">//    private because it&#39;s omitted from module.exports (see below)
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">b</span>() {} <span style="color:#75715e">//    public because it&#39;s defined in module.exports
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">c</span>() {} <span style="color:#75715e">//    public because it&#39;s defined in module.exports
 </span><span style="color:#75715e"></span>
 <span style="color:#75715e">//    exposed public methods
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> {
-    <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">b</span>,
-    <span style="color:#a6e22e">c</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">c</span>
+  <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">b</span>,
+  <span style="color:#a6e22e">c</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">c</span>,
 };
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="umd-universal-module-definition">UMD: Universal Module Definition</h2>
-<p>Since CommonJS and AMD styles have both been equally popular, it seems there&rsquo;s yet no consensus.  This has brought about the push for a &ldquo;universal&rdquo; pattern that supports both styles, which brings us to none other than the Universal Module Definition.</p>
+<p>Since CommonJS and AMD styles have both been equally popular, it seems there&rsquo;s yet no consensus. This has brought about the push for a &ldquo;universal&rdquo; pattern that supports both styles, which brings us to none other than the Universal Module Definition.</p>
 <p>The pattern is admittedly ugly, but is both AMD and CommonJS compatible, as well as supporting the old-style &ldquo;global&rdquo; variable definition:</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -384,23 +385,23 @@
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">root</span>, <span style="color:#a6e22e">factory</span>) {
-    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">define</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;function&#39;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">define</span>.<span style="color:#a6e22e">amd</span>) {
-        <span style="color:#75715e">// AMD
-</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">define</span>([<span style="color:#e6db74">&#39;jquery&#39;</span>], <span style="color:#a6e22e">factory</span>);
-    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">exports</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;object&#39;</span>) {
-        <span style="color:#75715e">// Node, CommonJS-like
-</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">factory</span>(<span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;jquery&#39;</span>));
-    } <span style="color:#66d9ef">else</span> {
-        <span style="color:#75715e">// Browser globals (root is window)
-</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">returnExports</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">factory</span>(<span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">jQuery</span>);
-    }
-}(<span style="color:#66d9ef">this</span>, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">$</span>) {
-    <span style="color:#75715e">//    methods
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">myFunc</span>(){};
+  <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">define</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;function&#34;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">define</span>.<span style="color:#a6e22e">amd</span>) {
+    <span style="color:#75715e">// AMD
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">define</span>([<span style="color:#e6db74">&#34;jquery&#34;</span>], <span style="color:#a6e22e">factory</span>);
+  } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">exports</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;object&#34;</span>) {
+    <span style="color:#75715e">// Node, CommonJS-like
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">factory</span>(<span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;jquery&#34;</span>));
+  } <span style="color:#66d9ef">else</span> {
+    <span style="color:#75715e">// Browser globals (root is window)
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">returnExports</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">factory</span>(<span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">jQuery</span>);
+  }
+})(<span style="color:#66d9ef">this</span>, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">$</span>) {
+  <span style="color:#75715e">//    methods
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">myFunc</span>() {}
 
-    <span style="color:#75715e">//    exposed public method
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">myFunc</span>;
-}));
+  <span style="color:#75715e">//    exposed public method
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">myFunc</span>;
+});
 </code></pre></td></tr></table>
 </div>
 </div><p>And keeping in the same pattern as the above examples, the more complicated case with multiple dependencies and multiple exposed methods:</p>
@@ -432,28 +433,28 @@
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">root</span>, <span style="color:#a6e22e">factory</span>) {
-    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">define</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;function&#39;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">define</span>.<span style="color:#a6e22e">amd</span>) {
-        <span style="color:#75715e">// AMD
-</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">define</span>([<span style="color:#e6db74">&#39;jquery&#39;</span>, <span style="color:#e6db74">&#39;underscore&#39;</span>], <span style="color:#a6e22e">factory</span>);
-    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">exports</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;object&#39;</span>) {
-        <span style="color:#75715e">// Node, CommonJS-like
-</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">factory</span>(<span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;jquery&#39;</span>), <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;underscore&#39;</span>));
-    } <span style="color:#66d9ef">else</span> {
-        <span style="color:#75715e">// Browser globals (root is window)
-</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">returnExports</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">factory</span>(<span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">jQuery</span>, <span style="color:#a6e22e">root</span>.<span style="color:#ae81ff">_</span>);
-    }
-}(<span style="color:#66d9ef">this</span>, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">$</span>, <span style="color:#ae81ff">_</span>) {
-    <span style="color:#75715e">//    methods
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">a</span>(){};    <span style="color:#75715e">//    private because it&#39;s not returned (see below)
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">b</span>(){};    <span style="color:#75715e">//    public because it&#39;s returned
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">c</span>(){};    <span style="color:#75715e">//    public because it&#39;s returned
+  <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">define</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;function&#34;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">define</span>.<span style="color:#a6e22e">amd</span>) {
+    <span style="color:#75715e">// AMD
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">define</span>([<span style="color:#e6db74">&#34;jquery&#34;</span>, <span style="color:#e6db74">&#34;underscore&#34;</span>], <span style="color:#a6e22e">factory</span>);
+  } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">exports</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;object&#34;</span>) {
+    <span style="color:#75715e">// Node, CommonJS-like
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">factory</span>(<span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;jquery&#34;</span>), <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;underscore&#34;</span>));
+  } <span style="color:#66d9ef">else</span> {
+    <span style="color:#75715e">// Browser globals (root is window)
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">returnExports</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">factory</span>(<span style="color:#a6e22e">root</span>.<span style="color:#a6e22e">jQuery</span>, <span style="color:#a6e22e">root</span>.<span style="color:#ae81ff">_</span>);
+  }
+})(<span style="color:#66d9ef">this</span>, <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">$</span>, <span style="color:#ae81ff">_</span>) {
+  <span style="color:#75715e">//    methods
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">a</span>() {} <span style="color:#75715e">//    private because it&#39;s not returned (see below)
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">b</span>() {} <span style="color:#75715e">//    public because it&#39;s returned
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">c</span>() {} <span style="color:#75715e">//    public because it&#39;s returned
 </span><span style="color:#75715e"></span>
-    <span style="color:#75715e">//    exposed public methods
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> {
-        <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">b</span>,
-        <span style="color:#a6e22e">c</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">c</span>
-    }
-}));
+  <span style="color:#75715e">//    exposed public methods
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">return</span> {
+    <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">b</span>,
+    <span style="color:#a6e22e">c</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">c</span>,
+  };
+});
 </code></pre></td></tr></table>
 </div>
 </div><p>(Sep 2014 edit: fixed syntax for CommonJS in the last example)</p>

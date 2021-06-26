@@ -14,6 +14,9 @@ tags:
   - rgba
   - web safe
 ---
+
+## ⚠️ Warning: this is an old article and may include information that's out of date. ⚠️
+
 ### Color keywords
 
 Example usage:
@@ -26,7 +29,7 @@ body { color: color_name; }</pre>
 
 Because color names are easy to remember, they&#8217;re handy for getting quick results, especially while doing rapid prototyping.
 
-[W3C&#8217;s CSS1 recommendation][1] first mentioned 16 color keywords that you can use: *aqua, black, blue, fuchsia, gray, green, lime, maroon, navy, olive, purple, red, silver, teal, white, and yellow*:
+[W3C&#8217;s CSS1 recommendation][1] first mentioned 16 color keywords that you can use: _aqua, black, blue, fuchsia, gray, green, lime, maroon, navy, olive, purple, red, silver, teal, white, and yellow_:
 
 <table>
   <tr>
@@ -218,9 +221,9 @@ body { color: rgb(red [integer 0-255], green [integer 0-255], blue [integer 0-25
 
 For this section it&#8217;s very handy to know a bit about [color theory][6], particularly these facts:
 
-*   all colors can be made from a combination of red, green, and blue (RGB) as the primary colors
-*   in light (additive color mixing), the absence of all color results in the color black
-*   in light (additive color mixing), the mixing of red, green, and blue in equal amounts results in the color white
+- all colors can be made from a combination of red, green, and blue (RGB) as the primary colors
+- in light (additive color mixing), the absence of all color results in the color black
+- in light (additive color mixing), the mixing of red, green, and blue in equal amounts results in the color white
 
 With the rgb attribute, we specify the amount of each color we want with an integer from 0 to 255. Here we can see both black and white expressed as rgb values:
 
@@ -346,14 +349,14 @@ Probably the best way to learn how to use these color values is to actually try 
 
 [HTML Colors][11]
 
- [1]: http://www.w3.org/TR/CSS1/#color-units
- [2]: http://en.wikipedia.org/wiki/Web_colors
- [3]: http://www.w3.org/TR/CSS2/syndata.html#keywords
- [4]: http://www.w3.org/TR/css3-color/#html4
- [5]: http://www.w3schools.com/css/css_colornames.asp
- [6]: http://en.wikipedia.org/wiki/Color_theory
- [7]: http://www.w3.org/TR/css3-color/#rgba-color
- [8]: http://en.wikipedia.org/wiki/Hexadecimal
- [9]: http://www.google.com/search?aq=f&#038;ie=UTF-8&#038;q=decimal+to+hex
- [10]: http://en.wikipedia.org/wiki/Web_colors#Web-safe_colors
- [11]: http://www.w3schools.com/html/html_colors.asp
+[1]: http://www.w3.org/TR/CSS1/#color-units
+[2]: http://en.wikipedia.org/wiki/Web_colors
+[3]: http://www.w3.org/TR/CSS2/syndata.html#keywords
+[4]: http://www.w3.org/TR/css3-color/#html4
+[5]: http://www.w3schools.com/css/css_colornames.asp
+[6]: http://en.wikipedia.org/wiki/Color_theory
+[7]: http://www.w3.org/TR/css3-color/#rgba-color
+[8]: http://en.wikipedia.org/wiki/Hexadecimal
+[9]: http://www.google.com/search?aq=f&ie=UTF-8&q=decimal+to+hex
+[10]: http://en.wikipedia.org/wiki/Web_colors#Web-safe_colors
+[11]: http://www.w3schools.com/html/html_colors.asp

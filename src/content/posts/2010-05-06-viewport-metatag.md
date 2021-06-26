@@ -13,12 +13,15 @@ tags:
   - mobileoptimized
   - viewport
 ---
+
+## ⚠️ Warning: this is an old article and may include information that's out of date. ⚠️
+
 ### The skinny
 
 Use this:
 
-``` html
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 ```
 
 ### Introduction
@@ -39,6 +42,7 @@ Ok, so you've settled down to learn how to write a website for a mobile device u
     <p>Hello world!</p>
     </body>
     </html>
+
 {:lang="html"}
 
 Ok! You can't get much simpler than that. You check it out and it looks good on all the desktop browsers, since there's really no opportunity yet for any cross-browser inconsistencies. And then you check it out on your mobile device:
@@ -57,19 +61,19 @@ But this is no good! What we need to do is tell the browser that this webpage is
 
 Now we tweak our Hello World just a bit...
 
-``` html
-    <!doctype html>
-    <html>
-    <head>
-        <title>Hello world!</title>
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello world!</title>
 
-        <meta name="viewport" content="width=device-width"/>
-    </head>
+    <meta name="viewport" content="width=device-width" />
+  </head>
 
-    <body>
+  <body>
     <p>Hello world!</p>
-    </body>
-    </html>
+  </body>
+</html>
 ```
 
 And we get this...
@@ -82,14 +86,17 @@ This viewport metatag is supported on many smartphones, from iPhone to Android t
 
 At the end of the day here's what the standard viewport looks like, as grabbed from [m.yahoo.com][1]:
 
-``` html
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+```html
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+/>
 ```
 
 EDIT: It's been discussed a bit, and it seems that preventing the user from scaling the page (pinch zooming) isn't necessarily desirable. So here's a version of the tag that allows the user to pinch zoom:
 
-``` html
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 ```
 
 ### More fun with the viewport tag
@@ -170,20 +177,20 @@ In addition to solving our biggest concern with the width of the content, the vi
 
 ### Feature phones: when viewport isn't available...
 
-Note: this info is now very outdated and is preserved here just for historical reference.  In general, you can ignore this stuff these days.
+Note: this info is now very outdated and is preserved here just for historical reference. In general, you can ignore this stuff these days.
 
 Unfortunately the viewport tag is relatively new and as such isn't universally supported, especially if you're working on older feature phones. But there are some older methods at your disposal for identifying your website as optimized for mobile:
 
-``` html
-    <meta name="HandheldFriendly" content="true"/>
+```html
+<meta name="HandheldFriendly" content="true" />
 ```
 
 This tag was originally used to identify mobile content in AvantGo browsers, but has now been made the general standard for identifying mobile websites. However, it's unknown what range of browsers support this meta tag.
 
 Another tag at your disposal is a Windows-proprietary meta tag that also took root and eventually became used as another means of identifying mobile content. The drawback with this tag is that a specific width must be given, which doesn't make it as flexible as the viewport tag (see above). Again, it's unknown what the support for this tag is:
 
-``` html
-    <meta name="MobileOptimized" content="320"/>
+```html
+<meta name="MobileOptimized" content="320" />
 ```
 
 Lastly, your website will be identified as a mobile optimized site if your doctype is either XHTML-MP or WML. However, this is becoming less and less the case these days, as browsers begin to support good old HTML4.01 and HTML5+.
@@ -196,8 +203,8 @@ Lastly, your website will be identified as a mobile optimized site if your docty
 
 Here's an example of the tag in action:
 
-``` html
-    <meta name="viewport" content="target-densitydpi=device-dpi" />
+```html
+<meta name="viewport" content="target-densitydpi=device-dpi" />
 ```
 
 ### References
@@ -206,23 +213,24 @@ Here's an example of the tag in action:
 [Mobile META Tags][5]
 
 ### More from the Mobile Web series:
-* [Part 1: The viewport metatag][6]  
-* [Part 2: The mobile developer’s toolkit][7]  
-* [Part 3: Designing buttons that don’t suck][8]  
-* [Part 4: On designing a mobile webpage][9]  
-* [Part 5: Using mobile-specific HTML, CSS, and JavaScript][10]  
-* [Part 6: Dealing with device orientation][11]  
-* [Part 7: Mobile JavaScript libraries and frameworks][12]
 
- [1]: http://m.yahoo.com
- [2]: http://www.amazon.com/gp/product/B003U890OQ/ref=pd_lpo_k2_dp_sr_1?pf_rd_p=486539851&#038;pf_rd_s=lpo-top-stripe-1&#038;pf_rd_t=201&#038;pf_rd_i=143022620X&#038;pf_rd_m=ATVPDKIKX0DER&#038;pf_rd_r=017307F07YKBPJX46DXB
- [3]: http://developer.android.com/reference/android/webkit/WebView.html
- [4]: http://developer.apple.com/safari/library/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html
- [5]: http://learnthemobileweb.com/tag/mobile-web-development/page/3/
- [6]: http://davidbcalhoun.com/2010/viewport-metatag
- [7]: http://davidbcalhoun.com/2010/the-mobile-developers-toolkit-mobile-web-part-2
- [8]: http://davidbcalhoun.com/2010/designing-buttons-that-dont-suck
- [9]: http://davidbcalhoun.com/2010/on-designing-a-mobile-webpage
- [10]: http://davidbcalhoun.com/2010/using-mobile-specific-html-css-javascript
- [11]: http://davidbcalhoun.com/2010/dealing-with-device-orientation
- [12]: http://davidbcalhoun.com/2010/mobile-javascript-libraries-and-frameworks
+- [Part 1: The viewport metatag][6]
+- [Part 2: The mobile developer’s toolkit][7]
+- [Part 3: Designing buttons that don’t suck][8]
+- [Part 4: On designing a mobile webpage][9]
+- [Part 5: Using mobile-specific HTML, CSS, and JavaScript][10]
+- [Part 6: Dealing with device orientation][11]
+- [Part 7: Mobile JavaScript libraries and frameworks][12]
+
+[1]: http://m.yahoo.com
+[2]: http://www.amazon.com/gp/product/B003U890OQ/ref=pd_lpo_k2_dp_sr_1?pf_rd_p=486539851&pf_rd_s=lpo-top-stripe-1&pf_rd_t=201&pf_rd_i=143022620X&pf_rd_m=ATVPDKIKX0DER&pf_rd_r=017307F07YKBPJX46DXB
+[3]: http://developer.android.com/reference/android/webkit/WebView.html
+[4]: http://developer.apple.com/safari/library/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html
+[5]: http://learnthemobileweb.com/tag/mobile-web-development/page/3/
+[6]: http://davidbcalhoun.com/2010/viewport-metatag
+[7]: http://davidbcalhoun.com/2010/the-mobile-developers-toolkit-mobile-web-part-2
+[8]: http://davidbcalhoun.com/2010/designing-buttons-that-dont-suck
+[9]: http://davidbcalhoun.com/2010/on-designing-a-mobile-webpage
+[10]: http://davidbcalhoun.com/2010/using-mobile-specific-html-css-javascript
+[11]: http://davidbcalhoun.com/2010/dealing-with-device-orientation
+[12]: http://davidbcalhoun.com/2010/mobile-javascript-libraries-and-frameworks
