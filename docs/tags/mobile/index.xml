@@ -31,10 +31,10 @@ How shall we comfort ourselves, the murderers of all murderers?
       <pubDate>Fri, 10 May 2013 00:00:00 +0000</pubDate>
       
       <guid>https://www.davidbcalhoun.com/2013/quick-style-comparison-of-mobile-image-search-sites/</guid>
-      <description>The other day I glanced at a classmate using Baidu to perform an image search and was impressed with their presentation:
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ The other day I glanced at a classmate using Baidu to perform an image search and was impressed with their presentation:
 
 Note the nice big images and the lack of margins around images. After seeing this presentation, I realized that the common approach of adding margins around images is pretty unnecessary.
-I also noticed that the images are a variety of sizes, leading to a less sterile experience. There&amp;rsquo;s surely some clever math going on behind the scenes here to make sure the images appear &amp;ldquo;justified&amp;rdquo; (to use a word from the recent Flickr redesign).</description>
+I also noticed that the images are a variety of sizes, leading to a less sterile experience.</description>
     </item>
     
     <item>
@@ -76,8 +76,8 @@ iPhone 3GS (alternate white balance point)</description>
       <pubDate>Tue, 11 Oct 2011 00:00:00 +0000</pubDate>
       
       <guid>https://www.davidbcalhoun.com/2011/mobile-performance-manifesto/</guid>
-      <description>Earlier this year I gave a talk (slides) outlining the latest and greatest in mobile performance, including a bit of my own unscientific research into carrier latency and bandwidth thanks to boomerang.js.
-I realized that interest in mobile performance has exploded recently, especially with Steve Souders announcing his focus on mobile, and I thought it was time for an update, this time in blog form. Also, my old slides have been somewhat embarrassing.</description>
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ Earlier this year I gave a talk (slides) outlining the latest and greatest in mobile performance, including a bit of my own unscientific research into carrier latency and bandwidth thanks to boomerang.js.
+I realized that interest in mobile performance has exploded recently, especially with Steve Souders announcing his focus on mobile, and I thought it was time for an update, this time in blog form.</description>
     </item>
     
     <item>
@@ -122,12 +122,10 @@ iPhone released just before publication  Mobile Web Fundamentals  Putting 2.</de
       <pubDate>Mon, 06 Dec 2010 00:00:00 +0000</pubDate>
       
       <guid>https://www.davidbcalhoun.com/2010/mobile-javascript-libraries-and-frameworks-mobile-web-part-7/</guid>
-      <description>Intro This is designed to be a &amp;ldquo;living&amp;rdquo; post of available materials which will hopefully be updated frequently.
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ Intro This is designed to be a &amp;ldquo;living&amp;rdquo; post of available materials which will hopefully be updated frequently.
 Right now there&amp;rsquo;s not much, just some links, but I hope to keep adding materials, so check back!
 The List Sencha Touch
-PhoneGap - native wrapper which provides access to native hardware through their own JavaScript APIs
-jQuery Mobile - a separate mobile UI which has jQuery as a dependency
-iAd - an update to Apple&amp;rsquo;s PastryKit, but probably intended only for ads</description>
+PhoneGap - native wrapper which provides access to native hardware through their own JavaScript APIs</description>
     </item>
     
     <item>
@@ -136,8 +134,8 @@ iAd - an update to Apple&amp;rsquo;s PastryKit, but probably intended only for a
       <pubDate>Tue, 05 Oct 2010 00:00:00 +0000</pubDate>
       
       <guid>https://www.davidbcalhoun.com/2010/does-it-still-make-sense-to-use-em-rather-than-px/</guid>
-      <description>Alex Kessinger tweeted asking if there was a reason to still use EMs instead of PX measurements in mobile. This is an interesting question, but 140 characters isn&amp;rsquo;t quite enough to explain my thoughts. So here&amp;rsquo;s an old-fashioned blog post!
-Just a quick review: em and percentage (%) units in CSS are relative measurements, whereas px and other measurements are not. What this means is that the resulting size of relative measurements depends on the size of the parent.</description>
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ Alex Kessinger tweeted asking if there was a reason to still use EMs instead of PX measurements in mobile. This is an interesting question, but 140 characters isn&amp;rsquo;t quite enough to explain my thoughts. So here&amp;rsquo;s an old-fashioned blog post!
+Just a quick review: em and percentage (%) units in CSS are relative measurements, whereas px and other measurements are not.</description>
     </item>
     
     <item>
@@ -156,8 +154,8 @@ I just came back from Mobile Monday Silicon Valley: Best Practices for Mobile De
       <pubDate>Tue, 24 Aug 2010 00:00:00 +0000</pubDate>
       
       <guid>https://www.davidbcalhoun.com/2010/dealing-with-device-orientation-mobile-web-part-6/</guid>
-      <description>Introduction If you read part 4 of this series, you&amp;rsquo;ll know that because of the variety of screen sizes, the best way to develop for mobile is to develop fluid layouts that take 100% of the available space on the screen.
-What you probably didn&amp;rsquo;t think of is that there&amp;rsquo;s different screen widths even on the same device! This is due to screen orientation. And when the user changes the screen orientation, stuff may break (hey, it&amp;rsquo;s not a perfect world).</description>
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ Introduction If you read part 4 of this series, you&amp;rsquo;ll know that because of the variety of screen sizes, the best way to develop for mobile is to develop fluid layouts that take 100% of the available space on the screen.
+What you probably didn&amp;rsquo;t think of is that there&amp;rsquo;s different screen widths even on the same device!</description>
     </item>
     
     <item>
@@ -192,9 +190,9 @@ Mobile Access 2010 (Pew Research)</description>
       <pubDate>Tue, 29 Jun 2010 00:00:00 +0000</pubDate>
       
       <guid>https://www.davidbcalhoun.com/2010/using-mobile-specific-html-css-and-javascript-mobile-web-part-5/</guid>
-      <description>(updated June 27, 2011)
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ (updated June 27, 2011)
 Mobile-specific HTML Viewport tag Use the viewport tag to properly fit the content to the screen:
-1  &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1.0&amp;#34;/&amp;gt;   Tel scheme (to initiate phone calls) 1  &amp;lt;a href=&amp;#34;tel:18005555555&amp;#34;&amp;gt;Call us at 1-800-555-5555&amp;lt;/a&amp;gt;   Sms scheme (to initiate text messages) 1 2 3  &amp;lt;a href=&amp;#34;sms:18005555555&amp;#34;&amp;gt; &amp;lt;a href=&amp;#34;sms:18005555555,18005555556&amp;#34;&amp;gt; &amp;lt;!-- multiple recipients --&amp;gt; &amp;lt;a href=&amp;#34;sms:18005555555?body=Text%20goes%20here&amp;#34;&amp;gt; &amp;lt;!-- predefined message body --&amp;gt;   Disable automatic telephone number linking 1  &amp;lt;meta name=&amp;#34;format-detection&amp;#34; content=&amp;#34;telephone=no&amp;#34;&amp;gt;   iOS-specific HTML (some work on Android as well) You also have access to several Apple-specific tags to use in your iOS applications (iPhone, iPad, and don&amp;rsquo;t forget the iPod Touch!</description>
+1  &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1.0&amp;#34; /&amp;gt;   Tel scheme (to initiate phone calls) 1  &amp;lt;a href=&amp;#34;tel:18005555555&amp;#34;&amp;gt;Call us at 1-800-555-5555&amp;lt;/a&amp;gt;   Sms scheme (to initiate text messages) 1 2 3 4 5 6 7 8  &amp;lt;a href=&amp;#34;sms:18005555555&amp;#34;&amp;gt; &amp;lt;a href=&amp;#34;sms:18005555555,18005555556&amp;#34;&amp;gt; &amp;lt;!</description>
     </item>
     
     <item>
@@ -239,7 +237,7 @@ Mobile-specific HTML Viewport tag Use the viewport tag to properly fit the conte
       <pubDate>Wed, 26 May 2010 00:00:00 +0000</pubDate>
       
       <guid>https://www.davidbcalhoun.com/2010/on-designing-a-mobile-webpage-mobile-web-part-4/</guid>
-      <description>The frontend engineer lives at the intersection between design and engineering, and this is perhaps nowhere more true than in the world of mobile. In order to make a usable desktop website, an engineer must have at least some sense of design, and fortunately a lot of this has been standardized over the years. But the world of mobile is full of more unknowns, and the field is changing rapidly, especially lately from the shift away from older feature phones to the focus on smartphones.</description>
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ The frontend engineer lives at the intersection between design and engineering, and this is perhaps nowhere more true than in the world of mobile. In order to make a usable desktop website, an engineer must have at least some sense of design, and fortunately a lot of this has been standardized over the years. But the world of mobile is full of more unknowns, and the field is changing rapidly, especially lately from the shift away from older feature phones to the focus on smartphones.</description>
     </item>
     
     <item>
@@ -248,7 +246,7 @@ Mobile-specific HTML Viewport tag Use the viewport tag to properly fit the conte
       <pubDate>Wed, 19 May 2010 00:00:00 +0000</pubDate>
       
       <guid>https://www.davidbcalhoun.com/2010/designing-buttons-that-dont-suck-mobile-web-part-3/</guid>
-      <description>A button is something that seems to be made just for mobile: it’s designed to be big and easy to activate, as opposed to small and harder to activate, like normal text links. This seems ideal for a mobile devices, which have a small display area and whose form of input is a person’s (relatively) fat finger interacting with the screen. Contrast this with the desktop, where the display area is much larger and the input device, the mouse, is a much more highly refined and sensitive pointing device.</description>
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ A button is something that seems to be made just for mobile: it’s designed to be big and easy to activate, as opposed to small and harder to activate, like normal text links. This seems ideal for a mobile devices, which have a small display area and whose form of input is a person’s (relatively) fat finger interacting with the screen.</description>
     </item>
     
     <item>
@@ -257,8 +255,7 @@ Mobile-specific HTML Viewport tag Use the viewport tag to properly fit the conte
       <pubDate>Tue, 11 May 2010 00:00:00 +0000</pubDate>
       
       <guid>https://www.davidbcalhoun.com/2010/the-mobile-developers-toolkit-mobile-web-part-2/</guid>
-      <description>Tools of the trade You’re no mobile developer unless you have the tools to develop on mobile! And while it’s good to own at least one of the smartphones you’re developing on, it’s probably unrealistic to think that you’re going to go out of your way to buy several other unlocked smartphones just to test with. So you should have the next best thing: an SDK!
-But an SDK is just one of the tools of the trade.</description>
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ Tools of the trade You’re no mobile developer unless you have the tools to develop on mobile! And while it’s good to own at least one of the smartphones you’re developing on, it’s probably unrealistic to think that you’re going to go out of your way to buy several other unlocked smartphones just to test with.</description>
     </item>
     
     <item>
@@ -267,9 +264,9 @@ But an SDK is just one of the tools of the trade.</description>
       <pubDate>Thu, 06 May 2010 00:00:00 +0000</pubDate>
       
       <guid>https://www.davidbcalhoun.com/2010/the-viewport-metatag-mobile-web-part-1/</guid>
-      <description>The skinny Use this:
-1  &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1&amp;#34;/&amp;gt;   Introduction This series of posts is intended to introduce web developers to basic techniques for designing for the mobile web. It assumes at least a basic knowledge of creating desktop websites.
-The problem Ok, so you&amp;rsquo;ve settled down to learn how to write a website for a mobile device using your current knowledge of building desktop websites. So you start off with some pretty basic HTML:</description>
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ The skinny Use this:
+1  &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1&amp;#34; /&amp;gt;   Introduction This series of posts is intended to introduce web developers to basic techniques for designing for the mobile web. It assumes at least a basic knowledge of creating desktop websites.
+The problem Ok, so you&amp;rsquo;ve settled down to learn how to write a website for a mobile device using your current knowledge of building desktop websites.</description>
     </item>
     
     <item>

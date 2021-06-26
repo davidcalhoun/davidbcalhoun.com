@@ -217,7 +217,8 @@
 </article>
 
 
-    <div class="text-justify"><p><em><strong>Update: the Twitter REST API v1 is no longer active.  This post has been preserved as a reference.</strong></em></p>
+    <div class="text-justify"><h2 id="-warning-this-is-an-old-article-and-may-include-information-thats-out-of-date-">⚠️ Warning: this is an old article and may include information that&rsquo;s out of date. ⚠️</h2>
+<p><strong><em>Update: the Twitter REST API v1 is no longer active. This post has been preserved as a reference.</em></strong></p>
 <p>(why does Twitter make it so hard? What did RSS ever do to it?)</p>
 <h3 id="the-skinny">The skinny</h3>
 <p>The Twitter API appears to support two methods for getting RSS feeds of lists. Both of these methods are pretty buried and their API docs don&rsquo;t help too much, but nonetheless both of these feeds work:</p>
@@ -261,7 +262,7 @@
 </blockquote>
 <p>And it works, without having to mess around with OAuth or authentication, registering an app, or whatever. Of course now we can refer back to the API docs and mess around with some parameters to get just the data I&rsquo;m looking for. Maybe most useful to developers is the handy ability to get easily paginated results:</p>
 <blockquote>
-<p><a href="http://api.twitter.com/1/lists/statuses.atom?list_id=41981352&amp;#038;page=2">http://api.twitter.com/1/lists/statuses.atom?list_id=41981352&amp;#038;page=2</a></p>
+<p><a href="http://api.twitter.com/1/lists/statuses.atom?list_id=41981352&amp;page=2">http://api.twitter.com/1/lists/statuses.atom?list_id=41981352&amp;page=2</a></p>
 </blockquote>
 <p>There&rsquo;s also what would be a handy &ldquo;count&rdquo; variable, but it&rsquo;s altogether useless as it appears to be ignored. The API always returned 20 results for me.</p>
 <p>In any case, there you have it! The incredibly roundabout way to get an RSS feed of your favorite Twitter list.</p>

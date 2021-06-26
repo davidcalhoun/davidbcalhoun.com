@@ -225,7 +225,8 @@
 </article>
 
 
-    <div class="text-justify"><h3 id="introduction">Introduction</h3>
+    <div class="text-justify"><h2 id="-warning-this-is-an-old-article-and-may-include-information-thats-out-of-date-">⚠️ Warning: this is an old article and may include information that&rsquo;s out of date. ⚠️</h2>
+<h3 id="introduction">Introduction</h3>
 <p>A little while back <a href="http://www.mobilexweb.com/blog/android-froyo-html5-accelerometer-flash-player">this post</a> made the rounds, which took us on a journey through some of the new features introduced in the browser in Android 2.2 Froyo. Among the most overlooked features are the file upload functionality (you can upload photos from your browser now! But we&rsquo;re still waiting on iPhone to support this&hellip;) and a little-known JavaScript addition to the Browser Object Model (BOM) in the form of <code>navigator.connection</code>. Let&rsquo;s take a peek at its contents:</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -260,11 +261,23 @@
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">highbandwidth</span> .<span style="color:#a6e22e">logo</span>   { <span style="color:#66d9ef">background-image</span>:url(<span style="color:#e6db74">&#39;logo-high.jpg&#39;</span>); }
-.<span style="color:#a6e22e">mediumbandwidth</span> .<span style="color:#a6e22e">logo</span> { <span style="color:#66d9ef">background-image</span>:url(<span style="color:#e6db74">&#39;logo-medium.jpg&#39;</span>); }
-.<span style="color:#a6e22e">lowbandwidth</span> .<span style="color:#a6e22e">logo</span>    { <span style="color:#66d9ef">background-image</span>:url(<span style="color:#e6db74">&#39;logo-low.jpg&#39;</span>); }
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">highbandwidth</span> .<span style="color:#a6e22e">logo</span> {
+  <span style="color:#66d9ef">background-image</span>: url(<span style="color:#e6db74">&#34;logo-high.jpg&#34;</span>);
+}
+.<span style="color:#a6e22e">mediumbandwidth</span> .<span style="color:#a6e22e">logo</span> {
+  <span style="color:#66d9ef">background-image</span>: url(<span style="color:#e6db74">&#34;logo-medium.jpg&#34;</span>);
+}
+.<span style="color:#a6e22e">lowbandwidth</span> .<span style="color:#a6e22e">logo</span> {
+  <span style="color:#66d9ef">background-image</span>: url(<span style="color:#e6db74">&#34;logo-low.jpg&#34;</span>);
+}
 </code></pre></td></tr></table>
 </div>
 </div><p>And here&rsquo;s the JavaScript:</p>
@@ -299,27 +312,27 @@
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">connection</span>, <span style="color:#a6e22e">connectionSpeed</span>, <span style="color:#a6e22e">htmlNode</span>, <span style="color:#a6e22e">htmlClass</span>;
 
 <span style="color:#75715e">// create a custom object if navigator.connection isn&#39;t available
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">connection</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">connection</span> <span style="color:#f92672">||</span> {<span style="color:#e6db74">&#39;type&#39;</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;0&#39;</span>};
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">connection</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">navigator</span>.<span style="color:#a6e22e">connection</span> <span style="color:#f92672">||</span> { <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;0&#34;</span> };
 
 <span style="color:#75715e">// set connectionSpeed
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">switch</span>(<span style="color:#a6e22e">connection</span>.<span style="color:#a6e22e">type</span>) {
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">switch</span> (<span style="color:#a6e22e">connection</span>.<span style="color:#a6e22e">type</span>) {
   <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">connection</span>.<span style="color:#a6e22e">CELL_3G</span><span style="color:#f92672">:</span>
     <span style="color:#75715e">// 3G
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">connectionSpeed</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;mediumbandwidth&#39;</span>;
-  <span style="color:#66d9ef">break</span>;
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">connectionSpeed</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;mediumbandwidth&#34;</span>;
+    <span style="color:#66d9ef">break</span>;
   <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">connection</span>.<span style="color:#a6e22e">CELL_2G</span><span style="color:#f92672">:</span>
     <span style="color:#75715e">// 2G
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">connectionSpeed</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;lowbandwidth&#39;</span>;
-  <span style="color:#66d9ef">break</span>;
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">connectionSpeed</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;lowbandwidth&#34;</span>;
+    <span style="color:#66d9ef">break</span>;
   <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
     <span style="color:#75715e">// WIFI, ETHERNET, UNKNOWN
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">connectionSpeed</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;highbandwidth&#39;</span>;
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">connectionSpeed</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;highbandwidth&#34;</span>;
 }
 
 <span style="color:#75715e">// set the connection speed on the html element, i.e. &lt;html class=&#34;lowbandwidth&#34;&gt;
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">htmlNode</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">parentNode</span>;
-<span style="color:#a6e22e">htmlClass</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">htmlNode</span>.<span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#39;class&#39;</span>) <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39;&#39;</span>;
-<span style="color:#a6e22e">htmlNode</span>.<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#39;class&#39;</span>, <span style="color:#a6e22e">htmlClass</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; &#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">connectionSpeed</span>);
+<span style="color:#a6e22e">htmlClass</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">htmlNode</span>.<span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#34;class&#34;</span>) <span style="color:#f92672">||</span> <span style="color:#e6db74">&#34;&#34;</span>;
+<span style="color:#a6e22e">htmlNode</span>.<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#34;class&#34;</span>, <span style="color:#a6e22e">htmlClass</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">connectionSpeed</span>);
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="give-the-user-control">Give the user control!</h3>

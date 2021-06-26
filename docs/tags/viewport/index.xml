@@ -13,9 +13,9 @@
       <pubDate>Thu, 06 May 2010 00:00:00 +0000</pubDate>
       
       <guid>https://www.davidbcalhoun.com/2010/the-viewport-metatag-mobile-web-part-1/</guid>
-      <description>The skinny Use this:
-1  &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1&amp;#34;/&amp;gt;   Introduction This series of posts is intended to introduce web developers to basic techniques for designing for the mobile web. It assumes at least a basic knowledge of creating desktop websites.
-The problem Ok, so you&amp;rsquo;ve settled down to learn how to write a website for a mobile device using your current knowledge of building desktop websites. So you start off with some pretty basic HTML:</description>
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ The skinny Use this:
+1  &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1&amp;#34; /&amp;gt;   Introduction This series of posts is intended to introduce web developers to basic techniques for designing for the mobile web. It assumes at least a basic knowledge of creating desktop websites.
+The problem Ok, so you&amp;rsquo;ve settled down to learn how to write a website for a mobile device using your current knowledge of building desktop websites.</description>
     </item>
     
   </channel>

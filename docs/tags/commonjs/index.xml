@@ -13,8 +13,7 @@
       <pubDate>Wed, 30 Apr 2014 11:59:21 -0700</pubDate>
       
       <guid>https://www.davidbcalhoun.com/2014/what-is-amd-commonjs-and-umd/</guid>
-      <description>Intro Over the years there&amp;rsquo;s been a steadily increasing ecosystem of JavaScript components to choose from. The sheer amount of choices is fantastic, but this also infamously presents a difficulty when components are mixed-and-matched. And it doesn&amp;rsquo;t take too long for budding developers to find out that not all components are built to play nicely together.
-To address these issues, the competing module specs AMD and CommonJS have appeared on the scene, allowing developers to write their code in an agreed-upon sandboxed and modularized way, so as not to &amp;ldquo;pollute the ecosystem&amp;rdquo;.</description>
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ Intro Over the years there&amp;rsquo;s been a steadily increasing ecosystem of JavaScript components to choose from. The sheer amount of choices is fantastic, but this also infamously presents a difficulty when components are mixed-and-matched. And it doesn&amp;rsquo;t take too long for budding developers to find out that not all components are built to play nicely together.</description>
     </item>
     
   </channel>

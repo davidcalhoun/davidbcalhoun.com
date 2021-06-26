@@ -229,7 +229,8 @@
 </article>
 
 
-    <div class="text-justify"><p>(check out the live <a href="https://www.davidbcalhoun.com/a/_old%20mobile%20tests/iphone-slider.html">demo</a>)</p>
+    <div class="text-justify"><h2 id="-warning-this-is-an-old-article-and-may-include-information-thats-out-of-date-">⚠️ Warning: this is an old article and may include information that&rsquo;s out of date. ⚠️</h2>
+<p>(check out the live <a href="https://www.davidbcalhoun.com/a/_old%20mobile%20tests/iphone-slider.html">demo</a>)</p>
 <h3 id="introduction">Introduction</h3>
 <p>After reading <a href="http://glazkov.com/2011/01/14/what-the-heck-is-shadow-dom/">&ldquo;What the Heck is Shadow DOM?&quot;</a> I was inspired to see how far I could style the <code>&lt;input type=&quot;range&quot;&gt;</code> element. Pretty far, as it turns out!</p>
 <p>My goal was to change the input&rsquo;s default appearance:</p>
@@ -245,7 +246,7 @@
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;range&#34;</span>&gt;
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;range&#34;</span> /&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p>Which looks like this:</p>
@@ -254,9 +255,11 @@
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">input</span><span style="color:#f92672">[</span><span style="color:#f92672">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;range&#39;</span><span style="color:#f92672">]</span> {}
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">input</span><span style="color:#f92672">[</span><span style="color:#f92672">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;range&#34;</span><span style="color:#f92672">]</span> {
+}
 </code></pre></td></tr></table>
 </div>
 </div><p>And if we want, we can transform it into a vertical slider by changing the <code>-webkit-appearance</code> property:</p>
@@ -267,8 +270,8 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">input</span><span style="color:#f92672">[</span><span style="color:#f92672">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;range&#39;</span><span style="color:#f92672">]</span> {
-    <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">appearance</span>: slider-vertical;
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">input</span><span style="color:#f92672">[</span><span style="color:#f92672">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;range&#34;</span><span style="color:#f92672">]</span> {
+  <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">appearance</span>: slider-vertical;
 }
 </code></pre></td></tr></table>
 </div>
@@ -283,9 +286,9 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">input</span><span style="color:#f92672">[</span><span style="color:#f92672">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;range&#39;</span><span style="color:#f92672">]</span> {
-    <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">appearance</span>: <span style="color:#66d9ef">none</span>;
-    <span style="color:#66d9ef">background-color</span>: <span style="color:#66d9ef">gray</span>;
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">input</span><span style="color:#f92672">[</span><span style="color:#f92672">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;range&#34;</span><span style="color:#f92672">]</span> {
+  <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">appearance</span>: <span style="color:#66d9ef">none</span>;
+  <span style="color:#66d9ef">background-color</span>: <span style="color:#66d9ef">gray</span>;
 }
 </code></pre></td></tr></table>
 </div>
@@ -307,16 +310,16 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">input</span><span style="color:#f92672">[</span><span style="color:#f92672">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;range&#39;</span><span style="color:#f92672">]</span> {
-    <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">appearance</span>: <span style="color:#66d9ef">none</span>;
-    <span style="color:#66d9ef">background-color</span>: <span style="color:#66d9ef">gray</span>;
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">input</span><span style="color:#f92672">[</span><span style="color:#f92672">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;range&#34;</span><span style="color:#f92672">]</span> {
+  <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">appearance</span>: <span style="color:#66d9ef">none</span>;
+  <span style="color:#66d9ef">background-color</span>: <span style="color:#66d9ef">gray</span>;
 }
 
-<span style="color:#f92672">input</span><span style="color:#f92672">[</span><span style="color:#f92672">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;range&#39;</span><span style="color:#f92672">]</span>::<span style="color:#a6e22e">-webkit-slider-thumb</span> {
-    <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">appearance</span>: <span style="color:#66d9ef">none</span>;
-    <span style="color:#66d9ef">background-color</span>: <span style="color:#ae81ff">#444</span>;
-    <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">15</span><span style="color:#66d9ef">px</span>;
-    <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span>;
+<span style="color:#f92672">input</span><span style="color:#f92672">[</span><span style="color:#f92672">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;range&#34;</span><span style="color:#f92672">]</span>::<span style="color:#a6e22e">-webkit-slider-thumb</span> {
+  <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">appearance</span>: <span style="color:#66d9ef">none</span>;
+  <span style="color:#66d9ef">background-color</span>: <span style="color:#ae81ff">#444</span>;
+  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">15</span><span style="color:#66d9ef">px</span>;
+  <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span>;
 }
 </code></pre></td></tr></table>
 </div>
@@ -345,21 +348,21 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">input</span><span style="color:#f92672">[</span><span style="color:#f92672">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;range&#39;</span><span style="color:#f92672">]</span> {
-    <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">appearance</span>: <span style="color:#66d9ef">none</span>;
-    <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">280</span><span style="color:#66d9ef">px</span>;
-    <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">46</span><span style="color:#66d9ef">px</span>;
-    <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">3</span><span style="color:#66d9ef">px</span>;
-    <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">15</span><span style="color:#66d9ef">px</span>;
-    <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">15</span><span style="color:#66d9ef">px</span>;
-    <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#ae81ff">#525252</span>;
-    <span style="color:#66d9ef">background-image</span>: <span style="color:#66d9ef">-webkit-</span><span style="color:#a6e22e">gradient</span>(
-        <span style="color:#66d9ef">linear</span>,
-        <span style="color:#66d9ef">left</span> <span style="color:#66d9ef">top</span>,
-        <span style="color:#66d9ef">left</span> <span style="color:#66d9ef">bottom</span>,
-        <span style="color:#a6e22e">color-stop</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">#000000</span>),
-        <span style="color:#a6e22e">color-stop</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">#222222</span>)
-    );
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">input</span><span style="color:#f92672">[</span><span style="color:#f92672">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;range&#34;</span><span style="color:#f92672">]</span> {
+  <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">appearance</span>: <span style="color:#66d9ef">none</span>;
+  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">280</span><span style="color:#66d9ef">px</span>;
+  <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">46</span><span style="color:#66d9ef">px</span>;
+  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">3</span><span style="color:#66d9ef">px</span>;
+  <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">15</span><span style="color:#66d9ef">px</span>;
+  <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">15</span><span style="color:#66d9ef">px</span>;
+  <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#ae81ff">#525252</span>;
+  <span style="color:#66d9ef">background-image</span>: <span style="color:#66d9ef">-webkit-</span><span style="color:#a6e22e">gradient</span>(
+    <span style="color:#66d9ef">linear</span>,
+    <span style="color:#66d9ef">left</span> <span style="color:#66d9ef">top</span>,
+    <span style="color:#66d9ef">left</span> <span style="color:#66d9ef">bottom</span>,
+    <span style="color:#a6e22e">color-stop</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">#000000</span>),
+    <span style="color:#a6e22e">color-stop</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">#222222</span>)
+  );
 }
 </code></pre></td></tr></table>
 </div>
@@ -382,34 +385,18 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">input</span><span style="color:#f92672">[</span><span style="color:#f92672">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;range&#39;</span><span style="color:#f92672">]</span>::<span style="color:#a6e22e">-webkit-slider-thumb</span> {
-    <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">appearance</span>: <span style="color:#66d9ef">none</span>;
-    <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">68</span><span style="color:#66d9ef">px</span>;
-    <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">44</span><span style="color:#66d9ef">px</span>;
-    <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
-    <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
-    <span style="color:#66d9ef">background-image</span>: url(<span style="color:#e6db74">&#39;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAYCAYAAAB0kZQKAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAASJJREFUeNpi7OnpYaAC0AXiF0D8mhzNTAzUASBHnAdim4F0BAhIA/EBIC4aSEeAADMQ9wLxRiDmHyhHwIAfNHqMiXZEcXExGJMCiNCjCMTHgDiTkFmM////p4rXe3t78Rm0DIjTgfgLNkkWoGZQij7MQFsQBY2aICC+Rq80gQ2oA/EZIE4YSEeAACcQzwfimVD2gDgCBtKgiVZlIB0BAgbQbBwykI5A5I4BtPsaNLfcHKiQWADEJiAHDERIfAfiLKgjBiQ67kCD/zK2NAFqjMyi0AJQVnPCI78GiBNxFttQF6ZToVjG5ohfoLoOiKcMVO54BA3+swPVntgKxIbEOIAWjvgLxJVA7APE7waisHoKxBFAfGSgSszL0MLnBTmaAQIMAKg/OsrT7JG8AAAAAElFTkSuQmCC&#39;</span>),
-    <span style="color:#66d9ef">-webkit-</span><span style="color:#a6e22e">gradient</span>(
-        <span style="color:#66d9ef">linear</span>,
-        <span style="color:#66d9ef">left</span> <span style="color:#66d9ef">top</span>,
-        <span style="color:#66d9ef">left</span> <span style="color:#66d9ef">bottom</span>,
-        <span style="color:#a6e22e">color-stop</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">#fefefe</span>),
-        <span style="color:#a6e22e">color-stop</span>(<span style="color:#ae81ff">0.49</span>, <span style="color:#ae81ff">#dddddd</span>),
-        <span style="color:#a6e22e">color-stop</span>(<span style="color:#ae81ff">0.51</span>, <span style="color:#ae81ff">#d1d1d1</span>),
-        <span style="color:#a6e22e">color-stop</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">#a1a1a1</span>)
-    );
-    <span style="color:#66d9ef">background-repeat</span>: <span style="color:#66d9ef">no-repeat</span>;
-    <span style="color:#66d9ef">background-position</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">%</span>;
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">input</span><span style="color:#f92672">[</span><span style="color:#f92672">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;range&#34;</span><span style="color:#f92672">]</span>::<span style="color:#a6e22e">-webkit-slider-thumb</span> {
+  <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">appearance</span>: <span style="color:#66d9ef">none</span>;
+  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">68</span><span style="color:#66d9ef">px</span>;
+  <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">44</span><span style="color:#66d9ef">px</span>;
+  <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
+  <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
+  <span style="color:#66d9ef">background-image</span>: url(<span style="color:#e6db74">&#34;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAYCAYAAAB0kZQKAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAASJJREFUeNpi7OnpYaAC0AXiF0D8mhzNTAzUASBHnAdim4F0BAhIA/EBIC4aSEeAADMQ9wLxRiDmHyhHwIAfNHqMiXZEcXExGJMCiNCjCMTHgDiTkFmM////p4rXe3t78Rm0DIjTgfgLNkkWoGZQij7MQFsQBY2aICC+Rq80gQ2oA/EZIE4YSEeAACcQzwfimVD2gDgCBtKgiVZlIB0BAgbQbBwykI5A5I4BtPsaNLfcHKiQWADEJiAHDERIfAfiLKgjBiQ67kCD/zK2NAFqjMyi0AJQVnPCI78GiBNxFttQF6ZToVjG5ohfoLoOiKcMVO54BA3+swPVntgKxIbEOIAWjvgLxJVA7APE7waisHoKxBFAfGSgSszL0MLnBTmaAQIMAKg/OsrT7JG8AAAAAElFTkSuQmCC&#34;</span>),
+    <span style="color:#66d9ef">-webkit-</span><span style="color:#a6e22e">gradient</span>(<span style="color:#66d9ef">linear</span>, <span style="color:#66d9ef">left</span> <span style="color:#66d9ef">top</span>, <span style="color:#66d9ef">left</span> <span style="color:#66d9ef">bottom</span>, <span style="color:#a6e22e">color-stop</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">#fefefe</span>), <span style="color:#a6e22e">color-stop</span>(<span style="color:#ae81ff">0.49</span>, <span style="color:#ae81ff">#dddddd</span>), <span style="color:#a6e22e">color-stop</span>(<span style="color:#ae81ff">0.51</span>, <span style="color:#ae81ff">#d1d1d1</span>), <span style="color:#a6e22e">color-stop</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">#a1a1a1</span>));
+  <span style="color:#66d9ef">background-repeat</span>: <span style="color:#66d9ef">no-repeat</span>;
+  <span style="color:#66d9ef">background-position</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">%</span>;
 }
 </code></pre></td></tr></table>
 </div>
@@ -423,7 +410,7 @@
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;range&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span>&gt;
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;range&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span> /&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p>Ok, that wasn&rsquo;t too hard. But what about the text? We can&rsquo;t modify anything in the input itself, because it doesn&rsquo;t contain any element to display text. And we can&rsquo;t dynamically add text with JavaScript, because again, it&rsquo;s the shadow DOM! What we can do is create a separate text element outside of the input and position it on top of the slider using absolute positioning.</p>
@@ -531,96 +518,80 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">82
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">83
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">84
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">85
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">86
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">87
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">88
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">89
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">90
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">91
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">92
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">iphone-slider</span> {
-    <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">280</span><span style="color:#66d9ef">px</span>;
-    <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">46</span><span style="color:#66d9ef">px</span>;
-    
-    <span style="color:#75715e">/* set the wrapper as the anchor element for positioning */</span>
-    <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">relative</span>;
+  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">280</span><span style="color:#66d9ef">px</span>;
+  <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">46</span><span style="color:#66d9ef">px</span>;
+
+  <span style="color:#75715e">/* set the wrapper as the anchor element for positioning */</span>
+  <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">relative</span>;
 }
 
 .<span style="color:#a6e22e">iphone-slider</span> <span style="color:#f92672">input</span> {
-    <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">appearance</span>: <span style="color:#66d9ef">none</span>;
-    <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
-    <span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#ddd</span>;
-    <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">3</span><span style="color:#66d9ef">px</span>;
-    <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#ae81ff">#525252</span>;
-    <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">15</span><span style="color:#66d9ef">px</span>;
-    <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">15</span><span style="color:#66d9ef">px</span>;
-    <span style="color:#66d9ef">background-image</span>: <span style="color:#66d9ef">-webkit-</span><span style="color:#a6e22e">gradient</span>(
-        <span style="color:#66d9ef">linear</span>,
-        <span style="color:#66d9ef">left</span> <span style="color:#66d9ef">top</span>,
-        <span style="color:#66d9ef">left</span> <span style="color:#66d9ef">bottom</span>,
-        <span style="color:#a6e22e">color-stop</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">#000000</span>),
-        <span style="color:#a6e22e">color-stop</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">#222222</span>)
-    );
+  <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">appearance</span>: <span style="color:#66d9ef">none</span>;
+  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+  <span style="color:#66d9ef">background</span>: <span style="color:#ae81ff">#ddd</span>;
+  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">3</span><span style="color:#66d9ef">px</span>;
+  <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#ae81ff">#525252</span>;
+  <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">15</span><span style="color:#66d9ef">px</span>;
+  <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">15</span><span style="color:#66d9ef">px</span>;
+  <span style="color:#66d9ef">background-image</span>: <span style="color:#66d9ef">-webkit-</span><span style="color:#a6e22e">gradient</span>(
+    <span style="color:#66d9ef">linear</span>,
+    <span style="color:#66d9ef">left</span> <span style="color:#66d9ef">top</span>,
+    <span style="color:#66d9ef">left</span> <span style="color:#66d9ef">bottom</span>,
+    <span style="color:#a6e22e">color-stop</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">#000000</span>),
+    <span style="color:#a6e22e">color-stop</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">#222222</span>)
+  );
 }
 
 .<span style="color:#a6e22e">iphone-slider</span> <span style="color:#f92672">input</span>::<span style="color:#a6e22e">-webkit-slider-thumb</span> {
-    <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">appearance</span>: <span style="color:#66d9ef">none</span>;
-    
-    <span style="color:#75715e">/* position the button on top of everything */</span>
-    <span style="color:#66d9ef">z-index</span>: <span style="color:#ae81ff">100</span>;
-    <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">relative</span>;
-    
-    <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">68</span><span style="color:#66d9ef">px</span>;
-    <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">44</span><span style="color:#66d9ef">px</span>;
-    <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
-    <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
-    
-    <span style="color:#75715e">/* arrow and button gradient */</span>
-    <span style="color:#66d9ef">background-image</span>: url(<span style="color:#e6db74">&#39;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAYCAYAAAB0kZQKAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAASJJREFUeNpi7OnpYaAC0AXiF0D8mhzNTAzUASBHnAdim4F0BAhIA/EBIC4aSEeAADMQ9wLxRiDmHyhHwIAfNHqMiXZEcXExGJMCiNCjCMTHgDiTkFmM////p4rXe3t78Rm0DIjTgfgLNkkWoGZQij7MQFsQBY2aICC+Rq80gQ2oA/EZIE4YSEeAACcQzwfimVD2gDgCBtKgiVZlIB0BAgbQbBwykI5A5I4BtPsaNLfcHKiQWADEJiAHDERIfAfiLKgjBiQ67kCD/zK2NAFqjMyi0AJQVnPCI78GiBNxFttQF6ZToVjG5ohfoLoOiKcMVO54BA3+swPVntgKxIbEOIAWjvgLxJVA7APE7waisHoKxBFAfGSgSszL0MLnBTmaAQIMAKg/OsrT7JG8AAAAAElFTkSuQmCC&#39;</span>),
-    <span style="color:#66d9ef">-webkit-</span><span style="color:#a6e22e">gradient</span>(
-        <span style="color:#66d9ef">linear</span>,
-        <span style="color:#66d9ef">left</span> <span style="color:#66d9ef">top</span>,
-        <span style="color:#66d9ef">left</span> <span style="color:#66d9ef">bottom</span>,
-        <span style="color:#a6e22e">color-stop</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">#fefefe</span>),
-        <span style="color:#a6e22e">color-stop</span>(<span style="color:#ae81ff">0.49</span>, <span style="color:#ae81ff">#dddddd</span>),
-        <span style="color:#a6e22e">color-stop</span>(<span style="color:#ae81ff">0.51</span>, <span style="color:#ae81ff">#d1d1d1</span>),
-        <span style="color:#a6e22e">color-stop</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">#a1a1a1</span>)
-    );
-    <span style="color:#66d9ef">background-repeat</span>: <span style="color:#66d9ef">no-repeat</span>;
-    <span style="color:#66d9ef">background-position</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">%</span>;
+  <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">appearance</span>: <span style="color:#66d9ef">none</span>;
+
+  <span style="color:#75715e">/* position the button on top of everything */</span>
+  <span style="color:#66d9ef">z-index</span>: <span style="color:#ae81ff">100</span>;
+  <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">relative</span>;
+
+  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">68</span><span style="color:#66d9ef">px</span>;
+  <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">44</span><span style="color:#66d9ef">px</span>;
+  <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
+  <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
+
+  <span style="color:#75715e">/* arrow and button gradient */</span>
+  <span style="color:#66d9ef">background-image</span>: url(<span style="color:#e6db74">&#34;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAYCAYAAAB0kZQKAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAASJJREFUeNpi7OnpYaAC0AXiF0D8mhzNTAzUASBHnAdim4F0BAhIA/EBIC4aSEeAADMQ9wLxRiDmHyhHwIAfNHqMiXZEcXExGJMCiNCjCMTHgDiTkFmM////p4rXe3t78Rm0DIjTgfgLNkkWoGZQij7MQFsQBY2aICC+Rq80gQ2oA/EZIE4YSEeAACcQzwfimVD2gDgCBtKgiVZlIB0BAgbQbBwykI5A5I4BtPsaNLfcHKiQWADEJiAHDERIfAfiLKgjBiQ67kCD/zK2NAFqjMyi0AJQVnPCI78GiBNxFttQF6ZToVjG5ohfoLoOiKcMVO54BA3+swPVntgKxIbEOIAWjvgLxJVA7APE7waisHoKxBFAfGSgSszL0MLnBTmaAQIMAKg/OsrT7JG8AAAAAElFTkSuQmCC&#34;</span>),
+    <span style="color:#66d9ef">-webkit-</span><span style="color:#a6e22e">gradient</span>(<span style="color:#66d9ef">linear</span>, <span style="color:#66d9ef">left</span> <span style="color:#66d9ef">top</span>, <span style="color:#66d9ef">left</span> <span style="color:#66d9ef">bottom</span>, <span style="color:#a6e22e">color-stop</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">#fefefe</span>), <span style="color:#a6e22e">color-stop</span>(<span style="color:#ae81ff">0.49</span>, <span style="color:#ae81ff">#dddddd</span>), <span style="color:#a6e22e">color-stop</span>(<span style="color:#ae81ff">0.51</span>, <span style="color:#ae81ff">#d1d1d1</span>), <span style="color:#a6e22e">color-stop</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">#a1a1a1</span>));
+  <span style="color:#66d9ef">background-repeat</span>: <span style="color:#66d9ef">no-repeat</span>;
+  <span style="color:#66d9ef">background-position</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">%</span>;
 }
 
 .<span style="color:#a6e22e">iphone-slider</span> <span style="color:#f92672">span</span> {
-    <span style="color:#75715e">/* position the text just under the button in the stacking order */</span>
-    <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">absolute</span>;
-    <span style="color:#66d9ef">z-index</span>: <span style="color:#ae81ff">99</span>;
-    <span style="color:#66d9ef">top</span>: <span style="color:#ae81ff">30</span><span style="color:#66d9ef">%</span>;
-    <span style="color:#66d9ef">left</span>: <span style="color:#ae81ff">37</span><span style="color:#66d9ef">%</span>;
-    
-    <span style="color:#66d9ef">font-family</span>: <span style="color:#e6db74">&#34;Helvetica Neue&#34;</span>, Helvetica, sans;
-    <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">24</span><span style="color:#66d9ef">px</span>;
-    <span style="color:#66d9ef">color</span>: <span style="color:#66d9ef">white</span>;
-    <span style="color:#66d9ef">cursor</span>: <span style="color:#66d9ef">default</span>;
-    <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">user-select</span>: <span style="color:#66d9ef">none</span>;
-    
-    <span style="color:#75715e">/* semitransparent gradient mask to animate over the text */</span>
-    <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">mask-image</span>: <span style="color:#66d9ef">-webkit-</span><span style="color:#a6e22e">gradient</span>(
-        <span style="color:#66d9ef">linear</span>,
-        <span style="color:#66d9ef">left</span> <span style="color:#66d9ef">top</span>,
-        <span style="color:#66d9ef">right</span> <span style="color:#66d9ef">top</span>,
-        <span style="color:#a6e22e">color-stop</span>(<span style="color:#ae81ff">0</span>, rgba(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0.3</span>)),
-        <span style="color:#a6e22e">color-stop</span>(<span style="color:#ae81ff">0.45</span>, rgba(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0.3</span>)),
-        <span style="color:#a6e22e">color-stop</span>(<span style="color:#ae81ff">0.5</span>, rgba(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>)),
-        <span style="color:#a6e22e">color-stop</span>(<span style="color:#ae81ff">0.55</span>, rgba(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0.3</span>)),
-        <span style="color:#a6e22e">color-stop</span>(<span style="color:#ae81ff">1</span>, rgba(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0.3</span>))
-    );
-    <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">mask-size</span>: <span style="color:#ae81ff">1000</span><span style="color:#66d9ef">px</span>;
-    <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">mask-repeat</span>: <span style="color:#66d9ef">no-repeat</span>;
-    <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">animation-timing-function</span>: <span style="color:#66d9ef">ease-in-out</span>;
-    <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">animation</span>: <span style="color:#66d9ef">text</span><span style="color:#f92672">-</span>spotlight <span style="color:#ae81ff">4</span><span style="color:#66d9ef">s</span> <span style="color:#66d9ef">infinite</span>;
+  <span style="color:#75715e">/* position the text just under the button in the stacking order */</span>
+  <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">absolute</span>;
+  <span style="color:#66d9ef">z-index</span>: <span style="color:#ae81ff">99</span>;
+  <span style="color:#66d9ef">top</span>: <span style="color:#ae81ff">30</span><span style="color:#66d9ef">%</span>;
+  <span style="color:#66d9ef">left</span>: <span style="color:#ae81ff">37</span><span style="color:#66d9ef">%</span>;
+
+  <span style="color:#66d9ef">font-family</span>: <span style="color:#e6db74">&#34;Helvetica Neue&#34;</span>, Helvetica, sans;
+  <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">24</span><span style="color:#66d9ef">px</span>;
+  <span style="color:#66d9ef">color</span>: <span style="color:#66d9ef">white</span>;
+  <span style="color:#66d9ef">cursor</span>: <span style="color:#66d9ef">default</span>;
+  <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">user-select</span>: <span style="color:#66d9ef">none</span>;
+
+  <span style="color:#75715e">/* semitransparent gradient mask to animate over the text */</span>
+  <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">mask-image</span>: <span style="color:#66d9ef">-webkit-</span><span style="color:#a6e22e">gradient</span>(
+    <span style="color:#66d9ef">linear</span>,
+    <span style="color:#66d9ef">left</span> <span style="color:#66d9ef">top</span>,
+    <span style="color:#66d9ef">right</span> <span style="color:#66d9ef">top</span>,
+    <span style="color:#a6e22e">color-stop</span>(<span style="color:#ae81ff">0</span>, rgba(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0.3</span>)),
+    <span style="color:#a6e22e">color-stop</span>(<span style="color:#ae81ff">0.45</span>, rgba(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0.3</span>)),
+    <span style="color:#a6e22e">color-stop</span>(<span style="color:#ae81ff">0.5</span>, rgba(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>)),
+    <span style="color:#a6e22e">color-stop</span>(<span style="color:#ae81ff">0.55</span>, rgba(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0.3</span>)),
+    <span style="color:#a6e22e">color-stop</span>(<span style="color:#ae81ff">1</span>, rgba(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0.3</span>))
+  );
+  <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">mask-size</span>: <span style="color:#ae81ff">1000</span><span style="color:#66d9ef">px</span>;
+  <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">mask-repeat</span>: <span style="color:#66d9ef">no-repeat</span>;
+  <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">animation-timing-function</span>: <span style="color:#66d9ef">ease-in-out</span>;
+  <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">animation</span>: <span style="color:#66d9ef">text</span><span style="color:#f92672">-</span>spotlight <span style="color:#ae81ff">4</span><span style="color:#66d9ef">s</span> <span style="color:#66d9ef">infinite</span>;
 }
 
 <span style="color:#75715e">/* animate the webkit-mark over the text */</span>
@@ -628,7 +599,7 @@
   <span style="color:#f92672">0</span><span style="color:#f92672">%</span> {
     <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">mask-position</span>: <span style="color:#ae81ff">-800</span><span style="color:#66d9ef">px</span>;
   }
-  
+
   <span style="color:#f92672">100</span><span style="color:#f92672">%</span> {
     <span style="color:#66d9ef">-webkit-</span><span style="color:#66d9ef">mask-position</span>: <span style="color:#ae81ff">0</span><span style="color:#66d9ef">px</span>;
   }
@@ -688,50 +659,62 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">(<span style="color:#66d9ef">function</span>() {
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">(<span style="color:#66d9ef">function</span> () {
   <span style="color:#75715e">// variable declarations
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">slider</span>, <span style="color:#a6e22e">sliderInput</span>, <span style="color:#a6e22e">sliderButton</span>, <span style="color:#a6e22e">sliderText</span>, <span style="color:#a6e22e">sliderTimeout</span>, <span style="color:#a6e22e">sliderOnchange</span>, <span style="color:#a6e22e">unlockCheck</span>;
-  
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">slider</span>,
+    <span style="color:#a6e22e">sliderInput</span>,
+    <span style="color:#a6e22e">sliderButton</span>,
+    <span style="color:#a6e22e">sliderText</span>,
+    <span style="color:#a6e22e">sliderTimeout</span>,
+    <span style="color:#a6e22e">sliderOnchange</span>,
+    <span style="color:#a6e22e">unlockCheck</span>;
+
   <span style="color:#75715e">// cache our DOM elements in variables
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">slider</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;.iphone-slider&#39;</span>);
-  <span style="color:#a6e22e">sliderInput</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">slider</span>.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;input&#39;</span>);
-  <span style="color:#a6e22e">sliderButton</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">sliderInput</span>.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;::-webkit-slider-thumb&#39;</span>);
-  <span style="color:#a6e22e">sliderText</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">slider</span>.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;span&#39;</span>);
-  
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">slider</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;.iphone-slider&#34;</span>);
+  <span style="color:#a6e22e">sliderInput</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">slider</span>.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;input&#34;</span>);
+  <span style="color:#a6e22e">sliderButton</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">sliderInput</span>.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;::-webkit-slider-thumb&#34;</span>);
+  <span style="color:#a6e22e">sliderText</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">slider</span>.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#34;span&#34;</span>);
+
   <span style="color:#75715e">/*
 </span><span style="color:#75715e">      Check if it&#39;s been unlocked, else return the
 </span><span style="color:#75715e">      button back to the left side (default position).
 </span><span style="color:#75715e">  */</span>
-  <span style="color:#a6e22e">unlockCheck</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
-    <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">sliderInput</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">100</span>) {
-      <span style="color:#a6e22e">sliderText</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Unlocked!&#39;</span>;
+  <span style="color:#a6e22e">unlockCheck</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">sliderInput</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">100</span>) {
+      <span style="color:#a6e22e">sliderText</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Unlocked!&#34;</span>;
       <span style="color:#a6e22e">sliderInput</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
       <span style="color:#a6e22e">sliderText</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">opacity</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
     } <span style="color:#66d9ef">else</span> {
-      <span style="color:#a6e22e">setTimeout</span>(<span style="color:#66d9ef">function</span>(){
+      <span style="color:#a6e22e">setTimeout</span>(<span style="color:#66d9ef">function</span> () {
         <span style="color:#a6e22e">sliderInput</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
         <span style="color:#a6e22e">sliderText</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">opacity</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
       }, <span style="color:#ae81ff">1000</span>);
     }
   };
-  
-  <span style="color:#a6e22e">sliderOnchange</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+
+  <span style="color:#a6e22e">sliderOnchange</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
     <span style="color:#75715e">/*
 </span><span style="color:#75715e">        Set the opacity of the text relative to the value
 </span><span style="color:#75715e">        on the input range.
 </span><span style="color:#75715e">    */</span>
-    <span style="color:#a6e22e">sliderText</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">opacity</span> <span style="color:#f92672">=</span> ((<span style="color:#ae81ff">100</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">sliderInput</span>.<span style="color:#a6e22e">value</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">200</span>);
-    
+    <span style="color:#a6e22e">sliderText</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">opacity</span> <span style="color:#f92672">=</span> (<span style="color:#ae81ff">100</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">sliderInput</span>.<span style="color:#a6e22e">value</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">200</span>;
+
     <span style="color:#75715e">/*
 </span><span style="color:#75715e">        Add a timeout to prevent the function from being called
 </span><span style="color:#75715e">        on EVERY onchange event.
 </span><span style="color:#75715e">    */</span>
     <span style="color:#a6e22e">clearTimeout</span>(<span style="color:#a6e22e">sliderTimeout</span>);
     <span style="color:#a6e22e">sliderTimeout</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">setTimeout</span>(<span style="color:#a6e22e">unlockCheck</span>, <span style="color:#ae81ff">300</span>);
-  }
-  
+  };
+
   <span style="color:#a6e22e">slider</span>.<span style="color:#a6e22e">onchange</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">sliderOnchange</span>;
 })();
 </code></pre></td></tr></table>

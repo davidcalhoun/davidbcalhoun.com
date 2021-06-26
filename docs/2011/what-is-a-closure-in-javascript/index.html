@@ -221,7 +221,8 @@
 </article>
 
 
-    <div class="text-justify"><h3 id="intro">Intro</h3>
+    <div class="text-justify"><h2 id="-warning-this-is-an-old-article-and-may-include-information-thats-out-of-date-">⚠️ Warning: this is an old article and may include information that&rsquo;s out of date. ⚠️</h2>
+<h3 id="intro">Intro</h3>
 <p>There have been many attempts to answer this question in a succinct way, but I haven&rsquo;t really been satisfied by them. Here&rsquo;s my attempt at a (relatively) concise explanation.</p>
 <p>This is adapted from a <a href="http://www.reddit.com/r/javascript/comments/eti86/can_somebody_explain_closures_to_me/c1atir1">reply I posted on reddit</a> which people seemed to have found useful.</p>
 <h3 id="broad-definition">Broad definition</h3>
@@ -261,16 +262,16 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
-  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">myPrivateVar</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Foo&#39;</span>;
-  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">myPublicVar</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Bar&#39;</span>;
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">myPrivateVar</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Foo&#34;</span>;
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">myPublicVar</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Bar&#34;</span>;
 
   <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">myPublicVar</span>;
 };
 
-<span style="color:#a6e22e">b</span>();  <span style="color:#75715e">// &#39;Bar&#39;
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">myPrivateVar</span>;  <span style="color:#75715e">// ERROR (not defined, because it was only defined in functional scope and is trying to be accessed from the global [window] scope)
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">myPublicVar</span>;   <span style="color:#75715e">// ERROR (not defined)
+<span style="color:#a6e22e">b</span>(); <span style="color:#75715e">// &#39;Bar&#39;
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">myPrivateVar</span>; <span style="color:#75715e">// ERROR (not defined, because it was only defined in functional scope and is trying to be accessed from the global [window] scope)
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">myPublicVar</span>; <span style="color:#75715e">// ERROR (not defined)
 </span></code></pre></td></tr></table>
 </div>
 </div><p>But note that the original method name (myPublicVar) isn&rsquo;t available - but the value IS available from what we exposed to the global scope through the variable ‘b'.</p>
@@ -300,29 +301,33 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">myAPI</span> <span style="color:#f92672">=</span> (<span style="color:#66d9ef">function</span>() {
-  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">privateProperty</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Foo&#39;</span>;
-  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">publicProperty</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Bar&#39;</span>;
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">myAPI</span> <span style="color:#f92672">=</span> (<span style="color:#66d9ef">function</span> () {
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">privateProperty</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Foo&#34;</span>;
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">publicProperty</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Bar&#34;</span>;
 
-  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">privateMethod</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
-    <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;I can only be executed from the scope of myAPI&#39;</span>);
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">privateMethod</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+    <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#34;I can only be executed from the scope of myAPI&#34;</span>);
   };
 
-  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">publicMethod</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
-    <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;I am publicly accessible (through the global scope) because a reference to publicMethod is returned by myAPI&#39;</span>);
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">publicMethod</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+    <span style="color:#a6e22e">alert</span>(
+      <span style="color:#e6db74">&#34;I am publicly accessible (through the global scope) because a reference to publicMethod is returned by myAPI&#34;</span>
+    );
   };
 
   <span style="color:#75715e">// set up an object whose own property names (on the left) match the references to the internal, functionally-scoped methods (on the right)
 </span><span style="color:#75715e"></span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">publicStuff</span> <span style="color:#f92672">=</span> {
     <span style="color:#a6e22e">publicProperty</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">publicProperty</span>,
-    <span style="color:#a6e22e">publicMethod</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">publicMethod</span>
+    <span style="color:#a6e22e">publicMethod</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">publicMethod</span>,
   };
 
   <span style="color:#75715e">// return our public object (myAPI is now equal to this object)
 </span><span style="color:#75715e"></span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">publicStuff</span>;
-})();   <span style="color:#75715e">// immediately execute myAPI as a function, which returns an object that contains pointers to stuff in myAPI, which is exposed through myAPI.x, myAPI.y, etc
+})(); <span style="color:#75715e">// immediately execute myAPI as a function, which returns an object that contains pointers to stuff in myAPI, which is exposed through myAPI.x, myAPI.y, etc
 </span></code></pre></td></tr></table>
 </div>
 </div><p>By the time we reach the last line of the above script, the function has stopped executing, but some original pieces of the function still live on! Because some references to functional variables were returned by the function, we can now access these through the &ldquo;namespace&rdquo; myAPI:</p>
@@ -332,7 +337,7 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">myAPI</span>.<span style="color:#a6e22e">publicProperty</span>;  <span style="color:#75715e">// &#39;Bar&#39;
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">myAPI</span>.<span style="color:#a6e22e">publicProperty</span>; <span style="color:#75715e">// &#39;Bar&#39;
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">myAPI</span>.<span style="color:#a6e22e">publicMethod</span>(); <span style="color:#75715e">// (alert: &#39;I am publicly accessible&#39;...)
 </span></code></pre></td></tr></table>
 </div>
@@ -343,7 +348,7 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">myAPI</span>.<span style="color:#a6e22e">privateProperty</span>;  <span style="color:#75715e">// error (not defined)
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">myAPI</span>.<span style="color:#a6e22e">privateProperty</span>; <span style="color:#75715e">// error (not defined)
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">myAPI</span>.<span style="color:#a6e22e">privateMethod</span>(); <span style="color:#75715e">// error (not defined)
 </span></code></pre></td></tr></table>
 </div>
@@ -369,22 +374,22 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">myAPI</span> <span style="color:#f92672">=</span> (<span style="color:#66d9ef">function</span>(){
-  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">privateProperty</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Foo&#39;</span>;
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">myAPI</span> <span style="color:#f92672">=</span> (<span style="color:#66d9ef">function</span> () {
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">privateProperty</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Foo&#34;</span>;
 
-  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">publicFunction</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">publicFunction</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
     <span style="color:#75715e">// this function has access to privateProperty because it&#39;s in the same scope, even after the main function stops executing!
 </span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">privateProperty</span>;
   };
-  
+
   <span style="color:#75715e">// create a new object and return it
 </span><span style="color:#75715e"></span>  <span style="color:#66d9ef">return</span> {
-    <span style="color:#a6e22e">publicFunction</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">publicFunction</span>
+    <span style="color:#a6e22e">publicFunction</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">publicFunction</span>,
   };
 })();
 
-<span style="color:#a6e22e">privateProperty</span>;         <span style="color:#75715e">// ERROR (not defined)
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">myAPI</span>.<span style="color:#a6e22e">publicFunction</span>();  <span style="color:#75715e">// &#39;Foo&#39;
+<span style="color:#a6e22e">privateProperty</span>; <span style="color:#75715e">// ERROR (not defined)
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">myAPI</span>.<span style="color:#a6e22e">publicFunction</span>(); <span style="color:#75715e">// &#39;Foo&#39;
 </span></code></pre></td></tr></table>
 </div>
 </div><p>There&rsquo;s definitely more to be said here, but hopefully this helps!</p>

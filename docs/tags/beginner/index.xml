@@ -13,8 +13,7 @@
       <pubDate>Fri, 04 Dec 2009 00:00:00 +0000</pubDate>
       
       <guid>https://www.davidbcalhoun.com/2009/ways-of-passing-data-to-functions-in-javascript/</guid>
-      <description>Passing data is quite important in functional programming languages like JavaScript. When there are multiple functions (which is most of the time), there needs to be a way to pass data between the functions. This is done by passing values in parenthesis: myFunction(myData). Even when there is no data to be passed, we still have to declare and execute functions by using parenthesis: myFunction().
-Simple Passing I&amp;rsquo;ve already referred to the common method of passing data.</description>
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ Passing data is quite important in functional programming languages like JavaScript. When there are multiple functions (which is most of the time), there needs to be a way to pass data between the functions. This is done by passing values in parenthesis: myFunction(myData). Even when there is no data to be passed, we still have to declare and execute functions by using parenthesis: myFunction().</description>
     </item>
     
   </channel>

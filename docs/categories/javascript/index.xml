@@ -13,9 +13,9 @@
       <pubDate>Tue, 29 Jun 2010 00:00:00 +0000</pubDate>
       
       <guid>https://www.davidbcalhoun.com/2010/using-mobile-specific-html-css-and-javascript-mobile-web-part-5/</guid>
-      <description>(updated June 27, 2011)
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ (updated June 27, 2011)
 Mobile-specific HTML Viewport tag Use the viewport tag to properly fit the content to the screen:
-1  &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1.0&amp;#34;/&amp;gt;   Tel scheme (to initiate phone calls) 1  &amp;lt;a href=&amp;#34;tel:18005555555&amp;#34;&amp;gt;Call us at 1-800-555-5555&amp;lt;/a&amp;gt;   Sms scheme (to initiate text messages) 1 2 3  &amp;lt;a href=&amp;#34;sms:18005555555&amp;#34;&amp;gt; &amp;lt;a href=&amp;#34;sms:18005555555,18005555556&amp;#34;&amp;gt; &amp;lt;!-- multiple recipients --&amp;gt; &amp;lt;a href=&amp;#34;sms:18005555555?body=Text%20goes%20here&amp;#34;&amp;gt; &amp;lt;!-- predefined message body --&amp;gt;   Disable automatic telephone number linking 1  &amp;lt;meta name=&amp;#34;format-detection&amp;#34; content=&amp;#34;telephone=no&amp;#34;&amp;gt;   iOS-specific HTML (some work on Android as well) You also have access to several Apple-specific tags to use in your iOS applications (iPhone, iPad, and don&amp;rsquo;t forget the iPod Touch!</description>
+1  &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1.0&amp;#34; /&amp;gt;   Tel scheme (to initiate phone calls) 1  &amp;lt;a href=&amp;#34;tel:18005555555&amp;#34;&amp;gt;Call us at 1-800-555-5555&amp;lt;/a&amp;gt;   Sms scheme (to initiate text messages) 1 2 3 4 5 6 7 8  &amp;lt;a href=&amp;#34;sms:18005555555&amp;#34;&amp;gt; &amp;lt;a href=&amp;#34;sms:18005555555,18005555556&amp;#34;&amp;gt; &amp;lt;!</description>
     </item>
     
     <item>
@@ -33,8 +33,8 @@ Mobile-specific HTML Viewport tag Use the viewport tag to properly fit the conte
       <pubDate>Wed, 16 Dec 2009 00:00:00 +0000</pubDate>
       
       <guid>https://www.davidbcalhoun.com/2009/pastrykit-digging-into-an-apple-pie/</guid>
-      <description>Yesterday John Gruber wrote about Apple’s PastryKit, iPhone’s JavaScript framework that’s been discovered “in the wild” on the iPhone user guide at http://help.apple.com/iphone/3/mobile/. There’s a few ways to access the page:
- with an actual iPhone or iTouch by browsing with an iPhone/iTouch user agent. If you’re using Safari, enable the Developer menu in Safari&amp;gt;Preferences&amp;gt;Advanced and switching user agents by clicking on Develope&amp;gt;User Agent  What’s all the big fuss? John was particularly interested in the responsiveness and native-like interaction of flinging through long lists, the fact the address bar is completely hidden, and the possibility of having a toolbar fixed to the top of the page.</description>
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ Yesterday John Gruber wrote about Apple’s PastryKit, iPhone’s JavaScript framework that’s been discovered “in the wild” on the iPhone user guide at http://help.apple.com/iphone/3/mobile/. There’s a few ways to access the page:
+ with an actual iPhone or iTouch by browsing with an iPhone/iTouch user agent. If you’re using Safari, enable the Developer menu in Safari&amp;gt;Preferences&amp;gt;Advanced and switching user agents by clicking on Develope&amp;gt;User Agent  What’s all the big fuss?</description>
     </item>
     
     <item>
@@ -43,10 +43,9 @@ Mobile-specific HTML Viewport tag Use the viewport tag to properly fit the conte
       <pubDate>Tue, 08 Dec 2009 00:00:00 +0000</pubDate>
       
       <guid>https://www.davidbcalhoun.com/2009/javascript-tidbit-special-variables-_-etc/</guid>
-      <description>You&amp;rsquo;re probably used to typical variables names such as the following:
-1  var personName = &amp;#39;Joe&amp;#39;;   You may not realize it, but there are some non-alphanumeric variables at your disposal.
-Using $ For instance, the $ variable has been made popular by several JavaScript libraries, most notably jQuery. You can use it to alias operations that are commonly performed, such as the following (1):
-1 2  var $ = document.</description>
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ You&amp;rsquo;re probably used to typical variables names such as the following:
+1  var personName = &amp;#34;Joe&amp;#34;;   You may not realize it, but there are some non-alphanumeric variables at your disposal.
+Using $ For instance, the $ variable has been made popular by several JavaScript libraries, most notably jQuery. You can use it to alias operations that are commonly performed, such as the following (1):</description>
     </item>
     
     <item>
@@ -55,7 +54,7 @@ Using $ For instance, the $ variable has been made popular by several JavaScript
       <pubDate>Wed, 18 Nov 2009 00:00:00 +0000</pubDate>
       
       <guid>https://www.davidbcalhoun.com/2009/pitfalls-of-declaring-variables-in-javascript/</guid>
-      <description>Introduction One of the things that’s always been confusing to me is that there are multiple ways to declare variables in JavaScript, and some ways are better than others. For the beginner programmer, just getting to code to work means complete success, but for the intermediate or advanced programmer, this is just the first step. The next step is to clean up the code and make sure everything is written in the best way it could have been written.</description>
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ Introduction One of the things that’s always been confusing to me is that there are multiple ways to declare variables in JavaScript, and some ways are better than others. For the beginner programmer, just getting to code to work means complete success, but for the intermediate or advanced programmer, this is just the first step.</description>
     </item>
     
     <item>

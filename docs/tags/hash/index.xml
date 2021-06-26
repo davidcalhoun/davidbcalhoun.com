@@ -13,9 +13,8 @@
       <pubDate>Tue, 17 Aug 2010 00:00:00 +0000</pubDate>
       
       <guid>https://www.davidbcalhoun.com/2010/is-a-hash-faster-than-a-switch-in-javascript/</guid>
-      <description>I stumbled across this concept recently and I thought I&amp;rsquo;d share it, because I don&amp;rsquo;t generally see this pattern being used. More importantly, I also share test results that show that maybe it&amp;rsquo;s not always a good idea to use this pattern&amp;hellip;
-The problem with Switch statements The basic switch statement in JavaScript looks something like this:
-1 2 3 4 5 6 7 8 9 10 11 12 13 14  var foo = &amp;#39;c&amp;#39;; switch(foo) { case &amp;#39;a&amp;#39;: break; case &amp;#39;b&amp;#39;: break; case &amp;#39;c&amp;#39;: break; default: }   So what&amp;rsquo;s wrong with this?</description>
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ I stumbled across this concept recently and I thought I&amp;rsquo;d share it, because I don&amp;rsquo;t generally see this pattern being used. More importantly, I also share test results that show that maybe it&amp;rsquo;s not always a good idea to use this pattern&amp;hellip;
+The problem with Switch statements The basic switch statement in JavaScript looks something like this:</description>
     </item>
     
   </channel>

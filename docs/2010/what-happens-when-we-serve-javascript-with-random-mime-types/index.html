@@ -221,7 +221,8 @@
 </article>
 
 
-    <div class="text-justify"><h3 id="introduction">Introduction</h3>
+    <div class="text-justify"><h2 id="-warning-this-is-an-old-article-and-may-include-information-thats-out-of-date-">⚠️ Warning: this is an old article and may include information that&rsquo;s out of date. ⚠️</h2>
+<h3 id="introduction">Introduction</h3>
 <p>When people started to learn about the HTML5 doctype, they kind of freaked out a little, not knowing how older browsers would handle it. A <a href="http://www.dustindiaz.com/skinny-on-doctypes/">post by Dustin Diaz</a> prompted me to test out how pages rendered (in QuirksMode or Standards Mode) with a little help from <code>document.compatMode</code>, and <a href="http://themaingate.net/dev/html/all-you-need-is-doctype-html">I found that surprisingly every browser rendered in Standards Mode with the new doctype</a>. In other words, no need to worry!</p>
 <p>There&rsquo;s another welcome simplification (<a href="http://davidbcalhoun.com/2010/top-ten-things-html5-makes-simpler">along with others</a>): the &ldquo;type&rdquo; attribute is no longer necessary on script tags:</p>
 <blockquote>
@@ -261,12 +262,12 @@ AddType text/foo .six
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">TEST</span> <span style="color:#f92672">=</span> {
   <span style="color:#a6e22e">node</span><span style="color:#f92672">:</span> document.<span style="color:#a6e22e">body</span>,
-  <span style="color:#a6e22e">addMessage</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">message</span>) {
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">p</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;p&#39;</span>);
+  <span style="color:#a6e22e">addMessage</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">message</span>) {
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">p</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#34;p&#34;</span>);
     <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">message</span>;
     <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">node</span>.<span style="color:#a6e22e">appendChild</span>(<span style="color:#a6e22e">p</span>);
-  }
-}
+  },
+};
 </code></pre></td></tr></table>
 </div>
 </div><p>TEST.addMessage() is simply a glorified document.write. As each of the six scripts is run, they&rsquo;ll write out a message to the page essentially saying &ldquo;I&rsquo;m here! It worked!&rdquo;.</p>

@@ -43,8 +43,7 @@ First steps with for loops Most folks find for loops powerful enough to achieve 
       <pubDate>Mon, 08 Sep 2014 00:36:52 -0700</pubDate>
       
       <guid>https://www.davidbcalhoun.com/2014/async.parallel-with-a-simple-timeout-node.js/</guid>
-      <description>A while back I had a need for a general timeout option for async.parallel and was surprised I couldn&amp;rsquo;t find much information about how to do it. I was using async.parallel to make a lot of REST calls in parallel, but one of them was getting blocked by a firewall, resulting in an eventual timeout minutes later.
-One option was to specify a shorter timeout for each individual REST call, including the one causing the problem.</description>
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ A while back I had a need for a general timeout option for async.parallel and was surprised I couldn&amp;rsquo;t find much information about how to do it. I was using async.parallel to make a lot of REST calls in parallel, but one of them was getting blocked by a firewall, resulting in an eventual timeout minutes later.</description>
     </item>
     
     <item>
@@ -53,8 +52,7 @@ One option was to specify a shorter timeout for each individual REST call, inclu
       <pubDate>Wed, 30 Apr 2014 11:59:21 -0700</pubDate>
       
       <guid>https://www.davidbcalhoun.com/2014/what-is-amd-commonjs-and-umd/</guid>
-      <description>Intro Over the years there&amp;rsquo;s been a steadily increasing ecosystem of JavaScript components to choose from. The sheer amount of choices is fantastic, but this also infamously presents a difficulty when components are mixed-and-matched. And it doesn&amp;rsquo;t take too long for budding developers to find out that not all components are built to play nicely together.
-To address these issues, the competing module specs AMD and CommonJS have appeared on the scene, allowing developers to write their code in an agreed-upon sandboxed and modularized way, so as not to &amp;ldquo;pollute the ecosystem&amp;rdquo;.</description>
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ Intro Over the years there&amp;rsquo;s been a steadily increasing ecosystem of JavaScript components to choose from. The sheer amount of choices is fantastic, but this also infamously presents a difficulty when components are mixed-and-matched. And it doesn&amp;rsquo;t take too long for budding developers to find out that not all components are built to play nicely together.</description>
     </item>
     
     <item>
@@ -63,10 +61,9 @@ To address these issues, the competing module specs AMD and CommonJS have appear
       <pubDate>Sat, 23 Nov 2013 00:00:00 +0000</pubDate>
       
       <guid>https://www.davidbcalhoun.com/2013/introducing-negative-scroll-blur-for-browsers-that-support-css-filters/</guid>
-      <description>(2016: in retrospect, this is kind of gratuitous and doesn&amp;rsquo;t appear to be fully working anymore&amp;hellip;)
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ (2016: in retrospect, this is kind of gratuitous and doesn&amp;rsquo;t appear to be fully working anymore&amp;hellip;)
 Demo
-Just for fun, I wanted to reproduce a cool but completely superfluous UI I saw in the updated Foursquare app recently. Basically, when the user tries to scroll past the upper bound of the app/page, the header image becomes blurred.
-We can do the same thing on the web by listening for negative scroll and then using (abusing?</description>
+Just for fun, I wanted to reproduce a cool but completely superfluous UI I saw in the updated Foursquare app recently. Basically, when the user tries to scroll past the upper bound of the app/page, the header image becomes blurred.</description>
     </item>
     
     <item>
@@ -95,9 +92,9 @@ Quiz 1: doubleInteger Problem function doubleInteger(i) { // i will be an intege
       <pubDate>Fri, 24 Jun 2011 00:00:00 +0000</pubDate>
       
       <guid>https://www.davidbcalhoun.com/2011/different-ways-of-defining-functions-in-javascript-this-is-madness/</guid>
-      <description>Note: updated in July 2016 with ES6 arrow functions.
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ Note: updated in July 2016 with ES6 arrow functions.
 Russian translation thanks to Yevgeniy Pyastolov
-This is madness! This&amp;hellip; is&amp;hellip; JavaScript! In JavaScript, there&amp;rsquo;s many different ways of doing something. This is both a good thing and a bad thing. To the newcomer this is definitely a bad thing, as it means not only more things to learn, but more little caveats and more places to go wrong. And so it is with declaring functions!</description>
+This is madness! This&amp;hellip; is&amp;hellip; JavaScript! In JavaScript, there&amp;rsquo;s many different ways of doing something. This is both a good thing and a bad thing. To the newcomer this is definitely a bad thing, as it means not only more things to learn, but more little caveats and more places to go wrong.</description>
     </item>
     
     <item>
@@ -106,8 +103,7 @@ This is madness! This&amp;hellip; is&amp;hellip; JavaScript! In JavaScript, ther
       <pubDate>Thu, 24 Feb 2011 00:00:00 +0000</pubDate>
       
       <guid>https://www.davidbcalhoun.com/2011/android-3.0-honeycomb-is-first-to-implement-the-device-api/</guid>
-      <description>I fired up the newly released Android 3.0 SDK to run some tests and found they&amp;rsquo;ve implemented part of the long-awaited Device API (aka the Media Capture API). From your browser you can now upload pictures and videos from the camera as well as sounds from the microphone. The returned data should be available to manipulate via the File API (although I haven&amp;rsquo;t yet tested this).
-Video I made a short video demo with some explanation:</description>
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ I fired up the newly released Android 3.0 SDK to run some tests and found they&amp;rsquo;ve implemented part of the long-awaited Device API (aka the Media Capture API). From your browser you can now upload pictures and videos from the camera as well as sounds from the microphone. The returned data should be available to manipulate via the File API (although I haven&amp;rsquo;t yet tested this).</description>
     </item>
     
     <item>
@@ -116,7 +112,7 @@ Video I made a short video demo with some explanation:</description>
       <pubDate>Fri, 11 Feb 2011 00:00:00 +0000</pubDate>
       
       <guid>https://www.davidbcalhoun.com/2011/checking-for-undefined-null-and-empty-variables-in-javascript/</guid>
-      <description>In general it&amp;rsquo;s a good practice to check for the existence of something before blindly using it by faith and hoping it works. There are various times during the execution of scripts when a variable may not be defined, it may be null, or it might be an empty string. These are three things that are easily conflated. A good way to look at this is thinking of these as having increasing levels of existence (getting a bit philosophical here for a moment&amp;hellip;):</description>
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ In general it&amp;rsquo;s a good practice to check for the existence of something before blindly using it by faith and hoping it works. There are various times during the execution of scripts when a variable may not be defined, it may be null, or it might be an empty string. These are three things that are easily conflated.</description>
     </item>
     
     <item>
@@ -145,8 +141,8 @@ I&amp;rsquo;ve consistently recommended Nathan Smith&amp;rsquo;s list of JavaScr
       <pubDate>Wed, 12 Jan 2011 00:00:00 +0000</pubDate>
       
       <guid>https://www.davidbcalhoun.com/2011/what-happens-when-you-have-no-javascript-fallback/</guid>
-      <description>Here&amp;rsquo;s an example of what happens when your interface completely relies on JavaScript. There&amp;rsquo;s code with translated mojibake of some sort which caused the JavaScript to break. The code wasn&amp;rsquo;t in a try-catch block, so it caused all of the code on the page to fail, thus presenting me with the only part of the screen that wasn&amp;rsquo;t generated by JavaScript: the completely useless header.
-Where&amp;rsquo;s the tweets!?</description>
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ 
+Here&amp;rsquo;s an example of what happens when your interface completely relies on JavaScript. There&amp;rsquo;s code with translated mojibake of some sort which caused the JavaScript to break. The code wasn&amp;rsquo;t in a try-catch block, so it caused all of the code on the page to fail, thus presenting me with the only part of the screen that wasn&amp;rsquo;t generated by JavaScript: the completely useless header.</description>
     </item>
     
     <item>
@@ -155,8 +151,8 @@ Where&amp;rsquo;s the tweets!?</description>
       <pubDate>Fri, 07 Jan 2011 00:00:00 +0000</pubDate>
       
       <guid>https://www.davidbcalhoun.com/2011/how-to-spot-outdated-javascript/</guid>
-      <description>Introduction Those that are just setting out to learn JavaScript are typically overwhelmed by the amount of online resources to be found about learning JavaScript. Not only this, but every webpage visited presents a potential learning opportunity just by inspecting the source.
-However, not all resources are guaranteed to be up-to-date. JavaScript has been around for over a decade, and coding standards have changed drastically over time. While a code snippet may still work in today&amp;rsquo;s browsers, you may unknowingly be using an outdated practice that might eventually lead to a bit of embarrassment.</description>
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ Introduction Those that are just setting out to learn JavaScript are typically overwhelmed by the amount of online resources to be found about learning JavaScript. Not only this, but every webpage visited presents a potential learning opportunity just by inspecting the source.
+However, not all resources are guaranteed to be up-to-date. JavaScript has been around for over a decade, and coding standards have changed drastically over time.</description>
     </item>
     
     <item>
@@ -165,7 +161,7 @@ However, not all resources are guaranteed to be up-to-date. JavaScript has been 
       <pubDate>Mon, 03 Jan 2011 00:00:00 +0000</pubDate>
       
       <guid>https://www.davidbcalhoun.com/2011/what-is-a-closure-in-javascript/</guid>
-      <description>Intro There have been many attempts to answer this question in a succinct way, but I haven&amp;rsquo;t really been satisfied by them. Here&amp;rsquo;s my attempt at a (relatively) concise explanation.
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ Intro There have been many attempts to answer this question in a succinct way, but I haven&amp;rsquo;t really been satisfied by them. Here&amp;rsquo;s my attempt at a (relatively) concise explanation.
 This is adapted from a reply I posted on reddit which people seemed to have found useful.
 Broad definition Normally when people talk about closures in JavaScript, they&amp;rsquo;re talking about methods and properties that outlive the scope of their original function (more on that in a second), but actually the definition is a bit broader.</description>
     </item>
@@ -176,12 +172,10 @@ Broad definition Normally when people talk about closures in JavaScript, they&am
       <pubDate>Mon, 06 Dec 2010 00:00:00 +0000</pubDate>
       
       <guid>https://www.davidbcalhoun.com/2010/mobile-javascript-libraries-and-frameworks-mobile-web-part-7/</guid>
-      <description>Intro This is designed to be a &amp;ldquo;living&amp;rdquo; post of available materials which will hopefully be updated frequently.
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ Intro This is designed to be a &amp;ldquo;living&amp;rdquo; post of available materials which will hopefully be updated frequently.
 Right now there&amp;rsquo;s not much, just some links, but I hope to keep adding materials, so check back!
 The List Sencha Touch
-PhoneGap - native wrapper which provides access to native hardware through their own JavaScript APIs
-jQuery Mobile - a separate mobile UI which has jQuery as a dependency
-iAd - an update to Apple&amp;rsquo;s PastryKit, but probably intended only for ads</description>
+PhoneGap - native wrapper which provides access to native hardware through their own JavaScript APIs</description>
     </item>
     
     <item>
@@ -190,7 +184,7 @@ iAd - an update to Apple&amp;rsquo;s PastryKit, but probably intended only for a
       <pubDate>Mon, 01 Nov 2010 00:00:00 +0000</pubDate>
       
       <guid>https://www.davidbcalhoun.com/2010/what-happens-when-we-serve-javascript-with-random-mime-types/</guid>
-      <description>Introduction When people started to learn about the HTML5 doctype, they kind of freaked out a little, not knowing how older browsers would handle it. A post by Dustin Diaz prompted me to test out how pages rendered (in QuirksMode or Standards Mode) with a little help from document.compatMode, and I found that surprisingly every browser rendered in Standards Mode with the new doctype. In other words, no need to worry!</description>
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ Introduction When people started to learn about the HTML5 doctype, they kind of freaked out a little, not knowing how older browsers would handle it. A post by Dustin Diaz prompted me to test out how pages rendered (in QuirksMode or Standards Mode) with a little help from document.compatMode, and I found that surprisingly every browser rendered in Standards Mode with the new doctype.</description>
     </item>
     
     <item>
@@ -213,10 +207,9 @@ JSPerf.com - not really new news, but a nice quick way to test algorithm perform
       <pubDate>Wed, 15 Sep 2010 00:00:00 +0000</pubDate>
       
       <guid>https://www.davidbcalhoun.com/2010/server-side-console.log/</guid>
-      <description>The problem On the desktop we&amp;rsquo;re quite privileged to have nice debugging tools such as Firebug and Web Inspector in Webkit-based browsers. But when it comes to mobile, debugging JavaScript with console.log.
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ The problem On the desktop we&amp;rsquo;re quite privileged to have nice debugging tools such as Firebug and Web Inspector in Webkit-based browsers. But when it comes to mobile, debugging JavaScript with console.log.
 isn&amp;rsquo;t quite as easy.
-Probably the best available tool on mobile at the moment is mobile Safari&amp;rsquo;s console, which looks like the following when enabled (Settings -&amp;gt; Safari -&amp;gt; Developer -&amp;gt; Debug Console):
-Mobile Safari&#39;s debug console  On the left you can see the debug console displayed above the document itself, and on the right is an example of what you might see after outputting an object or a string of text to</description>
+Probably the best available tool on mobile at the moment is mobile Safari&amp;rsquo;s console, which looks like the following when enabled (Settings -&amp;gt; Safari -&amp;gt; Developer -&amp;gt; Debug Console):</description>
     </item>
     
     <item>
@@ -225,7 +218,7 @@ Mobile Safari&#39;s debug console  On the left you can see the debug console dis
       <pubDate>Tue, 14 Sep 2010 00:00:00 +0000</pubDate>
       
       <guid>https://www.davidbcalhoun.com/2010/optimizing-based-on-connection-speed-using-navigator.connection-on-android-2.2-/</guid>
-      <description>Introduction A little while back this post made the rounds, which took us on a journey through some of the new features introduced in the browser in Android 2.2 Froyo. Among the most overlooked features are the file upload functionality (you can upload photos from your browser now! But we&amp;rsquo;re still waiting on iPhone to support this&amp;hellip;) and a little-known JavaScript addition to the Browser Object Model (BOM) in the form of navigator.</description>
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ Introduction A little while back this post made the rounds, which took us on a journey through some of the new features introduced in the browser in Android 2.2 Froyo. Among the most overlooked features are the file upload functionality (you can upload photos from your browser now! But we&amp;rsquo;re still waiting on iPhone to support this&amp;hellip;) and a little-known JavaScript addition to the Browser Object Model (BOM) in the form of navigator.</description>
     </item>
     
     <item>
@@ -234,8 +227,8 @@ Mobile Safari&#39;s debug console  On the left you can see the debug console dis
       <pubDate>Tue, 24 Aug 2010 00:00:00 +0000</pubDate>
       
       <guid>https://www.davidbcalhoun.com/2010/dealing-with-device-orientation-mobile-web-part-6/</guid>
-      <description>Introduction If you read part 4 of this series, you&amp;rsquo;ll know that because of the variety of screen sizes, the best way to develop for mobile is to develop fluid layouts that take 100% of the available space on the screen.
-What you probably didn&amp;rsquo;t think of is that there&amp;rsquo;s different screen widths even on the same device! This is due to screen orientation. And when the user changes the screen orientation, stuff may break (hey, it&amp;rsquo;s not a perfect world).</description>
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ Introduction If you read part 4 of this series, you&amp;rsquo;ll know that because of the variety of screen sizes, the best way to develop for mobile is to develop fluid layouts that take 100% of the available space on the screen.
+What you probably didn&amp;rsquo;t think of is that there&amp;rsquo;s different screen widths even on the same device!</description>
     </item>
     
     <item>
@@ -253,9 +246,8 @@ What you probably didn&amp;rsquo;t think of is that there&amp;rsquo;s different 
       <pubDate>Tue, 17 Aug 2010 00:00:00 +0000</pubDate>
       
       <guid>https://www.davidbcalhoun.com/2010/is-a-hash-faster-than-a-switch-in-javascript/</guid>
-      <description>I stumbled across this concept recently and I thought I&amp;rsquo;d share it, because I don&amp;rsquo;t generally see this pattern being used. More importantly, I also share test results that show that maybe it&amp;rsquo;s not always a good idea to use this pattern&amp;hellip;
-The problem with Switch statements The basic switch statement in JavaScript looks something like this:
-1 2 3 4 5 6 7 8 9 10 11 12 13 14  var foo = &amp;#39;c&amp;#39;; switch(foo) { case &amp;#39;a&amp;#39;: break; case &amp;#39;b&amp;#39;: break; case &amp;#39;c&amp;#39;: break; default: }   So what&amp;rsquo;s wrong with this?</description>
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ I stumbled across this concept recently and I thought I&amp;rsquo;d share it, because I don&amp;rsquo;t generally see this pattern being used. More importantly, I also share test results that show that maybe it&amp;rsquo;s not always a good idea to use this pattern&amp;hellip;
+The problem with Switch statements The basic switch statement in JavaScript looks something like this:</description>
     </item>
     
     <item>
@@ -281,9 +273,9 @@ Mobile Access 2010 (Pew Research)</description>
       <pubDate>Tue, 29 Jun 2010 00:00:00 +0000</pubDate>
       
       <guid>https://www.davidbcalhoun.com/2010/using-mobile-specific-html-css-and-javascript-mobile-web-part-5/</guid>
-      <description>(updated June 27, 2011)
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ (updated June 27, 2011)
 Mobile-specific HTML Viewport tag Use the viewport tag to properly fit the content to the screen:
-1  &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1.0&amp;#34;/&amp;gt;   Tel scheme (to initiate phone calls) 1  &amp;lt;a href=&amp;#34;tel:18005555555&amp;#34;&amp;gt;Call us at 1-800-555-5555&amp;lt;/a&amp;gt;   Sms scheme (to initiate text messages) 1 2 3  &amp;lt;a href=&amp;#34;sms:18005555555&amp;#34;&amp;gt; &amp;lt;a href=&amp;#34;sms:18005555555,18005555556&amp;#34;&amp;gt; &amp;lt;!-- multiple recipients --&amp;gt; &amp;lt;a href=&amp;#34;sms:18005555555?body=Text%20goes%20here&amp;#34;&amp;gt; &amp;lt;!-- predefined message body --&amp;gt;   Disable automatic telephone number linking 1  &amp;lt;meta name=&amp;#34;format-detection&amp;#34; content=&amp;#34;telephone=no&amp;#34;&amp;gt;   iOS-specific HTML (some work on Android as well) You also have access to several Apple-specific tags to use in your iOS applications (iPhone, iPad, and don&amp;rsquo;t forget the iPod Touch!</description>
+1  &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1.0&amp;#34; /&amp;gt;   Tel scheme (to initiate phone calls) 1  &amp;lt;a href=&amp;#34;tel:18005555555&amp;#34;&amp;gt;Call us at 1-800-555-5555&amp;lt;/a&amp;gt;   Sms scheme (to initiate text messages) 1 2 3 4 5 6 7 8  &amp;lt;a href=&amp;#34;sms:18005555555&amp;#34;&amp;gt; &amp;lt;a href=&amp;#34;sms:18005555555,18005555556&amp;#34;&amp;gt; &amp;lt;!</description>
     </item>
     
     <item>
@@ -329,10 +321,9 @@ Mobile-specific HTML Viewport tag Use the viewport tag to properly fit the conte
       <pubDate>Tue, 08 Dec 2009 00:00:00 +0000</pubDate>
       
       <guid>https://www.davidbcalhoun.com/2009/javascript-tidbit-special-variables-_-etc/</guid>
-      <description>You&amp;rsquo;re probably used to typical variables names such as the following:
-1  var personName = &amp;#39;Joe&amp;#39;;   You may not realize it, but there are some non-alphanumeric variables at your disposal.
-Using $ For instance, the $ variable has been made popular by several JavaScript libraries, most notably jQuery. You can use it to alias operations that are commonly performed, such as the following (1):
-1 2  var $ = document.</description>
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ You&amp;rsquo;re probably used to typical variables names such as the following:
+1  var personName = &amp;#34;Joe&amp;#34;;   You may not realize it, but there are some non-alphanumeric variables at your disposal.
+Using $ For instance, the $ variable has been made popular by several JavaScript libraries, most notably jQuery. You can use it to alias operations that are commonly performed, such as the following (1):</description>
     </item>
     
     <item>
@@ -341,8 +332,7 @@ Using $ For instance, the $ variable has been made popular by several JavaScript
       <pubDate>Fri, 04 Dec 2009 00:00:00 +0000</pubDate>
       
       <guid>https://www.davidbcalhoun.com/2009/ways-of-passing-data-to-functions-in-javascript/</guid>
-      <description>Passing data is quite important in functional programming languages like JavaScript. When there are multiple functions (which is most of the time), there needs to be a way to pass data between the functions. This is done by passing values in parenthesis: myFunction(myData). Even when there is no data to be passed, we still have to declare and execute functions by using parenthesis: myFunction().
-Simple Passing I&amp;rsquo;ve already referred to the common method of passing data.</description>
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ Passing data is quite important in functional programming languages like JavaScript. When there are multiple functions (which is most of the time), there needs to be a way to pass data between the functions. This is done by passing values in parenthesis: myFunction(myData). Even when there is no data to be passed, we still have to declare and execute functions by using parenthesis: myFunction().</description>
     </item>
     
     <item>
@@ -351,7 +341,7 @@ Simple Passing I&amp;rsquo;ve already referred to the common method of passing d
       <pubDate>Wed, 18 Nov 2009 00:00:00 +0000</pubDate>
       
       <guid>https://www.davidbcalhoun.com/2009/pitfalls-of-declaring-variables-in-javascript/</guid>
-      <description>Introduction One of the things that’s always been confusing to me is that there are multiple ways to declare variables in JavaScript, and some ways are better than others. For the beginner programmer, just getting to code to work means complete success, but for the intermediate or advanced programmer, this is just the first step. The next step is to clean up the code and make sure everything is written in the best way it could have been written.</description>
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ Introduction One of the things that’s always been confusing to me is that there are multiple ways to declare variables in JavaScript, and some ways are better than others. For the beginner programmer, just getting to code to work means complete success, but for the intermediate or advanced programmer, this is just the first step.</description>
     </item>
     
     <item>

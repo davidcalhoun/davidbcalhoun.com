@@ -221,7 +221,8 @@
 </article>
 
 
-    <div class="text-justify"><h3 id="introduction">Introduction</h3>
+    <div class="text-justify"><h2 id="-warning-this-is-an-old-article-and-may-include-information-thats-out-of-date-">⚠️ Warning: this is an old article and may include information that&rsquo;s out of date. ⚠️</h2>
+<h3 id="introduction">Introduction</h3>
 <p>Ever since Steve Souders started evangelizing web performance, it&rsquo;s been pounded into our heads that extra HTTP requests add a lot of additional overhead, and that we should combine them if possible to dramatically decrease the load time of our web pages.</p>
 <p>The practical implication of this has been to combine our JavaScript and CSS files, which is relatively easy and straightforward, but the harder question has been what to do with images.</p>
 <h4 id="sprites">Sprites</h4>
@@ -263,7 +264,7 @@
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">address-book--arrow</span> {
-  <span style="color:#66d9ef">background-image</span>: url(<span style="color:#e6db74">data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAp1JREFUeNqEU21IU1EYfu7unW5Ty6aBszYs6MeUjGVYokHYyH5E1B9rZWFEFPQnAwmy6Hc/oqhfJsRKSSZGH1JIIX3MNCsqLTD9o1Oj6ebnnDfvvefezrnbdCHhCw/n433P8z7nPe/hBEEAtX0U7hc164uwuvVSXKwZLoOmaRDim+7m9vZa0WiEKSUFFpNpCWlmMyypqTDRuYn6t3k8vmQ2gRDCxs0t9fW45F52aBTROJLtZl7nEZad2m+KtoQCQ0FBARyOCGRZ/q92I1WgqqXlfdd95VsrK8/pChIEqqpCkiQsiCII0aBQZZoWl8lzFDwsFjMl0DBLY8Lj41hBwK4jSQrWOIphL6xYyhwJDWGo6wFSaH1Y3PTCAsITE1oyAa8flhWkbSiCLX8vun11eiGIpiJ/z2nYdx5HqLdVV7elrOzsuqysL3rmBIGiKPizKCHHWY4PLVeQbnXAdegqdhy+hu8dDTBnbqQJZJ1A7u+vz7RaiymWCZgCRSF6Edk8b9cx+B/W6WuVxPaZnyiqXoPpyUmVYvkKTIFClHigEieKjYuSvETUllaF4GAUM1NT6ooaJDKx+aDfC9fByxj90REb+9ppmIoAscH/6leg8MS9DJXPAM9xHCM443K57C6biMjcHDaVVCHw9RmCA2/RGC5C00AqXk/m4p20HZK4CM/J3Zk9n0ecMBhDQnJHcrTisyMfdQXOilrdMfxcwoHq/fg5R59TiQV3hYGKo6X2J/c7LyQIjOx9GXhOw/zoJ8wEevRGyp53o/lGMNYsBgPtEwLecwov7/jGDKa1twT6o3KpL4MdZgGsWZLtfPr7f1q58k1JNHy7YYaM+J+K3Y2PmAIbRavX66229hrGVvvL5uzsHDEUvUu+NT1my78CDAAMK1a8/QaZCgAAAABJRU5ErkJggg==</span>);  
+  <span style="color:#66d9ef">background-image</span>: url(<span style="color:#e6db74">data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAp1JREFUeNqEU21IU1EYfu7unW5Ty6aBszYs6MeUjGVYokHYyH5E1B9rZWFEFPQnAwmy6Hc/oqhfJsRKSSZGH1JIIX3MNCsqLTD9o1Oj6ebnnDfvvefezrnbdCHhCw/n433P8z7nPe/hBEEAtX0U7hc164uwuvVSXKwZLoOmaRDim+7m9vZa0WiEKSUFFpNpCWlmMyypqTDRuYn6t3k8vmQ2gRDCxs0t9fW45F52aBTROJLtZl7nEZad2m+KtoQCQ0FBARyOCGRZ/q92I1WgqqXlfdd95VsrK8/pChIEqqpCkiQsiCII0aBQZZoWl8lzFDwsFjMl0DBLY8Lj41hBwK4jSQrWOIphL6xYyhwJDWGo6wFSaH1Y3PTCAsITE1oyAa8flhWkbSiCLX8vun11eiGIpiJ/z2nYdx5HqLdVV7elrOzsuqysL3rmBIGiKPizKCHHWY4PLVeQbnXAdegqdhy+hu8dDTBnbqQJZJ1A7u+vz7RaiymWCZgCRSF6Edk8b9cx+B/W6WuVxPaZnyiqXoPpyUmVYvkKTIFClHigEieKjYuSvETUllaF4GAUM1NT6ooaJDKx+aDfC9fByxj90REb+9ppmIoAscH/6leg8MS9DJXPAM9xHCM443K57C6biMjcHDaVVCHw9RmCA2/RGC5C00AqXk/m4p20HZK4CM/J3Zk9n0ecMBhDQnJHcrTisyMfdQXOilrdMfxcwoHq/fg5R59TiQV3hYGKo6X2J/c7LyQIjOx9GXhOw/zoJ8wEevRGyp53o/lGMNYsBgPtEwLecwov7/jGDKa1twT6o3KpL4MdZgGsWZLtfPr7f1q58k1JNHy7YYaM+J+K3Y2PmAIbRavX66229hrGVvvL5uzsHDEUvUu+NT1my78CDAAMK1a8/QaZCgAAAABJRU5ErkJggg==</span>);
   <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">16</span><span style="color:#66d9ef">px</span>;
   <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">16</span><span style="color:#66d9ef">px</span>;
   <span style="color:#66d9ef">background-repeat</span>: <span style="color:#66d9ef">no-repeat</span>;
@@ -286,34 +287,34 @@
 <tr>
 <td>abacus</td>
 <td style="text-align:left">1443</td>
-<td style="text-align:left"><em><strong>1179</strong></em></td>
+<td style="text-align:left"><strong><em>1179</em></strong></td>
 <td style="text-align:left">2043</td>
 <td style="text-align:left">1395</td>
 </tr>
 <tr>
 <td>acorn</td>
 <td style="text-align:left">1770</td>
-<td style="text-align:left"><em><strong>1522</strong></em></td>
+<td style="text-align:left"><strong><em>1522</em></strong></td>
 <td style="text-align:left">2478</td>
 <td style="text-align:left">1728</td>
 </tr>
 <tr>
 <td>address-book-arrow</td>
-<td style="text-align:left"><em><strong>763</strong></em></td>
+<td style="text-align:left"><strong><em>763</em></strong></td>
 <td style="text-align:left">810</td>
 <td style="text-align:left">1153</td>
 <td style="text-align:left">948</td>
 </tr>
 <tr>
 <td>address-book-exclamation</td>
-<td style="text-align:left"><em><strong>795</strong></em></td>
+<td style="text-align:left"><strong><em>795</em></strong></td>
 <td style="text-align:left">848</td>
 <td style="text-align:left">1199</td>
 <td style="text-align:left">988</td>
 </tr>
 <tr>
 <td>address-book-minus</td>
-<td style="text-align:left"><em><strong>734</strong></em></td>
+<td style="text-align:left"><strong><em>734</em></strong></td>
 <td style="text-align:left">781</td>
 <td style="text-align:left">1113</td>
 <td style="text-align:left">919</td>
@@ -321,14 +322,14 @@
 <tr>
 <td>Total</td>
 <td style="text-align:left">5,505</td>
-<td style="text-align:left"><em><strong>5,140</strong></em></td>
+<td style="text-align:left"><strong><em>5,140</em></strong></td>
 <td style="text-align:left">7,986</td>
 <td style="text-align:left">5,978</td>
 </tr>
 <tr>
 <td>Combined file</td>
 <td style="text-align:left">(5,505)</td>
-<td style="text-align:left"><em><strong>(4,128)</strong></em></td>
+<td style="text-align:left"><strong><em>(4,128)</em></strong></td>
 <td style="text-align:left">7,986</td>
 <td style="text-align:left">4,423</td>
 </tr>
@@ -361,49 +362,49 @@
 <tr>
 <td><a href="https://www.flickr.com/photos/franksvalli/6064665766/sizes/sq/in/photostream/">1</a></td>
 <td style="text-align:left">6734</td>
-<td style="text-align:left"><em><strong>5557</strong></em></td>
+<td style="text-align:left"><strong><em>5557</em></strong></td>
 <td style="text-align:left">9095</td>
 <td style="text-align:left">6010</td>
 </tr>
 <tr>
 <td><a href="https://www.flickr.com/photos/franksvalli/6064638202/sizes/sq/in/photostream/">2</a></td>
 <td style="text-align:left">5379</td>
-<td style="text-align:left"><em><strong>4417</strong></em></td>
+<td style="text-align:left"><strong><em>4417</em></strong></td>
 <td style="text-align:left">7287</td>
 <td style="text-align:left">4781</td>
 </tr>
 <tr>
 <td><a href="https://www.flickr.com/photos/franksvalli/6063380824/sizes/sq/in/photostream/">3</a></td>
 <td style="text-align:left">25626</td>
-<td style="text-align:left"><em><strong>18387</strong></em></td>
+<td style="text-align:left"><strong><em>18387</em></strong></td>
 <td style="text-align:left">34283</td>
 <td style="text-align:left">20103</td>
 </tr>
 <tr>
 <td><a href="https://www.flickr.com/photos/franksvalli/6062803159/sizes/sq/in/photostream/">4</a></td>
 <td style="text-align:left">7031</td>
-<td style="text-align:left"><em><strong>6399</strong></em></td>
+<td style="text-align:left"><strong><em>6399</em></strong></td>
 <td style="text-align:left">9491</td>
 <td style="text-align:left">6702</td>
 </tr>
 <tr>
 <td><a href="https://www.flickr.com/photos/franksvalli/6017796233/sizes/sq/in/photostream/">5</a></td>
 <td style="text-align:left">5847</td>
-<td style="text-align:left"><em><strong>4655</strong></em></td>
+<td style="text-align:left"><strong><em>4655</em></strong></td>
 <td style="text-align:left">7911</td>
 <td style="text-align:left">5077</td>
 </tr>
 <tr>
 <td>Total</td>
 <td style="text-align:left">50,617</td>
-<td style="text-align:left"><em><strong>39,415</strong></em></td>
+<td style="text-align:left"><strong><em>39,415</em></strong></td>
 <td style="text-align:left">68,067</td>
 <td style="text-align:left">42,673</td>
 </tr>
 <tr>
 <td>Combined file</td>
 <td style="text-align:left">(50,617)</td>
-<td style="text-align:left"><em><strong>(36,838)</strong></em></td>
+<td style="text-align:left"><strong><em>(36,838)</em></strong></td>
 <td style="text-align:left">68,067</td>
 <td style="text-align:left">40,312</td>
 </tr>
@@ -430,49 +431,49 @@
 <tr>
 <td>1</td>
 <td style="text-align:left">24502</td>
-<td style="text-align:left"><em><strong>23403</strong></em></td>
+<td style="text-align:left"><strong><em>23403</em></strong></td>
 <td style="text-align:left">32789</td>
 <td style="text-align:left">23982</td>
 </tr>
 <tr>
 <td>2</td>
 <td style="text-align:left">20410</td>
-<td style="text-align:left"><em><strong>19466</strong></em></td>
+<td style="text-align:left"><strong><em>19466</em></strong></td>
 <td style="text-align:left">27333</td>
 <td style="text-align:left">19954</td>
 </tr>
 <tr>
 <td>3</td>
 <td style="text-align:left">43833</td>
-<td style="text-align:left"><em><strong>36729</strong></em></td>
+<td style="text-align:left"><strong><em>36729</em></strong></td>
 <td style="text-align:left">58561</td>
 <td style="text-align:left">38539</td>
 </tr>
 <tr>
 <td>4</td>
 <td style="text-align:left">31776</td>
-<td style="text-align:left"><em><strong>31180</strong></em></td>
+<td style="text-align:left"><strong><em>31180</em></strong></td>
 <td style="text-align:left">42485</td>
 <td style="text-align:left">31686</td>
 </tr>
 <tr>
 <td>5</td>
 <td style="text-align:left">21348</td>
-<td style="text-align:left"><em><strong>20208</strong></em></td>
+<td style="text-align:left"><strong><em>20208</em></strong></td>
 <td style="text-align:left">28581</td>
 <td style="text-align:left">20761</td>
 </tr>
 <tr>
 <td>Total</td>
 <td style="text-align:left">141,869</td>
-<td style="text-align:left"><em><strong>130,986</strong></em></td>
+<td style="text-align:left"><strong><em>130,986</em></strong></td>
 <td style="text-align:left">189,749</td>
 <td style="text-align:left">134,922</td>
 </tr>
 <tr>
 <td>Combined file</td>
 <td style="text-align:left">(141,869)</td>
-<td style="text-align:left"><em><strong>(129,307)</strong></em></td>
+<td style="text-align:left"><strong><em>(129,307)</em></strong></td>
 <td style="text-align:left">189,749</td>
 <td style="text-align:left">133,615</td>
 </tr>

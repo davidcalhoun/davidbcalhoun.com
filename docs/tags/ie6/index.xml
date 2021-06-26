@@ -13,7 +13,7 @@
       <pubDate>Wed, 07 Jul 2010 00:00:00 +0000</pubDate>
       
       <guid>https://www.davidbcalhoun.com/2010/targeting-internet-explorer-ie-the-age-old-struggle/</guid>
-      <description>As long as I can remember, developers have always been trying to target IE one way or another. Thanks to the wonders of modern technology, there have been multiple ways to pull this off.
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ As long as I can remember, developers have always been trying to target IE one way or another. Thanks to the wonders of modern technology, there have been multiple ways to pull this off.
 I guess I really haven’t been keeping up with the latest frontend trends (doh!), as I’ve just recently discovered this very elegant solution circa 2008 offered by Paul Irish, which sticks a class on the body tag using proprietary conditional IE tags (no JavaScript magic needed here!</description>
     </item>
     

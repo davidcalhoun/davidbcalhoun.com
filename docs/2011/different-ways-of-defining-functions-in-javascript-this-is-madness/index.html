@@ -225,7 +225,8 @@
 </article>
 
 
-    <div class="text-justify"><p>Note: updated in July 2016 with ES6 arrow functions.</p>
+    <div class="text-justify"><h2 id="-warning-this-is-an-old-article-and-may-include-information-thats-out-of-date-">⚠️ Warning: this is an old article and may include information that&rsquo;s out of date. ⚠️</h2>
+<p>Note: updated in July 2016 with ES6 arrow functions.</p>
 <p><a href="http://langtoday.com/?p=303">Russian translation</a> thanks to Yevgeniy Pyastolov</p>
 <h3 id="this-is-madness-this-is-javascript">This is madness! This&hellip; is&hellip; JavaScript!</h3>
 <p>In JavaScript, there&rsquo;s many different ways of doing something. This is both a good thing and a bad thing. To the newcomer this is definitely a bad thing, as it means not only more things to learn, but more little caveats and more places to go wrong. And so it is with declaring functions!</p>
@@ -244,18 +245,20 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">A</span>(){};             <span style="color:#75715e">// function declaration
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">B</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(){};       <span style="color:#75715e">// function expression
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">C</span> <span style="color:#f92672">=</span> (<span style="color:#66d9ef">function</span>(){});     <span style="color:#75715e">// function expression with grouping operators
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">D</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">foo</span>(){};   <span style="color:#75715e">// named function expression
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">E</span> <span style="color:#f92672">=</span> (<span style="color:#66d9ef">function</span>(){        <span style="color:#75715e">// IIFE that returns a function
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">function</span>(){}
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">A</span>() {} <span style="color:#75715e">// function declaration
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">B</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {}; <span style="color:#75715e">// function expression
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">C</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {}; <span style="color:#75715e">// function expression with grouping operators
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">D</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">foo</span>() {}; <span style="color:#75715e">// named function expression
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">E</span> <span style="color:#f92672">=</span> (<span style="color:#66d9ef">function</span> () {
+  <span style="color:#75715e">// IIFE that returns a function
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">function</span> () {};
 })();
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">F</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Function();     <span style="color:#75715e">// Function constructor
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">G</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">function</span>(){};   <span style="color:#75715e">// special case: object constructor
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">H</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">x</span> =&gt; <span style="color:#a6e22e">x</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>;         <span style="color:#75715e">// ES6 arrow function
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">F</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Function(); <span style="color:#75715e">// Function constructor
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">G</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> (<span style="color:#66d9ef">function</span> () {})(); <span style="color:#75715e">// special case: object constructor
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">H</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">x</span>) =&gt; <span style="color:#a6e22e">x</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>; <span style="color:#75715e">// ES6 arrow function
 </span></code></pre></td></tr></table>
 </div>
 </div><h3 id="a-function-declarations-function-a">A: Function declarations: function A(){};</h3>
@@ -271,9 +274,9 @@
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">A</span>();
-<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">A</span>(){
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;foo&#39;</span>);
-};
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">A</span>() {
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;foo&#34;</span>);
+}
 </code></pre></td></tr></table>
 </div>
 </div><p>Gets executed as this code:</p>
@@ -285,9 +288,9 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">A</span>(){
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;foo&#39;</span>);
-};
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">A</span>() {
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;foo&#34;</span>);
+}
 <span style="color:#a6e22e">A</span>();
 </code></pre></td></tr></table>
 </div>
@@ -313,9 +316,9 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">A</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(){};
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">B</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(){};
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">C</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(){};
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">A</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {};
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">B</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {};
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">C</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {};
 </code></pre></td></tr></table>
 </div>
 </div><p>Will be executed as this:</p>
@@ -327,10 +330,10 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">A</span>, <span style="color:#a6e22e">B</span>, <span style="color:#a6e22e">C</span>;  <span style="color:#75715e">// variable declarations are hoisted
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">A</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(){};
-<span style="color:#a6e22e">B</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(){};
-<span style="color:#a6e22e">C</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(){};
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">A</span>, <span style="color:#a6e22e">B</span>, <span style="color:#a6e22e">C</span>; <span style="color:#75715e">// variable declarations are hoisted
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">A</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {};
+<span style="color:#a6e22e">B</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {};
+<span style="color:#a6e22e">C</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {};
 </code></pre></td></tr></table>
 </div>
 </div><p>Therefore the order of setting and calling this type of function is important:</p>
@@ -346,12 +349,12 @@
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// this works
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">B</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(){};
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">B</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {};
 <span style="color:#a6e22e">B</span>();
 
 <span style="color:#75715e">// this doesn&#39;t work
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">B2</span>();  <span style="color:#75715e">// TypeError (B2 is undefined)
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">B2</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(){};
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">B2</span>(); <span style="color:#75715e">// TypeError (B2 is undefined)
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">B2</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {};
 </code></pre></td></tr></table>
 </div>
 </div><p>The second example gives us an error because only the variable B2&rsquo;s declaration is hoisted, but not its definition, thus the &ldquo;undefined&rdquo; error.</p>
@@ -376,8 +379,8 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">(<span style="color:#ae81ff">1</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>) <span style="color:#f92672">*</span> <span style="color:#ae81ff">3</span>;  <span style="color:#75715e">// 9
-</span><span style="color:#75715e"></span><span style="color:#ae81ff">1</span> <span style="color:#f92672">+</span> (<span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">3</span>);  <span style="color:#75715e">// 7
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">(<span style="color:#ae81ff">1</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>) <span style="color:#f92672">*</span> <span style="color:#ae81ff">3</span>; <span style="color:#75715e">// 9
+</span><span style="color:#75715e"></span><span style="color:#ae81ff">1</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">3</span>; <span style="color:#75715e">// 7
 </span></code></pre></td></tr></table>
 </div>
 </div><p>In the first example we&rsquo;re saying &ldquo;first add 1 and 2, then take the result and multiply by 3&rdquo;, whereas in the second example we&rsquo;re saying &ldquo;first multiply 2 and 3, then take the result and add 1&rdquo;.</p>
@@ -387,7 +390,7 @@
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">(<span style="color:#66d9ef">function</span>(){} <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>);  <span style="color:#75715e">// function(){}1
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">(<span style="color:#66d9ef">function</span> () {} <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>); <span style="color:#75715e">// function(){}1
 </span></code></pre></td></tr></table>
 </div>
 </div><p>The result is a string (because toString is being called on the function, then added/appended with 1), but you get the idea I hope.</p>
@@ -399,9 +402,9 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">(<span style="color:#66d9ef">function</span>(){});           <span style="color:#75715e">// resulting function not assigned
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">foo</span> <span style="color:#f92672">=</span> (<span style="color:#66d9ef">function</span>(){}); <span style="color:#75715e">// resulting function assigned to foo
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">bar</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(){};   <span style="color:#75715e">// resulting function assigned to bar
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">(<span style="color:#66d9ef">function</span> () {}); <span style="color:#75715e">// resulting function not assigned
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">foo</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {}; <span style="color:#75715e">// resulting function assigned to foo
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">bar</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {}; <span style="color:#75715e">// resulting function assigned to bar
 </span></code></pre></td></tr></table>
 </div>
 </div><p>Here we can see that foo and bar are really just the same, because in foo we&rsquo;re not grouping the function together with anything but itself.</p>
@@ -418,11 +421,11 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">D</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">foo</span>(){
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">D</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">foo</span>() {
   <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">foo</span>);
 };
-<span style="color:#a6e22e">D</span>();                       <span style="color:#75715e">// function
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">foo</span>);   <span style="color:#75715e">// undefined
+<span style="color:#a6e22e">D</span>(); <span style="color:#75715e">// function
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">foo</span>); <span style="color:#75715e">// undefined
 </span></code></pre></td></tr></table>
 </div>
 </div><h4 id="2-useful-for-recursion">2. Useful for recursion</h4>
@@ -440,13 +443,13 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">countdown</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">a</span>(<span style="color:#a6e22e">count</span>){
-  <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">count</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) {
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">countdown</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">a</span>(<span style="color:#a6e22e">count</span>) {
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">count</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) {
     <span style="color:#a6e22e">count</span><span style="color:#f92672">--</span>;
-    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span>(<span style="color:#a6e22e">count</span>);  <span style="color:#75715e">// we can also do this: a(--count), which is less clear
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span>(<span style="color:#a6e22e">count</span>); <span style="color:#75715e">// we can also do this: a(--count), which is less clear
 </span><span style="color:#75715e"></span>  }
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;end of recursive function&#39;</span>);
-}
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;end of recursive function&#34;</span>);
+};
 <span style="color:#a6e22e">countdown</span>(<span style="color:#ae81ff">5</span>);
 </code></pre></td></tr></table>
 </div>
@@ -467,11 +470,11 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">foo</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(){
-  <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;bar&#39;</span>;
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">foo</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+  <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;bar&#34;</span>;
 };
 <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">output</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">foo</span>();
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">output</span>);  <span style="color:#75715e">// &#39;bar&#39;
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">output</span>); <span style="color:#75715e">// &#39;bar&#39;
 </span></code></pre></td></tr></table>
 </div>
 </div><p>We already learned about grouping operators above, so you should feel comfortable with saying this is equivalent:</p>
@@ -484,11 +487,11 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">foo</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(){
-  <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;bar&#39;</span>;
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">foo</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+  <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;bar&#34;</span>;
 };
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">output</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">foo</span>)(); <span style="color:#75715e">// note the extra grouping operators
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">output</span>);  <span style="color:#75715e">// &#39;bar&#39;
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">output</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">foo</span>(); <span style="color:#75715e">// note the extra grouping operators
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">output</span>); <span style="color:#75715e">// &#39;bar&#39;
 </span></code></pre></td></tr></table>
 </div>
 </div><p>Since foo is pointing to our function expression, we know that we can simply refrain from using the variable &ldquo;foo&rdquo; and drop in the entire function as an anonymous function (since functions are first class, after all!):</p>
@@ -500,10 +503,10 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">output</span> <span style="color:#f92672">=</span> (<span style="color:#66d9ef">function</span>(){
-  <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;bar&#39;</span>;
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">output</span> <span style="color:#f92672">=</span> (<span style="color:#66d9ef">function</span> () {
+  <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;bar&#34;</span>;
 })();
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">output</span>);  <span style="color:#75715e">// &#39;bar&#39;
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">output</span>); <span style="color:#75715e">// &#39;bar&#39;
 </span></code></pre></td></tr></table>
 </div>
 </div><p>Hey wait, we just arrived at the magical resulting function! It turns out to be not so magical after all, once we break it down and see it for what it is. It&rsquo;s simply shorthand for the code we wrote originally, where we defined a function, executed it, and defined output to be its return value.</p>
@@ -515,8 +518,8 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">E</span> <span style="color:#f92672">=</span> (<span style="color:#66d9ef">function</span>(){
-  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">function</span>(){}
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">E</span> <span style="color:#f92672">=</span> (<span style="color:#66d9ef">function</span> () {
+  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">function</span> () {};
 })();
 </code></pre></td></tr></table>
 </div>
@@ -532,8 +535,8 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">F</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Function(<span style="color:#e6db74">&#39;arg1&#39;</span>, <span style="color:#e6db74">&#39;arg2&#39;</span>, <span style="color:#e6db74">&#39;console.log(arg1 + &#34;, &#34; + arg2)&#39;</span>);
-<span style="color:#a6e22e">F</span>(<span style="color:#e6db74">&#39;foo&#39;</span>, <span style="color:#e6db74">&#39;bar&#39;</span>);  <span style="color:#75715e">// &#39;foo, bar&#39;
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">F</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Function(<span style="color:#e6db74">&#34;arg1&#34;</span>, <span style="color:#e6db74">&#34;arg2&#34;</span>, <span style="color:#e6db74">&#39;console.log(arg1 + &#34;, &#34; + arg2)&#39;</span>);
+<span style="color:#a6e22e">F</span>(<span style="color:#e6db74">&#34;foo&#34;</span>, <span style="color:#e6db74">&#34;bar&#34;</span>); <span style="color:#75715e">// &#39;foo, bar&#39;
 </span></code></pre></td></tr></table>
 </div>
 </div><h4 id="2-you-dont-need-the-new-operator">2. You don&rsquo;t need the <code>new</code> operator</h4>
@@ -557,16 +560,16 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">foo</span>(){
-  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">bar</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;blah&#39;</span>;
-  
-  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">first</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Function(<span style="color:#e6db74">&#39;console.log(typeof bar)&#39;</span>);
-  <span style="color:#a6e22e">first</span>();   <span style="color:#75715e">// undefined
-</span><span style="color:#75715e"></span>  
-  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">second</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(){
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">foo</span>() {
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">bar</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;blah&#34;</span>;
+
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">first</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Function(<span style="color:#e6db74">&#34;console.log(typeof bar)&#34;</span>);
+  <span style="color:#a6e22e">first</span>(); <span style="color:#75715e">// undefined
+</span><span style="color:#75715e"></span>
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">second</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
     <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">bar</span>);
-  }
-  <span style="color:#a6e22e">second</span>();  <span style="color:#75715e">// string
+  };
+  <span style="color:#a6e22e">second</span>(); <span style="color:#75715e">// string
 </span><span style="color:#75715e"></span>}
 <span style="color:#a6e22e">foo</span>();
 </code></pre></td></tr></table>
@@ -585,9 +588,9 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">Person</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(){
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>);  <span style="color:#75715e">// Person
-</span><span style="color:#75715e"></span>}
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">Person</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>); <span style="color:#75715e">// Person
+</span><span style="color:#75715e"></span>};
 <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">joe</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Person</span>();
 </code></pre></td></tr></table>
 </div>
@@ -600,9 +603,13 @@
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>].<span style="color:#a6e22e">map</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">x</span>) {<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>});
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>].<span style="color:#a6e22e">map</span>(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">x</span>) {
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>;
+});
 <span style="color:#75715e">// [2, 4, 6]
 </span></code></pre></td></tr></table>
 </div>
@@ -613,29 +620,33 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>].<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">x</span> =&gt; <span style="color:#a6e22e">x</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>);
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>].<span style="color:#a6e22e">map</span>((<span style="color:#a6e22e">x</span>) =&gt; <span style="color:#a6e22e">x</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>);
 <span style="color:#75715e">// [2, 4, 6]
 </span></code></pre></td></tr></table>
 </div>
-</div><p>The second benefit of arrow functions is that they preserve their <code>this</code> context, which is super convenient.  Often times it&rsquo;s a tedious task trying to preserve scope in JavaScript, usually through the use of <code>bind()</code>.  But this allows us to bypass it and write less.</p>
+</div><p>The second benefit of arrow functions is that they preserve their <code>this</code> context, which is super convenient. Often times it&rsquo;s a tedious task trying to preserve scope in JavaScript, usually through the use of <code>bind()</code>. But this allows us to bypass it and write less.</p>
 <p>Consider the following case:</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">multiply</span>(<span style="color:#a6e22e">valuesArray</span>) {
   <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">multiplier</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
-  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">valuesArray</span>.<span style="color:#a6e22e">map</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">x</span>) {<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">multiplier</span>});
-};
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">valuesArray</span>.<span style="color:#a6e22e">map</span>(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">x</span>) {
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">multiplier</span>;
+  });
+}
 
 <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fakeContext</span> <span style="color:#f92672">=</span> {};
 
@@ -660,8 +671,8 @@
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">multiply</span>(<span style="color:#a6e22e">valuesArray</span>) {
   <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">multiplier</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
-  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">valuesArray</span>.<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">x</span> =&gt; <span style="color:#a6e22e">x</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">multiplier</span>);
-};
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">valuesArray</span>.<span style="color:#a6e22e">map</span>((<span style="color:#a6e22e">x</span>) =&gt; <span style="color:#a6e22e">x</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">multiplier</span>);
+}
 
 <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fakeContext</span> <span style="color:#f92672">=</span> {};
 
@@ -669,7 +680,7 @@
 <span style="color:#75715e">// -&gt; [2, 4, 6]
 </span></code></pre></td></tr></table>
 </div>
-</div><p>As with much of ES6, use caution, as it may not be completely supported yet (see <a href="http://caniuse.com/#feat=arrow-functions">caniuse.com</a>).  As most folks are using some sort of transpiler these days, they probably don&rsquo;t have to worry about this.  It&rsquo;s good to keep in mind however.</p>
+</div><p>As with much of ES6, use caution, as it may not be completely supported yet (see <a href="http://caniuse.com/#feat=arrow-functions">caniuse.com</a>). As most folks are using some sort of transpiler these days, they probably don&rsquo;t have to worry about this. It&rsquo;s good to keep in mind however.</p>
 <p>Read more about arrow functions <a href="http://exploringjs.com/es6/ch_arrow-functions.html">here</a>.</p>
 <h3 id="further-reading">Further reading</h3>
 <p><a href="http://kangax.github.com/nfe/">Named function expressions demystified</a> (kangax)</p>

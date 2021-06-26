@@ -13,8 +13,8 @@
       <pubDate>Wed, 16 Dec 2009 00:00:00 +0000</pubDate>
       
       <guid>https://www.davidbcalhoun.com/2009/pastrykit-digging-into-an-apple-pie/</guid>
-      <description>Yesterday John Gruber wrote about Apple’s PastryKit, iPhone’s JavaScript framework that’s been discovered “in the wild” on the iPhone user guide at http://help.apple.com/iphone/3/mobile/. There’s a few ways to access the page:
- with an actual iPhone or iTouch by browsing with an iPhone/iTouch user agent. If you’re using Safari, enable the Developer menu in Safari&amp;gt;Preferences&amp;gt;Advanced and switching user agents by clicking on Develope&amp;gt;User Agent  What’s all the big fuss? John was particularly interested in the responsiveness and native-like interaction of flinging through long lists, the fact the address bar is completely hidden, and the possibility of having a toolbar fixed to the top of the page.</description>
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ Yesterday John Gruber wrote about Apple’s PastryKit, iPhone’s JavaScript framework that’s been discovered “in the wild” on the iPhone user guide at http://help.apple.com/iphone/3/mobile/. There’s a few ways to access the page:
+ with an actual iPhone or iTouch by browsing with an iPhone/iTouch user agent. If you’re using Safari, enable the Developer menu in Safari&amp;gt;Preferences&amp;gt;Advanced and switching user agents by clicking on Develope&amp;gt;User Agent  What’s all the big fuss?</description>
     </item>
     
   </channel>

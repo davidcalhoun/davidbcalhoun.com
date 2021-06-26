@@ -22,8 +22,8 @@
       <pubDate>Tue, 11 Oct 2011 00:00:00 +0000</pubDate>
       
       <guid>https://www.davidbcalhoun.com/2011/mobile-performance-manifesto/</guid>
-      <description>Earlier this year I gave a talk (slides) outlining the latest and greatest in mobile performance, including a bit of my own unscientific research into carrier latency and bandwidth thanks to boomerang.js.
-I realized that interest in mobile performance has exploded recently, especially with Steve Souders announcing his focus on mobile, and I thought it was time for an update, this time in blog form. Also, my old slides have been somewhat embarrassing.</description>
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ Earlier this year I gave a talk (slides) outlining the latest and greatest in mobile performance, including a bit of my own unscientific research into carrier latency and bandwidth thanks to boomerang.js.
+I realized that interest in mobile performance has exploded recently, especially with Steve Souders announcing his focus on mobile, and I thought it was time for an update, this time in blog form.</description>
     </item>
     
     <item>
@@ -32,7 +32,7 @@ I realized that interest in mobile performance has exploded recently, especially
       <pubDate>Sun, 28 Aug 2011 00:00:00 +0000</pubDate>
       
       <guid>https://www.davidbcalhoun.com/2011/when-to-base64-encode-images-and-when-not-to/</guid>
-      <description>Introduction Ever since Steve Souders started evangelizing web performance, it&amp;rsquo;s been pounded into our heads that extra HTTP requests add a lot of additional overhead, and that we should combine them if possible to dramatically decrease the load time of our web pages.
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ Introduction Ever since Steve Souders started evangelizing web performance, it&amp;rsquo;s been pounded into our heads that extra HTTP requests add a lot of additional overhead, and that we should combine them if possible to dramatically decrease the load time of our web pages.
 The practical implication of this has been to combine our JavaScript and CSS files, which is relatively easy and straightforward, but the harder question has been what to do with images.</description>
     </item>
     
@@ -60,9 +60,8 @@ The practical implication of this has been to combine our JavaScript and CSS fil
       <pubDate>Tue, 17 Aug 2010 00:00:00 +0000</pubDate>
       
       <guid>https://www.davidbcalhoun.com/2010/is-a-hash-faster-than-a-switch-in-javascript/</guid>
-      <description>I stumbled across this concept recently and I thought I&amp;rsquo;d share it, because I don&amp;rsquo;t generally see this pattern being used. More importantly, I also share test results that show that maybe it&amp;rsquo;s not always a good idea to use this pattern&amp;hellip;
-The problem with Switch statements The basic switch statement in JavaScript looks something like this:
-1 2 3 4 5 6 7 8 9 10 11 12 13 14  var foo = &amp;#39;c&amp;#39;; switch(foo) { case &amp;#39;a&amp;#39;: break; case &amp;#39;b&amp;#39;: break; case &amp;#39;c&amp;#39;: break; default: }   So what&amp;rsquo;s wrong with this?</description>
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ I stumbled across this concept recently and I thought I&amp;rsquo;d share it, because I don&amp;rsquo;t generally see this pattern being used. More importantly, I also share test results that show that maybe it&amp;rsquo;s not always a good idea to use this pattern&amp;hellip;
+The problem with Switch statements The basic switch statement in JavaScript looks something like this:</description>
     </item>
     
     <item>

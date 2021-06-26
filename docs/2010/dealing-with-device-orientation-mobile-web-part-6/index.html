@@ -233,7 +233,8 @@
 </article>
 
 
-    <div class="text-justify"><h3 id="introduction">Introduction</h3>
+    <div class="text-justify"><h2 id="-warning-this-is-an-old-article-and-may-include-information-thats-out-of-date-">⚠️ Warning: this is an old article and may include information that&rsquo;s out of date. ⚠️</h2>
+<h3 id="introduction">Introduction</h3>
 <p>If you read <a href="https://www.davidbcalhoun.com/2010/on-designing-a-mobile-webpage">part 4</a> of this series, you&rsquo;ll know that because of the variety of screen sizes, the best way to develop for mobile is to develop fluid layouts that take 100% of the available space on the screen.</p>
 <p>What you probably didn&rsquo;t think of is that there&rsquo;s different screen widths <em>even on the same device</em>! This is due to screen orientation. And when the user changes the screen orientation, stuff may break (hey, it&rsquo;s not a perfect world). In my experience this has meant needing to tweak percentage widths on elements, but I imagine there&rsquo;s even more needs. Imagine an image carousel that can only fit three images across in portrait mode but can possibly fit four images in landscape mode. It might be nice to re-initialize the carousel to accommodate a forth image when the phone is in landscape mode (then again, that might create a lot of unnecessary overhead&hellip;).</p>
 <p>In any case, I hope you can agree that it would sometimes be useful to know the screen orientation.</p>
@@ -257,10 +258,10 @@
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// DOM Level 0 (avoid)
-</span><span style="color:#75715e"></span>window.<span style="color:#a6e22e">onorientationchange</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(){};
+</span><span style="color:#75715e"></span>window.<span style="color:#a6e22e">onorientationchange</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {};
 
 <span style="color:#75715e">// DOM Level 2
-</span><span style="color:#75715e"></span>window.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;orientationchange&#39;</span>, <span style="color:#66d9ef">function</span>(){}, <span style="color:#66d9ef">false</span>);
+</span><span style="color:#75715e"></span>window.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;orientationchange&#34;</span>, <span style="color:#66d9ef">function</span> () {}, <span style="color:#66d9ef">false</span>);
 </code></pre></td></tr></table>
 </div>
 </div><p><a href="http://www.iphonemicrosites.com/articles/6-tips-to-optimize-your-current-site-for-the-iphone/">Some websites</a> recommend using <code>orientationchange</code> to dynamically add an <code>orient</code> attribute on the <code>body</code> element and target the orientation with CSS selectors (<code>body[orient=landscape]</code>), <em>but this is in error</em>. As it turns out, <code>orientationchange</code> is only fired AFTER the screen has been rotated (which also <a href="http://www.stubbornella.org/content/2009/03/27/reflows-repaints-css-performance-making-your-javascript-slow/">triggers a CSS reflow</a>), which means this attribute is updated later (after the reflow). And unfortunately editing this <code>orient</code> attribute doesn&rsquo;t trigger another CSS reflow. The result? When you rotate the device, these new CSS styles don&rsquo;t get applied!</p>
@@ -296,32 +297,32 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">(<span style="color:#66d9ef">function</span>(){
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">init</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
-  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">updateOrientation</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">orientation</span> <span style="color:#f92672">=</span> window.<span style="color:#a6e22e">orientation</span>;
-    
-    <span style="color:#66d9ef">switch</span>(<span style="color:#a6e22e">orientation</span>) {
-      <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">90</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">case</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">90</span><span style="color:#f92672">:</span>
-        <span style="color:#a6e22e">orientation</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;landscape&#39;</span>;
-      <span style="color:#66d9ef">break</span>;
-      <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
-        <span style="color:#a6e22e">orientation</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;portrait&#39;</span>;
-    }
-    
-    <span style="color:#75715e">// set the class on the HTML element (i.e. )
-</span><span style="color:#75715e"></span>    document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">parentNode</span>.<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#39;class&#39;</span>, <span style="color:#a6e22e">orientation</span>);
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">(<span style="color:#66d9ef">function</span> () {
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">init</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">updateOrientation</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">orientation</span> <span style="color:#f92672">=</span> window.<span style="color:#a6e22e">orientation</span>;
+
+      <span style="color:#66d9ef">switch</span> (<span style="color:#a6e22e">orientation</span>) {
+        <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">90</span><span style="color:#f92672">:</span>
+        <span style="color:#66d9ef">case</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">90</span><span style="color:#f92672">:</span>
+          <span style="color:#a6e22e">orientation</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;landscape&#34;</span>;
+          <span style="color:#66d9ef">break</span>;
+        <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
+          <span style="color:#a6e22e">orientation</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;portrait&#34;</span>;
+      }
+
+      <span style="color:#75715e">// set the class on the HTML element (i.e. )
+</span><span style="color:#75715e"></span>      document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">parentNode</span>.<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#34;class&#34;</span>, <span style="color:#a6e22e">orientation</span>);
+    };
+
+    <span style="color:#75715e">// event triggered every 90 degrees of rotation
+</span><span style="color:#75715e"></span>    window.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;orientationchange&#34;</span>, <span style="color:#a6e22e">updateOrientation</span>, <span style="color:#66d9ef">false</span>);
+
+    <span style="color:#75715e">// initialize the orientation
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">updateOrientation</span>();
   };
-  
-  <span style="color:#75715e">// event triggered every 90 degrees of rotation
-</span><span style="color:#75715e"></span>  window.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;orientationchange&#39;</span>, <span style="color:#a6e22e">updateOrientation</span>, <span style="color:#66d9ef">false</span>);
-  
-  <span style="color:#75715e">// initialize the orientation
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">updateOrientation</span>();
-}
 
-window.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;DOMContentLoaded&#39;</span>, <span style="color:#a6e22e">init</span>, <span style="color:#66d9ef">false</span>);
-
+  window.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;DOMContentLoaded&#34;</span>, <span style="color:#a6e22e">init</span>, <span style="color:#66d9ef">false</span>);
 })();
 </code></pre></td></tr></table>
 </div>
@@ -330,31 +331,47 @@ window.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">portrait</span> <span style="color:#f92672">body</span> <span style="color:#f92672">div</span> { <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">%</span>; }
-.<span style="color:#a6e22e">landscape</span> <span style="color:#f92672">body</span> <span style="color:#f92672">div</span> { <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">15</span><span style="color:#66d9ef">%</span>; }
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">portrait</span> <span style="color:#f92672">body</span> <span style="color:#f92672">div</span> {
+  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">%</span>;
+}
+.<span style="color:#a6e22e">landscape</span> <span style="color:#f92672">body</span> <span style="color:#f92672">div</span> {
+  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">15</span><span style="color:#66d9ef">%</span>;
+}
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="with-a-little-help-from-media-queries">With a little help from media queries</h3>
 <p>You may have heard of <a href="https://developer.mozilla.org/en/css/media_queries">media queries</a> being used to target mobile devices (based on screen pixel width) or to <a href="http://www.bdoran.co.uk/2010/07/19/detecting-the-iphone4-and-resolution-with-javascript-or-php/">target the iPhone 4&rsquo;s Retina display</a>, but you may not have known that you can also target screen orientation!</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">@<span style="color:#66d9ef">media</span> <span style="color:#f92672">all</span> <span style="color:#f92672">and</span> <span style="color:#f92672">(</span><span style="color:#f92672">orientation</span><span style="color:#f92672">:</span> <span style="color:#f92672">portrait</span><span style="color:#f92672">)</span> {
-  <span style="color:#f92672">body</span> <span style="color:#f92672">div</span> { <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">%</span>; }
+  <span style="color:#f92672">body</span> <span style="color:#f92672">div</span> {
+    <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">%</span>;
+  }
 }
 
 @<span style="color:#66d9ef">media</span> <span style="color:#f92672">all</span> <span style="color:#f92672">and</span> <span style="color:#f92672">(</span><span style="color:#f92672">orientation</span><span style="color:#f92672">:</span> <span style="color:#f92672">landscape</span><span style="color:#f92672">)</span> {
-  <span style="color:#f92672">body</span> <span style="color:#f92672">div</span> { <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">15</span><span style="color:#66d9ef">%</span>; }
+  <span style="color:#f92672">body</span> <span style="color:#f92672">div</span> {
+    <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">15</span><span style="color:#66d9ef">%</span>;
+  }
 }
 </code></pre></td></tr></table>
 </div>
@@ -362,7 +379,7 @@ window.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e
 <p>This is a lot cleaner than the above JavaScript example in the sense that it&rsquo;s pure CSS, and it&rsquo;s part of the CSS that gets reflowed when the screen is rotated.</p>
 <p>(Minor note: iOS 4 on the iPhone Simulator running 4.0.0 looks like it&rsquo;s stuck in landscape orientation, but the media queries work correctly on my 3GS with 4.0.1)</p>
 <h3 id="fallback-when-windoworientation-and-media-queries-arent-available">Fallback: when window.orientation and media queries aren&rsquo;t available&hellip;</h3>
-<p>If <code>window.orientation</code> isn&rsquo;t available on a device, chances are the <code>orientationchange</code> event and media queries (for orientation) will also not be available.  Oh no, what do we do now?</p>
+<p>If <code>window.orientation</code> isn&rsquo;t available on a device, chances are the <code>orientationchange</code> event and media queries (for orientation) will also not be available. Oh no, what do we do now?</p>
 <p>Even though this isn&rsquo;t an entirely foolproof method, we can dynamically measure the window width and height and guess orientation based on that:</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -384,32 +401,34 @@ window.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">(<span style="color:#66d9ef">function</span>(){
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">HTMLNode</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">parentNode</span>;
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">updateOrientation</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {  
-  <span style="color:#75715e">// landscape when width is biggest, otherwise portrait
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">orientation</span> <span style="color:#f92672">=</span> (window.<span style="color:#a6e22e">innerWidth</span> <span style="color:#f92672">&gt;</span> window.<span style="color:#a6e22e">innerHeight</span>) <span style="color:#f92672">?</span> <span style="color:#e6db74">&#39;landscape&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;portrait&#39;</span>;
-  
-  <span style="color:#75715e">// set the class on the HTML element (i.e. )
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">HTMLNode</span>.<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#39;class&#39;</span>, <span style="color:#a6e22e">orientation</span>);
-}
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">init</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
-  <span style="color:#75715e">// initialize the orientation
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">updateOrientation</span>();
-  
-  <span style="color:#75715e">// update every 5 seconds
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">setInterval</span>(<span style="color:#a6e22e">updateOrientation</span>, <span style="color:#ae81ff">5000</span>);
-}
-window.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;DOMContentLoaded&#39;</span>, <span style="color:#a6e22e">init</span>, <span style="color:#66d9ef">false</span>);
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">(<span style="color:#66d9ef">function</span> () {
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">HTMLNode</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">parentNode</span>;
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">updateOrientation</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+    <span style="color:#75715e">// landscape when width is biggest, otherwise portrait
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">orientation</span> <span style="color:#f92672">=</span>
+      window.<span style="color:#a6e22e">innerWidth</span> <span style="color:#f92672">&gt;</span> window.<span style="color:#a6e22e">innerHeight</span> <span style="color:#f92672">?</span> <span style="color:#e6db74">&#34;landscape&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;portrait&#34;</span>;
+
+    <span style="color:#75715e">// set the class on the HTML element (i.e. )
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">HTMLNode</span>.<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#34;class&#34;</span>, <span style="color:#a6e22e">orientation</span>);
+  };
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">init</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+    <span style="color:#75715e">// initialize the orientation
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">updateOrientation</span>();
+
+    <span style="color:#75715e">// update every 5 seconds
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">setInterval</span>(<span style="color:#a6e22e">updateOrientation</span>, <span style="color:#ae81ff">5000</span>);
+  };
+  window.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;DOMContentLoaded&#34;</span>, <span style="color:#a6e22e">init</span>, <span style="color:#66d9ef">false</span>);
 })();
 </code></pre></td></tr></table>
 </div>
-</div><p>Ok, so it&rsquo;s not pretty, but it seems to work.  The overhead in this fallback example is the fact that we have to use a polling technique (in this case every 5 seconds [5000 milliseconds]) to check for changes in orientation.</p>
+</div><p>Ok, so it&rsquo;s not pretty, but it seems to work. The overhead in this fallback example is the fact that we have to use a polling technique (in this case every 5 seconds [5000 milliseconds]) to check for changes in orientation.</p>
 <p>Note: there&rsquo;s also the strong possibility that these browsers will not support the <code>DOMContentLoaded</code> event, but we&rsquo;ll ignore that for the purposes of this article. (if you have problems, change <code>DOMContentLoaded</code> to <code>load</code>).</p>
 <h3 id="putting-it-all-together">Putting it all together</h3>
-<p>Ok, so if you want the fallback example to work in addition to newer methods, unless you want to duplicate your CSS, then avoid using media queries to target orientation.  Instead we&rsquo;ll rely on adding a class to the <code>html</code> tag (or the <code>body</code> tag if you prefer).</p>
+<p>Ok, so if you want the fallback example to work in addition to newer methods, unless you want to duplicate your CSS, then avoid using media queries to target orientation. Instead we&rsquo;ll rely on adding a class to the <code>html</code> tag (or the <code>body</code> tag if you prefer).</p>
 <p>Once we put everything together, we get something that looks like this:</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -459,78 +478,166 @@ window.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">(<span style="color:#66d9ef">function</span>(){
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">supportsOrientation</span> <span style="color:#f92672">=</span> (<span style="color:#66d9ef">typeof</span> window.<span style="color:#a6e22e">orientation</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;number&#39;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#66d9ef">typeof</span> window.<span style="color:#a6e22e">onorientationchange</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;object&#39;</span>);
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">HTMLNode</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">parentNode</span>;
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">updateOrientation</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
-  <span style="color:#75715e">// rewrite the function depending on what&#39;s supported
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">supportsOrientation</span>) {
-    <span style="color:#a6e22e">updateOrientation</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
-      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">orientation</span> <span style="color:#f92672">=</span> window.<span style="color:#a6e22e">orientation</span>;
-    
-      <span style="color:#66d9ef">switch</span>(<span style="color:#a6e22e">orientation</span>) {
-        <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">90</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">case</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">90</span><span style="color:#f92672">:</span>
-          <span style="color:#a6e22e">orientation</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;landscape&#39;</span>;
-        <span style="color:#66d9ef">break</span>;
-        <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
-          <span style="color:#a6e22e">orientation</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;portrait&#39;</span>;
-      }
-      
-      <span style="color:#75715e">// set the class on the HTML element (i.e. )
-</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">HTMLNode</span>.<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#39;class&#39;</span>, <span style="color:#a6e22e">orientation</span>);
-    }
-  } <span style="color:#66d9ef">else</span> {
-    <span style="color:#a6e22e">updateOrientation</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
-      <span style="color:#75715e">// landscape when width is biggest, otherwise portrait
-</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">orientation</span> <span style="color:#f92672">=</span> (window.<span style="color:#a6e22e">innerWidth</span> <span style="color:#f92672">&gt;</span> window.<span style="color:#a6e22e">innerHeight</span>) <span style="color:#f92672">?</span> <span style="color:#e6db74">&#39;landscape&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;portrait&#39;</span>;
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">(<span style="color:#66d9ef">function</span> () {
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">supportsOrientation</span> <span style="color:#f92672">=</span>
+    <span style="color:#66d9ef">typeof</span> window.<span style="color:#a6e22e">orientation</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;number&#34;</span> <span style="color:#f92672">&amp;&amp;</span>
+    <span style="color:#66d9ef">typeof</span> window.<span style="color:#a6e22e">onorientationchange</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;object&#34;</span>;
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">HTMLNode</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">parentNode</span>;
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">updateOrientation</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+    <span style="color:#75715e">// rewrite the function depending on what&#39;s supported
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">supportsOrientation</span>) {
+      <span style="color:#a6e22e">updateOrientation</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">orientation</span> <span style="color:#f92672">=</span> window.<span style="color:#a6e22e">orientation</span>;
 
-      <span style="color:#75715e">// set the class on the HTML element (i.e. )
-</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">HTMLNode</span>.<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#39;class&#39;</span>, <span style="color:#a6e22e">orientation</span>);
-    }
-  }
-  
-  <span style="color:#a6e22e">updateOrientation</span>();
-}
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">init</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
-  <span style="color:#75715e">// initialize the orientation
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">updateOrientation</span>();
-  
-  <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">supportsOrientation</span>) {
-    window.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;orientationchange&#39;</span>, <span style="color:#a6e22e">updateOrientation</span>, <span style="color:#66d9ef">false</span>);
-  } <span style="color:#66d9ef">else</span> {
-    <span style="color:#75715e">// fallback: update every 5 seconds
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">setInterval</span>(<span style="color:#a6e22e">updateOrientation</span>, <span style="color:#ae81ff">5000</span>);
-  }
+        <span style="color:#66d9ef">switch</span> (<span style="color:#a6e22e">orientation</span>) {
+          <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">90</span><span style="color:#f92672">:</span>
+          <span style="color:#66d9ef">case</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">90</span><span style="color:#f92672">:</span>
+            <span style="color:#a6e22e">orientation</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;landscape&#34;</span>;
+            <span style="color:#66d9ef">break</span>;
+          <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
+            <span style="color:#a6e22e">orientation</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;portrait&#34;</span>;
+        }
 
-}
-window.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#39;DOMContentLoaded&#39;</span>, <span style="color:#a6e22e">init</span>, <span style="color:#66d9ef">false</span>);
+        <span style="color:#75715e">// set the class on the HTML element (i.e. )
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">HTMLNode</span>.<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#34;class&#34;</span>, <span style="color:#a6e22e">orientation</span>);
+      };
+    } <span style="color:#66d9ef">else</span> {
+      <span style="color:#a6e22e">updateOrientation</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+        <span style="color:#75715e">// landscape when width is biggest, otherwise portrait
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">orientation</span> <span style="color:#f92672">=</span>
+          window.<span style="color:#a6e22e">innerWidth</span> <span style="color:#f92672">&gt;</span> window.<span style="color:#a6e22e">innerHeight</span> <span style="color:#f92672">?</span> <span style="color:#e6db74">&#34;landscape&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;portrait&#34;</span>;
+
+        <span style="color:#75715e">// set the class on the HTML element (i.e. )
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">HTMLNode</span>.<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#34;class&#34;</span>, <span style="color:#a6e22e">orientation</span>);
+      };
+    }
+
+    <span style="color:#a6e22e">updateOrientation</span>();
+  };
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">init</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+    <span style="color:#75715e">// initialize the orientation
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">updateOrientation</span>();
+
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">supportsOrientation</span>) {
+      window.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;orientationchange&#34;</span>, <span style="color:#a6e22e">updateOrientation</span>, <span style="color:#66d9ef">false</span>);
+    } <span style="color:#66d9ef">else</span> {
+      <span style="color:#75715e">// fallback: update every 5 seconds
+</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">setInterval</span>(<span style="color:#a6e22e">updateOrientation</span>, <span style="color:#ae81ff">5000</span>);
+    }
+  };
+  window.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;DOMContentLoaded&#34;</span>, <span style="color:#a6e22e">init</span>, <span style="color:#66d9ef">false</span>);
 })();
 </code></pre></td></tr></table>
 </div>
 </div><p>Minified (540 bytes):</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">(<span style="color:#66d9ef">function</span>(){<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">e</span><span style="color:#f92672">=</span><span style="color:#66d9ef">typeof</span> window.<span style="color:#a6e22e">orientation</span><span style="color:#f92672">==</span><span style="color:#e6db74">&#34;number&#34;</span><span style="color:#f92672">&amp;&amp;</span><span style="color:#66d9ef">typeof</span> window.<span style="color:#a6e22e">onorientationchange</span><span style="color:#f92672">==</span><span style="color:#e6db74">&#34;object&#34;</span>,<span style="color:#a6e22e">f</span><span style="color:#f92672">=</span>document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">parentNode</span>;<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">c</span>(){<span style="color:#a6e22e">c</span><span style="color:#f92672">=</span><span style="color:#a6e22e">e</span><span style="color:#f92672">?</span><span style="color:#66d9ef">function</span>(){<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">d</span><span style="color:#f92672">=</span>window.<span style="color:#a6e22e">orientation</span>;<span style="color:#66d9ef">switch</span>(<span style="color:#a6e22e">d</span>){<span style="color:#66d9ef">case</span> <span style="color:#ae81ff">90</span><span style="color:#f92672">:</span><span style="color:#66d9ef">case</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">90</span><span style="color:#f92672">:</span><span style="color:#a6e22e">d</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;landscape&#34;</span>;<span style="color:#66d9ef">break</span>;<span style="color:#66d9ef">default</span><span style="color:#f92672">:</span><span style="color:#a6e22e">d</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;portrait&#34;</span>}<span style="color:#a6e22e">f</span>.<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#34;class&#34;</span>,<span style="color:#a6e22e">d</span>)}<span style="color:#f92672">:</span><span style="color:#66d9ef">function</span>(){<span style="color:#a6e22e">f</span>.<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#34;class&#34;</span>,window.<span style="color:#a6e22e">innerWidth</span><span style="color:#f92672">&gt;</span>window.<span style="color:#a6e22e">innerHeight</span><span style="color:#f92672">?</span><span style="color:#e6db74">&#34;landscape&#34;</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#34;portrait&#34;</span>)};<span style="color:#a6e22e">c</span>()}window.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;DOMContentLoaded&#34;</span>,<span style="color:#66d9ef">function</span>(){<span style="color:#a6e22e">c</span>();<span style="color:#a6e22e">e</span><span style="color:#f92672">?</span>window.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;orientationchange&#34;</span>,<span style="color:#a6e22e">c</span>,<span style="color:#66d9ef">false</span>)<span style="color:#f92672">:</span><span style="color:#a6e22e">setInterval</span>(<span style="color:#a6e22e">c</span>,<span style="color:#ae81ff">5E3</span>)},<span style="color:#66d9ef">false</span>)})();
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">(<span style="color:#66d9ef">function</span> () {
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">e</span> <span style="color:#f92672">=</span>
+      <span style="color:#66d9ef">typeof</span> window.<span style="color:#a6e22e">orientation</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;number&#34;</span> <span style="color:#f92672">&amp;&amp;</span>
+      <span style="color:#66d9ef">typeof</span> window.<span style="color:#a6e22e">onorientationchange</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;object&#34;</span>,
+    <span style="color:#a6e22e">f</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">parentNode</span>;
+  <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">c</span>() {
+    <span style="color:#a6e22e">c</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">e</span>
+      <span style="color:#f92672">?</span> <span style="color:#66d9ef">function</span> () {
+          <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">d</span> <span style="color:#f92672">=</span> window.<span style="color:#a6e22e">orientation</span>;
+          <span style="color:#66d9ef">switch</span> (<span style="color:#a6e22e">d</span>) {
+            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">90</span><span style="color:#f92672">:</span>
+            <span style="color:#66d9ef">case</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">90</span><span style="color:#f92672">:</span>
+              <span style="color:#a6e22e">d</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;landscape&#34;</span>;
+              <span style="color:#66d9ef">break</span>;
+            <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
+              <span style="color:#a6e22e">d</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;portrait&#34;</span>;
+          }
+          <span style="color:#a6e22e">f</span>.<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#34;class&#34;</span>, <span style="color:#a6e22e">d</span>);
+        }
+      <span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> () {
+          <span style="color:#a6e22e">f</span>.<span style="color:#a6e22e">setAttribute</span>(
+            <span style="color:#e6db74">&#34;class&#34;</span>,
+            window.<span style="color:#a6e22e">innerWidth</span> <span style="color:#f92672">&gt;</span> window.<span style="color:#a6e22e">innerHeight</span> <span style="color:#f92672">?</span> <span style="color:#e6db74">&#34;landscape&#34;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;portrait&#34;</span>
+          );
+        };
+    <span style="color:#a6e22e">c</span>();
+  }
+  window.<span style="color:#a6e22e">addEventListener</span>(
+    <span style="color:#e6db74">&#34;DOMContentLoaded&#34;</span>,
+    <span style="color:#66d9ef">function</span> () {
+      <span style="color:#a6e22e">c</span>();
+      <span style="color:#a6e22e">e</span>
+        <span style="color:#f92672">?</span> window.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;orientationchange&#34;</span>, <span style="color:#a6e22e">c</span>, <span style="color:#66d9ef">false</span>)
+        <span style="color:#f92672">:</span> <span style="color:#a6e22e">setInterval</span>(<span style="color:#a6e22e">c</span>, <span style="color:#ae81ff">5e3</span>);
+    },
+    <span style="color:#66d9ef">false</span>
+  );
+})();
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="conclusion">Conclusion</h3>
-<p>And that&rsquo;s it!  Now we can reliably target different screen orientations with some straightforward CSS:</p>
+<p>And that&rsquo;s it! Now we can reliably target different screen orientations with some straightforward CSS:</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">portrait</span> <span style="color:#f92672">body</span> <span style="color:#f92672">div</span> { <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">%</span>; }
-.<span style="color:#a6e22e">landscape</span> <span style="color:#f92672">body</span> <span style="color:#f92672">div</span> { <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">15</span><span style="color:#66d9ef">%</span>; }
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">portrait</span> <span style="color:#f92672">body</span> <span style="color:#f92672">div</span> {
+  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">%</span>;
+}
+.<span style="color:#a6e22e">landscape</span> <span style="color:#f92672">body</span> <span style="color:#f92672">div</span> {
+  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">15</span><span style="color:#66d9ef">%</span>;
+}
 </code></pre></td></tr></table>
 </div>
-</div><p>Again, in my experience I&rsquo;ve used this to fix bugs.  But I&rsquo;m sure you can find more creative uses for it!</p>
+</div><p>Again, in my experience I&rsquo;ve used this to fix bugs. But I&rsquo;m sure you can find more creative uses for it!</p>
 <h3 id="related">Related</h3>
 <p><a href="http://www.nczonline.net/blog/2010/04/06/ipad-web-development-tips/">iPad web development tips (Nicholas C. Zakas)</a><br />
 <a href="http://ajaxian.com/archives/iphone-windowonorientationchange-code">iPhone window.onorientationchange Code (Ajaxian)</a><br />
