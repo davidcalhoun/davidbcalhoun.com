@@ -2,8 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://www.davidbcalhoun.com/tags/childhood/</loc>
+    <lastmod>2021-07-17T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.davidbcalhoun.com/</loc>
-    <lastmod>2020-12-30T10:39:59-05:00</lastmod>
+    <lastmod>2021-07-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.davidbcalhoun.com/tags/gratefulness/</loc>
+    <lastmod>2021-07-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.davidbcalhoun.com/2021/lessons-in-gratefulness/</loc>
+    <lastmod>2021-07-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.davidbcalhoun.com/tags/philosophy/</loc>
+    <lastmod>2021-07-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.davidbcalhoun.com/posts/</loc>
+    <lastmod>2021-07-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.davidbcalhoun.com/tags/</loc>
+    <lastmod>2021-07-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.davidbcalhoun.com/tags/great-smoky-mountains/</loc>
     <lastmod>2020-12-30T10:39:59-05:00</lastmod>
@@ -24,12 +42,6 @@
     <lastmod>2020-12-30T10:39:59-05:00</lastmod>
   </url><url>
     <loc>https://www.davidbcalhoun.com/tags/photos/</loc>
-    <lastmod>2020-12-30T10:39:59-05:00</lastmod>
-  </url><url>
-    <loc>https://www.davidbcalhoun.com/posts/</loc>
-    <lastmod>2020-12-30T10:39:59-05:00</lastmod>
-  </url><url>
-    <loc>https://www.davidbcalhoun.com/tags/</loc>
     <lastmod>2020-12-30T10:39:59-05:00</lastmod>
   </url><url>
     <loc>https://www.davidbcalhoun.com/tags/wyoming/</loc>
@@ -63,9 +75,6 @@
     <lastmod>2020-10-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.davidbcalhoun.com/tags/hiking/</loc>
-    <lastmod>2020-10-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.davidbcalhoun.com/tags/philosophy/</loc>
     <lastmod>2020-10-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.davidbcalhoun.com/2020/thoughts-on-death-on-the-appalachian-trail/</loc>

@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "open http://localhost:1313/posts/ && hugo server -D -v",
-    "build": "hugo -d ../docs && cp ../docs/posts/index.* ../docs"
+    "build": "hugo -d ../docs && cp ../docs/posts/index.* ../docs",
+    "dev": "npm start"
   },
   "author": "",
   "license": "ISC",
