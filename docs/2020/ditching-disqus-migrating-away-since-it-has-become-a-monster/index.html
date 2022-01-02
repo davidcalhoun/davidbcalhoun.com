@@ -31,7 +31,7 @@
 
 
 
- <meta name="generator" content="Hugo 0.84.0" />
+ <meta name="generator" content="Hugo 0.91.2" />
     
 
     
@@ -332,7 +332,7 @@
 </ol>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4
@@ -437,7 +437,7 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">103
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">fs</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;fs&#39;</span>);
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">fs</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;fs&#39;</span>);
 <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">fetch</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;node-fetch&#39;</span>);
 
 <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">escapeQuotes</span>(<span style="color:#a6e22e">str</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>) {
@@ -569,18 +569,18 @@
 <p><a href="https://remysharp.com/2019/06/11/ejecting-disqus">Remy&rsquo;s</a> solution of self-hosting the original Disqus avatars is probably a better solution, but you can alternatively do what I did and simply point to the original Disqus image paths.  But for that to work you need to make yet another tweak to <code>commento.js</code>!  In two places I needed to change this:</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">avatar</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">create</span>(<span style="color:#e6db74">&#34;img&#34;</span>);
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">avatar</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">create</span>(<span style="color:#e6db74">&#34;img&#34;</span>);
 <span style="color:#a6e22e">attrSet</span>(<span style="color:#a6e22e">avatar</span>, <span style="color:#e6db74">&#34;src&#34;</span>, <span style="color:#a6e22e">cdn</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;/api/commenter/photo?commenterHex=&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">commenter</span>.<span style="color:#a6e22e">commenterHex</span>);
 </code></pre></td></tr></table>
 </div>
 </div><p>To this:</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
@@ -588,7 +588,7 @@
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">isFullURL</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">commenter</span>.<span style="color:#a6e22e">photo</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/(http|https):\/\//</span>).<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>;
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">isFullURL</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">commenter</span>.<span style="color:#a6e22e">photo</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/(http|https):\/\//</span>).<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>;
 <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">src</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">isFullURL</span>
 	<span style="color:#f92672">?</span> <span style="color:#a6e22e">commenter</span>.<span style="color:#a6e22e">photo</span>
 	<span style="color:#f92672">:</span> <span style="color:#a6e22e">cdn</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;/api/commenter/photo?commenterHex=&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">commenter</span>.<span style="color:#a6e22e">commenterHex</span>;

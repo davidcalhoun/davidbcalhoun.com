@@ -31,7 +31,7 @@
 
 
 
- <meta name="generator" content="Hugo 0.84.0" />
+ <meta name="generator" content="Hugo 0.91.2" />
     
 
     
@@ -266,7 +266,7 @@ if(isset($name)) {
 if(isset($name) &#038;&#038; $name != '') {
 	echo 'Hello ' . $name;
 }</pre>
-<p>There’s one neat thing here – if $name isn’t set, it evaluates the first part of the If condition as false (isset($name)) and doesn’t even look at the second part of the If condition ($name != ”). This is because it doesn’t matter what comes after, it will still evaluate to false (false �� true evaluates to false, and false �� false evaluates to false). Looking at the rest of the If condition is a waste of CPU cycles, so PHP doesn’t do it!</p>
+<p>There’s one neat thing here – if $name isn’t set, it evaluates the first part of the If condition as false (isset($name)) and doesn’t even look at the second part of the If condition ($name != ”). This is because it doesn’t matter what comes after, it will still evaluate to false (false &amp;&amp; true evaluates to false, and false &amp;&amp; false evaluates to false). Looking at the rest of the If condition is a waste of CPU cycles, so PHP doesn’t do it!</p>
 <p>We can confirm this with the following code, which evaluates to false on the first If condition, then doesn’t even try to evaluate the call to a nonexisting function, and thus gives no errors:</p>
 <pre name="code" class="PHP">if(false &#038;&#038; function_that_doesnt_exist()) {
 	// do stuff here

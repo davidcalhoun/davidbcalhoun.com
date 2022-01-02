@@ -31,7 +31,7 @@
 
 
 
- <meta name="generator" content="Hugo 0.84.0" />
+ <meta name="generator" content="Hugo 0.91.2" />
     
 
     
@@ -235,7 +235,7 @@
 </code></pre>
 <p>{:lang=&ldquo;html&rdquo;}</p>
 <p>Trying that as a link does work, but it takes you to this blank screen:</p>
-<p><img src="http://davidbcalhoun.com/wp-content/uploads/2012/02/facebook-blank-screen.png" alt="Facebook app - blank screen" title="Facebook app - blank screen" width="320" height="480" class="aligncenter size-full wp-image-878" /></p>
+<img src="http://davidbcalhoun.com/wp-content/uploads/2012/02/facebook-blank-screen.png" alt="Facebook app - blank screen" title="Facebook app - blank screen" width="320" height="480" class="aligncenter size-full wp-image-878" />
 <p>That blank screen isn&rsquo;t too exciting, but it is peaceful, like a Zen rock garden. Bookmark that page so you can come back later, when you&rsquo;re overwhelmed by friends flooding your updates screen with baby pictures.</p>
 <h3 id="google-to-the-rescue">Google to the rescue!</h3>
 <p>Ok, now back to work!</p>
@@ -243,25 +243,25 @@
 <p>After poking around a bit, I found <a href="http://stackoverflow.com/questions/9077817/open-facebook-app-with-text-from-ipad-app">this link</a> which showed this generic pattern:</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fb://publish/profile/me&#34;</span>&gt;fb://publish/profile/me&lt;/<span style="color:#f92672">a</span>&gt;
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fb://publish/profile/me&#34;</span>&gt;fb://publish/profile/me&lt;/<span style="color:#f92672">a</span>&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p>Whoo! And that works! But I still want to prepopulate the status field. We can do that by passing in a URL parameter:</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fb://publish/profile/me?text=foo&#34;</span>&gt;fb://publish/profile/me?text=foo&lt;/<span style="color:#f92672">a</span>&gt;
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fb://publish/profile/me?text=foo&#34;</span>&gt;fb://publish/profile/me?text=foo&lt;/<span style="color:#f92672">a</span>&gt;
 </code></pre></td></tr></table>
 </div>
 </div><p>Clicking on it will get you to a screen which looks like this:</p>
-<p><img src="http://davidbcalhoun.com/wp-content/uploads/2012/02/facebook-status-disabled.png" alt="Facebook status update with share button disabled" title="Facebook status update with share button disabled" width="320" height="480" class="aligncenter size-full wp-image-865" /></p>
+<img src="http://davidbcalhoun.com/wp-content/uploads/2012/02/facebook-status-disabled.png" alt="Facebook status update with share button disabled" title="Facebook status update with share button disabled" width="320" height="480" class="aligncenter size-full wp-image-865" />
 <p>This, interestingly enough, appears to be the old implementation of the status screen. Here&rsquo;s what it looks like if you launch it through the button on the native app:</p>
-<p><img src="http://davidbcalhoun.com/wp-content/uploads/2012/02/facebook-status-normal.png" alt="Facebook status - what it looks like normally" title="Facebook status - what it looks like normally" width="320" height="480" class="aligncenter size-full wp-image-867" /></p>
+<img src="http://davidbcalhoun.com/wp-content/uploads/2012/02/facebook-status-normal.png" alt="Facebook status - what it looks like normally" title="Facebook status - what it looks like normally" width="320" height="480" class="aligncenter size-full wp-image-867" />
 <p>Also note that the Share button is disabled until the user types in text themselves. This might be a little confusing for some users, but it&rsquo;s probably the best way to prevent spam.</p>
 <h3 id="detecting-if-the-facebook-app-is-installed">Detecting if the Facebook app is installed</h3>
 <p>There&rsquo;s another issue with <em>folks who don&rsquo;t have the native Facebook app installed</em>. There doesn&rsquo;t seem to be a perfect way to detect if the link failed and went nowhere. What we have to work with are <a href="http://stackoverflow.com/questions/7231085/how-to-fall-back-to-marketplace-when-android-custom-url-scheme-not-handled">hacky workarounds involving setTimeout</a>.</p>
