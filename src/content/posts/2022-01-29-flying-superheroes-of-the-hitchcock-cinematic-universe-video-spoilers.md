@@ -1,5 +1,5 @@
 ---
-title: "Flying Superheroes of the Hitchcock Cinematic Universe Video Spoilers"
+title: "Video: Flying Superheroes of the Hitchcock Cinematic Universe (spoilers)"
 description: "A silly video idea I had to turn Hitchcock actors into awkward flying superheroes."
 date: 2022-01-29
 draft: false
