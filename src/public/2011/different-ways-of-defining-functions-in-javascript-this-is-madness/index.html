@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en-US"
+    prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+
+<head>
+     
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="David Calhoun">
+    <title>Different ways of defining functions in JavaScript (this is madness!) - David Calhoun's blog</title>
+    
+    <style>
+
+    html body {
+        font-family: 'Roboto', sans-serif;
+    }
+
+</style>
+
+
+ 
+<link rel="stylesheet" href="https://www.davidbcalhoun.com/css/main.min.edbbacc2430116405d2cf3a4ef94fb1b9d832b1e953da3fcb23820aacda0b09d.css">
+ <link rel="preconnect" href="https://comments.davidbcalhoun.com">
+<link rel="preconnect" href="https://ssl.gstatic.com">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="preconnect" href="https://accounts.google.com">
+<link rel="preconnect" href="https://apis.google.com">
+<link rel="preconnect" href="https://www.google-analytics.com">
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<link rel="preload" href="/commento.css" as="style">
+
+
+
+ <meta name="generator" content="Hugo 0.91.2" />
+    
+
+    
+    
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-5530615-3', 'auto');
+        ga('send', 'pageview');
+    </script>
+    
+    
+
+    <style>
+         
+         
+         
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: local('Roboto'), local('Roboto-Regular'),
+                url('/wp-content/fonts/roboto-v20-latin-regular.woff2') format('woff2'),
+                 
+                url('/wp-content/fonts/roboto-v20-latin-regular.woff') format('woff');
+             
+        }
+    </style>
+
+    
+    <meta name="description" content="Personal blog of photographer and web developer David Calhoun." />
+    
+    <link rel="canonical" href="https://www.davidbcalhoun.com/2011/different-ways-of-defining-functions-in-javascript-this-is-madness/">
+    <link href="/index.xml" rel="alternate" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+    <link href="/index.xml" rel="feed" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+    <link href="/index.xml" rel="self" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+    <meta name="format-detection" content="telephone=no">
+
+    
+    <meta itemprop="name" content="Different ways of defining functions in JavaScript (this is madness!)" />
+    <meta itemprop="headline" content="Different ways of defining functions in JavaScript (this is madness!)" />
+    
+    
+    <meta itemprop="author" content="David Calhoun" />
+    <link rel="me" href="https://www.themaingate.net/" type="text/html">
+    <link rel="me" href="mailto:david.b.calhoun+dc@gmail.com">
+    <link rel="me" href="https://www.linkedin.com/in/davidcalhoun/" type="text/html">
+    <link rel="me" href="https://github.com/davidcalhoun" type="text/html">
+    <link rel="me" href="https://twitter.com/franksvalli" type="text/html">
+    <link rel="archives" href="https://example.com/archives/">
+
+    
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://www.davidbcalhoun.com/2011/different-ways-of-defining-functions-in-javascript-this-is-madness/" />
+    <meta property="og:title" content="Different ways of defining functions in JavaScript (this is madness!)" />
+    
+    
+    
+    <meta property="og:site_name" content="David Calhoun's Blog" />
+    
+    <meta property="og:updated_time" content=2011-06-24T00:00:00Z />
+    
+
+    
+    
+    <meta property="article:published_time" content=2011-06-24T00:00:00Z />
+    <meta property="article:modified_time" content=2011-06-24T00:00:00Z />
+    
+    
+    
+    <meta property="article:section" content="javascript" />
+    
+    
+    <meta property="article:author" content="https://www.davidbcalhoun.com" />
+    
+    
+    <meta property="article:tag" content="javascript" />
+    
+    <meta property="article:tag" content="programming" />
+    
+    <meta property="article:tag" content="webdev" />
+    
+
+    
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Different ways of defining functions in JavaScript (this is madness!)" />
+    <meta name="twitter:url" content="https://www.davidbcalhoun.com/2011/different-ways-of-defining-functions-in-javascript-this-is-madness/" />
+    <meta name="twitter:site" content="@franksvalli" />
+    <meta name="twitter:creator" content="@franksvalli" />
+    <meta name="twitter:domain" content="davidbcalhoun.com" />
+    
+    
+    
+
+
+    <link rel="Shortcut Icon" type="image/ico" href="https://www.davidbcalhoun.com/favicon.ico">
+</head>
+
+
+
+<body>
+     
+    <nav class="navbar">
+
+        <div class="navbar-header">
+            <a class="navbar-brand" href="https://www.davidbcalhoun.com/">David Calhoun&#39;s blog</a>
+        </div>
+
+        
+        <ul class="navbar-links">
+            
+            <li class="navbar-icon"><a aria-label="Send an email" title="Send an email" href="mailto:david.b.calhoun&#43;dc@gmail.com"><svg aria-label="email" role="img" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1664 1504v-768q-32 36-69 66-268 206-426 338-51 43-83 67t-86.5 48.5-102.5 24.5h-2q-48 0-102.5-24.5t-86.5-48.5-83-67q-158-132-426-338-37-30-69-66v768q0 13 9.5 22.5t22.5 9.5h1472q13 0 22.5-9.5t9.5-22.5zm0-1051v-24.5l-.5-13-3-12.5-5.5-9-9-7.5-14-2.5h-1472q-13 0-22.5 9.5t-9.5 22.5q0 168 147 284 193 152 401 317 6 5 35 29.5t46 37.5 44.5 31.5 50.5 27.5 43 9h2q20 0 43-9t50.5-27.5 44.5-31.5 46-37.5 35-29.5q208-165 401-317 54-43 100.5-115.5t46.5-131.5zm128-37v1088q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-1088q0-66 47-113t113-47h1472q66 0 113 47t47 113z"/></svg></i></a>
+            </li>
+            
+            <li class="navbar-icon"><a aria-label="Home Page" title="Home Page" href="https://www.themaingate.net/"><svg aria-label="home site" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"/></svg></i></a>
+            </li>
+            
+            <li class="navbar-icon"><a aria-label="Twitter" title="Twitter" href="https://twitter.com/franksvalli/"><svg aria-label="twitter" role="img" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"/></svg></i></a>
+            </li>
+            
+            <li class="navbar-icon"><a aria-label="Github" title="Github" href="https://github.com/davidcalhoun/"><svg aria-label="github" role="img" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M896 128q209 0 385.5 103t279.5 279.5 103 385.5q0 251-146.5 451.5t-378.5 277.5q-27 5-40-7t-13-30q0-3 .5-76.5t.5-134.5q0-97-52-142 57-6 102.5-18t94-39 81-66.5 53-105 20.5-150.5q0-119-79-206 37-91-8-204-28-9-81 11t-92 44l-38 24q-93-26-192-26t-192 26q-16-11-42.5-27t-83.5-38.5-85-13.5q-45 113-8 204-79 87-79 206 0 85 20.5 150t52.5 105 80.5 67 94 39 102.5 18q-39 36-49 103-21 10-45 15t-57 5-65.5-21.5-55.5-62.5q-19-32-48.5-52t-49.5-24l-20-3q-21 0-29 4.5t-5 11.5 9 14 13 12l7 5q22 10 43.5 38t31.5 51l10 23q13 38 44 61.5t67 30 69.5 7 55.5-3.5l23-4q0 38 .5 88.5t.5 54.5q0 18-13 30t-40 7q-232-77-378.5-277.5t-146.5-451.5q0-209 103-385.5t279.5-279.5 385.5-103zm-477 1103q3-7-7-12-10-3-13 2-3 7 7 12 9 6 13-2zm31 34q7-5-2-16-10-9-16-3-7 5 2 16 10 10 16 3zm30 45q9-7 0-19-8-13-17-6-9 5 0 18t17 7zm42 42q8-8-4-19-12-12-20-3-9 8 4 19 12 12 20 3zm57 25q3-11-13-16-15-4-19 7t13 15q15 6 19-6zm63 5q0-13-17-11-16 0-16 11 0 13 17 11 16 0 16-11zm58-10q-2-11-18-9-16 3-14 15t18 8 14-14z"/></svg></i></a>
+            </li>
+            
+            <li class="navbar-icon"><a aria-label="LinkedIn" title="LinkedIn" href="https://www.linkedin.com/in/davidcalhoun/"><svg aria-label="linkedin" role="img" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z"/></svg></i></a>
+            </li>
+            
+        </ul>
+        
+
+    </nav>
+
+<main role="main" itemscope itemType="https://schema.org/BlogPosting">
+    <meta itemprop="mainEntityOfPage" content="https://www.davidbcalhoun.com/2011/different-ways-of-defining-functions-in-javascript-this-is-madness/" />
+    <meta itemprop="inLanguage" content="en-US" />
+    <span itemscope itemprop="author" itemType="https://schema.org/Person">
+        <meta itemprop="name" content="David Calhoun" />
+        <meta itemprop="url" content="https://www.themaingate.net" />
+    </span>
+    <span itemscope itemprop="publisher" itemType="https://schema.org/Organization">
+        <meta itemprop="name" content="David Calhoun" />
+        <meta itemprop="url" content="https://www.themaingate.net" />
+        <span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+            <meta itemprop="url" content="https://www.themaingate.net/david-calhoun-logo.png">
+            <meta itemprop="width" content="459">
+            <meta itemprop="height" content="459">
+        </span>
+    </span>
+    <meta itemprop="image" content="https://www.themaingate.net/david-calhoun-logo.png" />
+    
+    <meta itemprop="datePublished" content=2011-06-24T00:00:00Z/>
+    <meta itemprop="dateModified" content=2011-06-24T00:00:00Z/>
+    
+
+    <article class="item">
+
+    
+    
+    
+
+    
+    
+
+
+    <h1 itemprop="headline" class="meta title">
+        <a href="https://www.davidbcalhoun.com/2011/different-ways-of-defining-functions-in-javascript-this-is-madness/" itemprop="url">Different ways of defining functions in JavaScript (this is madness!)</a>
+    </h1>
+
+    <time class="meta date" datetime="2011-06-24 00:00:00 &#43;0000 UTC">
+        
+        June 24, 2011
+        
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://www.davidbcalhoun.com/tags/javascript"><span class="item-tag">javascript</span></a>
+        
+        <a href="https://www.davidbcalhoun.com/tags/programming"><span class="item-tag">programming</span></a>
+        
+        <a href="https://www.davidbcalhoun.com/tags/webdev"><span class="item-tag">webdev</span></a>
+        
+    </aside>
+
+</article>
+
+
+    <div class="text-justify"><h2 id="-warning-this-is-an-old-article-and-may-include-information-thats-out-of-date-">⚠️ Warning: this is an old article and may include information that&rsquo;s out of date. ⚠️</h2>
+<p>Note: updated in July 2016 with ES6 arrow functions.</p>
+<p><a href="http://langtoday.com/?p=303">Russian translation</a> thanks to Yevgeniy Pyastolov</p>
+<h3 id="this-is-madness-this-is-javascript">This is madness! This&hellip; is&hellip; JavaScript!</h3>
+<p>In JavaScript, there&rsquo;s many different ways of doing something. This is both a good thing and a bad thing. To the newcomer this is definitely a bad thing, as it means not only more things to learn, but more little caveats and more places to go wrong. And so it is with declaring functions!</p>
+<p>The aim of this is just an accessible tour of the landscape, just so you know what&rsquo;s out there and what the basic differences are. Do be sure to check out the &ldquo;further reading&rdquo; section as well! Much of this is based on <a href="http://kangax.github.com/nfe/">Juriy &ldquo;kangax&rdquo; Zaytsev&rsquo;s article</a>, which goes into more depth. But I found that there wasn&rsquo;t just one reference to show all the different variable declarations.</p>
+<p>How about ways to execute functions? That opens up another can of worms, and incidentally opens up the possibility for a future post on that topic. :)</p>
+<h3 id="overview-different-ways-of-declaring-functions">Overview: different ways of declaring functions</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">A</span>() {} <span style="color:#75715e">// function declaration
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">B</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {}; <span style="color:#75715e">// function expression
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">C</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {}; <span style="color:#75715e">// function expression with grouping operators
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">D</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">foo</span>() {}; <span style="color:#75715e">// named function expression
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">E</span> <span style="color:#f92672">=</span> (<span style="color:#66d9ef">function</span> () {
+  <span style="color:#75715e">// IIFE that returns a function
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">function</span> () {};
+})();
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">F</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Function(); <span style="color:#75715e">// Function constructor
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">G</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> (<span style="color:#66d9ef">function</span> () {})(); <span style="color:#75715e">// special case: object constructor
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">H</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">x</span>) =&gt; <span style="color:#a6e22e">x</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>; <span style="color:#75715e">// ES6 arrow function
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="a-function-declarations-function-a">A: Function declarations: function A(){};</h3>
+<p>Function declarations are probably the most familiar and oldest way of doing things in JavaScript land. This creates a variable A which is accessible in the current scope. Scope is a separate topic, so well do everything in the global scope for all these examples (something you want to avoid usually).</p>
+<h4 id="1-hoisting">1. Hoisting</h4>
+<p>The interesting thing about these is that they are &ldquo;hoisted&rdquo; to the top of their scope, which means this code:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">A</span>();
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">A</span>() {
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;foo&#34;</span>);
+}
+</code></pre></td></tr></table>
+</div>
+</div><p>Gets executed as this code:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">A</span>() {
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;foo&#34;</span>);
+}
+<span style="color:#a6e22e">A</span>();
+</code></pre></td></tr></table>
+</div>
+</div><p>Which practically means that, yes, you can call the functions before they&rsquo;re written in your code. It won&rsquo;t matter, because the entire function gets hoisted to the top of its containing scope. (This is contrasted with variables, which only have their declaration hoisted, not their contents, as we&rsquo;ll see in the next section).</p>
+<h4 id="2-no-function-declarations-in-if-statements-or-loops-etc">2. No function declarations in <code>if</code> statements (or loops, etc)</h4>
+<p>You can&rsquo;t define functions this way in expressions, for example <code>if</code> statements, which is common if we want to define different versions of a function for different circumstances, usually to address browser inconsistencies. Well, you <em>can</em> in some implementations, but the way the code is processed is inconsistent (kangax has documented the inconsistencies <a href="http://kangax.github.com/nfe/">here</a>). If you want to use this pattern, use function expressions instead.</p>
+<h4 id="3-functions-declarations-must-have-names">3. Functions declarations must have names</h4>
+<p>This method doesn&rsquo;t allow you to create anonymous functions, meaning that you always have to give it an identifier (in this case we&rsquo;ve used &ldquo;A&rdquo;).</p>
+<h3 id="b-function-expressions-var-b--function">B: Function expressions: var B = function(){};</h3>
+<p>A function expression looks similar to function declarations, except that the function is assigned to a variable name. Though functions are not primitive values in JavaScript, this is the way they can be utilized to their full effect in this functional language. Functions are &ldquo;<a href="http://en.wikipedia.org/wiki/First-class_function">first class</a>&quot;:</p>
+<blockquote>
+<p>&ldquo;[JavaScript] supports passing functions as arguments to other functions, returning them as the values from other functions, and assigning them to variables or storing them in data structures&rdquo;</p>
+</blockquote>
+<h4 id="1-anonymous-functions-they-dont-need-names">1. Anonymous functions (they don&rsquo;t need names)</h4>
+<p>The function name is optional in function expressions, and we call these anonymous. Here we&rsquo;re setting the variable B equal to an anonymous function: <code>var B = function(){};</code></p>
+<h4 id="2-variable-declaration-hoisting">2. Variable declaration hoisting</h4>
+<p>Variable declarations are hoisted to the top of their scope, somewhat similarly to function hoisting <em>except</em> the contents of the variable are not hoisted as well. This happens with all variables, and it means it&rsquo;s now happening with our functions, now that we&rsquo;re assigning them to variables.</p>
+<p>This code:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">A</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {};
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">B</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {};
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">C</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {};
+</code></pre></td></tr></table>
+</div>
+</div><p>Will be executed as this:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">A</span>, <span style="color:#a6e22e">B</span>, <span style="color:#a6e22e">C</span>; <span style="color:#75715e">// variable declarations are hoisted
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">A</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {};
+<span style="color:#a6e22e">B</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {};
+<span style="color:#a6e22e">C</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {};
+</code></pre></td></tr></table>
+</div>
+</div><p>Therefore the order of setting and calling this type of function is important:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// this works
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">B</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {};
+<span style="color:#a6e22e">B</span>();
+
+<span style="color:#75715e">// this doesn&#39;t work
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">B2</span>(); <span style="color:#75715e">// TypeError (B2 is undefined)
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">B2</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {};
+</code></pre></td></tr></table>
+</div>
+</div><p>The second example gives us an error because only the variable B2&rsquo;s declaration is hoisted, but not its definition, thus the &ldquo;undefined&rdquo; error.</p>
+<h3 id="c-function-expressions-with-grouping-operators-var-c--function">C: Function expressions with grouping operators: var C = (function(){});</h3>
+<p>These really aren&rsquo;t different from plain old function expressions and aren&rsquo;t really seen in the wild (so maybe they&rsquo;re just good for JavaScript quizzes?). Recently this way of declaring functions was brought up in <a href="http://ironjs.wordpress.com/2011/06/22/my-gripes-with-javascript/">this article</a> and confused some folks including myself.</p>
+<p>Here&rsquo;s a good way to see what&rsquo;s happening:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span>(){};  <span style="color:#75715e">// SyntaxError
+</span><span style="color:#75715e"></span>(<span style="color:#66d9ef">function</span>(){});
+</code></pre></td></tr></table>
+</div>
+</div><p>Why does one work and the other doesn&rsquo;t? The first example is a function declaration, and we learned above that we can&rsquo;t declare them anonymously - that is, they must have a name. That&rsquo;s why we&rsquo;re getting the syntax error.</p>
+<p>The second example is using parenthesis - grouping operators - and is therefore evaluated differently, as a function expression. The grouping operators are the things we use to help show what should be evaluated first, as in mathematical problems. We&rsquo;re saying &ldquo;evaluate this first, then take the result and do something with it&rdquo;:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">(<span style="color:#ae81ff">1</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>) <span style="color:#f92672">*</span> <span style="color:#ae81ff">3</span>; <span style="color:#75715e">// 9
+</span><span style="color:#75715e"></span><span style="color:#ae81ff">1</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">3</span>; <span style="color:#75715e">// 7
+</span></code></pre></td></tr></table>
+</div>
+</div><p>In the first example we&rsquo;re saying &ldquo;first add 1 and 2, then take the result and multiply by 3&rdquo;, whereas in the second example we&rsquo;re saying &ldquo;first multiply 2 and 3, then take the result and add 1&rdquo;.</p>
+<p>Because functions are first class, we can use similar grouping operators. Here&rsquo;s a facetious example, but it shows how we can essentially drop in a function in the same way:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">(<span style="color:#66d9ef">function</span> () {} <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>); <span style="color:#75715e">// function(){}1
+</span></code></pre></td></tr></table>
+</div>
+</div><p>The result is a string (because toString is being called on the function, then added/appended with 1), but you get the idea I hope.</p>
+<p>When the JavaScript engine encounters the opening parenthesis here, we&rsquo;re essentially saying &ldquo;ok, start grouping this together with something else&rdquo;. Using our technical terms, we&rsquo;re telling the engine that we&rsquo;re not making a function declaration, but instead a function expression. And then we can assign the result to a variable:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">(<span style="color:#66d9ef">function</span> () {}); <span style="color:#75715e">// resulting function not assigned
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">foo</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {}; <span style="color:#75715e">// resulting function assigned to foo
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">bar</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {}; <span style="color:#75715e">// resulting function assigned to bar
+</span></code></pre></td></tr></table>
+</div>
+</div><p>Here we can see that foo and bar are really just the same, because in foo we&rsquo;re not grouping the function together with anything but itself.</p>
+<h3 id="d-named-function-expression-var-d--function-foo">D: Named function expression: var D = function foo(){};</h3>
+<p>Here we have our same old friend, the function expression. But instead of assigning the variable to an anonymous function, we&rsquo;re assigning it to a named function (with the name foo).</p>
+<h4 id="1-the-function-name-is-only-accessible-within-the-function">1. The function name is only accessible within the function</h4>
+<p>We haven&rsquo;t exposed the function name (foo) to the enclosing scope (in this case the global scope):</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">D</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">foo</span>() {
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">foo</span>);
+};
+<span style="color:#a6e22e">D</span>(); <span style="color:#75715e">// function
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">foo</span>); <span style="color:#75715e">// undefined
+</span></code></pre></td></tr></table>
+</div>
+</div><h4 id="2-useful-for-recursion">2. Useful for recursion</h4>
+<p>Because the function&rsquo;s name is accessible in the function itself, this turns out to be useful for recursive functions, much more useful than the plain old anonymous function.</p>
+<p>Here&rsquo;s a trivial recursive function to illustrate calling itself from within the named function expression:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">countdown</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">a</span>(<span style="color:#a6e22e">count</span>) {
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">count</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) {
+    <span style="color:#a6e22e">count</span><span style="color:#f92672">--</span>;
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span>(<span style="color:#a6e22e">count</span>); <span style="color:#75715e">// we can also do this: a(--count), which is less clear
+</span><span style="color:#75715e"></span>  }
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;end of recursive function&#34;</span>);
+};
+<span style="color:#a6e22e">countdown</span>(<span style="color:#ae81ff">5</span>);
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="3-useful-for-debugging">3. Useful for debugging</h4>
+<p>As a <a href="http://kangax.github.com/nfe/">few</a> <a href="http://javascriptweblog.wordpress.com/2010/07/06/function-declarations-vs-function-expressions/">have</a> pointed out, giving previously anonymous functions names helps in debugging, since the function name shows up on the call stack.</p>
+<h4 id="4-quirks-jscripts-bad-implementation">4. Quirks: JScript&rsquo;s bad implementation</h4>
+<p><a href="http://kangax.github.com/nfe/">kangax</a> points out that named function expressions are basically poison to JScript, Internet Explorer&rsquo;s implementation of JavaScript.</p>
+<p>The named function becomes a global variable, is hoisted like a function declaration, and actually ends up creating multiple instances of the same function.</p>
+<h3 id="e-immediately-invoked-function-expressions-iife-var-e--functionreturn-function">E: Immediately-invoked function expressions (IIFE): var E = (function(){return function(){}})();</h3>
+<p>&ldquo;Execute this function, whose return value is another function, and assign that to the variable E&rdquo;. This may seem like magic, but it&rsquo;s actually quite simple, and the pattern is powerful and has useful applications, the most famous of which is the <a href="http://www.klauskomenda.com/code/javascript-programming-patterns/#module">module pattern</a>.</p>
+<p>First we&rsquo;ll use an example that doesn&rsquo;t look like magic:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">foo</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+  <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;bar&#34;</span>;
+};
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">output</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">foo</span>();
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">output</span>); <span style="color:#75715e">// &#39;bar&#39;
+</span></code></pre></td></tr></table>
+</div>
+</div><p>We already learned about grouping operators above, so you should feel comfortable with saying this is equivalent:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">foo</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+  <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;bar&#34;</span>;
+};
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">output</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">foo</span>(); <span style="color:#75715e">// note the extra grouping operators
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">output</span>); <span style="color:#75715e">// &#39;bar&#39;
+</span></code></pre></td></tr></table>
+</div>
+</div><p>Since foo is pointing to our function expression, we know that we can simply refrain from using the variable &ldquo;foo&rdquo; and drop in the entire function as an anonymous function (since functions are first class, after all!):</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">output</span> <span style="color:#f92672">=</span> (<span style="color:#66d9ef">function</span> () {
+  <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;bar&#34;</span>;
+})();
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">output</span>); <span style="color:#75715e">// &#39;bar&#39;
+</span></code></pre></td></tr></table>
+</div>
+</div><p>Hey wait, we just arrived at the magical resulting function! It turns out to be not so magical after all, once we break it down and see it for what it is. It&rsquo;s simply shorthand for the code we wrote originally, where we defined a function, executed it, and defined output to be its return value.</p>
+<p>I&rsquo;ve included this method on the list of declaring functions because we can assign the return value to itself be a function:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">E</span> <span style="color:#f92672">=</span> (<span style="color:#66d9ef">function</span> () {
+  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">function</span> () {};
+})();
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="applications">Applications</h4>
+<p>There are good applications for this, including information hiding using in the module pattern, (<a href="http://ejohn.org/blog/partial-functions-in-javascript/">partial application</a>, for example), and other clever uses of it. It&rsquo;s definitely not a trivial pattern.</p>
+<h3 id="f-function-constructor-var-f--new-function">F: Function constructor: var F = new Function();</h3>
+<p>This method is extremely old and it&rsquo;s not recommended to be used. You pass in an unlimited number of arguments in the front, then the actual function body appears as a string in the last argument (because it&rsquo;s a string, it&rsquo;s effectively the equivalent of eval(), and isn&rsquo;t recommended).</p>
+<h4 id="1-defining-the-function">1. Defining the function</h4>
+<p>You can create a function like this:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">F</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Function(<span style="color:#e6db74">&#34;arg1&#34;</span>, <span style="color:#e6db74">&#34;arg2&#34;</span>, <span style="color:#e6db74">&#39;console.log(arg1 + &#34;, &#34; + arg2)&#39;</span>);
+<span style="color:#a6e22e">F</span>(<span style="color:#e6db74">&#34;foo&#34;</span>, <span style="color:#e6db74">&#34;bar&#34;</span>); <span style="color:#75715e">// &#39;foo, bar&#39;
+</span></code></pre></td></tr></table>
+</div>
+</div><h4 id="2-you-dont-need-the-new-operator">2. You don&rsquo;t need the <code>new</code> operator</h4>
+<p>You can simply write <code>var F = Function();</code> to get the same result.</p>
+<h4 id="3-quirks">3. Quirks</h4>
+<p>The <a href="https://developer.mozilla.org/en/JavaScript/Reference/Functions_and_function_scope#Function_constructor_vs._function_declaration_vs._function_expression">MDN docs</a> have some good examples of the quirks, including the fact that functions declared with the Function constructor don&rsquo;t inherit their current scope properly (i.e. a closure isn&rsquo;t formed).</p>
+<p>What this means is that they don&rsquo;t have access to variables in their enclosing scope, which isn&rsquo;t particularly useful:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">foo</span>() {
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">bar</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;blah&#34;</span>;
+
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">first</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Function(<span style="color:#e6db74">&#34;console.log(typeof bar)&#34;</span>);
+  <span style="color:#a6e22e">first</span>(); <span style="color:#75715e">// undefined
+</span><span style="color:#75715e"></span>
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">second</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">bar</span>);
+  };
+  <span style="color:#a6e22e">second</span>(); <span style="color:#75715e">// string
+</span><span style="color:#75715e"></span>}
+<span style="color:#a6e22e">foo</span>();
+</code></pre></td></tr></table>
+</div>
+</div><p>In the function &ldquo;first&rdquo;, we&rsquo;re using the Function constructor, so it doesn&rsquo;t have access to the variable bar. However, if we use the function &ldquo;second&rdquo;, which is a function expression, it does in fact have access to variables defined in its enclosing scope (via closure).</p>
+<p>In other words, <em>don&rsquo;t use the Function constructor</em>.</p>
+<h3 id="g-special-case---object-constructor-var-g--new-function-foo">G: Special case - object constructor: var G = new function foo(){};</h3>
+<p>I saved this for last because we&rsquo;re not really defining a function, though we are using the function keyword, so it&rsquo;s worth noting at least.</p>
+<p><code>new function(){};</code> creates a new object and invokes the anonymous function as its constructor. If an object is returned from the function, that becomes the resulting object, otherwise a new object is created from scratch and function is executed in the context of that new function (let&rsquo;s save the details for another post!).</p>
+<p>It&rsquo;s a bit unusual to see it in this form. Let&rsquo;s do it the proper way:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">Person</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>); <span style="color:#75715e">// Person
+</span><span style="color:#75715e"></span>};
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">joe</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Person</span>();
+</code></pre></td></tr></table>
+</div>
+</div><p>So really with the new operator, we are giving it a new &lsquo;this&rsquo; context and then executing the given function with that new context. Much different than the function definitions we&rsquo;ve been dealing with above! This does into a whole new topic, and we&rsquo;ll save that for later!</p>
+<h3 id="h-arrow-functions">H: Arrow functions</h3>
+<p>With the addition of ES6 came these so-called &ldquo;fat arrow&rdquo; functions, or if you prefer the slimmed-down version, simply &ldquo;arrow functions&rdquo;.</p>
+<p>Arrow functions bring no brand new functionality, instead offering some syntactic sugar, meaning that in the end we developers will have to type less to achieve the same result.</p>
+<p>Arrow functions are particularly handy in cases where we would&rsquo;ve had one-line functions before, as in this case with ES5 JavaScript:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>].<span style="color:#a6e22e">map</span>(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">x</span>) {
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>;
+});
+<span style="color:#75715e">// [2, 4, 6]
+</span></code></pre></td></tr></table>
+</div>
+</div><p>We can now write this as follows:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">[<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>].<span style="color:#a6e22e">map</span>((<span style="color:#a6e22e">x</span>) =&gt; <span style="color:#a6e22e">x</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>);
+<span style="color:#75715e">// [2, 4, 6]
+</span></code></pre></td></tr></table>
+</div>
+</div><p>The second benefit of arrow functions is that they preserve their <code>this</code> context, which is super convenient. Often times it&rsquo;s a tedious task trying to preserve scope in JavaScript, usually through the use of <code>bind()</code>. But this allows us to bypass it and write less.</p>
+<p>Consider the following case:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">multiply</span>(<span style="color:#a6e22e">valuesArray</span>) {
+  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">multiplier</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">valuesArray</span>.<span style="color:#a6e22e">map</span>(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">x</span>) {
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">multiplier</span>;
+  });
+}
+
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fakeContext</span> <span style="color:#f92672">=</span> {};
+
+<span style="color:#a6e22e">multiply</span>.<span style="color:#a6e22e">call</span>(<span style="color:#a6e22e">fakeContext</span>, [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>]);
+<span style="color:#75715e">// -&gt; [NaN, NaN, NaN]
+</span></code></pre></td></tr></table>
+</div>
+</div><p>This didn&rsquo;t work because the <code>this</code> context of the multiply function wasn&rsquo;t preserved in the <code>map()</code> function, forcing us to rewrite things slightly to preserve function context through defining a variable in <code>multiple()</code> (such as <code>var self = this</code>) or by using <code>bind()</code>.</p>
+<p>Instead, using an arrow function we know our <code>this</code> context will be preserved, allowing us to write with a minor tweak:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">multiply</span>(<span style="color:#a6e22e">valuesArray</span>) {
+  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">multiplier</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">valuesArray</span>.<span style="color:#a6e22e">map</span>((<span style="color:#a6e22e">x</span>) =&gt; <span style="color:#a6e22e">x</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">multiplier</span>);
+}
+
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">fakeContext</span> <span style="color:#f92672">=</span> {};
+
+<span style="color:#a6e22e">multiply</span>.<span style="color:#a6e22e">call</span>(<span style="color:#a6e22e">fakeContext</span>, [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>]);
+<span style="color:#75715e">// -&gt; [2, 4, 6]
+</span></code></pre></td></tr></table>
+</div>
+</div><p>As with much of ES6, use caution, as it may not be completely supported yet (see <a href="http://caniuse.com/#feat=arrow-functions">caniuse.com</a>). As most folks are using some sort of transpiler these days, they probably don&rsquo;t have to worry about this. It&rsquo;s good to keep in mind however.</p>
+<p>Read more about arrow functions <a href="http://exploringjs.com/es6/ch_arrow-functions.html">here</a>.</p>
+<h3 id="further-reading">Further reading</h3>
+<p><a href="http://kangax.github.com/nfe/">Named function expressions demystified</a> (kangax)</p>
+<p><a href="http://benalman.com/news/2010/11/immediately-invoked-function-expression/">Immediately-Invoked Function Expression (IIFE) (Ben Alman)</a></p>
+<p><a href="https://developer.mozilla.org/en/JavaScript/Reference/Functions_and_function_scope">Functions and function scope</a> (Mozilla Developer Network - MDN)</p>
+<p><a href="http://stackoverflow.com/questions/1140089/how-does-an-anonymous-function-in-javascript-work">How does an anonymous function in JavaScript work? (StackOverflow)</a></p>
+<p><a href="http://javascriptweblog.wordpress.com/2010/07/06/function-declarations-vs-function-expressions/">Function Declarations vs. Function Expressions (JavaScript, JavaScript by Angus Croll)</a></p>
+<p><a href="http://www.amazon.com/gp/product/0596805527/">JavaScript: The Definitive Guide</a> (classic book by David Flanagan)</p>
+</div>
+
+    
+    
+
+    
+
+</main>
+
+		<section class="comments">
+			<h2 class="page-header">Comments</h2>
+			<section id="commento"></section>
+			<script src="/commento.js"></script>
+		</section>
+
+        <footer role="contentinfo">
+
+            <p class="copyright text-muted">©<span itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="David Calhoun"><a href="https://www.themaingate.net/">David Calhoun</a></span> - <a href="https://www.davidbcalhoun.com/privacy/">Privacy</a> - <a href="https://www.davidbcalhoun.com/terms-of-service/">Terms</a></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+

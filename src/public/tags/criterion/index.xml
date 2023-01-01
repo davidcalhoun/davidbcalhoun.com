@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>criterion on David Calhoun&#39;s blog</title>
+    <link>https://www.davidbcalhoun.com/tags/criterion/</link>
+    <description>Recent content in criterion on David Calhoun&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Thu, 10 Oct 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://www.davidbcalhoun.com/tags/criterion/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Matching Accented Strings in Javascript</title>
+      <link>https://www.davidbcalhoun.com/2019/matching-accented-strings-in-javascript/</link>
+      <pubDate>Thu, 10 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2019/matching-accented-strings-in-javascript/</guid>
+      <description>The problem: accented characters versus user input I&amp;rsquo;ve really been enjoying (wait for it, unpaid endorsement) The Criterion Channel since it launched earlier this year. The app and the website are nascent and therefore have had their share of problems, but to their credit they have been hard at work making things smoother day by day.
+But one big annoying thing in general is searchability of films in general. Recently I found a reddit post revealing another big search annoyance: bad handling of matching strings with accented titles, particularly when searching for &amp;lsquo;samourai&amp;rsquo; and expecting &amp;lsquo;Le Samouraï&amp;rsquo; to pop up in the results:</description>
+    </item>
+    
+  </channel>
+</rss>

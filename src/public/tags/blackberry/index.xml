@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>blackberry on David Calhoun&#39;s blog</title>
+    <link>https://www.davidbcalhoun.com/tags/blackberry/</link>
+    <description>Recent content in blackberry on David Calhoun&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Wed, 18 Aug 2010 00:00:00 +0000</lastBuildDate><atom:link href="https://www.davidbcalhoun.com/tags/blackberry/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>BlackBerry Torch SunSpider results (JavaScript benchmark)</title>
+      <link>https://www.davidbcalhoun.com/2010/blackberry-torch-sunspider-results-javascript-benchmark/</link>
+      <pubDate>Wed, 18 Aug 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2010/blackberry-torch-sunspider-results-javascript-benchmark/</guid>
+      <description>Results ============================================RESULTS (means and 95% confidence intervals)--------------------------------------------Total: 322.2ms +/- 4.9%--------------------------------------------3d: 55.0ms +/- 15.3%cube: 19.8ms +/- 12.1%morph: 16.6ms +/- 35.8%raytrace: 18.6ms +/- 22.5%access: 32.8ms +/- 12.4%binary-trees: 1.8ms +/- 30.9%fannkuch: 14.2ms +/- 7.3%nbody: 12.6ms +/- 26.7%nsieve: 4.2ms +/- 24.8%bitops: 29.4ms +/- 10.2%3bit-bits-in-byte: 2.4ms +/- 28.4%bits-in-byte: 8.0ms +/- 15.5%bitwise-and: 8.6ms +/- 21.9%nsieve-bits: 10.4ms +/- 21.7%controlflow: 2.</description>
+    </item>
+    
+  </channel>
+</rss>
