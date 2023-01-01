@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>html on David Calhoun&#39;s blog</title>
+    <link>https://www.davidbcalhoun.com/tags/html/</link>
+    <description>Recent content in html on David Calhoun&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Thu, 07 Oct 2010 00:00:00 +0000</lastBuildDate><atom:link href="https://www.davidbcalhoun.com/tags/html/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Top ten things HTML5 makes simpler</title>
+      <link>https://www.davidbcalhoun.com/2010/top-ten-things-html5-makes-simpler/</link>
+      <pubDate>Thu, 07 Oct 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2010/top-ten-things-html5-makes-simpler/</guid>
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ General word of caution: not all of these HTML5 simplifications are compatible with older browsers. Test it for yourself before implementing!
+1. The doctype Old 1  &amp;lt;!DOCTYPE html PUBLIC &amp;#34;-//W3C//DTD HTML 4.01//EN&amp;#34; &amp;#34;http://www.w3.org/TR/html4/strict.dtd&amp;#34;&amp;gt;   New 1  &amp;lt;!DOCTYPE html&amp;gt;   2. charset Old 1  &amp;lt;meta http-equiv=&amp;#34;Content-Type&amp;#34; content=&amp;#34;text/html; charset=utf-8&amp;#34; /&amp;gt;   New 1  &amp;lt;meta charset=&amp;#34;utf-8&amp;#34; /&amp;gt;   3.</description>
+    </item>
+    
+    <item>
+      <title>Basic HTML5 template</title>
+      <link>https://www.davidbcalhoun.com/2010/basic-html5-template/</link>
+      <pubDate>Wed, 08 Sep 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2010/basic-html5-template/</guid>
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ Introduction Often times I end up creating short pages for testing short pieces of code, and I only need a very basic HTML template to write in. Short of using HTML5 Boilerplate, I just use a quick piece of code like the following. (note: yes, this has issues in IE, so you may want to use HTML5 Shiv/Shim)</description>
+    </item>
+    
+    <item>
+      <title>Using mobile-specific HTML, CSS, and JavaScript (Mobile web part 5)</title>
+      <link>https://www.davidbcalhoun.com/2010/using-mobile-specific-html-css-and-javascript-mobile-web-part-5/</link>
+      <pubDate>Tue, 29 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2010/using-mobile-specific-html-css-and-javascript-mobile-web-part-5/</guid>
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ (updated June 27, 2011)
+Mobile-specific HTML Viewport tag Use the viewport tag to properly fit the content to the screen:
+1  &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1.0&amp;#34; /&amp;gt;   Tel scheme (to initiate phone calls) 1  &amp;lt;a href=&amp;#34;tel:18005555555&amp;#34;&amp;gt;Call us at 1-800-555-5555&amp;lt;/a&amp;gt;   Sms scheme (to initiate text messages) 1 2 3 4 5 6 7 8  &amp;lt;a href=&amp;#34;sms:18005555555&amp;#34;&amp;gt; &amp;lt;a href=&amp;#34;sms:18005555555,18005555556&amp;#34;&amp;gt; &amp;lt;!</description>
+    </item>
+    
+  </channel>
+</rss>

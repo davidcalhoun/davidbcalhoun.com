@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en-US"
+    prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+
+<head>
+     
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="David Calhoun">
+    <title>You Can&#39;t JavaScript Under Pressure walkthrough - David Calhoun's blog</title>
+    
+    <style>
+
+    html body {
+        font-family: 'Roboto', sans-serif;
+    }
+
+</style>
+
+
+ 
+<link rel="stylesheet" href="https://www.davidbcalhoun.com/css/main.min.edbbacc2430116405d2cf3a4ef94fb1b9d832b1e953da3fcb23820aacda0b09d.css">
+ <link rel="preconnect" href="https://comments.davidbcalhoun.com">
+<link rel="preconnect" href="https://ssl.gstatic.com">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="preconnect" href="https://accounts.google.com">
+<link rel="preconnect" href="https://apis.google.com">
+<link rel="preconnect" href="https://www.google-analytics.com">
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<link rel="preload" href="/commento.css" as="style">
+
+
+
+ <meta name="generator" content="Hugo 0.91.2" />
+    
+
+    
+    
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-5530615-3', 'auto');
+        ga('send', 'pageview');
+    </script>
+    
+    
+
+    <style>
+         
+         
+         
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: local('Roboto'), local('Roboto-Regular'),
+                url('/wp-content/fonts/roboto-v20-latin-regular.woff2') format('woff2'),
+                 
+                url('/wp-content/fonts/roboto-v20-latin-regular.woff') format('woff');
+             
+        }
+    </style>
+
+    
+    <meta name="description" content="Personal blog of photographer and web developer David Calhoun." />
+    
+    <link rel="canonical" href="https://www.davidbcalhoun.com/2013/you-cant-javascript-under-pressure-walkthrough/">
+    <link href="/index.xml" rel="alternate" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+    <link href="/index.xml" rel="feed" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+    <link href="/index.xml" rel="self" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+    <meta name="format-detection" content="telephone=no">
+
+    
+    <meta itemprop="name" content="You Can&#39;t JavaScript Under Pressure walkthrough" />
+    <meta itemprop="headline" content="You Can&#39;t JavaScript Under Pressure walkthrough" />
+    
+    
+    <meta itemprop="author" content="David Calhoun" />
+    <link rel="me" href="https://www.themaingate.net/" type="text/html">
+    <link rel="me" href="mailto:david.b.calhoun+dc@gmail.com">
+    <link rel="me" href="https://www.linkedin.com/in/davidcalhoun/" type="text/html">
+    <link rel="me" href="https://github.com/davidcalhoun" type="text/html">
+    <link rel="me" href="https://twitter.com/franksvalli" type="text/html">
+    <link rel="archives" href="https://example.com/archives/">
+
+    
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://www.davidbcalhoun.com/2013/you-cant-javascript-under-pressure-walkthrough/" />
+    <meta property="og:title" content="You Can&#39;t JavaScript Under Pressure walkthrough" />
+    
+    
+    
+    <meta property="og:site_name" content="David Calhoun's Blog" />
+    
+    <meta property="og:updated_time" content=2013-10-04T00:00:00Z />
+    
+
+    
+    
+    <meta property="article:published_time" content=2013-10-04T00:00:00Z />
+    <meta property="article:modified_time" content=2013-10-04T00:00:00Z />
+    
+    
+    
+    <meta property="article:section" content="javascript" />
+    
+    
+    <meta property="article:author" content="https://www.davidbcalhoun.com" />
+    
+    
+    <meta property="article:tag" content="javascript" />
+    
+    <meta property="article:tag" content="programming" />
+    
+    <meta property="article:tag" content="webdev" />
+    
+
+    
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="You Can&#39;t JavaScript Under Pressure walkthrough" />
+    <meta name="twitter:url" content="https://www.davidbcalhoun.com/2013/you-cant-javascript-under-pressure-walkthrough/" />
+    <meta name="twitter:site" content="@franksvalli" />
+    <meta name="twitter:creator" content="@franksvalli" />
+    <meta name="twitter:domain" content="davidbcalhoun.com" />
+    
+    
+    
+
+
+    <link rel="Shortcut Icon" type="image/ico" href="https://www.davidbcalhoun.com/favicon.ico">
+</head>
+
+
+
+<body>
+     
+    <nav class="navbar">
+
+        <div class="navbar-header">
+            <a class="navbar-brand" href="https://www.davidbcalhoun.com/">David Calhoun&#39;s blog</a>
+        </div>
+
+        
+        <ul class="navbar-links">
+            
+            <li class="navbar-icon"><a aria-label="Send an email" title="Send an email" href="mailto:david.b.calhoun&#43;dc@gmail.com"><svg aria-label="email" role="img" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1664 1504v-768q-32 36-69 66-268 206-426 338-51 43-83 67t-86.5 48.5-102.5 24.5h-2q-48 0-102.5-24.5t-86.5-48.5-83-67q-158-132-426-338-37-30-69-66v768q0 13 9.5 22.5t22.5 9.5h1472q13 0 22.5-9.5t9.5-22.5zm0-1051v-24.5l-.5-13-3-12.5-5.5-9-9-7.5-14-2.5h-1472q-13 0-22.5 9.5t-9.5 22.5q0 168 147 284 193 152 401 317 6 5 35 29.5t46 37.5 44.5 31.5 50.5 27.5 43 9h2q20 0 43-9t50.5-27.5 44.5-31.5 46-37.5 35-29.5q208-165 401-317 54-43 100.5-115.5t46.5-131.5zm128-37v1088q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-1088q0-66 47-113t113-47h1472q66 0 113 47t47 113z"/></svg></i></a>
+            </li>
+            
+            <li class="navbar-icon"><a aria-label="Home Page" title="Home Page" href="https://www.themaingate.net/"><svg aria-label="home site" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"/></svg></i></a>
+            </li>
+            
+            <li class="navbar-icon"><a aria-label="Twitter" title="Twitter" href="https://twitter.com/franksvalli/"><svg aria-label="twitter" role="img" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"/></svg></i></a>
+            </li>
+            
+            <li class="navbar-icon"><a aria-label="Github" title="Github" href="https://github.com/davidcalhoun/"><svg aria-label="github" role="img" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M896 128q209 0 385.5 103t279.5 279.5 103 385.5q0 251-146.5 451.5t-378.5 277.5q-27 5-40-7t-13-30q0-3 .5-76.5t.5-134.5q0-97-52-142 57-6 102.5-18t94-39 81-66.5 53-105 20.5-150.5q0-119-79-206 37-91-8-204-28-9-81 11t-92 44l-38 24q-93-26-192-26t-192 26q-16-11-42.5-27t-83.5-38.5-85-13.5q-45 113-8 204-79 87-79 206 0 85 20.5 150t52.5 105 80.5 67 94 39 102.5 18q-39 36-49 103-21 10-45 15t-57 5-65.5-21.5-55.5-62.5q-19-32-48.5-52t-49.5-24l-20-3q-21 0-29 4.5t-5 11.5 9 14 13 12l7 5q22 10 43.5 38t31.5 51l10 23q13 38 44 61.5t67 30 69.5 7 55.5-3.5l23-4q0 38 .5 88.5t.5 54.5q0 18-13 30t-40 7q-232-77-378.5-277.5t-146.5-451.5q0-209 103-385.5t279.5-279.5 385.5-103zm-477 1103q3-7-7-12-10-3-13 2-3 7 7 12 9 6 13-2zm31 34q7-5-2-16-10-9-16-3-7 5 2 16 10 10 16 3zm30 45q9-7 0-19-8-13-17-6-9 5 0 18t17 7zm42 42q8-8-4-19-12-12-20-3-9 8 4 19 12 12 20 3zm57 25q3-11-13-16-15-4-19 7t13 15q15 6 19-6zm63 5q0-13-17-11-16 0-16 11 0 13 17 11 16 0 16-11zm58-10q-2-11-18-9-16 3-14 15t18 8 14-14z"/></svg></i></a>
+            </li>
+            
+            <li class="navbar-icon"><a aria-label="LinkedIn" title="LinkedIn" href="https://www.linkedin.com/in/davidcalhoun/"><svg aria-label="linkedin" role="img" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z"/></svg></i></a>
+            </li>
+            
+        </ul>
+        
+
+    </nav>
+
+<main role="main" itemscope itemType="https://schema.org/BlogPosting">
+    <meta itemprop="mainEntityOfPage" content="https://www.davidbcalhoun.com/2013/you-cant-javascript-under-pressure-walkthrough/" />
+    <meta itemprop="inLanguage" content="en-US" />
+    <span itemscope itemprop="author" itemType="https://schema.org/Person">
+        <meta itemprop="name" content="David Calhoun" />
+        <meta itemprop="url" content="https://www.themaingate.net" />
+    </span>
+    <span itemscope itemprop="publisher" itemType="https://schema.org/Organization">
+        <meta itemprop="name" content="David Calhoun" />
+        <meta itemprop="url" content="https://www.themaingate.net" />
+        <span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+            <meta itemprop="url" content="https://www.themaingate.net/david-calhoun-logo.png">
+            <meta itemprop="width" content="459">
+            <meta itemprop="height" content="459">
+        </span>
+    </span>
+    <meta itemprop="image" content="https://www.themaingate.net/david-calhoun-logo.png" />
+    
+    <meta itemprop="datePublished" content=2013-10-04T00:00:00Z/>
+    <meta itemprop="dateModified" content=2013-10-04T00:00:00Z/>
+    
+
+    <article class="item">
+
+    
+    
+    
+
+    
+    
+
+
+    <h1 itemprop="headline" class="meta title">
+        <a href="https://www.davidbcalhoun.com/2013/you-cant-javascript-under-pressure-walkthrough/" itemprop="url">You Can&#39;t JavaScript Under Pressure walkthrough</a>
+    </h1>
+
+    <time class="meta date" datetime="2013-10-04 00:00:00 &#43;0000 UTC">
+        
+        October 4, 2013
+        
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://www.davidbcalhoun.com/tags/javascript"><span class="item-tag">javascript</span></a>
+        
+        <a href="https://www.davidbcalhoun.com/tags/programming"><span class="item-tag">programming</span></a>
+        
+        <a href="https://www.davidbcalhoun.com/tags/webdev"><span class="item-tag">webdev</span></a>
+        
+    </aside>
+
+</article>
+
+
+    <div class="text-justify"><p>A friend posted a link to this fun little quiz - <a href="http://toys.usvsth3m.com/javascript-under-pressure/">You Can&rsquo;t JavaScript Under Pressure</a>.</p>
+<p>The quizzes get more and more difficult, and they present a nice challenge if you fear your skills are getting rusty. Give it an honest try first, then come back here if you get seriously, honestly stuck. Try to do it yourself!</p>
+<h3 id="quiz-1-doubleinteger">Quiz 1: doubleInteger</h3>
+<h4 id="problem">Problem</h4>
+<pre><code>function doubleInteger(i) {
+    // i will be an integer. Double it and return it.
+
+    return i;
+}
+</code></pre>
+<p>{:lang=&ldquo;javascript&rdquo;}</p>
+<h4 id="solution">Solution</h4>
+<pre><code>function doubleInteger(i) {
+    // i will be an integer. Double it and return it.
+    
+    return i * 2;
+}
+</code></pre>
+<p>{:lang=&ldquo;javascript&rdquo;}</p>
+<h4 id="explanation">Explanation</h4>
+<p>Nothing tricky going on here. The prompt implies this should be done in two steps, but a one-liner works. We know i will always be an integer, so we don&rsquo;t need any sanitization checks, just a straight up return.</p>
+<h3 id="quiz-2-isnumbereven">Quiz 2: isNumberEven</h3>
+<h4 id="problem-1">Problem</h4>
+<pre><code>function isNumberEven(i) {
+    // i will be an integer. Return true if it’s even, and false if it isn’t.
+}
+</code></pre>
+<p>{:lang=&ldquo;javascript&rdquo;}</p>
+<h4 id="solution-1">Solution</h4>
+<pre><code>function isNumberEven(i) {
+    // i will be an integer. Return true if it’s even, and false if it isn’t.
+    
+    if(i % 2 === ) {
+        //  no remainder, so it must be an even number
+        return true;
+    } else {
+        //  remainder, so it must be odd.
+        return false;
+    }
+}
+</code></pre>
+<p>{:lang=&ldquo;javascript&rdquo;}</p>
+<h4 id="explanation-1">Explanation</h4>
+<p>Again, no sanitization needed here because i is guaranteed to be an integer. The solution relies on an understanding of the modulus function - this is something usually learned in school, but something I haven&rsquo;t had to use since, except in interviews or quizzes. Or quizzes during interviews.</p>
+<p>Basically, think of modulus as &ldquo;remainder&rdquo; function for division problems. For instance, <code>4 % 2</code> will give a modulus of <code>1</code> because 4 goes into 2 twice, evenly, with zero remainder. On the other hand, <code>5 % 2</code> will give a modulus of <code>1</code> because 5 goes into 2 twice, with a remainder of 1. This turns out to be a handy way to differentiate even (4) and odd (5) numbers.</p>
+<p>(note that the <code>else</code> isn&rsquo;t needed here, but it gives greater clarity to what&rsquo;s going on)</p>
+<h3 id="quiz-3-getfileextension">Quiz 3: getFileExtension</h3>
+<h4 id="problem-2">Problem</h4>
+<pre><code>function getFileExtension(i) {
+    // i will be a string, but it may not have a file extension.
+    // return the file extension (with no period) if it has one, otherwise false
+}
+</code></pre>
+<p>{:lang=&ldquo;javascript&rdquo;}</p>
+<h4 id="solution-2">Solution</h4>
+<pre><code>function getFileExtension(i) {
+    // i will be a string, but it may not have a file extension.
+    // return the file extension (with no period) if it has one, otherwise false
+
+    var filenameArray = i.split(”.”);
+
+    if(filenameArray.length &lt;= 1) {
+        //  i.e. “foo” becomes [“foo”] (array with 1 member)
+        return false;
+    } else {
+        //  must be an array with more than 1 member.  The extension must be at the end.
+        return filenameArray[filenameArray.length - 1];
+    }
+}
+</code></pre>
+<p>{:lang=&ldquo;javascript&rdquo;}</p>
+<h4 id="explanation-2">Explanation</h4>
+<p>Now we&rsquo;re getting a bit tougher!</p>
+<p>Strings have a handy function that splits them into an array: <code>split()</code>. For instance,</p>
+<pre><code>&quot;foo.bar.baz&quot;.split(&quot;.&quot;)
+</code></pre>
+<p>{:lang=&ldquo;javascript&rdquo;}</p>
+<p>will output</p>
+<pre><code>[&quot;foo&quot;, &quot;bar&quot;, &quot;baz&quot;]
+</code></pre>
+<p>{:lang=&ldquo;javascript&rdquo;}</p>
+<p>Notice that the periods have been removed, just as the prompt asked for!</p>
+<p>In this case we need to first check if there was no file extension. This means that there were no periods to split on, resulting in a one-member array (<code>&quot;foo&quot;.split(&quot;.&quot;)</code> becomes <code>[&quot;foo&quot;]</code>). In this case we return <code>false</code>, as the prompt asks for.</p>
+<p>Now, in the else case, we know that the array must be larger than 1, meaning that it has a file extension. Since the file extension is always at the end, we know that it must be the last member in the array.</p>
+<p>We can find the index of the last member by taking into account array length (<code>filenameArray.length</code>) and the fact that the array is zero-indexed, meaning that we need to subtract 1 from this length. Now we know the extension exists and is at the end of the array, so all we need to do is return it:</p>
+<pre><code>return filenameArray[filenameArray.length - 1];
+</code></pre>
+<p>{:lang=&ldquo;javascript&rdquo;}</p>
+<h3 id="quiz-4-longeststring">Quiz 4: longestString</h3>
+<h4 id="problem-3">Problem</h4>
+<pre><code>function longestString(i) {
+    // i will be an array.
+    // return the longest string in the array
+    
+}
+</code></pre>
+<p>{:lang=&ldquo;javascript&rdquo;}</p>
+<h4 id="solution-3">Solution</h4>
+<pre><code>function longestString(i) {
+    // i will be an array.
+    // return the longest string in the array
+ 
+    var longest = ””,
+        n, len;
+
+    for(n=, len=i.length; n&lt;len; n++) {
+        if(typeof n[i] !== “string”) {
+            //  not a string, go to next iteration of the loop
+            continue;
+        }
+
+        if(n[i].length &gt; longest.length) {
+            //  Current string is longer, so set it as the new longest string
+            longest = n[i];
+        }
+    }   
+}
+</code></pre>
+<p>{:lang=&ldquo;javascript&rdquo;}</p>
+<h4 id="explanation-3">Explanation</h4>
+<p>This is a pretty classic interview question. It&rsquo;s fairly easy and straightforward: just keep track of the longest string in a variable, then loop through all the members of the array. If the current member is longer, set it as the new longest string. At the end, return whatever that variable contains.</p>
+<p>Note the extra sanitization check here to make sure the type is a string. If it&rsquo;s not a string, we <code>continue</code> to continue to the next iteration of the <code>for</code> loop. (Note that this is similar to returning early in functions)</p>
+<h3 id="quiz-5-arraysum">Quiz 5: arraySum</h3>
+<h4 id="problem-4">Problem</h4>
+<pre><code>function arraySum(i) {
+    // i will be an array, containing integers, strings and/or arrays like itself.
+    // Sum all the integers you find, anywhere in the nest of arrays.   
+}
+</code></pre>
+<p>{:lang=&ldquo;javascript&rdquo;}</p>
+<h4 id="solution-4">Solution</h4>
+<pre><code>function arraySum(i) {
+    var sum = ,
+        n, len;
+
+    if(typeof i === “number”) {
+        //  i has been defined as a simple number through a recursive call
+        sum += i;
+    } else if(Array.isArray(i)) {
+        //  i is an array, so iterate through it
+        for(n=, len=i.length; n&lt;len; n++) {
+            //  recursive call
+            sum += arraySum(i[n]);
+        }
+    }
+
+    return sum;
+}
+</code></pre>
+<p>{:lang=&ldquo;javascript&rdquo;}</p>
+<h4 id="explanation-4">Explanation</h4>
+<p>The best way to handle this one is through recursion, which is tricky but powerful. I admit that on my first attempts writing it in the console, my browser froze up and I had to restart it.</p>
+<p>Recursive functions are very elegant but tricky. It helps to step through with examples.</p>
+<p>First, let&rsquo;s start with <code>arraySum(1)</code>. The output is of course 1, but note that we didn&rsquo;t actually input an array. The code took the first codepath in the <code>if</code> statement (because <code>typeof 1 === &quot;number&quot;</code> is true)</p>
+<p>Let&rsquo;s see what happens when we input a basic array:</p>
+<pre><code>arraySum([1]);  // 1
+</code></pre>
+<p>{:lang=&ldquo;javascript&rdquo;}</p>
+<p>Again the answer is 1, but this time the codepath was different. This time <code>Array.isArray([1])</code> was true, and the function was called recursively for each of the members in the array. That is to say, each member of the array (in this case the single member) was sent to arraySum as a simple integer. So the recursive call was the same as the original example: <code>arraySum(1)</code>, and the output was the same.</p>
+<p>In the case of more numbers, the outputs are all added to the <code>sum</code> and then returned back at the end of the function.</p>
+<p>Note that this works quite well for even deeply nested arrays, since arraySum() has logic for arrays that will always return the sum of all of its deeply nested integers:</p>
+<pre><code>arraySum([1, [2,[3,[4,[5]]]]]);   // 15
+</code></pre>
+<p>{:lang=&ldquo;javascript&rdquo;}</p>
+</div>
+
+    
+    
+
+    
+
+</main>
+
+		<section class="comments">
+			<h2 class="page-header">Comments</h2>
+			<section id="commento"></section>
+			<script src="/commento.js"></script>
+		</section>
+
+        <footer role="contentinfo">
+
+            <p class="copyright text-muted">©<span itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="David Calhoun"><a href="https://www.themaingate.net/">David Calhoun</a></span> - <a href="https://www.davidbcalhoun.com/privacy/">Privacy</a> - <a href="https://www.davidbcalhoun.com/terms-of-service/">Terms</a></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+

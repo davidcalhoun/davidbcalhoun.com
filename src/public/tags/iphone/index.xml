@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>iphone on David Calhoun&#39;s blog</title>
+    <link>https://www.davidbcalhoun.com/tags/iphone/</link>
+    <description>Recent content in iphone on David Calhoun&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Fri, 14 Oct 2011 00:00:00 +0000</lastBuildDate><atom:link href="https://www.davidbcalhoun.com/tags/iphone/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>iOS5 SunSpider: iPhone 4S vs iPhone 4 vs iPhone 3GS</title>
+      <link>https://www.davidbcalhoun.com/2011/ios5-sunspider-iphone-4s-vs-iphone-4-vs-iphone-3gs/</link>
+      <pubDate>Fri, 14 Oct 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2011/ios5-sunspider-iphone-4s-vs-iphone-4-vs-iphone-3gs/</guid>
+      <description>Result table (SunSpider 0.9.1, all devices running iOS 5)   Test  &amp;lt;td&amp;gt; iPhone 4S &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; iPhone 4 &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; iPhone 3GS &amp;lt;/td&amp;gt;     Total  &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 2270ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 3483ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 4903ms &amp;lt;/td&amp;gt;     3D  &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 281ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 486ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 672ms &amp;lt;/td&amp;gt;     Access  &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 279ms &amp;lt;/td&amp;gt;&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 410ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 614ms &amp;lt;/td&amp;gt;     Bitops  &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 177ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 200ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 270ms &amp;lt;/td&amp;gt;     Controlflow  &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 20ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 26ms &amp;lt;/td&amp;gt;&amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 34ms &amp;lt;/td&amp;gt;     Crypto  &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 164ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 211ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 315ms &amp;lt;/td&amp;gt;     Date  &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 332ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 528ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 770ms &amp;lt;/td&amp;gt;     Math  &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 219ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 433ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 553ms &amp;lt;/td&amp;gt;     Regexp  &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 88ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 117ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 151ms &amp;lt;/td&amp;gt;     String  &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 711ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1072ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1525ms &amp;lt;/td&amp;gt;    Raw results iPhone 4S (iOS5)</description>
+    </item>
+    
+    <item>
+      <title>iPhone 4S, iPhone 4, and iPhone 3GS photo comparison</title>
+      <link>https://www.davidbcalhoun.com/2011/iphone-4s-iphone-4-and-iphone-3gs-photo-comparison/</link>
+      <pubDate>Fri, 14 Oct 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2011/iphone-4s-iphone-4-and-iphone-3gs-photo-comparison/</guid>
+      <description>More photos likely to come.. this is just after I unboxed my new 4S. Time to play with it a bit!
+iPhone 4S 
+iPhone 4 
+iPhone 3GS 
+iPhone 3GS (alternate white balance point)</description>
+    </item>
+    
+    <item>
+      <title>Implementing iPhone&#39;s slider unlock with input type=&#39;range&#39;</title>
+      <link>https://www.davidbcalhoun.com/2011/implementing-iphones-slider-unlock-with-input-typerange/</link>
+      <pubDate>Sun, 16 Jan 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2011/implementing-iphones-slider-unlock-with-input-typerange/</guid>
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ (check out the live demo)
+Introduction After reading &amp;ldquo;What the Heck is Shadow DOM?&amp;quot; I was inspired to see how far I could style the &amp;lt;input type=&amp;quot;range&amp;quot;&amp;gt; element. Pretty far, as it turns out!
+My goal was to change the input&amp;rsquo;s default appearance:
+To the visual appearance of the iPhone&amp;rsquo;s unlock slider:
+As far as I can tell, only WebKit-based browsers and Opera have implemented input type=range.</description>
+    </item>
+    
+    <item>
+      <title>iPhone 4 SunSpider test results (22% faster than iPhone 3GS)</title>
+      <link>https://www.davidbcalhoun.com/2010/iphone-4-sunspider-test-results-22-faster-than-iphone-3gs/</link>
+      <pubDate>Fri, 25 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2010/iphone-4-sunspider-test-results-22-faster-than-iphone-3gs/</guid>
+      <description>============================================RESULTS (means and 95% confidence intervals)--------------------------------------------Total: 10669.4ms +/- 1.0%--------------------------------------------3d: 1471.5ms +/- 2.1%cube: 428.7ms +/- 2.6%morph: 584.3ms +/- 4.7%raytrace: 458.5ms +/- 0.6%access: 1476.7ms +/- 1.3%binary-trees: 151.6ms +/- 1.3%fannkuch: 664.0ms +/- 0.1%nbody: 397.9ms +/- 2.1%nsieve: 263.2ms +/- 6.3%bitops: 947.2ms +/- 2.1%3bit-bits-in-byte: 195.7ms +/- 2.0%bits-in-byte: 206.1ms +/- 1.0%bitwise-and: 179.7ms +/- 1.1%nsieve-bits: 365.7ms +/- 3.9%controlflow: 169.</description>
+    </item>
+    
+    <item>
+      <title>JavaScript SunSpider test: iOS 3.1.3 versus iOS 4 GM</title>
+      <link>https://www.davidbcalhoun.com/2010/javascript-sunspider-test-ios-3.1.3-versus-ios-4-gm/</link>
+      <pubDate>Thu, 10 Jun 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2010/javascript-sunspider-test-ios-3.1.3-versus-ios-4-gm/</guid>
+      <description>Result table    Test  &amp;lt;td&amp;gt; iOS 3.1.3 (3GS) &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; iOS 4 GM (3GS) &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; % change &amp;lt;/td&amp;gt;     Total  &amp;lt;td&amp;gt; 15396ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 13787ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; -10.5% &amp;lt;/td&amp;gt;     3D  &amp;lt;td&amp;gt; 2411ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1917ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; -20.5% &amp;lt;/td&amp;gt;     Access  &amp;lt;td&amp;gt; 1884ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1893ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;negative&amp;quot;&amp;gt; +0.5% &amp;lt;/td&amp;gt;     Bitops  &amp;lt;td&amp;gt; 1044ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1239ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;negative&amp;quot;&amp;gt; +18.</description>
+    </item>
+    
+    <item>
+      <title>PastryKit: digging into an Apple Pie</title>
+      <link>https://www.davidbcalhoun.com/2009/pastrykit-digging-into-an-apple-pie/</link>
+      <pubDate>Wed, 16 Dec 2009 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.davidbcalhoun.com/2009/pastrykit-digging-into-an-apple-pie/</guid>
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ Yesterday John Gruber wrote about Apple’s PastryKit, iPhone’s JavaScript framework that’s been discovered “in the wild” on the iPhone user guide at http://help.apple.com/iphone/3/mobile/. There’s a few ways to access the page:
+ with an actual iPhone or iTouch by browsing with an iPhone/iTouch user agent. If you’re using Safari, enable the Developer menu in Safari&amp;gt;Preferences&amp;gt;Advanced and switching user agents by clicking on Develope&amp;gt;User Agent  What’s all the big fuss?</description>
+    </item>
+    
+  </channel>
+</rss>
