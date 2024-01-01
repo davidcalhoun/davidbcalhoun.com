@@ -6,17 +6,14 @@
     <description>Recent content in color on David Calhoun&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Tue, 29 Dec 2009 00:00:00 +0000</lastBuildDate><atom:link href="https://www.davidbcalhoun.com/tags/color/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 29 Dec 2009 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.davidbcalhoun.com/tags/color/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>A primer on CSS colors</title>
       <link>https://www.davidbcalhoun.com/2009/a-primer-on-css-colors/</link>
       <pubDate>Tue, 29 Dec 2009 00:00:00 +0000</pubDate>
-      
       <guid>https://www.davidbcalhoun.com/2009/a-primer-on-css-colors/</guid>
-      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ Color keywords Example usage:
-// Example body { color: red; } // Generalization (not actual code) body { color: color_name; } Because color names are easy to remember, they’re handy for getting quick results, especially while doing rapid prototyping.
-W3C’s CSS1 recommendation first mentioned 16 color keywords that you can use: aqua, black, blue, fuchsia, gray, green, lime, maroon, navy, olive, purple, red, silver, teal, white, and yellow:</description>
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ Color keywords Example usage:&#xA;// Example body { color: red; } // Generalization (not actual code) body { color: color_name; } Because color names are easy to remember, they’re handy for getting quick results, especially while doing rapid prototyping.&#xA;W3C’s CSS1 recommendation first mentioned 16 color keywords that you can use: aqua, black, blue, fuchsia, gray, green, lime, maroon, navy, olive, purple, red, silver, teal, white, and yellow:</description>
     </item>
-    
   </channel>
 </rss>

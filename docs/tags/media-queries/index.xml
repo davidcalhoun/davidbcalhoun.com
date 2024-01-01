@@ -6,37 +6,28 @@
     <description>Recent content in media queries on David Calhoun&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Tue, 05 Oct 2010 00:00:00 +0000</lastBuildDate><atom:link href="https://www.davidbcalhoun.com/tags/media-queries/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 05 Oct 2010 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.davidbcalhoun.com/tags/media-queries/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Does it still make sense to use em rather than px?</title>
       <link>https://www.davidbcalhoun.com/2010/does-it-still-make-sense-to-use-em-rather-than-px/</link>
       <pubDate>Tue, 05 Oct 2010 00:00:00 +0000</pubDate>
-      
       <guid>https://www.davidbcalhoun.com/2010/does-it-still-make-sense-to-use-em-rather-than-px/</guid>
-      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ Alex Kessinger tweeted asking if there was a reason to still use EMs instead of PX measurements in mobile. This is an interesting question, but 140 characters isn&amp;rsquo;t quite enough to explain my thoughts. So here&amp;rsquo;s an old-fashioned blog post!
-Just a quick review: em and percentage (%) units in CSS are relative measurements, whereas px and other measurements are not.</description>
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ Alex Kessinger tweeted asking if there was a reason to still use EMs instead of PX measurements in mobile. This is an interesting question, but 140 characters isn&amp;rsquo;t quite enough to explain my thoughts. So here&amp;rsquo;s an old-fashioned blog post!&#xA;Just a quick review: em and percentage (%) units in CSS are relative measurements, whereas px and other measurements are not.</description>
     </item>
-    
     <item>
       <title>Dealing with device orientation (Mobile web part 6)</title>
       <link>https://www.davidbcalhoun.com/2010/dealing-with-device-orientation-mobile-web-part-6/</link>
       <pubDate>Tue, 24 Aug 2010 00:00:00 +0000</pubDate>
-      
       <guid>https://www.davidbcalhoun.com/2010/dealing-with-device-orientation-mobile-web-part-6/</guid>
-      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ Introduction If you read part 4 of this series, you&amp;rsquo;ll know that because of the variety of screen sizes, the best way to develop for mobile is to develop fluid layouts that take 100% of the available space on the screen.
-What you probably didn&amp;rsquo;t think of is that there&amp;rsquo;s different screen widths even on the same device!</description>
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ Introduction If you read part 4 of this series, you&amp;rsquo;ll know that because of the variety of screen sizes, the best way to develop for mobile is to develop fluid layouts that take 100% of the available space on the screen.&#xA;What you probably didn&amp;rsquo;t think of is that there&amp;rsquo;s different screen widths even on the same device!</description>
     </item>
-    
     <item>
       <title>Using mobile-specific HTML, CSS, and JavaScript (Mobile web part 5)</title>
       <link>https://www.davidbcalhoun.com/2010/using-mobile-specific-html-css-and-javascript-mobile-web-part-5/</link>
       <pubDate>Tue, 29 Jun 2010 00:00:00 +0000</pubDate>
-      
       <guid>https://www.davidbcalhoun.com/2010/using-mobile-specific-html-css-and-javascript-mobile-web-part-5/</guid>
-      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ (updated June 27, 2011)
-Mobile-specific HTML Viewport tag Use the viewport tag to properly fit the content to the screen:
-1  &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1.0&amp;#34; /&amp;gt;   Tel scheme (to initiate phone calls) 1  &amp;lt;a href=&amp;#34;tel:18005555555&amp;#34;&amp;gt;Call us at 1-800-555-5555&amp;lt;/a&amp;gt;   Sms scheme (to initiate text messages) 1 2 3 4 5 6 7 8  &amp;lt;a href=&amp;#34;sms:18005555555&amp;#34;&amp;gt; &amp;lt;a href=&amp;#34;sms:18005555555,18005555556&amp;#34;&amp;gt; &amp;lt;!</description>
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ (updated June 27, 2011)&#xA;Mobile-specific HTML Viewport tag Use the viewport tag to properly fit the content to the screen:&#xA;1 &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1.0&amp;#34; /&amp;gt; Tel scheme (to initiate phone calls) 1 &amp;lt;a href=&amp;#34;tel:18005555555&amp;#34;&amp;gt;Call us at 1-800-555-5555&amp;lt;/a&amp;gt; Sms scheme (to initiate text messages) 1 2 3 4 5 6 7 8 &amp;lt;a href=&amp;#34;sms:18005555555&amp;#34;&amp;gt; &amp;lt;a href=&amp;#34;sms:18005555555,18005555556&amp;#34;&amp;gt; &amp;lt;!</description>
     </item>
-    
   </channel>
 </rss>
