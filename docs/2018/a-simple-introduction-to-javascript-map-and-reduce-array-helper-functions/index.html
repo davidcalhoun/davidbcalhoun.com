@@ -31,7 +31,7 @@
 
 
 
- <meta name="generator" content="Hugo 0.91.2" />
+ <meta name="generator" content="Hugo 0.121.1">
     
 
     
@@ -241,92 +241,92 @@
 <p>Perhaps you&rsquo;ve been programming for a while, and you&rsquo;re pretty comfortable using <code>for</code> loops to traverse Arrays.  However, you know how untidy and complicated <code>for</code> loops can get, and you are interested in better approaches to keep the code clean.  Enter <code>map</code> and <code>reduce</code>!</p>
 <h2 id="first-steps-with-for-loops">First steps with <code>for</code> loops</h2>
 <p>Most folks find <code>for</code> loops powerful enough to achieve all they need when they need to process items in an <code>Array</code>.  For example, say we have a simple list of items:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">beatles</span> <span style="color:#f92672">=</span> [
-    {
-        <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;John Lennon&#39;</span>,
-        <span style="color:#a6e22e">instrument</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;rhythm guitar&#39;</span>
-    },
-    {
-        <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Paul McCartney&#39;</span>,
-        <span style="color:#a6e22e">instrument</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;bass guitar&#39;</span>
-    },
-    {
-        <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;George Harrison&#39;</span>,
-        <span style="color:#a6e22e">instrument</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;lead guitar&#39;</span>
-    },
-    {
-        <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Ringo Starr&#39;</span>,
-        <span style="color:#a6e22e">instrument</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;drums&#39;</span>
-    }
-];
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">beatles</span> <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;John Lennon&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">instrument</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;rhythm guitar&#39;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Paul McCartney&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">instrument</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;bass guitar&#39;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;George Harrison&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">instrument</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;lead guitar&#39;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Ringo Starr&#39;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">instrument</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;drums&#39;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>];
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Let&rsquo;s say that we want to display all their names in a Markdown list, which means we simply need to prefix each item&rsquo;s name with an asterisk and a space, e.g. <code>* John Lennon</code>.</p>
 <p>Ok!  Seems easy enough.  Let&rsquo;s see how we&rsquo;d do this with a loop:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">beatleArray</span> <span style="color:#f92672">=</span> [];
-<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">index</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">index</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">beatles</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">index</span><span style="color:#f92672">++</span>) {
-    <span style="color:#a6e22e">beatleArray</span>.<span style="color:#a6e22e">push</span>(<span style="color:#e6db74">`* </span><span style="color:#e6db74">${</span> <span style="color:#a6e22e">beatles</span>[<span style="color:#a6e22e">index</span>].<span style="color:#a6e22e">name</span> <span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
-}
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">beatleArray</span> <span style="color:#f92672">=</span> [];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">index</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">index</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">beatles</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">index</span><span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">beatleArray</span>.<span style="color:#a6e22e">push</span>(<span style="color:#e6db74">`* </span><span style="color:#e6db74">${</span> <span style="color:#a6e22e">beatles</span>[<span style="color:#a6e22e">index</span>].<span style="color:#a6e22e">name</span> <span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Here&rsquo;s the resulting array (<code>beatleArray</code>):</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">[
-    <span style="color:#e6db74">&#39;* John Lennon&#39;</span>,
-    <span style="color:#e6db74">&#39;* Paul McCartney&#39;</span>,
-    <span style="color:#e6db74">&#39;* George Harrison&#39;</span>,
-    <span style="color:#e6db74">&#39;* Ringo Starr&#39;</span>
-]
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>[
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;* John Lennon&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;* Paul McCartney&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;* George Harrison&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;* Ringo Starr&#39;</span>
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="map">map()</h2>
 <p><code>Map</code> gives us a far simpler way to achieve the above.  Have you ever heard the expression &ldquo;mapped 1-to-1&rdquo;?  That&rsquo;s an easy way to understand what <code>map</code> actually does.  Each item in the array is transformed and mapped into a new array which is returned (and therefore the input array length is the same as the output array length).</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">beatleArray</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">beatles</span>.<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">beatle</span> =&gt; <span style="color:#e6db74">`* </span><span style="color:#e6db74">${</span> <span style="color:#a6e22e">beatle</span>.<span style="color:#a6e22e">name</span> <span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">beatleArray</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">beatles</span>.<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">beatle</span> =&gt; <span style="color:#e6db74">`* </span><span style="color:#e6db74">${</span> <span style="color:#a6e22e">beatle</span>.<span style="color:#a6e22e">name</span> <span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>That&rsquo;s it!</p>
 <p>No worries about having to initialize an array, create some temporary variable to iterate, then have to push each item piecemeal into the array.</p>
@@ -339,220 +339,220 @@
 <p>Without using reduce, let&rsquo;s filter out non-guitarists and also do the same Markdown transform we were doing above.</p>
 <h3 id="implementation-1-old-style-for-loops">Implementation 1: Old-style <code>for</code> loops</h3>
 <p>Let&rsquo;s see how we&rsquo;d do this the old way.</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">beatleArray</span> <span style="color:#f92672">=</span> [];
-<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">index</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">index</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">beatles</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">index</span><span style="color:#f92672">++</span>) {
-    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">beatles</span>[<span style="color:#a6e22e">index</span>].<span style="color:#a6e22e">instrument</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#e6db74">&#39;guitar&#39;</span>)) { <span style="color:#75715e">// Note: includes() not available in IE11
-</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">beatleArray</span>.<span style="color:#a6e22e">push</span>(<span style="color:#e6db74">`* </span><span style="color:#e6db74">${</span> <span style="color:#a6e22e">beatles</span>[<span style="color:#a6e22e">index</span>].<span style="color:#a6e22e">name</span> <span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
-    }
-}
-
-<span style="color:#75715e">/*
-</span><span style="color:#75715e">Output (sorry, Ringo):
-</span><span style="color:#75715e">[
-</span><span style="color:#75715e">    &#39;* John Lennon&#39;,
-</span><span style="color:#75715e">    &#39;* Paul McCartney&#39;,
-</span><span style="color:#75715e">    &#39;* George Harrison&#39;
-</span><span style="color:#75715e">]
-</span><span style="color:#75715e">*/</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">beatleArray</span> <span style="color:#f92672">=</span> [];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">index</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">index</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">beatles</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">index</span><span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">beatles</span>[<span style="color:#a6e22e">index</span>].<span style="color:#a6e22e">instrument</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#e6db74">&#39;guitar&#39;</span>)) { <span style="color:#75715e">// Note: includes() not available in IE11
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">beatleArray</span>.<span style="color:#a6e22e">push</span>(<span style="color:#e6db74">`* </span><span style="color:#e6db74">${</span> <span style="color:#a6e22e">beatles</span>[<span style="color:#a6e22e">index</span>].<span style="color:#a6e22e">name</span> <span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">Output (sorry, Ringo):
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">[
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    &#39;* John Lennon&#39;,
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    &#39;* Paul McCartney&#39;,
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    &#39;* George Harrison&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Not too bad.  Pretty readable but not really a functional approach.  Let&rsquo;s go one step further, just one step short of using reduce:</p>
 <h3 id="implementation-2-filter-and-map">Implementation 2: <code>filter</code> and <code>map</code></h3>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">beatles</span>
-    .<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">beatle</span> =&gt; <span style="color:#a6e22e">beatle</span>.<span style="color:#a6e22e">instrument</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#e6db74">&#39;guitar&#39;</span>))
-    .<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">beatle</span> =&gt; <span style="color:#e6db74">`* </span><span style="color:#e6db74">${</span> <span style="color:#a6e22e">beatle</span>.<span style="color:#a6e22e">name</span> <span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">beatles</span>
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">beatle</span> =&gt; <span style="color:#a6e22e">beatle</span>.<span style="color:#a6e22e">instrument</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#e6db74">&#39;guitar&#39;</span>))
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">beatle</span> =&gt; <span style="color:#e6db74">`* </span><span style="color:#e6db74">${</span> <span style="color:#a6e22e">beatle</span>.<span style="color:#a6e22e">name</span> <span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>We could even further and make it explicitly clear what&rsquo;s happening (especially useful when the functions get largers):</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">filterGuitarPlayers</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">beatle</span> =&gt; <span style="color:#a6e22e">beatle</span>.<span style="color:#a6e22e">instrument</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#e6db74">&#39;guitar&#39;</span>);
-
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">nameToMarkdownList</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">beatle</span> =&gt; <span style="color:#e6db74">`* </span><span style="color:#e6db74">${</span> <span style="color:#a6e22e">beatle</span>.<span style="color:#a6e22e">name</span> <span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>;
-
-<span style="color:#a6e22e">beatles</span>
-    .<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">filterGuitarPlayers</span>)
-    .<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">nameToMarkdownList</span>);
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">filterGuitarPlayers</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">beatle</span> =&gt; <span style="color:#a6e22e">beatle</span>.<span style="color:#a6e22e">instrument</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#e6db74">&#39;guitar&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">nameToMarkdownList</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">beatle</span> =&gt; <span style="color:#e6db74">`* </span><span style="color:#e6db74">${</span> <span style="color:#a6e22e">beatle</span>.<span style="color:#a6e22e">name</span> <span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">beatles</span>
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">filterGuitarPlayers</span>)
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">nameToMarkdownList</span>);
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>This is pretty nice.  Actually, this works well enough and is actually more readable than <code>reduce</code>.</p>
 <p>It&rsquo;s pretty clear what&rsquo;s going on here, and feels pretty clean and functional.  But suppose the original array is quite big?  Then we will be traversing the large list twice, which isn&rsquo;t ideal.  This brings us to <code>reduce</code>.</p>
 <h3 id="implementation-3-reduce">Implementation 3: <code>reduce</code></h3>
 <p>Now we can alternatively use <code>reduce</code>, which will allow us to filter and map while traversing the list only once:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">beatles</span>.<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">accumulator</span>, <span style="color:#a6e22e">beatle</span>) =&gt; {
-    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">beatle</span>.<span style="color:#a6e22e">instrument</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#e6db74">&#39;guitar&#39;</span>)
-        <span style="color:#f92672">?</span> <span style="color:#a6e22e">accumulator</span>.<span style="color:#a6e22e">concat</span>(<span style="color:#e6db74">`* </span><span style="color:#e6db74">${</span> <span style="color:#a6e22e">beatle</span>.<span style="color:#a6e22e">name</span> <span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
-        <span style="color:#f92672">:</span> <span style="color:#a6e22e">accumulator</span>;
-}, []);
-
-<span style="color:#75715e">/*
-</span><span style="color:#75715e">Output array:
-</span><span style="color:#75715e">
-</span><span style="color:#75715e">[
-</span><span style="color:#75715e">    &#39;* John Lennon&#39;,
-</span><span style="color:#75715e">    &#39;* Paul McCartney&#39;,
-</span><span style="color:#75715e">    &#39;* George Harrison&#39;
-</span><span style="color:#75715e">]
-</span><span style="color:#75715e">
-</span><span style="color:#75715e">*/</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">beatles</span>.<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">accumulator</span>, <span style="color:#a6e22e">beatle</span>) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">beatle</span>.<span style="color:#a6e22e">instrument</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#e6db74">&#39;guitar&#39;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">?</span> <span style="color:#a6e22e">accumulator</span>.<span style="color:#a6e22e">concat</span>(<span style="color:#e6db74">`* </span><span style="color:#e6db74">${</span> <span style="color:#a6e22e">beatle</span>.<span style="color:#a6e22e">name</span> <span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">:</span> <span style="color:#a6e22e">accumulator</span>;
+</span></span><span style="display:flex;"><span>}, []);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">Output array:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">[
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    &#39;* John Lennon&#39;,
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    &#39;* Paul McCartney&#39;,
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    &#39;* George Harrison&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>This may look scary and confusing, but it&rsquo;s really not!  Let&rsquo;s break down what&rsquo;s happening:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">beatles</span>.<span style="color:#a6e22e">reduce</span>(<span style="color:#a6e22e">transformAccumulatorItem</span>, <span style="color:#a6e22e">initialAccumulator</span>);
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">beatles</span>.<span style="color:#a6e22e">reduce</span>(<span style="color:#a6e22e">transformAccumulatorItem</span>, <span style="color:#a6e22e">initialAccumulator</span>);
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>In the parlance of <code>reduce</code>, the &ldquo;accumulator&rdquo; is simply a collection, what eventually evolves into the final output.  It could technically be anything, but is usually an array, string, or an object (it can even be a <code>Map</code> or <code>Set</code>, but we won&rsquo;t get into those here).</p>
 <p>The <code>initialAccumulator</code> is the &ldquo;seed value&rdquo; that is very much like the empty array we used to initialize before a <code>for</code> loop.  Ok, great, that&rsquo;s not so scary anymore!  Let&rsquo;s drop it in:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">beatles</span>.<span style="color:#a6e22e">reduce</span>(<span style="color:#a6e22e">transformAccumulatorItem</span>, []);
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">beatles</span>.<span style="color:#a6e22e">reduce</span>(<span style="color:#a6e22e">transformAccumulatorItem</span>, []);
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>The real meat is obviously this mysterious <code>transformAccumulatorItem</code>.  But it&rsquo;s easy: it&rsquo;s a function that takes two arguments: 1) the current accumulator state (the collection) and 2) one individual item from the array.  The output of this function is the new state of the accumulator (the collection).</p>
 <p>This function is basically responsible for taking one item, assessing what to do with it, then returning the accumulator.  That&rsquo;s what makes it so powerful, and so flexible.</p>
 <p>Just for instructive purposes, here&rsquo;s a silly example where we&rsquo;re just making an exact copy of the original array.  No filtering, no transforms, just a straight pass-through.</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">beatles</span>.<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">accumulator</span>, <span style="color:#a6e22e">beatle</span>) =&gt; <span style="color:#a6e22e">accumulator</span>.<span style="color:#a6e22e">concat</span>(<span style="color:#a6e22e">beatle</span>), []);
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">beatles</span>.<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">accumulator</span>, <span style="color:#a6e22e">beatle</span>) =&gt; <span style="color:#a6e22e">accumulator</span>.<span style="color:#a6e22e">concat</span>(<span style="color:#a6e22e">beatle</span>), []);
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Here&rsquo;s another case where we want the output to be an object.  So we seed with an object and then progressively add keys to it:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">beatles</span>.<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">accumulator</span>, <span style="color:#a6e22e">beatle</span>) =&gt; {
-    <span style="color:#a6e22e">accumulator</span>[<span style="color:#a6e22e">beatle</span>.<span style="color:#a6e22e">name</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">beatle</span>.<span style="color:#a6e22e">instrument</span>;
-    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">accumulator</span>;
-}, {});
-
-<span style="color:#75715e">/*
-</span><span style="color:#75715e">Output object:
-</span><span style="color:#75715e">{
-</span><span style="color:#75715e">  &#34;John Lennon&#34;: &#34;rhythm guitar&#34;,
-</span><span style="color:#75715e">  &#34;Paul McCartney&#34;: &#34;bass guitar&#34;,
-</span><span style="color:#75715e">  &#34;George Harrison&#34;: &#34;lead guitar&#34;,
-</span><span style="color:#75715e">  &#34;Ringo Starr&#34;: &#34;drums&#34;
-</span><span style="color:#75715e">}
-</span><span style="color:#75715e">*/</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">beatles</span>.<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">accumulator</span>, <span style="color:#a6e22e">beatle</span>) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">accumulator</span>[<span style="color:#a6e22e">beatle</span>.<span style="color:#a6e22e">name</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">beatle</span>.<span style="color:#a6e22e">instrument</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">accumulator</span>;
+</span></span><span style="display:flex;"><span>}, {});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">Output object:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">{
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  &#34;John Lennon&#34;: &#34;rhythm guitar&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  &#34;Paul McCartney&#34;: &#34;bass guitar&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  &#34;George Harrison&#34;: &#34;lead guitar&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">  &#34;Ringo Starr&#34;: &#34;drums&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">}
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Or maybe we just want the output to be a string.  We could easily <code>filter</code>, then <code>map</code>, then use <code>join</code> on the Array, or we could do it all in one go with <code>reduce</code>:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">beatles</span>.<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">accumulator</span>, <span style="color:#a6e22e">beatle</span>) =&gt; {
-    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">beatle</span>.<span style="color:#a6e22e">instrument</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#e6db74">&#39;guitar&#39;</span>)
-        <span style="color:#f92672">?</span> <span style="color:#a6e22e">accumulator</span>.<span style="color:#a6e22e">concat</span>(<span style="color:#e6db74">`* </span><span style="color:#e6db74">${</span> <span style="color:#a6e22e">beatle</span>.<span style="color:#a6e22e">name</span> <span style="color:#e6db74">}</span><span style="color:#e6db74">\n`</span>)
-        <span style="color:#f92672">:</span> <span style="color:#a6e22e">accumulator</span>;
-}, <span style="color:#e6db74">&#39;&#39;</span>);
-
-<span style="color:#75715e">/*
-</span><span style="color:#75715e">Output string (sorry again Ringo):
-</span><span style="color:#75715e">
-</span><span style="color:#75715e">&#34;* John Lennon
-</span><span style="color:#75715e">* Paul McCartney
-</span><span style="color:#75715e">* George Harrison
-</span><span style="color:#75715e">&#34;
-</span><span style="color:#75715e">
-</span><span style="color:#75715e">*/</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#a6e22e">beatles</span>.<span style="color:#a6e22e">reduce</span>((<span style="color:#a6e22e">accumulator</span>, <span style="color:#a6e22e">beatle</span>) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">beatle</span>.<span style="color:#a6e22e">instrument</span>.<span style="color:#a6e22e">includes</span>(<span style="color:#e6db74">&#39;guitar&#39;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">?</span> <span style="color:#a6e22e">accumulator</span>.<span style="color:#a6e22e">concat</span>(<span style="color:#e6db74">`* </span><span style="color:#e6db74">${</span> <span style="color:#a6e22e">beatle</span>.<span style="color:#a6e22e">name</span> <span style="color:#e6db74">}</span><span style="color:#e6db74">\n`</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">:</span> <span style="color:#a6e22e">accumulator</span>;
+</span></span><span style="display:flex;"><span>}, <span style="color:#e6db74">&#39;&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">Output string (sorry again Ringo):
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">&#34;* John Lennon
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* Paul McCartney
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">* George Harrison
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="conclusion">Conclusion</h2>
 <p>Ok, you&rsquo;re good to go!  You&rsquo;ve seen how you probably code with <code>for</code> loops currently, and how you could improve those loops by using <code>map</code> and <code>reduce</code>.  Now it&rsquo;s up to you to get comfortable with them!  Keep practicing!</p>

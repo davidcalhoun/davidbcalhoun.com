@@ -6,75 +6,56 @@
     <description>Recent content in mobile on David Calhoun&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Tue, 29 Jun 2010 00:00:00 +0000</lastBuildDate><atom:link href="https://www.davidbcalhoun.com/categories/mobile/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 29 Jun 2010 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.davidbcalhoun.com/categories/mobile/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Using mobile-specific HTML, CSS, and JavaScript (Mobile web part 5)</title>
       <link>https://www.davidbcalhoun.com/2010/using-mobile-specific-html-css-and-javascript-mobile-web-part-5/</link>
       <pubDate>Tue, 29 Jun 2010 00:00:00 +0000</pubDate>
-      
       <guid>https://www.davidbcalhoun.com/2010/using-mobile-specific-html-css-and-javascript-mobile-web-part-5/</guid>
-      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ (updated June 27, 2011)
-Mobile-specific HTML Viewport tag Use the viewport tag to properly fit the content to the screen:
-1  &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1.0&amp;#34; /&amp;gt;   Tel scheme (to initiate phone calls) 1  &amp;lt;a href=&amp;#34;tel:18005555555&amp;#34;&amp;gt;Call us at 1-800-555-5555&amp;lt;/a&amp;gt;   Sms scheme (to initiate text messages) 1 2 3 4 5 6 7 8  &amp;lt;a href=&amp;#34;sms:18005555555&amp;#34;&amp;gt; &amp;lt;a href=&amp;#34;sms:18005555555,18005555556&amp;#34;&amp;gt; &amp;lt;!</description>
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ (updated June 27, 2011)&#xA;Mobile-specific HTML Viewport tag Use the viewport tag to properly fit the content to the screen:&#xA;1 &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1.0&amp;#34; /&amp;gt; Tel scheme (to initiate phone calls) 1 &amp;lt;a href=&amp;#34;tel:18005555555&amp;#34;&amp;gt;Call us at 1-800-555-5555&amp;lt;/a&amp;gt; Sms scheme (to initiate text messages) 1 2 3 4 5 6 7 8 &amp;lt;a href=&amp;#34;sms:18005555555&amp;#34;&amp;gt; &amp;lt;a href=&amp;#34;sms:18005555555,18005555556&amp;#34;&amp;gt; &amp;lt;!</description>
     </item>
-    
     <item>
       <title>JavaScript SunSpider: HTC Evo versus HTC Incredible versus Nexus One</title>
       <link>https://www.davidbcalhoun.com/2010/javascript-sunspider-htc-evo-versus-htc-incredible-versus-nexus-one/</link>
       <pubDate>Thu, 10 Jun 2010 00:00:00 +0000</pubDate>
-      
       <guid>https://www.davidbcalhoun.com/2010/javascript-sunspider-htc-evo-versus-htc-incredible-versus-nexus-one/</guid>
-      <description>Result table    Test  &amp;lt;td&amp;gt; Evo (2.1) &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; Incredible (2.1) &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; Nexus One (2.2) &amp;lt;/td&amp;gt;     Total  &amp;lt;td&amp;gt; 16167ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 15237ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 5452ms &amp;lt;/td&amp;gt;     3D  &amp;lt;td&amp;gt; 2014ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1835ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 946ms &amp;lt;/td&amp;gt;     Access  &amp;lt;td&amp;gt; 2126ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1892ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 463ms &amp;lt;/td&amp;gt;     Bitops  &amp;lt;td&amp;gt; 1519ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1591ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 360ms &amp;lt;/td&amp;gt;     Controlflow  &amp;lt;td&amp;gt; 243ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 206ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 20ms &amp;lt;/td&amp;gt;     Crypto  &amp;lt;td&amp;gt; 1033ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1003ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 344ms &amp;lt;/td&amp;gt;     Date  &amp;lt;td&amp;gt; 1849ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1896ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 639ms &amp;lt;/td&amp;gt;     Math  &amp;lt;td&amp;gt; 1684ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1419ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 602ms &amp;lt;/td&amp;gt;     Regexp  &amp;lt;td&amp;gt; 1779ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1673ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 155ms &amp;lt;/td&amp;gt;     String  &amp;lt;td&amp;gt; 3920ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 3722ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 1923ms &amp;lt;/td&amp;gt;    Thoughts The Incredible is just slightly faster than the Evo, to the point where it’s probably negligible or within a margin of error.</description>
+      <description>Result table Test &amp;lt;td&amp;gt; Evo (2.1) &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; Incredible (2.1) &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; Nexus One (2.2) &amp;lt;/td&amp;gt; Total &amp;lt;td&amp;gt; 16167ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 15237ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 5452ms &amp;lt;/td&amp;gt; 3D &amp;lt;td&amp;gt; 2014ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1835ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 946ms &amp;lt;/td&amp;gt; Access &amp;lt;td&amp;gt; 2126ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1892ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 463ms &amp;lt;/td&amp;gt; Bitops &amp;lt;td&amp;gt; 1519ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1591ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 360ms &amp;lt;/td&amp;gt; Controlflow &amp;lt;td&amp;gt; 243ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 206ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 20ms &amp;lt;/td&amp;gt; Crypto &amp;lt;td&amp;gt; 1033ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1003ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 344ms &amp;lt;/td&amp;gt; Date &amp;lt;td&amp;gt; 1849ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1896ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 639ms &amp;lt;/td&amp;gt; Math &amp;lt;td&amp;gt; 1684ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1419ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 602ms &amp;lt;/td&amp;gt; Regexp &amp;lt;td&amp;gt; 1779ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 1673ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 155ms &amp;lt;/td&amp;gt; String &amp;lt;td&amp;gt; 3920ms &amp;lt;/td&amp;gt; &amp;lt;td&amp;gt; 3722ms &amp;lt;/td&amp;gt; &amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt; 1923ms &amp;lt;/td&amp;gt; Thoughts The Incredible is just slightly faster than the Evo, to the point where it’s probably negligible or within a margin of error.</description>
     </item>
-    
     <item>
       <title>Mobile First: Luke Wroblewski on mobile design</title>
       <link>https://www.davidbcalhoun.com/2010/mobile-first-luke-wroblewski-on-mobile-design/</link>
       <pubDate>Sat, 05 Jun 2010 00:00:00 +0000</pubDate>
-      
       <guid>https://www.davidbcalhoun.com/2010/mobile-first-luke-wroblewski-on-mobile-design/</guid>
       <description>In episode 6 of The Big Web Show, Luke Wroblewski gives his “Mobile First” talk, explaining his philosophy for designing for mobile, the challenges, and a look at the road ahead. Luke explains that because of the limitations on mobile, developers are forced to really optimize the user experience for mobile. Often times this mobile experience turns out much better than on the desktop, where the “gluttony of resources” results in distracting and excessive webpages.</description>
     </item>
-    
     <item>
       <title>The viewport metatag (Mobile web part 1)</title>
       <link>https://www.davidbcalhoun.com/2010/the-viewport-metatag-mobile-web-part-1/</link>
       <pubDate>Thu, 06 May 2010 00:00:00 +0000</pubDate>
-      
       <guid>https://www.davidbcalhoun.com/2010/the-viewport-metatag-mobile-web-part-1/</guid>
-      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ The skinny Use this:
-1  &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1&amp;#34; /&amp;gt;   Introduction This series of posts is intended to introduce web developers to basic techniques for designing for the mobile web. It assumes at least a basic knowledge of creating desktop websites.
-The problem Ok, so you&amp;rsquo;ve settled down to learn how to write a website for a mobile device using your current knowledge of building desktop websites.</description>
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ The skinny Use this:&#xA;1 &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1&amp;#34; /&amp;gt; Introduction This series of posts is intended to introduce web developers to basic techniques for designing for the mobile web. It assumes at least a basic knowledge of creating desktop websites.&#xA;The problem Ok, so you&amp;rsquo;ve settled down to learn how to write a website for a mobile device using your current knowledge of building desktop websites.</description>
     </item>
-    
     <item>
       <title>Links for the week of February 7, 2010</title>
       <link>https://www.davidbcalhoun.com/2010/links-for-the-week-of-february-7-2010/</link>
       <pubDate>Mon, 15 Feb 2010 00:00:00 +0000</pubDate>
-      
       <guid>https://www.davidbcalhoun.com/2010/links-for-the-week-of-february-7-2010/</guid>
-      <description>General links  Video for Everybody!: cross-browser support of HTML5 video and methods of fallback   Oracle Cuts Affect GNOME Accessibility Work: &amp;#8220;&amp;#8230;as a result of the layoffs &amp;#8230; &amp;#8216;the accessibility of the GNOME desktop will become the open source equivalent of an unfunded mandate, doomed ultimately to fail&amp;#8217; &amp;#8230;&amp;#8221;   Google Acquires Aardvark For $50 million   &amp;#8220;the latest publication of HTML5 is now blocked by Adobe, via an objection that has still not been made public (despite yesterday&amp;#8217;s promise to make it so)&amp;#8221;   The iPhone obsession (QuirksMode)   Performance  DOMTiming interface being implemented in Chromium and Firefox   A Hidden Cost of Javascript: file size is a factor in performance, but so is parse and load time   Announcing High Performance JavaScript: Nicholas Zakas announces his latest book, due in March 2010.</description>
+      <description>General links Video for Everybody!: cross-browser support of HTML5 video and methods of fallback Oracle Cuts Affect GNOME Accessibility Work: &amp;#8220;&amp;#8230;as a result of the layoffs &amp;#8230; &amp;#8216;the accessibility of the GNOME desktop will become the open source equivalent of an unfunded mandate, doomed ultimately to fail&amp;#8217; &amp;#8230;&amp;#8221; Google Acquires Aardvark For $50 million &amp;#8220;the latest publication of HTML5 is now blocked by Adobe, via an objection that has still not been made public (despite yesterday&amp;#8217;s promise to make it so)&amp;#8221; The iPhone obsession (QuirksMode) Performance DOMTiming interface being implemented in Chromium and Firefox A Hidden Cost of Javascript: file size is a factor in performance, but so is parse and load time Announcing High Performance JavaScript: Nicholas Zakas announces his latest book, due in March 2010.</description>
     </item>
-    
     <item>
       <title>PastryKit: digging into an Apple Pie</title>
       <link>https://www.davidbcalhoun.com/2009/pastrykit-digging-into-an-apple-pie/</link>
       <pubDate>Wed, 16 Dec 2009 00:00:00 +0000</pubDate>
-      
       <guid>https://www.davidbcalhoun.com/2009/pastrykit-digging-into-an-apple-pie/</guid>
-      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ Yesterday John Gruber wrote about Apple’s PastryKit, iPhone’s JavaScript framework that’s been discovered “in the wild” on the iPhone user guide at http://help.apple.com/iphone/3/mobile/. There’s a few ways to access the page:
- with an actual iPhone or iTouch by browsing with an iPhone/iTouch user agent. If you’re using Safari, enable the Developer menu in Safari&amp;gt;Preferences&amp;gt;Advanced and switching user agents by clicking on Develope&amp;gt;User Agent  What’s all the big fuss?</description>
+      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ Yesterday John Gruber wrote about Apple’s PastryKit, iPhone’s JavaScript framework that’s been discovered “in the wild” on the iPhone user guide at http://help.apple.com/iphone/3/mobile/. There’s a few ways to access the page:&#xA;with an actual iPhone or iTouch by browsing with an iPhone/iTouch user agent. If you’re using Safari, enable the Developer menu in Safari&amp;gt;Preferences&amp;gt;Advanced and switching user agents by clicking on Develope&amp;gt;User Agent What’s all the big fuss?</description>
     </item>
-    
     <item>
       <title>IEMobile 6/7 bug: classes and id not supported on the HTML element</title>
       <link>https://www.davidbcalhoun.com/2009/iemobile-6/7-bug-classes-and-id-not-supported-on-the-html-element/</link>
       <pubDate>Tue, 01 Dec 2009 00:00:00 +0000</pubDate>
-      
       <guid>https://www.davidbcalhoun.com/2009/iemobile-6/7-bug-classes-and-id-not-supported-on-the-html-element/</guid>
-      <description>As it turns out, IEMobile 6/7 (and presumably anything earlier) doesn’t support classes and ids that are attached to the HTML element. I confirmed this on both IEMobile 6 and 7. Fortunately it looks to be fixed in IEMobile 8 (which makes sense, since it works fine in desktop IE6, which it’s based on).
-The consequence of this is that adding an id/class to the html tag will result in the style not being applied to the document:</description>
+      <description>As it turns out, IEMobile 6/7 (and presumably anything earlier) doesn’t support classes and ids that are attached to the HTML element. I confirmed this on both IEMobile 6 and 7. Fortunately it looks to be fixed in IEMobile 8 (which makes sense, since it works fine in desktop IE6, which it’s based on).&#xA;The consequence of this is that adding an id/class to the html tag will result in the style not being applied to the document:</description>
     </item>
-    
   </channel>
 </rss>

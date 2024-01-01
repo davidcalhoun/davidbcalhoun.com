@@ -31,7 +31,7 @@
 
 
 
- <meta name="generator" content="Hugo 0.91.2" />
+ <meta name="generator" content="Hugo 0.121.1">
     
 
     
@@ -261,25 +261,25 @@
 <p>The Criterion Collection is home to many foreign films, so it&rsquo;s natural that many of the titles would have accents, so this is a bit unfortunate for their users.</p>
 <h2 id="first-steps-at-a-solution">First steps at a solution</h2>
 <p>I used this as an opportunity to learn something new!  I realized that I didn&rsquo;t immediately know how to solve for this either.  A simple regexp was no help:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Only works because there&#39;s no accented characters.
-</span><span style="color:#75715e"></span><span style="color:#e6db74">&#39;Le Samourai&#39;</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/samourai/i</span>);
-<span style="color:#75715e">// -&gt; [&#39;Samourai&#39;]
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// ...but once we introduce accented characters, our naïve implementation blows up...
-</span><span style="color:#75715e"></span><span style="color:#e6db74">&#39;Le Samouraï&#39;</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/samourai/i</span>);
-<span style="color:#75715e">// -&gt; null
-</span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// Only works because there&#39;s no accented characters.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#e6db74">&#39;Le Samourai&#39;</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/samourai/i</span>);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// -&gt; [&#39;Samourai&#39;]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// ...but once we introduce accented characters, our naïve implementation blows up...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#e6db74">&#39;Le Samouraï&#39;</span>.<span style="color:#a6e22e">match</span>(<span style="color:#e6db74">/samourai/i</span>);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// -&gt; null
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>I had to go digging a bit to figure out how to make progress&hellip;</p>
 <p>This <a href="https://stackoverflow.com/a/37511463/214017">great answer by Lewis Diamond on Stackoverflow</a> lead the way to <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/normalize">String.prototype.normalize()</a>, but before we jump into that, first we need to take care of some prerequisites with a super brief Unicode overview.</p>
@@ -291,186 +291,186 @@
 <p>Unicode generally calls the first the composed/precomposed form, while the second is decomposed into two symbols (&lsquo;i&rsquo; and the <a href="https://en.wikipedia.org/wiki/Diaeresis_(diacritic)">diacritic</a>).</p>
 <h2 id="side-note-with-unicode-things-are-not-always-as-they-appear">Side note: with Unicode, things are not always as they appear&hellip;</h2>
 <p>What is somewhat strange is that though the Unicode characters display exactly the same way and are considered <a href="https://en.wikipedia.org/wiki/Unicode_equivalence">Unicode equivalent</a>, in JavaScript they are not equal:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#e6db74">&#39;ï&#39;</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;\u00ef&#39;</span>;        <span style="color:#75715e">// true
-</span><span style="color:#75715e"></span><span style="color:#e6db74">&#39;ï&#39;</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;\u0069\u0308&#39;</span>;  <span style="color:#75715e">// true
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// You may then think that the following must be true in JavaScript
-</span><span style="color:#75715e">// (e.g. transitive equality), but you&#39;d be wrong!
-</span><span style="color:#75715e"></span>
-<span style="color:#e6db74">&#39;\u00ef&#39;</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;\u0069\u0308&#39;</span>;  <span style="color:#75715e">// false
-</span><span style="color:#75715e">// Note that the line above may display as &#39;ï&#39; === &#39;ï&#39;, but it will
-</span><span style="color:#75715e">// still evaluate to false!
-</span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#e6db74">&#39;ï&#39;</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;\u00ef&#39;</span>;        <span style="color:#75715e">// true
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#e6db74">&#39;ï&#39;</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;\u0069\u0308&#39;</span>;  <span style="color:#75715e">// true
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// You may then think that the following must be true in JavaScript
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// (e.g. transitive equality), but you&#39;d be wrong!
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;\u00ef&#39;</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;\u0069\u0308&#39;</span>;  <span style="color:#75715e">// false
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// Note that the line above may display as &#39;ï&#39; === &#39;ï&#39;, but it will
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// still evaluate to false!
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="removing-diacritics">Removing diacritics</h2>
 <p>What is most interesting for us here is that we can actually take the decomposed form <code>'\u0069\u0308'</code> and <strong>remove</strong> the diacritic (the two dots) simply by removing the symbol <code>'\u0308'</code> (&lsquo;Combining Diaeresis&rsquo;):</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Before: with accent
-</span><span style="color:#75715e"></span><span style="color:#e6db74">&#39;ï&#39;</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;\u0069\u0308&#39;</span>;
-
-<span style="color:#75715e">// After: violà!  accent removed
-</span><span style="color:#75715e"></span><span style="color:#e6db74">&#39;i&#39;</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;\u0069&#39;</span>;
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// Before: with accent
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#e6db74">&#39;ï&#39;</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;\u0069\u0308&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// After: violà!  accent removed
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#e6db74">&#39;i&#39;</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;\u0069&#39;</span>;
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>That&rsquo;s looking a lot closer to what the original user input was, and will make things easier to match.  Sort of like converting two strings using <code>toLowerCase()</code> to check their case-insensitive equivalence.</p>
 <p>It turns out that all diacritics have a predictable Unicode range, so we can easily remove any diacritics with a regexp character range:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#e6db74">&#39;\u0069\u0308&#39;</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/[\u0300-\u036f]/g</span>, <span style="color:#e6db74">&#39;&#39;</span>);
-<span style="color:#75715e">// -&gt; &#39;i&#39;
-</span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#e6db74">&#39;\u0069\u0308&#39;</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/[\u0300-\u036f]/g</span>, <span style="color:#e6db74">&#39;&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// -&gt; &#39;i&#39;
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>One big catch though - this will only work for decomposed symbols.  What happens if we get a composed symbol?  We&rsquo;d be stuck, since we can&rsquo;t break it apart into separate character and diacritic symbols&hellip;</p>
 <p>&hellip;or <em><strong>can</strong></em> we?</p>
 <h2 id="stringprototypenormalize-to-the-rescue"><em><strong><code>String.prototype.normalize()</code> to the rescue!</strong></em></h2>
 <p>This handy function can convert Unicode characters between their composed and decomposed forms:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Remember, though Unicode equivalent and identical in display, this is false...
-</span><span style="color:#75715e"></span><span style="color:#e6db74">&#39;\u0069\u0308&#39;</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;\u00ef&#39;</span>;  <span style="color:#75715e">// false
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// BUT we can use String.prototype.normalize() to help out!
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// To composed form (&#39;NFC&#39; means Normalization Form Canonical Composition)
-</span><span style="color:#75715e"></span><span style="color:#e6db74">&#39;\u0069\u0308&#39;</span>.<span style="color:#a6e22e">normalize</span>(<span style="color:#e6db74">&#39;NFC&#39;</span>) <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;\u00ef&#39;</span>;  <span style="color:#75715e">// true
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// To decomposed form (&#39;NFD&#39; means Normalization Form Canonical Decomposition)
-</span><span style="color:#75715e"></span><span style="color:#e6db74">&#39;\u00ef&#39;</span>.<span style="color:#a6e22e">normalize</span>(<span style="color:#e6db74">&#39;NFD&#39;</span>) <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;\u0069\u0308&#39;</span>;  <span style="color:#75715e">// true
-</span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// Remember, though Unicode equivalent and identical in display, this is false...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#e6db74">&#39;\u0069\u0308&#39;</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;\u00ef&#39;</span>;  <span style="color:#75715e">// false
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// BUT we can use String.prototype.normalize() to help out!
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// To composed form (&#39;NFC&#39; means Normalization Form Canonical Composition)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#e6db74">&#39;\u0069\u0308&#39;</span>.<span style="color:#a6e22e">normalize</span>(<span style="color:#e6db74">&#39;NFC&#39;</span>) <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;\u00ef&#39;</span>;  <span style="color:#75715e">// true
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// To decomposed form (&#39;NFD&#39; means Normalization Form Canonical Decomposition)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#e6db74">&#39;\u00ef&#39;</span>.<span style="color:#a6e22e">normalize</span>(<span style="color:#e6db74">&#39;NFD&#39;</span>) <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;\u0069\u0308&#39;</span>;  <span style="color:#75715e">// true
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>This normalization allows us to easily convert to decomposed form, so our regexp above will correctly remove diacritics.  We can now put together the pieces (pun intended) and make a basic helper function to remove accents (diacritics):</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">removeDiacritics</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">str</span> =&gt; {
-  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">str</span>
-    .<span style="color:#a6e22e">normalize</span>(<span style="color:#e6db74">&#39;NFD&#39;</span>)
-    .<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/[\u0300-\u036f]/g</span>, <span style="color:#e6db74">&#39;&#39;</span>);
-}
-
-<span style="color:#75715e">// Let&#39;s try it out!
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">removeDiacritics</span>(<span style="color:#e6db74">&#39;àbçdëfghïjklmñöpqrśtüvwxÿž&#39;</span>);
-<span style="color:#75715e">// -&gt; &#39;abcdefghijklmnopqrstuvwxyz&#39;
-</span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">removeDiacritics</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">str</span> =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">str</span>
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">normalize</span>(<span style="color:#e6db74">&#39;NFD&#39;</span>)
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/[\u0300-\u036f]/g</span>, <span style="color:#e6db74">&#39;&#39;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Let&#39;s try it out!
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">removeDiacritics</span>(<span style="color:#e6db74">&#39;àbçdëfghïjklmñöpqrśtüvwxÿž&#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// -&gt; &#39;abcdefghijklmnopqrstuvwxyz&#39;
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="complete-example-code">Complete example code</h2>
 <p>Now we can put it all together into a working example that would solve the original problem with user input in the Criterion Channel&rsquo;s website:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Strips diacritics from a string
-</span><span style="color:#75715e">// Example: removeDiacritics(&#39;ï&#39;) -&gt; &#39;i&#39;
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">removeDiacritics</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">str</span> =&gt; {
-  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">str</span>
-    .<span style="color:#a6e22e">normalize</span>(<span style="color:#e6db74">&#39;NFD&#39;</span>)
-    .<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/[\u0300-\u036f]/g</span>, <span style="color:#e6db74">&#39;&#39;</span>)
-}
-
-<span style="color:#75715e">// Determines if a haystack contains a needle.  Case and accent insensitive.
-</span><span style="color:#75715e">// Example: normalizedContains(&#39;Le Samouraï&#39;, &#39;I&#39;) -&gt; true
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">normalizedContains</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">haystack</span>, <span style="color:#a6e22e">needle</span>) =&gt; {
-  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">regExp</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> RegExp(<span style="color:#a6e22e">removeDiacritics</span>(<span style="color:#a6e22e">needle</span>), <span style="color:#e6db74">&#39;gi&#39;</span>);
-  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">regExp</span>.<span style="color:#a6e22e">test</span>(<span style="color:#a6e22e">removeDiacritics</span>(<span style="color:#a6e22e">haystack</span>));
-}
-
-<span style="color:#75715e">// Returns all films matching the input string.  Case and accent insensitive.
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">findMatchingFilms</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">strToMatch</span>, <span style="color:#a6e22e">films</span>) =&gt; {
-  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">films</span>.<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">filmTitle</span> =&gt; <span style="color:#a6e22e">normalizedContains</span>(<span style="color:#a6e22e">filmTitle</span>, <span style="color:#a6e22e">strToMatch</span>))
-}
-
-<span style="color:#75715e">// List of all films available (shortened for this example of course!)
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">allFilms</span> <span style="color:#f92672">=</span> [
-  <span style="color:#e6db74">&#39;Le Samouraï&#39;</span>,
-  <span style="color:#e6db74">&#39;House&#39;</span>,
-  <span style="color:#e6db74">&#39;The Samourai Witches From Gomorrah&#39;</span>,
-  <span style="color:#e6db74">&#39;Black Narcissus&#39;</span>,
-  <span style="color:#e6db74">&#39;Citizen Kane&#39;</span>,
-  <span style="color:#e6db74">&#39;Citizen Samourai&#39;</span>
-]
-
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">findMatchingFilms</span>(<span style="color:#e6db74">&#39;samourai&#39;</span>, <span style="color:#a6e22e">allFilms</span>));
-<span style="color:#75715e">// -&gt; [&#34;Le Samouraï&#34;, &#34;The Samourai Witches From Gomorrah&#34;, &#34;Citizen Samourai&#34;]
-</span></code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// Strips diacritics from a string
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// Example: removeDiacritics(&#39;ï&#39;) -&gt; &#39;i&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">removeDiacritics</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">str</span> =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">str</span>
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">normalize</span>(<span style="color:#e6db74">&#39;NFD&#39;</span>)
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/[\u0300-\u036f]/g</span>, <span style="color:#e6db74">&#39;&#39;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Determines if a haystack contains a needle.  Case and accent insensitive.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// Example: normalizedContains(&#39;Le Samouraï&#39;, &#39;I&#39;) -&gt; true
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">normalizedContains</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">haystack</span>, <span style="color:#a6e22e">needle</span>) =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">regExp</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> RegExp(<span style="color:#a6e22e">removeDiacritics</span>(<span style="color:#a6e22e">needle</span>), <span style="color:#e6db74">&#39;gi&#39;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">regExp</span>.<span style="color:#a6e22e">test</span>(<span style="color:#a6e22e">removeDiacritics</span>(<span style="color:#a6e22e">haystack</span>));
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Returns all films matching the input string.  Case and accent insensitive.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">findMatchingFilms</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">strToMatch</span>, <span style="color:#a6e22e">films</span>) =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">films</span>.<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">filmTitle</span> =&gt; <span style="color:#a6e22e">normalizedContains</span>(<span style="color:#a6e22e">filmTitle</span>, <span style="color:#a6e22e">strToMatch</span>))
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// List of all films available (shortened for this example of course!)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">allFilms</span> <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;Le Samouraï&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;House&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;The Samourai Witches From Gomorrah&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;Black Narcissus&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;Citizen Kane&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;Citizen Samourai&#39;</span>
+</span></span><span style="display:flex;"><span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">findMatchingFilms</span>(<span style="color:#e6db74">&#39;samourai&#39;</span>, <span style="color:#a6e22e">allFilms</span>));
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// -&gt; [&#34;Le Samouraï&#34;, &#34;The Samourai Witches From Gomorrah&#34;, &#34;Citizen Samourai&#34;]
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="references">References</h2>
 <ul>

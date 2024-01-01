@@ -31,7 +31,7 @@
 
 
 
- <meta name="generator" content="Hugo 0.91.2" />
+ <meta name="generator" content="Hugo 0.121.1">
     
 
     
@@ -241,22 +241,22 @@
 <p>Ok, now back to work!</p>
 <p>After poking around and trying to find my Facebook id, I inserted it and got the link to work. But that&rsquo;s not ideal, since everyone has different user ids. And I&rsquo;m not about to load in all the bloatware that comes with the Facebook API just to find a user id!</p>
 <p>After poking around a bit, I found <a href="http://stackoverflow.com/questions/9077817/open-facebook-app-with-text-from-ipad-app">this link</a> which showed this generic pattern:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fb://publish/profile/me&#34;</span>&gt;fb://publish/profile/me&lt;/<span style="color:#f92672">a</span>&gt;
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fb://publish/profile/me&#34;</span>&gt;fb://publish/profile/me&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Whoo! And that works! But I still want to prepopulate the status field. We can do that by passing in a URL parameter:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fb://publish/profile/me?text=foo&#34;</span>&gt;fb://publish/profile/me?text=foo&lt;/<span style="color:#f92672">a</span>&gt;
-</code></pre></td></tr></table>
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fb://publish/profile/me?text=foo&#34;</span>&gt;fb://publish/profile/me?text=foo&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Clicking on it will get you to a screen which looks like this:</p>
 <img src="http://davidbcalhoun.com/wp-content/uploads/2012/02/facebook-status-disabled.png" alt="Facebook status update with share button disabled" title="Facebook status update with share button disabled" width="320" height="480" class="aligncenter size-full wp-image-865" />

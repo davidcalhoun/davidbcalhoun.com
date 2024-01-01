@@ -6,15 +6,14 @@
     <description>Recent content in button on David Calhoun&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Wed, 19 May 2010 00:00:00 +0000</lastBuildDate><atom:link href="https://www.davidbcalhoun.com/tags/button/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 19 May 2010 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.davidbcalhoun.com/tags/button/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Designing buttons that don&#39;t suck (Mobile web part 3)</title>
       <link>https://www.davidbcalhoun.com/2010/designing-buttons-that-dont-suck-mobile-web-part-3/</link>
       <pubDate>Wed, 19 May 2010 00:00:00 +0000</pubDate>
-      
       <guid>https://www.davidbcalhoun.com/2010/designing-buttons-that-dont-suck-mobile-web-part-3/</guid>
       <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ A button is something that seems to be made just for mobile: it’s designed to be big and easy to activate, as opposed to small and harder to activate, like normal text links. This seems ideal for a mobile devices, which have a small display area and whose form of input is a person’s (relatively) fat finger interacting with the screen.</description>
     </item>
-    
   </channel>
 </rss>
