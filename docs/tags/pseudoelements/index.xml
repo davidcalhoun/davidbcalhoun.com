@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>pseudoelements on David Calhoun&#39;s blog</title>
+    <title>Pseudoelements on David Calhoun&#39;s blog</title>
     <link>https://www.davidbcalhoun.com/tags/pseudoelements/</link>
-    <description>Recent content in pseudoelements on David Calhoun&#39;s blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Pseudoelements on David Calhoun&#39;s blog</description>
+    <generator>Hugo</generator>
     <language>en-US</language>
     <lastBuildDate>Fri, 10 Aug 2012 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://www.davidbcalhoun.com/tags/pseudoelements/index.xml" rel="self" type="application/rss+xml" />
@@ -13,7 +13,7 @@
       <link>https://www.davidbcalhoun.com/2012/more-fun-with-webkit-pseudoelements-webkit-search-cancel-button-or-pseudoclass-inception/</link>
       <pubDate>Fri, 10 Aug 2012 00:00:00 +0000</pubDate>
       <guid>https://www.davidbcalhoun.com/2012/more-fun-with-webkit-pseudoelements-webkit-search-cancel-button-or-pseudoclass-inception/</guid>
-      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ Introduction UPDATE 2016: this appears to have even less support than before, and it&amp;rsquo;s not recommended to be used on a production site. Use a helper JS library instead.&#xA;(check out the Demo)&#xA;A while back I had a bit of a field day messing around with input type=&amp;ldquo;range&amp;rdquo;, trying to replicate the &amp;ldquo;unlock slider&amp;rdquo; on iOS using CSS, targeting special WebKit-only CSS pseudoelements such as webkit-slider-thumb.</description>
+      <description>&lt;h2 id=&#34;-warning-this-is-an-old-article-and-may-include-information-thats-out-of-date-&#34;&gt;⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️&lt;/h2&gt;&#xA;&lt;h3 id=&#34;introduction&#34;&gt;Introduction&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;&lt;em&gt;UPDATE&lt;/em&gt;&lt;/strong&gt; 2016: this appears to have even less support than before, and it&amp;rsquo;s not recommended to be used on a production site. Use a helper JS library instead.&lt;/p&gt;&lt;/p&gt;&#xA;&lt;p&gt;(check out the &lt;strong&gt;&lt;a href=&#34;https://www.davidbcalhoun.com/a/_old%20mobile%20tests/webkit-search-cancel-button.html&#34;&gt;Demo&lt;/a&gt;&lt;/strong&gt;)&lt;/p&gt;&#xA;&lt;p&gt;A while back I had a bit of a field day &lt;a href=&#34;https://www.davidbcalhoun.com/2011/implementing-iphone-slider-unlock-with-input-type-range&#34;&gt;messing around with input type=&amp;ldquo;range&amp;rdquo;&lt;/a&gt;, trying to replicate the &amp;ldquo;unlock slider&amp;rdquo; on iOS using CSS, targeting special WebKit-only CSS pseudoelements such as webkit-slider-thumb.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -2,2071 +2,1663 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on David Calhoun&#39;s blog</title>
-    <link>https://www.davidbcalhoun.com/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on David Calhoun&#39;s blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-US</language>
-    <lastBuildDate>Fri, 30 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.davidbcalhoun.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 31 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>photography</title>
-      <link>https://www.davidbcalhoun.com/tags/photography/</link>
-      <pubDate>Fri, 30 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/photography/</guid>
+      <title>Japan</title>
+      <link>http://localhost:1313/tags/japan/</link>
+      <pubDate>Sun, 31 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/japan/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>photos</title>
-      <link>https://www.davidbcalhoun.com/tags/photos/</link>
-      <pubDate>Fri, 30 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/photos/</guid>
+      <title>Kyoto</title>
+      <link>http://localhost:1313/tags/kyoto/</link>
+      <pubDate>Sun, 31 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/kyoto/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>year in photos</title>
-      <link>https://www.davidbcalhoun.com/tags/year-in-photos/</link>
-      <pubDate>Fri, 30 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/year-in-photos/</guid>
+      <title>Nyc</title>
+      <link>http://localhost:1313/tags/nyc/</link>
+      <pubDate>Sun, 31 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/nyc/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>film</title>
-      <link>https://www.davidbcalhoun.com/tags/film/</link>
+      <title>Photography</title>
+      <link>http://localhost:1313/tags/photography/</link>
+      <pubDate>Sun, 31 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/photography/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Photos</title>
+      <link>http://localhost:1313/tags/photos/</link>
+      <pubDate>Sun, 31 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/photos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Raleigh</title>
+      <link>http://localhost:1313/tags/raleigh/</link>
+      <pubDate>Sun, 31 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/raleigh/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Washington Dc</title>
+      <link>http://localhost:1313/tags/washington-dc/</link>
+      <pubDate>Sun, 31 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/washington-dc/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Year in Photos</title>
+      <link>http://localhost:1313/tags/year-in-photos/</link>
+      <pubDate>Sun, 31 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/year-in-photos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Film</title>
+      <link>http://localhost:1313/tags/film/</link>
       <pubDate>Sat, 29 Jan 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/film/</guid>
+      <guid>http://localhost:1313/tags/film/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>hitchcock</title>
-      <link>https://www.davidbcalhoun.com/tags/hitchcock/</link>
+      <title>Hitchcock</title>
+      <link>http://localhost:1313/tags/hitchcock/</link>
       <pubDate>Sat, 29 Jan 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/hitchcock/</guid>
+      <guid>http://localhost:1313/tags/hitchcock/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>silly</title>
-      <link>https://www.davidbcalhoun.com/tags/silly/</link>
+      <title>Silly</title>
+      <link>http://localhost:1313/tags/silly/</link>
       <pubDate>Sat, 29 Jan 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/silly/</guid>
+      <guid>http://localhost:1313/tags/silly/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>video</title>
-      <link>https://www.davidbcalhoun.com/tags/video/</link>
+      <title>Video</title>
+      <link>http://localhost:1313/tags/video/</link>
       <pubDate>Sat, 29 Jan 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/video/</guid>
+      <guid>http://localhost:1313/tags/video/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>eastern sierra</title>
-      <link>https://www.davidbcalhoun.com/tags/eastern-sierra/</link>
+      <title>Eastern Sierra</title>
+      <link>http://localhost:1313/tags/eastern-sierra/</link>
       <pubDate>Fri, 31 Dec 2021 15:00:00 -0500</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/eastern-sierra/</guid>
+      <guid>http://localhost:1313/tags/eastern-sierra/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>getty villa</title>
-      <link>https://www.davidbcalhoun.com/tags/getty-villa/</link>
+      <title>Getty Villa</title>
+      <link>http://localhost:1313/tags/getty-villa/</link>
       <pubDate>Fri, 31 Dec 2021 15:00:00 -0500</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/getty-villa/</guid>
+      <guid>http://localhost:1313/tags/getty-villa/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>manzanar</title>
-      <link>https://www.davidbcalhoun.com/tags/manzanar/</link>
+      <title>Manzanar</title>
+      <link>http://localhost:1313/tags/manzanar/</link>
       <pubDate>Fri, 31 Dec 2021 15:00:00 -0500</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/manzanar/</guid>
+      <guid>http://localhost:1313/tags/manzanar/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>washington dc</title>
-      <link>https://www.davidbcalhoun.com/tags/washington-dc/</link>
-      <pubDate>Fri, 31 Dec 2021 15:00:00 -0500</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/washington-dc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>childhood</title>
-      <link>https://www.davidbcalhoun.com/tags/childhood/</link>
+      <title>Childhood</title>
+      <link>http://localhost:1313/tags/childhood/</link>
       <pubDate>Sat, 17 Jul 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/childhood/</guid>
+      <guid>http://localhost:1313/tags/childhood/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>gratefulness</title>
-      <link>https://www.davidbcalhoun.com/tags/gratefulness/</link>
+      <title>Gratefulness</title>
+      <link>http://localhost:1313/tags/gratefulness/</link>
       <pubDate>Sat, 17 Jul 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/gratefulness/</guid>
+      <guid>http://localhost:1313/tags/gratefulness/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>philosophy</title>
-      <link>https://www.davidbcalhoun.com/tags/philosophy/</link>
+      <title>Philosophy</title>
+      <link>http://localhost:1313/tags/philosophy/</link>
       <pubDate>Sat, 17 Jul 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/philosophy/</guid>
+      <guid>http://localhost:1313/tags/philosophy/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>great smoky mountains</title>
-      <link>https://www.davidbcalhoun.com/tags/great-smoky-mountains/</link>
+      <title>Great Smoky Mountains</title>
+      <link>http://localhost:1313/tags/great-smoky-mountains/</link>
       <pubDate>Wed, 30 Dec 2020 10:39:59 -0500</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/great-smoky-mountains/</guid>
+      <guid>http://localhost:1313/tags/great-smoky-mountains/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>mountains</title>
-      <link>https://www.davidbcalhoun.com/tags/mountains/</link>
+      <title>Mountains</title>
+      <link>http://localhost:1313/tags/mountains/</link>
       <pubDate>Wed, 30 Dec 2020 10:39:59 -0500</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/mountains/</guid>
+      <guid>http://localhost:1313/tags/mountains/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>national parks</title>
-      <link>https://www.davidbcalhoun.com/tags/national-parks/</link>
+      <title>National Parks</title>
+      <link>http://localhost:1313/tags/national-parks/</link>
       <pubDate>Wed, 30 Dec 2020 10:39:59 -0500</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/national-parks/</guid>
+      <guid>http://localhost:1313/tags/national-parks/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>new york</title>
-      <link>https://www.davidbcalhoun.com/tags/new-york/</link>
+      <title>New York</title>
+      <link>http://localhost:1313/tags/new-york/</link>
       <pubDate>Wed, 30 Dec 2020 10:39:59 -0500</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/new-york/</guid>
+      <guid>http://localhost:1313/tags/new-york/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>wyoming</title>
-      <link>https://www.davidbcalhoun.com/tags/wyoming/</link>
+      <title>Wyoming</title>
+      <link>http://localhost:1313/tags/wyoming/</link>
       <pubDate>Wed, 30 Dec 2020 10:39:59 -0500</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/wyoming/</guid>
+      <guid>http://localhost:1313/tags/wyoming/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>yellowstone</title>
-      <link>https://www.davidbcalhoun.com/tags/yellowstone/</link>
+      <title>Yellowstone</title>
+      <link>http://localhost:1313/tags/yellowstone/</link>
       <pubDate>Wed, 30 Dec 2020 10:39:59 -0500</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/yellowstone/</guid>
+      <guid>http://localhost:1313/tags/yellowstone/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>drama</title>
-      <link>https://www.davidbcalhoun.com/tags/drama/</link>
+      <title>Drama</title>
+      <link>http://localhost:1313/tags/drama/</link>
       <pubDate>Fri, 25 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/drama/</guid>
+      <guid>http://localhost:1313/tags/drama/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>movies</title>
-      <link>https://www.davidbcalhoun.com/tags/movies/</link>
+      <title>Movies</title>
+      <link>http://localhost:1313/tags/movies/</link>
       <pubDate>Fri, 25 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/movies/</guid>
+      <guid>http://localhost:1313/tags/movies/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>top 100 films</title>
-      <link>https://www.davidbcalhoun.com/tags/top-100-films/</link>
+      <title>Top 100 Films</title>
+      <link>http://localhost:1313/tags/top-100-films/</link>
       <pubDate>Fri, 25 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/top-100-films/</guid>
+      <guid>http://localhost:1313/tags/top-100-films/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>appalachian trail</title>
-      <link>https://www.davidbcalhoun.com/tags/appalachian-trail/</link>
+      <title>Appalachian Trail</title>
+      <link>http://localhost:1313/tags/appalachian-trail/</link>
       <pubDate>Tue, 27 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/appalachian-trail/</guid>
+      <guid>http://localhost:1313/tags/appalachian-trail/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>backpacking</title>
-      <link>https://www.davidbcalhoun.com/tags/backpacking/</link>
+      <title>Backpacking</title>
+      <link>http://localhost:1313/tags/backpacking/</link>
       <pubDate>Tue, 27 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/backpacking/</guid>
+      <guid>http://localhost:1313/tags/backpacking/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>hiking</title>
-      <link>https://www.davidbcalhoun.com/tags/hiking/</link>
+      <title>Hiking</title>
+      <link>http://localhost:1313/tags/hiking/</link>
       <pubDate>Tue, 27 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/hiking/</guid>
+      <guid>http://localhost:1313/tags/hiking/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>functional programming</title>
-      <link>https://www.davidbcalhoun.com/tags/functional-programming/</link>
+      <title>Functional Programming</title>
+      <link>http://localhost:1313/tags/functional-programming/</link>
       <pubDate>Tue, 16 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/functional-programming/</guid>
+      <guid>http://localhost:1313/tags/functional-programming/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>javascript</title>
-      <link>https://www.davidbcalhoun.com/tags/javascript/</link>
+      <title>Javascript</title>
+      <link>http://localhost:1313/tags/javascript/</link>
       <pubDate>Tue, 16 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/javascript/</guid>
+      <guid>http://localhost:1313/tags/javascript/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>programming</title>
-      <link>https://www.davidbcalhoun.com/tags/programming/</link>
+      <title>Programming</title>
+      <link>http://localhost:1313/tags/programming/</link>
       <pubDate>Tue, 16 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/programming/</guid>
+      <guid>http://localhost:1313/tags/programming/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>data visualizations</title>
-      <link>https://www.davidbcalhoun.com/tags/data-visualizations/</link>
+      <title>Data Visualizations</title>
+      <link>http://localhost:1313/tags/data-visualizations/</link>
       <pubDate>Sat, 25 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/data-visualizations/</guid>
+      <guid>http://localhost:1313/tags/data-visualizations/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>disneyland</title>
-      <link>https://www.davidbcalhoun.com/tags/disneyland/</link>
+      <title>Disneyland</title>
+      <link>http://localhost:1313/tags/disneyland/</link>
       <pubDate>Sat, 25 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/disneyland/</guid>
+      <guid>http://localhost:1313/tags/disneyland/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>japan</title>
-      <link>https://www.davidbcalhoun.com/tags/japan/</link>
+      <title>Travel</title>
+      <link>http://localhost:1313/tags/travel/</link>
       <pubDate>Fri, 17 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/japan/</guid>
+      <guid>http://localhost:1313/tags/travel/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>kyoto</title>
-      <link>https://www.davidbcalhoun.com/tags/kyoto/</link>
-      <pubDate>Fri, 17 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/kyoto/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>travel</title>
-      <link>https://www.davidbcalhoun.com/tags/travel/</link>
-      <pubDate>Fri, 17 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/travel/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>kitano tenmangu</title>
-      <link>https://www.davidbcalhoun.com/tags/kitano-tenmangu/</link>
+      <title>Kitano Tenmangu</title>
+      <link>http://localhost:1313/tags/kitano-tenmangu/</link>
       <pubDate>Sat, 11 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/kitano-tenmangu/</guid>
+      <guid>http://localhost:1313/tags/kitano-tenmangu/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>plum blossoms</title>
-      <link>https://www.davidbcalhoun.com/tags/plum-blossoms/</link>
+      <title>Plum Blossoms</title>
+      <link>http://localhost:1313/tags/plum-blossoms/</link>
       <pubDate>Sat, 11 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/plum-blossoms/</guid>
+      <guid>http://localhost:1313/tags/plum-blossoms/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>shrine</title>
-      <link>https://www.davidbcalhoun.com/tags/shrine/</link>
+      <title>Shrine</title>
+      <link>http://localhost:1313/tags/shrine/</link>
       <pubDate>Sat, 11 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/shrine/</guid>
+      <guid>http://localhost:1313/tags/shrine/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>travel photography</title>
-      <link>https://www.davidbcalhoun.com/tags/travel-photography/</link>
+      <title>Travel Photography</title>
+      <link>http://localhost:1313/tags/travel-photography/</link>
       <pubDate>Sat, 11 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/travel-photography/</guid>
+      <guid>http://localhost:1313/tags/travel-photography/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>blogging</title>
-      <link>https://www.davidbcalhoun.com/tags/blogging/</link>
+      <title>Blogging</title>
+      <link>http://localhost:1313/tags/blogging/</link>
       <pubDate>Fri, 10 Jan 2020 10:28:03 -0500</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/blogging/</guid>
+      <guid>http://localhost:1313/tags/blogging/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>commento</title>
-      <link>https://www.davidbcalhoun.com/tags/commento/</link>
+      <title>Commento</title>
+      <link>http://localhost:1313/tags/commento/</link>
       <pubDate>Fri, 10 Jan 2020 10:28:03 -0500</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/commento/</guid>
+      <guid>http://localhost:1313/tags/commento/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>comments</title>
-      <link>https://www.davidbcalhoun.com/tags/comments/</link>
+      <title>Comments</title>
+      <link>http://localhost:1313/tags/comments/</link>
       <pubDate>Fri, 10 Jan 2020 10:28:03 -0500</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/comments/</guid>
+      <guid>http://localhost:1313/tags/comments/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>disqus</title>
-      <link>https://www.davidbcalhoun.com/tags/disqus/</link>
+      <title>Disqus</title>
+      <link>http://localhost:1313/tags/disqus/</link>
       <pubDate>Fri, 10 Jan 2020 10:28:03 -0500</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/disqus/</guid>
+      <guid>http://localhost:1313/tags/disqus/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>carlsbad caverns</title>
-      <link>https://www.davidbcalhoun.com/tags/carlsbad-caverns/</link>
+      <title>Carlsbad Caverns</title>
+      <link>http://localhost:1313/tags/carlsbad-caverns/</link>
       <pubDate>Tue, 31 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/carlsbad-caverns/</guid>
+      <guid>http://localhost:1313/tags/carlsbad-caverns/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>cave</title>
-      <link>https://www.davidbcalhoun.com/tags/cave/</link>
+      <title>Cave</title>
+      <link>http://localhost:1313/tags/cave/</link>
       <pubDate>Tue, 31 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/cave/</guid>
+      <guid>http://localhost:1313/tags/cave/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>cross country trip</title>
-      <link>https://www.davidbcalhoun.com/tags/cross-country-trip/</link>
+      <title>Cross Country Trip</title>
+      <link>http://localhost:1313/tags/cross-country-trip/</link>
       <pubDate>Tue, 31 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/cross-country-trip/</guid>
+      <guid>http://localhost:1313/tags/cross-country-trip/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>mono lake</title>
-      <link>https://www.davidbcalhoun.com/tags/mono-lake/</link>
+      <title>Mono Lake</title>
+      <link>http://localhost:1313/tags/mono-lake/</link>
       <pubDate>Tue, 31 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/mono-lake/</guid>
+      <guid>http://localhost:1313/tags/mono-lake/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>monument valley</title>
-      <link>https://www.davidbcalhoun.com/tags/monument-valley/</link>
+      <title>Monument Valley</title>
+      <link>http://localhost:1313/tags/monument-valley/</link>
       <pubDate>Tue, 31 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/monument-valley/</guid>
+      <guid>http://localhost:1313/tags/monument-valley/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>red rock canyon</title>
-      <link>https://www.davidbcalhoun.com/tags/red-rock-canyon/</link>
+      <title>Red Rock Canyon</title>
+      <link>http://localhost:1313/tags/red-rock-canyon/</link>
       <pubDate>Tue, 31 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/red-rock-canyon/</guid>
+      <guid>http://localhost:1313/tags/red-rock-canyon/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>space</title>
-      <link>https://www.davidbcalhoun.com/tags/space/</link>
+      <title>Space</title>
+      <link>http://localhost:1313/tags/space/</link>
       <pubDate>Tue, 31 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/space/</guid>
+      <guid>http://localhost:1313/tags/space/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>stanford theatre</title>
-      <link>https://www.davidbcalhoun.com/tags/stanford-theatre/</link>
+      <title>Stanford Theatre</title>
+      <link>http://localhost:1313/tags/stanford-theatre/</link>
       <pubDate>Tue, 31 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/stanford-theatre/</guid>
+      <guid>http://localhost:1313/tags/stanford-theatre/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>tokyo</title>
-      <link>https://www.davidbcalhoun.com/tags/tokyo/</link>
+      <title>Tokyo</title>
+      <link>http://localhost:1313/tags/tokyo/</link>
       <pubDate>Tue, 31 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/tokyo/</guid>
+      <guid>http://localhost:1313/tags/tokyo/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>utah</title>
-      <link>https://www.davidbcalhoun.com/tags/utah/</link>
+      <title>Utah</title>
+      <link>http://localhost:1313/tags/utah/</link>
       <pubDate>Tue, 31 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/utah/</guid>
+      <guid>http://localhost:1313/tags/utah/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>criterion</title>
-      <link>https://www.davidbcalhoun.com/tags/criterion/</link>
+      <title>Criterion</title>
+      <link>http://localhost:1313/tags/criterion/</link>
       <pubDate>Thu, 10 Oct 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/criterion/</guid>
+      <guid>http://localhost:1313/tags/criterion/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>regexp</title>
-      <link>https://www.davidbcalhoun.com/tags/regexp/</link>
+      <title>Regexp</title>
+      <link>http://localhost:1313/tags/regexp/</link>
       <pubDate>Thu, 10 Oct 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/regexp/</guid>
+      <guid>http://localhost:1313/tags/regexp/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>nature</title>
-      <link>https://www.davidbcalhoun.com/tags/nature/</link>
+      <title>Nature</title>
+      <link>http://localhost:1313/tags/nature/</link>
       <pubDate>Mon, 07 Oct 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/nature/</guid>
+      <guid>http://localhost:1313/tags/nature/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>autumn</title>
-      <link>https://www.davidbcalhoun.com/tags/autumn/</link>
+      <title>Autumn</title>
+      <link>http://localhost:1313/tags/autumn/</link>
       <pubDate>Mon, 31 Dec 2018 08:48:41 -0800</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/autumn/</guid>
+      <guid>http://localhost:1313/tags/autumn/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>autumn colors</title>
-      <link>https://www.davidbcalhoun.com/tags/autumn-colors/</link>
+      <title>Autumn Colors</title>
+      <link>http://localhost:1313/tags/autumn-colors/</link>
       <pubDate>Mon, 31 Dec 2018 08:48:41 -0800</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/autumn-colors/</guid>
+      <guid>http://localhost:1313/tags/autumn-colors/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>big basin redwoods state park</title>
-      <link>https://www.davidbcalhoun.com/tags/big-basin-redwoods-state-park/</link>
+      <title>Big Basin Redwoods State Park</title>
+      <link>http://localhost:1313/tags/big-basin-redwoods-state-park/</link>
       <pubDate>Mon, 31 Dec 2018 08:48:41 -0800</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/big-basin-redwoods-state-park/</guid>
+      <guid>http://localhost:1313/tags/big-basin-redwoods-state-park/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>california</title>
-      <link>https://www.davidbcalhoun.com/tags/california/</link>
+      <title>California</title>
+      <link>http://localhost:1313/tags/california/</link>
       <pubDate>Mon, 31 Dec 2018 08:48:41 -0800</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/california/</guid>
+      <guid>http://localhost:1313/tags/california/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>hawaii</title>
-      <link>https://www.davidbcalhoun.com/tags/hawaii/</link>
+      <title>Hawaii</title>
+      <link>http://localhost:1313/tags/hawaii/</link>
       <pubDate>Mon, 31 Dec 2018 08:48:41 -0800</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/hawaii/</guid>
+      <guid>http://localhost:1313/tags/hawaii/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>pigeon point light station</title>
-      <link>https://www.davidbcalhoun.com/tags/pigeon-point-light-station/</link>
+      <title>Pigeon Point Light Station</title>
+      <link>http://localhost:1313/tags/pigeon-point-light-station/</link>
       <pubDate>Mon, 31 Dec 2018 08:48:41 -0800</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/pigeon-point-light-station/</guid>
+      <guid>http://localhost:1313/tags/pigeon-point-light-station/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>pinnacles national park</title>
-      <link>https://www.davidbcalhoun.com/tags/pinnacles-national-park/</link>
+      <title>Pinnacles National Park</title>
+      <link>http://localhost:1313/tags/pinnacles-national-park/</link>
       <pubDate>Mon, 31 Dec 2018 08:48:41 -0800</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/pinnacles-national-park/</guid>
+      <guid>http://localhost:1313/tags/pinnacles-national-park/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>map</title>
-      <link>https://www.davidbcalhoun.com/tags/map/</link>
+      <title>Map</title>
+      <link>http://localhost:1313/tags/map/</link>
       <pubDate>Sun, 26 Aug 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/map/</guid>
+      <guid>http://localhost:1313/tags/map/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>reduce</title>
-      <link>https://www.davidbcalhoun.com/tags/reduce/</link>
+      <title>Reduce</title>
+      <link>http://localhost:1313/tags/reduce/</link>
       <pubDate>Sun, 26 Aug 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/reduce/</guid>
+      <guid>http://localhost:1313/tags/reduce/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>webdev</title>
-      <link>https://www.davidbcalhoun.com/tags/webdev/</link>
+      <title>Webdev</title>
+      <link>http://localhost:1313/tags/webdev/</link>
       <pubDate>Sun, 26 Aug 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/webdev/</guid>
+      <guid>http://localhost:1313/tags/webdev/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>kierkegaard</title>
-      <link>https://www.davidbcalhoun.com/tags/kierkegaard/</link>
+      <title>Kierkegaard</title>
+      <link>http://localhost:1313/tags/kierkegaard/</link>
       <pubDate>Tue, 11 Jul 2017 13:29:40 -0700</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/kierkegaard/</guid>
+      <guid>http://localhost:1313/tags/kierkegaard/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>rant</title>
-      <link>https://www.davidbcalhoun.com/tags/rant/</link>
+      <title>Rant</title>
+      <link>http://localhost:1313/tags/rant/</link>
       <pubDate>Sun, 09 Jul 2017 20:10:02 -0700</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/rant/</guid>
+      <guid>http://localhost:1313/tags/rant/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>youtube</title>
-      <link>https://www.davidbcalhoun.com/tags/youtube/</link>
+      <title>Youtube</title>
+      <link>http://localhost:1313/tags/youtube/</link>
       <pubDate>Sat, 11 Mar 2017 11:23:40 -0800</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/youtube/</guid>
+      <guid>http://localhost:1313/tags/youtube/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>hakodate</title>
-      <link>https://www.davidbcalhoun.com/tags/hakodate/</link>
+      <title>Hakodate</title>
+      <link>http://localhost:1313/tags/hakodate/</link>
       <pubDate>Sat, 31 Dec 2016 23:17:16 -0800</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/hakodate/</guid>
+      <guid>http://localhost:1313/tags/hakodate/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>june lake</title>
-      <link>https://www.davidbcalhoun.com/tags/june-lake/</link>
+      <title>June Lake</title>
+      <link>http://localhost:1313/tags/june-lake/</link>
       <pubDate>Sat, 31 Dec 2016 23:17:16 -0800</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/june-lake/</guid>
+      <guid>http://localhost:1313/tags/june-lake/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>kiyomizudera</title>
-      <link>https://www.davidbcalhoun.com/tags/kiyomizudera/</link>
+      <title>Kiyomizudera</title>
+      <link>http://localhost:1313/tags/kiyomizudera/</link>
       <pubDate>Sat, 31 Dec 2016 23:17:16 -0800</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/kiyomizudera/</guid>
+      <guid>http://localhost:1313/tags/kiyomizudera/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>korea</title>
-      <link>https://www.davidbcalhoun.com/tags/korea/</link>
+      <title>Korea</title>
+      <link>http://localhost:1313/tags/korea/</link>
       <pubDate>Sat, 31 Dec 2016 23:17:16 -0800</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/korea/</guid>
+      <guid>http://localhost:1313/tags/korea/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>lobdell lake</title>
-      <link>https://www.davidbcalhoun.com/tags/lobdell-lake/</link>
+      <title>Lobdell Lake</title>
+      <link>http://localhost:1313/tags/lobdell-lake/</link>
       <pubDate>Sat, 31 Dec 2016 23:17:16 -0800</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/lobdell-lake/</guid>
+      <guid>http://localhost:1313/tags/lobdell-lake/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>lundy lake</title>
-      <link>https://www.davidbcalhoun.com/tags/lundy-lake/</link>
+      <title>Lundy Lake</title>
+      <link>http://localhost:1313/tags/lundy-lake/</link>
       <pubDate>Sat, 31 Dec 2016 23:17:16 -0800</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/lundy-lake/</guid>
+      <guid>http://localhost:1313/tags/lundy-lake/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>nara</title>
-      <link>https://www.davidbcalhoun.com/tags/nara/</link>
+      <title>Nara</title>
+      <link>http://localhost:1313/tags/nara/</link>
       <pubDate>Sat, 31 Dec 2016 23:17:16 -0800</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/nara/</guid>
+      <guid>http://localhost:1313/tags/nara/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>new orleans</title>
-      <link>https://www.davidbcalhoun.com/tags/new-orleans/</link>
+      <title>New Orleans</title>
+      <link>http://localhost:1313/tags/new-orleans/</link>
       <pubDate>Sat, 31 Dec 2016 23:17:16 -0800</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/new-orleans/</guid>
+      <guid>http://localhost:1313/tags/new-orleans/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>osaka</title>
-      <link>https://www.davidbcalhoun.com/tags/osaka/</link>
+      <title>Osaka</title>
+      <link>http://localhost:1313/tags/osaka/</link>
       <pubDate>Sat, 31 Dec 2016 23:17:16 -0800</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/osaka/</guid>
+      <guid>http://localhost:1313/tags/osaka/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>sapporo</title>
-      <link>https://www.davidbcalhoun.com/tags/sapporo/</link>
+      <title>Sapporo</title>
+      <link>http://localhost:1313/tags/sapporo/</link>
       <pubDate>Sat, 31 Dec 2016 23:17:16 -0800</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/sapporo/</guid>
+      <guid>http://localhost:1313/tags/sapporo/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>shirakawago</title>
-      <link>https://www.davidbcalhoun.com/tags/shirakawago/</link>
+      <title>Shirakawago</title>
+      <link>http://localhost:1313/tags/shirakawago/</link>
       <pubDate>Sat, 31 Dec 2016 23:17:16 -0800</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/shirakawago/</guid>
+      <guid>http://localhost:1313/tags/shirakawago/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>yosemite</title>
-      <link>https://www.davidbcalhoun.com/tags/yosemite/</link>
+      <title>Yosemite</title>
+      <link>http://localhost:1313/tags/yosemite/</link>
       <pubDate>Sat, 31 Dec 2016 23:17:16 -0800</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/yosemite/</guid>
+      <guid>http://localhost:1313/tags/yosemite/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>zion national park</title>
-      <link>https://www.davidbcalhoun.com/tags/zion-national-park/</link>
+      <title>Zion National Park</title>
+      <link>http://localhost:1313/tags/zion-national-park/</link>
       <pubDate>Sat, 31 Dec 2016 23:17:16 -0800</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/zion-national-park/</guid>
+      <guid>http://localhost:1313/tags/zion-national-park/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>politics</title>
-      <link>https://www.davidbcalhoun.com/tags/politics/</link>
+      <title>Politics</title>
+      <link>http://localhost:1313/tags/politics/</link>
       <pubDate>Wed, 09 Nov 2016 09:35:44 -0800</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/politics/</guid>
+      <guid>http://localhost:1313/tags/politics/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>fall</title>
-      <link>https://www.davidbcalhoun.com/tags/fall/</link>
+      <title>Fall</title>
+      <link>http://localhost:1313/tags/fall/</link>
       <pubDate>Thu, 29 Sep 2016 16:06:18 -0700</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/fall/</guid>
+      <guid>http://localhost:1313/tags/fall/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>comedy</title>
-      <link>https://www.davidbcalhoun.com/tags/comedy/</link>
+      <title>Comedy</title>
+      <link>http://localhost:1313/tags/comedy/</link>
       <pubDate>Wed, 06 Jul 2016 19:36:46 -0700</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/comedy/</guid>
+      <guid>http://localhost:1313/tags/comedy/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>culture</title>
-      <link>https://www.davidbcalhoun.com/tags/culture/</link>
+      <title>Culture</title>
+      <link>http://localhost:1313/tags/culture/</link>
       <pubDate>Tue, 14 Jun 2016 22:15:52 +0900</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/culture/</guid>
+      <guid>http://localhost:1313/tags/culture/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>night</title>
-      <link>https://www.davidbcalhoun.com/tags/night/</link>
+      <title>Night</title>
+      <link>http://localhost:1313/tags/night/</link>
       <pubDate>Tue, 14 Jun 2016 22:15:52 +0900</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/night/</guid>
+      <guid>http://localhost:1313/tags/night/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>night photography</title>
-      <link>https://www.davidbcalhoun.com/tags/night-photography/</link>
+      <title>Night Photography</title>
+      <link>http://localhost:1313/tags/night-photography/</link>
       <pubDate>Tue, 14 Jun 2016 22:15:52 +0900</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/night-photography/</guid>
+      <guid>http://localhost:1313/tags/night-photography/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>photo assignment</title>
-      <link>https://www.davidbcalhoun.com/tags/photo-assignment/</link>
+      <title>Photo Assignment</title>
+      <link>http://localhost:1313/tags/photo-assignment/</link>
       <pubDate>Tue, 14 Jun 2016 22:15:52 +0900</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/photo-assignment/</guid>
+      <guid>http://localhost:1313/tags/photo-assignment/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>indonesia</title>
-      <link>https://www.davidbcalhoun.com/tags/indonesia/</link>
+      <title>Indonesia</title>
+      <link>http://localhost:1313/tags/indonesia/</link>
       <pubDate>Thu, 26 May 2016 08:52:04 +0900</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/indonesia/</guid>
+      <guid>http://localhost:1313/tags/indonesia/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>vlog</title>
-      <link>https://www.davidbcalhoun.com/tags/vlog/</link>
+      <title>Vlog</title>
+      <link>http://localhost:1313/tags/vlog/</link>
       <pubDate>Tue, 19 Apr 2016 19:44:03 +0900</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/vlog/</guid>
+      <guid>http://localhost:1313/tags/vlog/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>big basin</title>
-      <link>https://www.davidbcalhoun.com/tags/big-basin/</link>
+      <title>Big Basin</title>
+      <link>http://localhost:1313/tags/big-basin/</link>
       <pubDate>Tue, 02 Feb 2016 08:47:58 -0800</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/big-basin/</guid>
+      <guid>http://localhost:1313/tags/big-basin/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>romance</title>
-      <link>https://www.davidbcalhoun.com/tags/romance/</link>
+      <title>Romance</title>
+      <link>http://localhost:1313/tags/romance/</link>
       <pubDate>Tue, 26 Jan 2016 02:31:10 -0800</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/romance/</guid>
+      <guid>http://localhost:1313/tags/romance/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>war</title>
-      <link>https://www.davidbcalhoun.com/tags/war/</link>
+      <title>War</title>
+      <link>http://localhost:1313/tags/war/</link>
       <pubDate>Tue, 26 Jan 2016 02:31:10 -0800</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/war/</guid>
+      <guid>http://localhost:1313/tags/war/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>biography</title>
-      <link>https://www.davidbcalhoun.com/tags/biography/</link>
+      <title>Biography</title>
+      <link>http://localhost:1313/tags/biography/</link>
       <pubDate>Tue, 26 Jan 2016 02:27:34 -0800</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/biography/</guid>
+      <guid>http://localhost:1313/tags/biography/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>history</title>
-      <link>https://www.davidbcalhoun.com/tags/history/</link>
+      <title>History</title>
+      <link>http://localhost:1313/tags/history/</link>
       <pubDate>Tue, 26 Jan 2016 02:27:34 -0800</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/history/</guid>
+      <guid>http://localhost:1313/tags/history/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>agile</title>
-      <link>https://www.davidbcalhoun.com/tags/agile/</link>
+      <title>Agile</title>
+      <link>http://localhost:1313/tags/agile/</link>
       <pubDate>Thu, 08 Oct 2015 20:12:42 -0700</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/agile/</guid>
+      <guid>http://localhost:1313/tags/agile/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>bullshit</title>
-      <link>https://www.davidbcalhoun.com/tags/bullshit/</link>
+      <title>Bullshit</title>
+      <link>http://localhost:1313/tags/bullshit/</link>
       <pubDate>Thu, 08 Oct 2015 20:12:42 -0700</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/bullshit/</guid>
+      <guid>http://localhost:1313/tags/bullshit/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>parody</title>
-      <link>https://www.davidbcalhoun.com/tags/parody/</link>
+      <title>Parody</title>
+      <link>http://localhost:1313/tags/parody/</link>
       <pubDate>Thu, 08 Oct 2015 20:12:42 -0700</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/parody/</guid>
+      <guid>http://localhost:1313/tags/parody/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>life</title>
-      <link>https://www.davidbcalhoun.com/tags/life/</link>
+      <title>Life</title>
+      <link>http://localhost:1313/tags/life/</link>
       <pubDate>Sun, 04 Oct 2015 00:32:48 -0700</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/life/</guid>
+      <guid>http://localhost:1313/tags/life/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>astronomy</title>
-      <link>https://www.davidbcalhoun.com/tags/astronomy/</link>
+      <title>Astronomy</title>
+      <link>http://localhost:1313/tags/astronomy/</link>
       <pubDate>Sat, 12 Sep 2015 23:40:12 -0700</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/astronomy/</guid>
+      <guid>http://localhost:1313/tags/astronomy/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>astrophotography</title>
-      <link>https://www.davidbcalhoun.com/tags/astrophotography/</link>
+      <title>Astrophotography</title>
+      <link>http://localhost:1313/tags/astrophotography/</link>
       <pubDate>Sat, 12 Sep 2015 23:40:12 -0700</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/astrophotography/</guid>
+      <guid>http://localhost:1313/tags/astrophotography/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>national park</title>
-      <link>https://www.davidbcalhoun.com/tags/national-park/</link>
+      <title>National Park</title>
+      <link>http://localhost:1313/tags/national-park/</link>
       <pubDate>Sat, 12 Sep 2015 23:40:12 -0700</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/national-park/</guid>
+      <guid>http://localhost:1313/tags/national-park/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>night sky</title>
-      <link>https://www.davidbcalhoun.com/tags/night-sky/</link>
+      <title>Night Sky</title>
+      <link>http://localhost:1313/tags/night-sky/</link>
       <pubDate>Sat, 12 Sep 2015 23:40:12 -0700</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/night-sky/</guid>
+      <guid>http://localhost:1313/tags/night-sky/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>pinnacles</title>
-      <link>https://www.davidbcalhoun.com/tags/pinnacles/</link>
+      <title>Pinnacles</title>
+      <link>http://localhost:1313/tags/pinnacles/</link>
       <pubDate>Sat, 12 Sep 2015 23:40:12 -0700</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/pinnacles/</guid>
+      <guid>http://localhost:1313/tags/pinnacles/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>railroad</title>
-      <link>https://www.davidbcalhoun.com/tags/railroad/</link>
+      <title>Eastern Philosophy</title>
+      <link>http://localhost:1313/tags/eastern-philosophy/</link>
+      <pubDate>Sun, 07 Jun 2015 11:15:53 -0700</pubDate>
+      <guid>http://localhost:1313/tags/eastern-philosophy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Time</title>
+      <link>http://localhost:1313/tags/time/</link>
+      <pubDate>Sun, 07 Jun 2015 11:15:53 -0700</pubDate>
+      <guid>http://localhost:1313/tags/time/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Western Philosophy</title>
+      <link>http://localhost:1313/tags/western-philosophy/</link>
+      <pubDate>Sun, 07 Jun 2015 11:15:53 -0700</pubDate>
+      <guid>http://localhost:1313/tags/western-philosophy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Railroad</title>
+      <link>http://localhost:1313/tags/railroad/</link>
       <pubDate>Sat, 16 May 2015 21:41:32 -0700</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/railroad/</guid>
+      <guid>http://localhost:1313/tags/railroad/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>cafe</title>
-      <link>https://www.davidbcalhoun.com/tags/cafe/</link>
+      <title>Cafe</title>
+      <link>http://localhost:1313/tags/cafe/</link>
       <pubDate>Wed, 29 Apr 2015 23:20:01 -0700</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/cafe/</guid>
+      <guid>http://localhost:1313/tags/cafe/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>cherry blossoms</title>
-      <link>https://www.davidbcalhoun.com/tags/cherry-blossoms/</link>
+      <title>Cherry Blossoms</title>
+      <link>http://localhost:1313/tags/cherry-blossoms/</link>
       <pubDate>Wed, 29 Apr 2015 23:20:01 -0700</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/cherry-blossoms/</guid>
+      <guid>http://localhost:1313/tags/cherry-blossoms/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>sakura</title>
-      <link>https://www.davidbcalhoun.com/tags/sakura/</link>
+      <title>Sakura</title>
+      <link>http://localhost:1313/tags/sakura/</link>
       <pubDate>Wed, 29 Apr 2015 23:20:01 -0700</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/sakura/</guid>
+      <guid>http://localhost:1313/tags/sakura/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>spring</title>
-      <link>https://www.davidbcalhoun.com/tags/spring/</link>
+      <title>Spring</title>
+      <link>http://localhost:1313/tags/spring/</link>
       <pubDate>Wed, 29 Apr 2015 23:20:01 -0700</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/spring/</guid>
+      <guid>http://localhost:1313/tags/spring/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>the bible</title>
-      <link>https://www.davidbcalhoun.com/tags/the-bible/</link>
+      <title>The Bible</title>
+      <link>http://localhost:1313/tags/the-bible/</link>
       <pubDate>Mon, 09 Mar 2015 00:29:10 -0700</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/the-bible/</guid>
+      <guid>http://localhost:1313/tags/the-bible/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>exercise</title>
-      <link>https://www.davidbcalhoun.com/tags/exercise/</link>
+      <title>Exercise</title>
+      <link>http://localhost:1313/tags/exercise/</link>
       <pubDate>Mon, 02 Mar 2015 21:40:40 -0800</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/exercise/</guid>
+      <guid>http://localhost:1313/tags/exercise/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>gym</title>
-      <link>https://www.davidbcalhoun.com/tags/gym/</link>
+      <title>Gym</title>
+      <link>http://localhost:1313/tags/gym/</link>
       <pubDate>Mon, 02 Mar 2015 21:40:40 -0800</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/gym/</guid>
+      <guid>http://localhost:1313/tags/gym/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>new year</title>
-      <link>https://www.davidbcalhoun.com/tags/new-year/</link>
+      <title>New Year</title>
+      <link>http://localhost:1313/tags/new-year/</link>
       <pubDate>Sat, 03 Jan 2015 21:52:23 -0800</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/new-year/</guid>
+      <guid>http://localhost:1313/tags/new-year/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>big bear lake</title>
-      <link>https://www.davidbcalhoun.com/tags/big-bear-lake/</link>
+      <title>Big Bear Lake</title>
+      <link>http://localhost:1313/tags/big-bear-lake/</link>
       <pubDate>Wed, 31 Dec 2014 23:00:00 -0700</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/big-bear-lake/</guid>
+      <guid>http://localhost:1313/tags/big-bear-lake/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>fossil falls</title>
-      <link>https://www.davidbcalhoun.com/tags/fossil-falls/</link>
+      <title>Fossil Falls</title>
+      <link>http://localhost:1313/tags/fossil-falls/</link>
       <pubDate>Wed, 31 Dec 2014 23:00:00 -0700</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/fossil-falls/</guid>
+      <guid>http://localhost:1313/tags/fossil-falls/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>lake sabrina</title>
-      <link>https://www.davidbcalhoun.com/tags/lake-sabrina/</link>
+      <title>Lake Sabrina</title>
+      <link>http://localhost:1313/tags/lake-sabrina/</link>
       <pubDate>Wed, 31 Dec 2014 23:00:00 -0700</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/lake-sabrina/</guid>
+      <guid>http://localhost:1313/tags/lake-sabrina/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>mount shasta</title>
-      <link>https://www.davidbcalhoun.com/tags/mount-shasta/</link>
+      <title>Mount Shasta</title>
+      <link>http://localhost:1313/tags/mount-shasta/</link>
       <pubDate>Wed, 31 Dec 2014 23:00:00 -0700</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/mount-shasta/</guid>
+      <guid>http://localhost:1313/tags/mount-shasta/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>muir woods</title>
-      <link>https://www.davidbcalhoun.com/tags/muir-woods/</link>
+      <title>Muir Woods</title>
+      <link>http://localhost:1313/tags/muir-woods/</link>
       <pubDate>Wed, 31 Dec 2014 23:00:00 -0700</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/muir-woods/</guid>
+      <guid>http://localhost:1313/tags/muir-woods/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>naruko gorge</title>
-      <link>https://www.davidbcalhoun.com/tags/naruko-gorge/</link>
+      <title>Naruko Gorge</title>
+      <link>http://localhost:1313/tags/naruko-gorge/</link>
       <pubDate>Wed, 31 Dec 2014 23:00:00 -0700</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/naruko-gorge/</guid>
+      <guid>http://localhost:1313/tags/naruko-gorge/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>florida</title>
-      <link>https://www.davidbcalhoun.com/tags/florida/</link>
+      <title>Florida</title>
+      <link>http://localhost:1313/tags/florida/</link>
       <pubDate>Tue, 16 Dec 2014 01:00:00 -0700</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/florida/</guid>
+      <guid>http://localhost:1313/tags/florida/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>st augustine</title>
-      <link>https://www.davidbcalhoun.com/tags/st-augustine/</link>
+      <title>St Augustine</title>
+      <link>http://localhost:1313/tags/st-augustine/</link>
       <pubDate>Tue, 16 Dec 2014 01:00:00 -0700</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/st-augustine/</guid>
+      <guid>http://localhost:1313/tags/st-augustine/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>async</title>
-      <link>https://www.davidbcalhoun.com/tags/async/</link>
+      <title>Async</title>
+      <link>http://localhost:1313/tags/async/</link>
       <pubDate>Mon, 08 Sep 2014 00:36:52 -0700</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/async/</guid>
+      <guid>http://localhost:1313/tags/async/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>node</title>
-      <link>https://www.davidbcalhoun.com/tags/node/</link>
+      <title>Node</title>
+      <link>http://localhost:1313/tags/node/</link>
       <pubDate>Mon, 08 Sep 2014 00:36:52 -0700</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/node/</guid>
+      <guid>http://localhost:1313/tags/node/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>node.js</title>
-      <link>https://www.davidbcalhoun.com/tags/node.js/</link>
+      <title>Node.js</title>
+      <link>http://localhost:1313/tags/node.js/</link>
       <pubDate>Mon, 08 Sep 2014 00:36:52 -0700</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/node.js/</guid>
+      <guid>http://localhost:1313/tags/node.js/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>maui</title>
-      <link>https://www.davidbcalhoun.com/tags/maui/</link>
+      <title>Maui</title>
+      <link>http://localhost:1313/tags/maui/</link>
       <pubDate>Sun, 07 Sep 2014 23:12:20 -0700</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/maui/</guid>
+      <guid>http://localhost:1313/tags/maui/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>amd</title>
-      <link>https://www.davidbcalhoun.com/tags/amd/</link>
+      <title>Amd</title>
+      <link>http://localhost:1313/tags/amd/</link>
       <pubDate>Wed, 30 Apr 2014 11:59:21 -0700</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/amd/</guid>
+      <guid>http://localhost:1313/tags/amd/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>commonjs</title>
-      <link>https://www.davidbcalhoun.com/tags/commonjs/</link>
+      <title>Commonjs</title>
+      <link>http://localhost:1313/tags/commonjs/</link>
       <pubDate>Wed, 30 Apr 2014 11:59:21 -0700</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/commonjs/</guid>
+      <guid>http://localhost:1313/tags/commonjs/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>apps</title>
-      <link>https://www.davidbcalhoun.com/tags/apps/</link>
+      <title>Apps</title>
+      <link>http://localhost:1313/tags/apps/</link>
       <pubDate>Mon, 14 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/apps/</guid>
+      <guid>http://localhost:1313/tags/apps/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>mobile</title>
-      <link>https://www.davidbcalhoun.com/tags/mobile/</link>
+      <title>Mobile</title>
+      <link>http://localhost:1313/tags/mobile/</link>
       <pubDate>Mon, 14 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/mobile/</guid>
+      <guid>http://localhost:1313/tags/mobile/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>mobile web</title>
-      <link>https://www.davidbcalhoun.com/tags/mobile-web/</link>
+      <title>Mobile Web</title>
+      <link>http://localhost:1313/tags/mobile-web/</link>
       <pubDate>Mon, 14 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/mobile-web/</guid>
+      <guid>http://localhost:1313/tags/mobile-web/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>web</title>
-      <link>https://www.davidbcalhoun.com/tags/web/</link>
+      <title>Web</title>
+      <link>http://localhost:1313/tags/web/</link>
       <pubDate>Mon, 14 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/web/</guid>
+      <guid>http://localhost:1313/tags/web/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>demo</title>
-      <link>https://www.davidbcalhoun.com/tags/demo/</link>
+      <title>Demo</title>
+      <link>http://localhost:1313/tags/demo/</link>
       <pubDate>Sat, 23 Nov 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/demo/</guid>
+      <guid>http://localhost:1313/tags/demo/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>privacy</title>
-      <link>https://www.davidbcalhoun.com/tags/privacy/</link>
+      <title>Privacy</title>
+      <link>http://localhost:1313/tags/privacy/</link>
       <pubDate>Thu, 04 Jul 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/privacy/</guid>
+      <guid>http://localhost:1313/tags/privacy/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>design</title>
-      <link>https://www.davidbcalhoun.com/tags/design/</link>
+      <title>Design</title>
+      <link>http://localhost:1313/tags/design/</link>
       <pubDate>Fri, 10 May 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/design/</guid>
+      <guid>http://localhost:1313/tags/design/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>japanese</title>
-      <link>https://www.davidbcalhoun.com/tags/japanese/</link>
+      <title>Japanese</title>
+      <link>http://localhost:1313/tags/japanese/</link>
       <pubDate>Wed, 27 Feb 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/japanese/</guid>
+      <guid>http://localhost:1313/tags/japanese/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>css</title>
-      <link>https://www.davidbcalhoun.com/tags/css/</link>
+      <title>Css</title>
+      <link>http://localhost:1313/tags/css/</link>
       <pubDate>Fri, 10 Aug 2012 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/css/</guid>
+      <guid>http://localhost:1313/tags/css/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>pseudoelements</title>
-      <link>https://www.davidbcalhoun.com/tags/pseudoelements/</link>
+      <title>Pseudoelements</title>
+      <link>http://localhost:1313/tags/pseudoelements/</link>
       <pubDate>Fri, 10 Aug 2012 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/pseudoelements/</guid>
+      <guid>http://localhost:1313/tags/pseudoelements/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>webkit</title>
-      <link>https://www.davidbcalhoun.com/tags/webkit/</link>
+      <title>Webkit</title>
+      <link>http://localhost:1313/tags/webkit/</link>
       <pubDate>Fri, 10 Aug 2012 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/webkit/</guid>
+      <guid>http://localhost:1313/tags/webkit/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>apple</title>
-      <link>https://www.davidbcalhoun.com/tags/apple/</link>
+      <title>Apple</title>
+      <link>http://localhost:1313/tags/apple/</link>
       <pubDate>Tue, 19 Jun 2012 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/apple/</guid>
+      <guid>http://localhost:1313/tags/apple/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>silicon valley</title>
-      <link>https://www.davidbcalhoun.com/tags/silicon-valley/</link>
+      <title>Silicon Valley</title>
+      <link>http://localhost:1313/tags/silicon-valley/</link>
       <pubDate>Sat, 22 Oct 2011 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/silicon-valley/</guid>
+      <guid>http://localhost:1313/tags/silicon-valley/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>iphone</title>
-      <link>https://www.davidbcalhoun.com/tags/iphone/</link>
+      <title>Iphone</title>
+      <link>http://localhost:1313/tags/iphone/</link>
       <pubDate>Fri, 14 Oct 2011 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/iphone/</guid>
+      <guid>http://localhost:1313/tags/iphone/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>performance</title>
-      <link>https://www.davidbcalhoun.com/tags/performance/</link>
+      <title>Performance</title>
+      <link>http://localhost:1313/tags/performance/</link>
       <pubDate>Fri, 14 Oct 2011 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/performance/</guid>
+      <guid>http://localhost:1313/tags/performance/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>ios</title>
-      <link>https://www.davidbcalhoun.com/tags/ios/</link>
+      <title>Ios</title>
+      <link>http://localhost:1313/tags/ios/</link>
       <pubDate>Tue, 07 Jun 2011 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/ios/</guid>
+      <guid>http://localhost:1313/tags/ios/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>mobile safari</title>
-      <link>https://www.davidbcalhoun.com/tags/mobile-safari/</link>
+      <title>Mobile Safari</title>
+      <link>http://localhost:1313/tags/mobile-safari/</link>
       <pubDate>Tue, 07 Jun 2011 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/mobile-safari/</guid>
+      <guid>http://localhost:1313/tags/mobile-safari/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>android</title>
-      <link>https://www.davidbcalhoun.com/tags/android/</link>
+      <title>Android</title>
+      <link>http://localhost:1313/tags/android/</link>
       <pubDate>Thu, 24 Feb 2011 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/android/</guid>
+      <guid>http://localhost:1313/tags/android/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>autofocus</title>
-      <link>https://www.davidbcalhoun.com/tags/autofocus/</link>
+      <title>Autofocus</title>
+      <link>http://localhost:1313/tags/autofocus/</link>
       <pubDate>Thu, 07 Oct 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/autofocus/</guid>
+      <guid>http://localhost:1313/tags/autofocus/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>cache manifest</title>
-      <link>https://www.davidbcalhoun.com/tags/cache-manifest/</link>
+      <title>Cache Manifest</title>
+      <link>http://localhost:1313/tags/cache-manifest/</link>
       <pubDate>Thu, 07 Oct 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/cache-manifest/</guid>
+      <guid>http://localhost:1313/tags/cache-manifest/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>charset</title>
-      <link>https://www.davidbcalhoun.com/tags/charset/</link>
+      <title>Charset</title>
+      <link>http://localhost:1313/tags/charset/</link>
       <pubDate>Thu, 07 Oct 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/charset/</guid>
+      <guid>http://localhost:1313/tags/charset/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>defer</title>
-      <link>https://www.davidbcalhoun.com/tags/defer/</link>
+      <title>Defer</title>
+      <link>http://localhost:1313/tags/defer/</link>
       <pubDate>Thu, 07 Oct 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/defer/</guid>
+      <guid>http://localhost:1313/tags/defer/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>doctype</title>
-      <link>https://www.davidbcalhoun.com/tags/doctype/</link>
+      <title>Doctype</title>
+      <link>http://localhost:1313/tags/doctype/</link>
       <pubDate>Thu, 07 Oct 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/doctype/</guid>
+      <guid>http://localhost:1313/tags/doctype/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>html</title>
-      <link>https://www.davidbcalhoun.com/tags/html/</link>
+      <title>Html</title>
+      <link>http://localhost:1313/tags/html/</link>
       <pubDate>Thu, 07 Oct 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/html/</guid>
+      <guid>http://localhost:1313/tags/html/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>html5</title>
-      <link>https://www.davidbcalhoun.com/tags/html5/</link>
+      <title>Html5</title>
+      <link>http://localhost:1313/tags/html5/</link>
       <pubDate>Thu, 07 Oct 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/html5/</guid>
+      <guid>http://localhost:1313/tags/html5/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>localStorage</title>
-      <link>https://www.davidbcalhoun.com/tags/localstorage/</link>
+      <title>LocalStorage</title>
+      <link>http://localhost:1313/tags/localstorage/</link>
       <pubDate>Thu, 07 Oct 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/localstorage/</guid>
+      <guid>http://localhost:1313/tags/localstorage/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>placeholder</title>
-      <link>https://www.davidbcalhoun.com/tags/placeholder/</link>
+      <title>Placeholder</title>
+      <link>http://localhost:1313/tags/placeholder/</link>
       <pubDate>Thu, 07 Oct 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/placeholder/</guid>
+      <guid>http://localhost:1313/tags/placeholder/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>sessionStorage</title>
-      <link>https://www.davidbcalhoun.com/tags/sessionstorage/</link>
+      <title>SessionStorage</title>
+      <link>http://localhost:1313/tags/sessionstorage/</link>
       <pubDate>Thu, 07 Oct 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/sessionstorage/</guid>
+      <guid>http://localhost:1313/tags/sessionstorage/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>em</title>
-      <link>https://www.davidbcalhoun.com/tags/em/</link>
+      <title>Em</title>
+      <link>http://localhost:1313/tags/em/</link>
       <pubDate>Tue, 05 Oct 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/em/</guid>
+      <guid>http://localhost:1313/tags/em/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>links</title>
-      <link>https://www.davidbcalhoun.com/tags/links/</link>
+      <title>Links</title>
+      <link>http://localhost:1313/tags/links/</link>
       <pubDate>Tue, 05 Oct 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/links/</guid>
+      <guid>http://localhost:1313/tags/links/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>media queries</title>
-      <link>https://www.davidbcalhoun.com/tags/media-queries/</link>
+      <title>Media Queries</title>
+      <link>http://localhost:1313/tags/media-queries/</link>
       <pubDate>Tue, 05 Oct 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/media-queries/</guid>
+      <guid>http://localhost:1313/tags/media-queries/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>px</title>
-      <link>https://www.davidbcalhoun.com/tags/px/</link>
+      <title>Px</title>
+      <link>http://localhost:1313/tags/px/</link>
       <pubDate>Tue, 05 Oct 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/px/</guid>
+      <guid>http://localhost:1313/tags/px/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>orientation</title>
-      <link>https://www.davidbcalhoun.com/tags/orientation/</link>
+      <title>Orientation</title>
+      <link>http://localhost:1313/tags/orientation/</link>
       <pubDate>Tue, 24 Aug 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/orientation/</guid>
+      <guid>http://localhost:1313/tags/orientation/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>blackberry</title>
-      <link>https://www.davidbcalhoun.com/tags/blackberry/</link>
+      <title>Blackberry</title>
+      <link>http://localhost:1313/tags/blackberry/</link>
       <pubDate>Wed, 18 Aug 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/blackberry/</guid>
+      <guid>http://localhost:1313/tags/blackberry/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>sunspider</title>
-      <link>https://www.davidbcalhoun.com/tags/sunspider/</link>
+      <title>Sunspider</title>
+      <link>http://localhost:1313/tags/sunspider/</link>
       <pubDate>Wed, 18 Aug 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/sunspider/</guid>
+      <guid>http://localhost:1313/tags/sunspider/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>hash</title>
-      <link>https://www.davidbcalhoun.com/tags/hash/</link>
+      <title>Hash</title>
+      <link>http://localhost:1313/tags/hash/</link>
       <pubDate>Tue, 17 Aug 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/hash/</guid>
+      <guid>http://localhost:1313/tags/hash/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>jsperf</title>
-      <link>https://www.davidbcalhoun.com/tags/jsperf/</link>
+      <title>Jsperf</title>
+      <link>http://localhost:1313/tags/jsperf/</link>
       <pubDate>Tue, 17 Aug 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/jsperf/</guid>
+      <guid>http://localhost:1313/tags/jsperf/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>switch</title>
-      <link>https://www.davidbcalhoun.com/tags/switch/</link>
+      <title>Switch</title>
+      <link>http://localhost:1313/tags/switch/</link>
       <pubDate>Tue, 17 Aug 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/switch/</guid>
+      <guid>http://localhost:1313/tags/switch/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>event</title>
-      <link>https://www.davidbcalhoun.com/tags/event/</link>
+      <title>Event</title>
+      <link>http://localhost:1313/tags/event/</link>
       <pubDate>Sat, 17 Jul 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/event/</guid>
+      <guid>http://localhost:1313/tags/event/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>flickr</title>
-      <link>https://www.davidbcalhoun.com/tags/flickr/</link>
+      <title>Flickr</title>
+      <link>http://localhost:1313/tags/flickr/</link>
       <pubDate>Fri, 16 Jul 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/flickr/</guid>
+      <guid>http://localhost:1313/tags/flickr/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>conditional comments</title>
-      <link>https://www.davidbcalhoun.com/tags/conditional-comments/</link>
+      <title>Conditional Comments</title>
+      <link>http://localhost:1313/tags/conditional-comments/</link>
       <pubDate>Wed, 07 Jul 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/conditional-comments/</guid>
+      <guid>http://localhost:1313/tags/conditional-comments/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>hacks</title>
-      <link>https://www.davidbcalhoun.com/tags/hacks/</link>
+      <title>Hacks</title>
+      <link>http://localhost:1313/tags/hacks/</link>
       <pubDate>Wed, 07 Jul 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/hacks/</guid>
+      <guid>http://localhost:1313/tags/hacks/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>ie hack</title>
-      <link>https://www.davidbcalhoun.com/tags/ie-hack/</link>
+      <title>Ie Hack</title>
+      <link>http://localhost:1313/tags/ie-hack/</link>
       <pubDate>Wed, 07 Jul 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/ie-hack/</guid>
+      <guid>http://localhost:1313/tags/ie-hack/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>ie6</title>
-      <link>https://www.davidbcalhoun.com/tags/ie6/</link>
+      <title>Ie6</title>
+      <link>http://localhost:1313/tags/ie6/</link>
       <pubDate>Wed, 07 Jul 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/ie6/</guid>
+      <guid>http://localhost:1313/tags/ie6/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>ie7</title>
-      <link>https://www.davidbcalhoun.com/tags/ie7/</link>
+      <title>Ie7</title>
+      <link>http://localhost:1313/tags/ie7/</link>
       <pubDate>Wed, 07 Jul 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/ie7/</guid>
+      <guid>http://localhost:1313/tags/ie7/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>ie8</title>
-      <link>https://www.davidbcalhoun.com/tags/ie8/</link>
+      <title>Ie8</title>
+      <link>http://localhost:1313/tags/ie8/</link>
       <pubDate>Wed, 07 Jul 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/ie8/</guid>
+      <guid>http://localhost:1313/tags/ie8/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>ie9</title>
-      <link>https://www.davidbcalhoun.com/tags/ie9/</link>
+      <title>Ie9</title>
+      <link>http://localhost:1313/tags/ie9/</link>
       <pubDate>Wed, 07 Jul 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/ie9/</guid>
+      <guid>http://localhost:1313/tags/ie9/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>basejs</title>
-      <link>https://www.davidbcalhoun.com/tags/basejs/</link>
+      <title>Basejs</title>
+      <link>http://localhost:1313/tags/basejs/</link>
       <pubDate>Tue, 29 Jun 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/basejs/</guid>
+      <guid>http://localhost:1313/tags/basejs/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>blackberry.network</title>
-      <link>https://www.davidbcalhoun.com/tags/blackberry.network/</link>
+      <title>Blackberry.network</title>
+      <link>http://localhost:1313/tags/blackberry.network/</link>
       <pubDate>Tue, 29 Jun 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/blackberry.network/</guid>
+      <guid>http://localhost:1313/tags/blackberry.network/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>blackberry.system</title>
-      <link>https://www.davidbcalhoun.com/tags/blackberry.system/</link>
+      <title>Blackberry.system</title>
+      <link>http://localhost:1313/tags/blackberry.system/</link>
       <pubDate>Tue, 29 Jun 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/blackberry.system/</guid>
+      <guid>http://localhost:1313/tags/blackberry.system/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>capture api</title>
-      <link>https://www.davidbcalhoun.com/tags/capture-api/</link>
+      <title>Capture Api</title>
+      <link>http://localhost:1313/tags/capture-api/</link>
       <pubDate>Tue, 29 Jun 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/capture-api/</guid>
+      <guid>http://localhost:1313/tags/capture-api/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>gesture events</title>
-      <link>https://www.davidbcalhoun.com/tags/gesture-events/</link>
+      <title>Gesture Events</title>
+      <link>http://localhost:1313/tags/gesture-events/</link>
       <pubDate>Tue, 29 Jun 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/gesture-events/</guid>
+      <guid>http://localhost:1313/tags/gesture-events/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>iui</title>
-      <link>https://www.davidbcalhoun.com/tags/iui/</link>
+      <title>Iui</title>
+      <link>http://localhost:1313/tags/iui/</link>
       <pubDate>Tue, 29 Jun 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/iui/</guid>
+      <guid>http://localhost:1313/tags/iui/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>jqtouch</title>
-      <link>https://www.davidbcalhoun.com/tags/jqtouch/</link>
+      <title>Jqtouch</title>
+      <link>http://localhost:1313/tags/jqtouch/</link>
       <pubDate>Tue, 29 Jun 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/jqtouch/</guid>
+      <guid>http://localhost:1313/tags/jqtouch/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>mozorientation</title>
-      <link>https://www.davidbcalhoun.com/tags/mozorientation/</link>
+      <title>Mozorientation</title>
+      <link>http://localhost:1313/tags/mozorientation/</link>
       <pubDate>Tue, 29 Jun 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/mozorientation/</guid>
+      <guid>http://localhost:1313/tags/mozorientation/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>orientationchange</title>
-      <link>https://www.davidbcalhoun.com/tags/orientationchange/</link>
+      <title>Orientationchange</title>
+      <link>http://localhost:1313/tags/orientationchange/</link>
       <pubDate>Tue, 29 Jun 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/orientationchange/</guid>
+      <guid>http://localhost:1313/tags/orientationchange/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>pastrykit</title>
-      <link>https://www.davidbcalhoun.com/tags/pastrykit/</link>
+      <title>Pastrykit</title>
+      <link>http://localhost:1313/tags/pastrykit/</link>
       <pubDate>Tue, 29 Jun 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/pastrykit/</guid>
+      <guid>http://localhost:1313/tags/pastrykit/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>touch events</title>
-      <link>https://www.davidbcalhoun.com/tags/touch-events/</link>
+      <title>Touch Events</title>
+      <link>http://localhost:1313/tags/touch-events/</link>
       <pubDate>Tue, 29 Jun 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/touch-events/</guid>
+      <guid>http://localhost:1313/tags/touch-events/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>xui</title>
-      <link>https://www.davidbcalhoun.com/tags/xui/</link>
+      <title>Xui</title>
+      <link>http://localhost:1313/tags/xui/</link>
       <pubDate>Tue, 29 Jun 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/xui/</guid>
+      <guid>http://localhost:1313/tags/xui/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>iphone 4</title>
-      <link>https://www.davidbcalhoun.com/tags/iphone-4/</link>
+      <title>Iphone 4</title>
+      <link>http://localhost:1313/tags/iphone-4/</link>
       <pubDate>Fri, 25 Jun 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/iphone-4/</guid>
+      <guid>http://localhost:1313/tags/iphone-4/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>htc evo</title>
-      <link>https://www.davidbcalhoun.com/tags/htc-evo/</link>
+      <title>Htc Evo</title>
+      <link>http://localhost:1313/tags/htc-evo/</link>
       <pubDate>Thu, 10 Jun 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/htc-evo/</guid>
+      <guid>http://localhost:1313/tags/htc-evo/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>htc incredible</title>
-      <link>https://www.davidbcalhoun.com/tags/htc-incredible/</link>
+      <title>Htc Incredible</title>
+      <link>http://localhost:1313/tags/htc-incredible/</link>
       <pubDate>Thu, 10 Jun 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/htc-incredible/</guid>
+      <guid>http://localhost:1313/tags/htc-incredible/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>nexus one</title>
-      <link>https://www.davidbcalhoun.com/tags/nexus-one/</link>
+      <title>Nexus One</title>
+      <link>http://localhost:1313/tags/nexus-one/</link>
       <pubDate>Thu, 10 Jun 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/nexus-one/</guid>
+      <guid>http://localhost:1313/tags/nexus-one/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>avd</title>
-      <link>https://www.davidbcalhoun.com/tags/avd/</link>
+      <title>Avd</title>
+      <link>http://localhost:1313/tags/avd/</link>
       <pubDate>Wed, 09 Jun 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/avd/</guid>
+      <guid>http://localhost:1313/tags/avd/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>emulator</title>
-      <link>https://www.davidbcalhoun.com/tags/emulator/</link>
+      <title>Emulator</title>
+      <link>http://localhost:1313/tags/emulator/</link>
       <pubDate>Wed, 09 Jun 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/emulator/</guid>
+      <guid>http://localhost:1313/tags/emulator/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>button</title>
-      <link>https://www.davidbcalhoun.com/tags/button/</link>
+      <title>Button</title>
+      <link>http://localhost:1313/tags/button/</link>
       <pubDate>Wed, 19 May 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/button/</guid>
+      <guid>http://localhost:1313/tags/button/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>testing</title>
-      <link>https://www.davidbcalhoun.com/tags/testing/</link>
+      <title>Testing</title>
+      <link>http://localhost:1313/tags/testing/</link>
       <pubDate>Wed, 19 May 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/testing/</guid>
+      <guid>http://localhost:1313/tags/testing/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>usability</title>
-      <link>https://www.davidbcalhoun.com/tags/usability/</link>
+      <title>Usability</title>
+      <link>http://localhost:1313/tags/usability/</link>
       <pubDate>Wed, 19 May 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/usability/</guid>
+      <guid>http://localhost:1313/tags/usability/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>simulator</title>
-      <link>https://www.davidbcalhoun.com/tags/simulator/</link>
+      <title>Simulator</title>
+      <link>http://localhost:1313/tags/simulator/</link>
       <pubDate>Tue, 11 May 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/simulator/</guid>
+      <guid>http://localhost:1313/tags/simulator/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>handheldfriendly</title>
-      <link>https://www.davidbcalhoun.com/tags/handheldfriendly/</link>
+      <title>Handheldfriendly</title>
+      <link>http://localhost:1313/tags/handheldfriendly/</link>
       <pubDate>Thu, 06 May 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/handheldfriendly/</guid>
+      <guid>http://localhost:1313/tags/handheldfriendly/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>metatag</title>
-      <link>https://www.davidbcalhoun.com/tags/metatag/</link>
+      <title>Metatag</title>
+      <link>http://localhost:1313/tags/metatag/</link>
       <pubDate>Thu, 06 May 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/metatag/</guid>
+      <guid>http://localhost:1313/tags/metatag/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>mobileoptimized</title>
-      <link>https://www.davidbcalhoun.com/tags/mobileoptimized/</link>
+      <title>Mobileoptimized</title>
+      <link>http://localhost:1313/tags/mobileoptimized/</link>
       <pubDate>Thu, 06 May 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/mobileoptimized/</guid>
+      <guid>http://localhost:1313/tags/mobileoptimized/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>viewport</title>
-      <link>https://www.davidbcalhoun.com/tags/viewport/</link>
+      <title>Viewport</title>
+      <link>http://localhost:1313/tags/viewport/</link>
       <pubDate>Thu, 06 May 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/viewport/</guid>
+      <guid>http://localhost:1313/tags/viewport/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>box model</title>
-      <link>https://www.davidbcalhoun.com/tags/box-model/</link>
+      <title>Box Model</title>
+      <link>http://localhost:1313/tags/box-model/</link>
       <pubDate>Tue, 02 Mar 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/box-model/</guid>
+      <guid>http://localhost:1313/tags/box-model/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>color</title>
-      <link>https://www.davidbcalhoun.com/tags/color/</link>
+      <title>Color</title>
+      <link>http://localhost:1313/tags/color/</link>
       <pubDate>Tue, 29 Dec 2009 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/color/</guid>
+      <guid>http://localhost:1313/tags/color/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>hex</title>
-      <link>https://www.davidbcalhoun.com/tags/hex/</link>
+      <title>Hex</title>
+      <link>http://localhost:1313/tags/hex/</link>
       <pubDate>Tue, 29 Dec 2009 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/hex/</guid>
+      <guid>http://localhost:1313/tags/hex/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>rgb</title>
-      <link>https://www.davidbcalhoun.com/tags/rgb/</link>
+      <title>Rgb</title>
+      <link>http://localhost:1313/tags/rgb/</link>
       <pubDate>Tue, 29 Dec 2009 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/rgb/</guid>
+      <guid>http://localhost:1313/tags/rgb/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>rgba</title>
-      <link>https://www.davidbcalhoun.com/tags/rgba/</link>
+      <title>Rgba</title>
+      <link>http://localhost:1313/tags/rgba/</link>
       <pubDate>Tue, 29 Dec 2009 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/rgba/</guid>
+      <guid>http://localhost:1313/tags/rgba/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>web safe</title>
-      <link>https://www.davidbcalhoun.com/tags/web-safe/</link>
+      <title>Web Safe</title>
+      <link>http://localhost:1313/tags/web-safe/</link>
       <pubDate>Tue, 29 Dec 2009 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/web-safe/</guid>
+      <guid>http://localhost:1313/tags/web-safe/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>john resig</title>
-      <link>https://www.davidbcalhoun.com/tags/john-resig/</link>
+      <title>John Resig</title>
+      <link>http://localhost:1313/tags/john-resig/</link>
       <pubDate>Mon, 21 Dec 2009 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/john-resig/</guid>
+      <guid>http://localhost:1313/tags/john-resig/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>yahoo</title>
-      <link>https://www.davidbcalhoun.com/tags/yahoo/</link>
+      <title>Yahoo</title>
+      <link>http://localhost:1313/tags/yahoo/</link>
       <pubDate>Mon, 21 Dec 2009 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/yahoo/</guid>
+      <guid>http://localhost:1313/tags/yahoo/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>_</title>
-      <link>https://www.davidbcalhoun.com/tags/_/</link>
+      <link>http://localhost:1313/tags/_/</link>
       <pubDate>Tue, 08 Dec 2009 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/_/</guid>
+      <guid>http://localhost:1313/tags/_/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>jQuery</title>
-      <link>https://www.davidbcalhoun.com/tags/jquery/</link>
+      <title>$</title>
+      <link>http://localhost:1313/tags/</link>
       <pubDate>Tue, 08 Dec 2009 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/jquery/</guid>
+      <guid>http://localhost:1313/tags/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>beginner</title>
-      <link>https://www.davidbcalhoun.com/tags/beginner/</link>
+      <title>$$</title>
+      <link>http://localhost:1313/tags/</link>
+      <pubDate>Tue, 08 Dec 2009 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>JQuery</title>
+      <link>http://localhost:1313/tags/jquery/</link>
+      <pubDate>Tue, 08 Dec 2009 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/jquery/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Beginner</title>
+      <link>http://localhost:1313/tags/beginner/</link>
       <pubDate>Fri, 04 Dec 2009 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/beginner/</guid>
+      <guid>http://localhost:1313/tags/beginner/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>functions</title>
-      <link>https://www.davidbcalhoun.com/tags/functions/</link>
+      <title>Functions</title>
+      <link>http://localhost:1313/tags/functions/</link>
       <pubDate>Fri, 04 Dec 2009 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/functions/</guid>
+      <guid>http://localhost:1313/tags/functions/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>exists</title>
-      <link>https://www.davidbcalhoun.com/tags/exists/</link>
+      <title>Exists</title>
+      <link>http://localhost:1313/tags/exists/</link>
       <pubDate>Tue, 01 Dec 2009 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/exists/</guid>
+      <guid>http://localhost:1313/tags/exists/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>function_exists</title>
-      <link>https://www.davidbcalhoun.com/tags/function_exists/</link>
+      <title>Function_exists</title>
+      <link>http://localhost:1313/tags/function_exists/</link>
       <pubDate>Tue, 01 Dec 2009 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/function_exists/</guid>
+      <guid>http://localhost:1313/tags/function_exists/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>isset</title>
-      <link>https://www.davidbcalhoun.com/tags/isset/</link>
+      <title>Isset</title>
+      <link>http://localhost:1313/tags/isset/</link>
       <pubDate>Tue, 01 Dec 2009 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/isset/</guid>
+      <guid>http://localhost:1313/tags/isset/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>method_exists</title>
-      <link>https://www.davidbcalhoun.com/tags/method_exists/</link>
+      <title>Method_exists</title>
+      <link>http://localhost:1313/tags/method_exists/</link>
       <pubDate>Tue, 01 Dec 2009 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/method_exists/</guid>
+      <guid>http://localhost:1313/tags/method_exists/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>php</title>
-      <link>https://www.davidbcalhoun.com/tags/php/</link>
+      <title>Php</title>
+      <link>http://localhost:1313/tags/php/</link>
       <pubDate>Tue, 01 Dec 2009 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/php/</guid>
+      <guid>http://localhost:1313/tags/php/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>1.7</title>
-      <link>https://www.davidbcalhoun.com/tags/1.7/</link>
+      <link>http://localhost:1313/tags/1.7/</link>
       <pubDate>Tue, 15 Sep 2009 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/1.7/</guid>
+      <guid>http://localhost:1313/tags/1.7/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>block scope</title>
-      <link>https://www.davidbcalhoun.com/tags/block-scope/</link>
+      <title>Block Scope</title>
+      <link>http://localhost:1313/tags/block-scope/</link>
       <pubDate>Tue, 15 Sep 2009 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/block-scope/</guid>
+      <guid>http://localhost:1313/tags/block-scope/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>let</title>
-      <link>https://www.davidbcalhoun.com/tags/let/</link>
+      <title>Let</title>
+      <link>http://localhost:1313/tags/let/</link>
       <pubDate>Tue, 15 Sep 2009 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/let/</guid>
+      <guid>http://localhost:1313/tags/let/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>OO</title>
-      <link>https://www.davidbcalhoun.com/tags/oo/</link>
+      <link>http://localhost:1313/tags/oo/</link>
       <pubDate>Mon, 14 Sep 2009 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/oo/</guid>
+      <guid>http://localhost:1313/tags/oo/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>singleton</title>
-      <link>https://www.davidbcalhoun.com/tags/singleton/</link>
+      <title>Singleton</title>
+      <link>http://localhost:1313/tags/singleton/</link>
       <pubDate>Mon, 14 Sep 2009 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/singleton/</guid>
+      <guid>http://localhost:1313/tags/singleton/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>6.12</title>
-      <link>https://www.davidbcalhoun.com/tags/6.12/</link>
+      <link>http://localhost:1313/tags/6.12/</link>
       <pubDate>Mon, 31 Aug 2009 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/6.12/</guid>
+      <guid>http://localhost:1313/tags/6.12/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>display</title>
-      <link>https://www.davidbcalhoun.com/tags/display/</link>
+      <title>Display</title>
+      <link>http://localhost:1313/tags/display/</link>
       <pubDate>Mon, 31 Aug 2009 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/display/</guid>
+      <guid>http://localhost:1313/tags/display/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>ie</title>
-      <link>https://www.davidbcalhoun.com/tags/ie/</link>
+      <title>Ie</title>
+      <link>http://localhost:1313/tags/ie/</link>
       <pubDate>Mon, 31 Aug 2009 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/ie/</guid>
+      <guid>http://localhost:1313/tags/ie/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>iemobile</title>
-      <link>https://www.davidbcalhoun.com/tags/iemobile/</link>
+      <title>Iemobile</title>
+      <link>http://localhost:1313/tags/iemobile/</link>
       <pubDate>Mon, 31 Aug 2009 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/iemobile/</guid>
+      <guid>http://localhost:1313/tags/iemobile/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>inline</title>
-      <link>https://www.davidbcalhoun.com/tags/inline/</link>
+      <title>Inline</title>
+      <link>http://localhost:1313/tags/inline/</link>
       <pubDate>Mon, 31 Aug 2009 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/inline/</guid>
+      <guid>http://localhost:1313/tags/inline/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>inline-block</title>
-      <link>https://www.davidbcalhoun.com/tags/inline-block/</link>
+      <title>Inline-Block</title>
+      <link>http://localhost:1313/tags/inline-block/</link>
       <pubDate>Mon, 31 Aug 2009 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/inline-block/</guid>
+      <guid>http://localhost:1313/tags/inline-block/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>internet explorer</title>
-      <link>https://www.davidbcalhoun.com/tags/internet-explorer/</link>
+      <title>Internet Explorer</title>
+      <link>http://localhost:1313/tags/internet-explorer/</link>
       <pubDate>Mon, 31 Aug 2009 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/tags/internet-explorer/</guid>
+      <guid>http://localhost:1313/tags/internet-explorer/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

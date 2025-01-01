@@ -1,40 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>eastern sierra on David Calhoun&#39;s blog</title>
-    <link>https://www.davidbcalhoun.com/tags/eastern-sierra/</link>
-    <description>Recent content in eastern sierra on David Calhoun&#39;s blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Eastern Sierra on David Calhoun&#39;s blog</title>
+    <link>http://localhost:1313/tags/eastern-sierra/</link>
+    <description>Recent content in Eastern Sierra on David Calhoun&#39;s blog</description>
+    <generator>Hugo</generator>
     <language>en-US</language>
-    <lastBuildDate>Fri, 31 Dec 2021 15:00:00 -0500</lastBuildDate><atom:link href="https://www.davidbcalhoun.com/tags/eastern-sierra/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 31 Dec 2021 15:00:00 -0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/eastern-sierra/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My year in photos (2021)</title>
-      <link>https://www.davidbcalhoun.com/2021/my-year-in-photos-2021/</link>
+      <link>http://localhost:1313/2021/my-year-in-photos-2021/</link>
       <pubDate>Fri, 31 Dec 2021 15:00:00 -0500</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/2021/my-year-in-photos-2021/</guid>
-      <description>Intro Despite the continuing COVID-19 pandemic this year, I am grateful I was able to travel a bit. Two separate flights to California and a few road trips. While trying to keep as safe as possible, and being lucky so far not to have symptoms of COVID over this two year period (at the moment anyway&amp;hellip;).
-One of my favorite hiking spots this year was the Williamson Preserve, which is a long path of hiking and biking trails that was recently converted from farmland.</description>
+      <guid>http://localhost:1313/2021/my-year-in-photos-2021/</guid>
+      <description>&lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;&#xA;&lt;p&gt;Despite the continuing COVID-19 pandemic this year, I am grateful I was able to travel a bit.  Two separate flights to California and a few road trips.  While trying to keep as safe as possible, and being lucky so far not to have symptoms of COVID over this two year period (at the moment anyway&amp;hellip;).&lt;/p&gt;&#xA;&lt;p&gt;One of my favorite hiking spots this year was the Williamson Preserve, which is a long path of hiking and biking trails that was recently converted from farmland.  In the summertime the crews there planted a ton of flowers which attracted so many large butterflies.  On one of my hikes this area was swarming with Eastern Tiger Swallowtails, along with a lot of bees.  Pollinators&amp;rsquo; paradise!&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>My year in photos (2019)</title>
-      <link>https://www.davidbcalhoun.com/2019/my-year-in-photos-2019/</link>
+      <link>http://localhost:1313/2019/my-year-in-photos-2019/</link>
       <pubDate>Tue, 31 Dec 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/2019/my-year-in-photos-2019/</guid>
-      <description>In many ways this has been a strange and wonderful year, probably my most favorite year of my life to date. I traveled to Japan on a great flight deal, I hiked more than 1100 miles of the Appalachian Trail, and I drove across the USA on two (!) cross-country road trips, the latter a wonderful solo trip where I took my time photographing and visiting wonderful parks and museums.</description>
+      <guid>http://localhost:1313/2019/my-year-in-photos-2019/</guid>
+      <description>&lt;p&gt;In many ways this has been a strange and wonderful year, probably my most favorite year of my life to date.  I traveled to Japan on a great flight deal, I hiked more than 1100 miles of the Appalachian Trail, and I drove across the USA on two (!) cross-country road trips, the latter a wonderful solo trip where I took my time photographing and visiting wonderful parks and museums.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>My year in photos (2018)</title>
-      <link>https://www.davidbcalhoun.com/2018/my-year-in-photos-2018/</link>
+      <link>http://localhost:1313/2018/my-year-in-photos-2018/</link>
       <pubDate>Mon, 31 Dec 2018 08:48:41 -0800</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/2018/my-year-in-photos-2018/</guid>
-      <description>When the year&amp;rsquo;s days shorten and their number dwindles, I have liked to sometimes take the initiative to sort through all the photos I&amp;rsquo;ve taken (with my &amp;ldquo;big&amp;rdquo; camera). The eventual goal: to put together a sampling of the photos that stand out, sometimes for technical reasons, and sometimes for other reasons.
-This year I sadly didn&amp;rsquo;t get out with the camera as much as I have in previous years, which made this post much easier (no excuses this year!</description>
+      <guid>http://localhost:1313/2018/my-year-in-photos-2018/</guid>
+      <description>&lt;p&gt;When the year&amp;rsquo;s days shorten and their number dwindles, I have liked to sometimes take the initiative to sort through all the photos I&amp;rsquo;ve taken (with my &amp;ldquo;big&amp;rdquo; camera).  The eventual goal: to put together a sampling of the photos that stand out, sometimes for technical reasons, and sometimes for other reasons.&lt;/p&gt;&#xA;&lt;p&gt;This year I sadly didn&amp;rsquo;t get out with the camera as much as I have in previous years, which made this post much easier (no excuses this year!).  Less photos to sort through!  And much easier to pick out a small representative sampling.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

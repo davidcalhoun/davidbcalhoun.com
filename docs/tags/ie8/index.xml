@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ie8 on David Calhoun&#39;s blog</title>
+    <title>Ie8 on David Calhoun&#39;s blog</title>
     <link>https://www.davidbcalhoun.com/tags/ie8/</link>
-    <description>Recent content in ie8 on David Calhoun&#39;s blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Ie8 on David Calhoun&#39;s blog</description>
+    <generator>Hugo</generator>
     <language>en-US</language>
     <lastBuildDate>Wed, 07 Jul 2010 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://www.davidbcalhoun.com/tags/ie8/index.xml" rel="self" type="application/rss+xml" />
@@ -13,7 +13,7 @@
       <link>https://www.davidbcalhoun.com/2010/targeting-internet-explorer-ie-the-age-old-struggle/</link>
       <pubDate>Wed, 07 Jul 2010 00:00:00 +0000</pubDate>
       <guid>https://www.davidbcalhoun.com/2010/targeting-internet-explorer-ie-the-age-old-struggle/</guid>
-      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ As long as I can remember, developers have always been trying to target IE one way or another. Thanks to the wonders of modern technology, there have been multiple ways to pull this off.&#xA;I guess I really haven’t been keeping up with the latest frontend trends (doh!), as I’ve just recently discovered this very elegant solution circa 2008 offered by Paul Irish, which sticks a class on the body tag using proprietary conditional IE tags (no JavaScript magic needed here!</description>
+      <description>&lt;h2 id=&#34;-warning-this-is-an-old-article-and-may-include-information-thats-out-of-date-&#34;&gt;⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️&lt;/h2&gt;&#xA;&lt;p&gt;As long as I can remember, developers have always been trying to target IE one way or another. Thanks to the wonders of modern technology, there have been multiple ways to pull this off.&lt;/p&gt;&#xA;&lt;p&gt;I guess I really haven’t been keeping up with the latest frontend trends (doh!), as I’ve just recently discovered this very elegant solution circa 2008 offered by &lt;a href=&#34;http://paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/&#34;&gt;Paul Irish&lt;/a&gt;, which sticks a class on the body tag using proprietary conditional IE tags (no JavaScript magic needed here!):&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

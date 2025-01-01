@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>cherry blossoms on David Calhoun&#39;s blog</title>
+    <title>Cherry Blossoms on David Calhoun&#39;s blog</title>
     <link>https://www.davidbcalhoun.com/tags/cherry-blossoms/</link>
-    <description>Recent content in cherry blossoms on David Calhoun&#39;s blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Cherry Blossoms on David Calhoun&#39;s blog</description>
+    <generator>Hugo</generator>
     <language>en-US</language>
     <lastBuildDate>Wed, 29 Apr 2015 23:20:01 -0700</lastBuildDate>
     <atom:link href="https://www.davidbcalhoun.com/tags/cherry-blossoms/index.xml" rel="self" type="application/rss+xml" />
@@ -13,7 +13,7 @@
       <link>https://www.davidbcalhoun.com/2015/tourist-season-in-japan-and-a-brief-escape-to-cafe-rhinebeck-in-kyoto/</link>
       <pubDate>Wed, 29 Apr 2015 23:20:01 -0700</pubDate>
       <guid>https://www.davidbcalhoun.com/2015/tourist-season-in-japan-and-a-brief-escape-to-cafe-rhinebeck-in-kyoto/</guid>
-      <description>Inside Cafe Rhinebeck in Kyoto, Japan (Photo copyright David Calhoun) (I originally wrote this while sitting in Cafe Rhinebeck in Kyoto, Japan)&#xA;I&amp;rsquo;m visiting Japan again, when part of me is constantly thinking I should instead be spending the time and money exploring other parts of the world.&#xA;I guess I just find myself coming back to the familiar and (somewhat) comfortable. I find that I have the same habit when returning to a restaurant, and ordering the same item from the menu each and every time.</description>
+      <description>&lt;figure itemprop=&#34;image&#34; itemscope=&#34;&#34; itemtype=&#34;http://schema.org/ImageObject&#34; class=&#34;center&#34;&gt;&#xA;    &lt;meta itemprop=&#34;width&#34; content=&#34;1000&#34; /&gt;&#xA;    &lt;meta itemprop=&#34;height&#34; content=&#34;666&#34; /&gt;&#xA;    &lt;meta itemprop=&#34;url&#34; content=&#34;https://www.davidbcalhoun.com/wp-content/uploads/2015/2015-04-rhinebeck-cafe-kyoto-japan-5D__0292-david-calhoun.jpg&#34; /&gt;&#xA;    &lt;a href=&#34;https://www.davidbcalhoun.com/wp-content/uploads/2015/2015-04-rhinebeck-cafe-kyoto-japan-5D__0292-david-calhoun.jpg&#34;&gt;&#xA;        &lt;img itemprop=&#34;contentUrl&#34; src=&#34;https://www.davidbcalhoun.com/wp-content/uploads/2015/2015-04-rhinebeck-cafe-kyoto-japan-5D__0292-david-calhoun.jpg&#34; title=&#34;Inside Cafe Rhinebeck in Kyoto, Japan (Photo copyright David Calhoun)&#34; /&gt;&#xA;    &lt;/a&gt;&#xA;    &lt;figcaption itemprop=&#34;caption&#34;&gt;Inside Cafe Rhinebeck in Kyoto, Japan (Photo copyright David Calhoun)&lt;/figcaption&gt;&#xA;&lt;/figure&gt;&#xA;&lt;p&gt;(I originally wrote this while sitting in Cafe Rhinebeck in Kyoto, Japan)&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;m visiting Japan again, when part of me is constantly thinking I should instead be spending the time and money exploring other parts of the world.&lt;/p&gt;&#xA;&lt;p&gt;I guess I just find myself coming back to the familiar and (somewhat) comfortable.  I find that I have the same habit when returning to a restaurant, and ordering the same item from the menu each and every time.  This is what I&amp;rsquo;ve always done at Roger&amp;rsquo;s, a sandwich place near where I work.  I guess this sounds kind of silly, but Japan is basically my club sandwich, the old standby which I know won&amp;rsquo;t disappoint.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

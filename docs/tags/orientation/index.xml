@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>orientation on David Calhoun&#39;s blog</title>
+    <title>Orientation on David Calhoun&#39;s blog</title>
     <link>https://www.davidbcalhoun.com/tags/orientation/</link>
-    <description>Recent content in orientation on David Calhoun&#39;s blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Orientation on David Calhoun&#39;s blog</description>
+    <generator>Hugo</generator>
     <language>en-US</language>
     <lastBuildDate>Tue, 24 Aug 2010 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://www.davidbcalhoun.com/tags/orientation/index.xml" rel="self" type="application/rss+xml" />
@@ -13,7 +13,7 @@
       <link>https://www.davidbcalhoun.com/2010/dealing-with-device-orientation-mobile-web-part-6/</link>
       <pubDate>Tue, 24 Aug 2010 00:00:00 +0000</pubDate>
       <guid>https://www.davidbcalhoun.com/2010/dealing-with-device-orientation-mobile-web-part-6/</guid>
-      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ Introduction If you read part 4 of this series, you&amp;rsquo;ll know that because of the variety of screen sizes, the best way to develop for mobile is to develop fluid layouts that take 100% of the available space on the screen.&#xA;What you probably didn&amp;rsquo;t think of is that there&amp;rsquo;s different screen widths even on the same device!</description>
+      <description>&lt;h2 id=&#34;-warning-this-is-an-old-article-and-may-include-information-thats-out-of-date-&#34;&gt;⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️&lt;/h2&gt;&#xA;&lt;h3 id=&#34;introduction&#34;&gt;Introduction&lt;/h3&gt;&#xA;&lt;p&gt;If you read &lt;a href=&#34;https://www.davidbcalhoun.com/2010/on-designing-a-mobile-webpage&#34;&gt;part 4&lt;/a&gt; of this series, you&amp;rsquo;ll know that because of the variety of screen sizes, the best way to develop for mobile is to develop fluid layouts that take 100% of the available space on the screen.&lt;/p&gt;&#xA;&lt;p&gt;What you probably didn&amp;rsquo;t think of is that there&amp;rsquo;s different screen widths &lt;em&gt;even on the same device&lt;/em&gt;! This is due to screen orientation. And when the user changes the screen orientation, stuff may break (hey, it&amp;rsquo;s not a perfect world). In my experience this has meant needing to tweak percentage widths on elements, but I imagine there&amp;rsquo;s even more needs. Imagine an image carousel that can only fit three images across in portrait mode but can possibly fit four images in landscape mode. It might be nice to re-initialize the carousel to accommodate a forth image when the phone is in landscape mode (then again, that might create a lot of unnecessary overhead&amp;hellip;).&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

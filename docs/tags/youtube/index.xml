@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>youtube on David Calhoun&#39;s blog</title>
+    <title>Youtube on David Calhoun&#39;s blog</title>
     <link>https://www.davidbcalhoun.com/tags/youtube/</link>
-    <description>Recent content in youtube on David Calhoun&#39;s blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Youtube on David Calhoun&#39;s blog</description>
+    <generator>Hugo</generator>
     <language>en-US</language>
     <lastBuildDate>Sat, 11 Mar 2017 11:23:40 -0800</lastBuildDate>
     <atom:link href="https://www.davidbcalhoun.com/tags/youtube/index.xml" rel="self" type="application/rss+xml" />
@@ -13,7 +13,7 @@
       <link>https://www.davidbcalhoun.com/2017/my-new-photography-youtube-channel/</link>
       <pubDate>Sat, 11 Mar 2017 11:23:40 -0800</pubDate>
       <guid>https://www.davidbcalhoun.com/2017/my-new-photography-youtube-channel/</guid>
-      <description>Hello friends! It&amp;rsquo;s been a while without an update.&#xA;I&amp;rsquo;ve been working more and more on my photography endeavors, which includes building up a YouTube channel to document my travels and also my learnings. I&amp;rsquo;m hoping it&amp;rsquo;s interesting and useful enough, especially for other aspiring photographers.&#xA;This year is definitely shaping up to be a year of travelling, and I&amp;rsquo;d also like to keep a blog of photos and such, so I&amp;rsquo;m working to get a separate photography blog setup at my photography website.</description>
+      <description>&lt;p&gt;Hello friends!  It&amp;rsquo;s been a while without an update.&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;ve been working more and more on my photography endeavors, which includes building up a &lt;a href=&#34;https://www.youtube.com/channel/UCg5jVvaChTjkL74IQ334FzQ&#34;&gt;YouTube channel&lt;/a&gt; to document my travels and also my learnings.  I&amp;rsquo;m hoping it&amp;rsquo;s interesting and useful enough, especially for other aspiring photographers.&lt;/p&gt;&#xA;&lt;p&gt;This year is definitely shaping up to be a year of travelling, and I&amp;rsquo;d also like to keep a blog of photos and such, so I&amp;rsquo;m working to get a separate photography blog setup at &lt;a href=&#34;https://davidcalhounphotography.com&#34;&gt;my photography website&lt;/a&gt;.  I&amp;rsquo;m hoping to get that up soon, as I&amp;rsquo;m already falling behind!  And I have a trip to Japan coming up next week already!&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

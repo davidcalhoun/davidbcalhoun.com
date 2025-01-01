@@ -1,198 +1,138 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>programming on David Calhoun&#39;s blog</title>
-    <link>https://www.davidbcalhoun.com/tags/programming/</link>
-    <description>Recent content in programming on David Calhoun&#39;s blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Programming on David Calhoun&#39;s blog</title>
+    <link>http://localhost:1313/tags/programming/</link>
+    <description>Recent content in Programming on David Calhoun&#39;s blog</description>
+    <generator>Hugo</generator>
     <language>en-US</language>
-    <lastBuildDate>Tue, 16 Jun 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.davidbcalhoun.com/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 16 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/programming/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Javascript Bind, Partial Application, and Currying</title>
-      <link>https://www.davidbcalhoun.com/2020/javascript-bind-partial-application-and-currying/</link>
+      <link>http://localhost:1313/2020/javascript-bind-partial-application-and-currying/</link>
       <pubDate>Tue, 16 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/2020/javascript-bind-partial-application-and-currying/</guid>
-      <description>HAL 9000 computer interface from Stanley Kubrick&amp;#39;s 2001  Summary Partial application and currying often get muddled; they are related but not the same. They&amp;rsquo;re both techniques that transform functions that accept multiple arguments, but the difference is in the transformation.
-  Partial application simplifies a function by prefilling arguments, so the newly-returned function accepts less arguments. E.g. add(2, 3) becomes addTwo(3), which calls add() and prefills the first argument as 2.</description>
+      <guid>http://localhost:1313/2020/javascript-bind-partial-application-and-currying/</guid>
+      <description>&lt;figure itemprop=&#34;image&#34; itemscope itemtype=&#34;https://schema.org/ImageObject&#34; class=&#34;center landscape&#34;&gt;&#xA;  &#xA;    &lt;a href=&#34;http://localhost:1313/wp-content/uploads/2020/2001-2000px-resize.jpeg&#34; class=&#34;picture&#34;&gt;&#xA;      &lt;picture&gt;&#xA;        &lt;span itemscope itemprop=&#34;author&#34; itemtype=&#34;https://schema.org/Person&#34;&gt;&#xA;            &lt;meta itemprop=&#34;name&#34; content=&#34;David Calhoun&#34; /&gt;&#xA;            &lt;meta itemprop=&#34;url&#34; content=&#34;https://www.themaingate.net&#34; /&gt;&#xA;        &lt;/span&gt;&#xA;        &#xA;        &lt;meta itemprop=&#34;caption&#34; content=&#34;HAL 9000 computer interface from Stanley Kubrick&amp;#39;s 2001&#34; /&gt;&#xA;        &#xA;        &#xA;        &lt;meta itemprop=&#34;name&#34; content=&#34;HAL 9000 interface, showing HAL&amp;#39;s centered fisheye camera lens with code readouts on eight screens, four on each side of HAL&amp;#39;s camera.&#34; /&gt;&#xA;        &#xA;        &#xA;        &lt;meta itemprop=&#34;width&#34; content=&#34;2000&#34; /&gt;&#xA;        &#xA;        &#xA;        &lt;meta itemprop=&#34;height&#34; content=&#34;1125&#34; /&gt;&#xA;        &#xA;        &lt;span itemscope itemprop=&#34;thumbnail&#34; itemtype=&#34;https://schema.org/ImageObject&#34;&gt;&#xA;          &lt;meta itemprop=&#34;url&#34; content=&#34;/wp-content/uploads/2020/2001-500px-resize.jpeg&#34; /&gt;&#xA;        &lt;/span&gt;&#xA;        &#xA;        &#xA;        &#xA;        &lt;meta itemprop=&#34;isFamilyFriendly&#34; content=&#34;true&#34; /&gt;&#xA;&#xA;        &lt;source type=&#34;image/webp&#34; media=&#34;(max-width: 500px)&#34; srcset=&#34;http://localhost:1313/wp-content/uploads/2020/2001-500px-resize.webp&#34; /&gt;&#xA;        &lt;source type=&#34;image/webp&#34; media=&#34;(max-width: 1000px)&#34; srcset=&#34;http://localhost:1313/wp-content/uploads/2020/2001-1000px-resize.webp&#34; /&gt;&#xA;        &lt;source type=&#34;image/webp&#34; media=&#34;(min-width: 1001px)&#34; srcset=&#34;http://localhost:1313/wp-content/uploads/2020/2001-2000px-resize.webp&#34; /&gt;&#xA;&#xA;        &lt;source type=&#34;image/jpeg&#34; media=&#34;(max-width: 500px)&#34; srcset=&#34;http://localhost:1313/wp-content/uploads/2020/2001-500px-resize.jpeg&#34; /&gt;&#xA;        &lt;source type=&#34;image/jpeg&#34; media=&#34;(max-width: 1000px)&#34; srcset=&#34;http://localhost:1313/wp-content/uploads/2020/2001-1000px-resize.jpeg&#34; /&gt;&#xA;        &lt;source type=&#34;image/jpeg&#34; media=&#34;(min-width: 1001px)&#34; srcset=&#34;http://localhost:1313/wp-content/uploads/2020/2001-2000px-resize.jpeg&#34; /&gt;&#xA;&#xA;        &lt;img data-foo=&#34;2&#34; itemprop=&#34;url&#34; src=&#34;http://localhost:1313/wp-content/uploads/2020/2001-2000px-resize.jpeg&#34; loading=&#34;lazy&#34; alt=&#34;HAL 9000 interface, showing HAL&amp;#39;s centered fisheye camera lens with code readouts on eight screens, four on each side of HAL&amp;#39;s camera.&#34; width=&#34;2000&#34; height=&#34;1125&#34; style=&#34;aspect-ratio: 2000 / 1125;&#34;  /&gt;&#xA;      &lt;/picture&gt;&#xA;    &lt;/a&gt;&#xA;  &#xA;    &lt;figcaption&gt;HAL 9000 computer interface from Stanley Kubrick&amp;#39;s 2001&lt;/figcaption&gt;&#xA;  &lt;/figure&gt;&#xA;  &#xA;&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;&#xA;&lt;p&gt;Partial application and currying often get muddled; they are related but not the same.  They&amp;rsquo;re both techniques that transform functions that accept multiple arguments, but the difference is in the transformation.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>A Simple Introduction to Javascript Map and Reduce Array Helper Functions</title>
-      <link>https://www.davidbcalhoun.com/2018/a-simple-introduction-to-javascript-map-and-reduce-array-helper-functions/</link>
+      <link>http://localhost:1313/2018/a-simple-introduction-to-javascript-map-and-reduce-array-helper-functions/</link>
       <pubDate>Sun, 26 Aug 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/2018/a-simple-introduction-to-javascript-map-and-reduce-array-helper-functions/</guid>
-      <description>Perhaps you&amp;rsquo;ve been programming for a while, and you&amp;rsquo;re pretty comfortable using for loops to traverse Arrays. However, you know how untidy and complicated for loops can get, and you are interested in better approaches to keep the code clean. Enter map and reduce!
-First steps with for loops Most folks find for loops powerful enough to achieve all they need when they need to process items in an Array. For example, say we have a simple list of items:</description>
+      <guid>http://localhost:1313/2018/a-simple-introduction-to-javascript-map-and-reduce-array-helper-functions/</guid>
+      <description>&lt;link itemprop=&#34;mainEntityOfPage&#34; href=&#34;https://en.wikipedia.org/wiki/JavaScript&#34;&gt;&#xA;&lt;p&gt;Perhaps you&amp;rsquo;ve been programming for a while, and you&amp;rsquo;re pretty comfortable using &lt;code&gt;for&lt;/code&gt; loops to traverse Arrays.  However, you know how untidy and complicated &lt;code&gt;for&lt;/code&gt; loops can get, and you are interested in better approaches to keep the code clean.  Enter &lt;code&gt;map&lt;/code&gt; and &lt;code&gt;reduce&lt;/code&gt;!&lt;/p&gt;&#xA;&lt;h2 id=&#34;first-steps-with-for-loops&#34;&gt;First steps with &lt;code&gt;for&lt;/code&gt; loops&lt;/h2&gt;&#xA;&lt;p&gt;Most folks find &lt;code&gt;for&lt;/code&gt; loops powerful enough to achieve all they need when they need to process items in an &lt;code&gt;Array&lt;/code&gt;.  For example, say we have a simple list of items:&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>You Can&#39;t JavaScript Under Pressure walkthrough</title>
-      <link>https://www.davidbcalhoun.com/2013/you-cant-javascript-under-pressure-walkthrough/</link>
+      <link>http://localhost:1313/2013/you-cant-javascript-under-pressure-walkthrough/</link>
       <pubDate>Fri, 04 Oct 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/2013/you-cant-javascript-under-pressure-walkthrough/</guid>
-      <description>A friend posted a link to this fun little quiz - You Can&amp;rsquo;t JavaScript Under Pressure.
-The quizzes get more and more difficult, and they present a nice challenge if you fear your skills are getting rusty. Give it an honest try first, then come back here if you get seriously, honestly stuck. Try to do it yourself!
-Quiz 1: doubleInteger Problem function doubleInteger(i) { // i will be an integer.</description>
+      <guid>http://localhost:1313/2013/you-cant-javascript-under-pressure-walkthrough/</guid>
+      <description>&lt;p&gt;A friend posted a link to this fun little quiz - &lt;a href=&#34;http://toys.usvsth3m.com/javascript-under-pressure/&#34;&gt;You Can&amp;rsquo;t JavaScript Under Pressure&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;The quizzes get more and more difficult, and they present a nice challenge if you fear your skills are getting rusty. Give it an honest try first, then come back here if you get seriously, honestly stuck. Try to do it yourself!&lt;/p&gt;&#xA;&lt;h3 id=&#34;quiz-1-doubleinteger&#34;&gt;Quiz 1: doubleInteger&lt;/h3&gt;&#xA;&lt;h4 id=&#34;problem&#34;&gt;Problem&lt;/h4&gt;&#xA;&lt;pre&gt;&lt;code&gt;function doubleInteger(i) {&#xA;    // i will be an integer. Double it and return it.&#xA;&#xA;    return i;&#xA;}&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;{:lang=&amp;ldquo;javascript&amp;rdquo;}&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Descartes on building software frameworks</title>
-      <link>https://www.davidbcalhoun.com/2012/descartes-on-building-software-frameworks/</link>
+      <link>http://localhost:1313/2012/descartes-on-building-software-frameworks/</link>
       <pubDate>Tue, 02 Oct 2012 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/2012/descartes-on-building-software-frameworks/</guid>
-      <description>Rene Descartes  Years ago I read Descartes&amp;rsquo;s Discourse on Method for what I found to be some of the more interesting philosophy courses of my college career: those of the history of modern philosophy. Modern philosophy technically starts with Descartes, so it&amp;rsquo;s a good place to start, or to get re-acquainted with philosophy in general.
-I&amp;rsquo;ve been reading through the Discourse again, and have found it to be more interesting and relatable this time around (particularly about lessons learned while traveling, but that&amp;rsquo;s a topic for another post).</description>
+      <guid>http://localhost:1313/2012/descartes-on-building-software-frameworks/</guid>
+      <description>&lt;figure itemprop=&#34;image&#34; itemscope=&#34;&#34; itemtype=&#34;http://schema.org/ImageObject&#34; class=&#34;center&#34;&gt;&#xA;    &lt;meta itemprop=&#34;width&#34; content=&#34;817&#34; /&gt;&#xA;    &lt;meta itemprop=&#34;height&#34; content=&#34;1000&#34; /&gt;&#xA;    &lt;meta itemprop=&#34;url&#34; content=&#34;https://www.davidbcalhoun.com/wp-content/uploads/2012/10/Frans_Hals_-_Portret_van_René_Descartes.jpeg&#34; /&gt;&#xA;    &lt;a href=&#34;http://commons.wikimedia.org/wiki/File:Frans_Hals_-_Portret_van_Ren%C3%A9_Descartes.jpg&#34;&gt;&#xA;        &lt;img itemprop=&#34;contentUrl&#34; src=&#34;https://www.davidbcalhoun.com/wp-content/uploads/2012/10/Frans_Hals_-_Portret_van_René_Descartes.jpeg&#34; alt=&#34;Rene Descartes&#34; /&gt;&#xA;    &lt;/a&gt;&#xA;    &lt;figcaption itemprop=&#34;caption&#34;&gt;Rene Descartes&lt;/figcaption&gt;&#xA;&lt;/figure&gt;&#xA;&lt;p&gt;Years ago I read Descartes&amp;rsquo;s &lt;a href=&#34;http://en.wikipedia.org/wiki/Discourse_on_the_Method&#34;&gt;Discourse on Method&lt;/a&gt; for what I found to be some of the more interesting philosophy courses of my college career: those of the history of modern philosophy. Modern philosophy technically starts with Descartes, so it&amp;rsquo;s a good place to start, or to get re-acquainted with philosophy in general.&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;ve been reading through the Discourse again, and have found it to be more interesting and relatable this time around (particularly about lessons learned while traveling, but that&amp;rsquo;s a topic for another post).&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Different ways of defining functions in JavaScript (this is madness!)</title>
-      <link>https://www.davidbcalhoun.com/2011/different-ways-of-defining-functions-in-javascript-this-is-madness/</link>
+      <link>http://localhost:1313/2011/different-ways-of-defining-functions-in-javascript-this-is-madness/</link>
       <pubDate>Fri, 24 Jun 2011 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/2011/different-ways-of-defining-functions-in-javascript-this-is-madness/</guid>
-      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ Note: updated in July 2016 with ES6 arrow functions.
-Russian translation thanks to Yevgeniy Pyastolov
-This is madness! This&amp;hellip; is&amp;hellip; JavaScript! In JavaScript, there&amp;rsquo;s many different ways of doing something. This is both a good thing and a bad thing. To the newcomer this is definitely a bad thing, as it means not only more things to learn, but more little caveats and more places to go wrong.</description>
+      <guid>http://localhost:1313/2011/different-ways-of-defining-functions-in-javascript-this-is-madness/</guid>
+      <description>&lt;h2 id=&#34;-warning-this-is-an-old-article-and-may-include-information-thats-out-of-date-&#34;&gt;⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️&lt;/h2&gt;&#xA;&lt;p&gt;Note: updated in July 2016 with ES6 arrow functions.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://langtoday.com/?p=303&#34;&gt;Russian translation&lt;/a&gt; thanks to Yevgeniy Pyastolov&lt;/p&gt;&#xA;&lt;h3 id=&#34;this-is-madness-this-is-javascript&#34;&gt;This is madness! This&amp;hellip; is&amp;hellip; JavaScript!&lt;/h3&gt;&#xA;&lt;p&gt;In JavaScript, there&amp;rsquo;s many different ways of doing something. This is both a good thing and a bad thing. To the newcomer this is definitely a bad thing, as it means not only more things to learn, but more little caveats and more places to go wrong. And so it is with declaring functions!&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Android 3.0 Honeycomb is first to implement the Device API</title>
-      <link>https://www.davidbcalhoun.com/2011/android-3.0-honeycomb-is-first-to-implement-the-device-api/</link>
+      <link>http://localhost:1313/2011/android-3.0-honeycomb-is-first-to-implement-the-device-api/</link>
       <pubDate>Thu, 24 Feb 2011 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/2011/android-3.0-honeycomb-is-first-to-implement-the-device-api/</guid>
-      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ I fired up the newly released Android 3.0 SDK to run some tests and found they&amp;rsquo;ve implemented part of the long-awaited Device API (aka the Media Capture API). From your browser you can now upload pictures and videos from the camera as well as sounds from the microphone. The returned data should be available to manipulate via the File API (although I haven&amp;rsquo;t yet tested this).</description>
+      <guid>http://localhost:1313/2011/android-3.0-honeycomb-is-first-to-implement-the-device-api/</guid>
+      <description>&lt;h2 id=&#34;-warning-this-is-an-old-article-and-may-include-information-thats-out-of-date-&#34;&gt;⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️&lt;/h2&gt;&#xA;&lt;p&gt;I fired up the newly released Android 3.0 SDK to run some tests and found they&amp;rsquo;ve implemented part of the long-awaited &lt;a href=&#34;http://www.w3.org/2009/dap/&#34;&gt;Device API&lt;/a&gt; (aka the Media Capture API). From your browser you can now upload pictures and videos from the camera as well as sounds from the microphone. The returned data should be available to manipulate via the &lt;a href=&#34;http://www.w3.org/TR/FileAPI/&#34;&gt;File API&lt;/a&gt; (although I haven&amp;rsquo;t yet tested this).&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>My O&#39;Reilly Books Wishlist</title>
-      <link>https://www.davidbcalhoun.com/2011/my-oreilly-books-wishlist/</link>
+      <link>http://localhost:1313/2011/my-oreilly-books-wishlist/</link>
       <pubDate>Tue, 22 Feb 2011 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/2011/my-oreilly-books-wishlist/</guid>
-      <description>Introduction Ok, so this post is only here in the hopes I&amp;rsquo;ll actually win something.
-O&amp;rsquo;Reilly Books has a promotion where a random winner will receive up to $500 of books on their wishlist, provided they post the list somewhere online. You can probably see why this is here then!
-The List Programming the Mobile Web ($50)
-Palm webOS ($45)
-MongoDB: The Definitive Guide ($40)
-JavaScript: The Definitive Guide: Rough Cuts Version, Sixth Edition ($50)</description>
+      <guid>http://localhost:1313/2011/my-oreilly-books-wishlist/</guid>
+      <description>&lt;h3 id=&#34;introduction&#34;&gt;Introduction&lt;/h3&gt;&#xA;&lt;p&gt;Ok, so this post is only here in the hopes I&amp;rsquo;ll actually win something.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://oreilly.com/new-year-2011.html&#34;&gt;O&amp;rsquo;Reilly Books has a promotion&lt;/a&gt; where a random winner will receive up to $500 of books on their wishlist, provided they post the list somewhere online. You can probably see why this is here then!&lt;/p&gt;&#xA;&lt;h3 id=&#34;the-list&#34;&gt;The List&lt;/h3&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://oreilly.com/catalog/9780596807788/&#34;&gt;Programming the Mobile Web&lt;/a&gt; ($50)&lt;br&gt;&#xA;&lt;a href=&#34;http://oreilly.com/catalog/9780596155254/&#34;&gt;Palm webOS&lt;/a&gt; ($45)&lt;br&gt;&#xA;&lt;a href=&#34;http://oreilly.com/catalog/9781449381561/&#34;&gt;MongoDB: The Definitive Guide&lt;/a&gt; ($40)&lt;br&gt;&#xA;&lt;a href=&#34;http://oreilly.com/catalog/9781449393847/&#34;&gt;JavaScript: The Definitive Guide: Rough Cuts Version, Sixth Edition&lt;/a&gt; ($50)&lt;br&gt;&#xA;&lt;a href=&#34;http://oreilly.com/catalog/9780596806026/&#34;&gt;HTML5: Up and Running&lt;/a&gt; ($30)&lt;br&gt;&#xA;&lt;a href=&#34;http://oreilly.com/catalog/9781449383268/&#34;&gt;Building Android Apps with HTML, CSS, and JavaScript&lt;/a&gt; ($30)&lt;br&gt;&#xA;&lt;a href=&#34;http://oreilly.com/catalog/9780596805784/&#34;&gt;Building iPhone Apps with HTML, CSS, and JavaScript&lt;/a&gt; ($30)&lt;br&gt;&#xA;&lt;a href=&#34;http://oreilly.com/catalog/9780596157609/&#34;&gt;HTML &amp;amp; CSS: The Good Parts&lt;/a&gt; ($35)&lt;br&gt;&#xA;&lt;a href=&#34;http://oreilly.com/catalog/9781449393908/&#34;&gt;HTML5 Canvas&lt;/a&gt; ($40)&lt;br&gt;&#xA;&lt;a href=&#34;http://oreilly.com/catalog/9780596159771/&#34;&gt;jQuery Cookbook&lt;/a&gt; ($35)&lt;br&gt;&#xA;&lt;a href=&#34;http://oreilly.com/catalog/9781449390501/&#34;&gt;Learning Android&lt;/a&gt; ($35)&lt;br&gt;&#xA;&lt;a href=&#34;http://oreilly.com/catalog/9780596155933/&#34;&gt;CSS Cookbook, Third Edition&lt;/a&gt; ($50)&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Improving yourself as a programmer versus as a human being</title>
-      <link>https://www.davidbcalhoun.com/2011/improving-yourself-as-a-programmer-versus-as-a-human-being/</link>
+      <link>http://localhost:1313/2011/improving-yourself-as-a-programmer-versus-as-a-human-being/</link>
       <pubDate>Sun, 20 Feb 2011 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/2011/improving-yourself-as-a-programmer-versus-as-a-human-being/</guid>
-      <description>(OR &amp;ldquo;The Post In Which I Conflate Programming and Philosophy&amp;rdquo; OR &amp;ldquo;The Programmer&amp;rsquo;s Existentialist Crisis&amp;rdquo;)
-I woke up this morning to read Dmitry A. Soshnikov&amp;rsquo;s tweet:
-
-While this seems like good advice for aspiring programmers, I can&amp;rsquo;t help but think what this means for those who will buy into this. Us programmers have a keen ability to sit and focus on problems for extended periods of time, usually to the detriment of everything else around us.</description>
+      <guid>http://localhost:1313/2011/improving-yourself-as-a-programmer-versus-as-a-human-being/</guid>
+      <description>&lt;p&gt;(OR &amp;ldquo;The Post In Which I Conflate Programming and Philosophy&amp;rdquo; OR &amp;ldquo;The Programmer&amp;rsquo;s Existentialist Crisis&amp;rdquo;)&lt;/p&gt;&#xA;&lt;p&gt;I woke up this morning to read Dmitry A. Soshnikov&amp;rsquo;s tweet:&lt;br&gt;&#xA;&lt;a href=&#34;http://twitter.com/#!/DmitrySoshnikov/status/39356492058607616&#34;&gt;&lt;img src=&#34;http://davidbcalhoun.com/wp-content/uploads/2011/02/two-programming-languages.png&#34; alt=&#34;Have one-two langs in which you are a master and know professionally, and in addition, consider alternative langs. Your experience will grow.&#34; width=&#34;661&#34; height=&#34;318&#34; class=&#34;aligncenter size-full wp-image-639&#34; /&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;While this seems like good advice for aspiring programmers, I can&amp;rsquo;t help but think what this means for those who will buy into this. Us programmers have a keen ability to sit and focus on problems for extended periods of time, usually to the detriment of everything else around us. From the perspective of &amp;ldquo;real life&amp;rdquo;, we might as well be sitting in a basement somewhere playing World of Warcraft. Sure, programming is more productive, profitable, and surely not brainless, but at the end of the day we could still only be sitting in a basement somewhere. What I mean to say here is that we&amp;rsquo;re not actually living our actual lives doing these things.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Checking for undefined, null, and empty variables in JavaScript</title>
-      <link>https://www.davidbcalhoun.com/2011/checking-for-undefined-null-and-empty-variables-in-javascript/</link>
+      <link>http://localhost:1313/2011/checking-for-undefined-null-and-empty-variables-in-javascript/</link>
       <pubDate>Fri, 11 Feb 2011 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/2011/checking-for-undefined-null-and-empty-variables-in-javascript/</guid>
-      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ In general it&amp;rsquo;s a good practice to check for the existence of something before blindly using it by faith and hoping it works. There are various times during the execution of scripts when a variable may not be defined, it may be null, or it might be an empty string. These are three things that are easily conflated.</description>
+      <guid>http://localhost:1313/2011/checking-for-undefined-null-and-empty-variables-in-javascript/</guid>
+      <description>&lt;h2 id=&#34;-warning-this-is-an-old-article-and-may-include-information-thats-out-of-date-&#34;&gt;⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️&lt;/h2&gt;&#xA;&lt;p&gt;In general it&amp;rsquo;s a good practice to check for the existence of something before blindly using it by faith and hoping it works. There are various times during the execution of scripts when a variable may not be defined, it may be null, or it might be an empty string. These are three things that are easily conflated. A good way to look at this is thinking of these as having increasing levels of existence (getting a bit philosophical here for a moment&amp;hellip;):&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>JavaScript news resources</title>
-      <link>https://www.davidbcalhoun.com/2011/javascript-news-resources/</link>
+      <link>http://localhost:1313/2011/javascript-news-resources/</link>
       <pubDate>Fri, 14 Jan 2011 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/2011/javascript-news-resources/</guid>
-      <description>There&amp;rsquo;s an overwhelming amount of information being pumped out of the JavaScript community each week, but how do you keep up with it? Here&amp;rsquo;s some sources to keep you busy.
-Twitter This merits a category of its own. This has replaced the RSS reader for a lot of folks, or at the very least supplemented it.
-I&amp;rsquo;ve consistently recommended Nathan Smith&amp;rsquo;s list of JavaScript folks. When I&amp;rsquo;m diligent, I keep up with this several times a week and favorite items from the feed to be considered for inclusion in that week&amp;rsquo;s JSMag Blog update.</description>
+      <guid>http://localhost:1313/2011/javascript-news-resources/</guid>
+      <description>&lt;p&gt;There&amp;rsquo;s an overwhelming amount of information being pumped out of the JavaScript community each week, but how do you keep up with it? Here&amp;rsquo;s some sources to keep you busy.&lt;/p&gt;&#xA;&lt;h3 id=&#34;twitter&#34;&gt;Twitter&lt;/h3&gt;&#xA;&lt;p&gt;This merits a category of its own. This has replaced the RSS reader for a lot of folks, or at the very least supplemented it.&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;ve consistently recommended &lt;a href=&#34;http://twitter.com/#!/nathansmith/javascript/&#34;&gt;Nathan Smith&amp;rsquo;s list of JavaScript folks&lt;/a&gt;. When I&amp;rsquo;m diligent, I keep up with this several times a week and &lt;a href=&#34;http://twitter.com/#!/franksvalli/favorites/&#34;&gt;favorite items from the feed&lt;/a&gt; to be considered for inclusion in that week&amp;rsquo;s &lt;a href=&#34;http://jsmag.com/blog/&#34;&gt;JSMag Blog update&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>What happens when you have no JavaScript fallback?</title>
-      <link>https://www.davidbcalhoun.com/2011/what-happens-when-you-have-no-javascript-fallback/</link>
+      <link>http://localhost:1313/2011/what-happens-when-you-have-no-javascript-fallback/</link>
       <pubDate>Wed, 12 Jan 2011 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/2011/what-happens-when-you-have-no-javascript-fallback/</guid>
-      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ 
-Here&amp;rsquo;s an example of what happens when your interface completely relies on JavaScript. There&amp;rsquo;s code with translated mojibake of some sort which caused the JavaScript to break. The code wasn&amp;rsquo;t in a try-catch block, so it caused all of the code on the page to fail, thus presenting me with the only part of the screen that wasn&amp;rsquo;t generated by JavaScript: the completely useless header.</description>
+      <guid>http://localhost:1313/2011/what-happens-when-you-have-no-javascript-fallback/</guid>
+      <description>&lt;h2 id=&#34;-warning-this-is-an-old-article-and-may-include-information-thats-out-of-date-&#34;&gt;⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://davidbcalhoun.com/wp-content/uploads/2011/01/twitter-fallback.png&#34;&gt;&lt;img src=&#34;http://davidbcalhoun.com/wp-content/uploads/2011/01/twitter-fallback.png&#34; alt=&#34;&#34; title=&#34;Twitter no-JavaScript fallback&#34; class=&#34;aligncenter size-full wp-image-556&#34; /&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Here&amp;rsquo;s an example of what happens when your interface completely relies on JavaScript. There&amp;rsquo;s code with translated &lt;a href=&#34;http://en.wikipedia.org/wiki/Mojibake&#34;&gt;mojibake&lt;/a&gt; of some sort which caused the JavaScript to break. The code wasn&amp;rsquo;t in a try-catch block, so it caused all of the code on the page to fail, thus presenting me with the only part of the screen that wasn&amp;rsquo;t generated by JavaScript: the completely useless header.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>How to spot outdated JavaScript</title>
-      <link>https://www.davidbcalhoun.com/2011/how-to-spot-outdated-javascript/</link>
+      <link>http://localhost:1313/2011/how-to-spot-outdated-javascript/</link>
       <pubDate>Fri, 07 Jan 2011 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/2011/how-to-spot-outdated-javascript/</guid>
-      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ Introduction Those that are just setting out to learn JavaScript are typically overwhelmed by the amount of online resources to be found about learning JavaScript. Not only this, but every webpage visited presents a potential learning opportunity just by inspecting the source.
-However, not all resources are guaranteed to be up-to-date. JavaScript has been around for over a decade, and coding standards have changed drastically over time.</description>
+      <guid>http://localhost:1313/2011/how-to-spot-outdated-javascript/</guid>
+      <description>&lt;h2 id=&#34;-warning-this-is-an-old-article-and-may-include-information-thats-out-of-date-&#34;&gt;⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️&lt;/h2&gt;&#xA;&lt;h3 id=&#34;introduction&#34;&gt;Introduction&lt;/h3&gt;&#xA;&lt;p&gt;Those that are just setting out to learn JavaScript are typically overwhelmed by the amount of online resources to be found about learning JavaScript. Not only this, but every webpage visited presents a potential learning opportunity just by inspecting the source.&lt;/p&gt;&#xA;&lt;p&gt;However, not all resources are guaranteed to be up-to-date. JavaScript has been around for over a decade, and coding standards have changed drastically over time. While a code snippet may still work in today&amp;rsquo;s browsers, you may unknowingly be using an outdated practice that might eventually lead to a bit of embarrassment.&lt;/p&gt;</description>
     </item>
-    
+    <item>
+      <title>Book: JavaScript</title>
+      <link>http://localhost:1313/2010/book-javascript/</link>
+      <pubDate>Thu, 09 Dec 2010 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/2010/book-javascript/</guid>
+      <description>&lt;h2 id=&#34;-warning-this-is-an-old-article-and-may-include-information-thats-out-of-date-&#34;&gt;⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️&lt;/h2&gt;&#xA;&lt;p&gt;(Note: This was going to be where I was keeping notes to eventually write a book. Needless to say, there&amp;rsquo;s not much here and the book never happened!)&lt;/p&gt;&#xA;&lt;h3 id=&#34;functions&#34;&gt;Functions&lt;/h3&gt;&#xA;&lt;h4 id=&#34;parenthesis-and-function-execution&#34;&gt;Parenthesis and function execution&lt;/h4&gt;&#xA;&lt;p&gt;Parenthesis kick off the execution of a function:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&#xA;&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;4&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;5&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;6&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;foo&lt;/span&gt;() {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;typeof&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;foo&lt;/span&gt;; &lt;span style=&#34;color:#75715e&#34;&gt;// &amp;#34;function&amp;#34;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;typeof&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;foo&lt;/span&gt;(); &lt;span style=&#34;color:#75715e&#34;&gt;// &amp;#34;boolean&amp;#34;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;p&gt;Both of these are related to the function we just defined, but notice that a function reference without parenthesis is simply a pointer to the function and nothing more. The function with parenthesis executes our function and returns a result (true, which is of type &amp;ldquo;boolean&amp;rdquo;). We can assign these to variables:&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Mobile JavaScript libraries and frameworks (Mobile Web Part 7)</title>
-      <link>https://www.davidbcalhoun.com/2010/mobile-javascript-libraries-and-frameworks-mobile-web-part-7/</link>
+      <link>http://localhost:1313/2010/mobile-javascript-libraries-and-frameworks-mobile-web-part-7/</link>
       <pubDate>Mon, 06 Dec 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/2010/mobile-javascript-libraries-and-frameworks-mobile-web-part-7/</guid>
-      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ Intro This is designed to be a &amp;ldquo;living&amp;rdquo; post of available materials which will hopefully be updated frequently.
-Right now there&amp;rsquo;s not much, just some links, but I hope to keep adding materials, so check back!
-The List Sencha Touch
-PhoneGap - native wrapper which provides access to native hardware through their own JavaScript APIs</description>
+      <guid>http://localhost:1313/2010/mobile-javascript-libraries-and-frameworks-mobile-web-part-7/</guid>
+      <description>&lt;h2 id=&#34;-warning-this-is-an-old-article-and-may-include-information-thats-out-of-date-&#34;&gt;⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️&lt;/h2&gt;&#xA;&lt;h3 id=&#34;intro&#34;&gt;Intro&lt;/h3&gt;&#xA;&lt;p&gt;This is designed to be a &amp;ldquo;living&amp;rdquo; post of available materials which will hopefully be updated frequently.&lt;/p&gt;&#xA;&lt;p&gt;Right now there&amp;rsquo;s not much, just some links, but I hope to keep adding materials, so check back!&lt;/p&gt;&#xA;&lt;h3 id=&#34;the-list&#34;&gt;The List&lt;/h3&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://www.sencha.com/products/touch/&#34;&gt;Sencha Touch&lt;/a&gt;&lt;br&gt;&#xA;&lt;a href=&#34;http://www.phonegap.com/&#34;&gt;PhoneGap&lt;/a&gt; - native wrapper which provides access to native hardware through their own JavaScript APIs&lt;br&gt;&#xA;&lt;a href=&#34;http://jquerymobile.com/&#34;&gt;jQuery Mobile&lt;/a&gt; - a separate mobile UI which has jQuery as a dependency&lt;br&gt;&#xA;&lt;a href=&#34;http://developer.apple.com/iad/&#34;&gt;iAd&lt;/a&gt; - an update to Apple&amp;rsquo;s PastryKit, but probably intended only for ads&lt;br&gt;&#xA;&lt;a href=&#34;http://zeptojs.com/&#34;&gt;Zepto.js&lt;/a&gt;&lt;br&gt;&#xA;&lt;a href=&#34;http://joapp.com/&#34;&gt;Jo HTML5 Mobile App Framework&lt;/a&gt;&lt;br&gt;&#xA;&lt;a href=&#34;http://touch.sproutcore.com/hedwig/&#34;&gt;Sproutcore Touch&lt;/a&gt;&lt;br&gt;&#xA;&lt;a href=&#34;http://unify.github.com/unify/&#34;&gt;Unify&lt;/a&gt;&lt;br&gt;&#xA;&lt;a href=&#34;http://developer.yahoo.com/yui/3/&#34;&gt;YUI3&lt;/a&gt; - the desktop library has taken its first steps in supporting mobile (there&amp;rsquo;s no separate version just for mobile)&lt;br&gt;&#xA;&lt;a href=&#34;http://www.springsource.org/spring-mobile&#34;&gt;Spring Mobile&lt;/a&gt;: an extension to Spring MVC.&lt;br&gt;&#xA;&lt;a href=&#34;http://pyxismobile.com/&#34;&gt;pyxis mobile&lt;/a&gt;&lt;br&gt;&#xA;&lt;a href=&#34;http://www.winktoolkit.org/&#34;&gt;Wink Toolkit&lt;/a&gt;&lt;br&gt;&#xA;&lt;a href=&#34;http://chocolatechipmobile.wordpress.com/&#34;&gt;ChocolateChip Mobile&lt;/a&gt;&lt;br&gt;&#xA;&lt;a href=&#34;http://webapp-net.com/&#34;&gt;WebApp.Net&lt;/a&gt;&lt;br&gt;&#xA;&lt;a href=&#34;http://paularmstrongdesigns.com/projects/basejs/&#34;&gt;baseJS&lt;/a&gt;&lt;br&gt;&#xA;&lt;a href=&#34;http://xuijs.com/&#34;&gt;XUI&lt;/a&gt;&lt;br&gt;&#xA;&lt;a href=&#34;http://iwebkit.net/&#34;&gt;iWebKit&lt;/a&gt;&lt;br&gt;&#xA;&lt;a href=&#34;http://www.jqtouch.com/&#34;&gt;jQTouch&lt;/a&gt;&lt;br&gt;&#xA;&lt;a href=&#34;http://notes.sencha.com/post/1483278482/wed-like-to-extend-a-warm-welcome-to-one-of-our&#34;&gt;MooTouch&lt;/a&gt; - acquired and integrated into Sencha&lt;br&gt;&#xA;&lt;a href=&#34;http://code.google.com/p/iphone-universal/&#34;&gt;UiUIKit (Universal iPhone UI Kit)&lt;/a&gt;&lt;br&gt;&#xA;&lt;a href=&#34;http://code.google.com/p/ciui-dev/&#34;&gt;CiUI&lt;/a&gt; - CNET iPhone UI&lt;br&gt;&#xA;&lt;a href=&#34;&#34;&gt;UiUIKit&lt;/a&gt;&lt;br&gt;&#xA;&lt;a href=&#34;http://www.iui-js.org/&#34;&gt;iUI&lt;/a&gt; (&lt;a href=&#34;http://code.google.com/p/iui/&#34;&gt;on Google Code&lt;/a&gt;) - the first library for the iPhone as far as I know.&lt;br&gt;&#xA;&lt;a href=&#34;http://davidbcalhoun.com/2009/pastrykit-digging-into-an-apple-pie&#34;&gt;PastryKit&lt;/a&gt; - Apple&amp;rsquo;s proprietary framework, peeked into just for curiousity (not recommended for use)&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>JavaScript links from last week (September 26)</title>
-      <link>https://www.davidbcalhoun.com/2010/javascript-links-from-last-week-september-26/</link>
+      <link>http://localhost:1313/2010/javascript-links-from-last-week-september-26/</link>
       <pubDate>Tue, 05 Oct 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/2010/javascript-links-from-last-week-september-26/</guid>
-      <description>JavaScript Asteroids - blow up any webpage with this bookmarklet!
-JS1k contest - and the winner
-PromoteJS - Google bombing with a good intent. Better links to JavaScript documentation!
-Async and defer attributes for Script tags added to WebKit
-Evercookie - uses devious ways to try to track users. Hmm, this one is questionable. Please use it for good, not evil&amp;hellip; :/
-JSPerf.com - not really new news, but a nice quick way to test algorithm performance in JavaScript</description>
+      <guid>http://localhost:1313/2010/javascript-links-from-last-week-september-26/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://erkie.github.com/&#34;&gt;JavaScript Asteroids&lt;/a&gt; - blow up any webpage with this bookmarklet!&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://js1k.com&#34;&gt;JS1k contest&lt;/a&gt; - and the &lt;a href=&#34;http://marijn.haverbeke.nl/js1k.html&#34;&gt;winner&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://www.wait-till-i.com/2010/09/26/promote-better-javascript-documentation-with-promotejs/&#34;&gt;PromoteJS&lt;/a&gt; - Google bombing with a good intent. Better links to JavaScript documentation!&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://webkit.org/blog/1395/running-scripts-in-webkit/&#34;&gt;Async and defer attributes for Script tags added to WebKit&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://samy.pl/evercookie/&#34;&gt;Evercookie&lt;/a&gt; - uses devious ways to try to track users. Hmm, this one is questionable. Please use it for good, not evil&amp;hellip; :/&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://jsperf.com&#34;&gt;JSPerf.com&lt;/a&gt; - not really new news, but a nice quick way to test algorithm performance in JavaScript&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Friday links: mobile performance studies, the upcoming device element, and more (July 15)</title>
-      <link>https://www.davidbcalhoun.com/2010/friday-links-mobile-performance-studies-the-upcoming-device-element-and-more-july-15/</link>
+      <link>http://localhost:1313/2010/friday-links-mobile-performance-studies-the-upcoming-device-element-and-more-july-15/</link>
       <pubDate>Fri, 16 Jul 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/2010/friday-links-mobile-performance-studies-the-upcoming-device-element-and-more-july-15/</guid>
-      <description>Mobile Flickr for iPhone 1.2 released
-Firefox Home For iPhone Approved, Lets You Sync Bookmarks, Open Tabs And More
-Opera Mobile 10.1 for S60: W3C gelocation, border-radius &amp;amp; 2D transforms on S60 platform
-Mobile Browser Cache Limits, Revisited by Ryan Grove
-Mobile cache file sizes (and other performance tests on mobile devices) by Steve Souders
-Out Of Nowhere, The iPad Has A Real Competitor: the Android-based Pandigital Novel
-Ex-Apple Javascript Guru: HTML5 and Native Apps Can Live Together</description>
+      <guid>http://localhost:1313/2010/friday-links-mobile-performance-studies-the-upcoming-device-element-and-more-july-15/</guid>
+      <description>&lt;h3 id=&#34;mobile&#34;&gt;Mobile&lt;/h3&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://www.flickr.com/photos/spierisf/4776109875/&#34;&gt;Flickr for iPhone 1.2 released&lt;/a&gt;&lt;br&gt;&#xA;&lt;a href=&#34;http://techcrunch.com/2010/07/15/firefox-iphone/&#34;&gt;Firefox Home For iPhone Approved, Lets You Sync Bookmarks, Open Tabs And More&lt;/a&gt;&lt;br&gt;&#xA;&lt;a href=&#34;http://my.opera.com/ODIN/blog/2010/07/15/opera-mobile-10-1-for-s60&#34;&gt;Opera Mobile 10.1 for S60&lt;/a&gt;: W3C gelocation, border-radius &amp;amp; 2D transforms on S60 platform&lt;br&gt;&#xA;&lt;a href=&#34;http://www.yuiblog.com/blog/2010/07/12/mobile-browser-cache-limits-revisited/&#34;&gt;Mobile Browser Cache Limits, Revisited&lt;/a&gt; by Ryan Grove&lt;br&gt;&#xA;&lt;a href=&#34;http://www.stevesouders.com/blog/2010/07/12/mobile-cache-file-sizes/&#34;&gt;Mobile cache file sizes&lt;/a&gt; (and other performance tests on mobile devices) by Steve Souders&lt;br&gt;&#xA;&lt;a href=&#34;http://ipadtest.wordpress.com/2010/07/12/out-of-nowhere-the-ipad-has-a-real-competitor/&#34;&gt;Out Of Nowhere, The iPad Has A Real Competitor&lt;/a&gt;: the Android-based Pandigital Novel&lt;br&gt;&#xA;&lt;a href=&#34;http://gigaom.com/2010/07/13/charles-jolley-srpoutcore-strobe/&#34;&gt;Ex-Apple Javascript Guru: HTML5 and Native Apps Can Live Together&lt;/a&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Video: John Resig - Testing, Performance Analysis, and jQuery 1.4</title>
-      <link>https://www.davidbcalhoun.com/2009/video-john-resig-testing-performance-analysis-and-jquery-1.4/</link>
+      <link>http://localhost:1313/2009/video-john-resig-testing-performance-analysis-and-jquery-1.4/</link>
       <pubDate>Mon, 21 Dec 2009 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/2009/video-john-resig-testing-performance-analysis-and-jquery-1.4/</guid>
-      <description>In case you hadn’t seen it yet, John Resig was kind enough to stop by Yahoo! for the December Bayjax meetup. Here’s the video:
- Usually developers are more interested in just getting the dang code to work, and as a result actual the testing and maintenance of JavaScript isn’t talked about too much, so I’m sure this will be new territory for many developers. And since it’s John Resig speaking, there was of course a bit about using TestSwarm, a testing distributed framework-agnostic automated testing tool (that’s a mouthful!</description>
+      <guid>http://localhost:1313/2009/video-john-resig-testing-performance-analysis-and-jquery-1.4/</guid>
+      <description>&lt;p&gt;In case you hadn’t seen it yet, &lt;a href=&#34;http://ejohn.org/&#34;&gt;John Resig&lt;/a&gt; was kind enough to stop by Yahoo! for the December &lt;a href=&#34;http://www.meetup.com/BayJax/&#34;&gt;Bayjax&lt;/a&gt; meetup. Here’s the &lt;a href=&#34;https://www.youtube.com/watch?v=72wh5PnEf1k&#34;&gt;video&lt;/a&gt;:&lt;/p&gt;&#xA;&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/72wh5PnEf1k&#34; frameborder=&#34;0&#34; allow=&#34;autoplay; encrypted-media&#34; allowfullscreen&gt;&lt;/iframe&gt;&#xA;&lt;p&gt;Usually developers are more interested in just getting the dang code to work, and as a result actual the testing and maintenance of JavaScript isn’t talked about too much, so I’m sure this will be new territory for many developers. And since it’s John Resig speaking, there was of course a bit about using &lt;a href=&#34;http://testswarm.com/&#34;&gt;TestSwarm&lt;/a&gt;, a testing distributed framework-agnostic automated testing tool (that’s a mouthful!).&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Ways of passing data to functions in JavaScript</title>
-      <link>https://www.davidbcalhoun.com/2009/ways-of-passing-data-to-functions-in-javascript/</link>
+      <link>http://localhost:1313/2009/ways-of-passing-data-to-functions-in-javascript/</link>
       <pubDate>Fri, 04 Dec 2009 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/2009/ways-of-passing-data-to-functions-in-javascript/</guid>
-      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ Passing data is quite important in functional programming languages like JavaScript. When there are multiple functions (which is most of the time), there needs to be a way to pass data between the functions. This is done by passing values in parenthesis: myFunction(myData). Even when there is no data to be passed, we still have to declare and execute functions by using parenthesis: myFunction().</description>
+      <guid>http://localhost:1313/2009/ways-of-passing-data-to-functions-in-javascript/</guid>
+      <description>&lt;h2 id=&#34;-warning-this-is-an-old-article-and-may-include-information-thats-out-of-date-&#34;&gt;⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️&lt;/h2&gt;&#xA;&lt;p&gt;Passing data is quite important in functional programming languages like JavaScript. When there are multiple functions (which is most of the time), there needs to be a way to pass data between the functions. This is done by passing values in parenthesis: myFunction(myData). Even when there is no data to be passed, we still have to declare and execute functions by using parenthesis: myFunction().&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

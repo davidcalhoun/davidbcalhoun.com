@@ -4,7 +4,7 @@
     <title>OO on David Calhoun&#39;s blog</title>
     <link>https://www.davidbcalhoun.com/tags/oo/</link>
     <description>Recent content in OO on David Calhoun&#39;s blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-US</language>
     <lastBuildDate>Mon, 14 Sep 2009 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://www.davidbcalhoun.com/tags/oo/index.xml" rel="self" type="application/rss+xml" />
@@ -13,7 +13,7 @@
       <link>https://www.davidbcalhoun.com/2009/javascript-tidbit-shorthand-object-instantiation/</link>
       <pubDate>Mon, 14 Sep 2009 00:00:00 +0000</pubDate>
       <guid>https://www.davidbcalhoun.com/2009/javascript-tidbit-shorthand-object-instantiation/</guid>
-      <description>The skinny: here’s a neat little trick to reduce the amount of code users have to type to instantiate objects:&#xA;function jQuery(str, con){ if ( window == this ) return new jQuery(str, con); // ... } new jQuery(&amp;quot;#foo&amp;quot;); // this is now equivalent... jQuery(&amp;quot;#foo&amp;quot;); // ...to this! {:lang=&amp;ldquo;js&amp;rdquo;}&#xA;Explanation: when jQuery(“#foo”) is typed, the function first determines if the context in which it’s being called is the global object (window). If it is, it returns an instantiation of itself.</description>
+      <description>&lt;p&gt;The skinny: here’s a neat little trick to reduce the amount of code users have to type to instantiate objects:&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;function jQuery(str, con){&#xA;    if ( window == this )&#xA;        return new jQuery(str, con);&#xA;    // ...&#xA;}&#xA;&#xA;new jQuery(&amp;quot;#foo&amp;quot;); // this is now equivalent...&#xA;jQuery(&amp;quot;#foo&amp;quot;);     // ...to this!&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;{:lang=&amp;ldquo;js&amp;rdquo;}&lt;/p&gt;&#xA;&lt;p&gt;Explanation: when jQuery(“#foo”) is typed, the function first determines if the context in which it’s being called is the global object (window).  If it is, it returns an instantiation of itself.  When it’s instantiated, the context in which it’s being called is inside its own function, and NOT within the global object (window), thus it bypasses our little instantiation trick and moves on to execute any remaining code in the function.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

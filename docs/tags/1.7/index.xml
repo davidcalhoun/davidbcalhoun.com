@@ -4,7 +4,7 @@
     <title>1.7 on David Calhoun&#39;s blog</title>
     <link>https://www.davidbcalhoun.com/tags/1.7/</link>
     <description>Recent content in 1.7 on David Calhoun&#39;s blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-US</language>
     <lastBuildDate>Tue, 15 Sep 2009 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://www.davidbcalhoun.com/tags/1.7/index.xml" rel="self" type="application/rss+xml" />
@@ -13,7 +13,7 @@
       <link>https://www.davidbcalhoun.com/2009/javascript-tidbit-block-scope-with-let/</link>
       <pubDate>Tue, 15 Sep 2009 00:00:00 +0000</pubDate>
       <guid>https://www.davidbcalhoun.com/2009/javascript-tidbit-block-scope-with-let/</guid>
-      <description>JavaScript has functional scope. Meaning that if you (properly) define variables within functions, those variables remain accessible only inside the function.&#xA;Block scope, on the other hand, defines scope within a block of code, usually defined by braces. JavaScript now has block scope as of version 1.7, which means it’s available in these browsers:&#xA;Firefox 2+ Block scope is enabled in JavaScript with the use of “let”:&#xA;let(x=100) { alert(x); }; It also works perfectly well on one line, without the use of braces:</description>
+      <description>&lt;p&gt;JavaScript has &lt;strong&gt;functional scope&lt;/strong&gt;. Meaning that if you (properly) define variables within functions, those variables remain accessible only inside the function.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Block scope&lt;/strong&gt;, on the other hand, defines scope within a block of code, usually defined by braces. JavaScript now has block scope as of version 1.7, which means it’s available in these browsers:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Firefox 2+&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Block scope is enabled in JavaScript with the use of “let”:&lt;/p&gt;&#xA;&lt;pre name=&#34;code&#34; class=&#34;JScript&#34;&gt;let(x=100) {&#xA;    alert(x);&#xA;};&lt;/pre&gt;&#xA;&lt;p&gt;It also works perfectly well on one line, without the use of braces:&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

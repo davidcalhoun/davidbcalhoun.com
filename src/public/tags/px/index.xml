@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>px on David Calhoun&#39;s blog</title>
-    <link>https://www.davidbcalhoun.com/tags/px/</link>
-    <description>Recent content in px on David Calhoun&#39;s blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Px on David Calhoun&#39;s blog</title>
+    <link>http://localhost:1313/tags/px/</link>
+    <description>Recent content in Px on David Calhoun&#39;s blog</description>
+    <generator>Hugo</generator>
     <language>en-US</language>
-    <lastBuildDate>Tue, 05 Oct 2010 00:00:00 +0000</lastBuildDate><atom:link href="https://www.davidbcalhoun.com/tags/px/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 05 Oct 2010 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/px/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Does it still make sense to use em rather than px?</title>
-      <link>https://www.davidbcalhoun.com/2010/does-it-still-make-sense-to-use-em-rather-than-px/</link>
+      <link>http://localhost:1313/2010/does-it-still-make-sense-to-use-em-rather-than-px/</link>
       <pubDate>Tue, 05 Oct 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/2010/does-it-still-make-sense-to-use-em-rather-than-px/</guid>
-      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ Alex Kessinger tweeted asking if there was a reason to still use EMs instead of PX measurements in mobile. This is an interesting question, but 140 characters isn&amp;rsquo;t quite enough to explain my thoughts. So here&amp;rsquo;s an old-fashioned blog post!
-Just a quick review: em and percentage (%) units in CSS are relative measurements, whereas px and other measurements are not.</description>
+      <guid>http://localhost:1313/2010/does-it-still-make-sense-to-use-em-rather-than-px/</guid>
+      <description>&lt;h2 id=&#34;-warning-this-is-an-old-article-and-may-include-information-thats-out-of-date-&#34;&gt;⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️&lt;/h2&gt;&#xA;&lt;p&gt;Alex Kessinger &lt;a href=&#34;http://twitter.com/voidfiles/status/26470129747&#34;&gt;tweeted&lt;/a&gt; asking if there was a reason to still use EMs instead of PX measurements in mobile. This is an interesting question, but 140 characters isn&amp;rsquo;t quite enough to explain my thoughts. So here&amp;rsquo;s an old-fashioned blog post!&lt;/p&gt;&#xA;&lt;p&gt;Just a quick review: em and percentage (%) units in CSS are relative measurements, whereas px and other measurements are not. What this means is that the resulting size of relative measurements depends on the size of the parent.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>
