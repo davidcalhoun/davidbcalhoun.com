@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>getty villa on David Calhoun&#39;s blog</title>
-    <link>https://www.davidbcalhoun.com/tags/getty-villa/</link>
-    <description>Recent content in getty villa on David Calhoun&#39;s blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Getty Villa on David Calhoun&#39;s blog</title>
+    <link>http://localhost:1313/tags/getty-villa/</link>
+    <description>Recent content in Getty Villa on David Calhoun&#39;s blog</description>
+    <generator>Hugo</generator>
     <language>en-US</language>
-    <lastBuildDate>Fri, 31 Dec 2021 15:00:00 -0500</lastBuildDate><atom:link href="https://www.davidbcalhoun.com/tags/getty-villa/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 31 Dec 2021 15:00:00 -0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/getty-villa/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My year in photos (2021)</title>
-      <link>https://www.davidbcalhoun.com/2021/my-year-in-photos-2021/</link>
+      <link>http://localhost:1313/2021/my-year-in-photos-2021/</link>
       <pubDate>Fri, 31 Dec 2021 15:00:00 -0500</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/2021/my-year-in-photos-2021/</guid>
-      <description>Intro Despite the continuing COVID-19 pandemic this year, I am grateful I was able to travel a bit. Two separate flights to California and a few road trips. While trying to keep as safe as possible, and being lucky so far not to have symptoms of COVID over this two year period (at the moment anyway&amp;hellip;).
-One of my favorite hiking spots this year was the Williamson Preserve, which is a long path of hiking and biking trails that was recently converted from farmland.</description>
+      <guid>http://localhost:1313/2021/my-year-in-photos-2021/</guid>
+      <description>&lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;&#xA;&lt;p&gt;Despite the continuing COVID-19 pandemic this year, I am grateful I was able to travel a bit.  Two separate flights to California and a few road trips.  While trying to keep as safe as possible, and being lucky so far not to have symptoms of COVID over this two year period (at the moment anyway&amp;hellip;).&lt;/p&gt;&#xA;&lt;p&gt;One of my favorite hiking spots this year was the Williamson Preserve, which is a long path of hiking and biking trails that was recently converted from farmland.  In the summertime the crews there planted a ton of flowers which attracted so many large butterflies.  On one of my hikes this area was swarming with Eastern Tiger Swallowtails, along with a lot of bees.  Pollinators&amp;rsquo; paradise!&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

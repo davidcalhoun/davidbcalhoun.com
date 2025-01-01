@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>rgb on David Calhoun&#39;s blog</title>
-    <link>https://www.davidbcalhoun.com/tags/rgb/</link>
-    <description>Recent content in rgb on David Calhoun&#39;s blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Rgb on David Calhoun&#39;s blog</title>
+    <link>http://localhost:1313/tags/rgb/</link>
+    <description>Recent content in Rgb on David Calhoun&#39;s blog</description>
+    <generator>Hugo</generator>
     <language>en-US</language>
-    <lastBuildDate>Tue, 29 Dec 2009 00:00:00 +0000</lastBuildDate><atom:link href="https://www.davidbcalhoun.com/tags/rgb/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 29 Dec 2009 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/rgb/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>A primer on CSS colors</title>
-      <link>https://www.davidbcalhoun.com/2009/a-primer-on-css-colors/</link>
+      <link>http://localhost:1313/2009/a-primer-on-css-colors/</link>
       <pubDate>Tue, 29 Dec 2009 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/2009/a-primer-on-css-colors/</guid>
-      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ Color keywords Example usage:
-// Example body { color: red; } // Generalization (not actual code) body { color: color_name; } Because color names are easy to remember, they’re handy for getting quick results, especially while doing rapid prototyping.
-W3C’s CSS1 recommendation first mentioned 16 color keywords that you can use: aqua, black, blue, fuchsia, gray, green, lime, maroon, navy, olive, purple, red, silver, teal, white, and yellow:</description>
+      <guid>http://localhost:1313/2009/a-primer-on-css-colors/</guid>
+      <description>&lt;h2 id=&#34;-warning-this-is-an-old-article-and-may-include-information-thats-out-of-date-&#34;&gt;⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️&lt;/h2&gt;&#xA;&lt;h3 id=&#34;color-keywords&#34;&gt;Color keywords&lt;/h3&gt;&#xA;&lt;p&gt;Example usage:&lt;/p&gt;&#xA;&lt;pre name=&#34;code&#34; class=&#34;css&#34;&gt;// Example&#xA;body { color: red; }&#xA;&#xA;// Generalization (not actual code)&#xA;body { color: color_name; }&lt;/pre&gt;&#xA;&lt;p&gt;Because color names are easy to remember, they’re handy for getting quick results, especially while doing rapid prototyping.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://www.w3.org/TR/CSS1/#color-units&#34;&gt;W3C’s CSS1 recommendation&lt;/a&gt; first mentioned 16 color keywords that you can use: &lt;em&gt;aqua, black, blue, fuchsia, gray, green, lime, maroon, navy, olive, purple, red, silver, teal, white, and yellow&lt;/em&gt;:&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

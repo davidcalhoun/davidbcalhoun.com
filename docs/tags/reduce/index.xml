@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>reduce on David Calhoun&#39;s blog</title>
+    <title>Reduce on David Calhoun&#39;s blog</title>
     <link>https://www.davidbcalhoun.com/tags/reduce/</link>
-    <description>Recent content in reduce on David Calhoun&#39;s blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Reduce on David Calhoun&#39;s blog</description>
+    <generator>Hugo</generator>
     <language>en-US</language>
     <lastBuildDate>Sun, 26 Aug 2018 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://www.davidbcalhoun.com/tags/reduce/index.xml" rel="self" type="application/rss+xml" />
@@ -13,7 +13,7 @@
       <link>https://www.davidbcalhoun.com/2018/a-simple-introduction-to-javascript-map-and-reduce-array-helper-functions/</link>
       <pubDate>Sun, 26 Aug 2018 00:00:00 +0000</pubDate>
       <guid>https://www.davidbcalhoun.com/2018/a-simple-introduction-to-javascript-map-and-reduce-array-helper-functions/</guid>
-      <description>Perhaps you&amp;rsquo;ve been programming for a while, and you&amp;rsquo;re pretty comfortable using for loops to traverse Arrays. However, you know how untidy and complicated for loops can get, and you are interested in better approaches to keep the code clean. Enter map and reduce!&#xA;First steps with for loops Most folks find for loops powerful enough to achieve all they need when they need to process items in an Array.</description>
+      <description>&lt;link itemprop=&#34;mainEntityOfPage&#34; href=&#34;https://en.wikipedia.org/wiki/JavaScript&#34;&gt;&#xA;&lt;p&gt;Perhaps you&amp;rsquo;ve been programming for a while, and you&amp;rsquo;re pretty comfortable using &lt;code&gt;for&lt;/code&gt; loops to traverse Arrays.  However, you know how untidy and complicated &lt;code&gt;for&lt;/code&gt; loops can get, and you are interested in better approaches to keep the code clean.  Enter &lt;code&gt;map&lt;/code&gt; and &lt;code&gt;reduce&lt;/code&gt;!&lt;/p&gt;&#xA;&lt;h2 id=&#34;first-steps-with-for-loops&#34;&gt;First steps with &lt;code&gt;for&lt;/code&gt; loops&lt;/h2&gt;&#xA;&lt;p&gt;Most folks find &lt;code&gt;for&lt;/code&gt; loops powerful enough to achieve all they need when they need to process items in an &lt;code&gt;Array&lt;/code&gt;.  For example, say we have a simple list of items:&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

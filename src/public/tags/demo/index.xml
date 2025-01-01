@@ -1,35 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>demo on David Calhoun&#39;s blog</title>
-    <link>https://www.davidbcalhoun.com/tags/demo/</link>
-    <description>Recent content in demo on David Calhoun&#39;s blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Demo on David Calhoun&#39;s blog</title>
+    <link>http://localhost:1313/tags/demo/</link>
+    <description>Recent content in Demo on David Calhoun&#39;s blog</description>
+    <generator>Hugo</generator>
     <language>en-US</language>
-    <lastBuildDate>Sat, 23 Nov 2013 00:00:00 +0000</lastBuildDate><atom:link href="https://www.davidbcalhoun.com/tags/demo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Nov 2013 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/demo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Introducing Negative Scroll Blur (for browsers that support CSS filters)</title>
-      <link>https://www.davidbcalhoun.com/2013/introducing-negative-scroll-blur-for-browsers-that-support-css-filters/</link>
+      <link>http://localhost:1313/2013/introducing-negative-scroll-blur-for-browsers-that-support-css-filters/</link>
       <pubDate>Sat, 23 Nov 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/2013/introducing-negative-scroll-blur-for-browsers-that-support-css-filters/</guid>
-      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ (2016: in retrospect, this is kind of gratuitous and doesn&amp;rsquo;t appear to be fully working anymore&amp;hellip;)
-Demo
-Just for fun, I wanted to reproduce a cool but completely superfluous UI I saw in the updated Foursquare app recently. Basically, when the user tries to scroll past the upper bound of the app/page, the header image becomes blurred.</description>
+      <guid>http://localhost:1313/2013/introducing-negative-scroll-blur-for-browsers-that-support-css-filters/</guid>
+      <description>&lt;h2 id=&#34;-warning-this-is-an-old-article-and-may-include-information-thats-out-of-date-&#34;&gt;⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️&lt;/h2&gt;&#xA;&lt;p&gt;(2016: in retrospect, this is kind of gratuitous and doesn&amp;rsquo;t appear to be fully working anymore&amp;hellip;)&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.davidbcalhoun.com/a/_old%20mobile%20tests/negative-scroll-blur.html&#34;&gt;Demo&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Just for fun, I wanted to reproduce a cool but completely superfluous UI I saw in the updated Foursquare app recently. Basically, when the user tries to scroll past the upper bound of the app/page, the header image becomes blurred.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Implementing iPhone&#39;s slider unlock with input type=&#39;range&#39;</title>
-      <link>https://www.davidbcalhoun.com/2011/implementing-iphones-slider-unlock-with-input-typerange/</link>
+      <link>http://localhost:1313/2011/implementing-iphones-slider-unlock-with-input-typerange/</link>
       <pubDate>Sun, 16 Jan 2011 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/2011/implementing-iphones-slider-unlock-with-input-typerange/</guid>
-      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ (check out the live demo)
-Introduction After reading &amp;ldquo;What the Heck is Shadow DOM?&amp;quot; I was inspired to see how far I could style the &amp;lt;input type=&amp;quot;range&amp;quot;&amp;gt; element. Pretty far, as it turns out!
-My goal was to change the input&amp;rsquo;s default appearance:
-To the visual appearance of the iPhone&amp;rsquo;s unlock slider:
-As far as I can tell, only WebKit-based browsers and Opera have implemented input type=range.</description>
+      <guid>http://localhost:1313/2011/implementing-iphones-slider-unlock-with-input-typerange/</guid>
+      <description>&lt;h2 id=&#34;-warning-this-is-an-old-article-and-may-include-information-thats-out-of-date-&#34;&gt;⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️&lt;/h2&gt;&#xA;&lt;p&gt;(check out the live &lt;a href=&#34;https://www.davidbcalhoun.com/a/_old%20mobile%20tests/iphone-slider.html&#34;&gt;demo&lt;/a&gt;)&lt;/p&gt;&#xA;&lt;h3 id=&#34;introduction&#34;&gt;Introduction&lt;/h3&gt;&#xA;&lt;p&gt;After reading &lt;a href=&#34;http://glazkov.com/2011/01/14/what-the-heck-is-shadow-dom/&#34;&gt;&amp;ldquo;What the Heck is Shadow DOM?&amp;rdquo;&lt;/a&gt; I was inspired to see how far I could style the &lt;code&gt;&amp;lt;input type=&amp;quot;range&amp;quot;&amp;gt;&lt;/code&gt; element. Pretty far, as it turns out!&lt;/p&gt;&#xA;&lt;p&gt;My goal was to change the input&amp;rsquo;s default appearance:&lt;/p&gt;&#xA;&lt;img src=&#34;http://davidbcalhoun.com/wp-content/uploads/2011/01/input-range.png&#34; alt=&#34;The default appearance for input type=range&#34; title=&#34;The default appearance for input type=range&#34; width=&#34;144&#34; height=&#34;25&#34; class=&#34;aligncenter size-full wp-image-567&#34; /&gt;&#xD;&#xA;&lt;p&gt;To the visual appearance of the iPhone&amp;rsquo;s unlock slider:&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>
