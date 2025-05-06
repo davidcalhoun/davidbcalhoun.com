@@ -31,7 +31,7 @@
 
 
 
- <meta name="generator" content="Hugo 0.140.2">
+ <meta name="generator" content="Hugo 0.147.1">
     
 
     <style>
@@ -207,12 +207,10 @@
 <h3 id="the-skinny">The skinny</h3>
 <p>The Twitter API appears to support two methods for getting RSS feeds of lists. Both of these methods are pretty buried and their API docs don&rsquo;t help too much, but nonetheless both of these feeds work:</p>
 <blockquote>
-<p><a href="http://api.twitter.com/1/nathansmith/lists/javascript/statuses.atom">http://api.twitter.com/1/nathansmith/lists/javascript/statuses.atom</a></p>
-</blockquote>
+<p><a href="http://api.twitter.com/1/nathansmith/lists/javascript/statuses.atom">http://api.twitter.com/1/nathansmith/lists/javascript/statuses.atom</a></p></blockquote>
 <p>If you have the list ID (requires using some dev tools - see below), you can also use this format:</p>
 <blockquote>
-<p><a href="http://api.twitter.com/1/lists/statuses.atom?list_id=41981352">http://api.twitter.com/1/lists/statuses.atom?list_id=41981352</a></p>
-</blockquote>
+<p><a href="http://api.twitter.com/1/lists/statuses.atom?list_id=41981352">http://api.twitter.com/1/lists/statuses.atom?list_id=41981352</a></p></blockquote>
 <h3 id="the-explanation">The explanation</h3>
 <p>As it turns out, getting an RSS feed of a Twitter list is no easy task, at least from what I&rsquo;ve found. Twitter has largely replaced RSS for me, in terms of getting the latest and greatest information, and maybe Twitter wants to keep it that way by having me rely on their service instead of an RSS feed. That&rsquo;s how it seems to me anyway (this is also evidenced by their <a href="https://support.twitter.com/groups/31-twitter-basics/topics/111-features/articles/15361-how-to-find-your-rss-feed">killing off of making RSS feeds easily discoverable</a> but still making the feed available as long as you can figure out your Twitter user id (which is a task in itself), for instance here&rsquo;s my RSS feed: <a href="https://twitter.com/statuses/user_timeline/16521889.rss">https://twitter.com/statuses/user_timeline/16521889.rss</a>). I&rsquo;d say this is simply a conspiracy against RSS feeds and developers in general, which is the direction Twitter is headed these days.</p>
 <p>In any case, I digress! I want to get an RSS feed of a Twitter list. Great! All I should have to do is go to the page of the list and subscribe to the RSS feed. But.. there&rsquo;s no RSS feed. Hmm.</p>
@@ -222,39 +220,32 @@
 <p>After digging through the API docs, I found just the page I was looking for, <a href="http://dev.twitter.com/doc/get/lists/statuses">detailing the REST service for Twitter lists</a>.</p>
 <p>As it turns out, the basic structure for requesting list data is as follows:</p>
 <blockquote>
-<p><a href="http://api.twitter.com/version/lists/statuses.format">http://api.twitter.com/version/lists/statuses.format</a></p>
-</blockquote>
+<p><a href="http://api.twitter.com/version/lists/statuses.format">http://api.twitter.com/version/lists/statuses.format</a></p></blockquote>
 <p>As a newbie Twitter developer, there were a couple of things wrong here. First, what&rsquo;s the version of the API I&rsquo;m supposed to use? From other examples on the web (outside of the documentation&hellip;) I just assumed I&rsquo;d be using version 1, and that seemed to work. Ok, whatever, we&rsquo;ll go with 1:</p>
 <blockquote>
-<p><a href="http://api.twitter.com/1/lists/statuses.format">http://api.twitter.com/1/lists/statuses.format</a></p>
-</blockquote>
+<p><a href="http://api.twitter.com/1/lists/statuses.format">http://api.twitter.com/1/lists/statuses.format</a></p></blockquote>
 <p>Second step: this API is actually quite nice, and will return data in three different formats: xml, json, or atom (RSS!). Ok, now we&rsquo;re making progress!</p>
 <blockquote>
-<p><a href="http://api.twitter.com/1/lists/statuses.atom">http://api.twitter.com/1/lists/statuses.atom</a></p>
-</blockquote>
+<p><a href="http://api.twitter.com/1/lists/statuses.atom">http://api.twitter.com/1/lists/statuses.atom</a></p></blockquote>
 <h3 id="wheres-this-list_id-you-speak-of">Where&rsquo;s this list_id you speak of?</h3>
 <p>Now to pass in the info - I need to pass in the list ID in a key called &ldquo;list_id&rdquo;. The only problem is&hellip; where do I find the list ID? For the purposes of this example I&rsquo;ll use <a href="https://twitter.com/#!/nathansmith/javascript">Nathan Smith&rsquo;s excellent JavaScript developers list</a>. To normal human beings, this list might be called &ldquo;nathansmith/javascript&rdquo;, but a Twitter ID is numerical, so that&rsquo;s not what we&rsquo;re looking for.</p>
 <p>So.. I assume at this point I can use some of the Twitter developer tools and fiddle around with them until I find an API call that will translate the human-readable list name into a numerical ID. But no.. I don&rsquo;t want to download anything, I don&rsquo;t want to investigate more of the API or go down any more rabbit holes.</p>
 <p>It&rsquo;s time to cut this rabbit hole short and do a bit of investigating. So I pulled up the list, opened up Web Inspector in Chrome, and took a look at the Network tab in the hopes of seeing an API call with an ID I was looking for&hellip;</p>
 <p>&hellip;And I found it! Somewhere down the line, Twitter was calling statuses.json with this request:</p>
 <blockquote>
-<p><a href="https://api.twitter.com/1/lists/statuses.json?list_id=41981352&amp;#038;include_entities=1&amp;#038;include_available_features=1&amp;#038;contributor_details=true">https://api.twitter.com/1/lists/statuses.json?list_id=41981352&amp;#038;include_entities=1&amp;#038;include_available_features=1&amp;#038;contributor_details=true</a></p>
-</blockquote>
+<p><a href="https://api.twitter.com/1/lists/statuses.json?list_id=41981352&amp;#038;include_entities=1&amp;#038;include_available_features=1&amp;#038;contributor_details=true">https://api.twitter.com/1/lists/statuses.json?list_id=41981352&amp;#038;include_entities=1&amp;#038;include_available_features=1&amp;#038;contributor_details=true</a></p></blockquote>
 <p>There&rsquo;s our list_id (and incidentally, the same API call [with json instead of atom].. which shows that Web Inspector is more useful than API docs sometimes)! After a short copy-paste, all the pieces of my Frankenstein API call have been put together:</p>
 <blockquote>
-<p><a href="http://api.twitter.com/1/lists/statuses.atom?list_id=41981352">http://api.twitter.com/1/lists/statuses.atom?list_id=41981352</a></p>
-</blockquote>
+<p><a href="http://api.twitter.com/1/lists/statuses.atom?list_id=41981352">http://api.twitter.com/1/lists/statuses.atom?list_id=41981352</a></p></blockquote>
 <p>And it works, without having to mess around with OAuth or authentication, registering an app, or whatever. Of course now we can refer back to the API docs and mess around with some parameters to get just the data I&rsquo;m looking for. Maybe most useful to developers is the handy ability to get easily paginated results:</p>
 <blockquote>
-<p><a href="http://api.twitter.com/1/lists/statuses.atom?list_id=41981352&amp;page=2">http://api.twitter.com/1/lists/statuses.atom?list_id=41981352&amp;page=2</a></p>
-</blockquote>
+<p><a href="http://api.twitter.com/1/lists/statuses.atom?list_id=41981352&amp;page=2">http://api.twitter.com/1/lists/statuses.atom?list_id=41981352&amp;page=2</a></p></blockquote>
 <p>There&rsquo;s also what would be a handy &ldquo;count&rdquo; variable, but it&rsquo;s altogether useless as it appears to be ignored. The API always returned 20 results for me.</p>
 <p>In any case, there you have it! The incredibly roundabout way to get an RSS feed of your favorite Twitter list.</p>
 <h3 id="update"><strong>UPDATE</strong></h3>
 <p>Thanks to <a href="http://sociable.co/2011/05/05/as-twitter-protects-its-ecosystem-heres-how-to-create-an-rss-feed-of-a-twitter-list/">this site</a>, it looks like there&rsquo;s a more straightforward way of getting the RSS feed. Using the same list we were trying to get above, it looks like this also works:</p>
 <blockquote>
-<p><a href="http://api.twitter.com/1/nathansmith/lists/javascript/statuses.atom">http://api.twitter.com/1/nathansmith/lists/javascript/statuses.atom</a></p>
-</blockquote>
+<p><a href="http://api.twitter.com/1/nathansmith/lists/javascript/statuses.atom">http://api.twitter.com/1/nathansmith/lists/javascript/statuses.atom</a></p></blockquote>
 </div>
 
     
