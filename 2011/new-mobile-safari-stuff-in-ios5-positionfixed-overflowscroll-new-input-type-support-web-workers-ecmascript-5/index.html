@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en-US"
+    prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+
+<head>
+     
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="David Calhoun">
+    <title>New Mobile Safari stuff in iOS5: position:fixed, overflow:scroll, new input type support, web workers, ECMAScript 5 - David Calhoun's blog</title>
+    
+    <style>
+
+    html body {
+        font-family: 'Roboto', sans-serif;
+    }
+
+</style>
+
+
+ 
+<link rel="stylesheet" href="https://www.davidbcalhoun.com/css/main.min.edbbacc2430116405d2cf3a4ef94fb1b9d832b1e953da3fcb23820aacda0b09d.css">
+ <link rel="preconnect" href="https://comments.davidbcalhoun.com">
+<link rel="preconnect" href="https://ssl.gstatic.com">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="preconnect" href="https://accounts.google.com">
+<link rel="preconnect" href="https://apis.google.com">
+<link rel="preconnect" href="https://www.google-analytics.com">
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<link rel="preload" href="/commento.css" as="style">
+
+
+
+ <meta name="generator" content="Hugo 0.140.2">
+    
+
+    <style>
+         
+         
+         
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: local('Roboto'), local('Roboto-Regular'),
+                url('/wp-content/fonts/roboto-v20-latin-regular.woff2') format('woff2'),
+                 
+                url('/wp-content/fonts/roboto-v20-latin-regular.woff') format('woff');
+             
+        }
+    </style>
+
+    
+    <meta name="description" content="Personal blog of photographer and web developer David Calhoun." />
+    
+    <link rel="canonical" href="https://www.davidbcalhoun.com/2011/new-mobile-safari-stuff-in-ios5-positionfixed-overflowscroll-new-input-type-support-web-workers-ecmascript-5/">
+    <link href="/index.xml" rel="alternate" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+    <link href="/index.xml" rel="feed" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+    <link href="/index.xml" rel="self" type="application/rss+xml" title="David Calhoun&#39;s blog" />
+    <meta name="format-detection" content="telephone=no">
+
+    
+    <meta itemprop="name" content="New Mobile Safari stuff in iOS5: position:fixed, overflow:scroll, new input type support, web workers, ECMAScript 5" />
+    <meta itemprop="headline" content="New Mobile Safari stuff in iOS5: position:fixed, overflow:scroll, new input type support, web workers, ECMAScript 5" />
+    
+    
+    <meta itemprop="author" content="David Calhoun" />
+    <link rel="me" href="https://www.themaingate.net/" type="text/html">
+    <link rel="me" href="mailto:david.b.calhoun+dc@gmail.com">
+    <link rel="me" href="https://www.linkedin.com/in/davidcalhoun/" type="text/html">
+    <link rel="me" href="https://github.com/davidcalhoun" type="text/html">
+    <link rel="me" href="https://twitter.com/franksvalli" type="text/html">
+    <link rel="archives" href="https://example.com/archives/">
+
+    
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://www.davidbcalhoun.com/2011/new-mobile-safari-stuff-in-ios5-positionfixed-overflowscroll-new-input-type-support-web-workers-ecmascript-5/" />
+    <meta property="og:title" content="New Mobile Safari stuff in iOS5: position:fixed, overflow:scroll, new input type support, web workers, ECMAScript 5" />
+    
+    
+    
+    <meta property="og:site_name" content="David Calhoun's Blog" />
+    
+    <meta property="og:updated_time" content=2011-06-07T00:00:00Z />
+    
+
+    
+    
+    <meta property="article:published_time" content=2011-06-07T00:00:00Z />
+    <meta property="article:modified_time" content=2011-06-07T00:00:00Z />
+    
+    
+    
+    <meta property="article:section" content="ios" />
+    
+    
+    <meta property="article:author" content="https://www.davidbcalhoun.com" />
+    
+    
+    <meta property="article:tag" content="ios" />
+    
+    <meta property="article:tag" content="mobile safari" />
+    
+    <meta property="article:tag" content="mobile" />
+    
+    <meta property="article:tag" content="webdev" />
+    
+
+    
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="New Mobile Safari stuff in iOS5: position:fixed, overflow:scroll, new input type support, web workers, ECMAScript 5" />
+    <meta name="twitter:url" content="https://www.davidbcalhoun.com/2011/new-mobile-safari-stuff-in-ios5-positionfixed-overflowscroll-new-input-type-support-web-workers-ecmascript-5/" />
+    <meta name="twitter:site" content="@franksvalli" />
+    <meta name="twitter:creator" content="@franksvalli" />
+    <meta name="twitter:domain" content="davidbcalhoun.com" />
+    
+    
+    
+
+
+    <link rel="Shortcut Icon" type="image/ico" href="https://www.davidbcalhoun.com/favicon.ico">
+</head>
+
+
+
+<body>
+     
+    <nav class="navbar">
+
+        <div class="navbar-header">
+            <a class="navbar-brand" href="https://www.davidbcalhoun.com/">David Calhoun&#39;s blog</a>
+        </div>
+
+        
+        <ul class="navbar-links">
+            
+            <li class="navbar-icon"><a aria-label="Send an email" title="Send an email" href="mailto:david.b.calhoun&#43;dc@gmail.com"><svg aria-label="email" role="img" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1664 1504v-768q-32 36-69 66-268 206-426 338-51 43-83 67t-86.5 48.5-102.5 24.5h-2q-48 0-102.5-24.5t-86.5-48.5-83-67q-158-132-426-338-37-30-69-66v768q0 13 9.5 22.5t22.5 9.5h1472q13 0 22.5-9.5t9.5-22.5zm0-1051v-24.5l-.5-13-3-12.5-5.5-9-9-7.5-14-2.5h-1472q-13 0-22.5 9.5t-9.5 22.5q0 168 147 284 193 152 401 317 6 5 35 29.5t46 37.5 44.5 31.5 50.5 27.5 43 9h2q20 0 43-9t50.5-27.5 44.5-31.5 46-37.5 35-29.5q208-165 401-317 54-43 100.5-115.5t46.5-131.5zm128-37v1088q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-1088q0-66 47-113t113-47h1472q66 0 113 47t47 113z"/></svg></i></a>
+            </li>
+            
+            <li class="navbar-icon"><a aria-label="Home Page" title="Home Page" href="https://www.themaingate.net/"><svg aria-label="home site" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"/></svg></i></a>
+            </li>
+            
+            <li class="navbar-icon"><a aria-label="Twitter" title="Twitter" href="https://twitter.com/franksvalli/"><svg aria-label="twitter" role="img" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"/></svg></i></a>
+            </li>
+            
+            <li class="navbar-icon"><a aria-label="Github" title="Github" href="https://github.com/davidcalhoun/"><svg aria-label="github" role="img" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M896 128q209 0 385.5 103t279.5 279.5 103 385.5q0 251-146.5 451.5t-378.5 277.5q-27 5-40-7t-13-30q0-3 .5-76.5t.5-134.5q0-97-52-142 57-6 102.5-18t94-39 81-66.5 53-105 20.5-150.5q0-119-79-206 37-91-8-204-28-9-81 11t-92 44l-38 24q-93-26-192-26t-192 26q-16-11-42.5-27t-83.5-38.5-85-13.5q-45 113-8 204-79 87-79 206 0 85 20.5 150t52.5 105 80.5 67 94 39 102.5 18q-39 36-49 103-21 10-45 15t-57 5-65.5-21.5-55.5-62.5q-19-32-48.5-52t-49.5-24l-20-3q-21 0-29 4.5t-5 11.5 9 14 13 12l7 5q22 10 43.5 38t31.5 51l10 23q13 38 44 61.5t67 30 69.5 7 55.5-3.5l23-4q0 38 .5 88.5t.5 54.5q0 18-13 30t-40 7q-232-77-378.5-277.5t-146.5-451.5q0-209 103-385.5t279.5-279.5 385.5-103zm-477 1103q3-7-7-12-10-3-13 2-3 7 7 12 9 6 13-2zm31 34q7-5-2-16-10-9-16-3-7 5 2 16 10 10 16 3zm30 45q9-7 0-19-8-13-17-6-9 5 0 18t17 7zm42 42q8-8-4-19-12-12-20-3-9 8 4 19 12 12 20 3zm57 25q3-11-13-16-15-4-19 7t13 15q15 6 19-6zm63 5q0-13-17-11-16 0-16 11 0 13 17 11 16 0 16-11zm58-10q-2-11-18-9-16 3-14 15t18 8 14-14z"/></svg></i></a>
+            </li>
+            
+            <li class="navbar-icon"><a aria-label="LinkedIn" title="LinkedIn" href="https://www.linkedin.com/in/davidcalhoun/"><svg aria-label="linkedin" role="img" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z"/></svg></i></a>
+            </li>
+            
+        </ul>
+        
+
+    </nav>
+
+<main role="main" itemscope itemType="https://schema.org/BlogPosting">
+    <meta itemprop="mainEntityOfPage" content="https://www.davidbcalhoun.com/2011/new-mobile-safari-stuff-in-ios5-positionfixed-overflowscroll-new-input-type-support-web-workers-ecmascript-5/" />
+    <meta itemprop="inLanguage" content="en-US" />
+    <span itemscope itemprop="author" itemType="https://schema.org/Person">
+        <meta itemprop="name" content="David Calhoun" />
+        <meta itemprop="url" content="https://www.themaingate.net" />
+    </span>
+    <span itemscope itemprop="publisher" itemType="https://schema.org/Organization">
+        <meta itemprop="name" content="David Calhoun" />
+        <meta itemprop="url" content="https://www.themaingate.net" />
+        <span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+            <meta itemprop="url" content="https://www.themaingate.net/david-calhoun-logo.png">
+            <meta itemprop="width" content="459">
+            <meta itemprop="height" content="459">
+        </span>
+    </span>
+    <meta itemprop="image" content="https://www.themaingate.net/david-calhoun-logo.png" />
+    
+    <meta itemprop="datePublished" content=2011-06-07T00:00:00Z/>
+    <meta itemprop="dateModified" content=2011-06-07T00:00:00Z/>
+    
+
+    <article class="item">
+
+    
+    
+    
+
+    
+    
+
+
+    <h1 itemprop="headline" class="meta title">
+        <a href="https://www.davidbcalhoun.com/2011/new-mobile-safari-stuff-in-ios5-positionfixed-overflowscroll-new-input-type-support-web-workers-ecmascript-5/" itemprop="url">New Mobile Safari stuff in iOS5: position:fixed, overflow:scroll, new input type support, web workers, ECMAScript 5</a>
+    </h1>
+
+    <time class="meta date" datetime="2011-06-07 00:00:00 &#43;0000 UTC">
+        
+        June 7, 2011
+        
+    </time>
+    <aside class="meta tags">
+        <span>Tags: </span>
+        
+        <a href="https://www.davidbcalhoun.com/tags/ios"><span class="item-tag">ios</span></a>
+        
+        <a href="https://www.davidbcalhoun.com/tags/mobile-safari"><span class="item-tag">mobile safari</span></a>
+        
+        <a href="https://www.davidbcalhoun.com/tags/mobile"><span class="item-tag">mobile</span></a>
+        
+        <a href="https://www.davidbcalhoun.com/tags/webdev"><span class="item-tag">webdev</span></a>
+        
+    </aside>
+
+</article>
+
+
+    <div class="text-justify"><p>(note: this is based on the first iOS5 beta [9A5220p] and is subject to change on final release)</p>
+<p>It looks like there&rsquo;s finally some major improvements in mobile Safari, some of which I&rsquo;ve found below on my &ldquo;first glance&rdquo; after downloading the SDK. Chime in if you find anything yourself!</p>
+<h3 id="bad-news-first">Bad news first</h3>
+<p>Much to my disappointment, browser-based file uploads are still not supported (<a href="http://frontendstuff.com/html/examples/input-type-file.html">input type=&ldquo;file&rdquo;</a>), even though they have been supported on Android since version 2.2 (which they have <a href="http://davidbcalhoun.com/2011/android-3-0-honeycomb-is-first-to-implement-the-device-api">continued to improve and refine</a>). The best use case for this is uploading pictures and videos straight from the browser, but Apple seems more interested in making those functions possible directly from the operating system itself, supporting only big names like Twitter and YouTube. So much for the little guys.</p>
+<p>There&rsquo;s other stuff on my wishlist that hasn&rsquo;t yet been implemented, such as <code>WebGL</code> and <code>indexedDB</code>, along with some HTML5 input types, but regardless it&rsquo;s good to see some real progress in iOS 5. (update: it appears that some WebGL features are starting to be supported, although the demos I tried didn&rsquo;t seem to work).</p>
+<p>Now let&rsquo;s move on to the awesome new stuff that IS implemented!</p>
+<h3 id="positionfixed">position:fixed</h3>
+<p>A point of contention since the original iPhone was released in 2007, position:fixed now works on iOS5! What this means to developers: it&rsquo;s now very easy to create top and bottom toolbars for your web apps. (there&rsquo;s a long history of hacks and workarounds which will still need to be implemented as a fallback for the time being, but I&rsquo;ll save that for another post. I should also mention that position:fixed has worked on Android since version 2.2, and webOS seems to support a somewhat hacky implementation).</p>
+<p>Here&rsquo;s a <a href="http://www.youtube.com/watch?v=JFzv3ETwfms">video demo of position:fixed on iOS5</a>:</p>
+<p>(check out the <a href="http://frontendstuff.com/css/examples/position-fixed.html">demo</a> for yourself)</p>
+<h3 id="overflowscroll">overflow:scroll</h3>
+<p>This is a similar problem to position:fixed, but now it works on iOS5! For content that doesn&rsquo;t fit in its container element, previously the content was completely cut off (similarly with iframes). On the desktop we have the option to show scrollbars instead, allowing the user to scroll to see the content, but iOS made this difficult by requiring two fingers to scroll. Now overflow:scroll works and the user can scroll through the container&rsquo;s content with a single finger. Developers can use new CSS to enable native scrolling (with scrollbars and momentum):</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#f92672">-webkit-overflow-scrolling</span><span style="color:#f92672">:</span> <span style="color:#f92672">touch</span><span style="color:#f92672">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>(via <a href="http://johanbrook.com/browsers/native-momentum-scrolling-ios-5/">Johan Brook</a>).</p>
+<p>It&rsquo;s assumed that it&rsquo;s up to the developer to implement some sort of visual indicator to let the user know they can interact with the element.</p>
+<p>One criticism so far: there&rsquo;s no inertia scroll on this element, so it doesn&rsquo;t quite feel the same as scrolling the page.</p>
+<p>Here&rsquo;s a quick <a href="http://www.youtube.com/watch?v=KwpZ1F6dW5U">video demo of overflow:scroll on iOS 5</a>.</p>
+<p>(check out the <a href="http://frontendstuff.com/css/examples/overflow-scroll.html">demo</a> for yourself)</p>
+<h3 id="new-input-types">New Input Types</h3>
+<p>HTML5 defined many new helpful input types, and mobile operating systems have been slowly implementing them and creating optimized keyboards for the inputs. iOS5 now supports these input types: date, datetime, month, time, range. Click on the images to see their respective demo pages:</p>
+<p><a href="http://frontendstuff.com/html/input-type-date.html"><img src="http://davidbcalhoun.com/wp-content/uploads/2011/06/ios-date-input.png" alt="iOS Date Input" title="iOS Date Input" width="320" height="480" class="size-full wp-image-677" /></a><a href="http://frontendstuff.com/html/input-type-datetime.html"><img src="http://davidbcalhoun.com/wp-content/uploads/2011/06/ios-datetime-input.png" alt="iOS Datetime Input" title="iOS Datetime Input" width="320" height="480" class="size-full wp-image-678" /></a><a href="http://frontendstuff.com/html/input-type-month.html"><img src="http://davidbcalhoun.com/wp-content/uploads/2011/06/ios-month-input.png" alt="iOS Month Input" title="iOS Month Input" width="320" height="480" class="size-full wp-image-680" /></a><a href="http://frontendstuff.com/html/input-type-time.html"><img src="http://davidbcalhoun.com/wp-content/uploads/2011/06/ios-time-input.png" alt="iOS Time Input" title="iOS Time Input" width="320" height="480" class="size-full wp-image-682" /></a><a href="http://frontendstuff.com/html/input-type-range.html"><img src="http://davidbcalhoun.com/wp-content/uploads/2011/06/ios-range-input.png" alt="iOS Range Input" title="iOS Range Input" width="320" height="480" class="size-full wp-image-681" /></a></p>
+<p>And a fun one - <a href="http://davidbcalhoun.com/2011/implementing-iphone-slider-unlock-with-input-type-range">my iPhone slider hack based on input type range</a>, which now actually works on the iPhone itself (because input type=&ldquo;range&rdquo; is now supported)!</p>
+<p><a href="http://davidbcalhoun.com/a/iphone-slider.html"><img src="http://davidbcalhoun.com/wp-content/uploads/2011/06/ios-iphone-slider-in-html.png" alt="iOS Slider implemented with Range Input" title="iOS Slider implemented with Range Input" width="320" height="480" class="aligncenter size-full wp-image-679" /></a></p>
+<h3 id="web-workers-javascript">Web Workers (JavaScript)</h3>
+<p>JavaScript is single-threaded, and it happens to run on the same thread as the UI, which means computationally expensive operations can lead to an unresponsive UI, and no one likes that. Web Workers help by offloading tasks to another thread and only returning output when it needs to. In other words, it&rsquo;s a good thing for us web developers.</p>
+<p>According to my own tests, Web Workers seemed to be briefly enabled on early versions of iOS3, but were soon disabled thereafter. Now with iOS5, they&rsquo;re back again!</p>
+<h3 id="new-ecmascript-5-stuff-javascript">New ECMAScript 5 stuff (JavaScript)</h3>
+<p>(based on <a href="http://kangax.github.com/es5-compat-table/">kangax&rsquo;s ECMAScript 5 compatibility table</a>)</p>
+<table>
+  <tr>
+    <td>
+      Feature
+    </td>
+<pre><code>&lt;td&gt;
+  iOS 4.3.2
+&lt;/td&gt;
+
+&lt;td&gt;
+  iOS 5 beta 1
+&lt;/td&gt;
+</code></pre>
+  </tr>
+  <tr>
+    <td>
+      Object.create
+    </td>
+<pre><code>&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+
+&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+</code></pre>
+  </tr>
+  <tr>
+    <td>
+      Object.defineProperty
+    </td>
+<pre><code>&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+
+&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+</code></pre>
+  </tr>
+  <tr>
+    <td>
+      Object.defineProperties
+    </td>
+<pre><code>&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+
+&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+</code></pre>
+  </tr>
+  <tr>
+    <td>
+      Object.getPrototypeOf
+    </td>
+<pre><code>&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+
+&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+</code></pre>
+  </tr>
+  <tr>
+    <td>
+      Object.keys
+    </td>
+<pre><code>&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+
+&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+</code></pre>
+  </tr>
+  <tr>
+    <td>
+      Object.seal
+    </td>
+<pre><code>&lt;td class=&quot;negative&quot;&gt;
+  No
+&lt;/td&gt;
+
+&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+</code></pre>
+  </tr>
+  <tr>
+    <td>
+      Object.freeze
+    </td>
+<pre><code>&lt;td class=&quot;negative&quot;&gt;
+  No
+&lt;/td&gt;
+
+&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+</code></pre>
+  </tr>
+  <tr>
+    <td>
+      Object.preventExtensions
+    </td>
+<pre><code>&lt;td class=&quot;negative&quot;&gt;
+  No
+&lt;/td&gt;
+
+&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+</code></pre>
+  </tr>
+  <tr>
+    <td>
+      Object.isSealed
+    </td>
+<pre><code>&lt;td class=&quot;negative&quot;&gt;
+  No
+&lt;/td&gt;
+
+&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+</code></pre>
+  </tr>
+  <tr>
+    <td>
+      Object.isFrozen
+    </td>
+<pre><code>&lt;td class=&quot;negative&quot;&gt;
+  No
+&lt;/td&gt;
+
+&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+</code></pre>
+  </tr>
+  <tr>
+    <td>
+      Object.isExtensible
+    </td>
+<pre><code>&lt;td class=&quot;negative&quot;&gt;
+  No
+&lt;/td&gt;
+
+&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+</code></pre>
+  </tr>
+  <tr>
+    <td>
+      Object.getOwnPropertyDescriptor
+    </td>
+<pre><code>&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+
+&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+</code></pre>
+  </tr>
+  <tr>
+    <td>
+      Object.getOwnPropertyNames
+    </td>
+<pre><code>&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+
+&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+</code></pre>
+  </tr>
+  <tr>
+    <td>
+      Date.prototype.toISOString
+    </td>
+<pre><code>&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+
+&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+</code></pre>
+  </tr>
+  <tr>
+    <td>
+      Date.prototype.toISOString
+    </td>
+<pre><code>&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+
+&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+</code></pre>
+  </tr>
+  <tr>
+    <td>
+      Date.prototype.toISOString
+    </td>
+<pre><code>&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+
+&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+</code></pre>
+  </tr>
+  <tr>
+    <td>
+      Date.now
+    </td>
+<pre><code>&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+
+&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+</code></pre>
+  </tr>
+  <tr>
+    <td>
+      JSON
+    </td>
+<pre><code>&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+
+&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+</code></pre>
+  </tr>
+  <tr>
+    <td>
+      Function.prototype.bind
+    </td>
+<pre><code>&lt;td class=&quot;negative&quot;&gt;
+  No
+&lt;/td&gt;
+
+&lt;td class=&quot;negative&quot;&gt;
+  No
+&lt;/td&gt;
+</code></pre>
+  </tr>
+  <tr>
+    <td>
+      String.prototype.trim
+    </td>
+<pre><code>&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+
+&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+</code></pre>
+  </tr>
+  <tr>
+    <td>
+      Array.prototype.indexOf
+    </td>
+<pre><code>&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+
+&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+</code></pre>
+  </tr>
+  <tr>
+    <td>
+      Array.prototype.lastIndexOf
+    </td>
+<pre><code>&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+
+&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+</code></pre>
+  </tr>
+  <tr>
+    <td>
+      Array.prototype.every
+    </td>
+<pre><code>&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+
+&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+</code></pre>
+  </tr>
+  <tr>
+    <td>
+      Array.prototype.some
+    </td>
+<pre><code>&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+
+&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+</code></pre>
+  </tr>
+  <tr>
+    <td>
+      Array.prototype.forEach
+    </td>
+<pre><code>&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+
+&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+</code></pre>
+  </tr>
+  <tr>
+    <td>
+      Array.prototype.map
+    </td>
+<pre><code>&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+
+&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+</code></pre>
+  </tr>
+  <tr>
+    <td>
+      Array.prototype.filter
+    </td>
+<pre><code>&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+
+&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+</code></pre>
+  </tr>
+  <tr>
+    <td>
+      Array.prototype.reduce
+    </td>
+<pre><code>&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+
+&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+</code></pre>
+  </tr>
+  <tr>
+    <td>
+      Array.prototype.reduceRight
+    </td>
+<pre><code>&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+
+&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+</code></pre>
+  </tr>
+  <tr>
+    <td>
+      Getter in property initializer
+    </td>
+<pre><code>&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+
+&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+</code></pre>
+  </tr>
+  <tr>
+    <td>
+      Setter in property initializer
+    </td>
+<pre><code>&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+
+&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+</code></pre>
+  </tr>
+  <tr>
+    <td>
+      Property access on strings
+    </td>
+<pre><code>&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+
+&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+</code></pre>
+  </tr>
+  <tr>
+    <td>
+      Reserved words as property names
+    </td>
+<pre><code>&lt;td class=&quot;negative&quot;&gt;
+  No
+&lt;/td&gt;
+
+&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+</code></pre>
+  </tr>
+  <tr>
+    <td>
+      Strict mode
+    </td>
+<pre><code>&lt;td class=&quot;negative&quot;&gt;
+  No
+&lt;/td&gt;
+
+&lt;td class=&quot;positive&quot;&gt;
+  Yes
+&lt;/td&gt;
+</code></pre>
+  </tr>
+</table>
+<h3 id="html5test-score">HTML5Test score</h3>
+<p>iOS 4.3.2 scores 206 (7 bonus points) on the <a href="http://html5test.com/">HTML5 Test</a>, whereas iOS 5 beta scores 267 (9 bonus points). Much of these gains seem to be made in the &ldquo;Forms&rdquo; and &ldquo;Parsing rules&rdquo; sections, as well as the &ldquo;Web Workers&rdquo; section.</p>
+<h3 id="miscellaneous-new-stuff">Miscellaneous new stuff</h3>
+<ul>
+<li>Inline SVG in text/html</li>
+<li>float32array, int8array, int16array, int32array in JavaScript</li>
+<li>window.matchmedia() (JavaScript)</li>
+<li><s>onsearch Event (JavaScript)</s> - it looks like this was just broken in later iOS 4.3 builds, but it&rsquo;s back now in iOS 5</li>
+<li>MathML elements recognized (based on <a href="http://html5test.com/">html5test</a>)</li>
+<li>Improved speed of Canvas rendering (<a href="https://twitter.com/#!/KesieV/status/78067470501543936">source</a>)</li>
+<li>UIWebView and home screen web apps now running on Nitro? (expected but not tested)</li>
+<li>Newly supported CSS gradient syntax (-webkit-linear-gradient versus the older -webkit-gradient syntax)</li>
+<li><a href="https://developer.mozilla.org/en/DOM/element.classList">classList</a> (JavaScript)</li>
+<li>A major WebKit HTML5 History (popstate) bug is <a href="https://bugs.webkit.org/show_bug.cgi?id=42940">now fixed</a></li>
+<li><a href="http://html5demos.com/contenteditable">contentEditable</a> now works properly</li>
+</ul>
+</div>
+
+    
+    
+
+    
+
+</main>
+
+		<section class="comments">
+			<h2 class="page-header">Comments</h2>
+			<section id="commento"></section>
+			<script src="/commento.js"></script>
+		</section>
+
+        <footer role="contentinfo">
+
+            <p class="copyright text-muted">©<span itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="David Calhoun"><a href="https://www.themaingate.net/">David Calhoun</a></span> - <a href="https://www.davidbcalhoun.com/privacy/">Privacy</a> - <a href="https://www.davidbcalhoun.com/terms-of-service/">Terms</a></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+

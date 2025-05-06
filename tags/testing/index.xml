@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Testing on David Calhoun&#39;s blog</title>
+    <link>https://www.davidbcalhoun.com/tags/testing/</link>
+    <description>Recent content in Testing on David Calhoun&#39;s blog</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Wed, 19 May 2010 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.davidbcalhoun.com/tags/testing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Designing buttons that don&#39;t suck (Mobile web part 3)</title>
+      <link>https://www.davidbcalhoun.com/2010/designing-buttons-that-dont-suck-mobile-web-part-3/</link>
+      <pubDate>Wed, 19 May 2010 00:00:00 +0000</pubDate>
+      <guid>https://www.davidbcalhoun.com/2010/designing-buttons-that-dont-suck-mobile-web-part-3/</guid>
+      <description>&lt;h2 id=&#34;-warning-this-is-an-old-article-and-may-include-information-thats-out-of-date-&#34;&gt;⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️&lt;/h2&gt;&#xA;&lt;p&gt;A button is something that seems to be made just for mobile: it’s designed to be big and easy to activate, as opposed to small and harder to activate, like normal text links. This seems ideal for a mobile devices, which have a small display area and whose form of input is a person’s (relatively) fat finger interacting with the screen. Contrast this with the desktop, where the display area is much larger and the input device, the mouse, is a much more highly refined and sensitive pointing device.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Video: John Resig - Testing, Performance Analysis, and jQuery 1.4</title>
+      <link>https://www.davidbcalhoun.com/2009/video-john-resig-testing-performance-analysis-and-jquery-1.4/</link>
+      <pubDate>Mon, 21 Dec 2009 00:00:00 +0000</pubDate>
+      <guid>https://www.davidbcalhoun.com/2009/video-john-resig-testing-performance-analysis-and-jquery-1.4/</guid>
+      <description>&lt;p&gt;In case you hadn’t seen it yet, &lt;a href=&#34;http://ejohn.org/&#34;&gt;John Resig&lt;/a&gt; was kind enough to stop by Yahoo! for the December &lt;a href=&#34;http://www.meetup.com/BayJax/&#34;&gt;Bayjax&lt;/a&gt; meetup. Here’s the &lt;a href=&#34;https://www.youtube.com/watch?v=72wh5PnEf1k&#34;&gt;video&lt;/a&gt;:&lt;/p&gt;&#xA;&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/72wh5PnEf1k&#34; frameborder=&#34;0&#34; allow=&#34;autoplay; encrypted-media&#34; allowfullscreen&gt;&lt;/iframe&gt;&#xA;&lt;p&gt;Usually developers are more interested in just getting the dang code to work, and as a result actual the testing and maintenance of JavaScript isn’t talked about too much, so I’m sure this will be new territory for many developers. And since it’s John Resig speaking, there was of course a bit about using &lt;a href=&#34;http://testswarm.com/&#34;&gt;TestSwarm&lt;/a&gt;, a testing distributed framework-agnostic automated testing tool (that’s a mouthful!).&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

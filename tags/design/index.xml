@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Design on David Calhoun&#39;s blog</title>
+    <link>https://www.davidbcalhoun.com/tags/design/</link>
+    <description>Recent content in Design on David Calhoun&#39;s blog</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Fri, 10 May 2013 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.davidbcalhoun.com/tags/design/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Quick style comparison of mobile image search sites</title>
+      <link>https://www.davidbcalhoun.com/2013/quick-style-comparison-of-mobile-image-search-sites/</link>
+      <pubDate>Fri, 10 May 2013 00:00:00 +0000</pubDate>
+      <guid>https://www.davidbcalhoun.com/2013/quick-style-comparison-of-mobile-image-search-sites/</guid>
+      <description>&lt;h2 id=&#34;-warning-this-is-an-old-article-and-may-include-information-thats-out-of-date-&#34;&gt;⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️&lt;/h2&gt;&#xA;&lt;p&gt;The other day I glanced at a classmate using &lt;a href=&#34;http://www.baidu.com/&#34;&gt;Baidu&lt;/a&gt; to perform an image search and was impressed with their presentation:&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.davidbcalhoun.com/wp-content/uploads/2013/05/baidu-mobile-image-search.jpg&#34;&gt;&lt;img src=&#34;https://www.davidbcalhoun.com/wp-content/uploads/2013/05/baidu-mobile-image-search.jpg&#34; alt=&#34;Baidu mobile image search&#34; width=&#34;320&#34; height=&#34;480&#34; class=&#34;aligncenter size-full wp-image-1163&#34; /&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Note the nice big images and the lack of margins around images. After seeing this presentation, I realized that the common approach of adding margins around images is pretty unnecessary.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Response to &#39;What’s next for mobile now that adaptive design has failed?&#39;</title>
+      <link>https://www.davidbcalhoun.com/2012/response-to-whats-next-for-mobile-now-that-adaptive-design-has-failed/</link>
+      <pubDate>Wed, 23 May 2012 00:00:00 +0000</pubDate>
+      <guid>https://www.davidbcalhoun.com/2012/response-to-whats-next-for-mobile-now-that-adaptive-design-has-failed/</guid>
+      <description>&lt;p&gt;There&amp;rsquo;s been a flurry of response to &lt;a href=&#34;http://venturebeat.com/2012/05/22/adaptive-design-has-failed/&#34;&gt;this article, entitled &amp;ldquo;What’s next for mobile now that adaptive design has failed?&amp;rdquo;&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;There&amp;rsquo;s many problems with this article, so it&amp;rsquo;s hard to know where to start.&lt;/p&gt;&#xA;&lt;p&gt;I will admit that defenders of responsive design have come out of the woodwork in trashing this article, but I suppose I count myself among them, being a proponent of responsive design. I still see the web heading that direction, and I definitely don&amp;rsquo;t see it heading in the direction the author of the article has described.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Notes: Mobile Web Design (Cameron Moll, 2007)</title>
+      <link>https://www.davidbcalhoun.com/2011/notes-mobile-web-design-cameron-moll-2007/</link>
+      <pubDate>Fri, 21 Jan 2011 00:00:00 +0000</pubDate>
+      <guid>https://www.davidbcalhoun.com/2011/notes-mobile-web-design-cameron-moll-2007/</guid>
+      <description>&lt;h3 id=&#34;whats-this&#34;&gt;What&amp;rsquo;s this?&lt;/h3&gt;&#xA;&lt;p&gt;These are some notes I collect as I read through Cameron Moll&amp;rsquo;s &lt;a href=&#34;http://www.amazon.com/Mobile-Web-Design-Cameron-Moll/dp/0615185916&#34;&gt;Mobile Web Design&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;h3 id=&#34;introduction&#34;&gt;Introduction&lt;/h3&gt;&#xA;&lt;ol start=&#34;8&#34;&gt;&#xA;&lt;li&gt;Further info:&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Designing the Mobile User Experience (Barbara Ballard)&lt;br&gt;&#xA;dotMobi Web Developer&amp;rsquo;s Guide (dev.mobi)&lt;br&gt;&#xA;Global Authoring Practices for the Mobile Web (Luca Passani) (passani.it/gap)&lt;br&gt;&#xA;Constant Touch: A Global History of the Mobile Web (Jon Agar)&lt;br&gt;&#xA;Personal, Portable, Pedestrian: Mobile Phones in Japanese Life (Mizuko Ito)&lt;br&gt;&#xA;Mobile Interaction Design (Matt Jones)&lt;/p&gt;&#xA;&lt;ol start=&#34;13&#34;&gt;&#xA;&lt;li&gt;iPhone released just before publication&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h3 id=&#34;mobile-web-fundamentals&#34;&gt;Mobile Web Fundamentals&lt;/h3&gt;&#xA;&lt;ol start=&#34;15&#34;&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://communities-dominate.blogs.com/brands/2007/01/putting_27_bill.html&#34;&gt;Putting 2.7 Billion in Context: Mobile Phone Users&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mobile First: Luke Wroblewski on mobile design</title>
+      <link>https://www.davidbcalhoun.com/2010/mobile-first-luke-wroblewski-on-mobile-design/</link>
+      <pubDate>Sat, 05 Jun 2010 00:00:00 +0000</pubDate>
+      <guid>https://www.davidbcalhoun.com/2010/mobile-first-luke-wroblewski-on-mobile-design/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://5by5.tv/bigwebshow/6&#34;&gt;&lt;img src=&#34;http://davidbcalhoun.com/wp-content/uploads/2010/06/luke-wroblewski-mobile-first1.png&#34; alt=&#34;Click to play Luke Wroblewski: Mobile First&#34; title=&#34;Click to play Luke Wroblewski: Mobile First&#34; width=&#34;474&#34; height=&#34;285&#34; class=&#34;aligncenter size-full wp-image-271&#34; /&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;In &lt;a href=&#34;http://5by5.tv/bigwebshow/6&#34;&gt;episode 6 of The Big Web Show&lt;/a&gt;, &lt;a href=&#34;//lukew.com/&#34;&gt;Luke Wroblewski&lt;/a&gt; gives his “Mobile First” talk, explaining his philosophy for designing for mobile, the challenges, and a look at the road ahead. Luke explains that because of the limitations on mobile, developers are forced to really optimize the user experience for mobile. Often times this mobile experience turns out much better than on the desktop, where the “gluttony of resources” results in distracting and excessive webpages.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>On designing a mobile webpage (Mobile web part 4)</title>
+      <link>https://www.davidbcalhoun.com/2010/on-designing-a-mobile-webpage-mobile-web-part-4/</link>
+      <pubDate>Wed, 26 May 2010 00:00:00 +0000</pubDate>
+      <guid>https://www.davidbcalhoun.com/2010/on-designing-a-mobile-webpage-mobile-web-part-4/</guid>
+      <description>&lt;h2 id=&#34;-warning-this-is-an-old-article-and-may-include-information-thats-out-of-date-&#34;&gt;⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️&lt;/h2&gt;&#xA;&lt;p&gt;The frontend engineer lives at the intersection between design and engineering, and this is perhaps nowhere more true than in the world of mobile. In order to make a usable desktop website, an engineer must have at least some sense of design, and fortunately a lot of this has been standardized over the years. But the world of mobile is full of more unknowns, and the field is changing rapidly, especially lately from the shift away from older feature phones to the focus on smartphones. As such, the mobile engineer has to be on their toes in the sense of both design and engineering.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

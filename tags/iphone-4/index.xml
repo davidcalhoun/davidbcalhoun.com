@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Iphone 4 on David Calhoun&#39;s blog</title>
+    <link>https://www.davidbcalhoun.com/tags/iphone-4/</link>
+    <description>Recent content in Iphone 4 on David Calhoun&#39;s blog</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Fri, 25 Jun 2010 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.davidbcalhoun.com/tags/iphone-4/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>iPhone 4 SunSpider test results (22% faster than iPhone 3GS)</title>
+      <link>https://www.davidbcalhoun.com/2010/iphone-4-sunspider-test-results-22-faster-than-iphone-3gs/</link>
+      <pubDate>Fri, 25 Jun 2010 00:00:00 +0000</pubDate>
+      <guid>https://www.davidbcalhoun.com/2010/iphone-4-sunspider-test-results-22-faster-than-iphone-3gs/</guid>
+      <description>&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;============================================&#xD;&#xA;RESULTS (means and 95% confidence intervals)&#xD;&#xA;--------------------------------------------&#xD;&#xA;Total:                 10669.4ms +/- 1.0%&#xD;&#xA;--------------------------------------------&#xD;&#xA;&#xD;&#xA;  3d:                   1471.5ms +/- 2.1%&#xD;&#xA;    cube:                428.7ms +/- 2.6%&#xD;&#xA;    morph:               584.3ms +/- 4.7%&#xD;&#xA;    raytrace:            458.5ms +/- 0.6%&#xD;&#xA;&#xD;&#xA;  access:               1476.7ms +/- 1.3%&#xD;&#xA;    binary-trees:        151.6ms +/- 1.3%&#xD;&#xA;    fannkuch:            664.0ms +/- 0.1%&#xD;&#xA;    nbody:               397.9ms +/- 2.1%&#xD;&#xA;    nsieve:              263.2ms +/- 6.3%&#xD;&#xA;&#xD;&#xA;  bitops:                947.2ms +/- 2.1%&#xD;&#xA;    3bit-bits-in-byte:   195.7ms +/- 2.0%&#xD;&#xA;    bits-in-byte:        206.1ms +/- 1.0%&#xD;&#xA;    bitwise-and:         179.7ms +/- 1.1%&#xD;&#xA;    nsieve-bits:         365.7ms +/- 3.9%&#xD;&#xA;&#xD;&#xA;  controlflow:           169.5ms +/- 8.0%&#xD;&#xA;    recursive:           169.5ms +/- 8.0%&#xD;&#xA;&#xD;&#xA;  crypto:                668.7ms +/- 1.0%&#xD;&#xA;    aes:                 307.0ms +/- 1.4%&#xD;&#xA;    md5:                 181.1ms +/- 3.1%&#xD;&#xA;    sha1:                180.6ms +/- 1.0%&#xD;&#xA;&#xD;&#xA;  date:                  838.4ms +/- 4.6%&#xD;&#xA;    format-tofte:        420.9ms +/- 7.4%&#xD;&#xA;    format-xparb:        417.5ms +/- 2.8%&#xD;&#xA;&#xD;&#xA;  math:                 1161.9ms +/- 1.0%&#xD;&#xA;    cordic:              424.9ms +/- 0.5%&#xD;&#xA;    partial-sums:        385.1ms +/- 0.3%&#xD;&#xA;    spectral-norm:       351.9ms +/- 2.9%&#xD;&#xA;&#xD;&#xA;  regexp:               1479.3ms +/- 0.1%&#xD;&#xA;    dna:                1479.3ms +/- 0.1%&#xD;&#xA;&#xD;&#xA;  string:               2456.2ms +/- 0.9%&#xD;&#xA;    base64:              347.6ms +/- 3.1%&#xD;&#xA;    fasta:               408.1ms +/- 6.7%&#xD;&#xA;    tagcloud:            447.7ms +/- 0.6%&#xD;&#xA;    unpack-code:         797.8ms +/- 0.4%&#xD;&#xA;    validate-input:      455.0ms +/- 0.4%&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;summary&#34;&gt;Summary&lt;/h3&gt;&#xA;&lt;p&gt;Thanks to my coworker for lending me his phone for a few minutes (he waited in line for 9 hours yesterday when it first went on sale!).&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Apple on David Calhoun&#39;s blog</title>
+    <link>https://www.davidbcalhoun.com/categories/apple/</link>
+    <description>Recent content in Apple on David Calhoun&#39;s blog</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Wed, 16 Dec 2009 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.davidbcalhoun.com/categories/apple/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PastryKit: digging into an Apple Pie</title>
+      <link>https://www.davidbcalhoun.com/2009/pastrykit-digging-into-an-apple-pie/</link>
+      <pubDate>Wed, 16 Dec 2009 00:00:00 +0000</pubDate>
+      <guid>https://www.davidbcalhoun.com/2009/pastrykit-digging-into-an-apple-pie/</guid>
+      <description>&lt;h2 id=&#34;-warning-this-is-an-old-article-and-may-include-information-thats-out-of-date-&#34;&gt;⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️&lt;/h2&gt;&#xA;&lt;p&gt;Yesterday &lt;a href=&#34;http://daringfireball.net/2009/12/pastrykit&#34;&gt;John Gruber wrote about Apple’s PastryKit&lt;/a&gt;, iPhone’s JavaScript framework that’s been discovered “in the wild” on the iPhone user guide at &lt;a href=&#34;http://help.apple.com/iphone/3/mobile/&#34;&gt;http://help.apple.com/iphone/3/mobile/&lt;/a&gt;. There’s a few ways to access the page:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;with an actual iPhone or iTouch&lt;/li&gt;&#xA;&lt;li&gt;by browsing with an iPhone/iTouch user agent. If you’re using Safari, enable the Developer menu in Safari&amp;gt;Preferences&amp;gt;Advanced and switching user agents by clicking on Develope&amp;gt;User Agent&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;what8217s-all-the-big-fuss&#34;&gt;What’s all the big fuss?&lt;/h3&gt;&#xA;&lt;p&gt;John was particularly interested in the responsiveness and native-like interaction of flinging through long lists, the fact the address bar is completely hidden, and the possibility of having a toolbar fixed to the top of the page. PastryKit makes all of these things possible and implements them better than anything else. And the result is nearly indistinguishable from a native app. Here’s a video I made of the iPhone user guide in action, powered by PastryKit. This is running on Safari – it’s not a native app!&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

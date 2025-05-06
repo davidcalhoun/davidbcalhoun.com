@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Functions on David Calhoun&#39;s blog</title>
+    <link>https://www.davidbcalhoun.com/tags/functions/</link>
+    <description>Recent content in Functions on David Calhoun&#39;s blog</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Fri, 04 Dec 2009 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.davidbcalhoun.com/tags/functions/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ways of passing data to functions in JavaScript</title>
+      <link>https://www.davidbcalhoun.com/2009/ways-of-passing-data-to-functions-in-javascript/</link>
+      <pubDate>Fri, 04 Dec 2009 00:00:00 +0000</pubDate>
+      <guid>https://www.davidbcalhoun.com/2009/ways-of-passing-data-to-functions-in-javascript/</guid>
+      <description>&lt;h2 id=&#34;-warning-this-is-an-old-article-and-may-include-information-thats-out-of-date-&#34;&gt;⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️&lt;/h2&gt;&#xA;&lt;p&gt;Passing data is quite important in functional programming languages like JavaScript. When there are multiple functions (which is most of the time), there needs to be a way to pass data between the functions. This is done by passing values in parenthesis: myFunction(myData). Even when there is no data to be passed, we still have to declare and execute functions by using parenthesis: myFunction().&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

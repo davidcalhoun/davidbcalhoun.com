@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Commento on David Calhoun&#39;s blog</title>
+    <link>https://www.davidbcalhoun.com/tags/commento/</link>
+    <description>Recent content in Commento on David Calhoun&#39;s blog</description>
+    <generator>Hugo</generator>
+    <language>en-US</language>
+    <lastBuildDate>Fri, 10 Jan 2020 10:28:03 -0500</lastBuildDate>
+    <atom:link href="https://www.davidbcalhoun.com/tags/commento/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ditching Disqus (Migrating Away Since It Has Become a Monster)</title>
+      <link>https://www.davidbcalhoun.com/2020/ditching-disqus-migrating-away-since-it-has-become-a-monster/</link>
+      <pubDate>Fri, 10 Jan 2020 10:28:03 -0500</pubDate>
+      <guid>https://www.davidbcalhoun.com/2020/ditching-disqus-migrating-away-since-it-has-become-a-monster/</guid>
+      <description>&lt;p&gt;The time has finally come for me to ditch Disqus for comments.  I&amp;rsquo;ll let this gif do the talking:&lt;/p&gt;&#xA;&lt;figure itemprop=&#34;image&#34; itemscope=&#34;&#34; itemtype=&#34;http://schema.org/ImageObject&#34; class=&#34;center&#34;&gt;&#xA;    &lt;meta itemprop=&#34;width&#34; content=&#34;700&#34; /&gt;&#xA;    &lt;meta itemprop=&#34;height&#34; content=&#34;474&#34; /&gt;&#xA;    &lt;meta itemprop=&#34;url&#34; content=&#34;https://www.davidbcalhoun.com/wp-content/uploads/2020/disqus-crazy-amount-of-requests.gif&#34; /&gt;&#xA;    &lt;a href=&#34;https://www.davidbcalhoun.com/wp-content/uploads/2020/disqus-crazy-amount-of-requests.gif&#34;&gt;&#xA;        &lt;img itemprop=&#34;contentUrl&#34; src=&#34;https://www.davidbcalhoun.com/wp-content/uploads/2020/disqus-crazy-amount-of-requests.gif&#34; title=&#34;Disqus unleashed: making almost 100 HTTP requests to its own servers and random ad servers.&#34; /&gt;&#xA;    &lt;/a&gt;&#xA;    &lt;figcaption itemprop=&#34;caption&#34;&gt;Disqus unleashed: making almost 100 HTTP requests to its own servers and random ad servers.&lt;/figcaption&gt;&#xA;&lt;/figure&gt;&#xA;&lt;h2 id=&#34;the-downside-of-a-free-service&#34;&gt;The downside of a &lt;em&gt;free&lt;/em&gt; service&lt;/h2&gt;&#xA;&lt;p&gt;As the addage goes: if you are not paying for the product, &lt;em&gt;you&lt;/em&gt; are the product.  And the ad companies are the customers, vying for the ability to track you and your interests as you move around the web.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
