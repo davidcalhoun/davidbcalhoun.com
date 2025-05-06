@@ -1,26 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Mobile Safari on David Calhoun&#39;s blog</title>
-    <link>https://www.davidbcalhoun.com/tags/mobile-safari/</link>
-    <description>Recent content in Mobile Safari on David Calhoun&#39;s blog</description>
-    <generator>Hugo</generator>
-    <language>en-US</language>
-    <lastBuildDate>Tue, 07 Jun 2011 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://www.davidbcalhoun.com/tags/mobile-safari/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>New Mobile Safari stuff in iOS5: position:fixed, overflow:scroll, new input type support, web workers, ECMAScript 5</title>
-      <link>https://www.davidbcalhoun.com/2011/new-mobile-safari-stuff-in-ios5-positionfixed-overflowscroll-new-input-type-support-web-workers-ecmascript-5/</link>
-      <pubDate>Tue, 07 Jun 2011 00:00:00 +0000</pubDate>
-      <guid>https://www.davidbcalhoun.com/2011/new-mobile-safari-stuff-in-ios5-positionfixed-overflowscroll-new-input-type-support-web-workers-ecmascript-5/</guid>
-      <description>&lt;p&gt;(note: this is based on the first iOS5 beta [9A5220p] and is subject to change on final release)&lt;/p&gt;&#xA;&lt;p&gt;It looks like there&amp;rsquo;s finally some major improvements in mobile Safari, some of which I&amp;rsquo;ve found below on my &amp;ldquo;first glance&amp;rdquo; after downloading the SDK. Chime in if you find anything yourself!&lt;/p&gt;&#xA;&lt;h3 id=&#34;bad-news-first&#34;&gt;Bad news first&lt;/h3&gt;&#xA;&lt;p&gt;Much to my disappointment, browser-based file uploads are still not supported (&lt;a href=&#34;http://frontendstuff.com/html/examples/input-type-file.html&#34;&gt;input type=&amp;ldquo;file&amp;rdquo;&lt;/a&gt;), even though they have been supported on Android since version 2.2 (which they have &lt;a href=&#34;http://davidbcalhoun.com/2011/android-3-0-honeycomb-is-first-to-implement-the-device-api&#34;&gt;continued to improve and refine&lt;/a&gt;). The best use case for this is uploading pictures and videos straight from the browser, but Apple seems more interested in making those functions possible directly from the operating system itself, supporting only big names like Twitter and YouTube. So much for the little guys.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Is a hash faster than a Switch in JavaScript?</title>
-      <link>https://www.davidbcalhoun.com/2010/is-a-hash-faster-than-a-switch-in-javascript/</link>
-      <pubDate>Tue, 17 Aug 2010 00:00:00 +0000</pubDate>
-      <guid>https://www.davidbcalhoun.com/2010/is-a-hash-faster-than-a-switch-in-javascript/</guid>
-      <description>&lt;h2 id=&#34;-warning-this-is-an-old-article-and-may-include-information-thats-out-of-date-&#34;&gt;⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️&lt;/h2&gt;&#xA;&lt;p&gt;I stumbled across this concept recently and I thought I&amp;rsquo;d share it, because I don&amp;rsquo;t generally see this pattern being used. More importantly, I also share test results that show that maybe it&amp;rsquo;s not always a good idea to use this pattern&amp;hellip;&lt;/p&gt;&#xA;&lt;h3 id=&#34;the-problem-with-switch-statements&#34;&gt;The problem with Switch statements&lt;/h3&gt;&#xA;&lt;p&gt;The basic switch statement in JavaScript looks something like this:&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mobile Safari on David Calhoun's blog</title><link>https://www.davidbcalhoun.com/tags/mobile-safari/</link><description>Recent content in Mobile Safari on David Calhoun's blog</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Tue, 07 Jun 2011 00:00:00 +0000</lastBuildDate><atom:link href="https://www.davidbcalhoun.com/tags/mobile-safari/index.xml" rel="self" type="application/rss+xml"/><item><title>New Mobile Safari stuff in iOS5: position:fixed, overflow:scroll, new input type support, web workers, ECMAScript 5</title><link>https://www.davidbcalhoun.com/2011/new-mobile-safari-stuff-in-ios5-positionfixed-overflowscroll-new-input-type-support-web-workers-ecmascript-5/</link><pubDate>Tue, 07 Jun 2011 00:00:00 +0000</pubDate><guid>https://www.davidbcalhoun.com/2011/new-mobile-safari-stuff-in-ios5-positionfixed-overflowscroll-new-input-type-support-web-workers-ecmascript-5/</guid><description>&lt;p>(note: this is based on the first iOS5 beta [9A5220p] and is subject to change on final release)&lt;/p>
+&lt;p>It looks like there&amp;rsquo;s finally some major improvements in mobile Safari, some of which I&amp;rsquo;ve found below on my &amp;ldquo;first glance&amp;rdquo; after downloading the SDK. Chime in if you find anything yourself!&lt;/p>
+&lt;h3 id="bad-news-first">Bad news first&lt;/h3>
+&lt;p>Much to my disappointment, browser-based file uploads are still not supported (&lt;a href="http://frontendstuff.com/html/examples/input-type-file.html">input type=&amp;ldquo;file&amp;rdquo;&lt;/a>), even though they have been supported on Android since version 2.2 (which they have &lt;a href="http://davidbcalhoun.com/2011/android-3-0-honeycomb-is-first-to-implement-the-device-api">continued to improve and refine&lt;/a>). The best use case for this is uploading pictures and videos straight from the browser, but Apple seems more interested in making those functions possible directly from the operating system itself, supporting only big names like Twitter and YouTube. So much for the little guys.&lt;/p></description></item><item><title>Is a hash faster than a Switch in JavaScript?</title><link>https://www.davidbcalhoun.com/2010/is-a-hash-faster-than-a-switch-in-javascript/</link><pubDate>Tue, 17 Aug 2010 00:00:00 +0000</pubDate><guid>https://www.davidbcalhoun.com/2010/is-a-hash-faster-than-a-switch-in-javascript/</guid><description>&lt;h2 id="-warning-this-is-an-old-article-and-may-include-information-thats-out-of-date-">⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️&lt;/h2>
+&lt;p>I stumbled across this concept recently and I thought I&amp;rsquo;d share it, because I don&amp;rsquo;t generally see this pattern being used. More importantly, I also share test results that show that maybe it&amp;rsquo;s not always a good idea to use this pattern&amp;hellip;&lt;/p>
+&lt;h3 id="the-problem-with-switch-statements">The problem with Switch statements&lt;/h3>
+&lt;p>The basic switch statement in JavaScript looks something like this:&lt;/p></description></item></channel></rss>

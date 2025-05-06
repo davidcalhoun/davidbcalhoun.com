@@ -1,19 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>_ on David Calhoun&#39;s blog</title>
-    <link>https://www.davidbcalhoun.com/tags/_/</link>
-    <description>Recent content in _ on David Calhoun&#39;s blog</description>
-    <generator>Hugo</generator>
-    <language>en-US</language>
-    <lastBuildDate>Tue, 08 Dec 2009 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://www.davidbcalhoun.com/tags/_/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>JavaScript tidbit: special variables ($, $$, _, etc)</title>
-      <link>https://www.davidbcalhoun.com/2009/javascript-tidbit-special-variables-_-etc/</link>
-      <pubDate>Tue, 08 Dec 2009 00:00:00 +0000</pubDate>
-      <guid>https://www.davidbcalhoun.com/2009/javascript-tidbit-special-variables-_-etc/</guid>
-      <description>&lt;h2 id=&#34;-warning-this-is-an-old-article-and-may-include-information-thats-out-of-date-&#34;&gt;⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️&lt;/h2&gt;&#xA;&lt;p&gt;You&amp;rsquo;re probably used to typical variables names such as the following:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&#xA;&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;personName&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Joe&amp;#34;&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;p&gt;You may not realize it, but there are some non-alphanumeric variables at your disposal.&lt;/p&gt;&#xA;&lt;h3 id=&#34;using-&#34;&gt;Using $&lt;/h3&gt;&#xA;&lt;p&gt;For instance, the $ variable has been made popular by several JavaScript libraries, most notably &lt;a href=&#34;http://jquery.com/&#34;&gt;jQuery&lt;/a&gt;. You can use it to alias operations that are commonly performed, such as the following (1):&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>_ on David Calhoun's blog</title><link>https://www.davidbcalhoun.com/tags/_/</link><description>Recent content in _ on David Calhoun's blog</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Tue, 08 Dec 2009 00:00:00 +0000</lastBuildDate><atom:link href="https://www.davidbcalhoun.com/tags/_/index.xml" rel="self" type="application/rss+xml"/><item><title>JavaScript tidbit: special variables ($, $$, _, etc)</title><link>https://www.davidbcalhoun.com/2009/javascript-tidbit-special-variables-_-etc/</link><pubDate>Tue, 08 Dec 2009 00:00:00 +0000</pubDate><guid>https://www.davidbcalhoun.com/2009/javascript-tidbit-special-variables-_-etc/</guid><description>&lt;h2 id="-warning-this-is-an-old-article-and-may-include-information-thats-out-of-date-">⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️&lt;/h2>
+&lt;p>You&amp;rsquo;re probably used to typical variables names such as the following:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">var&lt;/span> &lt;span style="color:#a6e22e">personName&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Joe&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>You may not realize it, but there are some non-alphanumeric variables at your disposal.&lt;/p>
+&lt;h3 id="using-">Using $&lt;/h3>
+&lt;p>For instance, the $ variable has been made popular by several JavaScript libraries, most notably &lt;a href="http://jquery.com/">jQuery&lt;/a>. You can use it to alias operations that are commonly performed, such as the following (1):&lt;/p></description></item></channel></rss>

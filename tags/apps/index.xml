@@ -1,19 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Apps on David Calhoun&#39;s blog</title>
-    <link>https://www.davidbcalhoun.com/tags/apps/</link>
-    <description>Recent content in Apps on David Calhoun&#39;s blog</description>
-    <generator>Hugo</generator>
-    <language>en-US</language>
-    <lastBuildDate>Mon, 14 Apr 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://www.davidbcalhoun.com/tags/apps/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>The mobile web is dead (and we have killed it)</title>
-      <link>https://www.davidbcalhoun.com/2014/the-mobile-web-is-dead-and-we-have-killed-it/</link>
-      <pubDate>Mon, 14 Apr 2014 00:00:00 +0000</pubDate>
-      <guid>https://www.davidbcalhoun.com/2014/the-mobile-web-is-dead-and-we-have-killed-it/</guid>
-      <description>&lt;p&gt;The mobile web is dead.&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;(Banner: would you like to download the app?)&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;The mobile web remains dead.&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;(Splash screen: download the app!)&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;And &lt;strong&gt;we&lt;/strong&gt; have killed it.&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;(JavaScript prompt: &amp;ldquo;Yahoo! can serve you more accurate local weather and news if you enable location services&amp;rdquo;)&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;Yet its shadow still looms.&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;(Prompt: Yahoo! would like to use your Current Location)&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;How shall we comfort ourselves, the murderers of all murderers?&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;(&amp;ldquo;Do you want to change your search engine to Yahoo?&amp;rdquo;)&lt;/em&gt;&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apps on David Calhoun's blog</title><link>https://www.davidbcalhoun.com/tags/apps/</link><description>Recent content in Apps on David Calhoun's blog</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Mon, 14 Apr 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://www.davidbcalhoun.com/tags/apps/index.xml" rel="self" type="application/rss+xml"/><item><title>The mobile web is dead (and we have killed it)</title><link>https://www.davidbcalhoun.com/2014/the-mobile-web-is-dead-and-we-have-killed-it/</link><pubDate>Mon, 14 Apr 2014 00:00:00 +0000</pubDate><guid>https://www.davidbcalhoun.com/2014/the-mobile-web-is-dead-and-we-have-killed-it/</guid><description>&lt;p>The mobile web is dead.&lt;/p>
+&lt;p>&lt;em>(Banner: would you like to download the app?)&lt;/em>&lt;/p>
+&lt;p>The mobile web remains dead.&lt;/p>
+&lt;p>&lt;em>(Splash screen: download the app!)&lt;/em>&lt;/p>
+&lt;p>And &lt;strong>we&lt;/strong> have killed it.&lt;/p>
+&lt;p>&lt;em>(JavaScript prompt: &amp;ldquo;Yahoo! can serve you more accurate local weather and news if you enable location services&amp;rdquo;)&lt;/em>&lt;/p>
+&lt;p>Yet its shadow still looms.&lt;/p>
+&lt;p>&lt;em>(Prompt: Yahoo! would like to use your Current Location)&lt;/em>&lt;/p>
+&lt;p>How shall we comfort ourselves, the murderers of all murderers?&lt;/p>
+&lt;p>&lt;em>(&amp;ldquo;Do you want to change your search engine to Yahoo?&amp;rdquo;)&lt;/em>&lt;/p></description></item></channel></rss>

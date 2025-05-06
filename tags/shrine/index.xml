@@ -1,19 +1,52 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Shrine on David Calhoun&#39;s blog</title>
-    <link>https://www.davidbcalhoun.com/tags/shrine/</link>
-    <description>Recent content in Shrine on David Calhoun&#39;s blog</description>
-    <generator>Hugo</generator>
-    <language>en-US</language>
-    <lastBuildDate>Sat, 11 Jan 2020 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://www.davidbcalhoun.com/tags/shrine/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Plum Blossoms at Kitano Tenmangu Shrine in Kyoto, Japan (京都の北野天満宮)</title>
-      <link>https://www.davidbcalhoun.com/2020/plum-blossoms-at-kitano-tenmangu-shrine-in-kyoto-japan-%E4%BA%AC%E9%83%BD%E3%81%AE%E5%8C%97%E9%87%8E%E5%A4%A9%E6%BA%80%E5%AE%AE/</link>
-      <pubDate>Sat, 11 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>https://www.davidbcalhoun.com/2020/plum-blossoms-at-kitano-tenmangu-shrine-in-kyoto-japan-%E4%BA%AC%E9%83%BD%E3%81%AE%E5%8C%97%E9%87%8E%E5%A4%A9%E6%BA%80%E5%AE%AE/</guid>
-      <description>&lt;figure itemprop=&#34;image&#34; itemscope itemtype=&#34;https://schema.org/ImageObject&#34; class=&#34;center landscape&#34;&gt;&#xA;  &#xA;    &lt;a href=&#34;https://www.davidbcalhoun.com/wp-content/uploads/2020/kyoto-kitano-tenmangu/20190214-5D__2616-2000px-resize.jpeg&#34; class=&#34;picture&#34;&gt;&#xA;      &lt;picture&gt;&#xA;        &lt;span itemscope itemprop=&#34;author&#34; itemtype=&#34;https://schema.org/Person&#34;&gt;&#xA;            &lt;meta itemprop=&#34;name&#34; content=&#34;David Calhoun&#34; /&gt;&#xA;            &lt;meta itemprop=&#34;url&#34; content=&#34;https://www.themaingate.net&#34; /&gt;&#xA;        &lt;/span&gt;&#xA;        &#xA;        &lt;meta itemprop=&#34;caption&#34; content=&#34;The roof of the main shrine (拝殿) at Kitano Tenmangu.&#34; /&gt;&#xA;        &#xA;        &#xA;        &#xA;        &lt;meta itemprop=&#34;width&#34; content=&#34;2000&#34; /&gt;&#xA;        &#xA;        &#xA;        &lt;meta itemprop=&#34;height&#34; content=&#34;1333&#34; /&gt;&#xA;        &#xA;        &lt;span itemscope itemprop=&#34;thumbnail&#34; itemtype=&#34;https://schema.org/ImageObject&#34;&gt;&#xA;          &lt;meta itemprop=&#34;url&#34; content=&#34;/wp-content/uploads/2020/kyoto-kitano-tenmangu/20190214-5D__2616-500px-resize.jpeg&#34; /&gt;&#xA;        &lt;/span&gt;&#xA;        &#xA;        &lt;meta itemprop=&#34;genre&#34; content=&#34;Travel Photography&#34; /&gt;&#xA;        &#xA;        &#xA;        &lt;meta itemprop=&#34;keywords&#34; content=&#34;kyoto, japan, kitano tenmangu, shinto, shrine, plum blossoms, ume, traditional, roof&#34; /&gt;&#xA;        &#xA;        &#xA;        &lt;span itemprop=&#34;contentLocation&#34; itemscope itemtype=&#34;http://schema.org/Place&#34;&gt;&#xA;            &lt;meta itemprop=&#34;address&#34; content=&#34;Kitano Tenmangu shrine, Kyoto, Japan&#34;&gt;&#xA;            &#xA;            &#xA;        &lt;/span&gt;&#xA;        &#xA;        &lt;meta itemprop=&#34;isFamilyFriendly&#34; content=&#34;true&#34; /&gt;&#xA;&#xA;        &lt;source type=&#34;image/webp&#34; media=&#34;(max-width: 500px)&#34; srcset=&#34;https://www.davidbcalhoun.com/wp-content/uploads/2020/kyoto-kitano-tenmangu/20190214-5D__2616-500px-resize.webp&#34; /&gt;&#xA;        &lt;source type=&#34;image/webp&#34; media=&#34;(max-width: 1000px)&#34; srcset=&#34;https://www.davidbcalhoun.com/wp-content/uploads/2020/kyoto-kitano-tenmangu/20190214-5D__2616-1000px-resize.webp&#34; /&gt;&#xA;        &lt;source type=&#34;image/webp&#34; media=&#34;(min-width: 1001px)&#34; srcset=&#34;https://www.davidbcalhoun.com/wp-content/uploads/2020/kyoto-kitano-tenmangu/20190214-5D__2616-2000px-resize.webp&#34; /&gt;&#xA;&#xA;        &lt;source type=&#34;image/jpeg&#34; media=&#34;(max-width: 500px)&#34; srcset=&#34;https://www.davidbcalhoun.com/wp-content/uploads/2020/kyoto-kitano-tenmangu/20190214-5D__2616-500px-resize.jpeg&#34; /&gt;&#xA;        &lt;source type=&#34;image/jpeg&#34; media=&#34;(max-width: 1000px)&#34; srcset=&#34;https://www.davidbcalhoun.com/wp-content/uploads/2020/kyoto-kitano-tenmangu/20190214-5D__2616-1000px-resize.jpeg&#34; /&gt;&#xA;        &lt;source type=&#34;image/jpeg&#34; media=&#34;(min-width: 1001px)&#34; srcset=&#34;https://www.davidbcalhoun.com/wp-content/uploads/2020/kyoto-kitano-tenmangu/20190214-5D__2616-2000px-resize.jpeg&#34; /&gt;&#xA;&#xA;        &lt;img data-foo=&#34;2&#34; itemprop=&#34;url&#34; src=&#34;https://www.davidbcalhoun.com/wp-content/uploads/2020/kyoto-kitano-tenmangu/20190214-5D__2616-2000px-resize.jpeg&#34; loading=&#34;lazy&#34; alt=&#34;&#34; width=&#34;2000&#34; height=&#34;1333&#34; style=&#34;aspect-ratio: 2000 / 1333;&#34;  /&gt;&#xA;      &lt;/picture&gt;&#xA;    &lt;/a&gt;&#xA;  &#xA;    &lt;figcaption&gt;The roof of the main shrine (拝殿) at Kitano Tenmangu.&lt;/figcaption&gt;&#xA;  &lt;/figure&gt;&#xA;  &#xA;&lt;p&gt;Almost a year ago now I was lucky to be able to go back to my old stomping grounds in Kyoto, where I once studied Japanese in the hopes of maybe learning enough of the language to enroll in a university there to continue my studies in philosophy, perhaps being able to one day be another &amp;ldquo;professional&amp;rdquo; philosopher to walk along the &lt;a href=&#34;https://en.wikipedia.org/wiki/Philosopher%27s_Walk&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;Philosopher&amp;#39;s Path&lt;/a&gt;.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Shrine on David Calhoun's blog</title><link>https://www.davidbcalhoun.com/tags/shrine/</link><description>Recent content in Shrine on David Calhoun's blog</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Sat, 11 Jan 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.davidbcalhoun.com/tags/shrine/index.xml" rel="self" type="application/rss+xml"/><item><title>Plum Blossoms at Kitano Tenmangu Shrine in Kyoto, Japan (京都の北野天満宮)</title><link>https://www.davidbcalhoun.com/2020/plum-blossoms-at-kitano-tenmangu-shrine-in-kyoto-japan-%E4%BA%AC%E9%83%BD%E3%81%AE%E5%8C%97%E9%87%8E%E5%A4%A9%E6%BA%80%E5%AE%AE/</link><pubDate>Sat, 11 Jan 2020 00:00:00 +0000</pubDate><guid>https://www.davidbcalhoun.com/2020/plum-blossoms-at-kitano-tenmangu-shrine-in-kyoto-japan-%E4%BA%AC%E9%83%BD%E3%81%AE%E5%8C%97%E9%87%8E%E5%A4%A9%E6%BA%80%E5%AE%AE/</guid><description>&lt;figure itemprop="image" itemscope itemtype="https://schema.org/ImageObject" class="center landscape">
+ 
+ &lt;a href="https://www.davidbcalhoun.com/wp-content/uploads/2020/kyoto-kitano-tenmangu/20190214-5D__2616-2000px-resize.jpeg" class="picture">
+ &lt;picture>
+ &lt;span itemscope itemprop="author" itemtype="https://schema.org/Person">
+ &lt;meta itemprop="name" content="David Calhoun" />
+ &lt;meta itemprop="url" content="https://www.themaingate.net" />
+ &lt;/span>
+ 
+ &lt;meta itemprop="caption" content="The roof of the main shrine (拝殿) at Kitano Tenmangu." />
+ 
+ 
+ 
+ &lt;meta itemprop="width" content="2000" />
+ 
+ 
+ &lt;meta itemprop="height" content="1333" />
+ 
+ &lt;span itemscope itemprop="thumbnail" itemtype="https://schema.org/ImageObject">
+ &lt;meta itemprop="url" content="/wp-content/uploads/2020/kyoto-kitano-tenmangu/20190214-5D__2616-500px-resize.jpeg" />
+ &lt;/span>
+ 
+ &lt;meta itemprop="genre" content="Travel Photography" />
+ 
+ 
+ &lt;meta itemprop="keywords" content="kyoto, japan, kitano tenmangu, shinto, shrine, plum blossoms, ume, traditional, roof" />
+ 
+ 
+ &lt;span itemprop="contentLocation" itemscope itemtype="http://schema.org/Place">
+ &lt;meta itemprop="address" content="Kitano Tenmangu shrine, Kyoto, Japan">
+ 
+ 
+ &lt;/span>
+ 
+ &lt;meta itemprop="isFamilyFriendly" content="true" />
+
+ &lt;source type="image/webp" media="(max-width: 500px)" srcset="https://www.davidbcalhoun.com/wp-content/uploads/2020/kyoto-kitano-tenmangu/20190214-5D__2616-500px-resize.webp" />
+ &lt;source type="image/webp" media="(max-width: 1000px)" srcset="https://www.davidbcalhoun.com/wp-content/uploads/2020/kyoto-kitano-tenmangu/20190214-5D__2616-1000px-resize.webp" />
+ &lt;source type="image/webp" media="(min-width: 1001px)" srcset="https://www.davidbcalhoun.com/wp-content/uploads/2020/kyoto-kitano-tenmangu/20190214-5D__2616-2000px-resize.webp" />
+
+ &lt;source type="image/jpeg" media="(max-width: 500px)" srcset="https://www.davidbcalhoun.com/wp-content/uploads/2020/kyoto-kitano-tenmangu/20190214-5D__2616-500px-resize.jpeg" />
+ &lt;source type="image/jpeg" media="(max-width: 1000px)" srcset="https://www.davidbcalhoun.com/wp-content/uploads/2020/kyoto-kitano-tenmangu/20190214-5D__2616-1000px-resize.jpeg" />
+ &lt;source type="image/jpeg" media="(min-width: 1001px)" srcset="https://www.davidbcalhoun.com/wp-content/uploads/2020/kyoto-kitano-tenmangu/20190214-5D__2616-2000px-resize.jpeg" />
+
+ &lt;img data-foo="2" itemprop="url" src="https://www.davidbcalhoun.com/wp-content/uploads/2020/kyoto-kitano-tenmangu/20190214-5D__2616-2000px-resize.jpeg" loading="lazy" alt="" width="2000" height="1333" style="aspect-ratio: 2000 / 1333;" />
+ &lt;/picture>
+ &lt;/a>
+ 
+ &lt;figcaption>The roof of the main shrine (拝殿) at Kitano Tenmangu.&lt;/figcaption>
+ &lt;/figure>
+ 
+&lt;p>Almost a year ago now I was lucky to be able to go back to my old stomping grounds in Kyoto, where I once studied Japanese in the hopes of maybe learning enough of the language to enroll in a university there to continue my studies in philosophy, perhaps being able to one day be another &amp;ldquo;professional&amp;rdquo; philosopher to walk along the &lt;a href="https://en.wikipedia.org/wiki/Philosopher%27s_Walk" target="_blank" rel="noopener noreferrer">Philosopher&amp;#39;s Path&lt;/a>.&lt;/p></description></item></channel></rss>

@@ -1,630 +1,229 @@
-<!DOCTYPE html>
-<html lang="en-US"
-    prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
-
-<head>
-     
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="David Calhoun">
-    <title>Checking for undefined, null, and empty variables in JavaScript - David Calhoun's blog</title>
-    
-    <style>
-
-    html body {
-        font-family: 'Roboto', sans-serif;
-    }
-
-</style>
-
-
- 
-<link rel="stylesheet" href="https://www.davidbcalhoun.com/css/main.min.edbbacc2430116405d2cf3a4ef94fb1b9d832b1e953da3fcb23820aacda0b09d.css">
- <link rel="preconnect" href="https://comments.davidbcalhoun.com">
-<link rel="preconnect" href="https://ssl.gstatic.com">
-<link rel="preconnect" href="https://cdnjs.cloudflare.com">
-<link rel="preconnect" href="https://accounts.google.com">
-<link rel="preconnect" href="https://apis.google.com">
-<link rel="preconnect" href="https://www.google-analytics.com">
-<link rel="preconnect" href="https://www.googletagmanager.com">
-<link rel="preload" href="/commento.css" as="style">
-
-
-
- <meta name="generator" content="Hugo 0.140.2">
-    
-
-    <style>
-         
-         
-         
-        @font-face {
-            font-family: 'Roboto';
-            font-style: normal;
-            font-weight: 400;
-            font-display: swap;
-            src: local('Roboto'), local('Roboto-Regular'),
-                url('/wp-content/fonts/roboto-v20-latin-regular.woff2') format('woff2'),
-                 
-                url('/wp-content/fonts/roboto-v20-latin-regular.woff') format('woff');
-             
-        }
-    </style>
-
-    
-    <meta name="description" content="Personal blog of photographer and web developer David Calhoun." />
-    
-    <link rel="canonical" href="https://www.davidbcalhoun.com/2011/checking-for-undefined-null-and-empty-variables-in-javascript/">
-    <link href="/index.xml" rel="alternate" type="application/rss+xml" title="David Calhoun&#39;s blog" />
-    <link href="/index.xml" rel="feed" type="application/rss+xml" title="David Calhoun&#39;s blog" />
-    <link href="/index.xml" rel="self" type="application/rss+xml" title="David Calhoun&#39;s blog" />
-    <meta name="format-detection" content="telephone=no">
-
-    
-    <meta itemprop="name" content="Checking for undefined, null, and empty variables in JavaScript" />
-    <meta itemprop="headline" content="Checking for undefined, null, and empty variables in JavaScript" />
-    
-    
-    <meta itemprop="author" content="David Calhoun" />
-    <link rel="me" href="https://www.themaingate.net/" type="text/html">
-    <link rel="me" href="mailto:david.b.calhoun+dc@gmail.com">
-    <link rel="me" href="https://www.linkedin.com/in/davidcalhoun/" type="text/html">
-    <link rel="me" href="https://github.com/davidcalhoun" type="text/html">
-    <link rel="me" href="https://twitter.com/franksvalli" type="text/html">
-    <link rel="archives" href="https://example.com/archives/">
-
-    
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://www.davidbcalhoun.com/2011/checking-for-undefined-null-and-empty-variables-in-javascript/" />
-    <meta property="og:title" content="Checking for undefined, null, and empty variables in JavaScript" />
-    
-    
-    
-    <meta property="og:site_name" content="David Calhoun's Blog" />
-    
-    <meta property="og:updated_time" content=2011-02-11T00:00:00Z />
-    
-
-    
-    
-    <meta property="article:published_time" content=2011-02-11T00:00:00Z />
-    <meta property="article:modified_time" content=2011-02-11T00:00:00Z />
-    
-    
-    
-    <meta property="article:section" content="javascript" />
-    
-    
-    <meta property="article:author" content="https://www.davidbcalhoun.com" />
-    
-    
-    <meta property="article:tag" content="javascript" />
-    
-    <meta property="article:tag" content="webdev" />
-    
-    <meta property="article:tag" content="programming" />
-    
-
-    
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Checking for undefined, null, and empty variables in JavaScript" />
-    <meta name="twitter:url" content="https://www.davidbcalhoun.com/2011/checking-for-undefined-null-and-empty-variables-in-javascript/" />
-    <meta name="twitter:site" content="@franksvalli" />
-    <meta name="twitter:creator" content="@franksvalli" />
-    <meta name="twitter:domain" content="davidbcalhoun.com" />
-    
-    
-    
-
-
-    <link rel="Shortcut Icon" type="image/ico" href="https://www.davidbcalhoun.com/favicon.ico">
-</head>
-
-
-
-<body>
-     
-    <nav class="navbar">
-
-        <div class="navbar-header">
-            <a class="navbar-brand" href="https://www.davidbcalhoun.com/">David Calhoun&#39;s blog</a>
-        </div>
-
-        
-        <ul class="navbar-links">
-            
-            <li class="navbar-icon"><a aria-label="Send an email" title="Send an email" href="mailto:david.b.calhoun&#43;dc@gmail.com"><svg aria-label="email" role="img" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1664 1504v-768q-32 36-69 66-268 206-426 338-51 43-83 67t-86.5 48.5-102.5 24.5h-2q-48 0-102.5-24.5t-86.5-48.5-83-67q-158-132-426-338-37-30-69-66v768q0 13 9.5 22.5t22.5 9.5h1472q13 0 22.5-9.5t9.5-22.5zm0-1051v-24.5l-.5-13-3-12.5-5.5-9-9-7.5-14-2.5h-1472q-13 0-22.5 9.5t-9.5 22.5q0 168 147 284 193 152 401 317 6 5 35 29.5t46 37.5 44.5 31.5 50.5 27.5 43 9h2q20 0 43-9t50.5-27.5 44.5-31.5 46-37.5 35-29.5q208-165 401-317 54-43 100.5-115.5t46.5-131.5zm128-37v1088q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-1088q0-66 47-113t113-47h1472q66 0 113 47t47 113z"/></svg></i></a>
-            </li>
-            
-            <li class="navbar-icon"><a aria-label="Home Page" title="Home Page" href="https://www.themaingate.net/"><svg aria-label="home site" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"/></svg></i></a>
-            </li>
-            
-            <li class="navbar-icon"><a aria-label="Twitter" title="Twitter" href="https://twitter.com/franksvalli/"><svg aria-label="twitter" role="img" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"/></svg></i></a>
-            </li>
-            
-            <li class="navbar-icon"><a aria-label="Github" title="Github" href="https://github.com/davidcalhoun/"><svg aria-label="github" role="img" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M896 128q209 0 385.5 103t279.5 279.5 103 385.5q0 251-146.5 451.5t-378.5 277.5q-27 5-40-7t-13-30q0-3 .5-76.5t.5-134.5q0-97-52-142 57-6 102.5-18t94-39 81-66.5 53-105 20.5-150.5q0-119-79-206 37-91-8-204-28-9-81 11t-92 44l-38 24q-93-26-192-26t-192 26q-16-11-42.5-27t-83.5-38.5-85-13.5q-45 113-8 204-79 87-79 206 0 85 20.5 150t52.5 105 80.5 67 94 39 102.5 18q-39 36-49 103-21 10-45 15t-57 5-65.5-21.5-55.5-62.5q-19-32-48.5-52t-49.5-24l-20-3q-21 0-29 4.5t-5 11.5 9 14 13 12l7 5q22 10 43.5 38t31.5 51l10 23q13 38 44 61.5t67 30 69.5 7 55.5-3.5l23-4q0 38 .5 88.5t.5 54.5q0 18-13 30t-40 7q-232-77-378.5-277.5t-146.5-451.5q0-209 103-385.5t279.5-279.5 385.5-103zm-477 1103q3-7-7-12-10-3-13 2-3 7 7 12 9 6 13-2zm31 34q7-5-2-16-10-9-16-3-7 5 2 16 10 10 16 3zm30 45q9-7 0-19-8-13-17-6-9 5 0 18t17 7zm42 42q8-8-4-19-12-12-20-3-9 8 4 19 12 12 20 3zm57 25q3-11-13-16-15-4-19 7t13 15q15 6 19-6zm63 5q0-13-17-11-16 0-16 11 0 13 17 11 16 0 16-11zm58-10q-2-11-18-9-16 3-14 15t18 8 14-14z"/></svg></i></a>
-            </li>
-            
-            <li class="navbar-icon"><a aria-label="LinkedIn" title="LinkedIn" href="https://www.linkedin.com/in/davidcalhoun/"><svg aria-label="linkedin" role="img" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z"/></svg></i></a>
-            </li>
-            
-        </ul>
-        
-
-    </nav>
-
-<main role="main" itemscope itemType="https://schema.org/BlogPosting">
-    <meta itemprop="mainEntityOfPage" content="https://www.davidbcalhoun.com/2011/checking-for-undefined-null-and-empty-variables-in-javascript/" />
-    <meta itemprop="inLanguage" content="en-US" />
-    <span itemscope itemprop="author" itemType="https://schema.org/Person">
-        <meta itemprop="name" content="David Calhoun" />
-        <meta itemprop="url" content="https://www.themaingate.net" />
-    </span>
-    <span itemscope itemprop="publisher" itemType="https://schema.org/Organization">
-        <meta itemprop="name" content="David Calhoun" />
-        <meta itemprop="url" content="https://www.themaingate.net" />
-        <span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-            <meta itemprop="url" content="https://www.themaingate.net/david-calhoun-logo.png">
-            <meta itemprop="width" content="459">
-            <meta itemprop="height" content="459">
-        </span>
-    </span>
-    <meta itemprop="image" content="https://www.themaingate.net/david-calhoun-logo.png" />
-    
-    <meta itemprop="datePublished" content=2011-02-11T00:00:00Z/>
-    <meta itemprop="dateModified" content=2011-02-11T00:00:00Z/>
-    
-
-    <article class="item">
-
-    
-    
-    
-
-    
-    
-
-
-    <h1 itemprop="headline" class="meta title">
-        <a href="https://www.davidbcalhoun.com/2011/checking-for-undefined-null-and-empty-variables-in-javascript/" itemprop="url">Checking for undefined, null, and empty variables in JavaScript</a>
-    </h1>
-
-    <time class="meta date" datetime="2011-02-11 00:00:00 &#43;0000 UTC">
-        
-        February 11, 2011
-        
-    </time>
-    <aside class="meta tags">
-        <span>Tags: </span>
-        
-        <a href="https://www.davidbcalhoun.com/tags/javascript"><span class="item-tag">javascript</span></a>
-        
-        <a href="https://www.davidbcalhoun.com/tags/webdev"><span class="item-tag">webdev</span></a>
-        
-        <a href="https://www.davidbcalhoun.com/tags/programming"><span class="item-tag">programming</span></a>
-        
-    </aside>
-
-</article>
-
-
-    <div class="text-justify"><h2 id="-warning-this-is-an-old-article-and-may-include-information-thats-out-of-date-">⚠️ Warning: this is an old article and may include information that&rsquo;s out of date. ⚠️</h2>
-<p>In general it&rsquo;s a good practice to check for the existence of something before blindly using it by faith and hoping it works. There are various times during the execution of scripts when a variable may not be defined, it may be null, or it might be an empty string. These are three things that are easily conflated. A good way to look at this is thinking of these as having increasing levels of existence (getting a bit philosophical here for a moment&hellip;):</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">foo0</span>; <span style="color:#75715e">// existence level 0 (creates the error &#34;not defined&#34;)
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">foo1</span>; <span style="color:#75715e">// existence level 1 (&#34;undefined&#34; - variable declared but not defined/initialized)
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">foo2</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>; <span style="color:#75715e">// existence level 2 (variable initialized, but isn&#39;t an Object, Number, String, etc)
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">foo3</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>; <span style="color:#75715e">// existence level 3 (variable initialized to an empty String)
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">foo4</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;bar&#34;</span>; <span style="color:#75715e">// existence level 4 (variable initialized to String &#34;foo&#34;)
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><p>Generally it would be handy if we had some way to filter out everything but the very last line. We simply want to check for these cases without the script entirely blowing up, as it does with the first line:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">foo</span>; <span style="color:#75715e">// ReferenceError: foo is not defined
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><p>We&rsquo;re not particularly doing anything useful with foo here, but notice that the script fails out anyway. At this point any code that follows will not be executed. Your first instinct might be &ldquo;Oh! I know how to contain these errors! We&rsquo;ll use a try-catch!&rdquo;:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">try</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">foo</span>;
-</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">e</span>) {
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">message</span>; <span style="color:#75715e">// &#34;foo is not defined&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>The script still fails, but not critically, so your script continues to execute. But this turns out to aversely affect performance. The basic lesson here is that try-catch can be useful in some situations, but shouldn&rsquo;t be used where alternatives are available.</p>
-<h3 id="typeof-foo">typeof foo</h3>
-<p>JavaScript has quite a useful remedy for this:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">foo</span>; <span style="color:#75715e">// &#34;undefined&#34;
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><p>Unlike everything else in JavaScript, typeof will deal with whatever you throw at it, including undefined variables. So you can use it as a simple check before using a variable that might not exist:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">foo</span> <span style="color:#f92672">!==</span> <span style="color:#e6db74">&#34;undefined&#34;</span>) {
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// do something with foo
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Note that this is easy to confuse with the <code>undefined</code> keyword, which in this case doesn&rsquo;t help us one bit, as it gives us a fatal error:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">foo</span> <span style="color:#f92672">!==</span> <span style="color:#66d9ef">undefined</span>) {
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// ReferenceError: foo is not defined
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>This filters out our first two cases, since they both evaluate to &ldquo;undefined&rdquo;:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">foo</span>; <span style="color:#75715e">// &#34;undefined&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">bar</span>;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">bar</span>; <span style="color:#75715e">// &#34;undefined&#34;
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><p>But this turns out not to work well for our other conditions, which evaluate differently:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">typeof</span> <span style="color:#66d9ef">null</span>; <span style="color:#75715e">// &#34;object&#34; (what?!)
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">typeof</span> <span style="color:#e6db74">&#34;&#34;</span>; <span style="color:#75715e">// &#34;string&#34;
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><p>So we need to add other &ldquo;if&rdquo; conditions to check.. but there turns out to be a better way!</p>
-<h3 id="exploiting-loose-typing">Exploiting loose typing</h3>
-<p>JavaScript is a loosely typed language, which means that it will &ldquo;automagically&rdquo; cast variables into other types when necessary (i.e. when adding a Number to a String), sometimes resulting in the unexpected. For instance, whenever we use the &ldquo;if&rdquo; statement, the expected input is a Boolean true/false value. If JavaScript gets anything other than a Boolean, such as a String or a Number, instead of blowing up completely (as in strictly typed languages such as C), it&rsquo;ll cast the variable into a Boolean for you.</p>
-<p>&ldquo;How handy!&rdquo; you might think. Except in the following unexpected cases:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#e6db74">&#34;0&#34;</span>) {
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// this will run because &#34;0&#34; is true
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#e6db74">&#34;false&#34;</span>) {
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// this will run because &#34;false&#34; is true
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>To see what JavaScript will cast a value to without having to use an <code>if</code> statement, we could create a new Boolean value with the following:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>Boolean(<span style="color:#ae81ff">0</span>); <span style="color:#75715e">// false
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>Boolean(<span style="color:#e6db74">&#34;0&#34;</span>); <span style="color:#75715e">// true
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><p>Or we can use the less intuitive but quick way of using double exclamation marks (this will probably award you cleverness points in someone&rsquo;s book.. hopefully those points actually matter):</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#f92672">!!</span><span style="color:#ae81ff">0</span>; <span style="color:#75715e">// false
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">!!</span><span style="color:#e6db74">&#34;0&#34;</span>; <span style="color:#75715e">// true
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><p>This works because !foo converts foo to a Boolean but negates its original value, turning it on its head. !!foo converts foo to a Boolean and flips it back to its expected value, which is the same value that&rsquo;s evaluated by our <code>if</code> statement.</p>
-<p>Using this ALMOST gives us the answer we&rsquo;re looking for:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#f92672">!!</span><span style="color:#a6e22e">foo0</span>; <span style="color:#75715e">// ReferenceError: foo0 is not defined
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">foo1</span>;
-</span></span><span style="display:flex;"><span><span style="color:#f92672">!!</span><span style="color:#a6e22e">foo1</span>; <span style="color:#75715e">// false
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">foo2</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
-</span></span><span style="display:flex;"><span><span style="color:#f92672">!!</span><span style="color:#a6e22e">foo2</span>; <span style="color:#75715e">// false (same as !!null)
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">foo3</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>;
-</span></span><span style="display:flex;"><span><span style="color:#f92672">!!</span><span style="color:#a6e22e">foo3</span>; <span style="color:#75715e">// false (same as !!&#34;&#34;)
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">foo4</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;bar&#34;</span>;
-</span></span><span style="display:flex;"><span><span style="color:#f92672">!!</span><span style="color:#a6e22e">foot4</span>; <span style="color:#75715e">// true (same as !!&#34;bar&#34;)
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><p>Excluding the first example, now we can test for uninitialized variables (foo1), null variables (foo2), and empty strings (foo3) all with just an <code>if</code> statement:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">foo1</span>) {
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// do something with foo1
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">foo2</span>) {
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// do something with foo2
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">foo3</span>) {
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// do something with foo3
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Dang… so close! But we can&rsquo;t yet test the first case without an error:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">foo0</span>) {
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// ReferenceError: foo0 is not defined
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="foo-versus-windowfoo-and-thisfoo">foo versus window.foo and this.foo</h3>
-<p>The secret to our solution lies in how JavaScript handles undefined variables versus undefined properties. Here&rsquo;s a quick reminder on the difference between the two:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// variable foo
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">foo</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// property bar (and object variable foo)
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">foo</span> <span style="color:#f92672">=</span> {}; <span style="color:#75715e">// create an empty object to add bar too
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">foo</span>.<span style="color:#a6e22e">bar</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>;
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>The difference between these makes all the difference whether a fatal error occurs:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">foo</span>; <span style="color:#75715e">// ReferenceError: foo is not defined
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">foo</span> <span style="color:#f92672">=</span> {};
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">foo</span>.<span style="color:#a6e22e">bar</span>; <span style="color:#75715e">// undefined
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">foo</span>.<span style="color:#a6e22e">blah</span>; <span style="color:#75715e">// undefined
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><p>We can randomly invent and check any property of <code>foo</code> we want, and the code will keep chugging along:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">foo</span> <span style="color:#f92672">=</span> {};
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">foo</span>.<span style="color:#a6e22e">something</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;hello&#34;</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">foo</span>.<span style="color:#a6e22e">bar</span>) {
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// undefined, interpreted as false (same as !!foo.bar)
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// never runs
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">foo</span>.<span style="color:#a6e22e">something</span>) {
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">foo</span>.<span style="color:#a6e22e">something</span>; <span style="color:#75715e">// &#34;hello&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Now comes the magic. If you know anything about JavaScript running in the browser, you know that all global variables are part of the <code>window</code> object. This means <code>foo</code> and <code>window.foo</code> are equivalent:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">foo</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">foo</span> <span style="color:#f92672">===</span> window.<span style="color:#a6e22e">foo</span>; <span style="color:#75715e">// true
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// &#34;this&#34; is another bag of worms, but note this anyway
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">foo</span> <span style="color:#f92672">===</span> window.<span style="color:#a6e22e">foo</span>;
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>So technically our variable foo is a <em>property</em> of the window object. So we should be able to check for any arbitrary variable in the window scope now!</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>window.<span style="color:#a6e22e">foo</span>; <span style="color:#75715e">// undefined (not a fatal error!)
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// even though we&#39;re checking for the same thing, we get a fatal error…
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">foo</span>; <span style="color:#75715e">// ReferenceError: foo is not defined
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="practical-uses">Practical uses</h3>
-<p>Now as long as we have a global entry point for our code, we can write our code in such a way that it won&rsquo;t ever give us a fatal error if our variables aren&rsquo;t yet defined:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (window.<span style="color:#a6e22e">foo</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">foo</span>.<span style="color:#a6e22e">bar</span>) {
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">foo</span>.<span style="color:#a6e22e">bar</span>();
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Of course nothing happens, because we haven&rsquo;t defined foo. But why doesn&rsquo;t foo.bar give us a fatal error? Because the first test, <code>window.foo</code> failed out. It would be useless processing for the JavaScript engine to also evaluate the second statement, because the end result will still be the same (false &amp;&amp; true results in false, false &amp;&amp; false results in false). So it doesn&rsquo;t get so far as <code>foo.bar</code>.</p>
-<p>And now the code will work properly when we hook up our code to our <code>foo</code> global namespace:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">foo</span> <span style="color:#f92672">=</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">bar</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> () {
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#34;hello world&#34;</span>);
-</span></span><span style="display:flex;"><span>  },
-</span></span><span style="display:flex;"><span>};
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (window.<span style="color:#a6e22e">foo</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">foo</span>.<span style="color:#a6e22e">bar</span>) {
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">foo</span>.<span style="color:#a6e22e">bar</span>(); <span style="color:#75715e">// &#34;hello world&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="shorthand">Shorthand</h3>
-<p>It&rsquo;s becoming common to see an abbreviation for the above code. Check out the following two methods, which accomplish the same thing:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// Method 1
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (window.<span style="color:#a6e22e">foo</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">foo</span>.<span style="color:#a6e22e">bar</span>) {
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">foo</span>.<span style="color:#a6e22e">bar</span>(); <span style="color:#75715e">// &#34;hello world&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// Method 2
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>window.<span style="color:#a6e22e">foo</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">foo</span>.<span style="color:#a6e22e">bar</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">foo</span>.<span style="color:#a6e22e">bar</span>();
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Don&rsquo;t get too scared.. these blocks of code are equivalent. Method 2 is shorter, but it simply goes something like this: if window.foo isn&rsquo;t set, stop evaluating this line (just as above in the <code>if</code> statement). Otherwise, if foo.bar exists then execute the code in parentheses, which gives us an alert (&ldquo;hello world&rdquo;);</p>
-<p>Just a word of caution about using Method 2: it&rsquo;s obviously less clear what&rsquo;s going on here. Your own cleverness might actually result in unnecessary confusion, especially of other people work in the same code base and they&rsquo;re at different levels of understanding. In these cases we should first strive to be clear, and then only clever if it&rsquo;s not at the expense of being clear.</p>
-<p>It&rsquo;s also likely that a code minifier would take care of this cleverness for us at build time, giving us the best of both worlds.</p>
-</div>
-
-    
-    
-
-    
-
-</main>
-
-		<section class="comments">
-			<h2 class="page-header">Comments</h2>
-			<section id="commento"></section>
-			<script src="/commento.js"></script>
-		</section>
-
-        <footer role="contentinfo">
-
-            <p class="copyright text-muted">©<span itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="David Calhoun"><a href="https://www.themaingate.net/">David Calhoun</a></span> - <a href="https://www.davidbcalhoun.com/privacy/">Privacy</a> - <a href="https://www.davidbcalhoun.com/terms-of-service/">Terms</a></p>
-
-        </footer>
-       
-    </body>
-
-</html>
-
+<!doctype html><html lang=en-US prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#"><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=author content="David Calhoun"><title>Checking for undefined, null, and empty variables in JavaScript - David Calhoun's blog</title><style>html body{font-family:roboto,sans-serif}</style><link rel=stylesheet href=https://www.davidbcalhoun.com/css/main.min.edbbacc2430116405d2cf3a4ef94fb1b9d832b1e953da3fcb23820aacda0b09d.css><link rel=preconnect href=https://comments.davidbcalhoun.com><link rel=preconnect href=https://ssl.gstatic.com><link rel=preconnect href=https://cdnjs.cloudflare.com><link rel=preconnect href=https://accounts.google.com><link rel=preconnect href=https://apis.google.com><link rel=preconnect href=https://www.google-analytics.com><link rel=preconnect href=https://www.googletagmanager.com><link rel=preload href=/commento.css as=style><meta name=generator content="Hugo 0.147.1"><style>@font-face{font-family:roboto;font-style:normal;font-weight:400;font-display:swap;src:local('Roboto'),local('Roboto-Regular'),url(/wp-content/fonts/roboto-v20-latin-regular.woff2)format('woff2'),url(/wp-content/fonts/roboto-v20-latin-regular.woff)format('woff')}</style><meta name=description content="Personal blog of photographer and web developer David Calhoun."><link rel=canonical href=https://www.davidbcalhoun.com/2011/checking-for-undefined-null-and-empty-variables-in-javascript/><link href=/index.xml rel=alternate type=application/rss+xml title="David Calhoun's blog"><link href=/index.xml rel=feed type=application/rss+xml title="David Calhoun's blog"><link href=/index.xml rel=self type=application/rss+xml title="David Calhoun's blog"><meta name=format-detection content="telephone=no"><meta itemprop=name content="Checking for undefined, null, and empty variables in JavaScript"><meta itemprop=headline content="Checking for undefined, null, and empty variables in JavaScript"><meta itemprop=author content="David Calhoun"><link rel=me href=https://www.themaingate.net/ type=text/html><link rel=me href=mailto:david.b.calhoun+dc@gmail.com><link rel=me href=https://www.linkedin.com/in/davidcalhoun/ type=text/html><link rel=me href=https://github.com/davidcalhoun type=text/html><link rel=me href=https://twitter.com/franksvalli type=text/html><link rel=archives href=https://example.com/archives/><meta property="og:locale" content="en_US"><meta property="og:type" content="article"><meta property="og:url" content="https://www.davidbcalhoun.com/2011/checking-for-undefined-null-and-empty-variables-in-javascript/"><meta property="og:title" content="Checking for undefined, null, and empty variables in JavaScript"><meta property="og:site_name" content="David Calhoun's Blog"><meta property="og:updated_time" content=2011-02-11T00:00:00Z><meta property="article:published_time" content=2011-02-11T00:00:00Z><meta property="article:modified_time" content=2011-02-11T00:00:00Z><meta property="article:section" content="javascript"><meta property="article:author" content="https://www.davidbcalhoun.com"><meta property="article:tag" content="javascript"><meta property="article:tag" content="webdev"><meta property="article:tag" content="programming"><meta name=twitter:card content="summary_large_image"><meta name=twitter:title content="Checking for undefined, null, and empty variables in JavaScript"><meta name=twitter:url content="https://www.davidbcalhoun.com/2011/checking-for-undefined-null-and-empty-variables-in-javascript/"><meta name=twitter:site content="@franksvalli"><meta name=twitter:creator content="@franksvalli"><meta name=twitter:domain content="davidbcalhoun.com"><link rel="Shortcut Icon" type=image/ico href=https://www.davidbcalhoun.com/favicon.ico></head><body><nav class=navbar><div class=navbar-header><a class=navbar-brand href=https://www.davidbcalhoun.com/>David Calhoun's blog</a></div><ul class=navbar-links><li class=navbar-icon><a aria-label="Send an email" title="Send an email" href=mailto:david.b.calhoun+dc@gmail.com><svg aria-label="email" role="img" width="1792" height="1792" viewBox="0 0 1792 1792"><path d="M1664 1504V736q-32 36-69 66-268 206-426 338-51 43-83 67t-86.5 48.5T897 1280h-2q-48 0-102.5-24.5T706 1207t-83-67q-158-132-426-338-37-30-69-66v768q0 13 9.5 22.5t22.5 9.5h1472q13 0 22.5-9.5t9.5-22.5zm0-1051v-24.5l-.5-13-3-12.5-5.5-9-9-7.5-14-2.5H160q-13 0-22.5 9.5T128 416q0 168 147 284 193 152 401 317 6 5 35 29.5t46 37.5 44.5 31.5T852 1143t43 9h2q20 0 43-9t50.5-27.5 44.5-31.5 46-37.5 35-29.5q208-165 401-317 54-43 100.5-115.5T1664 453zm128-37v1088q0 66-47 113t-113 47H160q-66 0-113-47T0 1504V416q0-66 47-113t113-47h1472q66 0 113 47t47 113z"/></svg></i></a></li><li class=navbar-icon><a aria-label="Home Page" title="Home Page" href=https://www.themaingate.net/><svg aria-label="home site" role="img" viewBox="0 0 576 512"><path d="M280.37 148.26 96 300.11V464a16 16 0 0016 16l112.06-.29a16 16 0 0015.92-16V368a16 16 0 0116-16h64a16 16 0 0116 16v95.64a16 16 0 0016 16.05L464 480a16 16 0 0016-16V3e2L295.67 148.26a12.19 12.19.0 00-15.3.0zM571.6 251.47 488 182.56V44.05a12 12 0 00-12-12h-56a12 12 0 00-12 12v72.61L318.47 43a48 48 0 00-61 0L4.34 251.47a12 12 0 00-1.6 16.9l25.5 31A12 12 0 0045.15 301l235.22-193.74a12.19 12.19.0 0115.3.0L530.9 301a12 12 0 0016.9-1.6l25.5-31a12 12 0 00-1.7-16.93z"/></svg></i></a></li><li class=navbar-icon><a aria-label=Twitter title=Twitter href=https://twitter.com/franksvalli/><svg aria-label="twitter" role="img" width="1792" height="1792" viewBox="0 0 1792 1792"><path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5T1369.5 1125 1185 1335.5t-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5T285 1033q33 5 61 5 43 0 85-11-112-23-185.5-111.5T172 710v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5T884 653q-8-38-8-74 0-134 94.5-228.5T1199 256q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"/></svg></i></a></li><li class=navbar-icon><a aria-label=Github title=Github href=https://github.com/davidcalhoun/><svg aria-label="github" role="img" width="1792" height="1792" viewBox="0 0 1792 1792"><path d="M896 128q209 0 385.5 103T1561 510.5 1664 896q0 251-146.5 451.5T1139 1625q-27 5-40-7t-13-30q0-3 .5-76.5t.5-134.5q0-97-52-142 57-6 102.5-18t94-39 81-66.5 53-105T1386 856q0-119-79-206 37-91-8-204-28-9-81 11t-92 44l-38 24q-93-26-192-26t-192 26q-16-11-42.5-27T578 459.5 493 446q-45 113-8 204-79 87-79 206 0 85 20.5 150t52.5 105 80.5 67 94 39 102.5 18q-39 36-49 103-21 10-45 15t-57 5-65.5-21.5T484 1274q-19-32-48.5-52t-49.5-24l-20-3q-21 0-29 4.5t-5 11.5 9 14 13 12l7 5q22 10 43.5 38t31.5 51l10 23q13 38 44 61.5t67 30 69.5 7 55.5-3.5l23-4q0 38 .5 88.5t.5 54.5q0 18-13 30t-40 7q-232-77-378.5-277.5T128 896q0-209 103-385.5T510.5 231 896 128zM419 1231q3-7-7-12-10-3-13 2-3 7 7 12 9 6 13-2zm31 34q7-5-2-16-10-9-16-3-7 5 2 16 10 10 16 3zm30 45q9-7 0-19-8-13-17-6-9 5 0 18t17 7zm42 42q8-8-4-19-12-12-20-3-9 8 4 19 12 12 20 3zm57 25q3-11-13-16-15-4-19 7t13 15q15 6 19-6zm63 5q0-13-17-11-16 0-16 11 0 13 17 11 16 0 16-11zm58-10q-2-11-18-9-16 3-14 15t18 8 14-14z"/></svg></i></a></li><li class=navbar-icon><a aria-label=LinkedIn title=LinkedIn href=https://www.linkedin.com/in/davidcalhoun/><svg aria-label="linkedin" role="img" width="1792" height="1792" viewBox="0 0 1792 1792"><path d="M477 625v991H147V625h330zm21-306q1 73-50.5 122T312 490h-2q-82 0-132-49t-50-122q0-74 51.5-122.5T314 148t133 48.5T498 319zm1166 729v568h-329v-530q0-105-40.5-164.5T1168 862q-63 0-105.5 34.5T999 982q-11 30-11 81v553H659q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5T1285 602q171 0 275 113.5t104 332.5z"/></svg></i></a></li></ul></nav><main role=main itemscope itemtype=https://schema.org/BlogPosting><meta itemprop=mainEntityOfPage content="https://www.davidbcalhoun.com/2011/checking-for-undefined-null-and-empty-variables-in-javascript/"><meta itemprop=inLanguage content="en-US"><span itemscope itemprop=author itemtype=https://schema.org/Person><meta itemprop=name content="David Calhoun"><meta itemprop=url content="https://www.themaingate.net"></span><span itemscope itemprop=publisher itemtype=https://schema.org/Organization><meta itemprop=name content="David Calhoun"><meta itemprop=url content="https://www.themaingate.net"><span itemprop=logo itemscope itemtype=https://schema.org/ImageObject><meta itemprop=url content="https://www.themaingate.net/david-calhoun-logo.png"><meta itemprop=width content="459"><meta itemprop=height content="459"></span></span><meta itemprop=image content="https://www.themaingate.net/david-calhoun-logo.png"><meta itemprop=datePublished content=2011-02-11T00:00:00Z/><meta itemprop=dateModified content=2011-02-11T00:00:00Z/><article class=item><h1 itemprop=headline class="meta title"><a href=https://www.davidbcalhoun.com/2011/checking-for-undefined-null-and-empty-variables-in-javascript/ itemprop=url>Checking for undefined, null, and empty variables in JavaScript</a></h1><time class="meta date" datetime="2011-02-11 00:00:00 +0000 UTC">February 11, 2011</time><aside class="meta tags"><span>Tags: </span><a href=https://www.davidbcalhoun.com/tags/javascript><span class=item-tag>javascript</span></a>
+<a href=https://www.davidbcalhoun.com/tags/webdev><span class=item-tag>webdev</span></a>
+<a href=https://www.davidbcalhoun.com/tags/programming><span class=item-tag>programming</span></a></aside></article><div class=text-justify><h2 id=-warning-this-is-an-old-article-and-may-include-information-thats-out-of-date->⚠️ Warning: this is an old article and may include information that&rsquo;s out of date. ⚠️</h2><p>In general it&rsquo;s a good practice to check for the existence of something before blindly using it by faith and hoping it works. There are various times during the execution of scripts when a variable may not be defined, it may be null, or it might be an empty string. These are three things that are easily conflated. A good way to look at this is thinking of these as having increasing levels of existence (getting a bit philosophical here for a moment&mldr;):</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#a6e22e>foo0</span>; <span style=color:#75715e>// existence level 0 (creates the error &#34;not defined&#34;)
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>var</span> <span style=color:#a6e22e>foo1</span>; <span style=color:#75715e>// existence level 1 (&#34;undefined&#34; - variable declared but not defined/initialized)
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>var</span> <span style=color:#a6e22e>foo2</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span>; <span style=color:#75715e>// existence level 2 (variable initialized, but isn&#39;t an Object, Number, String, etc)
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>var</span> <span style=color:#a6e22e>foo3</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span>; <span style=color:#75715e>// existence level 3 (variable initialized to an empty String)
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>var</span> <span style=color:#a6e22e>foo4</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;bar&#34;</span>; <span style=color:#75715e>// existence level 4 (variable initialized to String &#34;foo&#34;)
+</span></span></span></code></pre></td></tr></table></div></div><p>Generally it would be handy if we had some way to filter out everything but the very last line. We simply want to check for these cases without the script entirely blowing up, as it does with the first line:</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#a6e22e>foo</span>; <span style=color:#75715e>// ReferenceError: foo is not defined
+</span></span></span></code></pre></td></tr></table></div></div><p>We&rsquo;re not particularly doing anything useful with foo here, but notice that the script fails out anyway. At this point any code that follows will not be executed. Your first instinct might be &ldquo;Oh! I know how to contain these errors! We&rsquo;ll use a try-catch!&rdquo;:</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#66d9ef>try</span> {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>foo</span>;
+</span></span><span style=display:flex><span>} <span style=color:#66d9ef>catch</span> (<span style=color:#a6e22e>e</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>e</span>.<span style=color:#a6e22e>message</span>; <span style=color:#75715e>// &#34;foo is not defined&#34;
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>}
+</span></span></code></pre></td></tr></table></div></div><p>The script still fails, but not critically, so your script continues to execute. But this turns out to aversely affect performance. The basic lesson here is that try-catch can be useful in some situations, but shouldn&rsquo;t be used where alternatives are available.</p><h3 id=typeof-foo>typeof foo</h3><p>JavaScript has quite a useful remedy for this:</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#66d9ef>typeof</span> <span style=color:#a6e22e>foo</span>; <span style=color:#75715e>// &#34;undefined&#34;
+</span></span></span></code></pre></td></tr></table></div></div><p>Unlike everything else in JavaScript, typeof will deal with whatever you throw at it, including undefined variables. So you can use it as a simple check before using a variable that might not exist:</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#66d9ef>if</span> (<span style=color:#66d9ef>typeof</span> <span style=color:#a6e22e>foo</span> <span style=color:#f92672>!==</span> <span style=color:#e6db74>&#34;undefined&#34;</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// do something with foo
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>}
+</span></span></code></pre></td></tr></table></div></div><p>Note that this is easy to confuse with the <code>undefined</code> keyword, which in this case doesn&rsquo;t help us one bit, as it gives us a fatal error:</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>foo</span> <span style=color:#f92672>!==</span> <span style=color:#66d9ef>undefined</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// ReferenceError: foo is not defined
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>}
+</span></span></code></pre></td></tr></table></div></div><p>This filters out our first two cases, since they both evaluate to &ldquo;undefined&rdquo;:</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#66d9ef>typeof</span> <span style=color:#a6e22e>foo</span>; <span style=color:#75715e>// &#34;undefined&#34;
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>var</span> <span style=color:#a6e22e>bar</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>typeof</span> <span style=color:#a6e22e>bar</span>; <span style=color:#75715e>// &#34;undefined&#34;
+</span></span></span></code></pre></td></tr></table></div></div><p>But this turns out not to work well for our other conditions, which evaluate differently:</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#66d9ef>typeof</span> <span style=color:#66d9ef>null</span>; <span style=color:#75715e>// &#34;object&#34; (what?!)
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>typeof</span> <span style=color:#e6db74>&#34;&#34;</span>; <span style=color:#75715e>// &#34;string&#34;
+</span></span></span></code></pre></td></tr></table></div></div><p>So we need to add other &ldquo;if&rdquo; conditions to check.. but there turns out to be a better way!</p><h3 id=exploiting-loose-typing>Exploiting loose typing</h3><p>JavaScript is a loosely typed language, which means that it will &ldquo;automagically&rdquo; cast variables into other types when necessary (i.e. when adding a Number to a String), sometimes resulting in the unexpected. For instance, whenever we use the &ldquo;if&rdquo; statement, the expected input is a Boolean true/false value. If JavaScript gets anything other than a Boolean, such as a String or a Number, instead of blowing up completely (as in strictly typed languages such as C), it&rsquo;ll cast the variable into a Boolean for you.</p><p>&ldquo;How handy!&rdquo; you might think. Except in the following unexpected cases:</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">7
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#66d9ef>if</span> (<span style=color:#e6db74>&#34;0&#34;</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// this will run because &#34;0&#34; is true
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> (<span style=color:#e6db74>&#34;false&#34;</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// this will run because &#34;false&#34; is true
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>}
+</span></span></code></pre></td></tr></table></div></div><p>To see what JavaScript will cast a value to without having to use an <code>if</code> statement, we could create a new Boolean value with the following:</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span>Boolean(<span style=color:#ae81ff>0</span>); <span style=color:#75715e>// false
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>Boolean(<span style=color:#e6db74>&#34;0&#34;</span>); <span style=color:#75715e>// true
+</span></span></span></code></pre></td></tr></table></div></div><p>Or we can use the less intuitive but quick way of using double exclamation marks (this will probably award you cleverness points in someone&rsquo;s book.. hopefully those points actually matter):</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#f92672>!!</span><span style=color:#ae81ff>0</span>; <span style=color:#75715e>// false
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#f92672>!!</span><span style=color:#e6db74>&#34;0&#34;</span>; <span style=color:#75715e>// true
+</span></span></span></code></pre></td></tr></table></div></div><p>This works because !foo converts foo to a Boolean but negates its original value, turning it on its head. !!foo converts foo to a Boolean and flips it back to its expected value, which is the same value that&rsquo;s evaluated by our <code>if</code> statement.</p><p>Using this ALMOST gives us the answer we&rsquo;re looking for:</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#f92672>!!</span><span style=color:#a6e22e>foo0</span>; <span style=color:#75715e>// ReferenceError: foo0 is not defined
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>var</span> <span style=color:#a6e22e>foo1</span>;
+</span></span><span style=display:flex><span><span style=color:#f92672>!!</span><span style=color:#a6e22e>foo1</span>; <span style=color:#75715e>// false
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>var</span> <span style=color:#a6e22e>foo2</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span>;
+</span></span><span style=display:flex><span><span style=color:#f92672>!!</span><span style=color:#a6e22e>foo2</span>; <span style=color:#75715e>// false (same as !!null)
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>var</span> <span style=color:#a6e22e>foo3</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span>;
+</span></span><span style=display:flex><span><span style=color:#f92672>!!</span><span style=color:#a6e22e>foo3</span>; <span style=color:#75715e>// false (same as !!&#34;&#34;)
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>var</span> <span style=color:#a6e22e>foo4</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;bar&#34;</span>;
+</span></span><span style=display:flex><span><span style=color:#f92672>!!</span><span style=color:#a6e22e>foot4</span>; <span style=color:#75715e>// true (same as !!&#34;bar&#34;)
+</span></span></span></code></pre></td></tr></table></div></div><p>Excluding the first example, now we can test for uninitialized variables (foo1), null variables (foo2), and empty strings (foo3) all with just an <code>if</code> statement:</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>foo1</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// do something with foo1
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>foo2</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// do something with foo2
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>foo3</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// do something with foo3
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>}
+</span></span></code></pre></td></tr></table></div></div><p>Dang… so close! But we can&rsquo;t yet test the first case without an error:</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>foo0</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// ReferenceError: foo0 is not defined
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>}
+</span></span></code></pre></td></tr></table></div></div><h3 id=foo-versus-windowfoo-and-thisfoo>foo versus window.foo and this.foo</h3><p>The secret to our solution lies in how JavaScript handles undefined variables versus undefined properties. Here&rsquo;s a quick reminder on the difference between the two:</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">6
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#75715e>// variable foo
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>var</span> <span style=color:#a6e22e>foo</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// property bar (and object variable foo)
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>var</span> <span style=color:#a6e22e>foo</span> <span style=color:#f92672>=</span> {}; <span style=color:#75715e>// create an empty object to add bar too
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>foo</span>.<span style=color:#a6e22e>bar</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span>;
+</span></span></code></pre></td></tr></table></div></div><p>The difference between these makes all the difference whether a fatal error occurs:</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#a6e22e>foo</span>; <span style=color:#75715e>// ReferenceError: foo is not defined
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>var</span> <span style=color:#a6e22e>foo</span> <span style=color:#f92672>=</span> {};
+</span></span><span style=display:flex><span><span style=color:#a6e22e>foo</span>.<span style=color:#a6e22e>bar</span>; <span style=color:#75715e>// undefined
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>foo</span>.<span style=color:#a6e22e>blah</span>; <span style=color:#75715e>// undefined
+</span></span></span></code></pre></td></tr></table></div></div><p>We can randomly invent and check any property of <code>foo</code> we want, and the code will keep chugging along:</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#66d9ef>var</span> <span style=color:#a6e22e>foo</span> <span style=color:#f92672>=</span> {};
+</span></span><span style=display:flex><span><span style=color:#a6e22e>foo</span>.<span style=color:#a6e22e>something</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;hello&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>foo</span>.<span style=color:#a6e22e>bar</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#75715e>// undefined, interpreted as false (same as !!foo.bar)
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#75715e>// never runs
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>foo</span>.<span style=color:#a6e22e>something</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>foo</span>.<span style=color:#a6e22e>something</span>; <span style=color:#75715e>// &#34;hello&#34;
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>}
+</span></span></code></pre></td></tr></table></div></div><p>Now comes the magic. If you know anything about JavaScript running in the browser, you know that all global variables are part of the <code>window</code> object. This means <code>foo</code> and <code>window.foo</code> are equivalent:</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">6
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#66d9ef>var</span> <span style=color:#a6e22e>foo</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>foo</span> <span style=color:#f92672>===</span> window.<span style=color:#a6e22e>foo</span>; <span style=color:#75715e>// true
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// &#34;this&#34; is another bag of worms, but note this anyway
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>foo</span> <span style=color:#f92672>===</span> window.<span style=color:#a6e22e>foo</span>;
+</span></span></code></pre></td></tr></table></div></div><p>So technically our variable foo is a <em>property</em> of the window object. So we should be able to check for any arbitrary variable in the window scope now!</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span>window.<span style=color:#a6e22e>foo</span>; <span style=color:#75715e>// undefined (not a fatal error!)
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// even though we&#39;re checking for the same thing, we get a fatal error…
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>foo</span>; <span style=color:#75715e>// ReferenceError: foo is not defined
+</span></span></span></code></pre></td></tr></table></div></div><h3 id=practical-uses>Practical uses</h3><p>Now as long as we have a global entry point for our code, we can write our code in such a way that it won&rsquo;t ever give us a fatal error if our variables aren&rsquo;t yet defined:</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#66d9ef>if</span> (window.<span style=color:#a6e22e>foo</span> <span style=color:#f92672>&amp;&amp;</span> <span style=color:#a6e22e>foo</span>.<span style=color:#a6e22e>bar</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>foo</span>.<span style=color:#a6e22e>bar</span>();
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></td></tr></table></div></div><p>Of course nothing happens, because we haven&rsquo;t defined foo. But why doesn&rsquo;t foo.bar give us a fatal error? Because the first test, <code>window.foo</code> failed out. It would be useless processing for the JavaScript engine to also evaluate the second statement, because the end result will still be the same (false && true results in false, false && false results in false). So it doesn&rsquo;t get so far as <code>foo.bar</code>.</p><p>And now the code will work properly when we hook up our code to our <code>foo</code> global namespace:</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">9
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#66d9ef>var</span> <span style=color:#a6e22e>foo</span> <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>bar</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>function</span> () {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>alert</span>(<span style=color:#e6db74>&#34;hello world&#34;</span>);
+</span></span><span style=display:flex><span>  },
+</span></span><span style=display:flex><span>};
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> (window.<span style=color:#a6e22e>foo</span> <span style=color:#f92672>&amp;&amp;</span> <span style=color:#a6e22e>foo</span>.<span style=color:#a6e22e>bar</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>foo</span>.<span style=color:#a6e22e>bar</span>(); <span style=color:#75715e>// &#34;hello world&#34;
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>}
+</span></span></code></pre></td></tr></table></div></div><h3 id=shorthand>Shorthand</h3><p>It&rsquo;s becoming common to see an abbreviation for the above code. Check out the following two methods, which accomplish the same thing:</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">7
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#75715e>// Method 1
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>if</span> (window.<span style=color:#a6e22e>foo</span> <span style=color:#f92672>&amp;&amp;</span> <span style=color:#a6e22e>foo</span>.<span style=color:#a6e22e>bar</span>) {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>foo</span>.<span style=color:#a6e22e>bar</span>(); <span style=color:#75715e>// &#34;hello world&#34;
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// Method 2
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>window.<span style=color:#a6e22e>foo</span> <span style=color:#f92672>&amp;&amp;</span> <span style=color:#a6e22e>foo</span>.<span style=color:#a6e22e>bar</span> <span style=color:#f92672>&amp;&amp;</span> <span style=color:#a6e22e>foo</span>.<span style=color:#a6e22e>bar</span>();
+</span></span></code></pre></td></tr></table></div></div><p>Don&rsquo;t get too scared.. these blocks of code are equivalent. Method 2 is shorter, but it simply goes something like this: if window.foo isn&rsquo;t set, stop evaluating this line (just as above in the <code>if</code> statement). Otherwise, if foo.bar exists then execute the code in parentheses, which gives us an alert (&ldquo;hello world&rdquo;);</p><p>Just a word of caution about using Method 2: it&rsquo;s obviously less clear what&rsquo;s going on here. Your own cleverness might actually result in unnecessary confusion, especially of other people work in the same code base and they&rsquo;re at different levels of understanding. In these cases we should first strive to be clear, and then only clever if it&rsquo;s not at the expense of being clear.</p><p>It&rsquo;s also likely that a code minifier would take care of this cleverness for us at build time, giving us the best of both worlds.</p></div></main><section class=comments><h2 class=page-header>Comments</h2><section id=commento></section><script src=/commento.js></script></section><footer role=contentinfo><p class="copyright text-muted">©<span itemscope itemtype=https://schema.org/Person><meta itemprop=name content="David Calhoun"><a href=https://www.themaingate.net/>David Calhoun</a></span> - <a href=https://www.davidbcalhoun.com/privacy/>Privacy</a> - <a href=https://www.davidbcalhoun.com/terms-of-service/>Terms</a></p></footer></body></html>

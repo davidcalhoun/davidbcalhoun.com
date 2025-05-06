@@ -1,19 +1,2 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Design on David Calhoun&#39;s blog</title>
-    <link>https://www.davidbcalhoun.com/categories/design/</link>
-    <description>Recent content in Design on David Calhoun&#39;s blog</description>
-    <generator>Hugo</generator>
-    <language>en-US</language>
-    <lastBuildDate>Sat, 05 Jun 2010 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://www.davidbcalhoun.com/categories/design/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Mobile First: Luke Wroblewski on mobile design</title>
-      <link>https://www.davidbcalhoun.com/2010/mobile-first-luke-wroblewski-on-mobile-design/</link>
-      <pubDate>Sat, 05 Jun 2010 00:00:00 +0000</pubDate>
-      <guid>https://www.davidbcalhoun.com/2010/mobile-first-luke-wroblewski-on-mobile-design/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://5by5.tv/bigwebshow/6&#34;&gt;&lt;img src=&#34;http://davidbcalhoun.com/wp-content/uploads/2010/06/luke-wroblewski-mobile-first1.png&#34; alt=&#34;Click to play Luke Wroblewski: Mobile First&#34; title=&#34;Click to play Luke Wroblewski: Mobile First&#34; width=&#34;474&#34; height=&#34;285&#34; class=&#34;aligncenter size-full wp-image-271&#34; /&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;In &lt;a href=&#34;http://5by5.tv/bigwebshow/6&#34;&gt;episode 6 of The Big Web Show&lt;/a&gt;, &lt;a href=&#34;//lukew.com/&#34;&gt;Luke Wroblewski&lt;/a&gt; gives his “Mobile First” talk, explaining his philosophy for designing for mobile, the challenges, and a look at the road ahead. Luke explains that because of the limitations on mobile, developers are forced to really optimize the user experience for mobile. Often times this mobile experience turns out much better than on the desktop, where the “gluttony of resources” results in distracting and excessive webpages.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Design on David Calhoun's blog</title><link>https://www.davidbcalhoun.com/categories/design/</link><description>Recent content in Design on David Calhoun's blog</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Sat, 05 Jun 2010 00:00:00 +0000</lastBuildDate><atom:link href="https://www.davidbcalhoun.com/categories/design/index.xml" rel="self" type="application/rss+xml"/><item><title>Mobile First: Luke Wroblewski on mobile design</title><link>https://www.davidbcalhoun.com/2010/mobile-first-luke-wroblewski-on-mobile-design/</link><pubDate>Sat, 05 Jun 2010 00:00:00 +0000</pubDate><guid>https://www.davidbcalhoun.com/2010/mobile-first-luke-wroblewski-on-mobile-design/</guid><description>&lt;p>&lt;a href="http://5by5.tv/bigwebshow/6">&lt;img src="http://davidbcalhoun.com/wp-content/uploads/2010/06/luke-wroblewski-mobile-first1.png" alt="Click to play Luke Wroblewski: Mobile First" title="Click to play Luke Wroblewski: Mobile First" width="474" height="285" class="aligncenter size-full wp-image-271" />&lt;/a>&lt;/p>
+&lt;p>In &lt;a href="http://5by5.tv/bigwebshow/6">episode 6 of The Big Web Show&lt;/a>, &lt;a href="//lukew.com/">Luke Wroblewski&lt;/a> gives his “Mobile First” talk, explaining his philosophy for designing for mobile, the challenges, and a look at the road ahead. Luke explains that because of the limitations on mobile, developers are forced to really optimize the user experience for mobile. Often times this mobile experience turns out much better than on the desktop, where the “gluttony of resources” results in distracting and excessive webpages.&lt;/p></description></item></channel></rss>
