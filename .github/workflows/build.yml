@@ -13,6 +13,8 @@ jobs:
           hugo-version: "0.147.1"
       - name: Build
         run: hugo --minify
+      - name: Replace main index with posts index
+        run: cp ./public/posts/index.html ./public/index.html
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         with:
