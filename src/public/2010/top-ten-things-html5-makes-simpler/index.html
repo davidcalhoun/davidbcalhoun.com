@@ -31,7 +31,7 @@
 
 
 
- <meta name="generator" content="Hugo 0.140.2">
+ <meta name="generator" content="Hugo 0.147.1">
     
 
     <style>
@@ -311,8 +311,7 @@
 </div><p>This one may be a bit controversial, but the HTML5 spec actually tells browser vendors not to treat the <code>type</code> attribute as the final word, which makes it seem pretty redundant:</p>
 <blockquote>
 <p>User agents must not consider the type attribute authoritative — upon fetching the resource, user agents must not use the type attribute to determine its actual type. Only the actual type (as defined in the next paragraph) is used to determine whether to apply the resource, not the aforementioned assumed type.</p>
-<p>-<a href="http://w3c.github.io/html/#the-link-element">W3C HTML5 spec</a></p>
-</blockquote>
+<p>-<a href="http://w3c.github.io/html/#the-link-element">W3C HTML5 spec</a></p></blockquote>
 <p>The spec then goes on to state that the browser must effectively determine the type by examining the <code>Content-Type</code> sent back in the header from the server when requesting the CSS file. If this extra work is already being performed and there’s no noticeable downside of omitting the <code>type</code> attribute, then it seems pretty redundant. Save the extra bytes by omitting it!</p>
 <h3 id="4-the-script-tags-type-attribute">4. The script tag’s <code>type</code> attribute</h3>
 <h4 id="old-3">Old</h4>
@@ -336,8 +335,7 @@
 </div><p>According the the W3C, if the <code>type</code> attribute isn’t present, it should default to <code>text/javascript</code>:</p>
 <blockquote>
 <p>The type attribute gives the language of the script or format of the data. If the attribute is present, its value must be a valid MIME type. The charset parameter must not be specified. The default, which is used if the attribute is absent, is “text/javascript”.</p>
-<p>-<a href="http://w3c.github.io/html/#script">W3C HTML5 spec</a></p>
-</blockquote>
+<p>-<a href="http://w3c.github.io/html/#script">W3C HTML5 spec</a></p></blockquote>
 <h3 id="5-the-script-tags-async-and-defer-attributes">5. The script tag’s <code>async</code> and <code>defer</code> attributes</h3>
 <p>Moving scripts to the bottom of a document is <a href="http://developer.yahoo.com/performance/">one of the top performance tips</a> and one of the easiest ways to speed up a website. This is because script downloading (in older browsers) and parsing/executing is done synchronously, that is, in a way which blocks everything else which comes after them.</p>
 <p>It’s not too hard to move the scripts to the bottom, but wouldn’t it be handy if there was an attribute we could add on the script to make it behave, no matter where it’s located? Now there is! Check out the async attribute:</p>
@@ -444,7 +442,7 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>There’s much more to be said about improvements to forms in general, in addition to some other handy form validation tools such as the <a href="http://dev.w3.org/html5/spec/Overview.html#the-min-and-max-attributes"><code>min</code> and <code>max</code> attributes</a> and the <a href="http://dev.w3.org/html5/spec/Overview.html#the-placeholder-attribute"><code>pattern</code> attribute</a>.</p>
-<h3 id="10-video-and-audiohttphtml5doctorcomnative-audio-in-the-browser">10. Video (and <a href="http://html5doctor.com/native-audio-in-the-browser/">audio</a>)</h3>
+<h3 id="10-video-and-audio">10. Video (and <a href="http://html5doctor.com/native-audio-in-the-browser/">audio</a>)</h3>
 <h4 id="old-4">Old</h4>
 <p>The old way - a common example using a Flash container in an object:</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">

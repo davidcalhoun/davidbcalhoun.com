@@ -31,7 +31,7 @@
 
 
 
- <meta name="generator" content="Hugo 0.140.2">
+ <meta name="generator" content="Hugo 0.147.1">
     
 
     <style>
@@ -295,8 +295,8 @@
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e">// (e.g. transitive equality), but you&#39;d be wrong!
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
 </span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;\u00ef&#39;</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;\u0069\u0308&#39;</span>;  <span style="color:#75715e">// false
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#960050;background-color:#1e0010">// Note that the line above may display as &#39;ï&#39; === &#39;ï&#39;, but it will</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// still evaluate to false!
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// Note that the line above may display as &#39;ï&#39; === &#39;ï&#39;, but it will
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// still evaluate to false!
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="removing-diacritics">Removing diacritics</h2>
@@ -331,7 +331,7 @@
 </div>
 </div><p>One big catch though - this will only work for decomposed symbols.  What happens if we get a composed symbol?  We&rsquo;d be stuck, since we can&rsquo;t break it apart into separate character and diacritic symbols&hellip;</p>
 <p>&hellip;or <em><strong>can</strong></em> we?</p>
-<h2 id="stringprototypenormalize-to-the-rescue"><em><strong><code>String.prototype.normalize()</code> to the rescue!</strong></em></h2>
+<h2 id="stringprototypenormalize"><em><strong><code>String.prototype.normalize()</code> to the rescue!</strong></em></h2>
 <p>This handy function can convert Unicode characters between their composed and decomposed forms:</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">

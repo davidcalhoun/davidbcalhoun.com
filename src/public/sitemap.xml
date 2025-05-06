@@ -2,11 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/2025/2025-05-04-the-importance-of-what-we-desire/</loc>
+    <lastmod>2025-05-04T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2023-12-31T00:00:00+00:00</lastmod>
+    <lastmod>2025-05-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2025-05-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/eclipse/</loc>
+    <lastmod>2024-12-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/hokkaido/</loc>
+    <lastmod>2024-12-31T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/japan/</loc>
-    <lastmod>2023-12-31T00:00:00+00:00</lastmod>
+    <lastmod>2024-12-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/los-angeles/</loc>
+    <lastmod>2024-12-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/2024/my-year-in-photos-2024/</loc>
+    <lastmod>2024-12-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/photography/</loc>
+    <lastmod>2024-12-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/photos/</loc>
+    <lastmod>2024-12-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2024-12-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/tokyo/</loc>
+    <lastmod>2024-12-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/year-in-photos/</loc>
+    <lastmod>2024-12-31T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/kyoto/</loc>
     <lastmod>2023-12-31T00:00:00+00:00</lastmod>
@@ -17,25 +50,10 @@
     <loc>http://localhost:1313/tags/nyc/</loc>
     <lastmod>2023-12-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/photography/</loc>
-    <lastmod>2023-12-31T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/photos/</loc>
-    <lastmod>2023-12-31T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2023-12-31T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/raleigh/</loc>
     <lastmod>2023-12-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2023-12-31T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/washington-dc/</loc>
-    <lastmod>2023-12-31T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/year-in-photos/</loc>
     <lastmod>2023-12-31T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/2022/my-year-in-photos-2022/</loc>
@@ -234,9 +252,6 @@
     <lastmod>2019-12-31T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/stanford-theatre/</loc>
-    <lastmod>2019-12-31T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/tokyo/</loc>
     <lastmod>2019-12-31T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/utah/</loc>
@@ -1181,10 +1196,10 @@
     <loc>http://localhost:1313/tags/method_exists/</loc>
     <lastmod>2009-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/php/</loc>
+    <loc>http://localhost:1313/categories/php/</loc>
     <lastmod>2009-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/php/</loc>
+    <loc>http://localhost:1313/tags/php/</loc>
     <lastmod>2009-12-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/2009/php-dealing-with-stuff-that-doesnt-exist/</loc>
