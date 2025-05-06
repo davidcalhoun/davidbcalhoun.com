@@ -147,4 +147,4 @@ On this trip to Japan I brought my folks along for the ride.  Since they'd visit
     dateModified="2024-12-31T19:17:31-05:00"
 >}}
 
-So few photos this year - so my new year's resolution for 2025 is to take more photos and take some more trips!
+So few photos this year.  My new year's resolution for 2025 is to take more photos and take some more trips!
