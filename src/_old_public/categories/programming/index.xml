@@ -1,139 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>programming on David Calhoun&#39;s blog</title>
-    <link>https://www.davidbcalhoun.com/categories/programming/</link>
-    <description>Recent content in programming on David Calhoun&#39;s blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
-    <lastBuildDate>Thu, 08 Jul 2010 00:00:00 +0000</lastBuildDate><atom:link href="https://www.davidbcalhoun.com/categories/programming/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Thursday links (July 8)</title>
-      <link>https://www.davidbcalhoun.com/2010/thursday-links-july-8/</link>
-      <pubDate>Thu, 08 Jul 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/2010/thursday-links-july-8/</guid>
-      <description>Mobile YouTube Mobile Gets a Kick Start
-Battle of Champions: HTC Droid Incredible vs. Palm Pre Plus
-Designing for the Retina Display (326ppi)
-AUDIO: John Resig: You Don’t Know Mobile (Webstyle Magazine) – ~$5,000 minimum to do mobile testing
-Tapworthy: Designing Great iPhone Apps
-eMobile: We have the fastest network in Japan!
-Apple iPad User Analysis — Phase II
-VIDEO: Using iPhone with a Braille display (Victor Tsaran)
-Mobile Access 2010 (Pew Research)</description>
-    </item>
-    
-    <item>
-      <title>Using mobile-specific HTML, CSS, and JavaScript (Mobile web part 5)</title>
-      <link>https://www.davidbcalhoun.com/2010/using-mobile-specific-html-css-and-javascript-mobile-web-part-5/</link>
-      <pubDate>Tue, 29 Jun 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/2010/using-mobile-specific-html-css-and-javascript-mobile-web-part-5/</guid>
-      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ (updated June 27, 2011)
-Mobile-specific HTML Viewport tag Use the viewport tag to properly fit the content to the screen:
-1  &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1.0&amp;#34; /&amp;gt;   Tel scheme (to initiate phone calls) 1  &amp;lt;a href=&amp;#34;tel:18005555555&amp;#34;&amp;gt;Call us at 1-800-555-5555&amp;lt;/a&amp;gt;   Sms scheme (to initiate text messages) 1 2 3 4 5 6 7 8  &amp;lt;a href=&amp;#34;sms:18005555555&amp;#34;&amp;gt; &amp;lt;a href=&amp;#34;sms:18005555555,18005555556&amp;#34;&amp;gt; &amp;lt;!</description>
-    </item>
-    
-    <item>
-      <title>How to install obsolete Android Virtual Devices (AVDs)</title>
-      <link>https://www.davidbcalhoun.com/2010/how-to-install-obsolete-android-virtual-devices-avds/</link>
-      <pubDate>Wed, 09 Jun 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/2010/how-to-install-obsolete-android-virtual-devices-avds/</guid>
-      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ Apparently it’s no longer possible to easily download Android versions 2.0 and 2.0.1 from the AVD Manager. I noticed this problem when I got a new machine and had to install everything from scratch. In the future I suspect even more AVDs will be made obsolete, so this solution also applies to them.
-Why would you want to install obsolete AVDs?</description>
-    </item>
-    
-    <item>
-      <title>Links for the week of February 21, 2010</title>
-      <link>https://www.davidbcalhoun.com/2010/links-for-the-week-of-february-21-2010/</link>
-      <pubDate>Sun, 28 Feb 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/2010/links-for-the-week-of-february-21-2010/</guid>
-      <description>General links  Video: Flash performance on the Nexus One   censorzilla   PHP compiler performance &amp;#8211; PHP Classes blog   Mobile  10 Great Tools to Create a Mobile Version of Your Site  </description>
-    </item>
-    
-    <item>
-      <title>Links for the week of February 14, 2010</title>
-      <link>https://www.davidbcalhoun.com/2010/links-for-the-week-of-february-14-2010/</link>
-      <pubDate>Sun, 21 Feb 2010 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/2010/links-for-the-week-of-february-14-2010/</guid>
-      <description>General links  What really happens when you navigate to a URL &amp;#8211; great in-depth explanation of computer-to-server transactions. With pictures!  (Google) Update on Qualified Developer Program &amp;#8211; some insight into the motivation behind Google&amp;#8217;s Qualified Developer Program   HTML5/CSS3 and new web technology  &amp;lt;ul class=&amp;quot;links&amp;quot;&amp;gt; &amp;lt;li&amp;gt; &amp;lt;a href=&amp;quot;http://www.slideshare.net/madrobby/i-cant-believe-its-not-flash&amp;quot;&amp;gt;I Can&amp;amp;#8217;t Believe It&amp;amp;#8217;s Not Flash: Thomas Fuchs&amp;amp;#8217;s slides from his presentation at Webstock 2010&amp;lt;/a&amp;gt; &amp;lt;/li&amp;gt; &amp;lt;li&amp;gt; &amp;lt;a href=&amp;quot;http://designinformer.com/use-css3-now/&amp;quot;&amp;gt;You Can Use CSS3 Right Now&amp;lt;/a&amp;gt; &amp;lt;/li&amp;gt; &amp;lt;li&amp;gt; &amp;lt;a href=&amp;quot;http://devsnippets.</description>
-    </item>
-    
-    <item>
-      <title>PastryKit: digging into an Apple Pie</title>
-      <link>https://www.davidbcalhoun.com/2009/pastrykit-digging-into-an-apple-pie/</link>
-      <pubDate>Wed, 16 Dec 2009 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/2009/pastrykit-digging-into-an-apple-pie/</guid>
-      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ Yesterday John Gruber wrote about Apple’s PastryKit, iPhone’s JavaScript framework that’s been discovered “in the wild” on the iPhone user guide at http://help.apple.com/iphone/3/mobile/. There’s a few ways to access the page:
- with an actual iPhone or iTouch by browsing with an iPhone/iTouch user agent. If you’re using Safari, enable the Developer menu in Safari&amp;gt;Preferences&amp;gt;Advanced and switching user agents by clicking on Develope&amp;gt;User Agent  What’s all the big fuss?</description>
-    </item>
-    
-    <item>
-      <title>JavaScript tidbit: special variables ($, $$, _, etc)</title>
-      <link>https://www.davidbcalhoun.com/2009/javascript-tidbit-special-variables-_-etc/</link>
-      <pubDate>Tue, 08 Dec 2009 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/2009/javascript-tidbit-special-variables-_-etc/</guid>
-      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ You&amp;rsquo;re probably used to typical variables names such as the following:
-1  var personName = &amp;#34;Joe&amp;#34;;   You may not realize it, but there are some non-alphanumeric variables at your disposal.
-Using $ For instance, the $ variable has been made popular by several JavaScript libraries, most notably jQuery. You can use it to alias operations that are commonly performed, such as the following (1):</description>
-    </item>
-    
-    <item>
-      <title>PHP: dealing with stuff that doesn&#39;t exist</title>
-      <link>https://www.davidbcalhoun.com/2009/php-dealing-with-stuff-that-doesnt-exist/</link>
-      <pubDate>Tue, 01 Dec 2009 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/2009/php-dealing-with-stuff-that-doesnt-exist/</guid>
-      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ Introduction As the application you’re coding becomes more and more complex, there’s more of an opportunity for things to go wrong in all sorts of unforseen ways. One of these problems is variables or functions that don’t exist. The problem is when you code in such a way that you presuppose their existence. But their existence isn’t guaranteed!</description>
-    </item>
-    
-    <item>
-      <title>Pitfalls of declaring variables in JavaScript</title>
-      <link>https://www.davidbcalhoun.com/2009/pitfalls-of-declaring-variables-in-javascript/</link>
-      <pubDate>Wed, 18 Nov 2009 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/2009/pitfalls-of-declaring-variables-in-javascript/</guid>
-      <description>⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️ Introduction One of the things that’s always been confusing to me is that there are multiple ways to declare variables in JavaScript, and some ways are better than others. For the beginner programmer, just getting to code to work means complete success, but for the intermediate or advanced programmer, this is just the first step.</description>
-    </item>
-    
-    <item>
-      <title>JavaScript Tidbit: Block scope with let</title>
-      <link>https://www.davidbcalhoun.com/2009/javascript-tidbit-block-scope-with-let/</link>
-      <pubDate>Tue, 15 Sep 2009 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/2009/javascript-tidbit-block-scope-with-let/</guid>
-      <description>JavaScript has functional scope. Meaning that if you (properly) define variables within functions, those variables remain accessible only inside the function.
-Block scope, on the other hand, defines scope within a block of code, usually defined by braces. JavaScript now has block scope as of version 1.7, which means it’s available in these browsers:
- Firefox 2+  Block scope is enabled in JavaScript with the use of “let”:
-let(x=100) { alert(x); }; It also works perfectly well on one line, without the use of braces:</description>
-    </item>
-    
-    <item>
-      <title>JavaScript Tidbit: Shorthand Object Instantiation</title>
-      <link>https://www.davidbcalhoun.com/2009/javascript-tidbit-shorthand-object-instantiation/</link>
-      <pubDate>Mon, 14 Sep 2009 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/2009/javascript-tidbit-shorthand-object-instantiation/</guid>
-      <description>The skinny: here’s a neat little trick to reduce the amount of code users have to type to instantiate objects:
-function jQuery(str, con){ if ( window == this ) return new jQuery(str, con); // ... } new jQuery(&amp;quot;#foo&amp;quot;); // this is now equivalent... jQuery(&amp;quot;#foo&amp;quot;); // ...to this!  {:lang=&amp;ldquo;js&amp;rdquo;}
-Explanation: when jQuery(“#foo”) is typed, the function first determines if the context in which it’s being called is the global object (window).</description>
-    </item>
-    
-    <item>
-      <title>PHP Tidbit: Dead simple singleton</title>
-      <link>https://www.davidbcalhoun.com/2009/php-tidbit-dead-simple-singleton/</link>
-      <pubDate>Mon, 14 Sep 2009 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.davidbcalhoun.com/2009/php-tidbit-dead-simple-singleton/</guid>
-      <description>class Singleton {private static $instance;public static function getInstance() {if(!isset(self::$instance)) {$c = __CLASS__;self::$instance = new $c();}return self::$instance;}}And the explanation…
-class Singleton {private static $instance; // static variable to hold our 1 instancepublic static function getInstance() { // function to get the 1 instanceif(!isset(self::$instance)) { // this will only run once (and instantiate once)$c = __CLASS__; // get the class (Singleton)self::$instance = new $c(); // instantiate the class and store it in our variable}return self::$instance; // return the instance}public static function myFunction() { // we can get to this through Singleton::getInstance()-myFunction()// .</description>
-    </item>
-    
-  </channel>
-</rss>

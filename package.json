@@ -1,0 +1,17 @@
+{
+  "name": "davidbcalhoun",
+  "version": "1.0.0",
+  "description": "Personal website of David Calhoun",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "open http://localhost:1313/posts/ && hugo server -D",
+    "dev": "npm start"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sharp": "^0.33.1"
+  },
+  "type": "module"
+}
