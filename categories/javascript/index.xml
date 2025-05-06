@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Javascript on David Calhoun's blog</title><link>https://www.davidbcalhoun.com/categories/javascript/</link><description>Recent content in Javascript on David Calhoun's blog</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Tue, 29 Jun 2010 00:00:00 +0000</lastBuildDate><atom:link href="https://www.davidbcalhoun.com/categories/javascript/index.xml" rel="self" type="application/rss+xml"/><item><title>Using mobile-specific HTML, CSS, and JavaScript (Mobile web part 5)</title><link>https://www.davidbcalhoun.com/2010/using-mobile-specific-html-css-and-javascript-mobile-web-part-5/</link><pubDate>Tue, 29 Jun 2010 00:00:00 +0000</pubDate><guid>https://www.davidbcalhoun.com/2010/using-mobile-specific-html-css-and-javascript-mobile-web-part-5/</guid><description>&lt;h2 id="-warning-this-is-an-old-article-and-may-include-information-thats-out-of-date-">⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️&lt;/h2>
+&lt;p>&lt;em>(updated June 27, 2011)&lt;/em>&lt;/p>
+&lt;h3 id="mobile-specific-html">Mobile-specific HTML&lt;/h3>
+&lt;h4 id="viewport-tag">Viewport tag&lt;/h4>
+&lt;p>Use the &lt;a href="http://davidbcalhoun.com/2010/viewport-metatag">viewport tag&lt;/a> to properly fit the content to the screen:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">meta&lt;/span> &lt;span style="color:#a6e22e">name&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;viewport&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">content&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;width=device-width, initial-scale=1.0&amp;#34;&lt;/span> /&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h4 id="tel-scheme-to-initiate-phone-calls">&lt;a href="http://www.rfc-editor.org/rfc/rfc3966.txt">Tel scheme&lt;/a> (to initiate phone calls)&lt;/h4>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">a&lt;/span> &lt;span style="color:#a6e22e">href&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;tel:18005555555&amp;#34;&lt;/span>&amp;gt;Call us at 1-800-555-5555&amp;lt;/&lt;span style="color:#f92672">a&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h4 id="sms-scheme-to-initiate-text-messages">&lt;a href="http://www.rfc-editor.org/rfc/rfc5724.txt">Sms scheme&lt;/a> (to initiate text messages)&lt;/h4>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">a&lt;/span> &lt;span style="color:#a6e22e">href&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;sms:18005555555&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">a&lt;/span> &lt;span style="color:#a6e22e">href&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;sms:18005555555,18005555556&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!-- multiple recipients --&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;lt;&lt;span style="color:#f92672">a&lt;/span> &lt;span style="color:#a6e22e">href&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;sms:18005555555?body=Text%20goes%20here&amp;#34;&lt;/span>&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">&amp;lt;!-- predefined message body --&amp;gt;&lt;/span>&amp;lt;/&lt;span style="color:#f92672">a&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;gt;&amp;lt;/&lt;span style="color:#f92672">a&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;gt;&amp;lt;/&lt;span style="color:#f92672">a&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h4 id="disable-automatic-telephone-number-linking">Disable automatic telephone number linking&lt;/h4>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-html" data-lang="html">&lt;span style="display:flex;">&lt;span>&amp;lt;&lt;span style="color:#f92672">meta&lt;/span> &lt;span style="color:#a6e22e">name&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;format-detection&amp;#34;&lt;/span> &lt;span style="color:#a6e22e">content&lt;/span>&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;telephone=no&amp;#34;&lt;/span> /&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h4 id="ios-specific-html-some-work-on-android-as-well">iOS-specific HTML (some work on Android as well)&lt;/h4>
+&lt;p>You also have access to several &lt;a href="http://developer.apple.com/library/safari/#documentation/appleapplications/reference/safariwebcontent/configuringwebapplications/configuringwebapplications.html">Apple-specific tags to use in your iOS applications (iPhone, iPad, and don&amp;rsquo;t forget the iPod Touch!)&lt;/a>.&lt;/p></description></item><item><title>JavaScript SunSpider: HTC Evo versus HTC Incredible versus Nexus One</title><link>https://www.davidbcalhoun.com/2010/javascript-sunspider-htc-evo-versus-htc-incredible-versus-nexus-one/</link><pubDate>Thu, 10 Jun 2010 00:00:00 +0000</pubDate><guid>https://www.davidbcalhoun.com/2010/javascript-sunspider-htc-evo-versus-htc-incredible-versus-nexus-one/</guid><description>&lt;h3 id="result-table">Result table&lt;/h3>
+&lt;table>
+ &lt;tr>
+ &lt;td>
+ Test
+ &lt;/td>
+&lt;pre>&lt;code>&amp;lt;td&amp;gt;
+ Evo (2.1)
+&amp;lt;/td&amp;gt;
+
+&amp;lt;td&amp;gt;
+ Incredible (2.1)
+&amp;lt;/td&amp;gt;
+
+&amp;lt;td&amp;gt;
+ Nexus One (2.2)
+&amp;lt;/td&amp;gt;
+&lt;/code>&lt;/pre>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>
+ Total
+ &lt;/td>
+&lt;pre>&lt;code>&amp;lt;td&amp;gt;
+ 16167ms
+&amp;lt;/td&amp;gt;
+
+&amp;lt;td&amp;gt;
+ 15237ms
+&amp;lt;/td&amp;gt;
+
+&amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt;
+ 5452ms
+&amp;lt;/td&amp;gt;
+&lt;/code>&lt;/pre>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>
+ 3D
+ &lt;/td>
+&lt;pre>&lt;code>&amp;lt;td&amp;gt;
+ 2014ms
+&amp;lt;/td&amp;gt;
+
+&amp;lt;td&amp;gt;
+ 1835ms
+&amp;lt;/td&amp;gt;
+
+&amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt;
+ 946ms
+&amp;lt;/td&amp;gt;
+&lt;/code>&lt;/pre>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>
+ Access
+ &lt;/td>
+&lt;pre>&lt;code>&amp;lt;td&amp;gt;
+ 2126ms
+&amp;lt;/td&amp;gt;
+
+&amp;lt;td&amp;gt;
+ 1892ms
+&amp;lt;/td&amp;gt;
+
+&amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt;
+ 463ms
+&amp;lt;/td&amp;gt;
+&lt;/code>&lt;/pre>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>
+ Bitops
+ &lt;/td>
+&lt;pre>&lt;code>&amp;lt;td&amp;gt;
+ 1519ms
+&amp;lt;/td&amp;gt;
+
+&amp;lt;td&amp;gt;
+ 1591ms
+&amp;lt;/td&amp;gt;
+
+&amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt;
+ 360ms
+&amp;lt;/td&amp;gt;
+&lt;/code>&lt;/pre>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>
+ Controlflow
+ &lt;/td>
+&lt;pre>&lt;code>&amp;lt;td&amp;gt;
+ 243ms
+&amp;lt;/td&amp;gt;
+
+&amp;lt;td&amp;gt;
+ 206ms
+&amp;lt;/td&amp;gt;
+
+&amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt;
+ 20ms
+&amp;lt;/td&amp;gt;
+&lt;/code>&lt;/pre>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>
+ Crypto
+ &lt;/td>
+&lt;pre>&lt;code>&amp;lt;td&amp;gt;
+ 1033ms
+&amp;lt;/td&amp;gt;
+
+&amp;lt;td&amp;gt;
+ 1003ms
+&amp;lt;/td&amp;gt;
+
+&amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt;
+ 344ms
+&amp;lt;/td&amp;gt;
+&lt;/code>&lt;/pre>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>
+ Date
+ &lt;/td>
+&lt;pre>&lt;code>&amp;lt;td&amp;gt;
+ 1849ms
+&amp;lt;/td&amp;gt;
+
+&amp;lt;td&amp;gt;
+ 1896ms
+&amp;lt;/td&amp;gt;
+
+&amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt;
+ 639ms
+&amp;lt;/td&amp;gt;
+&lt;/code>&lt;/pre>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>
+ Math
+ &lt;/td>
+&lt;pre>&lt;code>&amp;lt;td&amp;gt;
+ 1684ms
+&amp;lt;/td&amp;gt;
+
+&amp;lt;td&amp;gt;
+ 1419ms
+&amp;lt;/td&amp;gt;
+
+&amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt;
+ 602ms
+&amp;lt;/td&amp;gt;
+&lt;/code>&lt;/pre>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>
+ Regexp
+ &lt;/td>
+&lt;pre>&lt;code>&amp;lt;td&amp;gt;
+ 1779ms
+&amp;lt;/td&amp;gt;
+
+&amp;lt;td&amp;gt;
+ 1673ms
+&amp;lt;/td&amp;gt;
+
+&amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt;
+ 155ms
+&amp;lt;/td&amp;gt;
+&lt;/code>&lt;/pre>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>
+ String
+ &lt;/td>
+&lt;pre>&lt;code>&amp;lt;td&amp;gt;
+ 3920ms
+&amp;lt;/td&amp;gt;
+
+&amp;lt;td&amp;gt;
+ 3722ms
+&amp;lt;/td&amp;gt;
+
+&amp;lt;td class=&amp;quot;positive&amp;quot;&amp;gt;
+ 1923ms
+&amp;lt;/td&amp;gt;
+&lt;/code>&lt;/pre>
+ &lt;/tr>
+&lt;/table>
+&lt;h3 id="thoughts">Thoughts&lt;/h3>
+&lt;p>The Incredible is just slightly faster than the Evo, to the point where it’s probably negligible or within a margin of error. Both of these phones run on Android 2.1 with HTC’s Sense UI modifications, and represent the latest and greatest in Android phones available on the market today. Both run on the same 1GHz Snapdragon processor (QSD8650). The Nexus One is a bit older, and runs with an older version of the Snapdragon processor (QSD8250), however it still runs at 1GHz just like the other two phones.&lt;/p></description></item><item><title>PastryKit: digging into an Apple Pie</title><link>https://www.davidbcalhoun.com/2009/pastrykit-digging-into-an-apple-pie/</link><pubDate>Wed, 16 Dec 2009 00:00:00 +0000</pubDate><guid>https://www.davidbcalhoun.com/2009/pastrykit-digging-into-an-apple-pie/</guid><description>&lt;h2 id="-warning-this-is-an-old-article-and-may-include-information-thats-out-of-date-">⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️&lt;/h2>
+&lt;p>Yesterday &lt;a href="http://daringfireball.net/2009/12/pastrykit">John Gruber wrote about Apple’s PastryKit&lt;/a>, iPhone’s JavaScript framework that’s been discovered “in the wild” on the iPhone user guide at &lt;a href="http://help.apple.com/iphone/3/mobile/">http://help.apple.com/iphone/3/mobile/&lt;/a>. There’s a few ways to access the page:&lt;/p>
+&lt;ul>
+&lt;li>with an actual iPhone or iTouch&lt;/li>
+&lt;li>by browsing with an iPhone/iTouch user agent. If you’re using Safari, enable the Developer menu in Safari&amp;gt;Preferences&amp;gt;Advanced and switching user agents by clicking on Develope&amp;gt;User Agent&lt;/li>
+&lt;/ul>
+&lt;h3 id="what8217s-all-the-big-fuss">What’s all the big fuss?&lt;/h3>
+&lt;p>John was particularly interested in the responsiveness and native-like interaction of flinging through long lists, the fact the address bar is completely hidden, and the possibility of having a toolbar fixed to the top of the page. PastryKit makes all of these things possible and implements them better than anything else. And the result is nearly indistinguishable from a native app. Here’s a video I made of the iPhone user guide in action, powered by PastryKit. This is running on Safari – it’s not a native app!&lt;/p></description></item><item><title>JavaScript tidbit: special variables ($, $$, _, etc)</title><link>https://www.davidbcalhoun.com/2009/javascript-tidbit-special-variables-_-etc/</link><pubDate>Tue, 08 Dec 2009 00:00:00 +0000</pubDate><guid>https://www.davidbcalhoun.com/2009/javascript-tidbit-special-variables-_-etc/</guid><description>&lt;h2 id="-warning-this-is-an-old-article-and-may-include-information-thats-out-of-date-">⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️&lt;/h2>
+&lt;p>You&amp;rsquo;re probably used to typical variables names such as the following:&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">var&lt;/span> &lt;span style="color:#a6e22e">personName&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Joe&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>You may not realize it, but there are some non-alphanumeric variables at your disposal.&lt;/p>
+&lt;h3 id="using-">Using $&lt;/h3>
+&lt;p>For instance, the $ variable has been made popular by several JavaScript libraries, most notably &lt;a href="http://jquery.com/">jQuery&lt;/a>. You can use it to alias operations that are commonly performed, such as the following (1):&lt;/p></description></item><item><title>Pitfalls of declaring variables in JavaScript</title><link>https://www.davidbcalhoun.com/2009/pitfalls-of-declaring-variables-in-javascript/</link><pubDate>Wed, 18 Nov 2009 00:00:00 +0000</pubDate><guid>https://www.davidbcalhoun.com/2009/pitfalls-of-declaring-variables-in-javascript/</guid><description>&lt;h2 id="-warning-this-is-an-old-article-and-may-include-information-thats-out-of-date-">⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️&lt;/h2>
+&lt;h3 id="introduction">Introduction&lt;/h3>
+&lt;p>One of the things that’s always been confusing to me is that there are multiple ways to declare variables in JavaScript, and some ways are better than others. For the beginner programmer, just getting to code to work means complete success, but for the intermediate or advanced programmer, this is just the first step. The next step is to clean up the code and make sure everything is written in the best way it could have been written.&lt;/p></description></item><item><title>JavaScript Tidbit: Block scope with let</title><link>https://www.davidbcalhoun.com/2009/javascript-tidbit-block-scope-with-let/</link><pubDate>Tue, 15 Sep 2009 00:00:00 +0000</pubDate><guid>https://www.davidbcalhoun.com/2009/javascript-tidbit-block-scope-with-let/</guid><description>&lt;p>JavaScript has &lt;strong>functional scope&lt;/strong>. Meaning that if you (properly) define variables within functions, those variables remain accessible only inside the function.&lt;/p>
+&lt;p>&lt;strong>Block scope&lt;/strong>, on the other hand, defines scope within a block of code, usually defined by braces. JavaScript now has block scope as of version 1.7, which means it’s available in these browsers:&lt;/p>
+&lt;ul>
+&lt;li>Firefox 2+&lt;/li>
+&lt;/ul>
+&lt;p>Block scope is enabled in JavaScript with the use of “let”:&lt;/p>
+&lt;pre name="code" class="JScript">let(x=100) {
+ alert(x);
+};&lt;/pre>
+&lt;p>It also works perfectly well on one line, without the use of braces:&lt;/p></description></item><item><title>JavaScript Tidbit: Shorthand Object Instantiation</title><link>https://www.davidbcalhoun.com/2009/javascript-tidbit-shorthand-object-instantiation/</link><pubDate>Mon, 14 Sep 2009 00:00:00 +0000</pubDate><guid>https://www.davidbcalhoun.com/2009/javascript-tidbit-shorthand-object-instantiation/</guid><description>&lt;p>The skinny: here’s a neat little trick to reduce the amount of code users have to type to instantiate objects:&lt;/p>
+&lt;pre>&lt;code>function jQuery(str, con){
+ if ( window == this )
+ return new jQuery(str, con);
+ // ...
+}
+
+new jQuery(&amp;quot;#foo&amp;quot;); // this is now equivalent...
+jQuery(&amp;quot;#foo&amp;quot;); // ...to this!
+&lt;/code>&lt;/pre>
+&lt;p>{:lang=&amp;ldquo;js&amp;rdquo;}&lt;/p>
+&lt;p>Explanation: when jQuery(“#foo”) is typed, the function first determines if the context in which it’s being called is the global object (window).  If it is, it returns an instantiation of itself.  When it’s instantiated, the context in which it’s being called is inside its own function, and NOT within the global object (window), thus it bypasses our little instantiation trick and moves on to execute any remaining code in the function.&lt;/p></description></item></channel></rss>

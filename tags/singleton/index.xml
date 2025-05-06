@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Singleton on David Calhoun's blog</title><link>https://www.davidbcalhoun.com/tags/singleton/</link><description>Recent content in Singleton on David Calhoun's blog</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Mon, 14 Sep 2009 00:00:00 +0000</lastBuildDate><atom:link href="https://www.davidbcalhoun.com/tags/singleton/index.xml" rel="self" type="application/rss+xml"/><item><title>PHP Tidbit: Dead simple singleton</title><link>https://www.davidbcalhoun.com/2009/php-tidbit-dead-simple-singleton/</link><pubDate>Mon, 14 Sep 2009 00:00:00 +0000</pubDate><guid>https://www.davidbcalhoun.com/2009/php-tidbit-dead-simple-singleton/</guid><description>&lt;pre name="code" class="php">class Singleton {
+ private static $instance;
+ public static function getInstance() {
+ if(!isset(self::$instance)) {
+ $c = __CLASS__;
+ self::$instance = new $c();
+ }
+ return self::$instance;
+ }
+}&lt;/pre>
+&lt;p>And the explanation…&lt;/p>
+&lt;pre name="code" class="php">class Singleton {
+ private static $instance; // static variable to hold our 1 instance
+
+ public static function getInstance() { // function to get the 1 instance
+ if(!isset(self::$instance)) { // this will only run once (and instantiate once)
+ $c = __CLASS__; // get the class (Singleton)
+ self::$instance = new $c(); // instantiate the class and store it in our variable
+ }
+ return self::$instance; // return the instance
+ }
+
+ public static function myFunction() { // we can get to this through Singleton::getInstance()->myFunction()
+ // ...
+ }
+}&lt;/pre></description></item></channel></rss>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Php on David Calhoun's blog</title><link>https://www.davidbcalhoun.com/categories/php/</link><description>Recent content in Php on David Calhoun's blog</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Tue, 01 Dec 2009 00:00:00 +0000</lastBuildDate><atom:link href="https://www.davidbcalhoun.com/categories/php/index.xml" rel="self" type="application/rss+xml"/><item><title>PHP: dealing with stuff that doesn't exist</title><link>https://www.davidbcalhoun.com/2009/php-dealing-with-stuff-that-doesnt-exist/</link><pubDate>Tue, 01 Dec 2009 00:00:00 +0000</pubDate><guid>https://www.davidbcalhoun.com/2009/php-dealing-with-stuff-that-doesnt-exist/</guid><description>&lt;h2 id="-warning-this-is-an-old-article-and-may-include-information-thats-out-of-date-">⚠️ Warning: this is an old article and may include information that&amp;rsquo;s out of date. ⚠️&lt;/h2>
+&lt;h3 id="introduction">Introduction&lt;/h3>
+&lt;p>As the application you’re coding becomes more and more complex, there’s more of an opportunity for things to go wrong in all sorts of unforseen ways.  One of these problems is variables or functions that don’t exist.  The problem is when you code in such a way that you presuppose their existence. But their existence isn’t guaranteed!&lt;/p></description></item><item><title>PHP Tidbit: Dead simple singleton</title><link>https://www.davidbcalhoun.com/2009/php-tidbit-dead-simple-singleton/</link><pubDate>Mon, 14 Sep 2009 00:00:00 +0000</pubDate><guid>https://www.davidbcalhoun.com/2009/php-tidbit-dead-simple-singleton/</guid><description>&lt;pre name="code" class="php">class Singleton {
+ private static $instance;
+ public static function getInstance() {
+ if(!isset(self::$instance)) {
+ $c = __CLASS__;
+ self::$instance = new $c();
+ }
+ return self::$instance;
+ }
+}&lt;/pre>
+&lt;p>And the explanation…&lt;/p>
+&lt;pre name="code" class="php">class Singleton {
+ private static $instance; // static variable to hold our 1 instance
+
+ public static function getInstance() { // function to get the 1 instance
+ if(!isset(self::$instance)) { // this will only run once (and instantiate once)
+ $c = __CLASS__; // get the class (Singleton)
+ self::$instance = new $c(); // instantiate the class and store it in our variable
+ }
+ return self::$instance; // return the instance
+ }
+
+ public static function myFunction() { // we can get to this through Singleton::getInstance()->myFunction()
+ // ...
+ }
+}&lt;/pre></description></item></channel></rss>

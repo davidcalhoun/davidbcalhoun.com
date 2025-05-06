@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>OO on David Calhoun's blog</title><link>https://www.davidbcalhoun.com/tags/oo/</link><description>Recent content in OO on David Calhoun's blog</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Mon, 14 Sep 2009 00:00:00 +0000</lastBuildDate><atom:link href="https://www.davidbcalhoun.com/tags/oo/index.xml" rel="self" type="application/rss+xml"/><item><title>JavaScript Tidbit: Shorthand Object Instantiation</title><link>https://www.davidbcalhoun.com/2009/javascript-tidbit-shorthand-object-instantiation/</link><pubDate>Mon, 14 Sep 2009 00:00:00 +0000</pubDate><guid>https://www.davidbcalhoun.com/2009/javascript-tidbit-shorthand-object-instantiation/</guid><description>&lt;p>The skinny: here’s a neat little trick to reduce the amount of code users have to type to instantiate objects:&lt;/p>
+&lt;pre>&lt;code>function jQuery(str, con){
+ if ( window == this )
+ return new jQuery(str, con);
+ // ...
+}
+
+new jQuery(&amp;quot;#foo&amp;quot;); // this is now equivalent...
+jQuery(&amp;quot;#foo&amp;quot;); // ...to this!
+&lt;/code>&lt;/pre>
+&lt;p>{:lang=&amp;ldquo;js&amp;rdquo;}&lt;/p>
+&lt;p>Explanation: when jQuery(“#foo”) is typed, the function first determines if the context in which it’s being called is the global object (window).  If it is, it returns an instantiation of itself.  When it’s instantiated, the context in which it’s being called is inside its own function, and NOT within the global object (window), thus it bypasses our little instantiation trick and moves on to execute any remaining code in the function.&lt;/p></description></item></channel></rss>
