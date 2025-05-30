@@ -32,7 +32,7 @@
         --tag-text-color: #555;
         --tag-highlight-bg-color: var(--accent-secondary);
         --tag-highlight-text-color: white;
-        --text-color: #555;
+        --text-color: #444;
         --text-secondary-color: #033A8E;
         --text-emphasis-color: black;
         --text-muted-color: #666;
@@ -255,10 +255,10 @@ figure[itemprop="image"] figcaption {
 }
 
 main {
-    text-align: justify;
+    text-align: left;
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
-    hyphens: auto;
+    hyphens: none;
     padding: 1.5rem var(--page-side-padding);
     margin: auto;
     flex: 1 0 auto;
@@ -275,11 +275,12 @@ main h4,
 main h5,
 main h6 {
     text-align: left;
+    hyphens: none;
 }
 
 main p {
     margin-bottom: 2rem;
-    line-height: 1.5rem;
+    line-height: 1.7rem;
 }
 
 main li {
@@ -367,7 +368,7 @@ table tr:hover {
 }
 
 .meta.tags a:first-of-type {
-    margin-left: 0.5rem;
+    margin-left: 0.1rem;
 }
 
 .meta.tags a:not(:last-of-type) {
@@ -395,7 +396,7 @@ table tr:hover {
 
 h2 {
     line-height: 1.5rem;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.5rem;
     margin-top: 2.5rem;
     font-size: 1.2rem;
 }
@@ -428,8 +429,7 @@ code {
 blockquote {
     border-left: 2px solid var(--accent);
     padding-left: 1rem;
-    font-style: italic;
-    margin: 3rem 0 3rem 2rem;
+    margin: 2rem 0 2rem 1rem;
 }
 
 blockquote p {
