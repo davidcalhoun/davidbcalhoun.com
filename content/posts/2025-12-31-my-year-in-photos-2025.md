@@ -163,8 +163,8 @@ Heidelberg was my favorite city in Germany.  Like any good city in the world, th
 
 {{< img
     src="2025/2025-08-27_2V9A7279-rainbow-over-heidelberg-castle-from-the-philosophers-way"
-    width="2000"
-    height="1500"
+    width="1295"
+    height="2000"
     title="Rainbow over Heidelberg Castle"
     caption="Rainbow over Heidelberg Castle, seen from the Philosopher's Way (Heidelberg, Germany in August 2025)"
     genre="Travel Photography"
