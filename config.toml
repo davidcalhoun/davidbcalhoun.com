@@ -2,7 +2,7 @@ baseURL = "https://www.davidbcalhoun.com/"
 languageCode = "en-US"
 title = "David Calhoun's blog"
 theme = "minimal-dc-mod"
-googleAnalytics = "UA-5530615-3"
+googleAnalytics = ""
 
 [markup.goldmark.renderer]
 unsafe = true
